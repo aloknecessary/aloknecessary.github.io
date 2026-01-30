@@ -2,3 +2,4 @@ title: Alok
 description: Solution Architect | Cloud | DevOps | System Design
 markdown: kramdown
 theme: null
+permalink: /blogs/:title/

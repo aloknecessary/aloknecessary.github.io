@@ -43,6 +43,8 @@ My work focuses on translating **business problems into pragmatic, scalable, and
 
 I write about real-world engineering problems, architecture decisions, and lessons learned while building systems.
 
+👉 **[Browse all blogs →](/blogs)**
+
 - **Blog:** https://ideas.byteridge.com/author/alok/
 
 ---
