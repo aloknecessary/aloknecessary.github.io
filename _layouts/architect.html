@@ -112,6 +112,7 @@
 
 <body>
 
+  {% unless page.hide_header %}
   <header>
     <h1>Alok</h1>
     <p>
@@ -119,6 +120,8 @@
       and pragmatic engineering decisions that align technology with business outcomes.
     </p>
   </header>
+{% endunless %}
+
 
   {{ content }}
 

@@ -1,6 +1,7 @@
 ---
 layout: architect
 title: Blogs
+hide_header: true
 ---
 
 ## Writing
