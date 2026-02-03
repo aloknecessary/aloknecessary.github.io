@@ -54,6 +54,8 @@ title: Tags
   .tag-heading.active {
     background-color: #eef2ff;
     color: #1e3a8a;
+    border-left: 4px solid #6366f1;
+    padding-left: 10px;
   }
 </style>
 
