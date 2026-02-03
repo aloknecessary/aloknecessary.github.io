@@ -45,7 +45,7 @@ I write about real-world engineering problems, architecture decisions, and lesso
 
 👉 **[Browse all blogs →](/blogs)**
 
-- **Blog:** https://ideas.byteridge.com/author/alok/
+<!-- - **Blog:** https://ideas.byteridge.com/author/alok/ -->
 
 ---
 
@@ -59,7 +59,9 @@ I value transparency, thoughtful experimentation, and learning through execution
 
 ## Contact
 
-- **LinkedIn:** https://www.linkedin.com/in/aloknecessary/  
-- **GitHub:** https://github.com/aloknecessary  
+- **LinkedIn:** [https://www.linkedin.com/in/aloknecessary](https://www.linkedin.com/in/aloknecessary)  
+- **GitHub:** [https://github.com/aloknecessary](https://github.com/aloknecessary)
+- **Email:** aloknecessary@gmail.com
+
 
 If you’re interested in **architecture discussions, system design reviews, or technical collaboration**, feel free to reach out.

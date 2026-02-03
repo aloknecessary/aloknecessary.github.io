@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>{{ page.title }}</title>
@@ -10,9 +11,9 @@
     :root {
       --primary: #2563eb;   /* blue-600 */
       --secondary: #0f172a; /* slate-900 */
-      --muted: #6b7280;     /* gray-500 */
-      --bg-soft: #f8fafc;   /* slate-50 */
-      --border: #e5e7eb;    /* gray-200 */
+      --muted: #6b7280;  /* gray-500 */
+      --bg-soft: #f8fafc;  /* slate-50 */
+      --border: #e5e7eb;  /* gray-200 */
     }
 
     body {
@@ -62,7 +63,8 @@
       border-radius: 2px;
     }
 
-    p, li {
+    p,
+    li {
       font-size: 1rem;
     }
 
@@ -120,7 +122,7 @@
       and pragmatic engineering decisions that align technology with business outcomes.
     </p>
   </header>
-{% endunless %}
+  {% endunless %}
 
 
   {{ content }}
@@ -130,4 +132,5 @@
   </footer>
 
 </body>
+
 </html>

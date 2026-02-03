@@ -6,16 +6,21 @@ hide_header: true
 
 ## Writing
 
-Thoughts on architecture, system design, cloud trade-offs, and lessons learned while building real-world systems.
-
----
 
 {% for post in site.posts %}
 ### [{{ post.title }}]({{ post.url }})
 
-<small>{{ post.date | date: "%B %d, %Y" }}</small>
 
-{{ post.excerpt | strip_html | truncatewords: 65 }}
+<small>{{ post.date | date: "%B %d, %Y" }} • {{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read</small>
+
+
+{{ post.excerpt | strip_html | truncatewords: 30 }}
+
+
+{% if post.tags %}
+<small>Tags: {{ post.tags | join: ", " }}</small>
+{% endif %}
+
 
 [Read more →]({{ post.url }})
 

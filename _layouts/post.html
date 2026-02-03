@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>{{ page.title }}</title>
@@ -38,20 +39,36 @@
 </head>
 
 <body>
-  
-  <nav style="margin-bottom: 24px; font-size: 0.95rem;">
-    <a href="/blogs">← Back to Blogs</a>
-    &nbsp;|&nbsp;
-    <a href="/">Home</a>
+
+  <nav style="margin-bottom:24px; font-size:0.95rem;">
+    <a href="/blogs">← Back to Blogs</a> | <a href="/">Home</a>
   </nav>
 
   <article>
     <h1>{{ page.title }}</h1>
-    <div class="meta">
-      {{ page.date | date: "%B %d, %Y" }}
-    </div>
+
+    <p style="color:#666; font-size:0.9rem;">
+      {{ page.date | date: "%B %d, %Y" }} •
+      {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read
+    </p>
+
+    {% if page.tags %}
+    <p style="font-size:0.85rem;">Tags: {{ page.tags | join: ", " }}</p>
+    {% endif %}
 
     {{ content }}
+
+    <hr />
+
+    <div style="display:flex; justify-content:space-between;">
+      {% if page.previous %}
+      <a href="{{ page.previous.url }}">← {{ page.previous.title }}</a>
+      {% endif %}
+
+      {% if page.next %}
+      <a href="{{ page.next.url }}">{{ page.next.title }} →</a>
+      {% endif %}
+    </div>
   </article>
 
 </body>

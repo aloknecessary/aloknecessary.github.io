@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Boosting Developer Productivity with AI"
+tags: [architecture, cloud, system-design, ai]
 ---
 
 ### How Engineers Are Using AI to Move Faster—Without Cutting Corners

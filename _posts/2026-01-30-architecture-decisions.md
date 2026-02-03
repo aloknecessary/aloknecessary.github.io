@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Architecture Decisions That Actually Matter in Production"
+tags: [architecture, cloud, system-design]
 ---
 
 Most systems don’t fail because of bad code.
