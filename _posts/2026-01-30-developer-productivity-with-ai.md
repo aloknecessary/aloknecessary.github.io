@@ -7,6 +7,8 @@ title: "Boosting Developer Productivity with AI"
 
 AI is often discussed as a force multiplier for software development. In practice, the most effective teams are not using it to bypass engineering rigor or accelerate recklessly. Instead, they are using AI to remove friction from everyday workflows—freeing engineers to focus on design quality, correctness, and long-term system health.
 
+<!--more-->
+
 Across product and solution teams, AI adoption is becoming less about experimentation and more about _practical integration_ into the development lifecycle.
 
 >_AI doesn’t replace engineering judgment—it reduces the cost of reaching it._

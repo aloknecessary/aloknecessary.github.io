@@ -7,6 +7,8 @@ Most systems don’t fail because of bad code.
 
 They fail because of **poor architectural decisions made too early, too late, or for the wrong reasons**.
 
+<!--more-->
+
 Over the years, I’ve seen teams invest months perfecting abstractions, frameworks, and tooling—only to struggle in production with scalability, operability, and cost. This post focuses on the architectural decisions that *actually* matter once your system leaves the whiteboard and starts serving real users.
 
 ---
