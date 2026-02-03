@@ -13,7 +13,7 @@ hide_header: true
 
 <small>{{ post.date | date: "%B %d, %Y" }} • {{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read</small>
 
-{{ post.excerpt | strip_html | truncatewords: 30 }}
+{{ post.excerpt | strip_html | truncatewords: 65 }}
 
 {% if post.tags %}
   <div class="post-tags">
