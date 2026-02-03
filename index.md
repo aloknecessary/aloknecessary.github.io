@@ -61,7 +61,7 @@ I value transparency, thoughtful experimentation, and learning through execution
 
 - **LinkedIn:** [https://www.linkedin.com/in/aloknecessary](https://www.linkedin.com/in/aloknecessary)  
 - **GitHub:** [https://github.com/aloknecessary](https://github.com/aloknecessary)
-- **Email:** aloknecessary@gmail.com
+- **Email:** [aloknecessary@gmail.com](mailto:aloknecessary@gmail.com)
+- **Docker:** [https://hub.docker.com/u/aloknecessary](https://hub.docker.com/u/aloknecessary)
 
-
-If you’re interested in **architecture discussions, system design reviews, or technical collaboration**, feel free to reach out.
+If you’re interested in **architecture discussions, system design reviews, DevOps or technical collaboration**, feel free to reach out.

@@ -1,138 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+        max-width: 820px;
+        margin: 40px auto;
+        padding: 0 20px;
+        color: #1f2937;
+        line-height: 1.75;
+      }
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-      max-width: 820px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #1f2937;
-      line-height: 1.75;
-    }
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+      }
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 8px;
-    }
+      .meta {
+        color: #6b7280;
+        font-size: 0.95rem;
+        margin-bottom: 32px;
+      }
 
-    .meta {
-      color: #6b7280;
-      font-size: 0.95rem;
-      margin-bottom: 32px;
-    }
+      a {
+        color: #2563eb;
+        text-decoration: none;
+      }
 
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
+      a:hover {
+        text-decoration: underline;
+      }
 
-    a:hover {
-      text-decoration: underline;
-    }
+      .post-tags {
+        margin-top: 1.5rem;
+      }
 
-    .post-tags {
-      margin-top: 1.5rem;
-    }
+      .post-tags .tag {
+        display: inline-block;
+        margin-right: 0.5rem;
+        padding: 0.25rem 0.6rem;
+        background: #eef2ff;
+        color: #3730a3;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        text-decoration: none;
+      }
 
-    .post-tags .tag {
-      display: inline-block;
-      margin-right: 0.5rem;
-      padding: 0.25rem 0.6rem;
-      background: #eef2ff;
-      color: #3730a3;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      text-decoration: none;
-    }
+      .post-tags .tag:hover {
+        background: #c7d2fe;
+      }
 
-    .post-tags .tag:hover {
-      background: #c7d2fe;
-    }
+      .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2.5rem;
+      }
 
-    .post-navigation {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 2.5rem;
-    }
+      .post-footer {
+        margin-top: 2.5rem;
+        font-size: 0.9rem;
+        color: #4b5563;
+      }
 
-    .post-footer {
-      margin-top: 2.5rem;
-      font-size: 0.9rem;
-      color: #4b5563;
-    }
+      .post-footer a {
+        color: #2563eb;
+        font-weight: 500;
+        text-decoration: none;
+      }
 
-    .post-footer a {
-      color: #2563eb;
-      font-weight: 500;
-      text-decoration: none;
-    }
+      .post-footer a:hover {
+        text-decoration: underline;
+      }
 
-    .post-footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
+      pre {
+        background: #f4f4f4; /* Light gray background to distinguish the block */
+        border: 1px solid #ddd; /* Subtle border */
+        border-left: 3px solid #f36d33; /* Prominent left border for accent/style */
+        color: #666; /* Default text color */
+        font-family:
+          Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
+          "Lucida Sans Typewriter", "DejaVu Sans Mono",
+          "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
+          Monaco, "Courier New", Courier, monospace; /* Monospace font stack for readability */
+        font-size: 15px; /* Adjust font size as needed, em or rem units are also good practice */
+        line-height: 1.6; /* Good line height for readability */
+        margin-bottom: 1.6em; /* Space below the code block */
+        max-width: 100%; /* Ensures it doesn't overflow container on smaller screens */
+        overflow: auto; /* Adds scrollbars if content is too wide */
+        padding: 1em 1.5em; /* Padding inside the block */
+        display: block; /* Ensures block-level behavior */
+        word-wrap: break-word; /* Breaks long words if necessary */
+        white-space: pre-wrap; /* Preserves whitespace and wraps long lines */
+      }
 
-<body>
+      /* Optional: Additional styles for inline <code> within other text elements (like paragraphs) */
+      p > code,
+      li > code,
+      dd > code,
+      td > code {
+        background: #ffeff0; /* Lighter background for inline code */
+        padding: 0.1rem 0.3rem 0.2rem; /* Small padding for visual separation */
+        border-radius: 0.2rem; /* Slightly rounded corners */
+        font-size: inherit; /* Inherits font size from parent element */
+      }
+    </style>
+  </head>
 
-  <nav style="margin-bottom:24px; font-size:0.95rem;">
-    <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a> |
-    <a href="{{ '/' | relative_url }}">Home</a>
-  </nav>
-
-  <article>
-
-    <h1>{{ page.title }}</h1>
-
-    <p class="meta">
-      {{ page.date | date: "%B %d, %Y" }} •
-      {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read
-    </p>
-
-    <!-- 1️⃣ Post content -->
-    <div class="post-content">
-      {{ content }}
-    </div>
-
-    <!-- 2️⃣ Tags -->
-    {% if page.tags %}
-    <div class="post-tags">
-      {% for tag in page.tags %}
-      <a href="{{ '/tags/#' | append: tag | relative_url }}" class="tag">
-        #{{ tag }}
-      </a>
-      {% endfor %}
-    </div>
-    {% endif %}
-
-    <hr />
-
-    <!-- 3️⃣ Previous / Next navigation -->
-    <nav class="post-navigation">
-      {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}">
-        ← {{ page.previous.title }}
-      </a>
-      {% endif %}
-
-      {% if page.next %}
-      <a href="{{ page.next.url | relative_url }}">
-        {{ page.next.title }} →
-      </a>
-      {% endif %}
+  <body>
+    <nav style="margin-bottom: 24px; font-size: 0.95rem">
+      <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a> |
+      <a href="{{ '/' | relative_url }}">Home</a>
     </nav>
 
-    <!-- 4️⃣ Global footer CTA -->
-    {% include post-footer.html %}
+    <article>
+      <h1>{{ page.title }}</h1>
 
-  </article>
+      <p class="meta">
+        {{ page.date | date: "%B %d, %Y" }} • {{ content | number_of_words |
+        divided_by: 200 | plus: 1 }} min read
+      </p>
 
-</body>
+      <!-- 1️⃣ Post content -->
+      <div class="post-content">{{ content }}</div>
 
+      <!-- 2️⃣ Tags -->
+      {% if page.tags %}
+      <div class="post-tags">
+        {% for tag in page.tags %}
+        <a href="{{ '/tags/#' | append: tag | relative_url }}" class="tag">
+          #{{ tag }}
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <hr />
+
+      <!-- 3️⃣ Previous / Next navigation -->
+      <nav class="post-navigation">
+        {% if page.previous %}
+        <a href="{{ page.previous.url | relative_url }}">
+          ← {{ page.previous.title }}
+        </a>
+        {% endif %} {% if page.next %}
+        <a href="{{ page.next.url | relative_url }}">
+          {{ page.next.title }} →
+        </a>
+        {% endif %}
+      </nav>
+
+      <!-- 4️⃣ Global footer CTA -->
+      {% include post-footer.html %}
+    </article>
+  </body>
 </html>
