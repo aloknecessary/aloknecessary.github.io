@@ -35,41 +35,104 @@
     a:hover {
       text-decoration: underline;
     }
+
+    .post-tags {
+      margin-top: 1.5rem;
+    }
+
+    .post-tags .tag {
+      display: inline-block;
+      margin-right: 0.5rem;
+      padding: 0.25rem 0.6rem;
+      background: #eef2ff;
+      color: #3730a3;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+
+    .post-tags .tag:hover {
+      background: #c7d2fe;
+    }
+
+    .post-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2.5rem;
+    }
+
+    .post-footer {
+      margin-top: 2.5rem;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    .post-footer a {
+      color: #2563eb;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .post-footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
 <body>
 
   <nav style="margin-bottom:24px; font-size:0.95rem;">
-    <a href="/blogs">← Back to Blogs</a> | <a href="/">Home</a>
+    <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a> |
+    <a href="{{ '/' | relative_url }}">Home</a>
   </nav>
 
   <article>
+
     <h1>{{ page.title }}</h1>
 
-    <p style="color:#666; font-size:0.9rem;">
+    <p class="meta">
       {{ page.date | date: "%B %d, %Y" }} •
       {{ content | number_of_words | divided_by: 200 | plus: 1 }} min read
     </p>
 
-    {% if page.tags %}
-    <p style="font-size:0.85rem;">Tags: {{ page.tags | join: ", " }}</p>
-    {% endif %}
+    <!-- 1️⃣ Post content -->
+    <div class="post-content">
+      {{ content }}
+    </div>
 
-    {{ content }}
+    <!-- 2️⃣ Tags -->
+    {% if page.tags %}
+    <div class="post-tags">
+      {% for tag in page.tags %}
+      <a href="{{ '/tags/#' | append: tag | relative_url }}" class="tag">
+        #{{ tag }}
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
 
     <hr />
 
-    <div style="display:flex; justify-content:space-between;">
+    <!-- 3️⃣ Previous / Next navigation -->
+    <nav class="post-navigation">
       {% if page.previous %}
-      <a href="{{ page.previous.url }}">← {{ page.previous.title }}</a>
+      <a href="{{ page.previous.url | relative_url }}">
+        ← {{ page.previous.title }}
+      </a>
       {% endif %}
 
       {% if page.next %}
-      <a href="{{ page.next.url }}">{{ page.next.title }} →</a>
+      <a href="{{ page.next.url | relative_url }}">
+        {{ page.next.title }} →
+      </a>
       {% endif %}
-    </div>
+    </nav>
+
+    <!-- 4️⃣ Global footer CTA -->
+    {% include post-footer.html %}
+
   </article>
 
 </body>
+
 </html>

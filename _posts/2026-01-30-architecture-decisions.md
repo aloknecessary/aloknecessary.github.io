@@ -159,7 +159,3 @@ And that’s exactly what makes it successful.
 > *Making mistakes is better than faking perfection—but repeating avoidable mistakes is optional.*
 
 If you’re building systems in the real world, optimize for **clarity, ownership, and evolution**. Everything else follows.
-
----
-
-*If this resonates with your experience or you’d like to discuss architecture trade-offs, feel free to reach out via LinkedIn or GitHub.*
