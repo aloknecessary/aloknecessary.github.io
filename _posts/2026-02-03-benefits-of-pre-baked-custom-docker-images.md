@@ -2,11 +2,10 @@
 layout: post
 title: "How pre-baked Docker images can significantly reduce CI setup time and improve reliability."
 description: "Speeding Up CI Pipelines with a Custom Playwright + Azure CLI Docker Image"
-tags: [docker, ci-cd, playwright, github-actions, devops, automation, azure, docker-buildx, multi-architecture, software-architecture, developer-productivity]
+tags: [docker, playwright, github-actions, devops, automation, multi-architecture, software-architecture, developer-productivity]
 ---
 
-## Modern CI/CD pipelines are powerful, but they are often **wasteful by default**.
-
+Modern CI/CD pipelines are powerful, but they are often **wasteful by default**.
 If you look closely at most automation workflows, a large chunk of execution time is spent not on *actual testing*, but on repeatedly installing the same tools:
 - Node.js
 - Playwright dependencies
@@ -20,7 +19,7 @@ This setup cost is paid **on every run**, even though the tooling rarely changes
 In this post, I’ll walk through a simple but high-impact optimization:
 > **Using a custom Docker image to eliminate repetitive setup work in CI pipelines.**
 
-I’ll use my [**Playwright + Azure CLI Docker image**](https://hub.docker.com/r/aloknecessary/playwright-az-cli) as a concrete example to show how this approach improves speed, reliability, and maintainability.
+I’ll use my [**Playwright + Azure CLI Docker image**](https://hub.docker.com/r/aloknecessary/playwright-az-cli) as a concrete example to show how this approach improves speed, reliability, and maintainability. You can navigate to the repo by clicking 
 [aloknecessary/playwright-az-cli](https://hub.docker.com/r/aloknecessary/playwright-az-cli)
 
 ---
