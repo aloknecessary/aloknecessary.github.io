@@ -1,137 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <title>{{ page.title }}</title>
-  {% include head.html %}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Solution Architect | Cloud | DevOps | System Design" />
-
-  <style>
-    :root {
-      --primary: #2563eb;   /* blue-600 */
-      --secondary: #0f172a; /* slate-900 */
-      --muted: #6b7280;  /* gray-500 */
-      --bg-soft: #f8fafc;  /* slate-50 */
-      --border: #e5e7eb;  /* gray-200 */
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
-      background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 40%);
-      color: #1f2937;
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 0 20px 60px;
-      line-height: 1.65;
-    }
-
-    header {
-      padding: 60px 0 40px;
-      margin-bottom: 40px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    header h1 {
-      font-size: 2.6rem;
-      margin-bottom: 12px;
-      color: var(--secondary);
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 720px;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 56px;
-      margin-bottom: 16px;
-      color: var(--secondary);
-      position: relative;
-    }
-
-    h2::before {
-      content: "";
-      position: absolute;
-      left: -14px;
-      top: 6px;
-      height: 22px;
-      width: 4px;
-      background: var(--primary);
-      border-radius: 2px;
-    }
-
-    p,
-    li {
-      font-size: 1rem;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    blockquote {
-      background: var(--bg-soft);
-      border-left: 4px solid var(--primary);
-      padding: 18px 22px;
-      margin: 28px 0;
-      border-radius: 6px;
-      color: #334155;
-      font-style: italic;
-    }
-
-    .card {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 22px 26px;
-      margin: 24px 0;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-    }
-
-    footer {
-      margin-top: 80px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      font-size: 0.9rem;
-      color: var(--muted);
-      text-align: center;
-    }
-  </style>
-</head>
-
-<body>
-
-  {% unless page.hide_header %}
-  <header>
-    <h1>Alok</h1>
-    <p>
-      Solution Architect specializing in cloud-native systems, scalable architectures,
-      and pragmatic engineering decisions that align technology with business outcomes.
-    </p>
-  </header>
-  {% endunless %}
+---
+layout: default
+---
 
 
-  {{ content }}
+{% unless page.hide_header %}
 
-  <footer>
-    © {{ site.time | date: "%Y" }} Alok · Built with GitHub Pages
-  </footer>
+<header>
+  <h1>Alok</h1>
+  <p>
+    Solution Architect specializing in cloud-native systems, scalable
+    architectures, and pragmatic engineering decisions that align technology
+    with business outcomes.
+  </p>
+</header>
 
-</body>
+{% endunless %}
 
-</html>
+<section class="architect">{{ content }}</section>

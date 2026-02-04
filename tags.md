@@ -44,6 +44,14 @@ title: Tags
 {% endfor %}
 
 <style>
+  h2::before {
+    top: 10px;
+  }
+
+  h2.active::before {
+    display: none !important;
+  }
+  
   .tag-heading {
     scroll-margin-top: 80px;
     transition: background-color 0.3s ease;
@@ -82,4 +90,3 @@ title: Tags
   // Run when hash changes
   window.addEventListener('hashchange', highlightActiveTag);
 </script>
-
