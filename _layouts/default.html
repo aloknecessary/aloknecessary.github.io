@@ -6,169 +6,8 @@
     <title>{{ page.title }} | {{ site.title }}</title>
 
     {% include head.html %}
-    
-    <style>
-      :root {
-        --primary: #2563eb;
-        --secondary: #0f172a;
-        --muted: #6b7280;
-        --bg-soft: #f8fafc;
-        --border: #e5e7eb;
-      }
-      body {
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
-        background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 40%);
-        color: #1f2937;
-        max-width: 920px;
-        margin: 0 auto;
-        padding: 0 20px 60px;
-        line-height: 1.65;
-      }
-      header {
-        padding: 60px 0 40px;
-        margin-bottom: 40px;
-        border-bottom: 1px solid var(--border);
-      }
-      header h1 {
-        font-size: 2.6rem;
-        margin-bottom: 12px;
-        color: var(--secondary);
-      }
-      header p {
-        font-size: 1.1rem;
-        color: var(--muted);
-        max-width: 720px;
-      }
-      h2 {
-        font-size: 1.5rem;
-        margin-top: 56px;
-        margin-bottom: 16px;
-        color: var(--secondary);
-        position: relative;
-      }
-      h2::before {
-        content: "";
-        position: absolute;
-        left: -14px;
-        top: 8px;
-        height: 26px;
-        width: 4px;
-        background: var(--primary);
-        border-radius: 2px;
-      }
-      p,
-      li {
-        font-size: 1rem;
-      }
-      ul {
-        padding-left: 20px;
-      }
-      a {
-        color: var(--primary);
-        text-decoration: none;
-        font-weight: 500;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      blockquote {
-        background: var(--bg-soft);
-        border-left: 4px solid var(--primary);
-        padding: 18px 22px;
-        margin: 28px 0;
-        border-radius: 6px;
-        color: #334155;
-        font-style: italic;
-      }
-      .card {
-        background: #ffffff;
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 22px 26px;
-        margin: 24px 0;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-      }
-      footer {
-        margin-top: 80px;
-        padding-top: 24px;
-        border-top: 1px solid var(--border);
-        font-size: 0.9rem;
-        color: var(--muted);
-        text-align: center;
-      }
-      .meta {
-        color: #6b7280;
-        font-size: 0.95rem;
-        margin-bottom: 32px;
-      }
-      .post-tags {
-        margin-top: 1.5rem;
-      }
-      .post-tags .tag {
-        display: inline-block;
-        margin-right: 0.5rem;
-        padding: 0.25rem 0.6rem;
-        background: #eef2ff;
-        color: #3730a3;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        text-decoration: none;
-      }
-      .post-tags .tag:hover {
-        background: #c7d2fe;
-      }
-      .post-navigation {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 2.5rem;
-      }
-      .post-footer {
-        margin-top: 2.5rem;
-        font-size: 0.9rem;
-        color: #4b5563;
-      }
-      .post-footer a {
-        color: #2563eb;
-        font-weight: 500;
-        text-decoration: none;
-      }
-      .post-footer a:hover {
-        text-decoration: underline;
-      }
-      pre {
-        background: #f4f4f4;
-        border: 1px solid #ddd;
-        border-left: 3px solid #f36d33;
-        color: #666;
-        font-family:
-          Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
-          "Lucida Sans Typewriter", "DejaVu Sans Mono",
-          "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
-          Monaco, "Courier New", Courier, monospace;
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: 1.6em;
-        max-width: 100%;
-        overflow: auto;
-        padding: 1em 1.5em;
-        display: block;
-        word-wrap: break-word;
-        white-space: pre-wrap;
-      }
-      p > code,
-      li > code,
-      dd > code,
-      td > code {
-        background: #ffeff0;
-        padding: 0.1rem 0.3rem 0.2rem;
-        border-radius: 0.2rem;
-        font-size: inherit;
-      }
-      .hidden {
-        display: none;
-      }
-    </style>
+
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
   </head>
   <body>
     <!-- <header>
@@ -177,6 +16,19 @@
          Add navigation links here if needed 
       </nav>
     </header> -->
+
+    {% unless page.hide_header %}
+
+    <header>
+      <h1>Alok Ranjan Daftuar</h1>
+      <p>
+        Solution Architect specializing in cloud-native systems, scalable
+        architectures, and pragmatic engineering decisions that align technology
+        with business outcomes.
+      </p>
+    </header>
+
+    {% endunless %}
 
     <main>{{ content }}</main>
 

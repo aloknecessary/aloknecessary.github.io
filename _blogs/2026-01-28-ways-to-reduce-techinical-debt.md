@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "5 Effective Ways to Reduce Technical Debt Through Modernisation"
 description: "Practical approaches to systematically lower technical debt by modernising systems, infrastructure, and development practices."
 tags: ["technical-debt", "software-architecture", "modernisation", "legacy-modernisation", "application-modernisation"]

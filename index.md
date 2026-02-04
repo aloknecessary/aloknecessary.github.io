@@ -1,7 +1,11 @@
 ---
 layout: architect
 title: Alok | Solution Architect
+hide_header: true
 ---
+<nav style="margin-bottom: 24px; font-size: 0.95rem">
+  <a href="{{ '/blogs' | relative_url }}">Read my blogs →</a>
+</nav>
 
 ## Hi, I’m Alok
 

@@ -1,6 +1,32 @@
 title: Alok
 description: Solution Architect | Cloud | DevOps | System Design
-markdown: kramdown
-theme: null
+
 url: https://aloknecessary.github.io
-permalink: /blogs/:title/
+baseurl: ""
+
+markdown: kramdown
+
+# GitHub Pages–supported plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Blog collection (THIS is the big win)
+collections:
+  blogs:
+    output: true
+    permalink: /blogs/:title/
+
+# Default layouts (avoids repetition)
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+  - scope:
+      path: ""
+      type: blogs
+    values:
+      layout: blog

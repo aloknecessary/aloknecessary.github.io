@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "How pre-baked Docker images can significantly reduce CI setup time and improve reliability."
 description: "Speeding Up CI Pipelines with a Custom Playwright + Azure CLI Docker Image"
 tags: [docker, playwright, github-actions, devops, automation, multi-architecture, software-architecture, developer-productivity]
