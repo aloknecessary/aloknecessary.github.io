@@ -3,7 +3,11 @@ layout: architect
 title: Alok | Solution Architect
 hide_header: true
 ---
-<nav style="margin-bottom: 24px; font-size: 0.95rem">
+<div class="page-banner">
+  <img src="{{ '/assets/images/header.png' | relative_url }}" alt="Header">
+</div>
+
+<nav style="display:flex; justify-content: right;">
   <a href="{{ '/blogs' | relative_url }}">Read my blogs →</a>
 </nav>
 
