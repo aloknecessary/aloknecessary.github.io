@@ -16,6 +16,7 @@ plugins:
 collections:
   blogs:
     output: true
+    sort_by: date
     permalink: /blogs/:title/
 
 # Default layouts (avoids repetition)

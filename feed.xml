@@ -11,7 +11,10 @@ layout: null
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <id>{{ site.url }}{{ site.baseurl }}/</id>
 
-  {% for post in site.blogs limit:20 %}
+  {% assign blogs = site.blogs | sort: 'date' | reverse %}
+  {% for post in blogs limit:25 %}
+
+  
   <entry>
     <title>{{ post.title }}</title>
     <link href="{{ site.url }}{{ post.url }}"/>
