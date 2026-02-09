@@ -1,8 +1,10 @@
 ---
 title: "Kubernetes vs Docker Compose: Architectural Trade-offs, Value Principles, and When to Use What"
 description: "A deep architectural comparison of Docker Compose and Kubernetes, focusing on system design principles, trade-offs, and real-world usage decisions."
+excerpt: "A deep architectural comparison of Docker Compose and Kubernetes, focusing on system design principles, trade-offs, and real-world usage decisions."
 author: "Alok Ranjan"
 tags: ["kubernetes", "docker-compose", "container-architecture", "cloud-native", "system-design"]
+date: 2026-02-06
 ---
 
 Containerization has fundamentally changed how modern systems are designed, deployed, and operated. While Docker made packaging applications simple and portable, **Docker Compose** and **Kubernetes** represent two very different architectural philosophies for running containerized workloads.
