@@ -75,7 +75,7 @@ My work focuses on translating **business problems into pragmatic, scalable, and
 ## Professional Experience
 
 ### **[Byteridge Software Pvt. Ltd.](https://www.byteridge.com)**   
-*Solution Architect* 
+*Solution Architect* **|**
 *2014 – Present*
 
 For over a decade at Byteridge, I’ve grown from a hands-on engineer into a solution and architecture owner, shaping complex, production-grade systems across the full stack. My role focuses on translating real business problems into pragmatic, scalable, and resilient technical solutions.
@@ -123,7 +123,7 @@ I value transparency, thoughtful experimentation, and learning through execution
 
 ---
 
-## Get in Touch
+## Contact & Presence
 
 If you’re interested in **architecture discussions, system design reviews, DevOps or technical collaboration**, feel free to reach out.
 
@@ -131,4 +131,5 @@ If you’re interested in **architecture discussions, system design reviews, Dev
 - **LinkedIn:** [https://www.linkedin.com/in/aloknecessary](https://www.linkedin.com/in/aloknecessary)  
 - **GitHub:** [https://github.com/aloknecessary](https://github.com/aloknecessary)
 - **Docker:** [https://hub.docker.com/u/aloknecessary](https://hub.docker.com/u/aloknecessary)
+- **npm:** [https://www.npmjs.com/~aloknecessary](https://www.npmjs.com/~aloknecessary)
 
