@@ -32,39 +32,62 @@ My work focuses on translating **business problems into pragmatic, scalable, and
 ## Core Expertise
 
 ### Architecture & Platforms
-- Microservices & Distributed Systems
-- Kubernetes (AKS), Docker, Container Security
-- Cloud Architecture (AWS & Azure)
-- API Design & Integration Patterns
-- Modular, scalable, domain-driven systems
+
+* Scalable, cloud-native systems with clear domain boundaries  
+* API design, integration patterns, and secure auth flows  
+* Containerization (Docker), Kubernetes and platform architecture  
+* Reliability, observability, and performance-driven design
+* Microservices & Distributed Systems
+
 
 ### Engineering
-- Building and maintaining **full-stack applications** using **React, Angular, Node.js, and .NET**, with clear separation of concerns and scalable design
-- Designing and consuming **RESTful APIs**, including authentication/authorization flows, **SSO integrations**, and well-documented interfaces using **Swagger / OpenAPI**
-- Implementing **event-driven and asynchronous systems**, including background workers, message-based workflows, and long-running process orchestration
-- Integrating and managing **third-party services and external APIs**, ensuring reliability, error handling, and observability
-- Driving **performance optimization and scalability** through efficient API design, **caching strategies**, and containerized deployments using **Docker**
+
+* Full-stack systems using **React, Angular, Node.js, and .NET**  
+* REST APIs with clean auth/SSO and documented contracts  
+* Event-driven & async workflows with background processing  
+* Third-party integrations with reliable error handling  
+* Performance, caching, and container-aware deployments
 
 ### DevOps & Operations
-- Designing and implementing **robust CI/CD pipelines** using GitHub Actions for repeatable, reliable deployments
-- Applying **Infrastructure as Code principles** to enable consistency, scalability, and environment parity
-- Ensuring **production readiness** through structured release strategies and operational safeguards
-- Establishing **observability standards** covering logging, metrics, and alerting for faster incident response
-- Improving system reliability via **operational automation, failure analysis, and continuous improvement**
+
+* Robust CI/CD using GitHub Actions  
+* Infrastructure as Code and repeatable environments  
+* Production readiness via observability and automation  
+* Incident response and operational stability improvements
+
 
 ### Data & Persistence
-- Selecting **appropriate data models and storage technologies** based on access patterns, consistency, and domain needs
-- Designing for **scalability and clarity** through separation of transactional and analytical workloads
-- Ensuring **data integrity and evolution** via schema versioning, backward compatibility, and governance practices
-- Optimizing data performance using **indexing, query tuning, and lifecycle management**
-- Building resilient data platforms with **backup, restore, and disaster recovery strategies**
+
+* Data modeling and storage choices based on needs  
+* Separation of transactional vs analytical workloads  
+* Schema evolution, versioning, and governance  
+* Query tuning, indexing, and recovery strategies
+
 
 ### Cost Optimization
-- Designing **cost-aware cloud and Kubernetes architectures** using real workload telemetry, autoscaling, and right-sized infrastructure
-- Eliminating waste through **resource optimization, idle environment cleanup, and CI/CD build caching strategies**
-- Balancing **performance, resilience, and cost** through explicit architectural trade-off analysis
-- Applying **FinOps principles** to improve cost visibility, accountability, and decision-making across teams
-- Continuously refining infrastructure based on **usage patterns, growth trends, and operational feedback**
+
+* Cost-aware cloud/Kubernetes architectures  
+* Resource and build cache optimization  
+* Balancing cost with resilience & performance  
+* Visibility and accountability via FinOps practices
+
+---
+## Professional Experience
+
+### **[Byteridge Software Pvt. Ltd.](https://www.byteridge.com)**   
+*Solution Architect* 
+*2014 – Present*
+
+For over a decade at Byteridge, I’ve grown from a hands-on engineer into a solution and architecture owner, shaping complex, production-grade systems across the full stack. My role focuses on translating real business problems into pragmatic, scalable, and resilient technical solutions.
+
+I’ve led and delivered systems that integrate frontend, backend, infrastructure, and cloud products — blending architectural rigor with software engineering craftsmanship. My work spans:
+- Full-stack application design using React, Angular, Node.js, and .NET.
+- Modular, API-centric platforms with strong authentication, observability, and integration patterns.
+- Cloud-native architectures with Docker, Kubernetes, and CI/CD pipelines.
+
+A core part of my role involves collaborating with product, UX, and business stakeholders to drive clarity and alignment, as well as mentoring engineers through system design and implementation decisions.
+
+Byteridge continues to be the foundation where I’ve built my engineering philosophy — pragmatic, resilient, and continuously evolving systems that solve real problems.
 
 ---
 
