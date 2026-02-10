@@ -1,0 +1,248 @@
+/* ============================================
+   CUSTOM ENHANCEMENTS FOR GITHUB PROFILE
+   Minimal additions to complement main.css
+   ============================================ */
+
+/* Badge Enhancements (not in main.css) */
+img[alt*="badge"], 
+img[src*="shields.io"],
+img[src*="badge"],
+img[src*="github-readme-stats"] {
+  display: inline-block;
+  margin: 4px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  vertical-align: middle;
+}
+
+img[alt*="badge"]:hover,
+img[src*="shields.io"]:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+/* Badge Container Layouts */
+p img[src*="shields.io"],
+p img[src*="badge"] {
+  margin: 0.25rem 0.3rem;
+}
+
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Center Alignment for Specific Sections (GitHub stats, badges) */
+div[align="center"],
+p[align="center"] {
+  text-align: center;
+}
+
+div[align="center"] h1,
+div[align="center"] h3 {
+  text-align: center;
+}
+
+/* GitHub Stats Specific Styling */
+img[src*="github-readme-stats"],
+img[src*="github-readme-streak"] {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Grid Layout Support (for featured projects) */
+div[style*="display: grid"] {
+  display: grid !important;
+  gap: 1.5rem;
+}
+
+/* Enhanced Card Hover (extends main.css .card) */
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Button/Link Styling for CTAs */
+a[style*="display: inline-block"] {
+  transition: all 0.3s ease;
+}
+
+a[style*="background"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* Tech Stack Badge Grouping */
+p > img[src*="for-the-badge"] {
+  margin: 0.3rem;
+}
+
+h2::before {
+  display: none; /* Remove the default before element for h2 */
+}
+/* Spacing for emoji in headings */
+h2 .emoji,
+h3 .emoji {
+  margin-right: 0.5rem;
+}
+
+/* Certifications Section Enhancement */
+.cert-badge,
+div[style*="margin: 2rem 0"] p img[src*="badge"] {
+  margin: 0.5rem;
+}
+
+/* Professional Experience Date/Role Styling */
+p[style*="font-style: italic"] {
+  color: var(--muted);
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Highlight Box for Special Sections */
+div[style*="background: #f6f8fa"],
+div[style*="border-radius: 8px"] {
+  margin: 2rem 0;
+}
+
+/* Stats Container for GitHub Activity */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+/* Featured Projects Card Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Section with border styling (complements main.css) */
+div[style*="border: 1px solid"] {
+  transition: box-shadow 0.3s ease;
+}
+
+div[style*="border: 1px solid"]:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* List item spacing improvements */
+li strong {
+  color: var(--secondary);
+}
+
+/* Contact Section Enhancement */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+/* YAML/Code Block Enhancement for Skills Section */
+div[style*="margin: 2rem 0"] pre {
+  font-size: 0.95rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Stack badges vertically on mobile */
+  p img[src*="for-the-badge"] {
+    display: block;
+    margin: 0.5rem auto;
+  }
+  
+  /* Single column for grids */
+  div[style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Center GitHub stats */
+  img[src*="github-readme-stats"],
+  img[src*="github-readme-streak"] {
+    max-width: 100%;
+    display: block;
+    margin: 1rem auto;
+  }
+  
+  /* Adjust spacing for mobile */
+  .badge-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Smooth Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: Add fade-in class to sections */
+.fade-in-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Print Styles */
+@media print {
+  img[src*="shields.io"],
+  img[src*="github-readme-stats"] {
+    display: none;
+  }
+}
+
+/* Accessibility Improvements */
+img[alt] {
+  border: none;
+}
+
+/* Focus States for Accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+  a {
+    text-decoration: underline;
+  }
+  
+  .card {
+    border-width: 2px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

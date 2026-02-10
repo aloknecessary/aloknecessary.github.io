@@ -3,133 +3,291 @@ layout: architect
 title: Alok | Solution Architect
 hide_header: true
 ---
+
 <div class="page-banner">
   <img src="{{ '/assets/images/header.png' | relative_url }}" alt="Header">
 </div>
 
-<nav style="display:flex; justify-content: right;">
-  <a href="{{ '/blogs' | relative_url }}">Read my blogs →</a>
-</nav>
+## Hi, I am Alok
 
-## Hi, I’m Alok
+<p align="center" style="margin: 2rem 0;">
+  <a href="https://aloknecessary.github.io/blogs">
+    <img src="https://img.shields.io/badge/📝_My_Blogs-Read_Articles-blue?style=for-the-badge" alt="Blog"/>
+  </a>
+  <a href="https://www.linkedin.com/in/aloknecessary/">
+    <img src="https://img.shields.io/badge/LinkedIn-aloknecessary-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="mailto:aloknecessary@gmail.com">
+    <img src="https://img.shields.io/badge/Email-aloknecessary%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
+ 
+</p>
 
-I am a **Solution Architect** with deep, hands-on experience across **full-stack engineering, cloud architecture, DevOps, and system design**. I have grown from an individual contributor into a technical leader who architects, builds, reviews, and scales production-grade systems.
+<p align="center" style="margin: 1rem 0;">
+ <a href="https://github.com/aloknecessary">
+    <img src="https://img.shields.io/badge/GitHub-aloknecessary-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+  <a href="https://hub.docker.com/u/aloknecessary">
+    <img src="https://img.shields.io/badge/Docker_Hub-aloknecessary-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Hub"/>
+  </a>
+  <a href="https://www.npmjs.com/~aloknecessary">
+    <img src="https://img.shields.io/badge/npm-aloknecessary-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm"/>
+  </a>
+</p>
+
+
+---
+
+## 🚀 About Me
+
+I am a **Solution Architect** with deep, hands-on experience across **full-stack engineering, cloud architecture, DevOps, and system design**. Over the past decade, I have evolved from an individual contributor into a technical leader who architects, builds, reviews, and scales production-grade systems.
 
 My work focuses on translating **business problems into pragmatic, scalable, and cost-efficient technical solutions**. I believe strong architecture is driven by clarity, resilience, and long-term maintainability—not unnecessary complexity.
 
 ---
 
-## What I Do
+## 💼 What I Do
 
-- Architect and deliver **end-to-end systems** spanning frontend, backend, infrastructure, and integrations  
-- Design **cloud-native architectures** with a focus on reliability, security, and cost optimization  
-- Lead system design discussions, estimations, and architectural decision-making  
-- Mentor engineers and collaborate closely with product, UX, and business stakeholders  
-- Reducing operational risk and technical debt
+* Architect and deliver **end-to-end systems** spanning frontend, backend, infrastructure, and integrations
+* Design **cloud-native architectures** with a focus on reliability, security, and cost optimization
+* Lead system design discussions, estimations, and architectural decision-making
+* Mentor engineers and collaborate closely with product, UX, and business stakeholders
+* Drive initiatives to reduce operational risk and technical debt
 
 ---
 
-## Core Expertise
+## 🛠️ Core Expertise
 
-### Architecture & Platforms
 
-* Scalable, cloud-native systems with clear domain boundaries  
-* API design, integration patterns, and secure auth flows  
-* Containerization (Docker), Kubernetes and platform architecture  
+### **Architecture & Platforms**
+
+![Architecture](https://img.shields.io/badge/Cloud_Native-Architecture-blue?style=flat-square)
+![API Design](https://img.shields.io/badge/API-Design-green?style=flat-square)
+![Microservices](https://img.shields.io/badge/Microservices-Distributed_Systems-orange?style=flat-square)
+
+* Scalable, cloud-native systems with clear domain boundaries
+* API design, integration patterns, and secure auth flows (OAuth, SSO, JWT)
+* Containerization (Docker), Kubernetes and platform architecture
 * Reliability, observability, and performance-driven design
 * Microservices & Distributed Systems
 
+### **Engineering Stack**
 
-### Engineering
+<div>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/>
+  <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"/>
+  <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#"/>
+</div>
 
-* Full-stack systems using **React, Angular, Node.js, and .NET**  
-* REST APIs with clean auth/SSO and documented contracts  
-* Event-driven & async workflows with background processing  
-* Third-party integrations with reliable error handling  
+* Full-stack systems using **React, Angular, Node.js, and .NET**
+* REST APIs with clean auth/SSO and documented contracts
+* Event-driven & async workflows with background processing
+* Third-party integrations with reliable error handling
 * Performance, caching, and container-aware deployments
 
-### DevOps & Operations
+### **DevOps & Cloud**
 
-* Robust CI/CD using GitHub Actions  
-* Infrastructure as Code and repeatable environments  
-* Production readiness via observability and automation  
+<div>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions"/>
+  <img src="https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Azure"/>
+  <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS"/>
+</div>
+
+* Robust CI/CD using GitHub Actions
+* Infrastructure as Code and repeatable environments
+* Production readiness via observability and automation
 * Incident response and operational stability improvements
 
+### **Databases & Data**
 
-### Data & Persistence
+<div>
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
+  <img src="https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/>
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis"/>
+</div>
 
-* Data modeling and storage choices based on needs  
-* Separation of transactional vs analytical workloads  
-* Schema evolution, versioning, and governance  
+* Data modeling and storage choices based on needs
+* Separation of transactional vs analytical workloads
+* Schema evolution, versioning, and governance
 * Query tuning, indexing, and recovery strategies
 
+### **Cost Optimization**
 
-### Cost Optimization
+![FinOps](https://img.shields.io/badge/FinOps-Cost_Optimization-success?style=flat-square)
 
-* Cost-aware cloud/Kubernetes architectures  
-* Resource and build cache optimization  
-* Balancing cost with resilience & performance  
+* Cost-aware cloud/Kubernetes architectures
+* Resource and build cache optimization
+* Balancing cost with resilience & performance
 * Visibility and accountability via FinOps practices
 
+
 ---
-## Professional Experience
 
-### **[Byteridge Software Pvt. Ltd.](https://www.byteridge.com)**   
-*Solution Architect* **|**
-*2014 – Present*
+## 💼 Professional Experience
 
-For over a decade at Byteridge, I’ve grown from a hands-on engineer into a solution and architecture owner, shaping complex, production-grade systems across the full stack. My role focuses on translating real business problems into pragmatic, scalable, and resilient technical solutions.
+### **[Byteridge Software Pvt. Ltd.](https://www.byteridge.com)**
 
-I’ve led and delivered systems that integrate frontend, backend, infrastructure, and cloud products — blending architectural rigor with software engineering craftsmanship. My work spans:
-- Full-stack application design using React, Angular, Node.js, and .NET.
-- Modular, API-centric platforms with strong authentication, observability, and integration patterns.
-- Cloud-native architectures with Docker, Kubernetes, and CI/CD pipelines.
+<p style="font-style: italic; color: #666;">
+Solution Architect | 2014 – Present | Hyderabad, India
+</p>
+
+For over a decade at Byteridge, I've grown from a hands-on engineer into a solution and architecture owner, shaping complex, production-grade systems across the full stack. My role focuses on translating real business problems into pragmatic, scalable, and resilient technical solutions.
+
+I've led and delivered systems that integrate frontend, backend, infrastructure, and cloud products — blending architectural rigor with software engineering craftsmanship.
+
+**Key Achievements:**
+
+* Architected and delivered full-stack application designs using React, Angular, Node.js, and .NET
+* Built modular, API-centric platforms with strong authentication, observability, and integration patterns
+* Designed cloud-native architectures with Docker, Kubernetes, and automated CI/CD pipelines
+* Collaborated with Microsoft teams on Bing and Microsoft Admin Portal platforms
+* Led cost optimization initiatives resulting in significant cloud infrastructure savings
 
 A core part of my role involves collaborating with product, UX, and business stakeholders to drive clarity and alignment, as well as mentoring engineers through system design and implementation decisions.
 
-Byteridge continues to be the foundation where I’ve built my engineering philosophy — pragmatic, resilient, and continuously evolving systems that solve real problems.
+---
+
+## 🎓 Certifications
+
+
+
+<p>
+  <img src="https://img.shields.io/badge/AWS-Partner_Certified-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS"/>
+  <img src="https://img.shields.io/badge/Neo4j-Professional_Certified-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/>
+  <img src="https://img.shields.io/badge/ZEDEDA-Edge_Computing_Associate-4285F4?style=for-the-badge" alt="ZEDEDA"/>
+</p>
+
+* 🏅 **AWS Partner Certified** — AWS cloud fundamentals, partner-led architectures
+* 🏅 **ZEDEDA Certified Edge Computing Associate** — Edge orchestration and lifecycle management
+* 🏅 **Neo4j Professional Certified** — Graph data modeling and Cypher query expertise
+
 
 ---
 
-## Certifications
+## 📝 Writing & Knowledge Sharing
 
-- **AWS Partner Certified** — AWS cloud fundamentals, partner-led architectures  
-- **ZEDEDA Certified Edge Computing Associate** — Edge orchestration and lifecycle management  
-- **Neo4j Professional Certified** — Graph data modeling and Cypher query expertise  
+<div style="background: #f6f8fa; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+
+<p>I regularly write about:</p>
+<ul>
+    <li>Real-world engineering problems and lessons learned</li>
+    <li>Architecture decisions made while building systems</li>
+    <li>System design trade-offs and practical solutions</li>
+    <li>Kubernetes & cloud architecture patterns</li>
+    <li>Docker optimization & CI/CD best practices</li>
+    <li>Performance and scalability strategies</li>
+</ul>
+<p align="center" style="margin-top: 1.5rem;">
+  <a href="/blogs" style="display: inline-block; background: #0366d6; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;">
+    📚 Read All My Blogs →
+  </a>
+</p>
+
+</div>
 
 ---
 
-## Writing & Knowledge Sharing
-
-I regularly write about 
-- Real-world engineering problems
-- Architecture decisions and lessons learned while building systems
-- System design trade-offs
-- Kubernetes & cloud architecture
-- Docker & CI/CD optimization
-- Performance and scalability strategies
-
-👉 **[Browse all blogs →](/blogs)**
-
-<!-- - **Blog:** https://ideas.byteridge.com/author/alok/ -->
-
----
-
-## Philosophy
+## 🎯 Philosophy
 
 > *“Making mistakes is better than faking perfection.”*
 
 I value transparency, thoughtful experimentation, and learning through execution. Real systems improve through iteration—not theory alone.
 
+Strong architecture is not about complexity, but about **clarity, resilience, and long-term maintainability**.
+
+
+
 ---
 
-## Contact & Presence
+## 📊 GitHub Activity
 
-If you’re interested in **architecture discussions, system design reviews, DevOps or technical collaboration**, feel free to reach out.
 
-- **Email:** [aloknecessary@gmail.com](mailto:aloknecessary@gmail.com)
-- **LinkedIn:** [https://www.linkedin.com/in/aloknecessary](https://www.linkedin.com/in/aloknecessary)  
-- **GitHub:** [https://github.com/aloknecessary](https://github.com/aloknecessary)
-- **Docker:** [https://hub.docker.com/u/aloknecessary](https://hub.docker.com/u/aloknecessary)
-- **npm:** [https://www.npmjs.com/~aloknecessary](https://www.npmjs.com/~aloknecessary)
+
+<!-- [![Alok's GitHub Stats](https://github-readme-stats.vercel.app/api?username=aloknecessary&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true)](https://github.com/aloknecessary) -->
+
+![Top Languages](https://readme-stats-fast.vercel.app/api/top-langs?username=aloknecessary&layout=compact&theme=github_dark)
+
+
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=aloknecessary&theme=github-dark-blue&hide_border=true)](https://github.com/aloknecessary)
+
+
+
+---
+
+## 📦 Featured Open Source Contributions
+
+
+
+### Production-Ready Docker Images
+
+### ⭐ [playwright-az-cli](https://github.com/aloknecessary/playwright-az-cli)
+Custom Docker image with Microsoft Playwright and Azure CLI pre-installed for E2E testing.
+
+![Playwright](https://img.shields.io/badge/Playwright-Testing-2EAD33?style=flat-square&logo=playwright)
+
+---
+
+### ⭐ [sonar-dotnet-v9.0](https://github.com/aloknecessary/sonar-dotnet-v9.0)
+Multi-architecture Docker image for SonarQube analysis on .NET 9 projects.
+
+![Docker](https://img.shields.io/badge/Docker-Production_Ready-2496ED?style=flat-square&logo=docker)
+
+---
+
+### ⭐ [sonar-dotnet-v10.0](https://github.com/aloknecessary/sonar-dotnet-v10.0)
+Multi-architecture Docker image for SonarQube analysis on .NET 10 projects.
+
+![Docker](https://img.shields.io/badge/Docker-Production_Ready-2496ED?style=flat-square&logo=docker)
+
+---
+
+## 🤝 Open To
+
+
+I'm always interested in:
+
+* 💼 **Architecture consulting** and system design reviews
+* 🎤 **Speaking opportunities** on cloud architecture, DevOps, and system design
+* 🤝 **Technical collaborations** and open-source contributions
+* 📚 **Mentoring engineers** on architectural thinking and best practices
+* 💡 **Advisory roles** for startups and scale-ups
+
+
+
+---
+
+## 📫 Contact & Presence
+
+
+
+If you're interested in **architecture discussions, system design reviews, DevOps or technical collaboration**, feel free to reach out.
+
+<p style="margin: 2rem 0;">
+  <a href="mailto:aloknecessary@gmail.com">
+    <img src="https://img.shields.io/badge/Email-aloknecessary%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
+</p>
+
+<p style="margin: 1rem 0;">
+  <a href="https://www.linkedin.com/in/aloknecessary">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="https://github.com/aloknecessary">
+    <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+  <a href="https://hub.docker.com/u/aloknecessary">
+    <img src="https://img.shields.io/badge/Docker_Hub-Images-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Hub"/>
+  </a>
+  <a href="https://www.npmjs.com/~aloknecessary">
+    <img src="https://img.shields.io/badge/npm-Packages-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm"/>
+  </a>
+</p>
+
 
