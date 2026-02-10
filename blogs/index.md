@@ -3,7 +3,7 @@ layout: default
 title: Blogs
 hide_header: false
 ---
-<nav style="margin-bottom:24px; font-size:0.95rem;">
+<nav class="nav-bar">
   <a href="{{ '/' | relative_url }}">Home</a>
 </nav>
 

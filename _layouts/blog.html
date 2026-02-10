@@ -2,9 +2,12 @@
 layout: default
 ---
 
-<nav style="margin-bottom: 24px; font-size: 0.95rem">
-  <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a> |
+<nav  class="nav-bar">
+  <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
+  <span class="nav-separator">|</span>
   <a href="{{ '/' | relative_url }}">Home</a>
+  <span class="nav-separator">|</span>
+  <a href="{{ '/tags' | relative_url }}"> Topics</a>
 </nav>
 
 <article class="post">

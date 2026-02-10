@@ -1,0 +1,155 @@
+---
+layout: default
+---
+
+<section class="tags-page">
+  <!-- Page header -->
+  <header class="tags-header">
+    <h1>{{ page.title }}</h1>
+
+    {% if page.content %}
+    <p class="tags-description">{{ page.content | strip_html }}</p>
+    {% endif %}
+  </header>
+
+  <!-- Page-specific navigation -->
+  <nav class="nav-bar">
+    <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
+    <span class="nav-separator">|</span>
+    <a href="{{ '/' | relative_url }}">Home</a>
+  </nav>
+
+  <!-- Build tag list from _blogs collection -->
+  {% assign tag_list = "" | split: "" %}
+
+  {% for post in site.blogs %}
+    {% for tag in post.tags %}
+      {% unless tag_list contains tag %}
+        {% assign tag_list = tag_list | push: tag %}
+      {% endunless %}
+    {% endfor %}
+  {% endfor %}
+
+  {% assign sorted_tags = tag_list | sort %}
+  <!-- Tags listing -->
+  <div class="tags-container">
+    {% for tag in sorted_tags %}
+    <div class="tag-block" id="{{ tag | slugify }}">
+      <h2 class="tag-heading">#{{ tag }}</h2>
+
+      <ul class="tag-posts">
+        {% for post in site.blogs %} 
+          {% if post.tags contains tag %}
+          <li>
+            <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
+            <span class="post-date"> {{ post.date | date: "%b %d, %Y" }} </span>
+          </li>
+          {% endif %} 
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Page-scoped styles -->
+<style>
+  .tags-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .tags-header {
+    margin-bottom: 0.75rem;
+  }
+
+  .tags-description {
+    color: #666;
+    margin-top: 0.5rem;
+  }
+
+  /* Tags list */
+  .tags-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .tag-block {
+    border-top: 1px solid #eaeaea;
+    padding-top: 1.5rem;
+  }
+
+  .tag-posts {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .tag-posts li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .tag-posts a {
+    text-decoration: none;
+  }
+
+  .post-date {
+    font-size: 0.85rem;
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .tag-block.active > h2::before {
+    display: none !important;
+  }
+
+  .tag-heading {
+    scroll-margin-top: 80px;
+    transition: background-color 0.3s ease;
+    padding: 4px 6px;
+    border-radius: 6px;
+  }
+
+  .tag-block.active > .tag-heading {
+    background-color: #eef2ff;
+    color: #1e3a8a;
+    border-left: 4px solid #6366f1;
+    padding-left: 20px;
+    margin-left: -14px;
+  }
+</style>
+
+<script>
+  function highlightActiveTag() {
+    // Remove existing highlights
+    document.querySelectorAll('.tag-block').forEach(el => {
+      el.classList.remove('active');
+    });
+
+    // Get hash without #
+    const hash = window.location.hash.substring(1);
+    if (!hash) return;
+
+    const active = document.getElementById(hash);
+    if (active) {
+      active.classList.add('active');
+    }
+  }
+
+  // Run on load
+  highlightActiveTag();
+
+  // Run when hash changes
+  window.addEventListener('hashchange', highlightActiveTag);
+
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+</script>
