@@ -7,6 +7,9 @@ baseurl: ""
 
 markdown: kramdown
 
+# Google Analytics
+google_analytics: G-M4F012WKH3
+
 # GitHub Pages–supported plugins
 plugins:
   - jekyll-seo-tag

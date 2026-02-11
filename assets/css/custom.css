@@ -87,7 +87,7 @@ h2::before {
   display: none; /* Remove the default before element for h2 */
 }
 h2 {
-  left: -34px
+  margin-left: -34px
 }
 /* Spacing for emoji in headings */
 h2 .emoji,
@@ -176,7 +176,7 @@ div[style*="margin: 2rem 0"] pre {
   div[style*="display: grid"] {
     grid-template-columns: 1fr !important;
   }
-  
+
   .project-grid {
     grid-template-columns: 1fr;
   }
@@ -185,6 +185,12 @@ div[style*="margin: 2rem 0"] pre {
   .badge-container {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 912px) {
+  h2 {
+    margin-left: -16px;
   }
 }
 

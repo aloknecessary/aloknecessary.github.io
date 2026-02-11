@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% if page.layout == "architect" %}
-    <title>{{ page.title }}</title>
+      <title>{{ page.title }}</title>
     {% else %}
-    <title>{{ page.title }} | {{ site.title }}</title>
+      <title>{{ page.title }} | {{ site.title }}</title>
     {% endif %}
     {% include head.html %}
     {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+    {% if jekyll.environment == 'production' and site.google_analytics %}
+      {% include google-analytics.html %}
+    {% endif %}
   </head>
   <body>
     <!-- <header>
@@ -35,6 +38,11 @@
 
     <main>{{ content }}</main>
 
+    <!-- Cookie Notice (only loads in production) -->
+    {% if jekyll.environment == 'production' and site.google_analytics %}
+      {% include cookie-notice.html %}
+    {% endif %}
+    
     <footer>{% include footer.html %}</footer>
   </body>
 </html>

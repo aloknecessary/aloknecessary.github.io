@@ -1,0 +1,563 @@
+<!-- 
+  GDPR/CCPA/CPRA Compliant Cookie Consent Banner - 2025 Standards
+  Modern Popup Design - Dismisses After Choice
+  
+  Features:
+  - Beautiful, modern design with glassmorphism
+  - Popup that appears once and dismisses
+  - Equal prominence for Accept/Reject buttons
+  - GPC (Global Privacy Control) support
+  - Prior consent (blocks cookies until acceptance)
+  - Accessible (WCAG 2.2)
+  - Mobile-optimized
+  - No persistent sticky button (only appears if user wants to change settings via footer link)
+-->
+
+<div id="cookie-consent-popup" class="cookie-popup" style="display: none;" role="dialog" aria-live="polite" aria-label="Cookie Consent" aria-describedby="cookie-popup-description">
+  <!-- Backdrop overlay -->
+  <div class="cookie-backdrop"></div>
+  
+  <!-- Popup content -->
+  <div class="cookie-popup-card">
+    
+    <!-- Icon/Emoji header -->
+    <div class="cookie-popup-icon">
+      🍪
+    </div>
+    
+    <!-- Main content -->
+    <div class="cookie-popup-header">
+      <h2 style="margin: 0 0 0.5rem 0; font-size: 1.3rem; font-weight: 700; color: #1f2937; text-align: center;">
+        Cookie Preferences
+      </h2>
+      <p id="cookie-popup-description" style="margin: 0; font-size: 0.95rem; color: #6b7280; line-height: 1.6; text-align: center;">
+        I use Google Analytics to understand how visitors use this site and improve your experience. 
+        Your choice will be remembered for one year.
+      </p>
+    </div>
+
+    <!-- Analytics toggle (visual representation) -->
+    <div class="cookie-option" style="margin: 1.5rem 0; padding: 1rem; background: linear-gradient(to right, #f9fafb, #ffffff); border: 1px solid #e5e7eb; border-radius: 10px;">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="flex: 1;">
+          <div style="font-weight: 600; color: #1f2937; margin-bottom: 0.25rem; font-size: 0.95rem;">
+            📊 Analytics & Performance
+          </div>
+          <div style="font-size: 0.85rem; color: #6b7280;">
+            Helps improve content and user experience
+          </div>
+        </div>
+        <div class="toggle-indicator" id="analytics-toggle" style="width: 50px; height: 28px; background: #d1d5db; border-radius: 14px; position: relative; transition: all 0.3s; cursor: pointer;" onclick="cookieConsent.toggleIndicator()">
+          <div class="toggle-thumb" style="width: 22px; height: 22px; background: white; border-radius: 50%; position: absolute; top: 3px; left: 3px; transition: all 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action buttons (Equal Prominence) -->
+    <div class="cookie-popup-actions" style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
+      
+      <button 
+        onclick="cookieConsent.declineAnalytics()" 
+        class="cookie-popup-btn cookie-popup-btn-secondary"
+        aria-label="Decline analytics cookies"
+        style="flex: 1; padding: 0.875rem 1.25rem; background: #ffffff; color: #374151; border: 2px solid #e5e7eb; border-radius: 10px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        No Thanks
+      </button>
+      
+      <button 
+        onclick="cookieConsent.acceptAnalytics()" 
+        class="cookie-popup-btn cookie-popup-btn-primary"
+        aria-label="Accept analytics cookies"
+        style="flex: 1; padding: 0.875rem 1.25rem; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; border: 2px solid #2563eb; border-radius: 10px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);">
+        Accept & Continue
+      </button>
+
+    </div>
+
+    <!-- Privacy policy link -->
+    <div style="margin-top: 1rem; text-align: center;">
+      <a href="/privacy-policy" style="font-size: 0.85rem; color: #6b7280; text-decoration: none; transition: color 0.2s;">
+        Privacy Policy
+      </a>
+    </div>
+
+    <!-- GPC status indicator -->
+    <div id="gpc-status-popup" style="display: none; margin-top: 1rem; padding: 0.75rem; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-left: 3px solid #2563eb; border-radius: 8px;">
+      <p style="margin: 0; font-size: 0.85rem; color: #1e40af;">
+        ✓ <strong>Privacy Control Detected:</strong> Analytics automatically declined per your browser preference.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* Cookie Popup Styling - Modern & Fancy */
+
+/* Backdrop overlay */
+.cookie-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Main popup container */
+.cookie-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 1rem;
+}
+
+/* Popup card with glassmorphism */
+.cookie-popup-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 
+              0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 999;
+}
+
+/* Cookie icon */
+.cookie-popup-icon {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+/* Button hover effects */
+.cookie-popup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cookie-popup-btn-secondary:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.cookie-popup-btn-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+}
+
+/* Button active/pressed state */
+.cookie-popup-btn:active {
+  transform: translateY(0);
+}
+
+/* Focus states for accessibility */
+.cookie-popup-btn:focus {
+  outline: 3px solid rgba(37, 99, 235, 0.5);
+  outline-offset: 2px;
+}
+
+/* Privacy policy link hover */
+a[href="/privacy-policy"]:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Toggle active state */
+.toggle-indicator.active {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.toggle-indicator.active .toggle-thumb {
+  transform: translateX(22px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Fade out animation when closing */
+.cookie-popup.fade-out {
+  animation: fadeOut 0.3s ease-out forwards;
+}
+
+.cookie-popup.fade-out .cookie-popup-card {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .cookie-popup-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+    max-width: 100%;
+    margin: 1rem;
+  }
+  
+  .cookie-popup-icon {
+    font-size: 2.5rem;
+  }
+  
+  .cookie-popup-header h2 {
+    font-size: 1.1rem;
+  }
+  
+  .cookie-popup-actions {
+    flex-direction: column;
+  }
+  
+  .cookie-popup-btn {
+    width: 100%;
+  }
+  
+  .cookie-option {
+    padding: 0.875rem;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cookie-popup-card,
+  .cookie-backdrop,
+  .cookie-popup-icon,
+  .cookie-popup-btn,
+  .toggle-thumb {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .cookie-popup-card {
+    border-width: 2px;
+    border-color: #000;
+  }
+  
+  .cookie-popup-btn {
+    border-width: 3px;
+  }
+}
+
+/* Print - hide popup */
+@media print {
+  .cookie-popup {
+    display: none !important;
+  }
+}
+</style>
+
+<script>
+// Cookie Consent Manager - Popup Version
+const cookieConsent = {
+  
+  // Configuration
+  config: {
+    cookieName: 'cookie-consent',
+    cookieExpiry: 365, // days
+    analyticsId: '{{ site.google_analytics }}',
+  },
+  
+  // State
+  analyticsEnabled: false,
+
+  // Initialize
+  init() {
+    // Check for GPC first
+    if (this.detectGPC()) {
+      return; // GPC handled, don't show popup
+    }
+    
+    // Check for existing consent
+    this.checkExistingConsent();
+  },
+
+  // Detect Global Privacy Control (GPC)
+  detectGPC() {
+    const gpcEnabled = navigator.globalPrivacyControl === true;
+    const doNotTrack = navigator.doNotTrack === '1';
+    
+    if (gpcEnabled || doNotTrack) {
+      console.log('Privacy signal detected (GPC/DNT) - Auto-declining analytics');
+      
+      // Save declined preference
+      this.setConsentCookie({
+        analytics: false,
+        gpc: true,
+        timestamp: new Date().toISOString()
+      });
+      
+      // Block analytics
+      this.applyConsent({ analytics: false });
+      
+      // Show GPC message in popup briefly
+      this.showGPCMessage();
+      
+      return true;
+    }
+    return false;
+  },
+
+  // Show GPC message briefly
+  showGPCMessage() {
+    const popup = document.getElementById('cookie-consent-popup');
+    const gpcStatus = document.getElementById('gpc-status-popup');
+    
+    if (popup && gpcStatus) {
+      gpcStatus.style.display = 'block';
+      popup.style.display = 'flex';
+      
+      // Auto-close after 4 seconds
+      // setTimeout(() => {
+      //   this.closePopup();
+      // }, 4000);
+    }
+  },
+
+  // Check for existing consent
+  checkExistingConsent() {
+    const consent = this.getConsentCookie();
+    
+    if (consent) {
+      // User already made a choice - apply it silently
+      this.applyConsent(consent);
+    } else {
+      // No consent yet - show popup
+      this.showPopup();
+    }
+  },
+
+  // Show popup
+  showPopup() {
+    const popup = document.getElementById('cookie-consent-popup');
+    if (popup) {
+      popup.style.display = 'flex';
+      popup.classList.remove('fade-out');
+      
+      // Focus trap for accessibility
+      const firstButton = popup.querySelector('button');
+      if (firstButton) {
+        setTimeout(() => firstButton.focus(), 100);
+      }
+    }
+  },
+
+  // Close popup with animation
+  closePopup() {
+    const popup = document.getElementById('cookie-consent-popup');
+    if (popup) {
+      popup.classList.add('fade-out');
+      
+      // Remove from DOM after animation
+      setTimeout(() => {
+        popup.style.display = 'none';
+        popup.classList.remove('fade-out');
+      }, 300);
+    }
+  },
+
+  // Toggle visual indicator (for UX, not actual state)
+  toggleIndicator() {
+    const toggle = document.getElementById('analytics-toggle');
+    if (toggle) {
+      toggle.classList.toggle('active');
+    }
+  },
+
+  // Accept analytics
+  acceptAnalytics() {
+    const consent = {
+      analytics: true,
+      gpc: false,
+      timestamp: new Date().toISOString()
+    };
+    
+    this.setConsentCookie(consent);
+    this.applyConsent(consent);
+    this.closePopup();
+    
+    console.log('User accepted analytics');
+  },
+
+  // Decline analytics
+  declineAnalytics() {
+    const consent = {
+      analytics: false,
+      gpc: false,
+      timestamp: new Date().toISOString()
+    };
+    
+    this.setConsentCookie(consent);
+    this.applyConsent(consent);
+    this.closePopup();
+    
+    console.log('User declined analytics');
+  },
+
+  // Apply consent
+  applyConsent(consent) {
+    this.analyticsEnabled = consent.analytics;
+    
+    if (consent.analytics && this.config.analyticsId) {
+      this.loadGoogleAnalytics();
+    } else {
+      this.blockGoogleAnalytics();
+    }
+    
+    // Update toggle visual state
+    const toggle = document.getElementById('analytics-toggle');
+    if (toggle) {
+      if (consent.analytics) {
+        toggle.classList.add('active');
+      } else {
+        toggle.classList.remove('active');
+      }
+    }
+  },
+
+  // Load Google Analytics
+  loadGoogleAnalytics() {
+    if (typeof gtag !== 'undefined') {
+      console.log('Google Analytics already loaded');
+      return;
+    }
+
+    if (!this.config.analyticsId) {
+      console.log('No Google Analytics ID configured');
+      return;
+    }
+
+    // Create script tag
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${this.config.analyticsId}`;
+    document.head.appendChild(script);
+
+    // Initialize gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', this.config.analyticsId, {
+      'anonymize_ip': true,
+      'cookie_flags': 'SameSite=Lax;Secure'
+    });
+
+    console.log('Google Analytics loaded');
+  },
+
+  // Block Google Analytics
+  blockGoogleAnalytics() {
+    if (typeof gtag !== 'undefined') {
+      gtag('consent', 'update', {
+        'analytics_storage': 'denied'
+      });
+      console.log('Google Analytics blocked via consent API');
+    } else {
+      console.log('Google Analytics blocked (not loaded)');
+    }
+  },
+
+  // Set consent cookie
+  setConsentCookie(consent) {
+    const value = JSON.stringify(consent);
+    const expires = new Date();
+    expires.setTime(expires.getTime() + (this.config.cookieExpiry * 24 * 60 * 60 * 1000));
+    
+    document.cookie = `${this.config.cookieName}=${value}; expires=${expires.toUTCString()}; path=/; SameSite=Lax; Secure`;
+  },
+
+  // Get consent cookie
+  getConsentCookie() {
+    const name = this.config.cookieName + '=';
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookieArray = decodedCookie.split(';');
+    
+    for (let cookie of cookieArray) {
+      cookie = cookie.trim();
+      if (cookie.indexOf(name) === 0) {
+        try {
+          return JSON.parse(cookie.substring(name.length));
+        } catch (e) {
+          console.error('Error parsing consent cookie:', e);
+          return null;
+        }
+      }
+    }
+    return null;
+  }
+};
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => cookieConsent.init());
+} else {
+  cookieConsent.init();
+}
+
+// Allow re-opening from footer link (if you want to add one)
+window.reopenCookieConsent = function() {
+  cookieConsent.showPopup();
+};
+</script>

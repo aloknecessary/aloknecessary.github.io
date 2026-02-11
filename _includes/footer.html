@@ -1,5 +1,13 @@
 <p class="footer">
-  <span> © {{ site.time | date: "%Y" }} Alok Ranjan Daftuar</span><br />
+  <p>
+      © {{ site.time | date: "%Y" }} Alok Ranjan Daftuar
+      <span style="margin: 0 0.5rem;">·</span>
+      <a href="/privacy-policy" >Privacy Policy</a>
+      <span style="margin: 0 0.5rem;">·</span>
+      <a href="#" onclick="event.preventDefault(); window.reopenCookieConsent();" >
+        Cookie Preferences
+      </a>
+    </p>
   <!-- <span> © {{ site.time | date: "%Y" }} Alok · Built with GitHub Pages</span> -->
   <em>
     If this resonates with your experience or you’d like to discuss architecture trade-offs,

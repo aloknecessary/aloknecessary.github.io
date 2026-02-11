@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="tags-page">
+<div>
   <!-- Page header -->
   <!-- <header class="tags-header">
     <h1>{{ page.title }}</h1>
@@ -11,7 +11,6 @@ layout: default
     <p class="tags-description">{{ page.content | strip_html }}</p>
     {% endif %}
   </header> -->
-
   <!-- Page-specific navigation -->
   <nav class="nav-bar">
     <a id="backButton" >← Back</a>
@@ -20,6 +19,8 @@ layout: default
     <span class="nav-separator">|</span>
     <a href="{{ '/' | relative_url }}">Home</a>
   </nav>
+</div>
+<section class="tags-page">
   <div class="tags-header">
     <h3>{{ page.title }}</h3>
     {% if page.content %}
@@ -129,6 +130,9 @@ layout: default
     border-left: 4px solid #6366f1;
     padding-left: 20px;
     margin-left: -14px;
+  }
+  #backButton {
+    cursor: pointer;
   }
 </style>
 
