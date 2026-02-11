@@ -2,7 +2,7 @@
 layout: tags
 title: Tags
 permalink: /tags/
-hide_header: true
+hide_header: false
 ---
 
-Browse posts by topic.
+Browse posts organized by tags to quickly find articles on specific topics.
