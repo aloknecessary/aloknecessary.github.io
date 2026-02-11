@@ -115,11 +115,16 @@ div[style*="border-radius: 8px"] {
 .stats-container {
   display: flex;
   justify-content: center;
+  align-items: center;   /* ← vertical centering */
   flex-wrap: wrap;
   gap: 1rem;
   margin: 2rem 0;
 }
-
+.stats-container img {
+  /* flex: 1 1 400px; */
+  max-width: 100%;
+  height: auto;
+}
 /* Featured Projects Card Grid */
 .project-grid {
   display: grid;
@@ -172,15 +177,7 @@ div[style*="margin: 2rem 0"] pre {
   .project-grid {
     grid-template-columns: 1fr;
   }
-  
-  /* Center GitHub stats */
-  img[src*="github-readme-stats"],
-  img[src*="github-readme-streak"] {
-    max-width: 100%;
-    display: block;
-    margin: 1rem auto;
-  }
-  
+
   /* Adjust spacing for mobile */
   .badge-container {
     flex-direction: column;

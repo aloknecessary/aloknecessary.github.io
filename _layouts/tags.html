@@ -38,7 +38,7 @@ layout: default
       <h2 class="tag-heading">#{{ tag }}</h2>
 
       <ul class="tag-posts">
-        {% for post in site.blogs %} 
+        {% for post in site.blogs | sort: 'date' | reverse %} 
           {% if post.tags contains tag %}
           <li>
             <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>

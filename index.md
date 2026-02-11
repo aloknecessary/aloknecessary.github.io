@@ -12,7 +12,7 @@ hide_header: true
 
 <p align="center" style="margin: 2rem 0;">
   <a href="https://aloknecessary.github.io/blogs">
-    <img src="https://img.shields.io/badge/📝_My_Blogs-Read_Articles-blue?style=for-the-badge" alt="Blog"/>
+    <img src="https://img.shields.io/badge/📝_My_Blogs-Read_Articles-brightgreen?style=for-the-badge" alt="Blog"/>
   </a>
   <a href="https://www.linkedin.com/in/aloknecessary/">
     <img src="https://img.shields.io/badge/LinkedIn-aloknecessary-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
@@ -31,7 +31,7 @@ hide_header: true
     <img src="https://img.shields.io/badge/Docker_Hub-aloknecessary-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Hub"/>
   </a>
   <a href="https://www.npmjs.com/~aloknecessary">
-    <img src="https://img.shields.io/badge/npm-aloknecessary-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm"/>
+    <img src="https://img.shields.io/badge/npm-aloknecessary-purple?style=for-the-badge&logo=npm&logoColor=white" alt="npm"/>
   </a>
 </p>
 
@@ -209,14 +209,16 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 ## 📊 GitHub Activity
 
 
-
 <!-- [![Alok's GitHub Stats](https://github-readme-stats.vercel.app/api?username=aloknecessary&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true)](https://github.com/aloknecessary) -->
 
-![Top Languages](https://readme-stats-fast.vercel.app/api/top-langs?username=aloknecessary&layout=compact&theme=github_dark)
+<!-- ![Top Languages](https://readme-stats-fast.vercel.app/api/top-langs?username=aloknecessary&layout=compact&theme=github_dark)
 
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=aloknecessary&theme=github-dark-blue&hide_border=true)](https://github.com/aloknecessary) -->
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=aloknecessary&theme=github-dark-blue&hide_border=true)](https://github.com/aloknecessary)
-
+<div class="stats-container">
+  <img src="https://readme-stats-fast.vercel.app/api/top-langs?username=aloknecessary&layout=compact&theme=github_dark" alt="Top Languages" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aloknecessary&theme=github-dark-blue&hide_border=true" alt="GitHub Streak" />
+</div>
 
 
 ---
@@ -227,24 +229,25 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 
 ### Production-Ready Docker Images
 
-### ⭐ [playwright-az-cli](https://github.com/aloknecessary/playwright-az-cli)
-Custom Docker image with Microsoft Playwright and Azure CLI pre-installed for E2E testing.
+### ⭐ playwright-az-cli
+ [<img src="https://img.shields.io/badge/github-repo-blue?style=flat&logo=github" />](https://github.com/aloknecessary/playwright-az-cli)  [<img src="https://img.shields.io/badge/hub-Playwright-2EAD33?style=flat-square&logo=docker&logoColor=white"/>](https://hub.docker.com/r/aloknecessary/playwright-az-cli)
 
-![Playwright](https://img.shields.io/badge/Playwright-Testing-2EAD33?style=flat-square&logo=playwright)
-
----
-
-### ⭐ [sonar-dotnet-v9.0](https://github.com/aloknecessary/sonar-dotnet-v9.0)
-Multi-architecture Docker image for SonarQube analysis on .NET 9 projects.
-
-![Docker](https://img.shields.io/badge/Docker-Production_Ready-2496ED?style=flat-square&logo=docker)
+A custom Docker image built on top of the official Microsoft Playwright image, with Azure CLI pre-installed.
+This image is intended for CI/CD and automation workflows that require browser-based testing along with Azure operations in a single, ready-to-use container.
 
 ---
 
-### ⭐ [sonar-dotnet-v10.0](https://github.com/aloknecessary/sonar-dotnet-v10.0)
-Multi-architecture Docker image for SonarQube analysis on .NET 10 projects.
+### ⭐ sonar-dotnet-v9.0
+[<img src="https://img.shields.io/badge/github-repo-blue?style=flat&logo=github" />](https://github.com/aloknecessary/sonar-dotnet-v9.0)  [<img src="https://img.shields.io/badge/hub-Sonar--dotnet--v9.0-2EAD33?style=flat-square&logo=docker&logoColor=white"/>](https://hub.docker.com/r/aloknecessary/sonar-dotnet-v9.0)
 
-![Docker](https://img.shields.io/badge/Docker-Production_Ready-2496ED?style=flat-square&logo=docker)
+A production-ready, multi-architecture Docker image for running SonarQube analysis on .NET 9 projects, preloaded with all required tooling to eliminate repetitive setup in CI pipelines.
+
+---
+
+### ⭐ sonar-dotnet-v10.0
+[<img src="https://img.shields.io/badge/github-repo-blue?style=flat&logo=github" />](https://github.com/aloknecessary/sonar-dotnet-v10.0)  [<img src="https://img.shields.io/badge/hub-Sonar--dotnet--v10.0-2EAD33?style=flat-square&logo=docker&logoColor=white"/>](https://hub.docker.com/r/aloknecessary/sonar-dotnet-v10.0)
+
+A production-ready, multi-architecture Docker image for running SonarQube analysis on .NET 10 projects, preloaded with all required tooling to eliminate repetitive setup in CI pipelines.
 
 ---
 
@@ -286,7 +289,7 @@ If you're interested in **architecture discussions, system design reviews, DevOp
     <img src="https://img.shields.io/badge/Docker_Hub-Images-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Hub"/>
   </a>
   <a href="https://www.npmjs.com/~aloknecessary">
-    <img src="https://img.shields.io/badge/npm-Packages-CB3837?style=for-the-badge&logo=npm&logoColor=white" alt="npm"/>
+    <img src="https://img.shields.io/badge/npm-Packages-purple?style=for-the-badge&logo=npm&logoColor=white" alt="npm"/>
   </a>
 </p>
 
