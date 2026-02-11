@@ -1,9 +1,13 @@
 ---
 title: "CQRS Without Regret: Where It Works, Where It Breaks, and How to Evolve Safely"
 date: 2026-02-09
+last_modified_at: 2026-02-11
 author: Alok 
 description: "A pragmatic, production-focused deep dive into CQRS—covering read/write divergence risks, operational complexity, and safe migration strategies from CRUD systems."
 excerpt: A pragmatic, production-focused deep dive into CQRS—covering divergence risks, operational complexity, and safe migration strategies from CRUD systems.
+categories:
+  - architecture
+  - system-design
 tags:
   - system-design
   - cqrs
