@@ -110,7 +110,7 @@ footer a{
 .meta {
   color: #6b7280;
   font-size: 0.95rem;
-  margin-bottom: 32px;
+  /* margin-bottom: 28px; */
 }
 .post-tags {
   margin-top: 1.5rem;

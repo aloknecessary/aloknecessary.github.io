@@ -1,6 +1,17 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-96x96.png' | relative_url }}">
 <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-192x192.png' | relative_url }}">
 <link rel="shortcut icon" href="{{ '/assets/favicon/favicon.ico' | relative_url }}">
+
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.excerpt | strip_html | strip_newlines }}">
+
+
 <link rel="alternate" type="application/atom+xml"
       title="Aloknecessary – Blog Feed"
       href="{{ '/feed.xml' | relative_url }}">

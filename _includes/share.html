@@ -1,0 +1,184 @@
+<div class="share-bar">
+  <!-- Native Share (Mobile Only) -->
+  <button id="nativeShare" class="share-icon mobile-only" aria-label="Share">
+    <svg viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7a2.48 2.48 0 000-1.39l7-4.11A2.5 2.5 0 1015.5 5c0 .23.03.45.08.66l-7 4.11a2.5 2.5 0 100 4.46l7.05 4.14c-.05.2-.08.41-.08.63a2.5 2.5 0 102.5-2.5z"
+      />
+    </svg>
+  </button>
+
+  <!-- LinkedIn -->
+  <a
+    class="share-icon"
+    href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | uri_escape }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on LinkedIn"
+  >
+    <svg viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.27 2.3-2.6 4.73-2.6C22 7.6 24 10 24 14v10h-5v-9c0-2.1-.04-4.8-2.93-4.8-2.94 0-3.39 2.3-3.39 4.6V24h-5V8z"
+      />
+    </svg>
+  </a>
+
+  <!-- Facebook -->
+  <a
+    class="share-icon"
+    href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | uri_escape }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on Facebook"
+  >
+    <svg viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        d="M22 12a10 10 0 10-11.5 9.9v-7H8v-3h2.5V9.5C10.5 7 12 5.5 14.7 5.5c1.3 0 2.7.2 2.7.2v3H16c-1.5 0-2 .9-2 1.9V12H18l-.5 3H14v7A10 10 0 0022 12z"
+      />
+    </svg>
+  </a>
+
+  <!-- X -->
+  <a
+    class="share-icon"
+    href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | uri_escape }}&text={{ page.title | uri_escape }}"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on X"
+  >
+    <svg viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.37 8.59 8.59 0 01-2.73 1.04 4.28 4.28 0 00-7.3 3.9A12.13 12.13 0 013 4.8a4.28 4.28 0 001.32 5.7A4.26 4.26 0 012.8 10v.05a4.28 4.28 0 003.43 4.2c-.4.1-.82.15-1.25.06a4.29 4.29 0 004 3 8.6 8.6 0 01-5.33 1.84A8.73 8.73 0 012 19.54 12.14 12.14 0 008.29 21c7.55 0 11.68-6.25 11.68-11.67 0-.18 0-.35-.01-.53A8.3 8.3 0 0022.46 6z"
+      />
+    </svg>
+  </a>
+
+  <!-- Copy Link -->
+  <button id="copyLink" class="share-icon" aria-label="Copy link">
+    <svg viewBox="0 0 24 24">
+      <path
+        fill="currentColor"
+        d="M3.9 12a5 5 0 015-5h3v2h-3a3 3 0 000 6h3v2h-3a5 5 0 01-5-5zm7-1h2v2h-2v-2zm4.2-4h-3v2h3a3 3 0 010 6h-3v2h3a5 5 0 000-10z"
+      />
+    </svg>
+  </button>
+</div>
+
+<style>
+  .share-bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    /* border-bottom: 1px solid #e5e7eb;  */
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .share-bar {
+      justify-content: flex-start;
+      gap: 12px;
+    }
+  }
+
+  .share-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    color: #fff;
+  }
+
+  .share-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .share-icon:hover {
+    color: #000;
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+  .share-icon.copied {
+    color: #16a34a;
+  }
+
+  /* Native Share */
+  #nativeShare {
+    background: #111827; /* neutral dark */
+  }
+
+  /* LinkedIn */
+  .share-bar a[aria-label="Share on LinkedIn"] {
+    background: #0a66c2;
+  }
+
+  /* Facebook */
+  .share-bar a[aria-label="Share on Facebook"] {
+    background: #1877f2;
+  }
+
+  /* X */
+  .share-bar a[aria-label="Share on X"] {
+    background: #000000;
+  }
+
+  /* Copy Link */
+  #copyLink {
+    background: #4b5563;
+  }
+
+  .share-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  }
+
+  .share-icon.copied {
+    background: #16a34a !important;
+  }
+
+  .share-icon:active {
+    transform: scale(0.95);
+  }
+</style>
+
+<script>
+  (function () {
+    const nativeBtn = document.getElementById("nativeShare");
+    const copyBtn = document.getElementById("copyLink");
+
+    // Hide native share on desktop
+    if (window.innerWidth > 768 || !navigator.share) {
+      nativeBtn.style.display = "none";
+    }
+
+    nativeBtn?.addEventListener("click", async () => {
+      try {
+        await navigator.share({
+          title: document.title,
+          url: window.location.href,
+        });
+      } catch (_) {}
+    });
+
+    copyBtn?.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        copyBtn.classList.add("copied");
+        setTimeout(() => copyBtn.classList.remove("copied"), 1500);
+      } catch (_) {}
+    });
+  })();
+</script>
