@@ -97,11 +97,18 @@ footer {
   color: var(--muted);
   text-align: center;
 }
-footer p {
+.footer .mobile-visible {
+  display: none;
+}
+.footer .mobile-hidden {
+  display: inline;
+}
+.footer {
+  margin-top: 16px;
   text-align: center;
   font-size: 0.9rem;
 }
-footer a{
+.footer a{
   color: #6b7280; 
   font-size: 0.9rem;
   text-decoration: none; 
@@ -208,4 +215,14 @@ tr:nth-child(even) {
 .nav-separator {
   margin: 0 0.4rem;
   color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .footer .mobile-visible {
+    display: inline;
+  }
+  .footer .mobile-hidden {
+    display: none;
+  }
+  
 }

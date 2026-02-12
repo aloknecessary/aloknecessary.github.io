@@ -1,21 +1,24 @@
-<p class="footer">
-  <span >
-      © {{ site.time | date: "%Y" }} Alok Ranjan Daftuar
-      <span style="margin: 0 0.5rem;">·</span>
-      <a href="/privacy-policy" >Privacy Policy</a>
-      <span style="margin: 0 0.5rem;">·</span>
-      <a href="#" onclick="event.preventDefault(); window.reopenCookieConsent();" >
-        Cookie Preferences
-      </a>
-    </span><br />
+<div class="footer">
+  <span>
+    <span>© {{ site.time | date: "%Y" }} Alok Ranjan Daftuar</span>
+    <span class="mobile-visible"><br></span>
+    <span class="mobile-hidden" style="margin: 0 0.5rem">·</span>
+    <a href="/privacy-policy">Privacy Policy</a>
+    <span style="margin: 0 0.5rem">·</span>
+    <a href="#" onclick="
+        event.preventDefault();
+        window.reopenCookieConsent();
+      ">
+      Cookie Preferences
+    </a> </span><br>
   <!-- <span> © {{ site.time | date: "%Y" }} Alok · Built with GitHub Pages</span> -->
   <em>
-    If this resonates with your experience or you’d like to discuss architecture trade-offs,
-    feel free to reach out via
+    If this resonates with your experience or you’d like to discuss architecture
+    trade-offs, feel free to reach out via
     <a href="https://www.linkedin.com/in/aloknecessary/" target="_blank">LinkedIn</a>
     or
     <a href="https://github.com/aloknecessary" target="_blank">GitHub</a>
-    or 
+    or
     <a href="mailto:aloknecessary@gmail.com">Email</a>.
   </em>
-</p>
+</div>
