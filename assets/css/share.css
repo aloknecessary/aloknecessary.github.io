@@ -1,0 +1,86 @@
+.share-bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .share-bar {
+      justify-content: flex-start;
+      gap: 12px;
+    }
+  }
+
+  .share-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    color: #fff;
+  }
+
+  .share-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* .share-icon:hover {
+    color: #000;
+    background: rgba(0, 0, 0, 0.08);
+  } */
+
+  /* .share-icon.copied {
+    color: #16a34a;
+  } */
+
+  .bottom-share-container{
+    border-bottom: 1px solid darkgray;
+    padding-bottom: 24px;
+    padding-top: 6px;
+  }
+
+  /* Native Share */
+  #nativeShare {
+    background: #111827; /* neutral dark */
+  }
+
+  /* LinkedIn */
+  .share-bar a[aria-label="Share on LinkedIn"] {
+    background: #0a66c2;
+  }
+
+  /* Facebook */
+  .share-bar a[aria-label="Share on Facebook"] {
+    background: #1877f2;
+  }
+
+  /* X */
+  .share-bar a[aria-label="Share on X"] {
+    background: #000000;
+  }
+
+  /* Copy Link */
+  #copyLink {
+    background: #4b5563;
+  }
+
+  .share-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  }
+
+  .share-icon.copied {
+    background: #16a34a !important;
+  }
+
+  .share-icon:active {
+    transform: scale(0.95);
+  }

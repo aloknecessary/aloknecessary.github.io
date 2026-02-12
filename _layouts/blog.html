@@ -20,8 +20,10 @@ layout: default
       divided_by: 200 | plus: 1 }} min read
     </p>
     {% endif %}
+    {% include share.html %}
   </header>
-  <h3 class="description">{{ page.description }}</h3>
+  <h2 class="description">{{ page.description }}</h2>
+
   <div class="post-content">{{ content }}</div>
 
   {% if page.tags %}
@@ -35,6 +37,11 @@ layout: default
   {% endif %}
 
   <hr />
+
+<div class="bottom-share-container">
+  {% include share.html %}
+</div>
+
 
   <nav class="post-navigation">
     {% if page.previous %}
