@@ -15,7 +15,7 @@
 
 <div id="cookie-consent-popup" class="cookie-popup" style="display: none;" role="dialog" aria-live="polite" aria-label="Cookie Consent" aria-describedby="cookie-popup-description">
   <!-- Backdrop overlay -->
-  <div class="cookie-backdrop"></div>
+  <div class="cookie-backdrop" onclick="cookieConsent.closePopup()"></div>
   
   <!-- Popup content -->
   <div class="cookie-popup-card">
@@ -324,10 +324,10 @@ const cookieConsent = {
 
   // Initialize
   init() {
-    // Check for GPC first
-    if (this.detectGPC()) {
-      return; // GPC handled, don't show popup
-    }
+    // // Check for GPC first
+    // if (this.detectGPC()) {
+    //   return; // GPC handled, don't show popup
+    // }
     
     // Check for existing consent
     this.checkExistingConsent();
@@ -369,9 +369,9 @@ const cookieConsent = {
       popup.style.display = 'flex';
       
       // Auto-close after 4 seconds
-      // setTimeout(() => {
-      //   this.closePopup();
-      // }, 4000);
+      setTimeout(() => {
+        this.closePopup();
+      }, 4000);
     }
   },
 

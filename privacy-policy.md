@@ -5,6 +5,9 @@ permalink: /privacy-policy/
 hide_header: true
 last_modified_at: 2026-02-12
 ---
+<nav class="nav-bar">
+  <a href="{{ '/' | relative_url }}"> Home</a>
+</nav>
 
 # Privacy Policy
 
