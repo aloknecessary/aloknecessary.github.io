@@ -11,7 +11,7 @@ hide_header: true
 ## &nbsp;&nbsp;Hi, I am Alok
 
 <p align="center" style="margin: 2rem 0;">
-  <a href="https://aloknecessary.github.io/blogs">
+  <a href="{{ '/blogs' | relative_url }}">
     <img src="https://img.shields.io/badge/📝_My_Blogs-Read_Articles-brightgreen?style=for-the-badge" alt="Blog"/>
   </a>
   <a href="https://www.linkedin.com/in/aloknecessary/">
@@ -131,26 +131,23 @@ My work focuses on translating **business problems into pragmatic, scalable, and
 ---
 
 ## 💼 Professional Experience
-
-### **[Byteridge Software Pvt. Ltd.](https://www.byteridge.com)**
-
-<p style="font-style: italic; color: #666;">
-Solution Architect | 2014 – Present | Hyderabad, India
-</p>
-
-For over a decade at Byteridge, I've grown from a hands-on engineer into a solution and architecture owner, shaping complex, production-grade systems across the full stack. My role focuses on translating real business problems into pragmatic, scalable, and resilient technical solutions.
-
-I've led and delivered systems that integrate frontend, backend, infrastructure, and cloud products — blending architectural rigor with software engineering craftsmanship.
-
-**Key Achievements:**
-
-* Architected and delivered full-stack application designs using React, Angular, Node.js, and .NET
-* Built modular, API-centric platforms with strong authentication, observability, and integration patterns
-* Designed cloud-native architectures with Docker, Kubernetes, and automated CI/CD pipelines
-* Collaborated with Microsoft teams on Bing and Microsoft Admin Portal platforms
-* Led cost optimization initiatives resulting in significant cloud infrastructure savings
-
-A core part of my role involves collaborating with product, UX, and business stakeholders to drive clarity and alignment, as well as mentoring engineers through system design and implementation decisions.
+> ### **[Byteridge Software Pvt. Ltd.](https://www.byteridge.com)**
+>
+> *Solution Architect* \| 2014 – Present \| *Hyderabad, India*
+>
+> For over a decade at Byteridge, I've grown from a hands-on engineer into a solution and architecture owner, shaping complex, production-grade systems across the full stack. My role focuses on translating real business problems into pragmatic, scalable, and resilient technical solutions.
+>
+> I've led and delivered systems that integrate frontend, backend, infrastructure, and cloud products — blending architectural rigor with software engineering craftsmanship.
+>
+> **Key Achievements:**
+>
+> - Architected and delivered full-stack application designs using React, Angular, Node.js, and .NET  
+> - Built modular, API-centric platforms with strong authentication, observability, and integration patterns  
+> - Designed cloud-native architectures with Docker, Kubernetes, and automated CI/CD pipelines  
+> - Collaborated with Microsoft teams on Bing and Microsoft Admin Portal platforms  
+> - Led cost optimization initiatives resulting in significant cloud infrastructure savings  
+>
+> A core part of my role involves collaborating with product, UX, and business stakeholders to drive clarity and alignment, as well as mentoring engineers through system design and implementation decisions.
 
 ---
 
@@ -272,7 +269,7 @@ I'm always interested in:
 
 If you're interested in **architecture discussions, system design reviews, DevOps or technical collaboration**, feel free to reach out.
 
-<p style="margin: 2rem 0;">
+<p style="margin: 2rem 0; text-align:center;">
   <a href="mailto:aloknecessary@gmail.com">
     <img src="https://img.shields.io/badge/Email-aloknecessary%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=darkgreen" alt="Email"/>
   </a>
@@ -281,7 +278,7 @@ If you're interested in **architecture discussions, system design reviews, DevOp
   </a>
 </p>
 
-<p style="margin: 1rem 0;">
+<p style="margin: 1rem 0; text-align:center;">
   <a href="https://www.linkedin.com/in/aloknecessary">
     <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=searxng&logoColor=white" alt="LinkedIn"/>
   </a>
