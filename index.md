@@ -25,13 +25,13 @@ hide_header: true
 
 <p align="center" style="margin: 1rem 0;">
  <a href="https://github.com/aloknecessary">
-    <img src="https://img.shields.io/badge/GitHub-aloknecessary-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+    <img src="https://img.shields.io/badge/GitHub-aloknecessary-yellow?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
   </a>
   <a href="https://hub.docker.com/u/aloknecessary">
     <img src="https://img.shields.io/badge/Docker_Hub-aloknecessary-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Hub"/>
   </a>
   <a href="https://www.npmjs.com/~aloknecessary">
-    <img src="https://img.shields.io/badge/npm-aloknecessary-purple?style=for-the-badge&logo=npm&logoColor=white" alt="npm"/>
+    <img src="https://img.shields.io/badge/npm-aloknecessary-purple?style=for-the-badge&logo=npm&logoColor=white&labelColor=c93525" alt="npm"/>
   </a>
 </p>
 
@@ -274,7 +274,10 @@ If you're interested in **architecture discussions, system design reviews, DevOp
 
 <p style="margin: 2rem 0;">
   <a href="mailto:aloknecessary@gmail.com">
-    <img src="https://img.shields.io/badge/Email-aloknecessary%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+    <img src="https://img.shields.io/badge/Email-aloknecessary%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=73AF6F" alt="Email"/>
+  </a>
+  <a href="https://facebook.com/aloknecessary">
+    <img src="https://img.shields.io/badge/Facebook-aloknecessary-FFEAD3?style=for-the-badge&logo=facebook&logoColor=white&labelColor=blue" alt="Facebook"/>
   </a>
 </p>
 
@@ -283,13 +286,13 @@ If you're interested in **architecture discussions, system design reviews, DevOp
     <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   <a href="https://github.com/aloknecessary">
-    <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+    <img src="https://img.shields.io/badge/GitHub-Follow-yellow?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
   </a>
   <a href="https://hub.docker.com/u/aloknecessary">
     <img src="https://img.shields.io/badge/Docker_Hub-Images-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Hub"/>
   </a>
   <a href="https://www.npmjs.com/~aloknecessary">
-    <img src="https://img.shields.io/badge/npm-Packages-purple?style=for-the-badge&logo=npm&logoColor=white" alt="npm"/>
+    <img src="https://img.shields.io/badge/npm-Packages-purple?style=for-the-badge&logo=npm&logoColor=white&labelColor=c93525" alt="npm"/>
   </a>
 </p>
 
