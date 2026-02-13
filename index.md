@@ -15,7 +15,7 @@ hide_header: true
     <img src="https://img.shields.io/badge/📝_My_Blogs-Read_Articles-brightgreen?style=for-the-badge" alt="Blog"/>
   </a>
   <a href="https://www.linkedin.com/in/aloknecessary/">
-    <img src="https://img.shields.io/badge/LinkedIn-aloknecessary-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+    <img src="https://img.shields.io/badge/LinkedIn-aloknecessary-0077B5?style=for-the-badge&logo=searxng&logoColor=white" alt="LinkedIn"/>
   </a>
   <a href="mailto:aloknecessary@gmail.com">
     <img src="https://img.shields.io/badge/Email-aloknecessary%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
@@ -74,12 +74,12 @@ My work focuses on translating **business problems into pragmatic, scalable, and
 ### **Engineering Stack**
 
 <div>
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React"/>
+  <img src="https://img.shields.io/badge/react-03C4E8?style=for-the-badge&logo=react&logoColor=white" alt="React"/>
   <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular"/>
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"/>
   <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET"/>
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
-  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#"/>
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=sharp&logoColor=white" alt="C#"/>
 </div>
 
 * Full-stack systems using **React, Angular, Node.js, and .NET**
@@ -94,8 +94,8 @@ My work focuses on translating **business problems into pragmatic, scalable, and
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
   <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
   <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions"/>
-  <img src="https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Azure"/>
-  <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS"/>
+  <img src="https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="Azure"/>
+  <img src="https://img.shields.io/badge/Amazon_AWS-F24C53?style=for-the-badge&logo=hackthebox&logoColor=white" alt="AWS"/>
 </div>
 
 * Robust CI/CD using GitHub Actions
@@ -159,9 +159,9 @@ A core part of my role involves collaborating with product, UX, and business sta
 
 
 <p>
-  <img src="https://img.shields.io/badge/AWS-Partner_Certified-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS"/>
+  <img src="https://img.shields.io/badge/AWS-Partner_Certified-FF9900?style=for-the-badge&logo=hackthebox&logoColor=white" alt="AWS"/>
   <img src="https://img.shields.io/badge/Neo4j-Professional_Certified-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/>
-  <img src="https://img.shields.io/badge/ZEDEDA-Edge_Computing_Associate-4285F4?style=for-the-badge" alt="ZEDEDA"/>
+  <img src="https://img.shields.io/badge/ZEDEDA-Edge_Computing_Associate-4285F4?style=for-the-badge&logo=zulip&logoColor=white" alt="ZEDEDA"/>
 </p>
 
 * 🏅 **AWS Partner Certified** — AWS cloud fundamentals, partner-led architectures
@@ -274,7 +274,7 @@ If you're interested in **architecture discussions, system design reviews, DevOp
 
 <p style="margin: 2rem 0;">
   <a href="mailto:aloknecessary@gmail.com">
-    <img src="https://img.shields.io/badge/Email-aloknecessary%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=73AF6F" alt="Email"/>
+    <img src="https://img.shields.io/badge/Email-aloknecessary%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=darkgreen" alt="Email"/>
   </a>
   <a href="https://facebook.com/aloknecessary">
     <img src="https://img.shields.io/badge/Facebook-aloknecessary-FFEAD3?style=for-the-badge&logo=facebook&logoColor=white&labelColor=blue" alt="Facebook"/>
@@ -283,7 +283,7 @@ If you're interested in **architecture discussions, system design reviews, DevOp
 
 <p style="margin: 1rem 0;">
   <a href="https://www.linkedin.com/in/aloknecessary">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=searxng&logoColor=white" alt="LinkedIn"/>
   </a>
   <a href="https://github.com/aloknecessary">
     <img src="https://img.shields.io/badge/GitHub-Follow-yellow?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
