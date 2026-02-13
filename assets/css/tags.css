@@ -1,0 +1,73 @@
+.tags-page {
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .tags-header {
+    margin-top: 24px;
+    margin-bottom: 0.75rem;
+  }
+  .tags-header h2::before{
+    display: none;
+  }
+
+  .tags-description {
+    color: #666;
+    margin-top: 0.5rem;
+  }
+
+  /* Tags list */
+  .tags-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .tag-block {
+    border-top: 1px solid #eaeaea;
+    /* padding-top: 1.5rem; */
+  }
+
+  .tag-posts {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .tag-posts li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .tag-posts a {
+    text-decoration: none;
+  }
+
+  .post-date {
+    font-size: 0.85rem;
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .tag-block.active > h2::before {
+    display: none !important;
+  }
+
+  .tag-heading {
+    scroll-margin-top: 80px;
+    transition: background-color 0.3s ease;
+    padding: 4px 6px;
+    border-radius: 6px;
+  }
+
+  .tag-block.active > .tag-heading {
+    background-color: #eef2ff;
+    color: #1e3a8a;
+    border-left: 4px solid #6366f1;
+    padding-left: 20px;
+    margin-left: -14px;
+  }
+  #backButton {
+    cursor: pointer;
+  }

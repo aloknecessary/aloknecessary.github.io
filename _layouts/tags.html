@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<link rel="stylesheet" href="{{ '/assets/css/tags.css' | relative_url }}">
 
 <div>
   <!-- Page header -->
@@ -20,14 +21,16 @@ layout: default
     <a href="{{ '/' | relative_url }}">Home</a>
   </nav>
 </div>
-<section class="tags-page">
-  <div class="tags-header">
-    <h3>{{ page.title }}</h3>
-    {% if page.content %}
-    <p class="tags-description">{{ page.content | strip_html }}</p>
-    {% endif %}
-  </div>
 
+<div class="tags-header">
+  <h2>{{ page.title }}</h2>
+  {% if page.content %}
+  <p class="tags-description">{{ page.content | strip_html }}</p>
+  {% endif %}
+</div>
+
+<section class="tags-page">
+  
   <!-- Build tag list from _blogs collection -->
   {% assign tag_list = "" | split: "" %}
   {% assign sorted_posts = site.blogs | sort: 'date' | reverse %}
@@ -62,79 +65,6 @@ layout: default
   </div>
 </section>
 
-<!-- Page-scoped styles -->
-<style>
-  .tags-page {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 1.5rem 1rem;
-  }
-
-  .tags-header {
-    margin-bottom: 0.75rem;
-  }
-
-  .tags-description {
-    color: #666;
-    margin-top: 0.5rem;
-  }
-
-  /* Tags list */
-  .tags-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-
-  .tag-block {
-    border-top: 1px solid #eaeaea;
-    /* padding-top: 1.5rem; */
-  }
-
-  .tag-posts {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  .tag-posts li {
-    margin-bottom: 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  .tag-posts a {
-    text-decoration: none;
-  }
-
-  .post-date {
-    font-size: 0.85rem;
-    color: #888;
-    white-space: nowrap;
-  }
-
-  .tag-block.active > h2::before {
-    display: none !important;
-  }
-
-  .tag-heading {
-    scroll-margin-top: 80px;
-    transition: background-color 0.3s ease;
-    padding: 4px 6px;
-    border-radius: 6px;
-  }
-
-  .tag-block.active > .tag-heading {
-    background-color: #eef2ff;
-    color: #1e3a8a;
-    border-left: 4px solid #6366f1;
-    padding-left: 20px;
-    margin-left: -14px;
-  }
-  #backButton {
-    cursor: pointer;
-  }
-</style>
 
 <script>
   function highlightActiveTag() {
