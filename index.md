@@ -222,31 +222,169 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 
 ## 📦 Featured Open Source Contributions
 
+<div class="opensource-grid">
 
+  <!-- React Progress Stepper Card -->
+  <div class="project-card">
+    <div class="project-card-header">
+      <div class="project-icon">🎯</div>
+      <div class="project-title-section">
+        <h3 class="project-title">react-progress-stepper-ts</h3>
+        <p class="project-category">UI Component Library</p>
+      </div>
+    </div>
+    <p class="project-description">
+      TypeScript-first React component library for creating customizable step-by-step progress indicators. Features a clean API with React Hooks, comprehensive TypeScript support, and zero runtime dependencies.
+    </p>
+    <div class="project-tags">
+      <span class="tag">TypeScript</span>
+      <span class="tag">React</span>
+      <span class="tag">npm Package</span>
+    </div>
+    <div class="project-stats">
+      <div class="stat-item">
+        <span class="stat-icon">📊</span>
+        <span class="stat-value">62+</span>
+        <span class="stat-label">Weekly Downloads</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">📦</span>
+        <span class="stat-value">v1.0.3</span>
+        <span class="stat-label">Latest Version</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/aloknecessary/react-progress-stepper-ts" class="project-link primary">
+        <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+      </a>
+      <a href="https://www.npmjs.com/package/react-progress-stepper-ts" class="project-link npm secondary">
+        <img src="https://img.shields.io/badge/npm-Package-CB3837?style=flat-square&logo=npm&logoColor=white" alt="npm" />
+      </a>
+    </div>
+  </div>
 
-### Production-Ready Docker Images
+  <!-- Playwright Azure CLI Card -->
+  <div class="project-card">
+    <div class="project-card-header">
+      <div class="project-icon">🎭</div>
+      <div class="project-title-section">
+        <h3 class="project-title">playwright-az-cli</h3>
+        <p class="project-category">Docker Image</p>
+      </div>
+    </div>
+    <p class="project-description">
+      Custom Docker image built on Microsoft Playwright with Azure CLI pre-installed. Designed for CI/CD and automation workflows that require browser-based testing along with Azure operations in a single, ready-to-use container.
+    </p>
+    <div class="project-tags">
+      <span class="tag">Docker</span>
+      <span class="tag">Playwright</span>
+      <span class="tag">Azure CLI</span>
+      <span class="tag">CI/CD</span>
+    </div>
+    <div class="project-stats">
+      <div class="stat-item">
+        <span class="stat-icon">🏗️</span>
+        <span class="stat-value">Multi-Arch</span>
+        <span class="stat-label">x86/ARM Support</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">🚀</span>
+        <span class="stat-value">Production</span>
+        <span class="stat-label">Ready to Use</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/aloknecessary/playwright-az-cli" class="project-link primary">
+        <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+      </a>
+      <a href="https://hub.docker.com/r/aloknecessary/playwright-az-cli" class="project-link secondary">
+        <img src="https://img.shields.io/badge/Docker_Hub-Image-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Hub" />
+      </a>
+    </div>
+  </div>
 
-### ⭐ playwright-az-cli
- [<img src="https://img.shields.io/badge/github-repo-blue?style=flat&logo=github" />](https://github.com/aloknecessary/playwright-az-cli)  [<img src="https://img.shields.io/badge/hub-Playwright-2EAD33?style=flat-square&logo=docker&logoColor=white"/>](https://hub.docker.com/r/aloknecessary/playwright-az-cli)
+  <!-- SonarQube .NET 9.0 Card -->
+  <div class="project-card">
+    <div class="project-card-header">
+      <div class="project-icon">🔍</div>
+      <div class="project-title-section">
+        <h3 class="project-title">sonar-dotnet-v9.0</h3>
+        <p class="project-category">Docker Image</p>
+      </div>
+    </div>
+    <p class="project-description">
+      Production-ready, multi-architecture Docker image for SonarQube analysis on .NET 9 projects. Preloaded with all required tooling including .NET SDK, SonarScanner, and Java runtime to eliminate repetitive setup in CI pipelines.
+    </p>
+    <div class="project-tags">
+      <span class="tag">Docker</span>
+      <span class="tag">.NET 9</span>
+      <span class="tag">SonarQube</span>
+      <span class="tag">Code Quality</span>
+    </div>
+    <div class="project-stats">
+      <div class="stat-item">
+        <span class="stat-icon">🏗️</span>
+        <span class="stat-value">Multi-Arch</span>
+        <span class="stat-label">x86/ARM Support</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">⚡</span>
+        <span class="stat-value">Optimized</span>
+        <span class="stat-label">Fast Builds</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/aloknecessary/sonar-dotnet-v9.0" class="project-link primary">
+        <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+      </a>
+      <a href="https://hub.docker.com/r/aloknecessary/sonar-dotnet-v9.0" class="project-link secondary">
+        <img src="https://img.shields.io/badge/Docker_Hub-Image-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Hub" />
+      </a>
+    </div>
+  </div>
 
-A custom Docker image built on top of the official Microsoft Playwright image, with Azure CLI pre-installed.
-This image is intended for CI/CD and automation workflows that require browser-based testing along with Azure operations in a single, ready-to-use container.
+  <!-- SonarQube .NET 10.0 Card -->
+  <div class="project-card">
+    <div class="project-card-header">
+      <div class="project-icon">🔍</div>
+      <div class="project-title-section">
+        <h3 class="project-title">sonar-dotnet-v10.0</h3>
+        <p class="project-category">Docker Image</p>
+      </div>
+    </div>
+    <p class="project-description">
+      Production-ready, multi-architecture Docker image for SonarQube analysis on .NET 10 projects. Preloaded with all required tooling including .NET SDK, SonarScanner, and Java runtime to eliminate repetitive setup in CI pipelines.
+    </p>
+    <div class="project-tags">
+      <span class="tag">Docker</span>
+      <span class="tag">.NET 10</span>
+      <span class="tag">SonarQube</span>
+      <span class="tag">Code Quality</span>
+    </div>
+    <div class="project-stats">
+      <div class="stat-item">
+        <span class="stat-icon">🏗️</span>
+        <span class="stat-value">Multi-Arch</span>
+        <span class="stat-label">x86/ARM Support</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">⚡</span>
+        <span class="stat-value">Optimized</span>
+        <span class="stat-label">Fast Builds</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/aloknecessary/sonar-dotnet-v10.0" class="project-link primary">
+        <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+      </a>
+      <a href="https://hub.docker.com/r/aloknecessary/sonar-dotnet-v10.0" class="project-link secondary">
+        <img src="https://img.shields.io/badge/Docker_Hub-Image-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Hub" />
+      </a>
+    </div>
+  </div>
 
----
+</div>
 
-### ⭐ sonar-dotnet-v9.0
-[<img src="https://img.shields.io/badge/github-repo-blue?style=flat&logo=github" />](https://github.com/aloknecessary/sonar-dotnet-v9.0)  [<img src="https://img.shields.io/badge/hub-Sonar--dotnet--v9.0-2EAD33?style=flat-square&logo=docker&logoColor=white"/>](https://hub.docker.com/r/aloknecessary/sonar-dotnet-v9.0)
-
-A production-ready, multi-architecture Docker image for running SonarQube analysis on .NET 9 projects, preloaded with all required tooling to eliminate repetitive setup in CI pipelines.
-
----
-
-### ⭐ sonar-dotnet-v10.0
-[<img src="https://img.shields.io/badge/github-repo-blue?style=flat&logo=github" />](https://github.com/aloknecessary/sonar-dotnet-v10.0)  [<img src="https://img.shields.io/badge/hub-Sonar--dotnet--v10.0-2EAD33?style=flat-square&logo=docker&logoColor=white"/>](https://hub.docker.com/r/aloknecessary/sonar-dotnet-v10.0)
-
-A production-ready, multi-architecture Docker image for running SonarQube analysis on .NET 10 projects, preloaded with all required tooling to eliminate repetitive setup in CI pipelines.
-
----
 
 ## 🤝 Open To
 
@@ -264,7 +402,6 @@ I'm always interested in:
 ---
 
 ## 📫 Contact & Presence
-
 
 
 If you're interested in **architecture discussions, system design reviews, DevOps or technical collaboration**, feel free to reach out.
