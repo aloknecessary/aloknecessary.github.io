@@ -56,6 +56,53 @@
       />
     </svg>
   </a>
+  
+  <!--Email-->
+
+  <!--Email body script-->
+  
+  {% assign words = content | number_of_words %}
+  {% assign reading_time = words | divided_by:200 | plus:1 %}
+
+  {% assign tracked_url = page.url | absolute_url | append: '?utm_source=email&utm_medium=share&utm_campaign=blog_share' %}
+
+  {% capture email_body %}
+  Hi,
+
+  I thought you might find this interesting:
+
+  {{ page.title }}
+  {% if reading_time %}
+  Estimated reading time: {{ reading_time }} minute{% if reading_time > 1 %}s{% endif %}
+  {% endif %}
+
+  Read here:
+  {{ tracked_url }}
+
+  ––––––––––––––––––––
+
+  Written by Alok  
+  Solution Architect | Sharing insights on software architecture, cloud-native systems, and DevOps.
+
+  Follow:
+  LinkedIn: https://www.linkedin.com/in/aloknecessary
+  GitHub: https://github.com/aloknecessary
+  Facebook: https://www.facebook.com/aloknecessary
+  {% endcapture %}
+
+  {% assign encoded_subject = page.title | append: ' | Alok' | url_encode | replace: '+', '%20' %}
+  {% assign encoded_body = email_body | strip | url_encode | replace: '+', '%20' %}
+
+  <a
+    class="share-icon email"
+    href="mailto:?subject={{ encoded_subject }}&body={{ encoded_body }}"
+    aria-label="Share via Email"
+  >
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="white">
+      <path d="M12 13.065L0 6.75V18h24V6.75L12 13.065zM12 10.935L24 4.5H0l12 6.435z"/>
+    </svg>
+  </a>
+
 
   <!-- Copy Link -->
   <button id="copyLink" class="share-icon" aria-label="Copy link">
