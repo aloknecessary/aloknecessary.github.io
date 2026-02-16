@@ -46,6 +46,20 @@ My work focuses on translating **business problems into pragmatic, scalable, and
 
 ---
 
+## 🤖 AI-Augmented Engineering
+
+I leverage AI strategically to accelerate delivery, improve code quality, and solve complex technical challenges. My approach combines **AI-assisted development with rigorous engineering discipline**—using models like Claude, GPT-4, Gemini and Amazon Q as force multipliers while maintaining architectural control and production-grade standards.
+
+**Key AI Initiatives:**
+
+* **Test Automation at Scale**: Led AI-powered Playwright test generation that increased code coverage from 35% to 82%+ across 40+ modules
+* **Intelligent Data Visualization**: Built a production POC enabling natural language to chart generation with real-time drill-down capabilities  
+* **Context-Driven Problem Solving**: Use AI in agentic and chat modes to rapidly prototype solutions, analyze codebases, and validate architectural decisions
+
+> I view AI as a **productivity accelerator and creative partner**—not a replacement for engineering judgment. Every AI-generated solution undergoes code review, testing, and refinement to meet production standards.
+
+---
+
 ## 💼 What I Do
 
 * Architect and deliver **end-to-end systems** spanning frontend, backend, infrastructure, and integrations
@@ -88,6 +102,19 @@ My work focuses on translating **business problems into pragmatic, scalable, and
 * Third-party integrations with reliable error handling
 * Performance, caching, and container-aware deployments
 
+### **AI & Intelligent Systems**
+
+![AI](https://img.shields.io/badge/AI-Powered_Solutions-FF6B6B?style=flat-square)
+![LLM](https://img.shields.io/badge/LLM-Integration-4ECDC4?style=flat-square)
+![Automation](https://img.shields.io/badge/AI-Driven_Automation-3178C6?style=flat-square)
+
+* AI-assisted software development with Claude, GPT-4, and Amazon Q
+* LLM API integration for production systems (OpenAI, Anthropic)
+* Context engineering and prompt optimization for technical workflows
+* AI-powered test generation and quality assurance
+* Natural language interfaces for data visualization and analytics
+* Ethical AI implementation with PII filtering and content moderation
+
 ### **DevOps & Cloud**
 
 <div>
@@ -106,6 +133,7 @@ My work focuses on translating **business problems into pragmatic, scalable, and
 ### **Databases & Data**
 
 <div>
+  <img src="https://img.shields.io/badge/MSSQL-orange?style=for-the-badge&logo=mysql&logoColor=white" alt="MSSQL"/>
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
   <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
@@ -120,7 +148,10 @@ My work focuses on translating **business problems into pragmatic, scalable, and
 
 ### **Cost Optimization**
 
-![FinOps](https://img.shields.io/badge/FinOps-Cost_Optimization-success?style=flat-square)
+![FinOps](https://img.shields.io/badge/FinOps-Certified_Practices-00C853?style=for-the-badge&logo=chartdotjs&logoColor=white)
+![Cloud Cost](https://img.shields.io/badge/Cloud-Cost_Aware-FF9900?style=for-the-badge&logo=icloud&logoColor=white)
+![K8s Optimization](https://img.shields.io/badge/K8s-Optimized-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Caching](https://img.shields.io/badge/Build_Cache-Optimized-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
 * Cost-aware cloud/Kubernetes architectures
 * Resource and build cache optimization
@@ -143,9 +174,12 @@ My work focuses on translating **business problems into pragmatic, scalable, and
 >
 > - Architected and delivered full-stack application designs using React, Angular, Node.js, and .NET  
 > - Built modular, API-centric platforms with strong authentication, observability, and integration patterns  
-> - Designed cloud-native architectures with Docker, Kubernetes, and automated CI/CD pipelines  
+> - Designed cloud-native architectures with Docker, Kubernetes, and automated CI/CD pipelines 
+> - **Led AI-powered Playwright automation initiative** for Client's debt collection platform, increasing test coverage from 35% to 81%+ and delivering 2500+ test cases across 40+ modules in 2 months with a 4-5 engineer team
+> - **Architected and delivered production-grade AI POC** for natural language data visualization using OpenAI GPT Engine—enabling business users to generate interactive Chart.js visualizations from tabular data via conversational prompts, live on company POC list 
 > - Collaborated with Microsoft teams on Bing and Microsoft Admin Portal platforms  
 > - Led cost optimization initiatives resulting in significant cloud infrastructure savings  
+> - Built custom Docker images for CI/CD optimization (playwright-az-cli, sonar-dotnet) downloaded 1000+ times across teams
 >
 > A core part of my role involves collaborating with product, UX, and business stakeholders to drive clarity and alignment, as well as mentoring engineers through system design and implementation decisions.
 
@@ -176,6 +210,8 @@ My work focuses on translating **business problems into pragmatic, scalable, and
 <ul>
     <li>Real-world engineering problems and lessons learned</li>
     <li>Architecture decisions made while building systems</li>
+    <li><i>AI-assisted development workflows and productivity strategies</i></li>
+    <li><i>LLM integration patterns and production best practices</i></li>
     <li>System design trade-offs and practical solutions</li>
     <li>Kubernetes & cloud architecture patterns</li>
     <li>Docker optimization & CI/CD best practices</li>
@@ -385,6 +421,109 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 
 </div>
 
+---
+
+## 🤖 AI-Powered Projects & POCs
+
+### 🧪 AI-Driven Test Automation Framework (Built at Byteridge)
+
+Playwright + Claude/GPT-4 + Amazon Q
+
+Led a transformative test automation initiative for Client's debt collection platform, leveraging AI for context analysis and test case generation. Guided a 4-5 engineer team to deliver production-grade Playwright tests across 40+ modules.
+
+**Tech Stack**: TypeScript, Playwright, Custom Docker Image, GitHub Actions
+
+**AI Models**: Amazon Q, Claude Sonnet, GPT-4
+
+**Workflow**: Module analysis → Context building → AI-generated test cases → Human review → CI/CD integration
+
+**Technical Approach**:
+```typescript
+// Workflow: AI-assisted test generation
+1. Extract module context from codebase
+2. Feed context to Claude/GPT-4 with test requirements
+3. Generate Playwright test scaffold
+4. Human review and refinement
+5. Execute in local for verification and evaluation
+6. Integrate into GitHub Actions CI/CD pipeline for realtime testing 
+```
+**Key Innovation**: Combined AI code generation with rigorous engineering review process, ensuring every generated test met production standards before merge.
+
+**Impact**:
+- 📈 Code coverage: **35% → 81%+**
+- ✅ **2500+ test cases** delivered in 2 months
+- 🚀 **40+ modules** fully covered
+- ⚡ Ongoing e2e test expansion
+
+**Key Innovation**: Combined AI code generation with rigorous engineering review process, ensuring every generated test met production standards before merge.
+
+[![GitHub](https://img.shields.io/badge/GitHub-Custom_Docker_Image-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/aloknecessary/playwright-az-cli)
+[![Docker Hub](https://img.shields.io/badge/Docker_Hub-playwright--az--cli-2496ED?style=flat-square&logo=docker&logoColor=white)](https://hub.docker.com/r/aloknecessary/playwright-az-cli)
+
+---
+
+### 📊 Natural Language Data Visualization POC (Built at Byteridge)
+
+React 18 + OpenAI GPT-3.5 + Chart.js
+
+Built an intelligent Higher-Order Component (HOC) that wraps any React-compatible table, enabling users to generate interactive visualizations through natural language prompts. Features PII filtering, content moderation, and drill-down analytics.
+
+[![🚀 Try Live Demo](https://img.shields.io/badge/🚀_Try_Live_Demo-Launch_App-4CAF50?style=for-the-badge)](https://solution.byteridge.com/innovation/visualizer)
+*Sign in with Gmail, LinkedIn, GitHub, Facebook, or Microsoft to explore the interactive demo*
+
+**Tech Stack**: React 18, Node.js, OpenAI GPT, Chart.js
+
+**Architecture**: 
+```
+User uploads data (CSV/Excel/JSON)
+    ↓
+Natural language prompt input
+    ↓
+PII filtering + Content moderation
+    ↓
+OpenAI API with Chart.js schema constraints
+    ↓
+Parse structured JSON response
+    ↓
+Render interactive Chart.js visualization
+    ↓
+Enable drill-down on chart segments
+```
+
+**Example User Experience:**:
+```
+User: "Generate a pie chart on sales done for beauty products"
+System: [Analyzes data, generates interactive pie chart with 5 product segments]
+
+User: [Clicks "Clothing" segment]
+System: [Drills down to show regional sales breakdown for Clothing]
+```
+
+**Key Features**:
+- 🗣️ **Natural language interface** - No chart configuration knowledge required
+- 🔒 **Security built-in** - PII filtering and content moderation layer
+- 📊 **Universal data support** - CSV, Excel uploads
+- 🔍 **Interactive drill-down** - Multi-level data exploration
+- 🎨 **Auto-schema generation** - GPT creates Chart.js configs automatically
+- 🔌 **HOC pattern** - Wraps any React-compatible table library
+
+**Business Impact**:
+- ✅ **Democratized data analysis** - Non-technical users create charts independently
+- 💬 **Highly praised by stakeholders** - Marketing and leadership teams
+- 🎯 **Proven feasibility** - Validated LLM-powered BI approach
+- ⚡ **Rapid delivery** - 20-30 days from concept to production POC
+- 🏢 **Company showcase** - Featured on [Byteridge's innovation portal](https://byteridge.com/gen-ai-solutions/visualizer/)
+
+**Current Status**: 
+- 🌐 **Publicly accessible** at [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Try_It_Now-4CAF50?style=for-the-badge)](https://solution.byteridge.com/innovation/visualizer)
+- 🔐 Social authentication (Gmail, LinkedIn, GitHub, Facebook, Microsoft)
+- 📊 Demo datasets provided for immediate experimentation
+- 🎯 Available for client demonstrations and POC evaluations
+
+
+<!-- [![Documentation](https://img.shields.io/badge/📖_Read_More-Technical_Deep_Dive-2196F3?style=for-the-badge)](#) -->
+
+---
 
 ## 🤝 Open To
 
@@ -392,11 +531,12 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 I'm always interested in:
 
 * 💼 **Architecture consulting** and system design reviews
+* 🤖 **AI integration consulting** for production systems and intelligent automation
 * 🎤 **Speaking opportunities** on cloud architecture, DevOps, and system design
 * 🤝 **Technical collaborations** and open-source contributions
 * 📚 **Mentoring engineers** on architectural thinking and best practices
 * 💡 **Advisory roles** for startups and scale-ups
-
+* 🧪 **POC partnerships** exploring AI/ML use cases in enterprise software
 
 
 ---
