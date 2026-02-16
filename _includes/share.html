@@ -64,7 +64,16 @@
   {% assign words = content | number_of_words %}
   {% assign reading_time = words | divided_by:200 | plus:1 %}
 
-  {% assign tracked_url = page.url | absolute_url | append: '?utm_source=email&utm_medium=share&utm_campaign=blog_share' %}
+  {% if page.slug == nil %}
+    {% assign page_slug = page.url | split: '/' | last | split: '.' | first %}
+  {% else %}
+    {% assign page_slug = page.slug %}
+  {% endif %}
+
+  {% assign tracked_url = page.url | absolute_url 
+  | append: '?utm_source=email&utm_medium=share&utm_campaign=' 
+  | append: page_slug %}
+
 
   {% capture email_body %}
   Hi,
