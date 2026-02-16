@@ -1,6 +1,6 @@
 ---
 title: "Architecture Decisions That Actually Matter in Production"
-tags: [architecture, cloud, system-design]
+tags: [architecture, cloud, system-design, kubernetes, optimization]
 ---
 
 Most systems don’t fail because of bad code.

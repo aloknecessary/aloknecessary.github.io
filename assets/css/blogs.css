@@ -237,7 +237,7 @@
   background: #dbeafe;
   color: #1e3a8a;
 }
-
+.card-tags .tag[data-tag*="terraform"],
 .card-tags .tag[data-tag*="aws"] {
   background: #fef3c7;
   color: #92400e;
@@ -245,12 +245,14 @@
 
 .card-tags .tag[data-tag*="devops"],
 .card-tags .tag[data-tag*="cicd"],
+.card-tags .tag[data-tag*="github-actions"],
 .card-tags .tag[data-tag*="ci-cd"] {
   background: #f3e8ff;
   color: #6b21a8;
 }
 
 .card-tags .tag[data-tag*="react"],
+.card-tags .tag[data-tag*="progressive-web-apps"],
 .card-tags .tag[data-tag*="node"],
 .card-tags .tag[data-tag*="javascript"] {
   background: #fef3c7;
@@ -265,6 +267,7 @@
 }
 
 .card-tags .tag[data-tag*="architecture"],
+.card-tags .tag[data-tag*="platform"],
 .card-tags .tag[data-tag*="design"] {
   background: #fce7f3;
   color: #9f1239;
@@ -286,6 +289,12 @@
 .card-tags .tag[data-tag*="optimization"] {
   background: #d1fae5;
   color: #065f46;
+}
+
+.card-tags .tag[data-tag*="ai"],
+.card-tags .tag[data-tag*="automation"] {
+  background: #e924b8;
+  color: #ffffff;
 }
 
 /* Read More Link */
