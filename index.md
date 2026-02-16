@@ -175,7 +175,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 > - Architected and delivered full-stack application designs using React, Angular, Node.js, and .NET  
 > - Built modular, API-centric platforms with strong authentication, observability, and integration patterns  
 > - Designed cloud-native architectures with Docker, Kubernetes, and automated CI/CD pipelines 
-> - **Led AI-powered Playwright automation initiative** for Client's debt collection platform, increasing test coverage from 35% to 82%+ and delivering 1500+ test cases across 25+ modules in 2 months with a 4-5 engineer team
+> - **Led AI-powered Playwright automation initiative** for Client's debt collection platform, increasing test coverage from 35% to 81%+ and delivering 2500+ test cases across 40+ modules in 2 months with a 4-5 engineer team
 > - **Architected and delivered production-grade AI POC** for natural language data visualization using OpenAI GPT Engine—enabling business users to generate interactive Chart.js visualizations from tabular data via conversational prompts, live on company POC list 
 > - Collaborated with Microsoft teams on Bing and Microsoft Admin Portal platforms  
 > - Led cost optimization initiatives resulting in significant cloud infrastructure savings  
