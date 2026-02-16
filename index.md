@@ -52,7 +52,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 **Key AI Initiatives:**
 
-* **Test Automation at Scale**: Led AI-powered Playwright test generation that increased code coverage from 35% to 82%+ across 20+ modules
+* **Test Automation at Scale**: Led AI-powered Playwright test generation that increased code coverage from 35% to 82%+ across 40+ modules
 * **Intelligent Data Visualization**: Built a production POC enabling natural language to chart generation with real-time drill-down capabilities  
 * **Context-Driven Problem Solving**: Use AI in agentic and chat modes to rapidly prototype solutions, analyze codebases, and validate architectural decisions
 
@@ -429,7 +429,7 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 
 Playwright + Claude/GPT-4 + Amazon Q
 
-Led a transformative test automation initiative for Client's debt collection platform, leveraging AI for context analysis and test case generation. Guided a 4-5 engineer team to deliver production-grade Playwright tests across 20+ modules.
+Led a transformative test automation initiative for Client's debt collection platform, leveraging AI for context analysis and test case generation. Guided a 4-5 engineer team to deliver production-grade Playwright tests across 40+ modules.
 
 **Tech Stack**: TypeScript, Playwright, Custom Docker Image, GitHub Actions
 
@@ -450,9 +450,9 @@ Led a transformative test automation initiative for Client's debt collection pla
 **Key Innovation**: Combined AI code generation with rigorous engineering review process, ensuring every generated test met production standards before merge.
 
 **Impact**:
-- 📈 Code coverage: **35% → 82%+**
-- ✅ **1500+ test cases** delivered in 2 months
-- 🚀 **20+ modules** fully covered
+- 📈 Code coverage: **35% → 81%+**
+- ✅ **2500+ test cases** delivered in 2 months
+- 🚀 **40+ modules** fully covered
 - ⚡ Ongoing e2e test expansion
 
 **Key Innovation**: Combined AI code generation with rigorous engineering review process, ensuring every generated test met production standards before merge.
