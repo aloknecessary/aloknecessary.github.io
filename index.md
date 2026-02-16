@@ -64,9 +64,9 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 * Architect and deliver **end-to-end systems** spanning frontend, backend, infrastructure, and integrations
 * Design **cloud-native architectures** with a focus on reliability, security, and cost optimization
-* Lead system design discussions, estimations, and architectural decision-making
-* Mentor engineers and collaborate closely with product, UX, and business stakeholders
-* Drive initiatives to reduce operational risk and technical debt
+* Lead **system design discussions**, estimations, and architectural decision-making
+* Mentor engineers and **collaborate** closely with product, UX, and business stakeholders
+* Drive initiatives to **reduce operational risk** and technical debt
 
 ---
 
@@ -75,9 +75,14 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ### **Architecture & Platforms**
 
-![Architecture](https://img.shields.io/badge/Cloud_Native-Architecture-blue?style=flat-square)
-![API Design](https://img.shields.io/badge/API-Design-green?style=flat-square)
-![Microservices](https://img.shields.io/badge/Microservices-Distributed_Systems-orange?style=flat-square)
+![Cloud Native](https://img.shields.io/badge/Cloud_Native-Architecture-0078D4?style=for-the-badge&logo=icloud&logoColor=white)
+![API Design](https://img.shields.io/badge/API-Design_Patterns-2ECC71?style=for-the-badge&logo=swagger&logoColor=white)
+![Microservices](https://img.shields.io/badge/Microservices-Distributed_Systems-FF6B6B?style=for-the-badge&logo=apachekafka&logoColor=white)
+![Auth](https://img.shields.io/badge/Auth-Best_Practices-FFD93D?style=for-the-badge&logo=auth0&logoColor=white)
+![Containers](https://img.shields.io/badge/Docker-Containers-326CE5?style=for-the-badge&logo=docker&logoColor=white)
+![K8s](https://img.shields.io/badge/K8s-Orchestration-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+
+
 
 * Scalable, cloud-native systems with clear domain boundaries
 * API design, integration patterns, and secure auth flows (OAuth, SSO, JWT)
@@ -104,9 +109,14 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ### **AI & Intelligent Systems**
 
-![AI](https://img.shields.io/badge/AI-Powered_Solutions-FF6B6B?style=flat-square)
-![LLM](https://img.shields.io/badge/LLM-Integration-4ECDC4?style=flat-square)
-![Automation](https://img.shields.io/badge/AI-Driven_Automation-3178C6?style=flat-square)
+![AI](https://img.shields.io/badge/AI-Powered_Solutions-FF6B6B?style=for-the-badge)
+![LLM](https://img.shields.io/badge/LLM-Integration-4ECDC4?style=for-the-badge)
+![Automation](https://img.shields.io/badge/AI-Driven_Automation-3178C6?style=for-the-badge)
+
+<!-- ![Claude](https://img.shields.io/badge/Claude-Anthropic-181717?style=for-the-badge&logo=anthropic&logoColor=white)
+![ChatGPT](https://img.shields.io/badge/ChatGPT-OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
+![Amazon Q](https://img.shields.io/badge/Amazon_Q-AWS-FF9900?style=for-the-badge&logo=amazon&logoColor=white) -->
+
 
 * AI-assisted software development with Claude, GPT-4, and Amazon Q
 * LLM API integration for production systems (OpenAI, Anthropic)
@@ -468,7 +478,7 @@ React 18 + OpenAI GPT-3.5 + Chart.js
 
 Built an intelligent Higher-Order Component (HOC) that wraps any React-compatible table, enabling users to generate interactive visualizations through natural language prompts. Features PII filtering, content moderation, and drill-down analytics.
 
-[![🚀 Try Live Demo](https://img.shields.io/badge/🚀_Try_Live_Demo-Launch_App-4CAF50?style=for-the-badge)](https://solution.byteridge.com/innovation/visualizer)
+[![🚀 Try Live Demo](https://img.shields.io/badge/🚀_Try_Live_Demo-Launch_App-4CAF50?style=flat-square)](https://solution.byteridge.com/innovation/visualizer)
 *Sign in with Gmail, LinkedIn, GitHub, Facebook, or Microsoft to explore the interactive demo*
 
 **Tech Stack**: React 18, Node.js, OpenAI GPT, Chart.js
@@ -515,7 +525,7 @@ System: [Drills down to show regional sales breakdown for Clothing]
 - 🏢 **Company showcase** - Featured on [Byteridge's innovation portal](https://byteridge.com/gen-ai-solutions/visualizer/)
 
 **Current Status**: 
-- 🌐 **Publicly accessible** at [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Try_It_Now-4CAF50?style=for-the-badge)](https://solution.byteridge.com/innovation/visualizer)
+- 🌐 **Publicly accessible** at [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Try_It_Now-4CAF50?style=flat-square)](https://solution.byteridge.com/innovation/visualizer)
 - 🔐 Social authentication (Gmail, LinkedIn, GitHub, Facebook, Microsoft)
 - 📊 Demo datasets provided for immediate experimentation
 - 🎯 Available for client demonstrations and POC evaluations
