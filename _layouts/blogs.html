@@ -2,6 +2,48 @@
 layout: default
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/blog-cards.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/blogs.css' | relative_url }}" />
 
-{{ content }}
+<nav class="nav-bar">
+  <a href="{{ '/' | relative_url }}">Home</a>
+</nav>
+
+<div class="blogs-header">
+  <h2>The Technical Compendium</h2>
+  <p class="blogs-subtitle">
+    Insights on architecture, cloud-native deployments, and modern DevOps
+  </p>
+</div>
+
+<!-- Skeleton Loader -->
+<div id="blog-loader" class="blog-skeleton-grid">
+  {% for i in (1..4) %}
+  <div class="blog-skeleton-card">
+    <div class="skeleton skeleton-cover"></div>
+    <div class="skeleton skeleton-title"></div>
+    <div class="skeleton skeleton-meta"></div>
+    <div class="skeleton skeleton-line"></div>
+    <div><br /><br /></div>
+    <div class="skeleton skeleton-line"></div>
+    <div class="skeleton skeleton-line short"></div>
+    <div class="skeleton skeleton-line"></div>
+    <div class="skeleton skeleton-line short"></div>
+    <div><br /></div>
+    <div class="skeleton skeleton-meta"></div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Blog List -->
+<div id="blog-list" class="blog-list hidden">
+  {{ content }}
+</div>
+
+<script>
+  window.addEventListener("load", function () {
+    setTimeout(() => {
+      document.getElementById("blog-loader").style.display = "none";
+      document.getElementById("blog-list").classList.remove("hidden");
+    }, 450);
+  });
+</script>

@@ -4,15 +4,6 @@ title: Blogs
 hide_header: false
 ---
 
-<nav class="nav-bar">
-  <a href="{{ '/' | relative_url }}">Home</a>
-</nav>
-
-<div class="blogs-header">
-  <h2>The Technical Compendium</h2>
-  <p class="blogs-subtitle">Insights on architecture, cloud-native deployments, and modern DevOps</p>
-</div>
-
 <div class="blog-cards-grid">
   {% assign blogs = site.blogs | sort: "date" | reverse %}
   {% for post in blogs %}

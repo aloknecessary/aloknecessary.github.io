@@ -1,3 +1,87 @@
+.blog-skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  padding: 30px 0 60px;
+}
+
+.blog-skeleton-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Skeleton Base */
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #e5e7eb;
+  border-radius: 6px;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150px;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(300px);
+  }
+}
+
+/* Individual Blocks */
+
+.skeleton-cover {
+  height: 160px; /* match your real cover image */
+  margin-bottom: 18px;
+  border-radius: 10px;
+}
+
+.skeleton-title {
+  height: 20px;
+  width: 70%;
+  margin-bottom: 12px;
+}
+
+.skeleton-meta {
+  height: 14px;
+  width: 40%;
+  margin-bottom: 16px;
+}
+
+.skeleton-line {
+  height: 14px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.skeleton-line.short {
+  width: 75%;
+}
+
+@media (max-width: 768px) {
+  .blog-skeleton-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
 /* ========================================
    Blog Cards Layout Styles
    ======================================== */
