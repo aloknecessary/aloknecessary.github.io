@@ -5,7 +5,7 @@ description: "Essential guide to designing multi-tenant SaaS systems with practi
 keywords: "multi-tenant architecture, SaaS isolation models, database partitioning, row-level security, schema isolation, blast radius, noisy neighbor, tenant isolation, cloud architecture, scalability patterns"
 date: 2026-02-11
 last_modified_at: 2026-02-11
-author: Alok
+author: Alok Ranjan
 categories:
   - architecture
   - system-design
