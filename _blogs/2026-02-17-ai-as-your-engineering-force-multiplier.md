@@ -1,6 +1,6 @@
 ---
 title: "AI as Your Engineering Force Multiplier"
-date: 2026-02-15 10:00:00 +0530
+date: 2026-02-17 10:00:00 +0530
 author: Alok Ranjan
 categories: [DevOps, AI, Platform Engineering]
 tags: [ai, developer-productivity, kubernetes, terraform, ci-cd, github-actions, infrastructure-as-code, automation, debugging, documentation, platform-engineering]
