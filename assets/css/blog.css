@@ -221,3 +221,62 @@ h2.description::before {
 .border {
   border-top: 1px solid var(--border);
 }
+/* Copy code btn css */
+
+.code-block-wrapper {
+  position: relative;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(4px);
+
+  border-radius: 8px;
+  cursor: pointer;
+
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.code-block-wrapper:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  background: rgba(255,255,255,1);
+  transform: translateY(-1px);
+}
+
+.copy-btn svg {
+  color: #555;
+}
+
+.copy-btn.copied {
+  border-color: #22c55e;
+}
+
+.copy-btn.copied svg {
+  color: #22c55e;
+}
+
+@media (prefers-color-scheme: dark) {
+  .copy-btn {
+    background: rgba(30,30,30,0.9);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .copy-btn svg {
+    color: #ccc;
+  }
+}
