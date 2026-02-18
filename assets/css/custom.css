@@ -188,7 +188,7 @@ div[style*="margin: 2rem 0"] pre {
   }
 }
 
-@media (max-width: 912px) {
+@media (max-width: 1020px) {
   h2 {
     margin-left: -16px;
   }

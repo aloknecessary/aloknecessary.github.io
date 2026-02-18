@@ -1,93 +1,106 @@
 .share-bar {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-top: 14px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
 
-  @media (max-width: 768px) {
-    .share-bar {
-      justify-content: flex-start;
-      gap: 12px;
-    }
+@media (max-width: 768px) {
+  .share-bar {
+    justify-content: flex-start;
+    gap: 12px;
   }
+}
 
-  .share-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    color: #fff;
-  }
+/* ============================================================
+   SHARE ICON BASE
+   ============================================================ */
 
-  .share-icon svg {
-    width: 20px;
-    height: 20px;
-  }
+.share-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.2s ease;
+  color: #fff;
+}
 
-  .bottom-share-container{
-    border-bottom: 1px solid darkgray;
-    padding-bottom: 24px;
-    padding-top: 6px;
-  }
+.share-icon svg {
+  width: 20px;
+  height: 20px;
+}
 
-  /* Native Share */
-  #nativeShare {
-    background: #111827; /* neutral dark */
-  }
+/* ============================================================
+   CONTAINER
+   ============================================================ */
 
-  /* LinkedIn */
-  .share-bar a[aria-label="Share on LinkedIn"] {
-    background: #0a66c2;
-  }
+.bottom-share-container {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 24px;
+  padding-top: 6px;
+}
 
-  /* Facebook */
-  .share-bar a[aria-label="Share on Facebook"] {
-    background: #1877f2;
-  }
+/* ============================================================
+   PLATFORM COLORS (Keep Brand Colors)
+   ============================================================ */
 
-  /* X */
-  .share-bar a[aria-label="Share on X"] {
-    background: #000000;
-  }
+/* Native Share */
+#nativeShare {
+  background: var(--secondary);
+}
 
-  /* Copy Link */
-  #copyLink {
-    background: #4b5563;
-  }
+/* LinkedIn */
+.share-bar a[aria-label="Share on LinkedIn"] {
+  background: #0a66c2;
+}
 
-  .share-icon:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-  }
+/* Facebook */
+.share-bar a[aria-label="Share on Facebook"] {
+  background: #1877f2;
+}
 
-  .share-icon.copied {
-    background: #16a34a !important;
-  }
+/* X */
+.share-bar a[aria-label="Share on X"] {
+  background: #000000;
+}
 
-  .share-icon:active {
-    transform: scale(0.95);
-  }
+/* Copy Link */
+#copyLink {
+  background: var(--muted);
+}
 
-  .share-icon.email {
-    background-color: #6b7280; /* neutral gray */
-    border-radius: 50%;
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-  }
+/* Email */
+.share-icon.email {
+  background: var(--muted);
+}
 
-  .share-icon.email:hover {
-    background-color: #4b5563; /* darker gray */
-    transform: translateY(-2px);
-  }
+/* ============================================================
+   STATES
+   ============================================================ */
+
+.share-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.share-icon:active {
+  transform: scale(0.95);
+}
+
+/* Copied state */
+.share-icon.copied {
+  background: #16a34a !important; /* success green */
+}
+
+/* Optional: slightly darker hover for neutral buttons */
+#copyLink:hover,
+.share-icon.email:hover,
+#nativeShare:hover {
+  filter: brightness(0.9);
+}

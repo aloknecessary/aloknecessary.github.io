@@ -214,7 +214,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ## 📝 Writing & Knowledge Sharing
 
-<div style="background: #f6f8fa; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+<div class="soft-block">
 
 <p>I regularly write about:</p>
 <ul>

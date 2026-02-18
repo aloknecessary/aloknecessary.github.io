@@ -162,6 +162,14 @@
   height: 68%;
 }
 
+.soft-block {
+  background: var(--bg-soft);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border: 1px solid var(--border);
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
