@@ -7,10 +7,20 @@ hide_header: true
 <div class="page-banner">
   <img src="{{ '/assets/images/header.png' | relative_url }}" alt="Header">
   <div class="theme-controls">
-    <div class="theme-segmented" role="group" aria-label="Theme selection">
-      <button type="button" data-theme-option="system">System</button>
-      <button type="button" data-theme-option="light">Light</button>
-      <button type="button" data-theme-option="dark">Dark</button>
+    <div class="theme-dropdown">
+      <button 
+        class="theme-trigger" 
+        aria-haspopup="true" 
+        aria-expanded="false"
+        aria-label="Change theme"
+      >
+        <span class="theme-icon">🖥</span>
+      </button>
+      <div class="theme-panel" role="menu">
+        <button data-theme-option="system">🖥 System</button>
+        <button data-theme-option="light">☀ Light</button>
+        <button data-theme-option="dark">🌙 Dark</button>
+      </div>
     </div>
   </div>
 
