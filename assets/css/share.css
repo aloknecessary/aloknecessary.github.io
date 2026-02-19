@@ -51,7 +51,7 @@
    ============================================================ */
 
 /* Native Share */
-#nativeShare {
+.mobile-only {
   background: var(--secondary);
 }
 
@@ -101,6 +101,10 @@
 /* Optional: slightly darker hover for neutral buttons */
 #copyLink:hover,
 .share-icon.email:hover,
-#nativeShare:hover {
+.mobile-only:hover {
   filter: brightness(0.9);
+}
+
+.desktop-hidden {
+  display: none;
 }

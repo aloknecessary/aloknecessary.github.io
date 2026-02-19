@@ -78,15 +78,12 @@
   {% capture email_body %}
   Hi,
 
-  I thought you might find this interesting:
+  I thought you might find this blog interesting:
 
   {{ page.title }}
-  {% if reading_time %}
-  Estimated reading time: {{ reading_time }} minute{% if reading_time > 1 %}s{% endif %}
+  Read here:  {{ tracked_url }}
+  {% if reading_time %} Estimated reading time: {{ reading_time }} minute{% if reading_time > 1 %}s{% endif %}
   {% endif %}
-
-  Read here:
-  {{ tracked_url }}
 
   ––––––––––––––––––––
 
@@ -114,7 +111,7 @@
 
 
   <!-- Copy Link -->
-  <button id="copyLink" class="share-icon" aria-label="Copy link">
+  <button id="copyLink" class="share-icon copy-link" aria-label="Copy link">
     <svg viewBox="0 0 24 24">
       <path
         fill="currentColor"
@@ -126,29 +123,38 @@
 
 <script>
   (function () {
-    const nativeBtn = document.getElementById("nativeShare");
-    const copyBtn = document.getElementById("copyLink");
+    const nativeBtns = document.getElementsByClassName("mobile-only");
+    const copyBtns = document.getElementsByClassName("copy-link");
 
-    // Hide native share on desktop
-    if (window.innerWidth > 768 || !navigator.share) {
-      nativeBtn.style.display = "none";
-    }
+    const isDesktop = window.innerWidth > 768;
+    const supportsShare = !!navigator.share;
 
-    nativeBtn?.addEventListener("click", async () => {
-      try {
-        await navigator.share({
-          title: document.title,
-          url: window.location.href,
+    // Hide native share buttons when not supported or desktop
+    Array.from(nativeBtns).forEach(btn => {
+      if (isDesktop || !supportsShare) {
+        btn.classList.add("desktop-hidden");
+      } else {
+        btn.addEventListener("click", async () => {
+          try {
+            await navigator.share({
+              title: document.title,
+              url: window.location.href,
+            });
+          } catch (_) {}
         });
-      } catch (_) {}
+      }
     });
 
-    copyBtn?.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(window.location.href);
-        copyBtn.classList.add("copied");
-        setTimeout(() => copyBtn.classList.remove("copied"), 1500);
-      } catch (_) {}
+    // Copy buttons
+    Array.from(copyBtns).forEach(btn => {
+      btn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          btn.classList.add("copied");
+          setTimeout(() => btn.classList.remove("copied"), 1500);
+        } catch (_) {}
+      });
     });
   })();
 </script>
+

@@ -231,7 +231,7 @@
 
 /* Example Semantic Tag Variants */
 
-.tag--kubernetes { --tag-bg: var(--tag-k8s-bg); --tag-color: var(--tag-k8s-color); }
+/* .tag--kubernetes { --tag-bg: var(--tag-k8s-bg); --tag-color: var(--tag-k8s-color); }
 .tag--docker     { --tag-bg: var(--tag-docker-bg); --tag-color: var(--tag-docker-color); }
 .tag--azure      { --tag-bg: var(--tag-azure-bg); --tag-color: var(--tag-azure-color); }
 .tag--aws        { --tag-bg: var(--tag-aws-bg); --tag-color: var(--tag-aws-color); }
@@ -241,7 +241,84 @@
 .tag--architecture { --tag-bg: var(--tag-architecture-bg); --tag-color: var(--tag-architecture-color); }
 .tag--security   { --tag-bg: var(--tag-security-bg); --tag-color: var(--tag-security-color); }
 .tag--performance { --tag-bg: var(--tag-performance-bg); --tag-color: var(--tag-performance-color); }
-.tag--ai         { --tag-bg: var(--tag-ai-bg); --tag-color: var(--tag-ai-color); }
+.tag--ai         { --tag-bg: var(--tag-ai-bg); --tag-color: var(--tag-ai-color); } */
+
+/* Tag Color Coding */
+.card-tags .tag[data-tag*="kubernetes"],
+.card-tags .tag[data-tag*="k8s"] {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.card-tags .tag[data-tag*="docker"] {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.card-tags .tag[data-tag*="azure"],
+.card-tags .tag[data-tag*="cloud"] {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+.card-tags .tag[data-tag*="terraform"],
+.card-tags .tag[data-tag*="aws"] {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.card-tags .tag[data-tag*="devops"],
+.card-tags .tag[data-tag*="cicd"],
+.card-tags .tag[data-tag*="github-actions"],
+.card-tags .tag[data-tag*="ci-cd"] {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.card-tags .tag[data-tag*="react"],
+.card-tags .tag[data-tag*="progressive-web-apps"],
+.card-tags .tag[data-tag*="node"],
+.card-tags .tag[data-tag*="javascript"] {
+  background: #fef3c7;
+  color: #78350f;
+}
+
+.card-tags .tag[data-tag*="dotnet"],
+.card-tags .tag[data-tag*="csharp"],
+.card-tags .tag[data-tag*="net"] {
+  background: #ddd6fe;
+  color: #5b21b6;
+}
+
+.card-tags .tag[data-tag*="architecture"],
+.card-tags .tag[data-tag*="platform"],
+.card-tags .tag[data-tag*="design"] {
+  background: #fce7f3;
+  color: #9f1239;
+}
+
+.card-tags .tag[data-tag*="scalability"],
+.card-tags .tag[data-tag*="security"] {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.card-tags .tag[data-tag*="modernisation"],
+.card-tags .tag[data-tag*="productivity"] {
+  background: #4fc2cc;
+  color: #ffffff;
+}
+
+.card-tags .tag[data-tag*="performance"],
+.card-tags .tag[data-tag*="optimization"] {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.card-tags .tag[data-tag*="ai"],
+.card-tags .tag[data-tag*="automation"] {
+  background: #e924b8;
+  color: #ffffff;
+}
 
 /* Read More Link */
 

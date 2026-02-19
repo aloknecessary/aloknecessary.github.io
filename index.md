@@ -6,9 +6,17 @@ hide_header: true
 
 <div class="page-banner">
   <img src="{{ '/assets/images/header.png' | relative_url }}" alt="Header">
+  <div class="theme-controls">
+    <div class="theme-segmented" role="group" aria-label="Theme selection">
+      <button type="button" data-theme-option="system">System</button>
+      <button type="button" data-theme-option="light">Light</button>
+      <button type="button" data-theme-option="dark">Dark</button>
+    </div>
+  </div>
+
 </div>
 
-## &nbsp;&nbsp;Hi, I am Alok
+<h2 style="margin-top:10px">&nbsp;&nbsp;Hi, I am Alok</h2>
 
 <p align="center" style="margin: 2rem 0;">
   <a href="{{ '/blogs' | relative_url }}">
