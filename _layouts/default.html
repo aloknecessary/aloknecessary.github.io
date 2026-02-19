@@ -84,35 +84,79 @@
         // Optional: expose setter
         window.setTheme = setTheme;
       })();
+    </script>
 
-      // for the segmented buttons
-      function initSegmentedControl() {
-        const buttons = document.querySelectorAll("[data-theme-option]");
-        if (!buttons.length) return;
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".theme-dropdown").forEach(dropdown => {
 
-        const current = localStorage.getItem("theme") || "system";
+          const trigger = dropdown.querySelector(".theme-trigger");
+          const buttons = dropdown.querySelectorAll("[data-theme-option]");
+          const icon = dropdown.querySelector(".theme-icon");
 
-        buttons.forEach(btn => {
-          if (btn.dataset.themeOption === current) {
-            btn.classList.add("active");
+          if (!trigger || !buttons.length || !icon) return;
+
+          function getCurrentTheme() {
+            return localStorage.getItem("theme") || "system";
           }
 
-          btn.addEventListener("click", () => {
-            const selected = btn.dataset.themeOption;
+          function updateUI() {
+            const current = getCurrentTheme();
+            buttons.forEach(btn => {
+              btn.classList.toggle(
+                "active",
+                btn.dataset.themeOption === current
+              );
+            });
 
-            setTheme(selected);
+            // Update icon
+            if (current === "light") icon.textContent = "☀";
+            else if (current === "dark") icon.textContent = "🌙";
+            else icon.textContent = "🖥";
+          }
 
-            buttons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
+          updateUI();
+
+          // Toggle dropdown
+          trigger.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle("open");
+            trigger.setAttribute(
+              "aria-expanded",
+              dropdown.classList.contains("open")
+            );
+          });
+
+          // Theme selection
+          buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+              const selected = btn.dataset.themeOption;
+
+              if (typeof setTheme === "function") {
+                setTheme(selected);
+              } else {
+                document.documentElement.setAttribute("data-theme", selected);
+                localStorage.setItem("theme", selected);
+              }
+
+              updateUI();
+              dropdown.classList.remove("open");
+            });
+          });
+
+          // Close on outside click
+          document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove("open");
+              trigger.setAttribute("aria-expanded", false);
+            }
           });
         });
-      }
-      document.addEventListener("DOMContentLoaded", initSegmentedControl);
-
+      });
     </script>
 
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-
+    
   </head>
   <body>
     <!-- <header>
@@ -132,10 +176,21 @@
         with business outcomes.
       </p>
       <div class="theme-controls">
-        <div class="theme-segmented" role="group" aria-label="Theme selection">
-          <button type="button" data-theme-option="system">System</button>
-          <button type="button" data-theme-option="light">Light</button>
-          <button type="button" data-theme-option="dark">Dark</button>
+        <div class="theme-dropdown">
+          <button 
+            class="theme-trigger" 
+            aria-haspopup="true" 
+            aria-expanded="false"
+            aria-label="Change theme"
+          >
+            <span class="theme-icon">🖥</span>
+          </button>
+
+          <div class="theme-panel" role="menu">
+            <button data-theme-option="system">🖥 System</button>
+            <button data-theme-option="light">☀ Light</button>
+            <button data-theme-option="dark">🌙 Dark</button>
+          </div>
         </div>
       </div>
 

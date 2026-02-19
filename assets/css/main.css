@@ -134,44 +134,86 @@ body {
 .theme-controls {
   display: flex;
   justify-content: flex-end;
+  margin-top: -32px;
 }
-.theme-segmented {
-  display: inline-flex;
+/* Wrapper */
+.theme-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Trigger button */
+.theme-trigger {
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--bg-soft);
-  padding: 4px;
-}
+  color: var(--text-primary);
 
-.theme-segmented button {
-  appearance: none;
-  border: none;
-  background: transparent;
-  color: var(--text-secondary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 0.45rem 0.9rem;
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.theme-segmented button:hover {
-  color: var(--text-primary);
+.theme-trigger:hover {
+  border-color: var(--primary);
 }
 
-.theme-segmented button.active {
+/* Floating panel */
+.theme-panel {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   background: var(--bg-card);
-  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 6px;
+  min-width: 140px;
   box-shadow: var(--shadow-soft);
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  z-index: 10;
 }
 
-.theme-segmented button:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
+.theme-dropdown.open .theme-panel {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
+
+.theme-panel button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  text-align: left;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-panel button:hover {
+  background: var(--bg-soft);
+  color: var(--text-primary);
+}
+
+.theme-panel button.active {
+  background: var(--primary);
+  color: #fff;
+}
+
 
 /* ============================================================
    LAYOUT
@@ -436,9 +478,7 @@ tr:nth-child(even) {
   .footer .mobile-hidden {
     display: none;
   }
-  
   .theme-controls {
-    border-top: 1px solid var(--border);
-    padding-top: 14px;
+    margin-top: -16px;
   }
 }
