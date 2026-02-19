@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,12 +12,151 @@
     {% include head.html %}
     {% seo %}
 
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-    <link rel="stylesheet" href="{{ '/assets/css/share.css' | relative_url }}">
-
     {% if jekyll.environment == 'production' and site.google_analytics %}
       {% include google-analytics.html %}
     {% endif %}
+
+    <script>
+      (function () {
+        const THEME_KEY = "theme";
+        const root = document.documentElement;
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+        function getSystemTheme() {
+          return mediaQuery.matches ? "dark" : "light";
+        }
+
+        function applyTheme(theme) {
+          root.setAttribute("data-theme", theme);
+        }
+
+        function getStoredTheme() {
+          return localStorage.getItem(THEME_KEY) || "system";
+        }
+
+        function initTheme() {
+          const stored = getStoredTheme();
+
+          if (stored === "system") {
+            applyTheme(getSystemTheme());
+          } else {
+            applyTheme(stored);
+          }
+        }
+
+        function setTheme(theme) {
+          localStorage.setItem(THEME_KEY, theme);
+
+          if (theme === "system") {
+            applyTheme(getSystemTheme());
+          } else {
+            applyTheme(theme);
+          }
+        }
+
+        function handleSystemChange(e) {
+          if (getStoredTheme() === "system") {
+            applyTheme(e.matches ? "dark" : "light");
+          }
+        }
+
+        function initDropdown() {
+          const select = document.getElementById("theme-select");
+          if (!select) return;
+
+          const stored = getStoredTheme();
+          select.value = stored;
+
+          select.addEventListener("change", (e) => {
+            setTheme(e.target.value);
+          });
+        }
+
+        // Initialize immediately
+        initTheme();
+
+        // Listen for OS changes
+        mediaQuery.addEventListener("change", handleSystemChange);
+
+        // Initialize dropdown after DOM ready
+        document.addEventListener("DOMContentLoaded", initDropdown);
+
+        // Optional: expose setter
+        window.setTheme = setTheme;
+      })();
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".theme-dropdown").forEach(dropdown => {
+
+          const trigger = dropdown.querySelector(".theme-trigger");
+          const buttons = dropdown.querySelectorAll("[data-theme-option]");
+          const icon = dropdown.querySelector(".theme-icon");
+
+          if (!trigger || !buttons.length || !icon) return;
+
+          function getCurrentTheme() {
+            return localStorage.getItem("theme") || "system";
+          }
+
+          function updateUI() {
+            const current = getCurrentTheme();
+            buttons.forEach(btn => {
+              btn.classList.toggle(
+                "active",
+                btn.dataset.themeOption === current
+              );
+            });
+
+            // Update icon
+            if (current === "light") icon.textContent = "☀";
+            else if (current === "dark") icon.textContent = "🌙";
+            else icon.textContent = "🖥";
+          }
+
+          updateUI();
+
+          // Toggle dropdown
+          trigger.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle("open");
+            trigger.setAttribute(
+              "aria-expanded",
+              dropdown.classList.contains("open")
+            );
+          });
+
+          // Theme selection
+          buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+              const selected = btn.dataset.themeOption;
+
+              if (typeof setTheme === "function") {
+                setTheme(selected);
+              } else {
+                document.documentElement.setAttribute("data-theme", selected);
+                localStorage.setItem("theme", selected);
+              }
+
+              updateUI();
+              dropdown.classList.remove("open");
+            });
+          });
+
+          // Close on outside click
+          document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove("open");
+              trigger.setAttribute("aria-expanded", false);
+            }
+          });
+        });
+      });
+    </script>
+
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+    
   </head>
   <body>
     <!-- <header>
@@ -36,6 +175,25 @@
         architectures, and pragmatic engineering decisions that align technology
         with business outcomes.
       </p>
+      <div class="theme-controls">
+        <div class="theme-dropdown">
+          <button 
+            class="theme-trigger" 
+            aria-haspopup="true" 
+            aria-expanded="false"
+            aria-label="Change theme"
+          >
+            <span class="theme-icon">🖥</span>
+          </button>
+
+          <div class="theme-panel" role="menu">
+            <button data-theme-option="system">🖥 System</button>
+            <button data-theme-option="light">☀ Light</button>
+            <button data-theme-option="dark">🌙 Dark</button>
+          </div>
+        </div>
+      </div>
+
     </header>
 
     {% endunless %}

@@ -1,73 +1,84 @@
 .tags-page {
-    margin: 0 auto;
-    padding: 1.5rem 1rem;
-  }
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
 
-  .tags-header {
-    margin-top: 24px;
-    margin-bottom: 0.75rem;
-  }
-  .tags-header h2::before{
-    display: none;
-  }
+.tags-header {
+  margin-top: 24px;
+  margin-bottom: 0.75rem;
+}
 
-  .tags-description {
-    color: #666;
-    margin-top: 0.5rem;
-  }
+.tags-header h2::before {
+  display: none;
+}
 
-  /* Tags list */
-  .tags-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
+/* Description */
+.tags-description {
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
 
-  .tag-block {
-    border-top: 1px solid #eaeaea;
-    /* padding-top: 1.5rem; */
-  }
+/* Tags list */
+.tags-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
 
-  .tag-posts {
-    list-style: none;
-    padding-left: 0;
-  }
+.tag-block {
+  border-top: 1px solid var(--border);
+}
 
-  .tag-posts li {
-    margin-bottom: 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-  }
+.tag-posts {
+  list-style: none;
+  padding-left: 0;
+}
 
-  .tag-posts a {
-    text-decoration: none;
-  }
+.tag-posts li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
 
-  .post-date {
-    font-size: 0.85rem;
-    color: #888;
-    white-space: nowrap;
-  }
+.tag-posts a {
+  text-decoration: none;
+  color: var(--primary);
+}
 
-  .tag-block.active > h2::before {
-    display: none !important;
-  }
+.tag-posts a:hover {
+  text-decoration: underline;
+}
 
-  .tag-heading {
-    scroll-margin-top: 80px;
-    transition: background-color 0.3s ease;
-    padding: 4px 6px;
-    border-radius: 6px;
-  }
+/* Post date */
+.post-date {
+  font-size: 0.85rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
 
-  .tag-block.active > .tag-heading {
-    background-color: #eef2ff;
-    color: #1e3a8a;
-    border-left: 4px solid #6366f1;
-    padding-left: 20px;
-    margin-left: -14px;
-  }
-  #backButton {
-    cursor: pointer;
-  }
+/* Active tag block */
+.tag-block.active > h2::before {
+  display: none !important;
+}
+
+.tag-heading {
+  scroll-margin-top: 80px;
+  transition: background-color 0.3s ease;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+/* Active state styling */
+.tag-block.active > .tag-heading {
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  border-left: 4px solid var(--primary);
+  padding-left: 20px;
+  margin-left: -14px;
+}
+
+/* Back button */
+#backButton {
+  cursor: pointer;
+}

@@ -2,6 +2,8 @@
 layout: default
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/share.css' | relative_url }}">
+
 <nav  class="nav-bar">
   <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
   <span class="nav-separator">|</span>
@@ -41,10 +43,9 @@ layout: default
 
   <hr />
 
-<div class="bottom-share-container">
-  {% include share.html %}
-</div>
-
+  <div class="bottom-share-container">
+    {% include share.html %}
+  </div>
 
   <nav class="post-navigation">
     {% if page.previous %}
