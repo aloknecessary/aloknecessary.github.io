@@ -289,13 +289,13 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
     <div class="project-stats">
       <div class="stat-item">
         <span class="stat-icon">📊</span>
-        <span class="stat-value">90+</span>
-        <span class="stat-label">Weekly Downloads</span>
+        <span class="stat-value"><img src="https://img.shields.io/npm/dm/react-progress-stepper-ts?logo=npm&color=cb3837&style=flat-square" alt="npm downloads" /></span>
+        <span class="stat-label">Download stats</span>
       </div>
       <div class="stat-item">
         <span class="stat-icon">📦</span>
-        <span class="stat-value">v2.1.0</span>
-        <span class="stat-label">Latest Version</span>
+        <span class="stat-value"><img src="https://img.shields.io/npm/v/react-progress-stepper-ts?style=flat-square&logo=npm&color=cb3837" alt="npm version" /></span>
+        <span class="stat-label">Version info</span>
       </div>
     </div>
     <div class="project-links">
@@ -334,8 +334,8 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
       </div>
       <div class="stat-item">
         <span class="stat-icon">🚀</span>
-        <span class="stat-value">Production</span>
-        <span class="stat-label">Ready to Use</span>
+        <span class="stat-value"><img src="https://img.shields.io/docker/v/aloknecessary/playwright-az-cli?style=flat-square&logo=docker&color=2496ED" alt="Docker version" /></span>
+        <span class="stat-label"><img src="https://img.shields.io/docker/pulls/aloknecessary/playwright-az-cli?style=flat-square&logo=docker&color=blue" alt="Docker pulls" /></span>
       </div>
     </div>
     <div class="project-links">
@@ -364,7 +364,7 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
       <span class="tag">Docker</span>
       <span class="tag">.NET 9</span>
       <span class="tag">SonarQube</span>
-      <span class="tag">Code Quality</span>
+      <span class="tag">Optimized</span>
     </div>
     <div class="project-stats">
       <div class="stat-item">
@@ -374,8 +374,8 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
       </div>
       <div class="stat-item">
         <span class="stat-icon">⚡</span>
-        <span class="stat-value">Optimized</span>
-        <span class="stat-label">Fast Builds</span>
+        <span class="stat-value"><img src="https://img.shields.io/docker/v/aloknecessary/sonar-dotnet-v9.0?style=flat-square&logo=docker&color=2496ED" alt="Docker version" /></span>
+        <span class="stat-label"><img src="https://img.shields.io/docker/pulls/aloknecessary/sonar-dotnet-v9.0?style=flat-square&logo=docker&color=blue" alt="Docker pulls" /></span>
       </div>
     </div>
     <div class="project-links">
@@ -398,13 +398,13 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
       </div>
     </div>
     <p class="project-description">
-      Production-ready, multi-architecture Docker image for SonarQube analysis on .NET 10 projects. Preloaded with all required tooling including .NET SDK, SonarScanner, and Java runtime to eliminate repetitive setup in CI pipelines.
+      Production-ready, multi-architecture Docker image for SonarQube analysis on .NET 10 projects. Preloaded with all required tooling including .NET SDK, SonarScanner to eliminate repetitive setup in CI pipelines.
     </p>
     <div class="project-tags">
       <span class="tag">Docker</span>
       <span class="tag">.NET 10</span>
       <span class="tag">SonarQube</span>
-      <span class="tag">Code Quality</span>
+      <span class="tag">Optimized</span>
     </div>
     <div class="project-stats">
       <div class="stat-item">
@@ -414,8 +414,8 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
       </div>
       <div class="stat-item">
         <span class="stat-icon">⚡</span>
-        <span class="stat-value">Optimized</span>
-        <span class="stat-label">Fast Builds</span>
+        <span class="stat-value"><img src="https://img.shields.io/docker/v/aloknecessary/sonar-dotnet-v10.0?style=flat-square&logo=docker&color=2496ED" alt="Docker version" /></span>
+        <span class="stat-label"><img src="https://img.shields.io/docker/pulls/aloknecessary/sonar-dotnet-v10.0?style=flat-square&logo=docker&color=blue" alt="Docker pulls" /></span>
       </div>
     </div>
     <div class="project-links">
