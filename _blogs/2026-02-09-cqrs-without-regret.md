@@ -2,9 +2,10 @@
 title: "CQRS Without Regret: Where It Works, Where It Breaks, and How to Evolve Safely"
 date: 2026-02-09
 last_modified_at: 2026-02-11
-author: Alok 
+author: Alok Ranjan Daftuar
 description: "A pragmatic, production-focused deep dive into CQRS—covering read/write divergence risks, operational complexity, and safe migration strategies from CRUD systems."
-excerpt: A pragmatic, production-focused deep dive into CQRS—covering divergence risks, operational complexity, and safe migration strategies from CRUD systems.
+excerpt: "A pragmatic, production-focused deep dive into CQRS—covering divergence risks, operational complexity, and safe migration strategies from CRUD systems."
+keywords: "CQRS pattern, command query responsibility segregation, distributed systems, event sourcing, microservices architecture, system design patterns"
 categories:
   - architecture
   - system-design

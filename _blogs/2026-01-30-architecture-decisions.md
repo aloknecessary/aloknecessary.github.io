@@ -1,5 +1,14 @@
 ---
 title: "Architecture Decisions That Actually Matter in Production"
+date: 2026-01-30
+last_modified_at: 2026-01-30
+author: Alok Ranjan Daftuar
+description: "Real-world architectural decisions that impact production systems—from choosing simplicity over premature scalability to treating cost as an architectural constraint."
+excerpt: "Most systems don't fail because of bad code—they fail because of poor architectural decisions. Learn the architecture decisions that actually matter once your system starts serving real users."
+keywords: "architecture, cloud, system design, kubernetes, optimization, scalability, production architecture, cost optimization, data modeling"
+categories:
+  - architecture
+  - system-design
 tags: [architecture, cloud, system-design, kubernetes, optimization]
 ---
 

@@ -1,6 +1,14 @@
 ---
 title: "5 Effective Ways to Reduce Technical Debt Through Modernisation"
+date: 2026-01-28
+last_modified_at: 2026-01-28
+author: Alok Ranjan Daftuar
 description: "Practical approaches to systematically lower technical debt by modernising systems, infrastructure, and development practices."
+excerpt: "Technical debt can silently slow teams down. Learn five practical strategies to identify, prioritize, and reduce technical debt through modernization of systems, infrastructure, and development practices."
+keywords: "technical debt, software architecture, modernization, legacy modernization, application modernization, refactoring, infrastructure modernization, code quality"
+categories:
+  - architecture
+  - system-design
 tags: ["technical-debt", "software-architecture", "modernisation", "legacy-modernisation", "application-modernisation"]
 ---
 

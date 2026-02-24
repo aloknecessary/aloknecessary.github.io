@@ -5,7 +5,7 @@ excerpt: "AI is often discussed as a force multiplier for software development. 
 keywords: "architecture, productivity, cloud, system-design, ai"
 date: 2026-01-30
 last_modified_at: 2026-02-16
-author: Alok
+author: Alok Ranjan Daftuar
 categories:
   - architecture
   - system-design

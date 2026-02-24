@@ -1,0 +1,18 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title }}",
+  "description": "{{ page.description }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author | default: site.author }}"
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  {% if page.image %}"image": "{{ page.image | absolute_url }}",{% endif %}
+  "url": "{{ page.url | absolute_url }}",
+  "keywords": "{{ page.keywords }}",
+  "articleSection": "{{ page.categories | join: ', ' }}"
+}
+</script>
