@@ -258,5 +258,3 @@ Docker Compose and Kubernetes represent two fundamentally different system desig
 Choosing between them is not about popularity—it’s about **architectural intent**. The right decision aligns tooling with the **actual complexity of the problem you are solving**, not the complexity you hope to have someday.
 
 Strong architecture is not about using powerful tools—it’s about using the *right* tools at the *right* time.
-
----

@@ -4,7 +4,7 @@ layout: default
 
 {% include schema-blog.html %}
 
-<link rel="stylesheet" href="{{ '/assets/css/share.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}">
 
 <nav  class="nav-bar">
   <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
@@ -43,11 +43,13 @@ layout: default
   </div>
   {% endif %}
 
-  <hr />
+  <hr class="border"/>
 
   <div class="bottom-share-container">
     {% include share.html %}
   </div>
+
+  {% include related-posts.html %}
 
   <nav class="post-navigation">
     {% if page.previous %}

@@ -106,6 +106,3 @@ Technical debt isn’t just a developer problem—it’s a business issue that a
 
 Modernisation isn’t a one-time task—it’s a strategic journey that combines architectural clarity, targeted investment, continuous improvement, and adoption of thoughtful tooling and practices.
 
----
-
-
