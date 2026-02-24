@@ -23,7 +23,6 @@ hide_header: true
       </div>
     </div>
   </div>
-
 </div>
 
 <h2 style="margin-top:10px">&nbsp;&nbsp;Hi, I am Alok</h2>
@@ -38,7 +37,6 @@ hide_header: true
   <a href="mailto:aloknecessary@gmail.com">
     <img src="https://img.shields.io/badge/Email-aloknecessary%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
   </a>
- 
 </p>
 
 <p align="center" style="margin: 1rem 0;">
@@ -52,7 +50,6 @@ hide_header: true
     <img src="https://img.shields.io/badge/npm-aloknecessary-purple?style=for-the-badge&logo=npm&logoColor=white&labelColor=c93525" alt="npm"/>
   </a>
 </p>
-
 
 ---
 
@@ -292,12 +289,12 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
     <div class="project-stats">
       <div class="stat-item">
         <span class="stat-icon">📊</span>
-        <span class="stat-value">62+</span>
+        <span class="stat-value">90+</span>
         <span class="stat-label">Weekly Downloads</span>
       </div>
       <div class="stat-item">
         <span class="stat-icon">📦</span>
-        <span class="stat-value">v1.0.3</span>
+        <span class="stat-value">v2.1.0</span>
         <span class="stat-label">Latest Version</span>
       </div>
     </div>
