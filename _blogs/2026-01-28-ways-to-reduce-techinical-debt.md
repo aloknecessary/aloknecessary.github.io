@@ -9,7 +9,7 @@ keywords: "technical debt, software architecture, modernization, legacy moderniz
 categories:
   - architecture
   - system-design
-tags: ["technical-debt", "software-architecture", "modernisation", "legacy-modernisation", "application-modernisation"]
+tags: ["technical-debt", "software-architecture", "modernisation", "legacy-modernisation", "application-modernisation", "system-design", "cloud-architecture"]
 ---
 
 Technical debt can silently slow teams down, complicating development and frustrating delivery timelines. When shortcuts accumulate—whether through legacy systems, outdated components, or inconsistent practices—teams inevitably end up spending significant time just to keep systems running rather than innovating.

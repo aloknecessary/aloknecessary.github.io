@@ -9,11 +9,26 @@ keywords: "kubernetes vs docker compose, container orchestration, system design,
 categories:
   - architecture
   - devops
-tags: ["kubernetes", "docker-compose", "container-architecture", "cloud-native", "system-design"]
+tags: ["kubernetes", "docker-compose", "container-architecture", "cloud-native", "system-design", "devops", "cloud-architecture", "scalability"]
 ---
 
 Containerization has fundamentally changed how modern systems are designed, deployed, and operated. While Docker made packaging applications simple and portable, **Docker Compose** and **Kubernetes** represent two very different architectural philosophies for running containerized workloads.
 <!--more-->
+
+## Table of Contents
+- [Understanding the Core Problem Each Tool Solves](#understanding-the-core-problem-each-tool-solves)
+- [Architectural Foundations](#architectural-foundations)
+- [Value Principles Comparison](#value-principles-comparison)
+- [Scaling and Resilience](#scaling-and-resilience)
+- [Networking and Service Discovery](#networking-and-service-discovery)
+- [Configuration and Secrets Management](#configuration-and-secrets-management)
+- [Operational Complexity Trade-off](#operational-complexity-trade-off)
+- [When Should You Use Docker Compose?](#when-should-you-use-docker-compose)
+- [When Should You Use Kubernetes?](#when-should-you-use-kubernetes)
+- [A Common Anti-Pattern](#a-common-anti-pattern)
+- [A Practical Architectural Progression](#a-practical-architectural-progression)
+- [Conclusion](#conclusion)
+
 Although they are often compared, Docker Compose and Kubernetes are **not competitors in capability**—they solve problems at very different scales and maturity levels. Choosing the wrong one can either introduce unnecessary complexity or severely limit system growth.
 
 This article provides a **system-design–driven comparison**, focusing on:

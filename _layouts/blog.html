@@ -54,10 +54,10 @@ layout: default
   <nav class="post-navigation">
     {% if page.previous %}
     <a href="{{ page.previous.url | relative_url }}">
-      ← {{ page.previous.title }}
+      ← <b>Prev: </b>{{ page.previous.title }}
     </a>
     {% endif %} {% if page.next %}
-    <a href="{{ page.next.url | relative_url }}"> {{ page.next.title }} → </a>
+    <a href="{{ page.next.url | relative_url }}"><b>Next: </b>{{ page.next.title }} → </a>
     {% endif %}
   </nav>
 </article>

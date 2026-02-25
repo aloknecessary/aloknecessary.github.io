@@ -9,7 +9,7 @@ keywords: "progressive web apps, PWA architecture, service workers, web performa
 categories:
   - architecture
   - web-development
-tags: ["progressive-web-apps", "web-architecture", "react-pwa", "service-workers", "web-performance"]
+tags: ["progressive-web-apps", "web-architecture", "react-pwa", "service-workers", "web-performance", "software-architecture", "system-design"]
 ---
 
 In today’s digital landscape, users expect fast, reliable, and engaging experiences—regardless of network conditions or device type. **Progressive Web Apps (PWAs)** are a powerful way to deliver these experiences by combining the reach and accessibility of the web with capabilities traditionally reserved for native mobile apps. Originally conceived as a set of progressive enhancement techniques, PWAs today provide offline support, installability, push notifications, and performance characteristics rivaling native applications.

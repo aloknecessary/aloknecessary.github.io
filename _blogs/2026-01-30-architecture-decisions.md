@@ -9,7 +9,7 @@ keywords: "architecture, cloud, system design, kubernetes, optimization, scalabi
 categories:
   - architecture
   - system-design
-tags: [architecture, cloud, system-design, kubernetes, optimization]
+tags: [architecture, cloud, system-design, kubernetes, optimization, scalability, cloud-architecture]
 ---
 
 Most systems don’t fail because of bad code.

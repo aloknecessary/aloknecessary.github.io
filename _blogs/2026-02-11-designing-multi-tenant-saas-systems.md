@@ -9,7 +9,7 @@ author: Alok Ranjan Daftuar
 categories:
   - architecture
   - system-design
-tags: [multi-tenancy, saas, architecture, database-design, isolation, scalability,  cloud-architecture, data-partitioning]
+tags: [multi-tenancy, saas, architecture, database-design, isolation, scalability, cloud-architecture, system-design, software-architecture]
 
 ---
 
@@ -17,6 +17,20 @@ tags: [multi-tenancy, saas, architecture, database-design, isolation, scalabilit
 Multi-tenancy is the architectural cornerstone of modern SaaS platforms, enabling resource consolidation while maintaining logical isolation between customers. However, choosing the wrong isolation model or failing to account for scaling inflection points can lead to catastrophic failures, security breaches, or operational nightmares at scale.
 
 This article provides a practical analysis of multi-tenant architecture patterns, covering isolation strategies, blast radius considerations, and the critical decision points that separate successful SaaS platforms from those that crumble under growth.
+
+<!--more-->
+
+## Table of Contents
+- [Understanding Multi-Tenancy Fundamentals](#understanding-multi-tenancy-fundamentals)
+- [The Three Isolation Models](#the-three-isolation-models)
+- [Isolation Models Comparison](#isolation-models-comparison)
+- [Blast Radius Analysis](#blast-radius-analysis)
+- [The Noisy Neighbor Problem](#the-noisy-neighbor-problem)
+- [Real-World Scaling Inflection Points](#real-world-scaling-inflection-points)
+- [Cost Analysis by Scale](#cost-analysis-by-scale)
+- [Implementation Best Practices](#implementation-best-practices)
+- [Hybrid Architecture: The Winning Strategy](#hybrid-architecture-the-winning-strategy)
+- [Key Takeaways](#key-takeaways)
 
 ## Understanding Multi-Tenancy Fundamentals
 
