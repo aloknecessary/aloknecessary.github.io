@@ -5,11 +5,11 @@ description: "Essential guide to designing multi-tenant SaaS systems with practi
 keywords: "multi-tenant architecture, SaaS isolation models, database partitioning, row-level security, schema isolation, blast radius, noisy neighbor, tenant isolation, cloud architecture, scalability patterns"
 date: 2026-02-11
 last_modified_at: 2026-02-11
-author: Alok Ranjan
+author: Alok Ranjan Daftuar
 categories:
   - architecture
   - system-design
-tags: [multi-tenancy, saas, architecture, database-design, isolation, scalability,  cloud-architecture, data-partitioning]
+tags: [multi-tenancy, saas, architecture, database-design, isolation, scalability, cloud-architecture, system-design, software-architecture]
 
 ---
 
@@ -17,6 +17,20 @@ tags: [multi-tenancy, saas, architecture, database-design, isolation, scalabilit
 Multi-tenancy is the architectural cornerstone of modern SaaS platforms, enabling resource consolidation while maintaining logical isolation between customers. However, choosing the wrong isolation model or failing to account for scaling inflection points can lead to catastrophic failures, security breaches, or operational nightmares at scale.
 
 This article provides a practical analysis of multi-tenant architecture patterns, covering isolation strategies, blast radius considerations, and the critical decision points that separate successful SaaS platforms from those that crumble under growth.
+
+<!--more-->
+
+## Table of Contents
+- [Understanding Multi-Tenancy Fundamentals](#understanding-multi-tenancy-fundamentals)
+- [The Three Isolation Models](#the-three-isolation-models)
+- [Isolation Models Comparison](#isolation-models-comparison)
+- [Blast Radius Analysis](#blast-radius-analysis)
+- [The Noisy Neighbor Problem](#the-noisy-neighbor-problem)
+- [Real-World Scaling Inflection Points](#real-world-scaling-inflection-points)
+- [Cost Analysis by Scale](#cost-analysis-by-scale)
+- [Implementation Best Practices](#implementation-best-practices)
+- [Hybrid Architecture: The Winning Strategy](#hybrid-architecture-the-winning-strategy)
+- [Key Takeaways](#key-takeaways)
 
 ## Understanding Multi-Tenancy Fundamentals
 
@@ -324,6 +338,4 @@ This approach balances cost efficiency with customer expectations and risk manag
 7. **Hybrid Wins**: Different tenant tiers justify different isolation models.
 
 The multi-tenant architecture powering your SaaS platform is not static—it must evolve as your business scales. Understanding these patterns and inflection points enables proactive architectural decisions rather than reactive firefighting.
-
----
 

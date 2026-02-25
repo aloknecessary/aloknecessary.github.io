@@ -1,8 +1,15 @@
 ---
 title: "Power of Progressive Web Apps (PWAs) and the Architecture Behind Them"
+date: 2026-02-05
+last_modified_at: 2026-02-05
+author: Alok Ranjan Daftuar
 description: "Exploring how PWAs deliver native-like web experiences, their architectural components, and why they matter for modern applications."
-author: "Alok Ranjan"
-tags: ["progressive-web-apps", "web-architecture", "react-pwa", "service-workers", "web-performance"]
+excerpt: "Progressive Web Apps combine web reach with native capabilities. Explore PWA architecture, service workers, caching strategies, and why they matter for modern applications."
+keywords: "progressive web apps, PWA architecture, service workers, web performance, React PWA, offline support, app shell architecture"
+categories:
+  - architecture
+  - web-development
+tags: ["progressive-web-apps", "web-architecture", "react-pwa", "service-workers", "web-performance", "software-architecture", "system-design"]
 ---
 
 In today’s digital landscape, users expect fast, reliable, and engaging experiences—regardless of network conditions or device type. **Progressive Web Apps (PWAs)** are a powerful way to deliver these experiences by combining the reach and accessibility of the web with capabilities traditionally reserved for native mobile apps. Originally conceived as a set of progressive enhancement techniques, PWAs today provide offline support, installability, push notifications, and performance characteristics rivaling native applications.

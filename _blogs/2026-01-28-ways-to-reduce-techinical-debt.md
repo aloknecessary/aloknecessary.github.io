@@ -1,7 +1,15 @@
 ---
 title: "5 Effective Ways to Reduce Technical Debt Through Modernisation"
+date: 2026-01-28
+last_modified_at: 2026-01-28
+author: Alok Ranjan Daftuar
 description: "Practical approaches to systematically lower technical debt by modernising systems, infrastructure, and development practices."
-tags: ["technical-debt", "software-architecture", "modernisation", "legacy-modernisation", "application-modernisation"]
+excerpt: "Technical debt can silently slow teams down. Learn five practical strategies to identify, prioritize, and reduce technical debt through modernization of systems, infrastructure, and development practices."
+keywords: "technical debt, software architecture, modernization, legacy modernization, application modernization, refactoring, infrastructure modernization, code quality"
+categories:
+  - architecture
+  - system-design
+tags: ["technical-debt", "software-architecture", "modernisation", "legacy-modernisation", "application-modernisation", "system-design", "cloud-architecture"]
 ---
 
 Technical debt can silently slow teams down, complicating development and frustrating delivery timelines. When shortcuts accumulate—whether through legacy systems, outdated components, or inconsistent practices—teams inevitably end up spending significant time just to keep systems running rather than innovating.
@@ -97,7 +105,4 @@ New technologies, when applied thoughtfully, can improve performance, lower main
 Technical debt isn’t just a developer problem—it’s a business issue that affects delivery speed and system resilience when left unchecked. By modernising systems, infrastructure, and development practices, organisations can significantly reduce this burden, improve productivity, and create an engineering environment that supports innovation and growth.
 
 Modernisation isn’t a one-time task—it’s a strategic journey that combines architectural clarity, targeted investment, continuous improvement, and adoption of thoughtful tooling and practices.
-
----
-
 

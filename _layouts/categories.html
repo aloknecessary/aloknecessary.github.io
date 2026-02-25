@@ -1,0 +1,96 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ '/assets/css/tags.css' | relative_url }}">
+
+<div>
+  <nav class="nav-bar">
+    <a id="backButton" >← Back</a>
+    <span class="nav-separator">|</span>
+    <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
+    <span class="nav-separator">|</span>
+    <a href="{{ '/' | relative_url }}">Home</a>
+  </nav>
+</div>
+
+<div class="tags-header">
+  <h2>{{ page.title }}</h2>
+  {% if page.content %}
+  <p class="tags-description">{{ page.content | strip_html }}</p>
+  {% endif %}
+</div>
+
+<section class="tags-page">
+  
+  {% assign category_list = "" | split: "" %}
+  {% assign sorted_posts = site.blogs | sort: 'date' | reverse %}
+
+  {% for post in sorted_posts %}
+    {% for category in post.categories %}
+      {% unless category_list contains category %}
+        {% assign category_list = category_list | push: category %}
+      {% endunless %}
+    {% endfor %}
+  {% endfor %}
+
+  {% assign sorted_categories = category_list | sort %}
+  
+  <div class="tags-container">
+    {% for category in sorted_categories %}
+    <div class="tag-block" id="{{ category | slugify }}">
+      <h2 class="tag-heading">{{ category | capitalize }}</h2>
+
+      <ul class="tag-posts">
+        {% for post in sorted_posts %} 
+          {% if post.categories contains category %}
+          <li>
+            <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
+            <span class="post-date"> {{ post.date | date: "%b %d, %Y" }} </span>
+          </li>
+          {% endif %} 
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  function highlightActiveCategory() {
+    document.querySelectorAll('.tag-block').forEach(el => {
+      el.classList.remove('active');
+    });
+
+    const hash = window.location.hash.substring(1);
+    if (!hash) return;
+
+    const active = document.getElementById(hash);
+    if (active) {
+      active.classList.add('active');
+    }
+  }
+
+  highlightActiveCategory();
+  window.addEventListener('hashchange', highlightActiveCategory);
+
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+</script>
+
+<script>
+  (function () {
+    const backBtn = document.getElementById("backButton");
+
+    backBtn.addEventListener("click", function () {
+      if (document.referrer && document.referrer !== window.location.href) {
+        history.back();
+      } else {
+        window.location.href = "{{ '/blogs' | relative_url }}";
+      }
+    });
+  })();
+</script>

@@ -353,56 +353,6 @@ footer {
 }
 
 /* ============================================================
-   META / TAGS
-   ============================================================ */
-
-.meta {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.post-tags {
-  margin-top: 1.5rem;
-}
-
-.post-tags .tag {
-  display: inline-block;
-  margin-right: 0.5rem;
-  padding: 0.25rem 0.6rem;
-  background: var(--tag-bg);
-  color: var(--tag-text);
-  border: 1px solid var(--tag-border);
-  border-radius: 6px;
-  font-size: 0.85rem;
-  text-decoration: none;
-}
-
-.post-tags .tag:hover {
-  opacity: 0.85;
-}
-
-/* ============================================================
-   POST FOOTER
-   ============================================================ */
-
-.post-navigation {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2.5rem;
-}
-
-.post-footer {
-  margin-top: 2.5rem;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-}
-
-.post-footer a {
-  color: var(--primary);
-  font-weight: 500;
-}
-
-/* ============================================================
    CODE BLOCKS
    ============================================================ */
 

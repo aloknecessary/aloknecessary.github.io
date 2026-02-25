@@ -5,11 +5,11 @@ excerpt: "AI is often discussed as a force multiplier for software development. 
 keywords: "architecture, productivity, cloud, system-design, ai"
 date: 2026-01-30
 last_modified_at: 2026-02-16
-author: Alok
+author: Alok Ranjan Daftuar
 categories:
   - architecture
   - system-design
-tags: [architecture, cloud, system-design, ai, "productivity"]
+tags: [architecture, cloud, system-design, ai, "productivity", developer-productivity, automation]
 ---
 
 AI is often discussed as a force multiplier for software development. In practice, the most effective teams are not using it to bypass engineering rigor or accelerate recklessly. Instead, they are using AI to remove friction from everyday workflows—freeing engineers to focus on design quality, correctness, and long-term system health.

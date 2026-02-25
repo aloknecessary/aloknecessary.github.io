@@ -1,7 +1,15 @@
 ---
 title: "How pre-baked Docker images can significantly reduce CI setup time and improve reliability."
+date: 2026-02-03
+last_modified_at: 2026-02-03
+author: Alok Ranjan Daftuar
 description: "Speeding Up CI Pipelines with a Custom Playwright + Azure CLI Docker Image"
-tags: [docker, playwright, github-actions, devops, automation, multi-architecture, software-architecture, developer-productivity]
+excerpt: "Modern CI/CD pipelines waste time repeatedly installing the same tools. Learn how pre-baked Docker images eliminate repetitive setup work, improve reliability, and save several minutes per pipeline run."
+keywords: "docker, playwright, github actions, devops, automation, multi-architecture, CI/CD optimization, docker images, pipeline performance, developer productivity"
+categories:
+  - devops
+  - automation
+tags: [docker, playwright, github-actions, devops, automation, multi-architecture, software-architecture, developer-productivity, ci-cd]
 ---
 
 Modern CI/CD pipelines are powerful, but they are often **wasteful by default**.

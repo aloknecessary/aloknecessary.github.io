@@ -1,8 +1,68 @@
+
+/* ========================================
+   Related Posts Section
+   ======================================== */
+
+.related-posts {
+  /* margin: 2rem 0; */
+  padding: 1.5rem;
+  background: var(--bg-soft);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.related-posts h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.related-posts ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.related-posts li {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  list-style: none;
+  margin-left: 2px;
+}
+
+.related-posts li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.related-posts a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: opacity 0.2s ease;
+}
+
+.related-posts a:hover {
+  opacity: 0.8;
+}
+
+.related-posts p {
+  margin: 0.5rem 0 0 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Share bar CSS */
+
 .share-bar {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-top: 14px;
+  margin-top: 10px;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
@@ -43,6 +103,7 @@
 .bottom-share-container {
   border-bottom: 1px solid var(--border);
   padding-bottom: 24px;
+  padding-right: 12px;
   padding-top: 6px;
 }
 
@@ -107,4 +168,53 @@
 
 .desktop-hidden {
   display: none;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+
+/* ============================================================
+   POST FOOTER
+   ============================================================ */
+
+
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+}
+
+.post-navigation a:first-child {
+  margin-right: 12px;
+}
+
+.post-tags {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--border);
+  padding: 20px 0 10px;
+}
+
+
+.post-tags .tag {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.6rem;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border: 1px solid var(--tag-border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.post-tags .tag:hover {
+  opacity: 0.85;
+}
+
+.border {
+  border-top: 1px solid var(--border);
 }

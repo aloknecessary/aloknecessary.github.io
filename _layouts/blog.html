@@ -2,14 +2,18 @@
 layout: default
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/share.css' | relative_url }}">
+{% include schema-blog.html %}
+
+<link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}">
 
 <nav  class="nav-bar">
   <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
   <span class="nav-separator">|</span>
   <a href="{{ '/' | relative_url }}">Home</a>
   <span class="nav-separator">|</span>
-  <a href="{{ '/tags' | relative_url }}"> Topics</a>
+  <a href="{{ '/categories' | relative_url }}">Categories</a>
+  <span class="nav-separator">|</span>
+  <a href="{{ '/tags' | relative_url }}">Topics</a>
 </nav>
 
 <article class="post">
@@ -41,19 +45,21 @@ layout: default
   </div>
   {% endif %}
 
-  <hr />
+  <hr class="border"/>
 
   <div class="bottom-share-container">
     {% include share.html %}
   </div>
 
+  {% include related-posts.html %}
+
   <nav class="post-navigation">
     {% if page.previous %}
     <a href="{{ page.previous.url | relative_url }}">
-      ← {{ page.previous.title }}
+      ← <b>Prev: </b>{{ page.previous.title }}
     </a>
     {% endif %} {% if page.next %}
-    <a href="{{ page.next.url | relative_url }}"> {{ page.next.title }} → </a>
+    <a href="{{ page.next.url | relative_url }}"><b>Next: </b>{{ page.next.title }} → </a>
     {% endif %}
   </nav>
 </article>
