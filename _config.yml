@@ -16,6 +16,12 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
 
+# Exclude from build
+exclude:
+  - external/
+  - node_modules/
+  - vendor/
+
 # Blog collection (THIS is the big win)
 collections:
   blogs:
