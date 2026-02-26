@@ -1,3 +1,6 @@
+h2.description::before {
+  content: none;
+}
 
 /* ========================================
    Related Posts Section

@@ -2,7 +2,10 @@
 title: "Private Endpoints Everywhere? The Hidden Cost of 'Secure by Default' Cloud Architectures"
 date: 2026-02-13 10:00:00 +0530
 author: Alok Ranjan Daftuar
-categories: [Cloud Architecture, Security, Networking]
+categories:
+  - cloud-architecture
+  - security
+  - networking
 tags: [private-endpoints, cloud-security, aws-privatelink, azure-private-link, dns, networking, cloud-architecture, security-architecture, cost-optimization, vpc, system-design, devops]
 excerpt: "An honest examination of private endpoint proliferation in cloud architectures, covering the hidden costs of DNS complexity, network debugging nightmares, and when private endpoints are actually unnecessary despite security theater."
 description: "Critical analysis of private endpoint over-engineering in cloud environments, examining DNS complexity, debugging challenges, cost implications, and practical decision frameworks for when private connectivity is genuinely needed versus security theater."

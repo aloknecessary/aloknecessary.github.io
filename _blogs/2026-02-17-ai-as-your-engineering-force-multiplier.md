@@ -2,7 +2,10 @@
 title: "AI as Your Engineering Force Multiplier"
 date: 2026-02-17 10:00:00 +0530
 author: Alok Ranjan Daftuar
-categories: [DevOps, AI, Platform Engineering]
+categories:
+  - devops
+  - ai
+  - platform-engineering
 tags: [ai, developer-productivity, kubernetes, terraform, ci-cd, github-actions, infrastructure-as-code, automation, debugging, documentation, platform-engineering, devops, cloud-architecture]
 excerpt: "A comprehensive guide to leveraging AI as a strategic force multiplier in modern software development. Real-world examples of AI-assisted Kubernetes deployments, Terraform generation, CI/CD optimization, and intelligent debugging that deliver 40% faster delivery cycles without compromising quality."
 keywords: "AI developer productivity, AI DevOps, Kubernetes automation, Terraform generation, CI/CD optimization, GitHub Actions, intelligent debugging, infrastructure as code, platform engineering, developer experience"
