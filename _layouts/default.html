@@ -3,20 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="-HtQERBhVJK0XI-Wy5n1Wdo4DApvngIfQN6_2wNKfMw" />
-    
-    {% if page.layout == "architect" %}
-      <title>{{ page.title }}</title>
-    {% else %}
-      <title>{{ page.title }} | {{ site.title }}</title>
-    {% endif %}
-    
-    {% include head.html %}
-    {% seo %}
+    <meta
+      name="google-site-verification"
+      content="-HtQERBhVJK0XI-Wy5n1Wdo4DApvngIfQN6_2wNKfMw"
+    />
 
-    {% if jekyll.environment == 'production' and site.google_analytics %}
-      {% include google-analytics.html %}
-    {% endif %}
+    {% if page.layout == "architect" %}
+    <title>{{ page.title }}</title>
+    {% else %}
+    <title>{{ page.title }} | {{ site.title }}</title>
+    {% endif %} {% include head.html %} {% seo %} {% if jekyll.environment ==
+    'production' and site.google_analytics %} {% include google-analytics.html
+    %} {% endif %}
 
     <script>
       (function () {
@@ -28,37 +26,85 @@
           return mediaQuery.matches ? "dark" : "light";
         }
 
-        function applyTheme(theme) {
-          root.setAttribute("data-theme", theme);
-        }
-
         function getStoredTheme() {
           return localStorage.getItem(THEME_KEY) || "system";
         }
 
-        function initTheme() {
+        function getEffectiveTheme() {
           const stored = getStoredTheme();
+          return stored === "system" ? getSystemTheme() : stored;
+        }
 
-          if (stored === "system") {
-            applyTheme(getSystemTheme());
-          } else {
-            applyTheme(stored);
-          }
+        function loadGiscus(theme) {
+          const container = document.getElementById("comments");
+          if (!container) return; // Only loads on blog posts
+          if (container.dataset.loaded) return;
+
+          const script = document.createElement("script");
+          script.src = "https://giscus.app/client.js";
+          script.async = true;
+          script.crossOrigin = "anonymous";
+
+          script.setAttribute("data-repo", "aloknecessary/aloknecessary.github.io");
+          script.setAttribute("data-repo-id", "R_kgDOQ_tpLA");
+          script.setAttribute("data-category", "General");
+          script.setAttribute("data-category-id", "DIC_kwDOQ_tpLM4C3Ls-");
+          script.setAttribute("data-mapping", "pathname");
+          script.setAttribute("data-strict", "0");
+          script.setAttribute("data-reactions-enabled", "1");
+          script.setAttribute("data-emit-metadata", "0");
+          script.setAttribute("data-input-position", "top");
+          script.setAttribute(
+            "data-theme",
+            theme === "dark" ? "dark_dimmed" : "light"
+          );
+          script.setAttribute("data-lang", "en");
+          script.setAttribute("data-loading", "lazy");
+
+          container.appendChild(script);
+          container.dataset.loaded = "true";
+        }
+
+        function updateGiscusTheme(theme) {
+          const iframe = document.querySelector("iframe.giscus-frame");
+          if (!iframe) return;
+
+          iframe.contentWindow.postMessage(
+            {
+              giscus: {
+                setConfig: {
+                  theme: theme === "dark" ? "dark_dimmed" : "light"
+                }
+              }
+            },
+            "https://giscus.app"
+          );
+        }
+
+        function applyTheme(theme) {
+          root.setAttribute("data-theme", theme);
+          updateGiscusTheme(theme);
+        }
+
+        function initTheme() {
+          const effective = getEffectiveTheme();
+          applyTheme(effective);
+
+          document.addEventListener("DOMContentLoaded", function () {
+            loadGiscus(effective);
+          });
         }
 
         function setTheme(theme) {
           localStorage.setItem(THEME_KEY, theme);
-
-          if (theme === "system") {
-            applyTheme(getSystemTheme());
-          } else {
-            applyTheme(theme);
-          }
+          const effective = getEffectiveTheme();
+          applyTheme(effective);
         }
 
         function handleSystemChange(e) {
           if (getStoredTheme() === "system") {
-            applyTheme(e.matches ? "dark" : "light");
+            const newTheme = e.matches ? "dark" : "light";
+            applyTheme(newTheme);
           }
         }
 
@@ -66,8 +112,7 @@
           const select = document.getElementById("theme-select");
           if (!select) return;
 
-          const stored = getStoredTheme();
-          select.value = stored;
+          select.value = getStoredTheme();
 
           select.addEventListener("change", (e) => {
             setTheme(e.target.value);
@@ -83,15 +128,14 @@
         // Initialize dropdown after DOM ready
         document.addEventListener("DOMContentLoaded", initDropdown);
 
-        // Optional: expose setter
+        // Expose setter globally (used by second script block)
         window.setTheme = setTheme;
       })();
     </script>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll(".theme-dropdown").forEach(dropdown => {
-
+        document.querySelectorAll(".theme-dropdown").forEach((dropdown) => {
           const trigger = dropdown.querySelector(".theme-trigger");
           const buttons = dropdown.querySelectorAll("[data-theme-option]");
           const icon = dropdown.querySelector(".theme-icon");
@@ -104,10 +148,10 @@
 
           function updateUI() {
             const current = getCurrentTheme();
-            buttons.forEach(btn => {
+            buttons.forEach((btn) => {
               btn.classList.toggle(
                 "active",
-                btn.dataset.themeOption === current
+                btn.dataset.themeOption === current,
               );
             });
 
@@ -125,12 +169,12 @@
             dropdown.classList.toggle("open");
             trigger.setAttribute(
               "aria-expanded",
-              dropdown.classList.contains("open")
+              dropdown.classList.contains("open"),
             );
           });
 
           // Theme selection
-          buttons.forEach(btn => {
+          buttons.forEach((btn) => {
             btn.addEventListener("click", () => {
               const selected = btn.dataset.themeOption;
 
@@ -158,7 +202,6 @@
     </script>
 
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-    
   </head>
   <body>
     <!-- <header>
@@ -179,9 +222,9 @@
       </p>
       <div class="theme-controls">
         <div class="theme-dropdown">
-          <button 
-            class="theme-trigger" 
-            aria-haspopup="true" 
+          <button
+            class="theme-trigger"
+            aria-haspopup="true"
             aria-expanded="false"
             aria-label="Change theme"
           >
@@ -194,8 +237,7 @@
             <button data-theme-option="dark">🌙 Dark</button>
           </div>
         </div>
-      </div>
-
+       </div>
     </header>
 
     {% endunless %}
