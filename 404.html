@@ -1,25 +1,151 @@
 ---
 permalink: /404.html
-layout: page
+layout: default
 ---
 
 <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
     text-align: center;
+    padding: 2rem;
   }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
+
+  .error-code {
+    font-size: clamp(6rem, 15vw, 10rem);
+    font-weight: 800;
     line-height: 1;
-    letter-spacing: -1px;
+    margin: 0;
+    background: linear-gradient(135deg, var(--primary, #0366d6) 0%, var(--accent, #eb259c) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .error-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
+    color: var(--text-primary);
+    animation: fadeIn 0.8s ease-out;
+  } 
+  
+  h2::before{
+    display: none;
+    content: none;
+  }
+
+  .error-message {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+    animation: fadeIn 1s ease-out;
+  }
+
+  .error-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeIn 1.2s ease-out;
+  }
+
+  .error-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .error-btn-primary {
+    background: var(--primary, #0366d6);
+    color: white;
+  }
+
+  .error-btn-primary:hover {
+    background: var(--primary-dark, #0256c7);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(3, 102, 214, 0.3);
+  }
+
+  .error-btn-secondary {
+    background: var(--bg-soft, #f6f8fa);
+    color: var(--text-primary);
+    border: 1px solid var(--border, #d0d7de);
+  }
+
+  .error-btn-secondary:hover {
+    background: var(--bg-card, #ffffff);
+    border-color: var(--primary, #0366d6);
+    transform: translateY(-2px);
+  }
+
+  .error-illustration {
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .error-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .error-btn {
+      width: 100%;
+      justify-content: center;
+    }
   }
 </style>
 
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<div class="error-container">
+  <div class="error-illustration">🧭</div>
+  <h1 class="error-code">404</h1>
+  <h2 class="error-title">Page Not Found</h2>
+  <p class="error-message">
+    The page you're looking for doesn't exist or has been moved. 
+    Let's get you back on track.
+  </p>
+  <div class="error-actions">
+    <a href="{{'/' | relative_url}}" class="error-btn error-btn-primary">
+      <span>←</span>
+      <span>Go Home</span>
+    </a>
+    <a href="{{ '/blogs' | relative_url }}" class="error-btn error-btn-secondary">
+      <span>📝</span>
+      <span>Read Blogs</span>
+    </a>
+  </div>
 </div>

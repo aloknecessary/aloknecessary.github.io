@@ -1,3 +1,6 @@
+h2.description::before {
+  content: none;
+}
 
 /* ========================================
    Related Posts Section
@@ -113,7 +116,7 @@
 
 /* Native Share */
 .mobile-only {
-  background: var(--secondary);
+  background: var(--muted);
 }
 
 /* LinkedIn */

@@ -1,0 +1,75 @@
+<button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" width="24" height="24">
+    <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+  </svg>
+</button>
+
+<style>
+  .scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--bg-card, #ffffff);
+    color: var(--text-primary);
+    border: 2px solid var(--border, #d0d7de);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease, background 0.2s ease;
+    z-index: 1000;
+  }
+
+  .scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .scroll-to-top:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    background: var(--bg-soft, #f6f8fa);
+    border-color: var(--primary, #0366d6);
+  }
+
+  .scroll-to-top:active {
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .scroll-to-top {
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    const btn = document.getElementById('scrollToTop');
+    const threshold = 300;
+
+    function toggleButton() {
+      if (window.scrollY > threshold) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', toggleButton);
+    toggleButton();
+  })();
+</script>

@@ -259,7 +259,7 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 
 <div class="stats-container">
   <img src="https://github-readme-stats-aloknecessary-4439s-projects.vercel.app/api/top-langs?username=aloknecessary&layout=compact&theme=ambient_gradient&size_weight=0.5&count_weight=0.5" alt="Top Languages" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aloknecessary&theme=ambient-gradient&hide_border=true" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aloknecessary&theme=ambient-gradient&hide_border=true&exclude_days=Sat,Sun&mode=weekly" alt="GitHub Streak" />
 </div>
 
 
