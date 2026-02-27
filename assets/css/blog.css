@@ -116,7 +116,7 @@ h2.description::before {
 
 /* Native Share */
 .mobile-only {
-  background: var(--secondary);
+  background: var(--muted);
 }
 
 /* LinkedIn */
