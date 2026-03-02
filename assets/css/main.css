@@ -428,7 +428,13 @@ tr:nth-child(even) {
   .footer .mobile-hidden {
     display: none;
   }
+
   .theme-controls {
     margin-top: -16px;
+  }
+
+  table {
+    overflow-x: auto;
+    display: block;
   }
 }
