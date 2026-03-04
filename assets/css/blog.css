@@ -221,6 +221,7 @@ h2.description::before {
 .border {
   border-top: 1px solid var(--border);
 }
+
 /* Copy code btn css */
 
 .code-block-wrapper {
