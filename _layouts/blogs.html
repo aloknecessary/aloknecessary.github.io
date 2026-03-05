@@ -4,9 +4,7 @@ layout: default
 
 <link rel="stylesheet" href="{{ '/assets/css/blogs.css' | relative_url }}" />
 
-<nav class="nav-bar">
-  <a href="{{ '/' | relative_url }}">Home</a>
-</nav>
+{% include navbar.html %}
 
 <div class="blogs-header">
   <h2>The Technical Compendium</h2>
@@ -39,6 +37,8 @@ layout: default
   {{ content }}
 </div>
 
+{% include scroll-to-top.html %}
+
 <script>
   window.addEventListener("load", function () {
     setTimeout(() => {
@@ -47,3 +47,5 @@ layout: default
     }, 350);
   });
 </script>
+
+<script src="{{ '/assets/js/blog-search.js' | relative_url }}"></script>
