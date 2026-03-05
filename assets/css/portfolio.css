@@ -220,21 +220,7 @@
   }
 }
 
-/* Print Styles */
-@media print {
-  .project-card {
-    break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #000;
-  }
-  
-  .project-card:hover {
-    transform: none;
-    box-shadow: none;
-  }
-}
-
-/* Dark Mode Support (Optional) */
+/* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   .project-card {
     background: #1f2937;
@@ -292,21 +278,4 @@
   outline: 2px solid #2563eb;
   outline-offset: 2px;
   border-radius: 4px;
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  .project-card,
-  .project-link,
-  .tag {
-    transition: none;
-  }
-  
-  .project-card:hover {
-    transform: none;
-  }
-  
-  .project-link:hover {
-    transform: none;
-  }
 }
