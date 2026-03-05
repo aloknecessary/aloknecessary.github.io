@@ -3,7 +3,7 @@ title: AI as Your Engineering Force Multiplier
 published: false
 description: How engineering teams are using AI to eliminate friction and deliver 40% faster without compromising quality
 tags: ai, devops, productivity, kubernetes
-canonical_url: https://aloknecessary.github.io/blogs/ai-as-your-engineering-force-multiplier/
+canonical_url: https://aloknecessary.github.io/blogs/ai-as-your-engineering-force-multiplier/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=ai-as-your-engineering-force-multiplier
 cover_image: 
 ---
 
@@ -223,7 +223,7 @@ The question isn't whether to use AI—it's how to use it strategically to ampli
 
 This is a summary of my comprehensive guide on AI as an engineering force multiplier. For detailed implementation examples, code samples, and a complete strategic framework, read the full article:
 
-**👉 [AI as Your Engineering Force Multiplier - Full Article](https://aloknecessary.github.io/blogs/ai-as-your-engineering-force-multiplier/)**
+**👉 [AI as Your Engineering Force Multiplier - Full Article](https://aloknecessary.github.io/blogs/ai-as-your-engineering-force-multiplier/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=ai-as-your-engineering-force-multiplier)**
 
 The full article includes:
 - Complete code examples for Kubernetes, Terraform, and CI/CD

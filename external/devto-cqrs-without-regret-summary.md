@@ -3,7 +3,7 @@ title: CQRS Without Regret - Where It Works, Where It Breaks, and How to Evolve 
 published: false
 description: A pragmatic guide to CQRS covering when it genuinely works, where it predictably breaks, and safe migration strategies from CRUD systems
 tags: architecture, cqrs, systemdesign, microservices
-canonical_url: https://aloknecessary.github.io/blogs/cqrs-without-regret/
+canonical_url: https://aloknecessary.github.io/blogs/cqrs-without-regret/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cqrs-without-regret
 cover_image: 
 ---
 
@@ -240,7 +240,7 @@ CQRS is no exception.
 
 This is a summary of my comprehensive guide on CQRS. For detailed migration strategies, real-world failure scenarios, and a complete decision framework, read the full article:
 
-**👉 [CQRS Without Regret - Full Article](https://aloknecessary.github.io/blogs/cqrs-without-regret/)**
+**👉 [CQRS Without Regret - Full Article](https://aloknecessary.github.io/blogs/cqrs-without-regret/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cqrs-without-regret)**
 
 The full article includes:
 - Detailed migration strategies with code examples
