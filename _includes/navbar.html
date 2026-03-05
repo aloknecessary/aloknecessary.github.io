@@ -16,6 +16,10 @@
   {% elsif page.layout == 'blogs' %}
     <div class="nav-left">
       <a href="{{ '/' | relative_url }}">Home</a>
+      <span class="nav-separator">|</span>
+      <a href="{{ '/categories' | relative_url }}">Categories</a>
+      <span class="nav-separator">|</span>
+      <a href="{{ '/tags' | relative_url }}">Topics</a>
     </div>
     <div class="search-container">
       <button class="search-toggle" id="search-toggle" aria-label="Search blogs">

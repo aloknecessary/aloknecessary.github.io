@@ -113,6 +113,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 12px;
 }
 
 .nav-left {
@@ -188,12 +189,6 @@
 
 .search-container.active .search-clear {
   display: flex;
-}
-
-@media (max-width: 768px) {
-  .search-container.active .search-input {
-    width: 200px;
-  }
 }
 
 /* Grid Layout */
@@ -441,6 +436,20 @@
    ======================================== */
 
 @media (max-width: 768px) {
+  .nav-bar {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    position: relative;
+  }
+
+  .search-container {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+
   .blog-cards-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;

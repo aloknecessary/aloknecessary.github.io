@@ -403,6 +403,7 @@ tr:nth-child(even) {
    ============================================================ */
 
 .nav-bar {
+  margin-top: 16px;
   margin-bottom: -0.5rem;
   font-size: 0.95rem;
 }
