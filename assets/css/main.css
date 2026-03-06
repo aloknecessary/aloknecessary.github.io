@@ -230,7 +230,7 @@ body {
 
 header {
   padding: 16px 0;
-  margin-bottom: 28px;
+  margin-bottom: 12px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -403,6 +403,7 @@ tr:nth-child(even) {
    ============================================================ */
 
 .nav-bar {
+  margin-top: 16px;
   margin-bottom: -0.5rem;
   font-size: 0.95rem;
 }

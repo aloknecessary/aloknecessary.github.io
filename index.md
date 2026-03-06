@@ -89,12 +89,14 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ### **Architecture & Platforms**
 
-![Cloud Native](https://img.shields.io/badge/Cloud_Native-Architecture-0078D4?style=for-the-badge&logo=icloud&logoColor=white)
-![API Design](https://img.shields.io/badge/API-Design_Patterns-2ECC71?style=for-the-badge&logo=swagger&logoColor=white)
-![Microservices](https://img.shields.io/badge/Microservices-Distributed_Systems-FF6B6B?style=for-the-badge&logo=apachekafka&logoColor=white)
-![Auth](https://img.shields.io/badge/Auth-Best_Practices-FFD93D?style=for-the-badge&logo=auth0&logoColor=white)
-![Containers](https://img.shields.io/badge/Docker-Containers-326CE5?style=for-the-badge&logo=docker&logoColor=white)
-![K8s](https://img.shields.io/badge/K8s-Orchestration-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+<div class="badge-grid">
+  <img src="https://img.shields.io/badge/Cloud_Native-Architecture-0078D4?style=for-the-badge&logo=icloud&logoColor=white" alt="Cloud Native" />
+  <img src="https://img.shields.io/badge/API-Design_Patterns-2ECC71?style=for-the-badge&logo=swagger&logoColor=white" alt="API Design" />
+  <img src="https://img.shields.io/badge/Microservices-Distributed_Systems-FF6B6B?style=for-the-badge&logo=apachekafka&logoColor=white" alt="Microservices" />
+  <img src="https://img.shields.io/badge/Auth-Best_Practices-FFD93D?style=for-the-badge&logo=auth0&logoColor=white" alt="Auth" />
+  <img src="https://img.shields.io/badge/Docker-Containers-326CE5?style=for-the-badge&logo=docker&logoColor=white" alt="Containers" />
+  <img src="https://img.shields.io/badge/K8s-Orchestration-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="K8s" />
+</div>
 
 
 
@@ -106,12 +108,14 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ### **Engineering Stack**
 
+<div class="badge-grid">
   <img src="https://img.shields.io/badge/react-03C4E8?style=for-the-badge&logo=react&logoColor=white" alt="React"/>
   <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular"/>
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"/>
   <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET"/>
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
   <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=sharp&logoColor=white" alt="C#"/>
+</div>
 
 * Full-stack systems using **React, Angular, Node.js, and .NET**
 * REST APIs with clean auth/SSO and documented contracts
@@ -121,9 +125,11 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ### **AI & Intelligent Systems**
 
-![AI](https://img.shields.io/badge/AI-Powered_Solutions-FF6B6B?style=for-the-badge)
-![LLM](https://img.shields.io/badge/LLM-Integration-4ECDC4?style=for-the-badge)
-![Automation](https://img.shields.io/badge/AI-Driven_Automation-3178C6?style=for-the-badge)
+<div class="badge-grid">
+  <img src="https://img.shields.io/badge/AI-Powered_Solutions-FF6B6B?style=for-the-badge" alt="AI" />
+  <img src="https://img.shields.io/badge/LLM-Integration-4ECDC4?style=for-the-badge" alt="LLM" />
+  <img src="https://img.shields.io/badge/AI-Driven_Automation-3178C6?style=for-the-badge" alt="Automation" />
+</div>
 
 <!-- ![Claude](https://img.shields.io/badge/Claude-Anthropic-181717?style=for-the-badge&logo=anthropic&logoColor=white)
 ![ChatGPT](https://img.shields.io/badge/ChatGPT-OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
@@ -139,11 +145,13 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ### **DevOps & Cloud**
 
+<div class="badge-grid">
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
   <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
   <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions"/>
   <img src="https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="Azure"/>
   <img src="https://img.shields.io/badge/Amazon_AWS-F24C53?style=for-the-badge&logo=hackthebox&logoColor=white" alt="AWS"/>
+</div>
 
 
 * Robust CI/CD using GitHub Actions
@@ -153,12 +161,14 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ### **Databases & Data**
 
+<div class="badge-grid">
   <img src="https://img.shields.io/badge/MSSQL-orange?style=for-the-badge&logo=mysql&logoColor=white" alt="MSSQL"/>
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
   <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"/>
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
   <img src="https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/>
   <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis"/>
+</div>
 
 * Data modeling and storage choices based on needs
 * Separation of transactional vs analytical workloads
@@ -167,10 +177,12 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ### **Cost Optimization**
 
-![FinOps](https://img.shields.io/badge/FinOps-Certified_Practices-00C853?style=for-the-badge&logo=chartdotjs&logoColor=white)
-![Cloud Cost](https://img.shields.io/badge/Cloud-Cost_Aware-FF9900?style=for-the-badge&logo=icloud&logoColor=white)
-![K8s Optimization](https://img.shields.io/badge/K8s-Optimized-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-![Caching](https://img.shields.io/badge/Build_Cache-Optimized-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+<div class="badge-grid">
+  <img src="https://img.shields.io/badge/FinOps-Certified_Practices-00C853?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="FinOps" />
+  <img src="https://img.shields.io/badge/Cloud-Cost_Aware-FF9900?style=for-the-badge&logo=icloud&logoColor=white" alt="Cloud Cost" />
+  <img src="https://img.shields.io/badge/K8s-Optimized-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="K8s Optimization" />
+  <img src="https://img.shields.io/badge/Build_Cache-Optimized-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Caching" />
+</div>
 
 * Cost-aware cloud/Kubernetes architectures
 * Resource and build cache optimization
@@ -233,7 +245,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
       <li>Docker optimization & CI/CD best practices</li>
       <li>Performance and scalability strategies</li>
   </ul>
-  <p align="center" style="margin-top: 1.5rem;">
+  <p align="center" style="margin-top: 1.5rem; text-align: center;">
     <a href="/blogs" style="display: inline-block; background: #0366d6; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;">
       📚 Read All My Blogs →
     </a>
@@ -564,7 +576,8 @@ If you're interested in **architecture discussions, system design reviews, DevOp
   </a>
 </p>
 
-<p style="margin: 1rem 0; text-align:center;">
+<!-- <p style="margin: 1rem 0; text-align:center;"> -->
+<div class="badge-grid justify-center ">
   <a href="https://www.linkedin.com/in/aloknecessary">
     <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=searxng&logoColor=white" alt="LinkedIn"/>
   </a>
@@ -577,6 +590,7 @@ If you're interested in **architecture discussions, system design reviews, DevOp
   <a href="https://www.npmjs.com/~aloknecessary">
     <img src="https://img.shields.io/badge/npm-Packages-purple?style=for-the-badge&logo=npm&logoColor=white&labelColor=c93525" alt="npm"/>
   </a>
-</p>
+  </div>
+<!-- </p> -->
 
 

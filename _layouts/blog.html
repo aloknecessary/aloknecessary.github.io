@@ -6,15 +6,7 @@ layout: default
 
 <link rel="stylesheet" href="{{ '/assets/css/blog.css' | relative_url }}">
 
-<nav  class="nav-bar">
-  <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
-  <span class="nav-separator">|</span>
-  <a href="{{ '/' | relative_url }}">Home</a>
-  <span class="nav-separator">|</span>
-  <a href="{{ '/categories' | relative_url }}">Categories</a>
-  <span class="nav-separator">|</span>
-  <a href="{{ '/tags' | relative_url }}">Topics</a>
-</nav>
+{% include navbar.html %}
 
 <article class="post">
   <header>

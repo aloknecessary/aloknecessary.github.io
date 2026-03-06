@@ -3,24 +3,7 @@ layout: default
 ---
 <link rel="stylesheet" href="{{ '/assets/css/tags.css' | relative_url }}">
 
-<div>
-  <!-- Page header -->
-  <!-- <header class="tags-header">
-    <h1>{{ page.title }}</h1>
-
-    {% if page.content %}
-    <p class="tags-description">{{ page.content | strip_html }}</p>
-    {% endif %}
-  </header> -->
-  <!-- Page-specific navigation -->
-  <nav class="nav-bar">
-    <a id="backButton" >← Back</a>
-    <span class="nav-separator">|</span>
-    <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
-    <span class="nav-separator">|</span>
-    <a href="{{ '/' | relative_url }}">Home</a>
-  </nav>
-</div>
+{% include navbar.html %}
 
 <div class="tags-header">
   <h2>{{ page.title }}</h2>
@@ -65,6 +48,7 @@ layout: default
   </div>
 </section>
 
+{% include scroll-to-top.html %}
 
 <script>
   function highlightActiveTag() {
@@ -95,18 +79,4 @@ layout: default
       target.scrollIntoView({ behavior: "smooth" });
     }
   }
-</script>
-
-<script>
-  (function () {
-    const backBtn = document.getElementById("backButton");
-
-    backBtn.addEventListener("click", function () {
-      if (document.referrer && document.referrer !== window.location.href) {
-        history.back();
-      } else {
-        window.location.href = "{{ '/blogs' | relative_url }}";
-      }
-    });
-  })();
 </script>

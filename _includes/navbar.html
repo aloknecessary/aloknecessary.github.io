@@ -1,0 +1,57 @@
+<nav class="nav-bar">
+  {% if page.layout == 'blog' %}
+    <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
+    <span class="nav-separator">|</span>
+    <a href="{{ '/' | relative_url }}">Home</a>
+    <span class="nav-separator">|</span>
+    <a href="{{ '/categories' | relative_url }}">Categories</a>
+    <span class="nav-separator">|</span>
+    <a href="{{ '/tags' | relative_url }}">Topics</a>
+  {% elsif page.layout == 'categories' or page.layout == 'tags' %}
+    <a id="backButton">← Back</a>
+    <span class="nav-separator">|</span>
+    <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
+    <span class="nav-separator">|</span>
+    <a href="{{ '/' | relative_url }}">Home</a>
+  {% elsif page.layout == 'blogs' %}
+    <div class="nav-left">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <span class="nav-separator">|</span>
+      <a href="{{ '/categories' | relative_url }}">Categories</a>
+      <span class="nav-separator">|</span>
+      <a href="{{ '/tags' | relative_url }}">Topics</a>
+    </div>
+    <div class="search-container">
+      <button class="search-toggle" id="search-toggle" aria-label="Search blogs">
+        <svg class="search-icon-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </button>
+      <input type="text" id="blog-search" class="search-input" placeholder="Search blogs..." />
+      <button class="search-clear" id="search-clear" aria-label="Clear search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  {% endif %}
+</nav>
+
+{% if page.layout == 'categories' or page.layout == 'tags' %}
+<script>
+  (function () {
+    const backBtn = document.getElementById("backButton");
+    if (backBtn) {
+      backBtn.addEventListener("click", function () {
+        if (document.referrer && document.referrer !== window.location.href) {
+          history.back();
+        } else {
+          window.location.href = "{{ '/blogs' | relative_url }}";
+        }
+      });
+    }
+  })();
+</script>
+{% endif %}
