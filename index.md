@@ -27,7 +27,7 @@ hide_header: true
 
 <h2 style="margin-top:10px">&nbsp;&nbsp;Hi, I am Alok</h2>
 
-<p align="center" style="margin: 2rem 0;">
+<p class="center" style="margin: 2rem 0;">
   <a href="{{ '/blogs' | relative_url }}">
     <img src="https://img.shields.io/badge/📝_My_Blogs-Read_Articles-brightgreen?style=for-the-badge" alt="Blog"/>
   </a>
@@ -39,7 +39,7 @@ hide_header: true
   </a>
 </p>
 
-<p align="center" style="margin: 1rem 0;">
+<p class="center" style="margin: 1rem 0;">
  <a href="https://github.com/aloknecessary">
     <img src="https://img.shields.io/badge/GitHub-aloknecessary-yellow?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
   </a>

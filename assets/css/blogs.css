@@ -136,12 +136,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
+  color: var(--primary);
   margin-left: auto;
 }
 
 .search-toggle:hover {
-  color: var(--primary);
+  opacity: 0.8;
 }
 
 .search-container.active .search-toggle {
@@ -327,44 +327,55 @@
 .tag--ai         { --tag-bg: var(--tag-ai-bg); --tag-color: var(--tag-ai-color); } */
 
 /* Tag Color Coding */
+
+/* Container & Cloud Native */
 .card-tags .tag[data-tag*="kubernetes"],
 .card-tags .tag[data-tag*="k8s"] {
   background: #e0f2fe;
   color: #0369a1;
 }
 
-.card-tags .tag[data-tag*="docker"] {
+.card-tags .tag[data-tag*="docker"],
+.card-tags .tag[data-tag*="container"] {
   background: #dbeafe;
   color: #1e40af;
 }
 
+/* Cloud Platforms */
 .card-tags .tag[data-tag*="azure"],
 .card-tags .tag[data-tag*="cloud"] {
   background: #dbeafe;
   color: #1e3a8a;
 }
+
 .card-tags .tag[data-tag*="terraform"],
 .card-tags .tag[data-tag*="aws"] {
   background: #fef3c7;
   color: #92400e;
 }
 
+/* DevOps & CI/CD */
 .card-tags .tag[data-tag*="devops"],
 .card-tags .tag[data-tag*="cicd"],
 .card-tags .tag[data-tag*="github-actions"],
-.card-tags .tag[data-tag*="ci-cd"] {
+.card-tags .tag[data-tag*="ci-cd"],
+.card-tags .tag[data-tag*="arc"] {
   background: #f3e8ff;
   color: #6b21a8;
 }
 
+/* Frontend & Web */
 .card-tags .tag[data-tag*="react"],
 .card-tags .tag[data-tag*="progressive-web-apps"],
 .card-tags .tag[data-tag*="node"],
-.card-tags .tag[data-tag*="javascript"] {
+.card-tags .tag[data-tag*="javascript"],
+.card-tags .tag[data-tag*="web-"],
+.card-tags .tag[data-tag*="service-workers"] {
   background: #fef3c7;
   color: #78350f;
 }
 
+/* .NET & Backend */
 .card-tags .tag[data-tag*="dotnet"],
 .card-tags .tag[data-tag*="csharp"],
 .card-tags .tag[data-tag*="net"] {
@@ -372,35 +383,97 @@
   color: #5b21b6;
 }
 
+/* Architecture & Design */
 .card-tags .tag[data-tag*="architecture"],
 .card-tags .tag[data-tag*="platform"],
-.card-tags .tag[data-tag*="design"] {
+.card-tags .tag[data-tag*="design"],
+.card-tags .tag[data-tag*="cqrs"] {
   background: #fce7f3;
   color: #9f1239;
 }
 
-.card-tags .tag[data-tag*="scalability"],
-.card-tags .tag[data-tag*="security"] {
+/* Security & Networking */
+.card-tags .tag[data-tag*="security"],
+.card-tags .tag[data-tag*="private-endpoints"],
+.card-tags .tag[data-tag*="privatelink"],
+.card-tags .tag[data-tag*="vpc"],
+.card-tags .tag[data-tag*="dns"],
+.card-tags .tag[data-tag*="networking"] {
   background: #fee2e2;
   color: #991b1b;
 }
 
-.card-tags .tag[data-tag*="modernisation"],
-.card-tags .tag[data-tag*="productivity"] {
-  background: #4fc2cc;
-  color: #ffffff;
-}
-
+/* Scalability & Performance */
+.card-tags .tag[data-tag*="scalability"],
 .card-tags .tag[data-tag*="performance"],
-.card-tags .tag[data-tag*="optimization"] {
+.card-tags .tag[data-tag*="optimization"],
+.card-tags .tag[data-tag*="multi-tenancy"] {
   background: #d1fae5;
   color: #065f46;
 }
 
+/* Modernization & Productivity */
+.card-tags .tag[data-tag*="modernisation"],
+.card-tags .tag[data-tag*="modernization"],
+.card-tags .tag[data-tag*="productivity"],
+.card-tags .tag[data-tag*="legacy"] {
+  background: #4fc2cc;
+  color: #ffffff;
+}
+
+/* AI & Automation */
 .card-tags .tag[data-tag*="ai"],
-.card-tags .tag[data-tag*="automation"] {
+.card-tags .tag[data-tag*="automation"],
+.card-tags .tag[data-tag*="debugging"] {
   background: #e924b8;
   color: #ffffff;
+}
+
+/* Database & Data */
+.card-tags .tag[data-tag*="database"],
+.card-tags .tag[data-tag*="sql"],
+.card-tags .tag[data-tag*="redis"],
+.card-tags .tag[data-tag*="isolation"] {
+  background: #fde68a;
+  color: #78350f;
+}
+
+/* Infrastructure & Platform */
+.card-tags .tag[data-tag*="infrastructure"],
+.card-tags .tag[data-tag*="platform-engineering"],
+.card-tags .tag[data-tag*="dev-infra"],
+.card-tags .tag[data-tag*="self-hosted"],
+.card-tags .tag[data-tag*="portainer"],
+.card-tags .tag[data-tag*="ubuntu"] {
+  background: #e9d5ff;
+  color: #6b21a8;
+}
+
+/* SaaS & Cloud Native */
+.card-tags .tag[data-tag*="saas"],
+.card-tags .tag[data-tag*="cloud-native"] {
+  background: #bfdbfe;
+  color: #1e40af;
+}
+
+/* Technical Debt & Quality */
+.card-tags .tag[data-tag*="technical-debt"],
+.card-tags .tag[data-tag*="code-quality"] {
+  background: #fed7aa;
+  color: #9a3412;
+}
+
+/* Documentation & Testing */
+.card-tags .tag[data-tag*="documentation"],
+.card-tags .tag[data-tag*="playwright"] {
+  background: #d1fae5;
+  color: #14532d;
+}
+
+/* Cost Optimization */
+.card-tags .tag[data-tag*="cost"] {
+  background: #fef08a;
+  color: #713f12;
 }
 
 /* Read More Link */

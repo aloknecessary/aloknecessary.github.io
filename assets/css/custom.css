@@ -50,6 +50,10 @@ p img[src*="badge"] {
   justify-content: center;
 }
 
+.center {
+  text-align: center;
+}
+
 /* GitHub Stats Specific Styling */
 img[src*="github-readme-stats"],
 img[src*="github-readme-streak"] {

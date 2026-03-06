@@ -240,6 +240,14 @@ header h1 {
   color: var(--secondary);
 }
 
+.gradient-name {
+  /* background: linear-gradient(35deg, #0366d6 0%, #eb259c 100%); */
+  background: linear-gradient(180deg, #0366d6 35%, #eb259c 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 header p {
   font-size: 1.1rem;
   color: var(--muted);
