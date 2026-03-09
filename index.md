@@ -201,6 +201,8 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 >
 > I've led and delivered systems that integrate frontend, backend, infrastructure, and cloud products — blending architectural rigor with software engineering craftsmanship.
 >
+> [**→ Read the full journey**]({{ '/detailed-journey' | relative_url }})
+>
 > **Key Achievements:**
 >
 > - Architected and delivered full-stack application designs using React, Angular, Node.js, and .NET  

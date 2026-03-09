@@ -251,7 +251,10 @@ header h1 {
 header p {
   font-size: 1.1rem;
   color: var(--muted);
-  max-width: 720px;
+}
+
+.info-header {
+  max-width: 780px;
 }
 
 h2 {
@@ -333,7 +336,7 @@ blockquote {
    ============================================================ */
 
 footer {
-  margin-top: 80px;
+  margin-top: 5rem;
   border-top: 1px solid var(--border);
   font-size: 0.9rem;
   color: var(--muted);
