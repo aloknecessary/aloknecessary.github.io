@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<link rel="stylesheet" href="{{ '/assets/css/skeleton.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/tags.css' | relative_url }}">
 
 {% include navbar.html %}
@@ -14,63 +15,63 @@ layout: default
 
 <section class="tags-page">
   
-  {% assign category_list = "" | split: "" %}
-  {% assign sorted_posts = site.blogs | sort: 'date' | reverse %}
-
-  {% for post in sorted_posts %}
-    {% for category in post.categories %}
-      {% unless category_list contains category %}
-        {% assign category_list = category_list | push: category %}
-      {% endunless %}
-    {% endfor %}
-  {% endfor %}
-
-  {% assign sorted_categories = category_list | sort %}
-  
-  <div class="tags-container">
-    {% for category in sorted_categories %}
-    <div class="tag-block" id="{{ category | slugify }}">
-      <h2 class="tag-heading">{{ category | capitalize }}</h2>
-
-      <ul class="tag-posts">
-        {% for post in sorted_posts %} 
-          {% if post.categories contains category %}
-          <li>
-            <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
-            <span class="post-date"> {{ post.date | date: "%b %d, %Y" }} </span>
-          </li>
-          {% endif %} 
-        {% endfor %}
-      </ul>
+  <!-- Skeleton Loader -->
+  <div id="tags-loader" class="tags-skeleton">
+    {% for i in (1..4) %}
+    <div class="tag-skeleton-block">
+      <div class="skeleton skeleton-heading"></div>
+      <div class="skeleton skeleton-item"></div>
+      <div class="skeleton skeleton-item"></div>
+      <div class="skeleton skeleton-item"></div>
     </div>
     {% endfor %}
+  </div>
+
+  <!-- Categories Content -->
+  <div id="tags-content" class="hidden">
+    {% assign category_list = "" | split: "" %}
+    {% assign sorted_posts = site.blogs | sort: 'date' | reverse %}
+
+    {% for post in sorted_posts %}
+      {% for category in post.categories %}
+        {% unless category_list contains category %}
+          {% assign category_list = category_list | push: category %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+
+    {% assign sorted_categories = category_list | sort %}
+    
+    <div class="tags-container">
+      {% for category in sorted_categories %}
+      <div class="tag-block" id="{{ category | slugify }}">
+        <h2 class="tag-heading">{{ category | capitalize }}</h2>
+
+        <ul class="tag-posts">
+          {% for post in sorted_posts %} 
+            {% if post.categories contains category %}
+            <li>
+              <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
+              <span class="post-date"> {{ post.date | date: "%b %d, %Y" }} </span>
+            </li>
+            {% endif %} 
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
 {% include scroll-to-top.html %}
 
 <script>
-  function highlightActiveCategory() {
-    document.querySelectorAll('.tag-block').forEach(el => {
-      el.classList.remove('active');
-    });
-
-    const hash = window.location.hash.substring(1);
-    if (!hash) return;
-
-    const active = document.getElementById(hash);
-    if (active) {
-      active.classList.add('active');
-    }
-  }
-
-  highlightActiveCategory();
-  window.addEventListener('hashchange', highlightActiveCategory);
-
-  if (window.location.hash) {
-    const target = document.querySelector(window.location.hash);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  }
+  window.addEventListener("load", function () {
+    setTimeout(() => {
+      document.getElementById("tags-loader").style.display = "none";
+      document.getElementById("tags-content").classList.remove("hidden");
+    }, 350);
+  });
 </script>
+
+<script src="{{ '/assets/js/tag-highlight.js' | relative_url }}"></script>

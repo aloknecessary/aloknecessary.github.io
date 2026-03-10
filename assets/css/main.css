@@ -282,13 +282,6 @@ li {
   text-align: justify;
 }
 
-ul {
-  padding-left: 20px;
-}
-
-ul > li {
-  margin-left: 20px;
-}
 
 /* ============================================================
    LINKS
@@ -298,10 +291,20 @@ a {
   color: var(--primary);
   text-decoration: none;
   font-weight: 500;
+  outline: none;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+a:focus {
+  outline: none;
+}
+
+a img {
+  outline: none;
+  border: none;
 }
 
 /* ============================================================

@@ -517,13 +517,34 @@
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.4rem;
-  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s, background 0.3s;
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.05) 0%, rgba(139, 92, 246, 0.03) 100%);
+  border: 1px solid rgba(255, 193, 7, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #FFC107, #8B5CF6);
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .skill-card:hover {
-  border-color: var(--border);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
+  border-color: rgba(255, 193, 7, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 193, 7, 0.12);
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
 }
 
 .skill-card-icon {
@@ -646,6 +667,10 @@ footer {
   margin-top: 3rem;
 }
 
+ul > li {
+  margin-left: 2px;
+}
+
 /* Responsive */
 @media (max-width: 640px) {
   .hero-stats {
@@ -676,7 +701,5 @@ footer {
   ul {
     padding-left: 2px;
   }
-  ul > li {
-    margin-left: 2px;
-  }
+  
 }

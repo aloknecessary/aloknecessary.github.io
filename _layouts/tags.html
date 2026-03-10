@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<link rel="stylesheet" href="{{ '/assets/css/skeleton.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/css/tags.css' | relative_url }}">
 
 {% include navbar.html %}
@@ -14,69 +15,64 @@ layout: default
 
 <section class="tags-page">
   
-  <!-- Build tag list from _blogs collection -->
-  {% assign tag_list = "" | split: "" %}
-  {% assign sorted_posts = site.blogs | sort: 'date' | reverse %}
-
-  {% for post in sorted_posts %}
-    {% for tag in post.tags %}
-      {% unless tag_list contains tag %}
-        {% assign tag_list = tag_list | push: tag %}
-      {% endunless %}
-    {% endfor %}
-  {% endfor %}
-
-  {% assign sorted_tags = tag_list | sort %}
-  <!-- Tags listing -->
-  <div class="tags-container">
-    {% for tag in sorted_tags %}
-    <div class="tag-block" id="{{ tag | slugify }}">
-      <h2 class="tag-heading">#{{ tag }}</h2>
-
-      <ul class="tag-posts">
-        {% for post in sorted_posts %} 
-          {% if post.tags contains tag %}
-          <li>
-            <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
-            <span class="post-date"> {{ post.date | date: "%b %d, %Y" }} </span>
-          </li>
-          {% endif %} 
-        {% endfor %}
-      </ul>
+  <!-- Skeleton Loader -->
+  <div id="tags-loader" class="tags-skeleton">
+    {% for i in (1..4) %}
+    <div class="tag-skeleton-block">
+      <div class="skeleton skeleton-heading"></div>
+      <div class="skeleton skeleton-item"></div>
+      <div class="skeleton skeleton-item"></div>
+      <div class="skeleton skeleton-item"></div>
     </div>
     {% endfor %}
+  </div>
+
+  <!-- Tags Content -->
+  <div id="tags-content" class="hidden">
+    <!-- Build tag list from _blogs collection -->
+    {% assign tag_list = "" | split: "" %}
+    {% assign sorted_posts = site.blogs | sort: 'date' | reverse %}
+
+    {% for post in sorted_posts %}
+      {% for tag in post.tags %}
+        {% unless tag_list contains tag %}
+          {% assign tag_list = tag_list | push: tag %}
+        {% endunless %}
+      {% endfor %}
+    {% endfor %}
+
+    {% assign sorted_tags = tag_list | sort %}
+    <!-- Tags listing -->
+    <div class="tags-container">
+      {% for tag in sorted_tags %}
+      <div class="tag-block" id="{{ tag | slugify }}">
+        <h2 class="tag-heading">#{{ tag }}</h2>
+
+        <ul class="tag-posts">
+          {% for post in sorted_posts %} 
+            {% if post.tags contains tag %}
+            <li>
+              <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
+              <span class="post-date"> {{ post.date | date: "%b %d, %Y" }} </span>
+            </li>
+            {% endif %} 
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
 
 {% include scroll-to-top.html %}
 
 <script>
-  function highlightActiveTag() {
-    // Remove existing highlights
-    document.querySelectorAll('.tag-block').forEach(el => {
-      el.classList.remove('active');
-    });
-
-    // Get hash without #
-    const hash = window.location.hash.substring(1);
-    if (!hash) return;
-
-    const active = document.getElementById(hash);
-    if (active) {
-      active.classList.add('active');
-    }
-  }
-
-  // Run on load
-  highlightActiveTag();
-
-  // Run when hash changes
-  window.addEventListener('hashchange', highlightActiveTag);
-
-  if (window.location.hash) {
-    const target = document.querySelector(window.location.hash);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  }
+  window.addEventListener("load", function () {
+    setTimeout(() => {
+      document.getElementById("tags-loader").style.display = "none";
+      document.getElementById("tags-content").classList.remove("hidden");
+    }, 350);
+  });
 </script>
+
+<script src="{{ '/assets/js/tag-highlight.js' | relative_url }}"></script>
