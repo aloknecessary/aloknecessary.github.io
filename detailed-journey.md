@@ -427,14 +427,98 @@ hide_header: false
       <p class="section-subtitle">The full-stack of skills forged across every engagement.</p>
     </div>
     <div class="skills-grid">
-      <div class="skill-card reveal"><div class="skill-card-icon">☁️</div><div class="skill-card-title">Cloud &amp; Infrastructure</div><div class="skill-tags"><span class="skill-tag">AWS</span><span class="skill-tag">Azure AKS</span><span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">IIS</span></div></div>
-      <div class="skill-card reveal"><div class="skill-card-icon">⚙️</div><div class="skill-card-title">CI/CD &amp; DevOps</div><div class="skill-tags"><span class="skill-tag">GitHub Actions</span><span class="skill-tag">CI/CD Pipelines</span><span class="skill-tag">Docker Compose</span><span class="skill-tag">Container Registry</span></div></div>
-      <div class="skill-card reveal"><div class="skill-card-icon">🖥️</div><div class="skill-card-title">Backend Engineering</div><div class="skill-tags"><span class="skill-tag">.NET</span><span class="skill-tag">Node.js</span><span class="skill-tag">REST APIs</span><span class="skill-tag">Microservices</span><span class="skill-tag">Message Queues</span><span class="skill-tag">SFTP Integration</span></div></div>
-      <div class="skill-card reveal"><div class="skill-card-icon">⚛️</div><div class="skill-card-title">Frontend Engineering</div><div class="skill-tags"><span class="skill-tag">React</span><span class="skill-tag">Next.js</span><span class="skill-tag">React Native</span><span class="skill-tag">Flutter</span><span class="skill-tag">TypeScript</span></div></div>
-      <div class="skill-card reveal"><div class="skill-card-icon">🗄️</div><div class="skill-card-title">Data &amp; Databases</div><div class="skill-tags"><span class="skill-tag">MSSQL</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">ArangoDB</span><span class="skill-tag">Redis</span></div></div>
-      <div class="skill-card reveal"><div class="skill-card-icon">🏗️</div><div class="skill-card-title">Architecture</div><div class="skill-tags"><span class="skill-tag">Solution Design</span><span class="skill-tag">System Architecture</span><span class="skill-tag">Caching Strategy</span><span class="skill-tag">Queue Architecture</span><span class="skill-tag">Bulk Data Processing</span></div></div>
-      <div class="skill-card reveal"><div class="skill-card-icon">🤖</div><div class="skill-card-title">AI &amp; Integrations</div><div class="skill-tags"><span class="skill-tag">Azure AI Foundry</span><span class="skill-tag">RAG</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">Custom Copilots</span><span class="skill-tag">Power Platform</span></div></div>
-      <div class="skill-card reveal"><div class="skill-card-icon">🎯</div><div class="skill-card-title">Leadership</div><div class="skill-tags"><span class="skill-tag">Teams of 40+</span><span class="skill-tag">Agile/Scrum</span><span class="skill-tag">Stakeholder Mgmt</span><span class="skill-tag">Mentoring</span><span class="skill-tag">Roadmapping</span></div></div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Frontend Engineering</div>
+        <div class="badge-grid">
+          <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React" />
+          <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
+          <img src="https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React Native" />
+          <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter" />
+          <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+          <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" />
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Backend Engineering</div>
+        <div class="badge-grid">
+          <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+          <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET" />
+          <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=sharp&logoColor=white" alt="C#" />
+          <img src="https://img.shields.io/badge/REST_APIs-FF6B6B?style=for-the-badge" alt="REST APIs" />
+          <img src="https://img.shields.io/badge/Microservices-FF6B6B?style=for-the-badge" alt="Microservices" />
+          <img src="https://img.shields.io/badge/Message_Queues-FFA500?style=for-the-badge" alt="Message Queues" />
+          <img src="https://img.shields.io/badge/SFTP_Integration-4ECDC4?style=for-the-badge" alt="SFTP Integration" />
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Cloud & Infrastructure</div>
+        <div class="badge-grid">
+          <img src="https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazon&logoColor=white" alt="AWS" />
+          <img src="https://img.shields.io/badge/Azure_AKS-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Azure AKS" />
+          <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+          <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes" />
+          <img src="https://img.shields.io/badge/IIS-0078D4?style=for-the-badge" alt="IIS" />
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">CI/CD & DevOps</div>
+        <div class="badge-grid">
+          <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions" />
+          <img src="https://img.shields.io/badge/Docker_Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Compose" />
+          <img src="https://img.shields.io/badge/Container_Registry-4ECDC4?style=for-the-badge" alt="Container Registry" />
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Databases & Data</div>
+        <div class="badge-grid">
+          <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+          <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+          <img src="https://img.shields.io/badge/MSSQL-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" alt="MSSQL" />
+          <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+          <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
+          <img src="https://img.shields.io/badge/ArangoDB-6BA642?style=for-the-badge" alt="ArangoDB" />
+          <img src="https://img.shields.io/badge/Neo4j-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j" />
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Architecture & Design</div>
+        <div class="badge-grid">
+          <img src="https://img.shields.io/badge/System_Design-4ECDC4?style=for-the-badge" alt="System Design" />
+          <img src="https://img.shields.io/badge/Solution_Design-4ECDC4?style=for-the-badge" alt="Solution Design" />
+          <img src="https://img.shields.io/badge/Caching_Strategy-FFA500?style=for-the-badge" alt="Caching Strategy" />
+          <img src="https://img.shields.io/badge/Queue_Architecture-FFA500?style=for-the-badge" alt="Queue Architecture" />
+          <img src="https://img.shields.io/badge/Bulk_Data_Processing-FF6B6B?style=for-the-badge" alt="Bulk Data Processing" />
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">AI & Integrations</div>
+        <div class="badge-grid">
+          <img src="https://img.shields.io/badge/Azure_AI_Foundry-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white" alt="Azure AI Foundry" />
+          <img src="https://img.shields.io/badge/Prompt_Engineering-9C27B0?style=for-the-badge" alt="Prompt Engineering" />
+          <img src="https://img.shields.io/badge/RAG-FF6B6B?style=for-the-badge" alt="RAG" />
+          <img src="https://img.shields.io/badge/Custom_Copilots-9C27B0?style=for-the-badge" alt="Custom Copilots" />
+          <img src="https://img.shields.io/badge/Power_Platform-0078D4?style=for-the-badge" alt="Power Platform" />
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Cost Optimization</div>
+        <div class="badge-grid">
+          <img src="https://img.shields.io/badge/FinOps-Cert._Practices-00C853?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="FinOps" />
+          <img src="https://img.shields.io/badge/Cloud-Cost_Aware-FF9900?style=for-the-badge&logo=icloud&logoColor=white" alt="Cloud Cost" />
+          <img src="https://img.shields.io/badge/K8s-Optimized-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="K8s Optimization" />
+          <img src="https://img.shields.io/badge/Build_Cache-Optimized-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Caching" />
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-title">Leadership & Methodology</div>
+        <div class="badge-grid">
+          <img src="https://img.shields.io/badge/Teams_of_40%2B-4CAF50?style=for-the-badge" alt="Teams of 40+" />
+          <img src="https://img.shields.io/badge/Agile%2FScrum-0078D4?style=for-the-badge" alt="Agile/Scrum" />
+          <img src="https://img.shields.io/badge/Mentoring-4CAF50?style=for-the-badge" alt="Mentoring" />
+          <img src="https://img.shields.io/badge/Stakeholder_Mgmt-FF9800?style=for-the-badge" alt="Stakeholder Mgmt" />
+          <img src="https://img.shields.io/badge/Roadmapping-2196F3?style=for-the-badge" alt="Roadmapping" />
+        </div>
+      </div>
     </div>
   </div>
 </section>

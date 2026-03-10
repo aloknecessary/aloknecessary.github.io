@@ -105,6 +105,14 @@ h3 .emoji {
   margin-right: 0.5rem;
 }
 
+ul {
+  padding-left: 20px;
+}
+
+ul > li {
+  margin-left: 20px;
+}
+
 /* Stats Container for GitHub Activity */
 .stats-container {
   display: flex;
@@ -172,13 +180,6 @@ li strong {
   img[src*="github-readme-stats"] {
     display: none;
   }
-}
-
-/* Focus States for Accessibility */
-a:focus,
-button:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
 }
 
 /* High Contrast Support */
