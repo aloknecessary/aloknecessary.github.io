@@ -12,12 +12,21 @@ function highlightActiveTag() {
   }
 }
 
+function scrollToHash() {
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+}
+
 highlightActiveTag();
 window.addEventListener('hashchange', highlightActiveTag);
 
-if (window.location.hash) {
-  const target = document.querySelector(window.location.hash);
-  if (target) {
-    target.scrollIntoView({ behavior: "smooth" });
-  }
-}
+// Scroll after content is visible
+window.addEventListener('load', function() {
+  setTimeout(() => {
+    scrollToHash();
+  }, 400); // Wait for skeleton to hide (350ms) + small buffer
+});
