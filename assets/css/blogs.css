@@ -355,7 +355,9 @@
 .card-tags .tag[data-tag*="architecture"],
 .card-tags .tag[data-tag*="platform"],
 .card-tags .tag[data-tag*="design"],
-.card-tags .tag[data-tag*="cqrs"] {
+.card-tags .tag[data-tag*="cqrs"],
+.card-tags .tag[data-tag*="patterns"],
+.card-tags .tag[data-tag*="system-design"] {
   background: #fce7f3;
   color: #9f1239;
 }
@@ -394,6 +396,34 @@
 .card-tags .tag[data-tag*="automation"],
 .card-tags .tag[data-tag*="debugging"] {
   background: #e924b8;
+  color: #ffffff;
+}
+
+/* Distributed Systems & Reliability */
+.card-tags .tag[data-tag*="distributed-systems"],
+.card-tags .tag[data-tag*="microservices"] {
+  background: #fbbf24;
+  color: #78350f;
+}
+
+.card-tags .tag[data-tag*="reliability"],
+.card-tags .tag[data-tag*="idempotency"],
+.card-tags .tag[data-tag*="deduplication"] {
+  background: #a78bfa;
+  color: #ffffff;
+}
+
+.card-tags .tag[data-tag*="saga"],
+.card-tags .tag[data-tag*="event-driven"] {
+  background: #34d399;
+  color: #064e3b;
+}
+
+/* API Design */
+.card-tags .tag[data-tag*="api-design"],
+.card-tags .tag[data-tag*="api"],
+.card-tags .tag[data-tag*="rest"] {
+  background: #fb923c;
   color: #ffffff;
 }
 

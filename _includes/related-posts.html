@@ -1,12 +1,13 @@
 {% assign maxRelated = 3 %}
 {% assign minScore = 2 %}
-{% assign relatedPosts = '' | split: '' %}
+{% assign scoredPosts = '' | split: '' %}
 
+{% comment %} Calculate scores for all posts {% endcomment %}
 {% for post in site.blogs %}
   {% if post.url != page.url %}
     {% assign score = 0 %}
     
-    {% comment %} Count matching categories (1.5 points each) {% endcomment %}
+    {% comment %} Count matching categories (3 points each - highest weight) {% endcomment %}
     {% assign categoryMatches = 0 %}
     {% for category in post.categories %}
       {% if page.categories contains category %}
@@ -22,26 +23,40 @@
       {% endif %}
     {% endfor %}
     
-    {% comment %} Calculate score: categories * 1.5 + tags * 1 {% endcomment %}
-    {% assign categoryScore = categoryMatches | times: 1.5 %}
+    {% comment %} Calculate score: categories * 3 + tags * 1 {% endcomment %}
+    {% assign categoryScore = categoryMatches | times: 3 %}
     {% assign score = categoryScore | plus: tagMatches %}
     
     {% if score >= minScore %}
-      {% assign relatedPosts = relatedPosts | push: post %}
+      {% comment %} Create sortable string: score (3 digits) + date (for tie-breaking) + url {% endcomment %}
+      {% assign paddedScore = score %}
+      {% if score < 10 %}{% assign paddedScore = '00' | append: score %}
+      {% elsif score < 100 %}{% assign paddedScore = '0' | append: score %}
+      {% endif %}
+      {% assign postDate = post.date | date: "%Y%m%d" %}
+      {% assign postData = paddedScore | append: '|' | append: postDate | append: '|' | append: post.url | append: '|' | append: post.title | append: '|' | append: post.excerpt %}
+      {% assign scoredPosts = scoredPosts | push: postData %}
     {% endif %}
   {% endif %}
 {% endfor %}
 
-{% if relatedPosts.size > 0 %}
+{% comment %} Sort by score descending, then by date descending {% endcomment %}
+{% assign sortedData = scoredPosts | sort | reverse %}
+
+{% if sortedData.size > 0 %}
 <div>
   <h3>Related Articles</h3>
   <div class="related-posts">
     <ul>
-      {% for post in relatedPosts limit: maxRelated %}
-      <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        {% if post.excerpt %}<p>{{ post.excerpt }}</p>{% endif %}
-      </li>
+      {% for item in sortedData limit: maxRelated %}
+        {% assign parts = item | split: '|' %}
+        {% assign postUrl = parts[2] %}
+        {% assign postTitle = parts[3] %}
+        {% assign postExcerpt = parts[4] %}
+        <li>
+          <a href="{{ postUrl | relative_url }}">{{ postTitle }}</a>
+          {% if postExcerpt and postExcerpt != '' %}<p>{{ postExcerpt }}</p>{% endif %}
+        </li>
       {% endfor %}
     </ul>
   </div>
