@@ -6,6 +6,7 @@
   --primary: #2563eb;
   --secondary: #0f172a;
   --muted: #6b7280;
+  --error: #dc2626;
 
   --bg-soft: #f8fafc;
   --bg-base: #ffffff;
@@ -46,6 +47,7 @@
   --primary: #3b82f6;
   --secondary: #f1f5f9;
   --muted: #9ca3af;
+  --error: #ef4444;
 
   --bg-soft: #0f172a;
   --bg-base: #0b1220;
