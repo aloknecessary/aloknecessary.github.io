@@ -12,3 +12,9 @@ The repository follows a content-first structure with a strong focus on clarity,
 # [About Me](https://aloknecessary.github.io/)
 
 # [My Blog](https://aloknecessary.github.io/blog)
+
+
+-Thanks
+
+
+
