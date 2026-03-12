@@ -25,6 +25,17 @@ If you're designing payment pipelines, event-driven microservices, or any system
 
 ---
 
+## Table of Contents
+- [What Idempotency Actually Guarantees](#what-idempotency-actually-guarantees-and-what-it-doesnt)
+- [Idempotency Keys: Design and Semantics](#idempotency-keys-design-and-semantics)
+- [Deduplication Stores: Architecture and Trade-offs](#deduplication-stores-architecture-and-trade-offs)
+- [API Gateway vs. Application-Layer Handling](#api-gateway-vs-application-layer-handling)
+- [Failure Scenarios Most Teams Miss](#failure-scenarios-most-teams-miss)
+- [Cross-Cutting Concerns](#cross-cutting-concerns)
+- [Summary](#summary)
+
+---
+
 ## What Idempotency Actually Guarantees (and What It Doesn't)
 
 Before getting into implementation, it's worth being precise about the guarantee we're trying to provide.

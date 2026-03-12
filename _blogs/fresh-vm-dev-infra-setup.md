@@ -21,6 +21,20 @@ Everything here is reproducible. You can run it as a script, drop it into user-d
 
 <!--more-->
 
+## Table of Contents
+- [Prerequisites and Assumptions](#prerequisites-and-assumptions)
+- [Step 1: OS Hardening and Base Packages](#step-1-os-hardening-and-base-packages)
+- [Step 2: Install Docker Engine](#step-2-install-docker-engine)
+- [Step 3: Directory Layout](#step-3-directory-layout)
+- [Step 4: GitHub Actions Self-Hosted Runner](#step-4-github-actions-self-hosted-runner)
+- [Step 5: Dev Services Stack via Docker Compose](#step-5-dev-services-stack-via-docker-compose)
+- [Step 6: Portainer Custom TLS Certificate (Optional)](#step-6-portainer-custom-tls-certificate-optional)
+- [Step 7: Using the Runner in Workflows](#step-7-using-the-runner-in-workflows)
+- [Step 8: Maintenance and Operations](#step-8-maintenance-and-operations)
+- [Quick Reference: Ports and Access](#quick-reference-ports-and-access)
+- [Common Pitfalls](#common-pitfalls)
+- [Summary](#summary)
+
 ---
 
 ## Prerequisites and Assumptions

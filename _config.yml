@@ -21,6 +21,9 @@ exclude:
   - external/
   - node_modules/
   - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - .amazonq/
 
 # Blog collection (THIS is the big win)
 collections:
