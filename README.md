@@ -1,3 +1,5 @@
+[![pages-build-deployment](https://github.com/aloknecessary/aloknecessary.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/aloknecessary/aloknecessary.github.io/actions/workflows/pages/pages-build-deployment)
+
 # Personal Website & Technical Blog
 
 This repository contains the source code and content for my personal website and technical blog, built using **Jekyll** and hosted on **GitHub Pages**.

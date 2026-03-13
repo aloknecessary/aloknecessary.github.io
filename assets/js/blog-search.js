@@ -3,13 +3,25 @@
   const searchInput = document.getElementById('blog-search');
   const searchClear = document.getElementById('search-clear');
   const searchContainer = document.querySelector('.search-container');
+  const noResults = document.getElementById('no-results');
+  const clearSearchLink = document.getElementById('clear-search-link');
   
   if (!searchToggle || !searchInput || !searchClear || !searchContainer) return;
 
   const blogCards = document.querySelectorAll('.blog-card');
   let debounceTimer;
   
+  function updateClearButtonVisibility() {
+    if (searchInput.value.trim().length > 0) {
+      searchContainer.classList.add('has-text');
+    } else {
+      searchContainer.classList.remove('has-text');
+    }
+  }
+  
   function filterBlogs(searchTerm) {
+    let visibleCount = 0;
+    
     blogCards.forEach(card => {
       const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
       const description = card.querySelector('.card-excerpt')?.textContent.toLowerCase() || '';
@@ -20,7 +32,19 @@
                      tags.includes(searchTerm);
       
       card.style.display = matches ? '' : 'none';
+      if (matches) visibleCount++;
     });
+    
+    if (noResults) {
+      noResults.classList.toggle('visible', searchTerm.length > 0 && visibleCount === 0);
+    }
+  }
+  
+  function clearSearch() {
+    searchInput.value = '';
+    updateClearButtonVisibility();
+    filterBlogs('');
+    searchContainer.classList.remove('active');
   }
   
   // Toggle search bar
@@ -34,6 +58,7 @@
   // Search input
   searchInput.addEventListener('input', function(e) {
     const searchTerm = e.target.value.toLowerCase().trim();
+    updateClearButtonVisibility();
     
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => {
@@ -41,12 +66,13 @@
     }, 300);
   });
   
-  // Clear search
-  searchClear.addEventListener('click', function() {
-    searchInput.value = '';
-    filterBlogs('');
-    searchContainer.classList.remove('active');
-  });
+  // Clear search button
+  searchClear.addEventListener('click', clearSearch);
+  
+  // Clear search link in no results
+  if (clearSearchLink) {
+    clearSearchLink.addEventListener('click', clearSearch);
+  }
   
   // Close search on outside click
   document.addEventListener('click', function(e) {
