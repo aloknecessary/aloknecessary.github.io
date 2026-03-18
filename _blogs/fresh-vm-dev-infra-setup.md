@@ -13,6 +13,8 @@ categories:
 tags: [docker, github-actions, self-hosted-runner, redis, sql-server, portainer, ubuntu, dev-infra]
 ---
 
+## Introduction
+
 Every team eventually needs a dedicated dev or staging VM — a place to run integration tests, host shared services, and fire CI/CD pipelines without routing everything through the cloud. Spinning one up correctly the first time saves hours of debugging later.
 
 This guide walks you through bootstrapping a fresh Ubuntu 22.04 LTS VM from a bare OS install to a fully operational developer infrastructure node. By the end you'll have: a hardened base OS, Docker with proper daemon configuration, a GitHub Actions self-hosted runner registered to your org, and a full stack of shared dev services — SQL Server, Redis, Portainer, and Adminer — all wired together via `docker-compose`.
@@ -22,6 +24,7 @@ Everything here is reproducible. You can run it as a script, drop it into user-d
 <!--more-->
 
 ## Table of Contents
+- [Introduction](#introduction)
 - [Prerequisites and Assumptions](#prerequisites-and-assumptions)
 - [Step 1: OS Hardening and Base Packages](#step-1-os-hardening-and-base-packages)
 - [Step 2: Install Docker Engine](#step-2-install-docker-engine)

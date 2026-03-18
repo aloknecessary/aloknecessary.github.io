@@ -14,6 +14,8 @@ tags: [multi-tenancy, saas, architecture, database-design, isolation, scalabilit
 ---
 
 
+## Introduction
+
 Multi-tenancy is the architectural cornerstone of modern SaaS platforms, enabling resource consolidation while maintaining logical isolation between customers. However, choosing the wrong isolation model or failing to account for scaling inflection points can lead to catastrophic failures, security breaches, or operational nightmares at scale.
 
 This article provides a practical analysis of multi-tenant architecture patterns, covering isolation strategies, blast radius considerations, and the critical decision points that separate successful SaaS platforms from those that crumble under growth.
@@ -21,6 +23,7 @@ This article provides a practical analysis of multi-tenant architecture patterns
 <!--more-->
 
 ## Table of Contents
+- [Introduction](#introduction)
 - [Understanding Multi-Tenancy Fundamentals](#understanding-multi-tenancy-fundamentals)
 - [The Three Isolation Models](#the-three-isolation-models)
 - [Isolation Models Comparison](#isolation-models-comparison)

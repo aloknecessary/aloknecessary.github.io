@@ -12,6 +12,8 @@ description: "Critical analysis of private endpoint over-engineering in cloud en
 keywords: "private endpoints, AWS PrivateLink, Azure Private Link, cloud security, VPC endpoints, DNS complexity, network debugging, cloud architecture, security architecture, private connectivity"
 ---
 
+## Introduction
+
 "Make everything private" has become the default security posture in cloud architectures. Private endpoints for databases, storage, message queues, APIs—if it has a public endpoint option, security teams demand it be private. The reasoning seems sound: private = secure, public = vulnerable.
 
 But this reflexive privatization comes with substantial hidden costs that nobody talks about until you're deep in production debugging at 2 AM, unable to figure out why your application can't resolve DNS, and your cloud bill shows $2,000/month in private endpoint charges for services that never needed them.
@@ -21,6 +23,7 @@ This article examines the uncomfortable reality of private endpoint proliferatio
 <!--more-->
 
 ## Table of Contents
+- [Introduction](#introduction)
 - [The Private Endpoint Gold Rush](#the-private-endpoint-gold-rush)
 - [The DNS Complexity Nightmare](#the-dns-complexity-nightmare)
 - [Network Debugging Challenges](#network-debugging-challenges)
