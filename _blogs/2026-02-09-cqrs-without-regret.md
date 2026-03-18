@@ -20,6 +20,8 @@ tags:
   - cloud-architecture
 ---
 
+## Introduction
+
 Command Query Responsibility Segregation (CQRS) is one of the most misunderstood architectural patterns in modern system design.
 
 When applied deliberately, it can unlock scalability, performance, and architectural clarity.  
@@ -34,6 +36,7 @@ It is a **decision framework**—focused on:
 <!--more-->
 
 ## Table of Contents
+- [Introduction](#introduction)
 - [What CQRS Actually Is (And What It Is Not)](#what-cqrs-actually-is-and-what-it-is-not)
 - [Where CQRS Works Exceptionally Well](#where-cqrs-works-exceptionally-well)
 - [Where CQRS Breaks (And Usually Does)](#where-cqrs-breaks-and-usually-does)

@@ -13,6 +13,8 @@ categories:
 tags: [kubernetes, github-actions, devops, ci-cd, security, arc, container-security, cloud-architecture, platform-engineering, automation]
 ---
 
+## Introduction
+
 Running CI/CD workloads at scale forces a reckoning with a deceptively simple question: *who controls the machines your code runs on?* GitHub's managed runners hand that control to GitHub. Self-hosted runners hand it back to you — along with every operational burden that comes with it.
 
 This post is a technical deep-dive into running self-hosted GitHub Actions runners on Kubernetes using the [Actions Runner Controller (ARC)](https://github.com/actions/actions-runner-controller). We'll cover isolation models, blast radius analysis, security hardening, and a realistic cost comparison against managed runners. By the end, you'll have the mental model to decide which path is right for your workload — and the configuration to get there if you go self-hosted.

@@ -12,10 +12,13 @@ categories:
 tags: ["kubernetes", "docker-compose", "container-architecture", "cloud-native", "system-design", "devops", "cloud-architecture", "scalability"]
 ---
 
+## Introduction
+
 Containerization has fundamentally changed how modern systems are designed, deployed, and operated. While Docker made packaging applications simple and portable, **Docker Compose** and **Kubernetes** represent two very different architectural philosophies for running containerized workloads.
 <!--more-->
 
 ## Table of Contents
+- [Introduction](#introduction)
 - [Understanding the Core Problem Each Tool Solves](#understanding-the-core-problem-each-tool-solves)
 - [Architectural Foundations](#architectural-foundations)
 - [Value Principles Comparison](#value-principles-comparison)

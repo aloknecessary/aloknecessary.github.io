@@ -11,7 +11,7 @@ excerpt: "A comprehensive guide to leveraging AI as a strategic force multiplier
 keywords: "AI developer productivity, AI DevOps, Kubernetes automation, Terraform generation, CI/CD optimization, GitHub Actions, intelligent debugging, infrastructure as code, platform engineering, developer experience"
 ---
 
-## The AI Productivity Paradox
+## Introduction
 
 Marketing promises "10x developers" and "code that writes itself." Reality is different—and more valuable.
 
@@ -22,6 +22,7 @@ Real productivity gains come from AI eliminating friction in engineering workflo
 <!--more-->
 
 ## Table of Contents
+- [Introduction](#introduction)
 - [Where AI Delivers Measurable Impact](#where-ai-delivers-measurable-impact)
 - [The Strategic Implementation Framework](#the-strategic-implementation-framework)
 - [Common Pitfalls to Avoid](#common-pitfalls-to-avoid)
