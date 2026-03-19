@@ -96,6 +96,15 @@ h2::before {
   display: none;
 }
 
+.intro-greeting {
+  background: linear-gradient(90deg, #2563eb 0%, #9333ea 30%, #ec4899 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  display: inline-block;
+}
+
 h2 {
   margin-left: -34px
 }

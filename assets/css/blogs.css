@@ -502,9 +502,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 3rem 2rem;
-  margin: 2rem auto 0;
-  max-width: 500px;
+  padding: 4rem 2rem;
+  grid-column: 1 / -1;
 }
 
 .no-results.visible {
@@ -512,16 +511,16 @@
 }
 
 .no-results-icon {
-  color: var(--error);
-  margin-bottom: 1.5rem;
-  opacity: 0.8;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  opacity: 0.5;
 }
 
 .no-results-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: var(--text-primary);
-  margin: 0 0 0.75rem 0;
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem 0;
 }
 
 .no-results-title::before {
@@ -529,8 +528,8 @@
 }
 
 .no-results-text {
-  font-size: 1rem;
-  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  color: var(--muted);
   margin: 0;
   line-height: 1.6;
 }

@@ -46,7 +46,11 @@ layout: default
     <div class="tags-container">
       {% for tag in sorted_tags %}
       <div class="tag-block" id="{{ tag | slugify }}">
-        <h2 class="tag-heading">#{{ tag }}</h2>
+        {% assign count = 0 %}
+        {% for post in sorted_posts %}
+          {% if post.tags contains tag %}{% assign count = count | plus: 1 %}{% endif %}
+        {% endfor %}
+        <h2 class="tag-heading">#{{ tag }} <span class="tag-count">{{ count }}</span></h2>
 
         <ul class="tag-posts">
           {% for post in sorted_posts %} 

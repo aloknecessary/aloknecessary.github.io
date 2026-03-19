@@ -45,7 +45,11 @@ layout: default
     <div class="tags-container">
       {% for category in sorted_categories %}
       <div class="tag-block" id="{{ category | slugify }}">
-        <h2 class="tag-heading">{{ category | capitalize }}</h2>
+        {% assign count = 0 %}
+        {% for post in sorted_posts %}
+          {% if post.categories contains category %}{% assign count = count | plus: 1 %}{% endif %}
+        {% endfor %}
+        <h2 class="tag-heading">{{ category | capitalize }} <span class="tag-count">{{ count }}</span></h2>
 
         <ul class="tag-posts">
           {% for post in sorted_posts %} 

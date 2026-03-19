@@ -25,7 +25,11 @@ hide_header: true
   </div>
 </div>
 
-<h2 style="margin-top:10px">&nbsp;&nbsp;Hi, I am Alok</h2>
+<h2 class="intro-greeting" style="margin-top:10px">&nbsp;&nbsp;Hi there, I am Alok</h2>
+
+<!-- <div class="center" style="overflow-x:auto">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&pause=1000&center=true&width=360&height=50&lines=Solution+Architect;Full-Stack+Engineering;Cloud-Native+Systems;Always+Learning+Something+New" alt="Typing SVG" />
+</div> -->
 
 <p class="center" style="margin: 2rem 0;">
   <a href="{{ '/blogs' | relative_url }}">
