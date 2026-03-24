@@ -188,6 +188,4 @@ The CAP theorem does not tell you what to build. It tells you that every system 
 
 ---
 
-*CAP Theorem &nbsp;•&nbsp; Distributed Systems Architecture &nbsp;•&nbsp; March 2026*
-
 *Further Reading: Brewer (2000), Gilbert & Lynch (2002), Abadi PACELC (2012), Kleppmann — Designing Data-Intensive Applications*
