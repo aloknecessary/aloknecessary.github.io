@@ -6,6 +6,7 @@ url: https://aloknecessary.github.io
 baseurl: ""
 
 markdown: kramdown
+future: false
 
 # Google Analytics
 google_analytics: G-M4F012WKH3
