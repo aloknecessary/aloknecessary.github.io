@@ -13,14 +13,14 @@ categories:
 tags: [distributed-systems, cap-theorem, architecture, patterns, reliability, cloud-native, database, system-design, microservices]
 ---
 
-## Introduction
+## The Problem No One Talks About Until Production Burns
 
 You've picked your database, designed your microservices, and wired up your event streams. Everything looks great on paper. Then your network has a blip, a pod restarts, and suddenly your e-commerce cart service is showing stale prices while payments go through — or worse, the entire checkout grinds to a halt. **Welcome to the CAP problem.**
 
 The CAP Theorem, formally proven by Eric Brewer in 2000 and mathematically formalized by Gilbert and Lynch in 2002, is not an academic curiosity. It is the fundamental constraint that governs every distributed system design decision you make — whether you acknowledge it or not. This post is about making that choice deliberately, not discovering it painfully during an incident.
 
 ### Table of Contents
-- [Introduction](#introduction)
+- [The Problem No One Talks About Until Production Burns](#the-problem-no-one-talks-about-until-production-burns)
 - [1. The Theorem, Stripped of Academic Ceremony](#1-the-theorem-stripped-of-academic-ceremony)
 - [2. CP vs AP: What You're Actually Trading](#2-cp-vs-ap-what-youre-actually-trading)
 - [3. PACELC: The Model That Actually Matches Production](#3-pacelc-the-model-that-actually-matches-production)
