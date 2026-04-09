@@ -1,7 +1,7 @@
 ---
 title: "Why Lift-and-Shift Fails Quietly: Architectural Smells That Appear After Migration"
-date: 2026-04-30
-last_modified_at: 2026-04-30
+date: 2026-05-01
+last_modified_at: 2026-05-01
 author: Alok Ranjan Daftuar
 description: "The architectural debt that migrated workloads accumulate — and why it doesn't show up until you're in production, paying real bills, and fielding real complaints."
 excerpt: "Lift-and-shift leaves on-premises assumptions baked into a system operating in a fundamentally different environment. This post covers the six architectural smells that surface after migration — latency amplification, chatty services, cost surprises, stateful assumptions, observability voids, and distributed monoliths — with diagnostics and mitigations for each."
