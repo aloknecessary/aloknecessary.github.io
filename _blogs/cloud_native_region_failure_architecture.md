@@ -1,7 +1,7 @@
 ---
 title: "Designing Cloud-Native Systems That Survive Region-Level Failures"
-date: 2026-04-22
-last_modified_at: 2026-04-22
+date: 2026-05-04
+last_modified_at: 2026-05-04
 author: Alok Ranjan Daftuar
 description: "A practical architecture guide to surviving region-level cloud failures — multi-AZ vs multi-region trade-offs, active-passive and active-active patterns with real AWS and Azure configurations, data replication strategies, failover automation, and a cost-aware decision framework."
 excerpt: "Most teams design for instance and zone failures but treat region-level outages as someone else's problem. This post covers the real architecture decisions behind multi-region resilience — active-passive vs active-active patterns, data replication trade-offs, failover automation, and a cost-aware framework for deciding how much resilience your system actually needs."
