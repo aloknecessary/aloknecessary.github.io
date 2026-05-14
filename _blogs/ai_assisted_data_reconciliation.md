@@ -1,7 +1,7 @@
 ---
 title: "AI-Assisted Data Reconciliation at Scale: Patterns for Distributed Systems"
-date: 2026-05-12
-last_modified_at: 2026-05-12
+date: 2026-05-20
+last_modified_at: 2026-05-20
 author: Alok Ranjan Daftuar
 description: "A practical architecture guide to AI-assisted data reconciliation — embedding-based similarity for schema-agnostic matching, LLM classification for ambiguous cases, observation windows for eventual consistency, and the boundaries where AI should never make the call."
 excerpt: "Traditional reconciliation breaks at the seams of distributed ownership. This post covers where rule-based reconciliation fails, how embedding similarity and LLM classification fill the gap, the observation window pattern for eventual consistency, and the hard boundaries where AI should never be trusted to auto-resolve."
