@@ -59,8 +59,13 @@
 
 /* Header Section */
 
-.blogs-header {
+.blogs-header-container{
   margin-bottom: 3rem;
+  margin-left: 1rem;
+}
+
+.blogs-header {
+  margin-bottom: 1rem;
   margin-left: 1rem;
 }
 
@@ -93,7 +98,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding-right: 14px;
+  /* padding-right: 14px; */
 }
 
 .search-container::before {

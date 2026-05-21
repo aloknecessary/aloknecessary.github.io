@@ -8,10 +8,11 @@ layout: default
 
 <div class="tags-header">
   <h2>{{ page.title }}</h2>
-  {% if page.content %}
-  <p class="tags-description">{{ page.content | strip_html }}</p>
-  {% endif %}
+  {% include sort-toggle.html %}
 </div>
+{% if page.content %}
+<p class="tags-description">{{ page.content | strip_html }}</p>
+{% endif %}
 
 <section class="tags-page">
   
@@ -80,3 +81,5 @@ layout: default
 </script>
 
 <script src="{{ '/assets/js/tag-highlight.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/tag-sort.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/tag-collapse.js' | relative_url }}"></script>
