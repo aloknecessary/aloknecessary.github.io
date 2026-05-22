@@ -1,0 +1,116 @@
+<style>
+  .sort-toggle {
+    display: inline-flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .sort-btn {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: none;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .sort-btn:not(:last-child) {
+    border-right: 1px solid var(--border);
+  }
+  .sort-btn.active {
+    background: var(--primary);
+    color: #fff;
+  }
+  .sort-btn:hover:not(.active) {
+    background: var(--tag-bg);
+  }
+  .sort-menu {
+    display: none;
+    position: relative;
+  }
+  .sort-menu-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .sort-menu-trigger:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  .sort-menu-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    min-width: 130px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    overflow: hidden;
+  }
+  .sort-menu-dropdown.open {
+    display: block;
+  }
+  .sort-menu-item {
+    display: block;
+    width: 100%;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: none;
+    background: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s ease;
+  }
+  .sort-menu-item:not(:last-child) {
+    border-bottom: 1px solid var(--border);
+  }
+  .sort-menu-item.active {
+    color: var(--primary);
+    font-weight: 600;
+  }
+  .sort-menu-item:hover {
+    background: var(--tag-bg);
+  }
+  @media (max-width: 768px) {
+    .sort-toggle {
+      display: none;
+    }
+    .sort-menu {
+      display: block;
+    }
+  }
+</style>
+
+<div class="sort-toggle">
+  <button class="sort-btn active" data-sort="newest">Newest</button>
+  <button class="sort-btn" data-sort="oldest">Oldest</button>
+  <button class="sort-btn" data-sort="alpha">A-Z</button>
+</div>
+
+<div class="sort-menu">
+  <button class="sort-menu-trigger" aria-label="Sort articles">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 6h18M6 12h12M9 18h6"/>
+    </svg>
+  </button>
+  <div class="sort-menu-dropdown">
+    <button class="sort-menu-item active" data-sort="newest">Newest</button>
+    <button class="sort-menu-item" data-sort="oldest">Oldest</button>
+    <button class="sort-menu-item" data-sort="alpha">A-Z</button>
+  </div>
+</div>
