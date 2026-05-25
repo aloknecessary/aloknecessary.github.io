@@ -339,3 +339,38 @@ ul.task-list input {
     color: #ccc;
   }
 }
+
+
+/* Blockquote override for blog posts */
+.post-content blockquote {
+  background: linear-gradient(135deg, var(--bg-soft) 0%, var(--bg-card) 100%);
+  border-left: 4px solid var(--primary);
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  position: relative;
+}
+
+.post-content blockquote::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.25rem;
+  left: 0.75rem;
+  font-size: 3rem;
+  color: var(--primary);
+  opacity: 0.2;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.post-content blockquote p {
+  margin: 0;
+}
+
+.post-content blockquote p + p {
+  margin-top: 0.75rem;
+}
