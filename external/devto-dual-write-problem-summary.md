@@ -3,7 +3,7 @@ title: "Event-Driven Architecture: The Dual Write Problem and How to Solve It"
 published: false
 description: Why writing to a database and publishing an event without atomicity fails silently in microservices — and the three solutions that fix it permanently
 tags: microservices, architecture, distributedsystems, eventdriven
-canonical_url: https://aloknecessary.github.io/blogs/event-driven-architecture-the-dual-write-problem-and-how-to-solve-it/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=dual-write-problem
+canonical_url: https://aloknecessary.github.io/blogs/dual-write-problem-in-event-driven-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=dual-write-problem
 cover_image: 
 ---
 
@@ -73,7 +73,7 @@ The event log is the source of truth. The database is a derived projection. Ther
 
 This is a summary of my deep dive into the dual write problem. The full article covers all three solutions with production implementation examples:
 
-**👉 [The Dual Write Problem and How to Solve It — Full Article](https://aloknecessary.github.io/blogs/event-driven-architecture-the-dual-write-problem-and-how-to-solve-it/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=dual-write-problem)**
+**👉 [The Dual Write Problem and How to Solve It — Full Article](https://aloknecessary.github.io/blogs/dual-write-problem-in-event-driven-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=dual-write-problem)**
 
 The full article includes:
 - Four failure scenarios with a dual write matrix
