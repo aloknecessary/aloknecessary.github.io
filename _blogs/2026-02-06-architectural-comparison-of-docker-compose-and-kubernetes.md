@@ -10,6 +10,8 @@ categories:
   - architecture
   - devops
 tags: ["kubernetes", "docker-compose", "container-architecture", "cloud-native", "system-design", "devops", "cloud-architecture", "scalability"]
+series: "DevOps & Platform Engineering"
+series_order: 3
 ---
 
 ## Introduction
