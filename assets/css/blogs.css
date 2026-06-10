@@ -567,7 +567,7 @@
   text-decoration: none;
   transition: all 0.2s ease;
   margin-top: auto;
-  padding-top: 0.5rem;
+  /* padding-top: 0.5rem; */
 }
 
 .card-link:hover {
@@ -650,4 +650,38 @@
   outline: 2px solid var(--primary);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+
+
+
+/* Card Series Badge */
+.card-series-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  margin-bottom: 0;
+  letter-spacing: 0.01em;
+  width: fit-content;
+}
+
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.card-footer .card-link {
+  margin-left: auto;
 }

@@ -258,3 +258,13 @@
   }
 }
 
+
+
+.series-description {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-top: -0.25rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}

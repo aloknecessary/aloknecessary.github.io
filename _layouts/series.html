@@ -10,6 +10,9 @@ layout: default
 <div class="series-header">
   <h2>{{ page.title }}</h2>
 </div>
+{% if page.content != '' %}
+<p class="series-description">{{ page.content | strip_html }}</p>
+{% endif %}
 
 <section class="series-page">
 
