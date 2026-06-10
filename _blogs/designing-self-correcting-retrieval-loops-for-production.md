@@ -1,7 +1,7 @@
 ---
 title: "Agentic RAG: Designing Self-Correcting Retrieval Loops for Production"
-date: 2026-06-05
-last_modified_at: 2026-06-05
+date: 2026-06-19
+last_modified_at: 2026-06-19
 author: Alok Ranjan Daftuar
 description: "A production architecture guide to agentic RAG — query planning, iterative retrieval, reflection agents, tool-call orchestration, routing logic, failure isolation, and the cost and latency trade-offs that determine when agentic loops earn their complexity."
 excerpt: "Standard RAG retrieves once and hopes for the best. Agentic RAG retrieves, reflects, decides it was wrong, and tries again. This post covers the full architecture — query planning, iterative retrieval loops, reflection agents, multi-tool orchestration, routing, loop bounding, cost modeling, and the observability that makes agentic systems accountable."
