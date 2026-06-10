@@ -11,6 +11,8 @@ categories:
   - architecture
   - system-design
 tags: [distributed-systems, cap-theorem, architecture, patterns, reliability, cloud-native, database, system-design, microservices]
+series: "Distributed Systems"
+series_order: 1
 ---
 
 ## The Problem No One Talks About Until Production Burns

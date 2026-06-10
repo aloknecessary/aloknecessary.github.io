@@ -11,6 +11,8 @@ categories:
   - architecture
   - system-design
 tags: [distributed-systems, saga, event-driven, microservices, reliability, architecture, patterns, cloud-native]
+series: "Distributed Systems"
+series_order: 2
 ---
 
 ## Introduction

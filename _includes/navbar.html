@@ -4,10 +4,12 @@
     <span class="nav-separator">|</span>
     <a href="{{ '/' | relative_url }}">Home</a>
     <span class="nav-separator">|</span>
+    <a href="{{ '/series' | relative_url }}">Series</a>
+    <span class="nav-separator">|</span>
     <a href="{{ '/categories' | relative_url }}">Categories</a>
     <span class="nav-separator">|</span>
     <a href="{{ '/tags' | relative_url }}">Topics</a>
-  {% elsif page.layout == 'categories' or page.layout == 'tags' %}
+  {% elsif page.layout == 'categories' or page.layout == 'tags' or page.layout == 'series' %}
     <a id="backButton">← Back</a>
     <span class="nav-separator">|</span>
     <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
@@ -16,6 +18,8 @@
   {% elsif page.layout == 'blogs' %}
     <div class="nav-left">
       <a href="{{ '/' | relative_url }}">Home</a>
+      <span class="nav-separator">|</span>
+      <a href="{{ '/series' | relative_url }}">Series</a>
       <span class="nav-separator">|</span>
       <a href="{{ '/categories' | relative_url }}">Categories</a>
       <span class="nav-separator">|</span>
@@ -39,7 +43,7 @@
   {% endif %}
 </nav>
 
-{% if page.layout == 'categories' or page.layout == 'tags' %}
+{% if page.layout == 'categories' or page.layout == 'tags' or page.layout == 'series' %}
 <script>
   (function () {
     const backBtn = document.getElementById("backButton");

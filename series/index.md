@@ -1,0 +1,4 @@
+---
+layout: series
+title: Series
+---

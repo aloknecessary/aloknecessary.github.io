@@ -1,0 +1,11 @@
+- name: "RAG Production"
+  slug: rag-production
+  description: "From retrieval fundamentals to agentic loops — building AI search systems that work in production."
+
+- name: "Distributed Systems"
+  slug: distributed-systems
+  description: "CAP trade-offs, partial failure, dual writes, and data reconciliation at scale."
+
+- name: "Cloud Architecture"
+  slug: cloud-architecture
+  description: "Migration patterns, region-level resilience, and the engineering decisions behind production cloud systems."

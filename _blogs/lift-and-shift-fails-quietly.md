@@ -11,6 +11,8 @@ categories:
   - cloud
   - architecture
 tags: [lift-and-shift, cloud-migration, latency, cost-optimization, devops, architecture, observability, microservices, cloud-native, system-design]
+series: "Cloud Architecture"
+series_order: 1
 ---
 
 ## Introduction
