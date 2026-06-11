@@ -5,7 +5,7 @@ hide_header: true
 ---
 
 <div class="page-banner">
-  <img src="{{ '/assets/images/header.png' | relative_url }}" alt="Header">
+  <img src="{{ '/assets/images/header.png' | relative_url }}" alt="Header" fetchpriority="high">
   <div class="theme-controls">
     <div class="theme-dropdown">
       <button 
