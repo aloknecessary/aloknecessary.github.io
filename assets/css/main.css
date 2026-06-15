@@ -14,9 +14,11 @@
   --border: #e5e7eb;
   --bg-card: #ffffff;
   --border-card: #e5e7eb;
+  --border-crimson: #ff009c;
 
   --text-primary: #111827;
   --text-secondary: #6b7280;
+  --text-tertiary: #78350f;
 
   --tag-bg: #eef2ff;
   --tag-border: #c7d2fe;
@@ -55,9 +57,11 @@
   --border: #334155;
   --bg-card: #1f2937;
   --border-card: #374151;
+  --border-crimson: #ff009c;
 
   --text-primary: #f9fafb;
   --text-secondary: #9ca3af;
+  --text-tertiary: #78350f;
 
   --tag-bg: #312e81;
   --tag-border: #4338ca;
