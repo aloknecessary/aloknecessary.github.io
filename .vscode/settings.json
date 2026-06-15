@@ -1,3 +1,4 @@
 {
-    "amazonQ.telemetry": false
+    "amazonQ.telemetry": false,
+    "workbench.browser.openLocalhostLinks": false
 }
