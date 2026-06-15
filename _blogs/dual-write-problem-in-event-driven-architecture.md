@@ -11,6 +11,8 @@ categories:
   - architecture
   - system-design
 tags: [event-driven, microservices, outbox-pattern, change-data-capture, distributed-systems, architecture, patterns, data-consistency, kafka, system-design]
+series: "Distributed Systems"
+series_order: 6
 ---
 
 > Writing to a database and publishing an event in the same operation without a transaction boundary is one of the most common correctness bugs in microservices. Here is why it happens, why it is hard to see, and how to fix it permanently.

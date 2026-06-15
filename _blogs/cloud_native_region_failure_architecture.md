@@ -11,6 +11,8 @@ categories:
   - architecture
   - cloud
 tags: [cloud-native, disaster-recovery, aws, azure, multi-region, high-availability, resilience, architecture, system-design, infrastructure]
+series: "Cloud Architecture"
+series_order: 2
 ---
 
 ## Introduction

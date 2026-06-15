@@ -1,0 +1,24 @@
+{% if page.series %}
+{% assign series_posts = site.blogs | where: "series", page.series | sort: "series_order" %}
+{% assign series_total = series_posts | size %}
+{% assign prev_order = page.series_order | minus: 1 %}
+{% assign next_order = page.series_order | plus: 1 %}
+
+<div class="series-banner">
+  <div class="series-label">
+    <span class="series-badge">Series</span>
+    <span class="series-name">{{ page.series }}</span>
+    <span class="series-position">— Part {{ page.series_order }} of {{ series_total }}</span>
+  </div>
+  <nav class="series-nav">
+    {% for post in series_posts %}
+      {% if post.series_order == prev_order %}
+        <a href="{{ post.url | relative_url }}" class="series-prev">← Previous</a>
+      {% endif %}
+      {% if post.series_order == next_order %}
+        <a href="{{ post.url | relative_url }}" class="series-next">Next →</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+</div>
+{% endif %}

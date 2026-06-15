@@ -1,9 +1,9 @@
 (function() {
-  const LIMIT = 5;
+  const LIMIT = 4;
   const ARROW_DOWN = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
   const ARROW_UP = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg>';
 
-  document.querySelectorAll('.tag-posts').forEach(ul => {
+  document.querySelectorAll('.tag-posts, .series-posts').forEach(ul => {
     const items = ul.querySelectorAll('li');
     if (items.length <= LIMIT) return;
 

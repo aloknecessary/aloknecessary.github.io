@@ -10,6 +10,8 @@ categories:
   - devops
   - automation
 tags: [docker, playwright, github-actions, devops, automation, multi-architecture, software-architecture, developer-productivity, ci-cd]
+series: "DevOps & Platform Engineering"
+series_order: 2
 ---
 
 Modern CI/CD pipelines are powerful, but they are often **wasteful by default**.

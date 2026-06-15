@@ -11,6 +11,8 @@ categories:
   - architecture
   - devops
 tags: [platform-engineering, kubernetes, devops, internal-developer-platform, backstage, crossplane, github-actions, gitops, cloud-native, architecture]
+series: "DevOps & Platform Engineering"
+series_order: 5
 ---
 
 ## Introduction

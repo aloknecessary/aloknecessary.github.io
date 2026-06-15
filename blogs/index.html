@@ -7,7 +7,7 @@ hide_header: false
 <div class="blog-cards-grid">
   {% assign blogs = site.blogs | sort: "date" | reverse %}
   {% for post in blogs %}
-    <article class="blog-card">
+    <article class="blog-card" data-series="{{ post.series | slugify }}">
       <div class="card-content">
         <div class="card-header">
           <h2 class="card-title">
@@ -34,12 +34,18 @@ hide_header: false
           {% endfor %}
         </div>
         {% endif %}
-        <a href="{{ post.url }}" class="card-link" aria-label="Read {{ post.title }}">
-          Read article
-          <svg class="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
+        <div class="card-footer">
+          {% if post.series %}
+            {% assign s_info = site.data.series | where: "name", post.series | first %}
+            <span class="card-series-badge">Series · {{ s_info.icon }} {{ post.series }}</span>
+          {% endif %}
+          <a href="{{ post.url }}" class="card-link" aria-label="Read {{ post.title }}">
+            Read article
+            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
       </div>
     </article>
   {% endfor %}

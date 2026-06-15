@@ -11,6 +11,8 @@ categories:
   - architecture
   - system-design
 tags: [ai, search-architecture, vector-search, bm25, information-retrieval, patterns, architecture, performance, cloud-native]
+series: "RAG Production"
+series_order: 1
 ---
 
 ## Why This Decision Matters More Than You Think

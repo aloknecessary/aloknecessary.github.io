@@ -11,6 +11,8 @@ categories:
   - architecture
   - system-design
 tags: [distributed-systems, api-design, idempotency, reliability, microservices, architecture, patterns, deduplication, saga, event-driven]
+series: "Distributed Systems"
+series_order: 3
 ---
 
 ## Introduction

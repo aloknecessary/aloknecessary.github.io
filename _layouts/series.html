@@ -1,0 +1,87 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ '/assets/css/skeleton.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/series.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/show-more.css' | relative_url }}">
+
+{% include navbar.html %}
+
+<div class="series-header">
+  <h2>{{ page.title }}</h2>
+</div>
+{% if page.content != '' %}
+<p class="series-description">{{ page.content | strip_html }}</p>
+{% endif %}
+
+<section class="series-page">
+
+  <!-- Skeleton Loader -->
+  <div id="series-loader" class="series-skeleton">
+    {% for i in (1..3) %}
+    <div class="series-skeleton-block">
+      <div class="skeleton skeleton-heading"></div>
+      <div class="skeleton skeleton-item"></div>
+      <div class="skeleton skeleton-item"></div>
+      <div class="skeleton skeleton-item"></div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Series Content -->
+  <div id="series-content" class="hidden">
+    <div class="series-container">
+      {% for series in site.data.series %}
+        {% assign series_posts = site.blogs | where: "series", series.name | sort: "series_order" %}
+        {% assign count = series_posts | size %}
+        {% if count > 0 %}
+        <div class="series-block">
+          <div class="series-block-header" data-collapsible>
+            <div class="series-block-header-top">
+              <div class="series-block-title-wrap">
+                <svg class="series-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                <h2 class="series-block-title">{{ series.name }} <span class="tag-count">{{ count }}</span></h2>
+              </div>
+              <a href="{{ series_posts.first.url | relative_url }}" class="series-start-btn">Start reading <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+            <p class="series-block-description">{{ series.description }}</p>
+          </div>
+
+          <ol class="series-posts">
+            {% for post in series_posts %}
+            <li>
+              <span class="step-indicator">{{ post.series_order }}</span>
+              <div class="step-content">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+              </div>
+            </li>
+            {% endfor %}
+          </ol>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include scroll-to-top.html %}
+
+<script>
+  window.addEventListener("load", function () {
+    setTimeout(() => {
+      document.getElementById("series-loader").style.display = "none";
+      document.getElementById("series-content").classList.remove("hidden");
+    }, 350);
+  });
+
+  document.addEventListener("click", function(e) {
+    const header = e.target.closest('[data-collapsible]');
+    if (!header) return;
+    if (e.target.closest('.series-start-btn')) return;
+    header.closest('.series-block').classList.toggle('collapsed');
+  });
+</script>
+
+<script src="{{ '/assets/js/tag-highlight.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/tag-collapse.js' | relative_url }}"></script>

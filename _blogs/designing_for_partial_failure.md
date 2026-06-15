@@ -11,6 +11,8 @@ categories:
   - architecture
   - system-design
 tags: [distributed-systems, resilience, graceful-degradation, cap-theorem, system-design, architecture, sre, observability, cloud-native, patterns]
+series: "Distributed Systems"
+series_order: 4
 ---
 
 > Your system will fail. The question is whether it fails completely or gracefully — and that answer is decided at design time, not incident time.

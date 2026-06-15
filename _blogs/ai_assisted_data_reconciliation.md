@@ -11,6 +11,8 @@ categories:
   - architecture
   - system-design
 tags: [ai, distributed-systems, data-reconciliation, vector-search, llm, architecture, patterns, observability, cloud-native, system-design]
+series: "Distributed Systems"
+series_order: 5
 ---
 
 > Traditional reconciliation breaks at the seams of distributed ownership. Here is how AI fills the gaps — and where it should never be trusted to.

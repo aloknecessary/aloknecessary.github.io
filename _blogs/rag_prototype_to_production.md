@@ -11,6 +11,8 @@ categories:
   - architecture
   - ai
 tags: [ai, rag, vector-search, llm, information-retrieval, architecture, observability, system-design, production, patterns]
+series: "RAG Production"
+series_order: 2
 ---
 
 > Most teams get RAG working in a notebook over a weekend. Very few get it working reliably in production. The gap between the two is not model quality — it is engineering discipline.
