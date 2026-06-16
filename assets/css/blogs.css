@@ -676,6 +676,9 @@
   border-radius: 10px;
 
 }
+.card-series-badge:hover {
+  text-decoration: none;
+}
 
 
 /* Card Footer */

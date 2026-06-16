@@ -35,7 +35,7 @@ layout: default
         {% assign series_posts = site.blogs | where: "series", series.name | sort: "series_order" %}
         {% assign count = series_posts | size %}
         {% if count > 0 %}
-        <div class="series-block">
+        <div class="series-block" id="{{ series.slug }}">
           <div class="series-block-header" data-collapsible>
             <div class="series-block-header-top">
               <div class="series-block-title-wrap">
