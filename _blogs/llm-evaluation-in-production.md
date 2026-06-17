@@ -33,7 +33,7 @@ This is not a model quality problem. It is an evaluation infrastructure problem.
 
 This post covers how to build the eval pipeline that runs on every deploy.
 
-> **Article context:** This post is part of the RAG production series. The [Building Reliable RAG Pipelines](https://aloknecessary.github.io/blogs/rag_prototype_to_production/) post covers retrieval evaluation (Recall@K, MRR) and pipeline instrumentation. This post picks up where that one ends — at the generation layer — and covers how to evaluate *what the LLM produces*, not just *what the retrieval returns*.
+> **Article context:** This post is part of the RAG production series. The [Building Reliable RAG Pipelines](/blogs/rag_prototype_to_production/) post covers retrieval evaluation (Recall@K, MRR) and pipeline instrumentation. This post picks up where that one ends — at the generation layer — and covers how to evaluate *what the LLM produces*, not just *what the retrieval returns*.
 
 ### Table of Contents
 

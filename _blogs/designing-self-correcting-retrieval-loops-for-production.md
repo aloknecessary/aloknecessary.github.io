@@ -30,7 +30,7 @@ Agentic RAG is the architectural response to this limitation. Instead of a fixed
 
 This is not a marginal improvement. On complex query classes, the quality difference between single-pass RAG and agentic retrieval loops is significant enough to change whether the system is usable at all. But agentic loops introduce latency, cost, and failure modes that single-pass systems do not have. The engineering challenge is not implementing agentic retrieval — frameworks make that easy. The challenge is knowing when to use it, bounding its behavior in production, and building the observability to understand what it is actually doing.
 
-> **Article context:** This post is part of the RAG production series. The [Building Reliable RAG Pipelines](https://aloknecessary.github.io/blogs/rag_prototype_to_production/) post covers the standard single-pass pipeline in full. The [LLM Evaluation in Production](https://aloknecessary.github.io/blogs/llm_evaluation_in_production/) post covers how to measure generation quality — both posts are relevant context for reasoning about when agentic complexity is justified and how to detect when the loops are not working.
+> **Article context:** This post is part of the RAG production series. The [Building Reliable RAG Pipelines](/blogs/rag_prototype_to_production/) post covers the standard single-pass pipeline in full. The [LLM Evaluation in Production](/blogs/llm_evaluation_in_production/) post covers how to measure generation quality — both posts are relevant context for reasoning about when agentic complexity is justified and how to detect when the loops are not working.
 
 ### Table of Contents
 
