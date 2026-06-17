@@ -1,7 +1,7 @@
 ---
 title: "Agentic RAG: Designing Self-Correcting Retrieval Loops for Production"
-date: 2026-06-19
-last_modified_at: 2026-06-19
+date: 2026-06-17
+last_modified_at: 2026-06-17
 author: Alok Ranjan Daftuar
 description: "A production architecture guide to agentic RAG — query planning, iterative retrieval, reflection agents, tool-call orchestration, routing logic, failure isolation, and the cost and latency trade-offs that determine when agentic loops earn their complexity."
 excerpt: "Standard RAG retrieves once and hopes for the best. Agentic RAG retrieves, reflects, decides it was wrong, and tries again. This post covers the full architecture — query planning, iterative retrieval loops, reflection agents, multi-tool orchestration, routing, loop bounding, cost modeling, and the observability that makes agentic systems accountable."
@@ -11,6 +11,8 @@ categories:
   - ai
   - architecture
 tags: [ai, rag, agents, llm, retrieval, architecture, observability, production, patterns, system-design]
+series: "RAG Production"
+series_order: 4
 ---
 
 
@@ -127,12 +129,6 @@ Given the user query, output a retrieval plan as JSON with:
 - sub_queries: list of ordered retrieval steps if multi-hop (empty for simple queries)
   Each sub_query has: id, query, depends_on (list of sub_query ids whose results inform this query)
 
-Classification rules:
-- simple: single factual lookup, clear intent, single document likely sufficient
-- multi_hop: requires chaining multiple retrievals where later steps depend on earlier results
-- analytical: requires retrieving, aggregating, and comparing information across multiple sources
-- ambiguous: query intent is unclear; requires clarification or broad initial retrieval before narrowing
-
 Respond ONLY with valid JSON. No preamble, no markdown fences.
 
 User query: {query}"""
@@ -155,28 +151,15 @@ def plan_query(query: str) -> QueryPlan:
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
         max_tokens=1000,
-        messages=[{
-            "role": "user",
-            "content": QUERY_PLANNER_PROMPT.format(query=query)
-        }]
+        messages=[{"role": "user", "content": QUERY_PLANNER_PROMPT.format(query=query)}]
     )
-
-    raw = response.content[0].text.strip()
-    parsed = json.loads(raw)
-
+    parsed = json.loads(response.content[0].text.strip())
     return QueryPlan(
         original_query=query,
         query_type=parsed["query_type"],
         requires_agentic=parsed["requires_agentic"],
         reasoning=parsed["reasoning"],
-        sub_queries=[
-            SubQuery(
-                id=sq["id"],
-                query=sq["query"],
-                depends_on=sq.get("depends_on", [])
-            )
-            for sq in parsed.get("sub_queries", [])
-        ]
+        sub_queries=[SubQuery(**sq) for sq in parsed.get("sub_queries", [])]
     )
 ```
 
@@ -194,39 +177,21 @@ The user asked: {original_query}
 The initial retrieval returned these chunk summaries:
 {chunk_summaries}
 
-These chunks suggest the query may be about: {inferred_topics}
-
 Rewrite the original query to be more specific and retrieval-effective, 
 given what you now know about the available information. Preserve the user's 
 intent exactly — do not change what they are asking for, only make it more precise.
 
 Respond with only the rewritten query. No explanation."""
 
-def rewrite_query(
-    original_query: str,
-    retrieved_chunks: list[dict]
-) -> str:
-    chunk_summaries = "\n".join([
-        f"- {c['text'][:150]}..." for c in retrieved_chunks[:5]
-    ])
-    inferred_topics = ", ".join(set([
-        c.get("metadata", {}).get("topic", "unknown")
-        for c in retrieved_chunks[:5]
-    ]))
-
+def rewrite_query(original_query: str, retrieved_chunks: list[dict]) -> str:
+    chunk_summaries = "\n".join([f"- {c['text'][:150]}..." for c in retrieved_chunks[:5]])
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
         max_tokens=200,
-        messages=[{
-            "role": "user",
-            "content": QUERY_REWRITER_PROMPT.format(
-                original_query=original_query,
-                chunk_summaries=chunk_summaries,
-                inferred_topics=inferred_topics
-            )
-        }]
+        messages=[{"role": "user", "content": QUERY_REWRITER_PROMPT.format(
+            original_query=original_query, chunk_summaries=chunk_summaries
+        )}]
     )
-
     return response.content[0].text.strip()
 ```
 
@@ -345,43 +310,21 @@ def _deduplicate_chunks(
 For multi-hop plans where later sub-queries depend on earlier results, the loop must inject resolved sub-query context into subsequent queries:
 
 ```python
-async def execute_query_plan(
-    plan: QueryPlan,
-    retrieval_fn,
-    reflection_fn
-) -> dict[str, AgenticRetrievalResult]:
-    """
-    Execute a multi-hop query plan respecting sub-query dependencies.
-    Returns results keyed by sub-query ID.
-    """
-    results: dict[str, AgenticRetrievalResult] = {}
+async def execute_query_plan(plan: QueryPlan, retrieval_fn, reflection_fn) -> dict:
+    """Execute a multi-hop query plan respecting sub-query dependencies."""
+    results = {}
 
-    # Topological ordering is implicit in depends_on — process in order
     for sub_query in plan.sub_queries:
-        # Build query enriched with results from dependency sub-queries
         enriched_query = sub_query.query
-
         for dep_id in sub_query.depends_on:
             if dep_id in results:
-                dep_context = _summarize_context(results[dep_id].accumulated_context)
-                enriched_query = (
-                    f"Given the following context from a prior retrieval step: "
-                    f"{dep_context}\n\n"
-                    f"Now answer: {sub_query.query}"
-                )
+                dep_summary = " ".join(c["text"] for c in results[dep_id].accumulated_context)[:800]
+                enriched_query = f"Given prior context: {dep_summary}\n\nNow answer: {sub_query.query}"
 
-        result = await run_agentic_retrieval_loop(
-            query=enriched_query,
-            retrieval_fn=retrieval_fn,
-            reflection_fn=reflection_fn
+        results[sub_query.id] = await run_agentic_retrieval_loop(
+            query=enriched_query, retrieval_fn=retrieval_fn, reflection_fn=reflection_fn
         )
-        results[sub_query.id] = result
-
     return results
-
-def _summarize_context(chunks: list[dict], max_chars: int = 800) -> str:
-    combined = " ".join(c["text"] for c in chunks)
-    return combined[:max_chars] + ("..." if len(combined) > max_chars else "")
 ```
 
 ---
@@ -498,34 +441,13 @@ If you are seeing significant traffic hitting max iterations, either your query 
 In Pattern 2, the retrieval agent selects from multiple tools rather than calling a single retrieval function. Structuring retrieval as LLM tool calls enables the agent to reason about which retrieval strategy is appropriate for each query and iteration.
 
 ```python
-# Tool definitions passed to the LLM
+# Tool definitions passed to the LLM (showing 2 of 4 — keyword_search and filtered_search follow the same pattern)
 RETRIEVAL_TOOLS = [
     {
         "name": "semantic_search",
         "description": (
-            "Search the document corpus using semantic/vector similarity. "
-            "Best for: conceptual queries, paraphrased questions, topic exploration. "
-            "Use when the query intent is clear but exact keywords may not match."
-        ),
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "query": {"type": "string", "description": "The search query"},
-                "top_k": {"type": "integer", "default": 5},
-                "filter_metadata": {
-                    "type": "object",
-                    "description": "Optional metadata filters: {document_type, date_range, source}",
-                }
-            },
-            "required": ["query"]
-        }
-    },
-    {
-        "name": "keyword_search",
-        "description": (
-            "Search using BM25 keyword matching. "
-            "Best for: exact terms, product names, codes, IDs, acronyms, proper nouns. "
-            "Use when the query contains specific identifiers that must appear in results."
+            "Search using semantic/vector similarity. "
+            "Best for: conceptual queries, paraphrased questions, topic exploration."
         ),
         "input_schema": {
             "type": "object",
@@ -540,7 +462,6 @@ RETRIEVAL_TOOLS = [
         "name": "hybrid_search",
         "description": (
             "Combined BM25 + semantic search with RRF merging. "
-            "Best for: general queries where you want both keyword precision and semantic coverage. "
             "Default choice when uncertain which search type is better."
         ),
         "input_schema": {
@@ -549,43 +470,21 @@ RETRIEVAL_TOOLS = [
                 "query": {"type": "string"},
                 "top_k": {"type": "integer", "default": 5},
                 "semantic_weight": {"type": "number", "default": 0.6},
-                "keyword_weight": {"type": "number", "default": 0.4},
             },
             "required": ["query"]
         }
     },
-    {
-        "name": "filtered_search",
-        "description": (
-            "Semantic search restricted to a specific document subset by metadata. "
-            "Best for: time-scoped queries ('Q3 results'), source-specific queries "
-            "('from the API documentation'), or document-type queries ('error logs')."
-        ),
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "query": {"type": "string"},
-                "document_type": {"type": "string"},
-                "date_from": {"type": "string", "description": "ISO 8601 date"},
-                "date_to": {"type": "string"},
-                "source_id": {"type": "string"},
-                "top_k": {"type": "integer", "default": 5},
-            },
-            "required": ["query"]
-        }
-    }
+    # + keyword_search (exact terms, IDs, proper nouns)
+    # + filtered_search (time-scoped, source-specific queries)
 ]
 
 async def run_tool_orchestrated_retrieval(
     query: str,
-    tool_executors: dict,   # {"tool_name": async_callable}
+    tool_executors: dict,
     system_prompt: str,
     max_iterations: int = 4
 ) -> list[dict]:
-    """
-    Let the LLM orchestrate retrieval tool selection across iterations.
-    Returns accumulated retrieved chunks.
-    """
+    """Let the LLM orchestrate retrieval tool selection across iterations."""
     messages = [{"role": "user", "content": query}]
     accumulated_chunks = []
 
@@ -598,37 +497,24 @@ async def run_tool_orchestrated_retrieval(
             messages=messages
         )
 
-        # Check if LLM wants to call a retrieval tool
         tool_uses = [b for b in response.content if b.type == "tool_use"]
-
         if not tool_uses:
-            # LLM decided it has enough context — stop the loop
-            break
+            break  # LLM decided it has enough context
 
-        # Execute tool calls (may be parallel if multiple in one turn)
         tool_results = []
         for tool_use in tool_uses:
             executor = tool_executors.get(tool_use.name)
             if not executor:
                 continue
-
             chunks = await executor(**tool_use.input)
             new_chunks = _deduplicate_chunks(chunks, accumulated_chunks)
             accumulated_chunks.extend(new_chunks)
-
             tool_results.append({
                 "type": "tool_result",
                 "tool_use_id": tool_use.id,
-                "content": json.dumps({
-                    "chunks_retrieved": len(new_chunks),
-                    "chunks": [
-                        {"id": c["id"], "text": c["text"][:300], "score": c.get("score")}
-                        for c in new_chunks[:5]
-                    ]
-                })
+                "content": json.dumps({"chunks_retrieved": len(new_chunks)})
             })
 
-        # Add assistant turn + tool results to conversation history
         messages.append({"role": "assistant", "content": response.content})
         messages.append({"role": "user", "content": tool_results})
 
@@ -758,74 +644,25 @@ AGENTIC_LOOP_LIMITS = {
 
 The `min_new_chunks_per_iteration` guard is important and often overlooked. If an iteration returns zero new chunks — every result was already in the accumulated context — the loop is stuck. The reflection agent may keep generating rewritten queries that retrieve the same documents. Break immediately.
 
+The bounded loop extends `run_agentic_retrieval_loop` from Section 3 with three additional guards:
+
 ```python
-async def run_bounded_agentic_loop(
-    query: str,
-    retrieval_fn,
-    reflection_fn,
-    limits: dict = AGENTIC_LOOP_LIMITS
-) -> AgenticRetrievalResult:
-    accumulated_context = []
-    iterations = []
-    current_query = query
-    termination_reason = "max_iterations"
-
-    try:
-        async with asyncio.timeout(limits["timeout_seconds"]):
-            for i in range(limits["max_iterations"]):
-
-                # Check context budget before next retrieval
-                total_tokens = sum(
-                    len(c["text"].split()) * 1.3   # rough token estimate
-                    for c in accumulated_context
-                )
-                if total_tokens >= limits["max_context_tokens"]:
-                    termination_reason = "context_budget_exhausted"
-                    break
-
-                chunks = await retrieval_fn(current_query)
-                new_chunks = _deduplicate_chunks(chunks, accumulated_context)
-
-                # Break if retrieval is stuck returning already-seen content
-                if len(new_chunks) < limits["min_new_chunks_per_iteration"]:
-                    termination_reason = "no_new_content"
-                    break
-
-                accumulated_context.extend(new_chunks[:limits["max_accumulated_chunks"]])
-
-                verdict = await reflection_fn(
-                    original_query=query,
-                    current_query=current_query,
-                    new_chunks=new_chunks,
-                    accumulated_context=accumulated_context,
-                    iteration=i
-                )
-
-                iterations.append(RetrievalIteration(
-                    iteration=i,
-                    query_used=current_query,
-                    chunks_retrieved=new_chunks,
-                    reflection_verdict=verdict["verdict"],
-                    next_query=verdict.get("next_query")
-                ))
-
-                if verdict["verdict"] == "sufficient":
-                    termination_reason = "sufficient"
-                    break
-
-                if verdict.get("next_query"):
-                    current_query = verdict["next_query"]
-
-    except asyncio.TimeoutError:
-        termination_reason = "timeout"
-
-    return AgenticRetrievalResult(
-        original_query=query,
-        iterations=iterations,
-        accumulated_context=accumulated_context,
-        total_iterations=len(iterations),
-        termination_reason=termination_reason
-    )
+async def run_bounded_agentic_loop(query, retrieval_fn, reflection_fn, limits=AGENTIC_LOOP_LIMITS):
+    # Same structure as run_agentic_retrieval_loop, plus:
+    #
+    # 1. Token budget check before each retrieval pass:
+    total_tokens = sum(len(c["text"].split()) * 1.3 for c in accumulated_context)
+    if total_tokens >= limits["max_context_tokens"]:
+        termination_reason = "context_budget_exhausted"
+        break
+    #
+    # 2. Stuck-retrieval detection after dedup:
+    if len(new_chunks) < limits["min_new_chunks_per_iteration"]:
+        termination_reason = "no_new_content"
+        break
+    #
+    # 3. Chunk accumulation cap:
+    accumulated_context.extend(new_chunks[:limits["max_accumulated_chunks"]])
 ```
 
 ### Graceful Degradation
@@ -957,29 +794,16 @@ import structlog
 
 logger = structlog.get_logger()
 
-def emit_loop_telemetry(
-    request_id: str,
-    query: str,
-    result: AgenticRetrievalResult,
-    total_latency_ms: float
-) -> None:
+def emit_loop_telemetry(request_id: str, query: str, result: AgenticRetrievalResult, total_latency_ms: float):
     logger.info(
         "agentic_loop_completed",
         request_id=request_id,
-        query_hash=hashlib.sha256(query.encode()).hexdigest()[:12],
         total_iterations=result.total_iterations,
         termination_reason=result.termination_reason,
         total_chunks_accumulated=len(result.accumulated_context),
         total_latency_ms=round(total_latency_ms, 1),
-        iteration_verdicts=[
-            it.reflection_verdict for it in result.iterations
-        ],
-        queries_used=[
-            it.query_used for it in result.iterations
-        ],
-        had_query_rewrite=any(
-            it.query_used != query for it in result.iterations
-        )
+        iteration_verdicts=[it.reflection_verdict for it in result.iterations],
+        had_query_rewrite=any(it.query_used != query for it in result.iterations)
     )
 ```
 
@@ -1005,14 +829,10 @@ class DebugTrace:
     original_query: str
     route: str
     query_plan: Optional[QueryPlan]
-    iterations: list[dict]     # full RetrievalIteration data including chunk texts
+    iterations: list[dict]
     termination_reason: str
     final_context_token_estimate: int
     total_latency_ms: float
-
-async def run_with_debug_trace(query: str, ...) -> tuple[str, DebugTrace]:
-    """Run the full agentic pipeline and return both the response and full debug trace."""
-    ...
 ```
 
 Store debug traces for max-iteration and timeout cases in a searchable store. Group by query topic or intent cluster. When a cluster consistently hits max iterations, that signals a corpus gap or chunking issue for that topic — it is not a loop problem, it is a data problem.
