@@ -11,7 +11,7 @@ categories:
   - architecture
   - ai
 tags: [ai, rag, vector-search, llm, information-retrieval, architecture, observability, system-design, production, patterns]
-series: "RAG Production"
+series: "RAG and AI Engineering"
 series_order: 2
 ---
 

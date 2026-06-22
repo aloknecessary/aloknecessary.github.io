@@ -11,7 +11,7 @@ categories:
   - ai
   - architecture
 tags: [ai, rag, llm, evaluation, observability, ci-cd, github-actions, production, ragas, architecture]
-series: "RAG Production"
+series: "RAG and AI Engineering"
 series_order: 3
 ---
 

@@ -11,7 +11,7 @@ categories:
   - architecture
   - system-design
 tags: [ai, search-architecture, vector-search, bm25, information-retrieval, patterns, architecture, performance, cloud-native]
-series: "RAG Production"
+series: "RAG and AI Engineering"
 series_order: 1
 ---
 

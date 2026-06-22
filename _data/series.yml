@@ -1,5 +1,5 @@
-- name: "RAG Production"
-  slug: rag-production
+- name: "RAG and AI Engineering"
+  slug: rag-and-ai-engineering
   icon: "🧠"
   description: "From retrieval fundamentals to agentic loops — building AI search systems that work in production."
 
