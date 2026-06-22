@@ -512,3 +512,72 @@ ul.task-list input {
     display: inline-block;
   }
 }
+
+
+/* Code block language label */
+div[class*="language-"] {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin: 1.5rem 0;
+  border-left: 3px solid var(--primary);
+}
+
+div[class*="language-"]::before {
+  display: block;
+  padding: 0.4rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--border);
+}
+
+div.language-python::before { content: "Python"; }
+div.language-javascript::before { content: "JavaScript"; }
+div.language-typescript::before { content: "TypeScript"; }
+div.language-yaml::before { content: "YAML"; }
+div.language-yml::before { content: "YAML"; }
+div.language-bash::before { content: "Bash"; }
+div.language-sh::before { content: "Shell"; }
+div.language-shell::before { content: "Shell"; }
+div.language-sql::before { content: "SQL"; }
+div.language-json::before { content: "JSON"; }
+div.language-csharp::before { content: "C#"; }
+div.language-css::before { content: "CSS"; }
+div.language-html::before { content: "HTML"; }
+div.language-ruby::before { content: "Ruby"; }
+div.language-go::before { content: "Go"; }
+div.language-rust::before { content: "Rust"; }
+div.language-java::before { content: "Java"; }
+div.language-text::before { content: "Text"; }
+div.language-xml::before { content: "XML"; }
+div.language-dockerfile::before { content: "Dockerfile"; }
+div.language-docker::before { content: "Docker"; }
+div.language-terraform::before { content: "Terraform"; }
+div.language-hcl::before { content: "HCL"; }
+div.language-toml::before { content: "TOML"; }
+div.language-ini::before { content: "INI"; }
+div.language-nginx::before { content: "Nginx"; }
+div.language-graphql::before { content: "GraphQL"; }
+div.language-proto::before { content: "Protobuf"; }
+div.language-protobuf::before { content: "Protobuf"; }
+div.language-kotlin::before { content: "Kotlin"; }
+div.language-swift::before { content: "Swift"; }
+div.language-c::before { content: "C"; }
+div.language-cpp::before { content: "C++"; }
+div.language-php::before { content: "PHP"; }
+div.language-powershell::before { content: "PowerShell"; }
+div.language-makefile::before { content: "Makefile"; }
+div.language-markdown::before { content: "Markdown"; }
+div.language-diff::before { content: "Diff"; }
+div.language-plaintext::before { content: "Plain Text"; }
+
+
+div[class*="language-"] pre {
+  margin: 0;
+  border: none;
+}

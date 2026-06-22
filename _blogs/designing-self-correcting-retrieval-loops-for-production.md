@@ -66,10 +66,10 @@ User Query
             │  Identify required retrieval tools
             ▼
         ┌─────────────────────────────────────────┐
-        │          AGENTIC RETRIEVAL LOOP          │
+        │          AGENTIC RETRIEVAL LOOP         │
         │                                         │
         │  ┌─────────────┐    ┌─────────────────┐ │
-        │  │   RETRIEVAL  │    │   REFLECTION    │ │
+        │  │  RETRIEVAL  │    │   REFLECTION    │ │
         │  │    AGENT    │───▶│     AGENT       │ │
         │  │             │    │                 │ │
         │  │ - BM25      │◀───│ - Sufficient?   │ │
@@ -78,7 +78,7 @@ User Query
         │  │ - Web       │    │ - Rewrite query?│ │
         │  └─────────────┘    └────────┬────────┘ │
         │                              │          │
-        │                    SUFFICIENT │          │
+        │                   SUFFICIENT │          │
         └──────────────────────────────┼──────────┘
                                        ▼
                               [CONTEXT ASSEMBLY]
