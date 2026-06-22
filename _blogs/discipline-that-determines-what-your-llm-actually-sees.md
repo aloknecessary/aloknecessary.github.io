@@ -1,7 +1,7 @@
 ---
 title: "Context Engineering: The Discipline That Determines What Your LLM Actually Sees"
-date: 2026-06-25
-last_modified_at: 2026-06-25
+date: 2026-06-23
+last_modified_at: 2026-06-23
 author: Alok Ranjan Daftuar
 description: "The emerging engineering discipline between retrieval and generation — context window budgeting, memory architecture, structured injection patterns, conversation compression, and the systematic failures that happen when context assembly is treated as an afterthought."
 excerpt: "Prompt engineering asks how to phrase an instruction. Context engineering asks what information the model needs, in what form, in what order, and how much of it. This post covers token budgeting, four-type memory architecture, structured injection patterns, conversation compression, lost-in-the-middle mitigation, contradiction detection, and testing context assembly as a first-class system."
