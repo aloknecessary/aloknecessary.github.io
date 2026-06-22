@@ -59,19 +59,19 @@ Before the engineering, the definition. Context engineering is the systematic de
 │                                                         │
 │  ┌─────────────────┐   Budget: fixed token limit        │
 │  │  SYSTEM PROMPT  │   Role, persona, instructions,     │
-│  │                 │   output format, constraints        │
+│  │                 │   output format, constraints       │
 │  └────────┬────────┘                                    │
 │           │                                             │
 │  ┌────────▼────────┐                                    │
 │  │  MEMORY LAYER   │   Episodic: prior conversation     │
-│  │                 │   Semantic: user/entity facts       │
-│  │                 │   Procedural: how-to patterns       │
+│  │                 │   Semantic: user/entity facts      │
+│  │                 │   Procedural: how-to patterns      │
 │  └────────┬────────┘                                    │
 │           │                                             │
 │  ┌────────▼────────┐                                    │
 │  │ RETRIEVED FACTS │   Chunks from RAG pipeline         │
-│  │                 │   Tool call results                 │
-│  │                 │   External API responses            │
+│  │                 │   Tool call results                │
+│  │                 │   External API responses           │
 │  └────────┬────────┘                                    │
 │           │                                             │
 │  ┌────────▼────────┐                                    │
