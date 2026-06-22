@@ -1,7 +1,7 @@
 ---
 title: "Multi-Agent Systems Architecture: Patterns, Pitfalls, and Production Reality"
-date: 2026-06-17
-last_modified_at: 2026-06-17
+date: 2026-07-06
+last_modified_at: 2026-07-06
 author: Alok Ranjan Daftuar
 description: "A systems architect's guide to multi-agent production design — orchestration vs. choreography, the four coordination patterns and their failure modes, state persistence, inter-agent protocols, cost controls, and the observability discipline that separates systems that survive production from systems that look fine until the cloud bill arrives."
 excerpt: "An agent stuck in an infinite retry loop doesn't show up in your error rate — it shows up in your AWS bill. This post covers the four coordination patterns, orchestration vs choreography, state persistence, inter-agent contracts (MCP/A2A), failure isolation with circuit breakers and sagas, cost controls, and the observability that detects 'wrong' as distinct from 'down.'"
@@ -15,7 +15,6 @@ series: "RAG and AI Engineering"
 series_order: 7
 ---
 
-{% raw %}
 
 > An agent that's stuck in an infinite retry loop doesn't show up in your error rate. It shows up in your AWS bill — eleven days later.
 
@@ -137,6 +136,8 @@ The single capability that distinguishes production multi-agent systems from wel
 Without it: any failure — API timeout, model refusal, parsing error, rate limit — restarts the workflow from the beginning, re-doing all completed work, re-spending all spent tokens, and surfacing to the user as a full failure rather than a partial retry.
 
 The state model needs to capture three things at every checkpoint: what the current task decomposition looks like, which subtasks have completed and what they returned, and which are in-flight, pending, or failed.
+
+{% raw %}
 
 ```python
 from dataclasses import dataclass, field
@@ -381,6 +382,7 @@ Structured traces enable the metrics that standard monitoring cannot: **workflow
 The alert that would have caught the $47K incident is simple once the data exists: flag any workflow where `sum(attempt_count for all tasks) > 2 * len(tasks)` — the system is retrying more than it is completing, which is the structural signature of a stuck loop. This alert fires on behavior, not on infrastructure failure. That's the category of observability that multi-agent systems require that no standard monitoring stack provides out of the box.
 
 ---
+{% endraw %}
 
 ## The Multi-Agent Production Checklist
 
@@ -420,4 +422,3 @@ The $47K infinite-retry incident is not a story about a broken agent. It's a sto
 
 *Further Reading: Anthropic — Building Effective Agents (2024), Google — Agent-to-Agent Protocol Specification (A2A v1.0, 2026), LangGraph — Stateful Multi-Agent Workflows Documentation, Liu et al. — Why Do Multi-Agent LLM Systems Fail? (arXiv, 2024), Braintrust — Production AI Agent Failure Modes Research (2026)*
 
-{% endraw %}
