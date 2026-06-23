@@ -55,7 +55,7 @@ layout: default
           </div>
 
           <ol class="series-posts">
-            {% for post in series_posts %}
+            {%- for post in series_posts %}
             <li>
               <span class="step-indicator">{{ post.series_order }}</span>
               <div class="step-content">
@@ -63,7 +63,7 @@ layout: default
                 <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
               </div>
             </li>
-            {% endfor %}
+            {%- endfor %}
           </ol>
         </div>
         {% endif %}
