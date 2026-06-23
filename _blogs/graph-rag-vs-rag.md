@@ -11,7 +11,7 @@ categories:
   - ai
   - architecture
 tags: [ai, rag, graphrag, knowledge-graphs, llm, retrieval, architecture, production, patterns, system-design]
-series: "RAG Production"
+series: "RAG and AI Engineering"
 series_order: 6
 ---
 
