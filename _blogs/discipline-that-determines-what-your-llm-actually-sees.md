@@ -11,7 +11,7 @@ categories:
   - ai
   - architecture
 tags: [ai, llm, context-engineering, rag, prompt-engineering, memory, architecture, production, observability, patterns]
-series: "RAG Production"
+series: "RAG and AI Engineering"
 series_order: 5
 ---
 
