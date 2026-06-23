@@ -47,9 +47,11 @@ layout: default
                 <svg class="series-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
                 <h2 class="series-block-title">{{ series.name }} <span class="tag-count">{{ count }}</span></h2>
               </div>
+            </div>
+            <div class="series-block-bottom">
+              <p class="series-block-description">{{ series.description }}</p>
               <a href="{{ series_posts.first.url | relative_url }}" class="series-start-btn">Start reading <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
-            <p class="series-block-description">{{ series.description }}</p>
           </div>
 
           <ol class="series-posts">
