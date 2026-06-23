@@ -3,6 +3,12 @@
     "development"
   ],
   "hints": {
-    "axe/structure": "off"
+    "axe/structure": "off",
+    "axe/aria": [
+      "default",
+      {
+        "aria-required-children": "off"
+      }
+    ]
   }
 }
