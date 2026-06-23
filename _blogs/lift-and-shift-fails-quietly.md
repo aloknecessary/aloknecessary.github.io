@@ -24,6 +24,7 @@ Lift-and-shift — rehosting an on-premises workload to cloud VMs or containers 
 This post is an honest accounting of the patterns I see repeatedly across lifted workloads. Not theoretical anti-patterns from a whitepaper — actual architectural smells that surface after migration, often slowly, and often expensively.
 
 ### Table of Contents
+
 - [Introduction](#introduction)
 - [The Illusion of a Successful Migration](#the-illusion-of-a-successful-migration)
 - [1. Latency Amplification](#1-latency-amplification)
@@ -48,7 +49,7 @@ What changed is everything underneath: the network topology, the storage subsyst
 The architectural smells described below all share this root cause. They don't register as bugs because nothing broke. They register as drift—subtle, compounding, and expensive.
 
 | Smell | When it surfaces | Who notices first |
-|---|---|---|
+| --- | --- | --- |
 | Latency amplification | Week 2–4 | End users, support tickets |
 | Chatty services | Week 3–6 | On-call engineer, APM alert |
 | Cost surprises | End of month 1 | Finance, FinOps |
@@ -64,7 +65,7 @@ This is the first smell that appears, and it is almost always misdiagnosed. Engi
 
 On a physical LAN, a service call between two rack-mounted servers has sub-millisecond round-trip times. In a cloud VPC, even two services in the same availability zone incur a baseline overhead of 1–3ms per call. Cross-AZ jumps can be 5–15ms. Cross-region calls are 40–120ms depending on geography. These numbers seem trivial until you look at how a typical on-premises service was designed.
 
-```
+```text
 On-premises: 40 calls × 0.1ms avg = 4ms network overhead
 After migration: 40 calls × 4ms avg = 160ms network overhead
 
@@ -221,7 +222,7 @@ Cost surprises in lifted workloads cluster around three sources that on-premises
 On-premises, data moving between servers is free. In cloud, data leaving a region, leaving an AZ, or leaving the cloud provider's network is metered. A system designed assuming free internal data movement will generate egress charges that are impossible to predict from architecture diagrams alone.
 
 | Pattern | On-prem cost | Cloud cost | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Log aggregation from 10 nodes | $0 | ~$45/mo egress | Unbounded with node count |
 | Cross-AZ DB replication | $0 | ~$0.01/GB both directions | Surprise at high write volumes |
 | CDN origin pull (unoptimized) | $0 | $0.085–$0.09/GB | Amplified by cache misses |
@@ -378,26 +379,31 @@ This pattern is not always avoidable during migration — full service decomposi
 The smells above are all detectable before migration if you know what to look for. This is the review I run before advising any lift-and-shift engagement.
 
 **Call patterns & latency budget**
+
 - [ ] Count synchronous downstream calls per request at P95 load — flag if > 15
 - [ ] Identify any call patterns that loop over collections without batching
 - [ ] Confirm connection pool sizes are appropriate for expected cloud concurrency
 
 **State & storage**
+
 - [ ] Identify all in-process or in-memory state that must survive a pod restart
 - [ ] Map every place the app reads from or writes to the local filesystem
 - [ ] Confirm session management does not rely on server affinity or in-memory stores
 
 **Cost**
+
 - [ ] Estimate cross-AZ and cross-region data flows, calculate egress cost at 2× peak
 - [ ] Identify any licensing model tied to CPU count or physical host (SQL Server, Oracle)
 - [ ] Catalogue all non-production environments and confirm shutdown automation exists
 
 **Observability**
+
 - [ ] Map existing monitoring agents — identify cloud equivalents before cutover
 - [ ] Confirm distributed tracing (OpenTelemetry or equivalent) is instrumented before go-live
 - [ ] Define SLO targets for P95 latency, error rate, and availability before migration
 
 **Architecture**
+
 - [ ] Identify any shared database schema across logical services
 - [ ] Check for hardcoded IPs or hostnames that assume on-prem DNS resolution
 - [ ] Verify secret management — on-prem flat files or config files must not migrate to cloud VMs

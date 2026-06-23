@@ -28,6 +28,7 @@ Every chunk must carry metadata — source document ID, version, content hash, e
 Neither BM25 nor vector search alone is sufficient. Hybrid retrieval with Reciprocal Rank Fusion (RRF) is the baseline for production RAG.
 
 The pipeline:
+
 1. **Dense retrieval** (vector similarity) + **Sparse retrieval** (BM25 keywords) in parallel
 2. **RRF merge** — rank-based fusion without score normalization
 3. **Cross-encoder re-ranker** — precision pass on top candidates
@@ -76,6 +77,7 @@ This is a summary of my deep dive into production RAG engineering. The full arti
 **👉 [Building Reliable RAG Pipelines — Full Article](https://aloknecessary.github.io/blogs/rag_prototype_to_production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=rag-prototype-to-production)**
 
 The full article includes:
+
 - Full pipeline architecture diagram (9 stages)
 - Three chunking approaches with Python implementations (fixed, semantic, hierarchical)
 - Hybrid retrieval with RRF implementation (Qdrant)

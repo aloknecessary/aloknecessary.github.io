@@ -18,6 +18,7 @@ This is the dual write problem — an **architectural correctness problem** that
 A dual write occurs when your application writes to two separate systems as part of a single logical operation without atomicity across both. The dangerous failure modes are silent — the HTTP response returns 200, the client gets a success, and nothing downstream happens.
 
 The naive fixes don't work:
+
 - **Try/catch with retry** — introduces duplicate events; consumers must be idempotent
 - **Publish first, then write DB** — just reverses which failure mode you're exposed to
 - **Distributed transactions (2PC)** — sacrifices availability and introduces distributed locking
@@ -76,6 +77,7 @@ This is a summary of my deep dive into the dual write problem. The full article 
 **👉 [The Dual Write Problem and How to Solve It — Full Article](https://aloknecessary.github.io/blogs/dual-write-problem-in-event-driven-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=dual-write-problem)**
 
 The full article includes:
+
 - Four failure scenarios with a dual write matrix
 - Transactional Outbox Pattern implementation (.NET with EF Core)
 - Polling relay vs log-tailing relay comparison

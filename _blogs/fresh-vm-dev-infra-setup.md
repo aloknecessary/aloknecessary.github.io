@@ -26,6 +26,7 @@ Everything here is reproducible. You can run it as a script, drop it into user-d
 <!--more-->
 
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Prerequisites and Assumptions](#prerequisites-and-assumptions)
 - [Step 1: OS Hardening and Base Packages](#step-1-os-hardening-and-base-packages)
@@ -102,7 +103,7 @@ sudo nano /etc/ssh/sshd_config
 
 Ensure these directives are set:
 
-```
+```text
 PasswordAuthentication no
 PermitRootLogin no
 PubkeyAuthentication yes
@@ -216,7 +217,7 @@ sudo chown -R devops:devops /opt/dev-infra
 
 Final structure:
 
-```
+```text
 /opt/dev-infra/
 ├── runner/                  # GitHub Actions runner installation
 ├── services/
@@ -787,7 +788,7 @@ docker compose -f /opt/dev-infra/services/docker-compose.yml ps --format json \
 ## Quick Reference: Ports and Access
 
 | Service | Port | Bind | Access |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | SQL Server | 1433 | `127.0.0.1` | localhost / SSH tunnel only |
 | Redis | 6379 | `127.0.0.1` | localhost / SSH tunnel only |
 | Portainer UI | 9443 | `0.0.0.0` | `https://VM_IP:9443` |

@@ -74,6 +74,7 @@ This is a summary of my deep dive into context engineering. The full article cov
 **👉 [Context Engineering: The Discipline That Determines What Your LLM Actually Sees — Full Article](https://aloknecessary.github.io/blogs/discipline-that-determines-what-your-llm-actually-sees/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=context-engineering)**
 
 The full article includes:
+
 - Context window budget accounting with Python dataclasses
 - Four memory types with implementation patterns (episodic, semantic, procedural, working)
 - Working memory bridge from agentic retrieval loops

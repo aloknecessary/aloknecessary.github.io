@@ -55,7 +55,7 @@ This post covers how to build the eval pipeline that runs on every deploy.
 
 Before building anything, establish a precise mental model of *what* you are evaluating. A RAG system has two independently failing components, and most teams conflate them.
 
-```
+```text
 User Query
     │
     ▼
@@ -198,7 +198,7 @@ def evaluate_answer_correctness(
 ### The Metric Selection Matrix
 
 | Metric | Requires Ground Truth | Suitable for Online Eval | Regression Sensitivity |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Faithfulness | No | Yes | Hallucination, prompt changes |
 | Answer Relevance | No | Yes | Retrieval drift, query handling |
 | Context Precision | Yes | No | Retrieval changes, chunking |
@@ -423,6 +423,7 @@ The eval pipeline is only as good as the dataset it runs against. A golden datas
 For a RAG system going to production, 100 records is the minimum. Fewer than that and your regression detection has too little statistical power — a 5-point score drop on 20 examples is noise; on 100 examples it is signal.
 
 Distribute records across:
+
 - Query types (factual lookup, multi-hop reasoning, summarization, comparison)
 - Difficulty tiers (direct answer in single chunk, requires synthesis across chunks, edge cases where context is insufficient)
 - Domain coverage (all major topic areas your corpus covers)
@@ -485,7 +486,7 @@ async def generate_eval_candidates(
 
 Your golden dataset must be versioned. When you add new questions, update reference answers for document changes, or remove stale questions, those changes must be tracked — not overwritten.
 
-```
+```text
 eval/
 ├── golden_dataset_v1.jsonl     # initial baseline, never deleted
 ├── golden_dataset_v2.jsonl     # added coverage for new product area
@@ -728,7 +729,7 @@ async def eval_queue_worker():
 ### Metrics to Alert On in Production
 
 | Signal | Alert Condition | Interpretation |
-|---|---|---|
+| --- | --- | --- |
 | 7-day rolling faithfulness | Drops > 0.05 from monthly baseline | Prompt drift, corpus contamination, model update |
 | 7-day rolling answer relevancy | Drops > 0.05 | Query distribution shift, retrieval degradation |
 | `had_sufficient_context` rate | Falls below 80% | Corpus gap or retrieval regression |

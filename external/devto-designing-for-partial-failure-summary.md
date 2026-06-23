@@ -18,6 +18,7 @@ High availability is not a property of your system — it is an emergent behavio
 The CAP theorem is clean in theory. In production, it manifests as **partial unavailability** — some nodes respond, some don't, and your system has to decide what to do about it.
 
 Real-world partitions are never clean:
+
 - A replica is reachable but 800ms slower than normal
 - A downstream service responds to health checks but times out on actual requests
 - A database primary is alive, but replication lag has grown to 45 seconds
@@ -33,6 +34,7 @@ Degraded systems are harder to reason about than failed ones. A service that ret
 Cascading failures rarely start big. They start with one slow service and end with everything down.
 
 The classic thread pool exhaustion cascade:
+
 1. A payment service starts responding in 4s instead of 200ms
 2. Threads pile up — connection pool goes from 20% to 80%
 3. Latency bleeds upstream — unrelated operations slow down because they share the same thread pool
@@ -42,6 +44,7 @@ The classic thread pool exhaustion cascade:
 Your entire checkout is down because a payment service was *slow* — not even failed.
 
 **Cascade enablers to eliminate:**
+
 - Synchronous chains longer than 2–3 hops
 - Shared thread pools across dependencies
 - Missing or oversized timeouts (a 30s default in a p99 200ms service is a loaded gun)
@@ -92,6 +95,7 @@ This is a summary of my deep dive into designing for partial failure. The full a
 **👉 [Designing for Partial Failure — Full Article](https://aloknecessary.github.io/blogs/designing_for_partial_failure/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=designing-for-partial-failure)**
 
 The full article includes:
+
 - CAP theorem applied to partial unavailability scenarios
 - Real-world cascade case studies (AWS us-east-1 2021, Facebook 2021)
 - Circuit breaker implementation in .NET (Polly) and Node.js (opossum)

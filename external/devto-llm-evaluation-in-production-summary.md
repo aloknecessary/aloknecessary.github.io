@@ -34,6 +34,7 @@ This is not a model quality problem. It is an evaluation infrastructure problem.
 RAGAS uses an LLM to evaluate LLM output — the only practical way to evaluate semantic quality at scale.
 
 Pitfalls to manage:
+
 - **Positional bias** — randomize order in pairwise comparisons
 - **Verbosity bias** — judge rates longer answers higher even when less accurate
 - **Self-preference** — use a different model family as judge than the one generating answers
@@ -79,6 +80,7 @@ This is a summary of my deep dive into LLM evaluation infrastructure. The full a
 **👉 [LLM Evaluation in Production — Full Article](https://aloknecessary.github.io/blogs/llm-evaluation-in-production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=llm-evaluation-in-production)**
 
 The full article includes:
+
 - Evaluation stack architecture (retrieval layer vs generation layer)
 - Four metrics with RAGAS Python implementations
 - LLM-as-Judge faithfulness prompt with claim-level scoring

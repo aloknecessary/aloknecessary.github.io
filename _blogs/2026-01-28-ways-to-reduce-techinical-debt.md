@@ -105,4 +105,3 @@ New technologies, when applied thoughtfully, can improve performance, lower main
 Technical debt isn’t just a developer problem—it’s a business issue that affects delivery speed and system resilience when left unchecked. By modernising systems, infrastructure, and development practices, organisations can significantly reduce this burden, improve productivity, and create an engineering environment that supports innovation and growth.
 
 Modernisation isn’t a one-time task—it’s a strategic journey that combines architectural clarity, targeted investment, continuous improvement, and adoption of thoughtful tooling and practices.
-

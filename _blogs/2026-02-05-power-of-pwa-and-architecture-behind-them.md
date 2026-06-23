@@ -25,7 +25,7 @@ A **Progressive Web App** is a web application built using modern web standards 
 Key traits include:
 
 - **Responsive design** across screens and form factors.
-- **Network independence and offline support** via service workers. 
+- **Network independence and offline support** via service workers.
 - **Installability** with web app manifest definitions.
 - **Engagement features** such as push notifications and background sync.
 - **Discoverability** through SEO since PWAs are essentially websites.
@@ -66,7 +66,7 @@ Unlike traditional caching, service workers allow fine-grained strategies (cache
 
 PWAs use a multi-tiered storage strategy:
 
-- **Cache API** for static assets (JS, CSS, SVGs). 
+- **Cache API** for static assets (JS, CSS, SVGs).
 - **IndexedDB** for structured, persistent data (API responses, user states).
 - **localStorage/sessionStorage** for simple key-value settings.
 

@@ -28,6 +28,7 @@ This blog is about that gap — the space between "all services are healthy" and
 > **If you haven't read the [CAP Theorem article](/blogs/the-cap-theorem-in-practice-making-the-right-trade-offs-at-scale/) posted earlier**, the short version: in any distributed system, network partitions are inevitable, and your only real architectural choice is whether you sacrifice Consistency or Availability when one occurs. This post picks up where that trade-off lands in production.
 
 ### Table of Contents
+
 - [The Lie We Tell Ourselves](#the-lie-we-tell-ourselves)
 - [1. CAP Theorem in Practice — What "Partial Unavailability" Actually Looks Like](#1-cap-theorem-in-practice--what-partial-unavailability-actually-looks-like)
 - [2. Cascading Failures — How a Small Problem Becomes a Total Outage](#2-cascading-failures--how-a-small-problem-becomes-a-total-outage)
@@ -56,7 +57,7 @@ In each case, your system is not down. It is *degraded*. And degraded systems ar
 ### The Two Failure Modes CAP Forces You to Choose Between
 
 | Scenario | CP System Behavior | AP System Behavior |
-|---|---|---|
+| --- | --- | --- |
 | Primary DB unreachable | Returns error / blocks writes | Accepts writes to replica, risks divergence |
 | Replication lag > threshold | Rejects stale reads | Serves stale data silently |
 | Quorum not achievable | Refuses operation | Proceeds with best-effort quorum |
@@ -123,6 +124,7 @@ Graceful degradation is the practice of defining explicit reduced-functionality 
 The circuit breaker prevents a slow or failing dependency from exhausting your resources. It monitors call failure rate and, above a threshold, *opens* the circuit — immediately returning a fallback response instead of attempting the call.
 
 **States:**
+
 - **Closed** — normal operation, calls pass through
 - **Open** — dependency is failing; calls short-circuit to fallback immediately
 - **Half-Open** — after a cooldown, a probe request tests if the dependency has recovered
@@ -227,7 +229,7 @@ Namespace-level quotas enforce that a resource-hungry service cannot starve adja
 
 Every network call needs an explicit timeout. But timeout values need to be *hierarchically consistent* — a downstream call's timeout must be shorter than the upstream caller's timeout, or the upstream will time out waiting for a response that may still arrive, resulting in both a failed request and a wasted downstream call.
 
-```
+```text
 User Request       (30s timeout)
   └── API Gateway  (25s timeout)
         └── Checkout Service  (20s timeout)
@@ -269,7 +271,7 @@ For non-critical downstream calls — notifications, analytics events, audit log
 When a dependency is unavailable, return a degraded but functional response rather than an error. The correct fallback is domain-specific:
 
 | Service | Preferred Fallback |
-|---|---|
+| --- | --- |
 | Product recommendations | Return bestsellers / editorial picks from cache |
 | Pricing service | Return last-cached price with a "price may vary" indicator |
 | Personalization service | Return generic/default experience |

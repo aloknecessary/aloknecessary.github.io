@@ -33,12 +33,14 @@ These are table stakes, not optional concerns.
 A dedicated orchestrator drives the saga — it knows the sequence, issues commands, waits for responses, and drives compensation.
 
 **Shines when:**
+
 - Workflows have complex conditional branching
 - Long-running sagas involve human steps or wait states
 - Operational visibility and debugging matter most
 - Compensation must be guaranteed and sequenced
 
 **Breaks down when:**
+
 - The orchestrator becomes a throughput bottleneck
 - Tight temporal coupling conflicts with event-driven decoupling goals
 - Business logic gravitates into the orchestrator (god-object risk)
@@ -50,12 +52,14 @@ A dedicated orchestrator drives the saga — it knows the sequence, issues comma
 No central coordinator. Each service listens for events, performs its local transaction, and publishes events that others react to. The saga is an emergent property.
 
 **Shines when:**
+
 - Services are genuinely independent
 - Throughput is high and latency requirements are strict
 - The workflow is stable and simple
 - Independent deployability is valued over centralized visibility
 
 **Breaks down when:**
+
 - Saga state is implicit and debugging requires forensic log analysis
 - Business logic is distributed across every participating service
 - Compensation failures go undetected — no component knows a step was missed
@@ -91,6 +95,7 @@ This is a summary of my deep dive into saga patterns. The full article covers or
 **👉 [Saga Orchestration vs. Choreography — Full Article](https://aloknecessary.github.io/blogs/saga-orchestration-vs-choreography/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=saga-orchestration-vs-choreography)**
 
 The full article includes:
+
 - Detailed comparison of both approaches with subsections on how they work, where they shine, and where they break down
 - Four critical failure modes that affect both approaches
 - Practical decision heuristics for choosing the right approach

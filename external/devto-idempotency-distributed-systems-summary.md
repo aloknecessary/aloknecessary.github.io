@@ -86,6 +86,7 @@ This is a summary of my comprehensive deep dive into idempotency patterns. The f
 **👉 [Idempotency in Distributed Systems — Full Article](https://aloknecessary.github.io/blogs/idempotency-distributed-systems/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=idempotency-distributed-systems)**
 
 The full article includes:
+
 - Detailed deduplication store architecture with Redis, PostgreSQL, and DynamoDB trade-offs
 - Complete two-phase reservation pattern walkthrough
 - All 7 failure scenarios with mitigations

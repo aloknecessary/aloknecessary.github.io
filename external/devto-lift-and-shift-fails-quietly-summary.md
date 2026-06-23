@@ -80,6 +80,7 @@ This is a summary of my deep dive into post-migration architectural smells. The 
 **👉 [Why Lift-and-Shift Fails Quietly — Full Article](https://aloknecessary.github.io/blogs/lift-and-shift-fails-quietly/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=lift-and-shift-fails-quietly)**
 
 The full article includes:
+
 - Latency amplification with SVG architecture diagram (on-prem vs cloud)
 - Chatty services with before/after code examples and connection pool diagnostics
 - Cost surprise breakdown with egress pricing tables

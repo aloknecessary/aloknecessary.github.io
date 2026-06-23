@@ -20,6 +20,7 @@ An agentic RAG system treats retrieval as a tool available to a reasoning loop. 
 The key component: a **reflection agent** sits between retrieval and generation. It evaluates the quality and sufficiency of accumulated context and either terminates the loop or sends it back with a refined query.
 
 Three patterns in increasing complexity:
+
 1. **Iterative Query Refinement** — single tool, query rewritten per pass
 2. **Multi-Tool Orchestration** — agent selects between keyword, semantic, hybrid, and filtered search
 3. **Hierarchical Decomposition** — planner splits multi-hop queries into dependent sub-queries
@@ -62,7 +63,7 @@ On timeout or max iterations: generate with accumulated context + caveat, never 
 
 ## Cost Reality
 
-```
+```text
 Single-pass RAG:     ~$0.003/request
 Agentic (2 iter):    ~$0.006/request  (2x)
 Agentic (4 iter):    ~$0.010/request  (3-4x)
@@ -87,6 +88,7 @@ This is a summary of my deep dive into agentic RAG architecture. The full articl
 **👉 [Designing Self-Correcting Retrieval Loops for Production — Full Article](https://aloknecessary.github.io/blogs/designing-self-correcting-retrieval-loops-for-production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=agentic-rag-self-correcting-retrieval)**
 
 The full article includes:
+
 - Full agentic RAG architecture diagram (router → planner → loop → generation)
 - Query planner implementation with multi-hop decomposition (Python/Anthropic)
 - Iterative retrieval loop with async timeout and dedup
