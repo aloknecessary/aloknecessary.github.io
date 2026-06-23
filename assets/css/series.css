@@ -57,6 +57,7 @@
   background: linear-gradient(135deg, var(--bg-soft) 0%, var(--bg-card) 100%);
   border-bottom: 1px solid var(--border);
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
 }
 
