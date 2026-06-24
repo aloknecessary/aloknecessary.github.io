@@ -423,6 +423,10 @@ pre {
   white-space: pre-wrap;
 }
 
+.language-text pre {
+  white-space: pre;
+}
+
 p > code,
 li > code,
 td > code {

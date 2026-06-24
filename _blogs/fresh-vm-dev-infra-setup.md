@@ -12,7 +12,7 @@ categories:
   - infrastructure
 tags: [docker, github-actions, self-hosted-runner, redis, sql-server, portainer, ubuntu, dev-infra]
 series: "DevOps & Platform Engineering"
-series_order: 1
+series_order: 4
 ---
 
 ## Introduction

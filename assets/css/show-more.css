@@ -1,13 +1,11 @@
 /* Collapsible lists — shared across tags, categories, series */
-.tag-posts.collapsed,
-.series-posts.collapsed {
+.tag-posts.collapsed {
   max-height: 290px;
   overflow: hidden;
   position: relative;
 }
 
-.tag-posts.collapsed::after,
-.series-posts.collapsed::after {
+.tag-posts.collapsed::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -16,6 +14,10 @@
   height: 60px;
   background: linear-gradient(to bottom, transparent, var(--bg-base));
   pointer-events: none;
+}
+
+.series-posts.collapsed li:nth-child(n+5) {
+  display: none;
 }
 
 .show-more-bar {

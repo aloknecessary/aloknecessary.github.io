@@ -12,7 +12,7 @@ categories:
   - devops
 tags: [kubernetes, github-actions, devops, ci-cd, security, arc, container-security, cloud-architecture, platform-engineering, automation]
 series: "DevOps & Platform Engineering"
-series_order: 4
+series_order: 3
 ---
 
 ## Introduction
