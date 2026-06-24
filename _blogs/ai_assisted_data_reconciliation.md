@@ -30,6 +30,7 @@ This is where AI — specifically embedding-based similarity and LLM-assisted cl
 > **Article context:** This blog builds directly on the [CAP Theorem](/blogs/cap_theorem_architecture/) and [Partial Failure](/blogs/designing_for_partial_failure/) posts in this series. The consistency trade-offs and failure modes discussed there are the upstream causes of the reconciliation problems addressed here.
 
 ### Table of Contents
+
 - [The Reconciliation Problem Nobody Wants to Own](#the-reconciliation-problem-nobody-wants-to-own)
 - [1. Where Traditional Reconciliation Breaks Down](#1-where-traditional-reconciliation-breaks-down)
 - [2. The AI-Assisted Reconciliation Architecture](#2-the-ai-assisted-reconciliation-architecture)
@@ -73,7 +74,7 @@ At millions of records per day, even a 0.1% false positive rate generates thousa
 
 The architecture is not AI-first — it is **rules-first, AI at the boundary**. Deterministic checks handle the high-confidence majority. AI handles the ambiguous remainder that rules cannot classify with confidence.
 
-```
+```text
 Raw Mismatch Detection (deterministic)
           │
           ▼
@@ -181,7 +182,7 @@ def classify_record_pair(record_a: dict, schema_a: str,
 The similarity thresholds (0.95, 0.80) are not universal — they must be calibrated against a labeled sample of your actual data. Run a calibration exercise with 500–1000 manually classified record pairs before setting production thresholds. Expect to revisit them after schema migrations or embedding model upgrades.
 
 | Similarity Range | Classification | Action |
-|---|---|---|
+| --- | --- | --- |
 | ≥ 0.95 | High-confidence match | Auto-resolve as equivalent |
 | 0.80 – 0.95 | Ambiguous | Route to LLM classification |
 | < 0.80 | High-confidence mismatch | Route to correction pipeline |

@@ -22,6 +22,7 @@ There is a pattern I have watched repeat itself across engineering organizations
 Platform Engineering is the architectural response to that problem. This post is a deep dive into what it actually takes to build an Internal Developer Platform (IDP) that delivers on the promise — not just the theory, but the team structure, the technical components, the implementation sequence, and the mistakes worth avoiding.
 
 ### Table of Contents
+
 - [Introduction](#introduction)
 - [The Problem Platform Engineering Actually Solves](#the-problem-platform-engineering-actually-solves)
 - [Platform Engineering Is Not DevOps Rebranded](#platform-engineering-is-not-devops-rebranded)
@@ -60,7 +61,7 @@ This distinction matters. DevOps is a cultural and organizational shift: it brea
 The key architectural difference is intent:
 
 | | DevOps | Platform Engineering |
-|---|---|---|
+| --- | --- | --- |
 | **Primary concern** | Delivery collaboration | Developer cognitive load |
 | **Mechanism** | Shared ownership | Curated self-service |
 | **Output** | Culture and practices | A platform as a product |
@@ -140,7 +141,7 @@ Inconsistent observability is one of the most expensive operational problems at 
 
 A platform-owned observability stack solves this by providing a pre-configured, consistent baseline per workload type. The standard modern stack for Kubernetes:
 
-```
+```text
 Metrics:   Prometheus (collection) → Grafana (dashboards + alerting)
 Logs:      Promtail/Alloy (collection) → Loki (storage) → Grafana
 Traces:    OpenTelemetry SDK → Tempo → Grafana
@@ -260,4 +261,3 @@ Start with the highest-friction point. Build it well. Ship it. The platform comp
 ---
 
 *If you are working through IDP adoption or have questions about any of the patterns covered here, reach out — I am always happy to dig into the specifics.*
-

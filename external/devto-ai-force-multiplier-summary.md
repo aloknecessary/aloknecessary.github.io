@@ -26,6 +26,7 @@ Real productivity gains come from AI eliminating friction in engineering workflo
 **How AI Helps:** Semantic code search and automatic dependency mapping reduce cognitive load.
 
 **Measurable Outcome:**
+
 - 40% reduction in time to understand unfamiliar codebases
 - Faster onboarding (weeks → days)
 - Reduced context switching
@@ -44,6 +45,7 @@ Real productivity gains come from AI eliminating friction in engineering workflo
 AI generates complete Deployment + HPA manifests with proper resource limits, health checks, and autoscaling configuration.
 
 **Measurable Outcome:**
+
 - 60% faster infrastructure provisioning
 - 80% reduction in configuration errors
 - Consistent security standards
@@ -57,7 +59,8 @@ AI generates complete Deployment + HPA manifests with proper resource limits, he
 **How AI Helps:** AI analyzes logs, correlates events across services, and suggests probable root causes.
 
 **Real scenario:**
-```
+
+```text
 Query: "Why are we seeing 503 errors in api-service between 14:00-14:15 UTC?"
 
 AI Analysis:
@@ -68,6 +71,7 @@ AI Analysis:
 ```
 
 **Measurable Outcome:**
+
 - MTTR reduced by 60%
 - Faster cascade failure identification
 - Reduced alert fatigue
@@ -81,10 +85,12 @@ AI Analysis:
 **How AI Helps:** AI analyzes execution patterns and identifies bottlenecks.
 
 **Real optimization:**
+
 - Original: 12 minutes
 - AI-optimized: 6 minutes (50% reduction)
 
 **Key improvements identified:**
+
 - Merge jobs to reduce startup overhead
 - Enable caching (npm, Docker layers)
 - Parallelize independent tasks
@@ -101,12 +107,14 @@ AI Analysis:
 **How AI Helps:** Auto-generates and updates docs from code, infrastructure, and git history.
 
 **AI generates:**
+
 - API documentation from code
 - Architecture docs from Terraform/K8s
 - Runbooks from incident history
 - Drift detection warnings
 
 **Measurable Outcome:**
+
 - Documentation accuracy: 60% → 95%
 - Onboarding time reduced by 40%
 
@@ -119,12 +127,14 @@ AI Analysis:
 Define what AI can assist with vs. what requires human review:
 
 **Allowed:**
+
 - Code generation for review
 - Infrastructure scaffolding
 - Log analysis
 - Documentation generation
 
 **Requires Human Review:**
+
 - Security-sensitive code
 - Database migrations
 - Production config changes
@@ -133,6 +143,7 @@ Define what AI can assist with vs. what requires human review:
 ### 2. Integrate into Existing Workflows
 
 Don't force workflow changes. Add AI where friction exists:
+
 - IDE plugins for real-time assistance
 - PR review bots for automated analysis
 - Slack/Teams bots for log queries
@@ -141,6 +152,7 @@ Don't force workflow changes. Add AI where friction exists:
 ### 3. Measure and Iterate
 
 Track meaningful metrics:
+
 - PR cycle time
 - Time to first review
 - Bug escape rate
@@ -157,6 +169,7 @@ Track meaningful metrics:
 **Problem:** Merging AI code without thorough review.
 
 **Solution:** Enforce mandatory human review focusing on:
+
 - Security vulnerabilities
 - Error handling and edge cases
 - Performance implications
@@ -173,6 +186,7 @@ Track meaningful metrics:
 **Problem:** AI tools may expose sensitive data or generate non-compliant code.
 
 **Solution:**
+
 - Never share production credentials or customer data
 - Use self-hosted models for sensitive code
 - Regular security audits of AI tool usage
@@ -210,6 +224,7 @@ The real win: **sustained velocity without burnout**—teams solve meaningful pr
 AI in development isn't about replacing engineers—it's about eliminating friction so developers focus on solving complex problems elegantly.
 
 Teams winning with AI:
+
 - Maintain rigorous engineering standards
 - Use AI to accelerate, not replace, human judgment
 - Measure productivity holistically
@@ -226,6 +241,7 @@ This is a summary of my comprehensive guide on AI as an engineering force multip
 **👉 [AI as Your Engineering Force Multiplier - Full Article](https://aloknecessary.github.io/blogs/ai-as-your-engineering-force-multiplier/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=ai-as-your-engineering-force-multiplier)**
 
 The full article includes:
+
 - Complete code examples for Kubernetes, Terraform, and CI/CD
 - Detailed debugging scenarios with AI analysis
 - 4-week training program for teams

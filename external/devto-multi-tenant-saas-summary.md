@@ -22,12 +22,14 @@ All tenant data in a single database with tenant identification columns. Data se
 **Best For**: Early-stage SaaS with <1,000 tenants, homogeneous usage patterns, price-sensitive markets.
 
 **Advantages**:
+
 - Maximum resource efficiency
 - Simplified schema management
 - Lower infrastructure costs
 - Easy cross-tenant analytics
 
 **Disadvantages**:
+
 - Performance blast radius (one tenant impacts all)
 - Data commingling risks
 - Difficult per-tenant customization
@@ -40,12 +42,14 @@ Each tenant gets a dedicated database schema within a shared database instance. 
 **Best For**: 100-10,000 tenants with varying requirements, compliance needs (GDPR, HIPAA), tenants requiring customizations.
 
 **Advantages**:
+
 - Better performance isolation
 - Easier compliance (can backup/restore individual tenants)
 - Per-tenant schema customization possible
 - Moderate blast radius
 
 **Disadvantages**:
+
 - Migration complexity (run across thousands of schemas)
 - Connection pool pressure
 - Database catalog bloat at scale
@@ -58,6 +62,7 @@ Each tenant gets a completely isolated database instance. True multi-tenancy wit
 **Best For**: Enterprise SaaS with <500 large tenants, strict compliance requirements (financial, healthcare), custom SLAs, geographic data residency needs.
 
 **Advantages**:
+
 - Complete isolation (zero data commingling risk)
 - Independent scaling per tenant
 - Simplified compliance and data residency
@@ -65,6 +70,7 @@ Each tenant gets a completely isolated database instance. True multi-tenancy wit
 - Easy tenant offboarding
 
 **Disadvantages**:
+
 - Highest infrastructure cost
 - Operational complexity at scale
 - Patch management overhead
@@ -78,18 +84,21 @@ Each tenant gets a completely isolated database instance. True multi-tenancy wit
 Understanding blast radius is critical for risk management:
 
 **Row-Level Isolation**:
+
 - Database failure → All tenants down
 - Bad query → All tenants impacted
 - Security bug → All tenant data at risk
 - **Blast Radius**: Maximum
 
 **Schema-Level Isolation**:
+
 - Database failure → All tenants down
 - Bad query in schema → Single tenant impacted
 - Schema corruption → Single tenant affected
 - **Blast Radius**: Medium
 
 **Database-Level Isolation**:
+
 - Database failure → Single tenant down
 - Bad query → Single tenant impacted
 - **Blast Radius**: Minimal
@@ -101,6 +110,7 @@ Understanding blast radius is critical for risk management:
 Occurs when one tenant's resource consumption negatively impacts others. Primary concern in row-level and schema-level models.
 
 **Mitigation Approaches**:
+
 - Database query limits (role-based timeouts)
 - Application rate limiting (token bucket algorithms)
 - Kubernetes resource quotas (namespace-level limits)
@@ -115,6 +125,7 @@ Occurs when one tenant's resource consumption negatively impacts others. Primary
 **Strategy**: Maximize development velocity. Use row-level isolation with PostgreSQL Row-Level Security (RLS).
 
 **Warning Signs to Evolve**:
+
 - Query latency P95 >500ms despite proper indexing
 - Individual tenants consuming >10% of resources
 - First compliance requirements emerge
@@ -122,12 +133,14 @@ Occurs when one tenant's resource consumption negatively impacts others. Primary
 
 ### 1,000-5,000 Tenants: Hybrid Approach
 
-**Strategy**: 
+**Strategy**:
+
 - Row-level for small tenants (<100 users)
 - Schema-level for medium tenants (100-1,000 users)
 - Database-level for large/enterprise tenants (>1,000 users or compliance)
 
 **Warning Signs to Evolve**:
+>
 - >5,000 active schemas causing catalog bloat
 - Schema migrations taking >1 hour
 - Connection pool exhaustion
@@ -140,6 +153,7 @@ Occurs when one tenant's resource consumption negatively impacts others. Primary
 ### 10,000+ Tenants: Purpose-Built Infrastructure
 
 **Examples**:
+
 - **Salesforce**: Custom multi-tenant database engine
 - **Slack**: Sharded MySQL with Vitess
 - **GitHub**: Partitioned MySQL clusters with geographic distribution
@@ -151,14 +165,17 @@ Occurs when one tenant's resource consumption negatively impacts others. Primary
 Most successful SaaS platforms don't use a single isolation model. Instead, they employ tiered approaches:
 
 **Free Tier**: Row-level isolation
+
 - Maximize cost efficiency
 - Accept higher blast radius for low-value tenants
 
 **Professional Tier**: Schema-level isolation
+
 - Better performance guarantees
 - Moderate cost increase justified by revenue
 
 **Enterprise Tier**: Database-level isolation
+
 - Complete isolation for compliance
 - Cost absorbed by premium pricing
 
@@ -171,6 +188,7 @@ This approach balances cost efficiency with customer expectations and risk manag
 ### 1. Tenant Context Propagation
 
 Ensure tenant context flows through your entire stack:
+
 - Extract from JWT claims, headers, or subdomain
 - Store in request context
 - Automatically apply to all database queries
@@ -179,6 +197,7 @@ Ensure tenant context flows through your entire stack:
 ### 2. Automated Tenant Provisioning
 
 Build automation early:
+
 - Database/schema creation
 - Initial data seeding
 - Monitoring setup
@@ -189,6 +208,7 @@ Manual provisioning doesn't scale beyond 100 tenants.
 ### 3. Monitoring and Observability
 
 Essential metrics per tenant:
+
 - Query performance (P50, P95, P99)
 - Resource utilization (CPU, memory, IOPS)
 - Error rates
@@ -229,6 +249,7 @@ This is a summary of my comprehensive guide on multi-tenant SaaS architecture. F
 **👉 [Designing Multi-Tenant SaaS Systems - Full Article](https://aloknecessary.github.io/blogs/designing-multi-tenant-saas-systems/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=designing-multi-tenant-saas-systems)**
 
 The full article includes:
+
 - Detailed SQL examples for each isolation model
 - Complete cost analysis by scale
 - Migration strategy implementation guides

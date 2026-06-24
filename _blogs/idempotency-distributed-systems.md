@@ -28,6 +28,7 @@ If you're designing payment pipelines, event-driven microservices, or any system
 ---
 
 ## Table of Contents
+
 - [What Idempotency Actually Guarantees](#what-idempotency-actually-guarantees-and-what-it-doesnt)
 - [Idempotency Keys: Design and Semantics](#idempotency-keys-design-and-semantics)
 - [Deduplication Stores: Architecture and Trade-offs](#deduplication-stores-architecture-and-trade-offs)

@@ -26,6 +26,7 @@ This post takes a production-grounded look at both approaches: how they work, wh
 <!--more-->
 
 ## Table of Contents
+
 - [The Shared Foundation: What Both Approaches Must Solve](#the-shared-foundation-what-both-approaches-must-solve)
 - [Orchestration: Central Control, Explicit State](#orchestration-central-control-explicit-state)
 - [Choreography: Decentralized Reactions, Implicit Coordination](#choreography-decentralized-reactions-implicit-coordination)

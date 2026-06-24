@@ -1,19 +1,23 @@
-- name: "RAG Production"
-  slug: rag-production
+- name: "RAG and AI Engineering"
+  slug: rag-and-ai-engineering
   icon: "🧠"
+  domain: "AI Engineering"
   description: "From retrieval fundamentals to agentic loops — building AI search systems that work in production."
 
 - name: "Distributed Systems"
   slug: distributed-systems
   icon: "⚡"
+  domain: "Infrastructure"
   description: "CAP trade-offs, partial failure, dual writes, and data reconciliation at scale."
 
 - name: "Cloud Architecture"
   slug: cloud-architecture
   icon: "☁️"
+  domain: "Infrastructure"
   description: "Migration patterns, region-level resilience, and the engineering decisions behind production cloud systems."
 
 - name: "DevOps & Platform Engineering"
   slug: devops-platform-engineering
   icon: "🔧"
+  domain: "Infrastructure"
   description: "From dev environment setup to organization-scale internal developer platforms — the infrastructure that accelerates delivery."

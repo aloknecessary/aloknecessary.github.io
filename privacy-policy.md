@@ -24,6 +24,7 @@ This is a personal portfolio and blog operated by [Alok Ranjan Daftuar](https://
 If you consent, I use Google Analytics to understand how visitors use this site. This helps me improve content and user experience.
 
 **Google Analytics collects:**
+
 - Pages you visit
 - Time spent on pages
 - Referral source (how you found the site)
@@ -32,6 +33,7 @@ If you consent, I use Google Analytics to understand how visitors use this site.
 - Your IP address is anonymized
 
 **Google Analytics does NOT collect:**
+
 - Your name or email
 - Precise location
 - Personal identification
@@ -39,6 +41,7 @@ If you consent, I use Google Analytics to understand how visitors use this site.
 ### Essential Technical Data
 
 No cookies are set without your consent. Your browser automatically sends:
+
 - IP address (for delivering web pages)
 - Browser type
 - Device type
@@ -48,6 +51,7 @@ This data is not stored by me.
 ## How I Use This Data
 
 Analytics data helps me:
+
 - Understand which blog posts are most helpful
 - Improve site performance
 - Create better content
@@ -55,6 +59,7 @@ Analytics data helps me:
 ## Your Rights
 
 You have the right to:
+
 - Decline analytics cookies (use the cookie banner)
 - Change your mind anytime (click "Cookie Settings")
 - Request deletion of your data (email me)

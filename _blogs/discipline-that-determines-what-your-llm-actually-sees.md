@@ -11,7 +11,7 @@ categories:
   - ai
   - architecture
 tags: [ai, llm, context-engineering, rag, prompt-engineering, memory, architecture, production, observability, patterns]
-series: "RAG Production"
+series: "RAG and AI Engineering"
 series_order: 5
 ---
 
@@ -242,7 +242,7 @@ The key budget decision for agentic systems: when `termination_reason` is `"suff
 The four memory types, their properties, and where they originate in the series:
 
 | Memory Type | Durability | Update Frequency | Token Cost | Priority | Series Origin |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Episodic | Session | Every turn | High (growing) | Highest for continuity | This post, Section 5 |
 | Semantic | Persistent | Fact changes | Low (compact) | High for personalization | This post, Section 3 |
 | Procedural | Persistent | Process changes | Medium (selective) | Medium (task-specific) | This post, Section 3 |
@@ -595,7 +595,7 @@ The same discipline applies to every invariant this post has introduced: budget 
 Context assembly quality directly affects the RAGAS metrics established in the [LLM Evaluation in Production](/blogs/llm-evaluation-in-production/) post. The connection is not abstract — each assembly failure mode produces a predictable signature in the metric scores:
 
 | Assembly Failure | Primary RAGAS Signal | Secondary Signal |
-|---|---|---|
+| --- | --- | --- |
 | Low-relevance chunks included | Context Precision ↓ | Answer Correctness ↓ |
 | Contradictory chunks in context | Faithfulness ↓ | Answer Correctness ↓ |
 | Most relevant chunk buried mid-window | Answer Relevance ↓ | Faithfulness stable |

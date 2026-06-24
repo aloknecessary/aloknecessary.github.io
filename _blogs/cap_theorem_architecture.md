@@ -22,6 +22,7 @@ You've picked your database, designed your microservices, and wired up your even
 The CAP Theorem, formally proven by Eric Brewer in 2000 and mathematically formalized by Gilbert and Lynch in 2002, is not an academic curiosity. It is the fundamental constraint that governs every distributed system design decision you make — whether you acknowledge it or not. This post is about making that choice deliberately, not discovering it painfully during an incident.
 
 ### Table of Contents
+
 - [The Problem No One Talks About Until Production Burns](#the-problem-no-one-talks-about-until-production-burns)
 - [1. The Theorem, Stripped of Academic Ceremony](#1-the-theorem-stripped-of-academic-ceremony)
 - [2. CP vs AP: What You're Actually Trading](#2-cp-vs-ap-what-youre-actually-trading)
@@ -38,7 +39,7 @@ The CAP Theorem, formally proven by Eric Brewer in 2000 and mathematically forma
 CAP states that a distributed system can guarantee at most two of the following three properties simultaneously:
 
 | Property | In Plain English | Architectural Implication |
-|---|---|---|
+| --- | --- | --- |
 | **Consistency (C)** | Every read returns the most recent write or an error. | All nodes see the same data at the same time. Writes are synchronously replicated before acknowledgment. |
 | **Availability (A)** | Every request receives a response (not an error). | The system remains operational and responsive even when some nodes are degraded. Stale data is acceptable. |
 | **Partition Tolerance (P)** | The system continues operating when network partitions occur. | Nodes can be cut off from each other. The system doesn't collapse — it makes a choice between C and A for that partition duration. |
@@ -99,7 +100,7 @@ CAP only describes behavior during partitions. But your system spends the vast m
 *PACELC*, introduced by Daniel Abadi in 2012, extends CAP with a crucial dimension: even during normal operation (Else), you are trading **Latency (L)** against **Consistency (C)**.
 
 | System | Partition Behavior | Normal Operation |
-|---|---|---|
+| --- | --- | --- |
 | `MySQL` (sync replication) | CP | Low latency, strong C |
 | `Cassandra` | AP | Low latency, eventual C |
 | `DynamoDB` | AP | Low latency, eventual C (or high latency, strong C) |
@@ -150,7 +151,7 @@ The architectural insight: tune consistency per operation, not per cluster. Your
 When evaluating a new service or data store, run through these questions with your architecture team:
 
 | Question | Points Toward |
-|---|---|
+| --- | --- |
 | Can the user tolerate a stale read? | AP — serve cached/previous data |
 | Is losing a write worse than a timeout? | CP — acknowledge only after replication |
 | Does availability drive revenue (uptime SLA)? | AP — always respond |

@@ -44,7 +44,7 @@ ARC is the Kubernetes operator that manages the lifecycle of runner pods. As of 
 
 ### Component Overview
 
-```
+```text
 GitHub Actions API
        │
        ▼
@@ -276,7 +276,7 @@ Each pod runs inside a lightweight VM. A container escape does not compromise th
 Here's a consolidated view of each model's failure surface:
 
 | Isolation Model | Namespace Lateral Move | Node Lateral Move | Cloud API Blast | Setup Complexity | Cost Overhead |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Shared pool/namespace | High | High | High | Low | None |
 | Namespace per team | **Low** | Medium | Medium | Medium | Low |
 | Dedicated node pools | **Low** | **Low** | Medium | Medium-High | 15–30% |
@@ -441,7 +441,7 @@ This is where teams often have inflated expectations. Self-hosted is *not always
 ### Managed Runner Pricing (GitHub-hosted, as of early 2025)
 
 | Runner Type | Price per Minute |
-|---|---|
+| --- | --- |
 | ubuntu-latest (2-core) | $0.008 |
 | ubuntu-latest (4-core) | $0.016 |
 | ubuntu-latest (16-core) | $0.064 |
@@ -449,7 +449,7 @@ This is where teams often have inflated expectations. Self-hosted is *not always
 
 For a team running 500 CI minutes/day on 4-core runners:
 
-```
+```text
 500 min/day × $0.016/min × 22 workdays/month = $176/month
 ```
 
@@ -457,7 +457,7 @@ For a team running 500 CI minutes/day on 4-core runners:
 
 Assume a dedicated node pool of 3× `m6i.xlarge` (4 vCPU, 16GB) in us-east-1, on-demand pricing:
 
-```
+```text
 3 nodes × $0.192/hr × 730 hrs/month = $420/month
 
 Add:
@@ -477,7 +477,7 @@ Self-hosted becomes cost-effective when:
 
 **1. Volume is high.** GitHub charges per minute. Your infrastructure cost is largely fixed (you pay for nodes whether idle or not). The crossover typically happens around 5,000–10,000 CI minutes/month depending on runner size.
 
-```
+```text
 Break-even (4-core equivalent):
 Fixed cost: ~$860/month
 Managed cost per minute: $0.016
@@ -610,7 +610,7 @@ Log aggregation from runner pods to your central log backend (Loki, CloudWatch, 
 
 ## Decision Framework
 
-```
+```text
 Is your CI volume > 5,000 min/month?
 ├── No  → Use managed runners. Revisit in 6 months.
 └── Yes → Do you have network/data isolation requirements?
@@ -625,7 +625,7 @@ Is your CI volume > 5,000 min/month?
 
 For isolation model selection:
 
-```
+```text
 Are workflows running untrusted/external contributor code?
 ├── Yes → Kata Containers / Firecracker isolation.
 └── No  → Are multiple teams sharing the cluster?

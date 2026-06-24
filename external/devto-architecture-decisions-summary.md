@@ -19,6 +19,7 @@ Over the years, I've seen teams invest months perfecting abstractions, framework
 Scalability is important—but **premature scalability is one of the most common architectural mistakes**.
 
 A system that:
+
 - Is easy to understand  
 - Is easy to deploy  
 - Is easy to debug  
@@ -26,6 +27,7 @@ A system that:
 will almost always outperform an over-engineered system in its early and mid lifecycle.
 
 **Ask yourself:**
+
 - Do we *actually* have scale today?
 - Are we solving a real bottleneck or a hypothetical one?
 - Can we evolve this design incrementally?
@@ -39,6 +41,7 @@ will almost always outperform an over-engineered system in its early and mid lif
 Kubernetes is powerful. It is also **operationally expensive**.
 
 I've seen teams adopt Kubernetes because:
+
 - "It's industry standard"
 - "We might need it later"
 - "It looks good architecturally"
@@ -46,12 +49,14 @@ I've seen teams adopt Kubernetes because:
 None of these are valid reasons on their own.
 
 **Kubernetes makes sense when:**
+
 - You run **multiple services**
 - You need **horizontal scalability**
 - You require **self-healing and rollout strategies**
 - Your team understands container orchestration
 
 **If you're deploying:**
+
 - A single backend
 - With predictable load
 - And a small team
@@ -67,12 +72,14 @@ A managed PaaS or VM-based deployment may be the *better* architectural choice.
 Cloud cost overruns are rarely caused by finance teams—they are caused by **architectural blind spots**.
 
 **Common issues:**
+
 - Over-provisioned clusters
 - Idle environments running 24/7
 - Chatty services causing unnecessary network costs
 - Poor data access patterns
 
 **Good architecture:**
+
 - Designs for **right-sizing**
 - Enables **environment isolation**
 - Encourages **observability-driven optimization**
@@ -88,6 +95,7 @@ You can swap frameworks.
 **You cannot easily undo a bad data model.**
 
 Early decisions around:
+
 - Entity boundaries
 - Relationships
 - Data ownership
@@ -104,12 +112,14 @@ This is where tools like **graph databases**, well-designed relational schemas, 
 ## 5. Operational Clarity Beats Clever Design
 
 Production systems need:
+
 - Clear logs
 - Actionable metrics
 - Predictable failure modes
 - Easy rollback paths
 
 A "clever" architecture that:
+
 - Is hard to debug
 - Requires tribal knowledge
 - Breaks silently
@@ -117,6 +127,7 @@ A "clever" architecture that:
 will fail under pressure.
 
 **Ask during design reviews:**
+
 - How do we know this is failing?
 - How do we recover?
 - Who owns this in production?
@@ -130,12 +141,14 @@ If those answers aren't clear, the architecture isn't ready.
 One of the biggest myths is that architecture is "done" at the beginning.
 
 **In reality:**
+
 - Architecture evolves
 - Constraints change
 - Teams grow
 - Usage patterns shift
 
 **Strong architects design systems that:**
+
 - Can be incrementally evolved
 - Allow replacement of parts
 - Avoid irreversible decisions early
@@ -149,6 +162,7 @@ The goal is not perfection—it's **adaptability**.
 Good architecture is rarely flashy.
 
 It is:
+
 - Quiet
 - Boring
 - Predictable
@@ -169,6 +183,7 @@ This is a summary of my comprehensive guide on production architecture decisions
 **👉 [Architecture Decisions That Actually Matter in Production - Full Article](https://aloknecessary.github.io/blogs/architecture-decisions/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=architecture-decisions)**
 
 The full article includes:
+
 - Detailed trade-off analysis for each decision
 - Real-world production scenarios
 - Cost optimization strategies

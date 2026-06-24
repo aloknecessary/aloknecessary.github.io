@@ -23,10 +23,12 @@ At its core, CQRS enforces a **separation of responsibilities**:
 - **Queries** → read state
 
 Critically:
+
 - Read models and write models are **allowed to diverge**
 - They may use **different schemas, storage engines, and scaling strategies**
 
 **What CQRS is NOT:**
+
 - It is **not** microservices
 - It is **not** event sourcing (though often paired)
 - It is **not** a default architecture choice
@@ -42,11 +44,13 @@ CQRS delivers value when **read and write workloads have fundamentally different
 ### 1. Read-Heavy, Write-Light Domains
 
 **Examples:**
+
 - Financial reporting
 - Search and analytics
 - Audit and compliance systems
 
 **Benefits:**
+
 - Highly optimized read models
 - Pre-computed projections
 - Independent scaling of query infrastructure
@@ -54,11 +58,13 @@ CQRS delivers value when **read and write workloads have fundamentally different
 ### 2. Complex Business Write Logic
 
 **Domains with:**
+
 - Deep invariants
 - Multi-step workflows
 - Strong consistency requirements on writes
 
 **Benefits:**
+
 - Explicit command models
 - Centralized business rule enforcement
 - Cleaner domain boundaries
@@ -66,6 +72,7 @@ CQRS delivers value when **read and write workloads have fundamentally different
 ### 3. Event-Driven Architectures
 
 CQRS aligns naturally with:
+
 - Event-driven systems
 - Streaming pipelines
 - Materialized views
@@ -81,11 +88,13 @@ Most CQRS failures are **predictable**.
 ### 1. Read/Write Divergence Risk
 
 **Common failure modes:**
+
 - Read models lag behind writes longer than expected
 - Business workflows accidentally depend on read-side freshness
 - Teams implicitly assume strong consistency where none exists
 
 **Symptoms in production:**
+
 - "Ghost data" bugs
 - UI inconsistencies
 - Race conditions that cannot be reproduced locally
@@ -95,12 +104,14 @@ Most CQRS failures are **predictable**.
 ### 2. Operational Complexity Multiplies
 
 CQRS doubles (or worse):
+
 - Data stores
 - Deployment pipelines
 - Monitoring surfaces
 - Failure modes
 
 **Operational questions become harder:**
+
 - Is the bug on the command side, projection, or query store?
 - Is the issue data corruption or projection lag?
 - Which component owns correctness?
@@ -116,6 +127,7 @@ Without strong observability, CQRS systems become **opaque under stress**.
 > Command → Write Store → Event → Projection → Read Store → Query
 
 Each hop introduces:
+
 - Latency
 - Retry semantics
 - Partial failure possibilities
@@ -129,11 +141,13 @@ Incident resolution shifts from **code debugging** to **system forensics**.
 CQRS increases **architectural cognitive load** across teams.
 
 New engineers must understand:
+
 - Consistency models
 - Projection pipelines
 - Failure recovery semantics
 
 Without discipline:
+
 - Teams rebuild CRUD logic on the read side
 - Business rules leak into projections
 - CQRS degenerates into *distributed spaghetti*
@@ -149,10 +163,12 @@ The most successful CQRS systems are **evolved**, not designed upfront.
 ### Strategy 1: Read-Model Extraction (Recommended)
 
 Start by:
+
 - Keeping the write path untouched
 - Introducing a separate read model for a single, painful query
 
 **Characteristics:**
+
 - No write-side refactor
 - Minimal blast radius
 - Immediate performance gains
@@ -162,10 +178,12 @@ This is **CQRS-lite**, and often enough.
 ### Strategy 2: Command Isolation Without Infrastructure Split
 
 Before introducing separate databases and event buses, first introduce:
+
 - Explicit command handlers
 - Clear write-side boundaries
 
 **You gain:**
+
 - Better domain modeling
 - Testable invariants
 - A future CQRS pivot point
@@ -175,10 +193,12 @@ Without paying the full operational cost.
 ### Strategy 3: Incremental Event Publication
 
 Publish domain events:
+
 - Without committing to event sourcing
 - Without external consumers initially
 
 **This enables:**
+
 - Observability
 - Auditing
 - Gradual projection experiments
@@ -190,6 +210,7 @@ Events become an **integration seam**, not a constraint.
 ## When You Should NOT Use CQRS
 
 Avoid CQRS when:
+
 - CRUD performance is acceptable
 - Strong consistency is mandatory everywhere
 - Team size is small and delivery speed is critical
@@ -218,6 +239,7 @@ If not, **delay the decision**.
 ## Final Thoughts
 
 CQRS works best when treated as:
+
 - An **evolutionary pattern**
 - A **scalability tool of last resort**
 - A **conscious trade-off**, not an ideology
@@ -243,6 +265,7 @@ This is a summary of my comprehensive guide on CQRS. For detailed migration stra
 **👉 [CQRS Without Regret - Full Article](https://aloknecessary.github.io/blogs/cqrs-without-regret/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cqrs-without-regret)**
 
 The full article includes:
+
 - Detailed migration strategies with code examples
 - Real-world failure scenarios and solutions
 - Complete decision checklist

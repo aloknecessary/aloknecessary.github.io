@@ -11,7 +11,7 @@ categories:
   - architecture
   - system-design
 tags: [ai, search-architecture, vector-search, bm25, information-retrieval, patterns, architecture, performance, cloud-native]
-series: "RAG Production"
+series: "RAG and AI Engineering"
 series_order: 1
 ---
 
@@ -41,7 +41,7 @@ BM25 scores a document against a query based on three factors:
 
 The score formula:
 
-```
+```text
 Score(D, Q) = Σ IDF(qᵢ) · [ f(qᵢ, D) · (k1 + 1) ] / [ f(qᵢ, D) + k1 · (1 - b + b · |D|/avgdl) ]
 ```
 
@@ -76,7 +76,7 @@ Vector search transforms text into dense numerical vectors in a high-dimensional
 2. **At query time:** the query is embedded using the same model, producing a query vector.
 3. **Retrieval:** the system finds the top-K document vectors closest to the query vector, typically via cosine similarity or dot product.
 
-```
+```text
 similarity(A, B) = (A · B) / (||A|| · ||B||)
 ```
 
@@ -91,7 +91,7 @@ Exact nearest-neighbor search is O(n) and impractical at scale. Production syste
 The quality of your vector search is entirely determined by your embedding model. Key considerations:
 
 | Factor | What to Evaluate |
-|---|---|
+| --- | --- |
 | **Domain fit** | Was the model trained on data similar to your corpus? General-purpose models underperform on specialized domains (legal, medical, code). |
 | **Dimensionality** | Higher dimensions = more expressive but slower and more memory-intensive. |
 | **Max token length** | Most models cap at 512 or 8192 tokens. Chunking strategy must align with this. |
@@ -119,7 +119,7 @@ The quality of your vector search is entirely determined by your embedding model
 ## 3. Head-to-Head: When Each Wins
 
 | Scenario | BM25 | Vector Search | Why |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Search for error code `ERR_SSL_PROTOCOL_ERROR` | ✅ | ❌ | Exact token match; embedding dilutes specificity |
 | "How do I improve query performance?" | ❌ | ✅ | Matches "optimization", "indexing", "slow queries" conceptually |
 | Legal document search by statute number | ✅ | ❌ | Precise citation matching |
@@ -139,7 +139,7 @@ In most real-world systems, neither BM25 nor vector search alone is sufficient. 
 
 RRF is the standard technique for merging ranked lists from multiple retrievers without requiring score normalization:
 
-```
+```text
 RRF_score(d) = Σ 1 / (k + rank(d))
 ```
 
@@ -149,7 +149,7 @@ RRF is rank-based, not score-based — which means you do not need to normalize 
 
 ### Hybrid Architecture Pattern
 
-```
+```text
 Query
   │
   ├──► BM25 Retriever (Elasticsearch / OpenSearch)
@@ -187,7 +187,7 @@ Models like `cross-encoder/ms-marco-MiniLM-L-6-v2` or Cohere's Rerank API work w
 ### Pure Vector Stores
 
 | Tool | Best For | Notes |
-|---|---|---|
+| --- | --- | --- |
 | **Pinecone** | Managed, production-scale vector search | Fully managed, excellent performance, no BM25 native |
 | **Qdrant** | Self-hosted or cloud, high-performance | Built-in payload filtering, sparse vector support (hybrid-ready) |
 | **Weaviate** | Hybrid search out of the box | BM25 + vector natively; supports GraphQL |
@@ -197,7 +197,7 @@ Models like `cross-encoder/ms-marco-MiniLM-L-6-v2` or Cohere's Rerank API work w
 ### Hybrid-Native (BM25 + Vector)
 
 | Tool | Notes |
-|---|---|
+| --- | --- |
 | **Elasticsearch 8.x** | ELSER (learned sparse retrieval) + dense vector; native hybrid via `knn` + `query` |
 | **OpenSearch** | Neural search plugin; hybrid query support |
 | **Weaviate** | Native BM25 + vector, RRF built-in |
@@ -206,14 +206,14 @@ Models like `cross-encoder/ms-marco-MiniLM-L-6-v2` or Cohere's Rerank API work w
 ### Relational + Vector
 
 | Tool | Notes |
-|---|---|
+| --- | --- |
 | **pgvector** (PostgreSQL) | `vector` type with HNSW/IVF index; combine with full-text search in a single query |
 | **SQLite-vec** | Lightweight, embedded; good for local or edge deployments |
 
 ### Embedding Model Providers
 
 | Provider | Models | Best For |
-|---|---|---|
+| --- | --- | --- |
 | **OpenAI** | `text-embedding-3-small`, `text-embedding-3-large` | General-purpose, strong baseline |
 | **Cohere** | `embed-v3` | Multilingual, strong retrieval performance |
 | **Hugging Face** | `e5-large-v2`, `bge-large-en-v1.5` | Self-hosted, open weights |
@@ -240,7 +240,7 @@ The rule of thumb: **embed at the granularity you want to retrieve, return at th
 Run through this with your team before committing to a retrieval architecture:
 
 | Question | If Yes → |
-|---|---|
+| --- | --- |
 | Do users search with exact terms, IDs, or codes? | Include BM25 |
 | Do users ask natural language questions? | Include Vector Search |
 | Is the corpus domain-specific (legal, medical, code)? | Use a domain-specific embedding model |
