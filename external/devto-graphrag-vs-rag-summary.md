@@ -77,6 +77,7 @@ This is a summary of my deep dive into GraphRAG architecture. The full article c
 **👉 [GraphRAG vs. RAG: When Knowledge Graphs Earn Their Complexity — Full Article](https://aloknecessary.github.io/blogs/graph-rag-vs-rag/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=graphrag-vs-rag)**
 
 The full article includes:
+
 - What a knowledge graph actually adds (and what it doesn't)
 - Benchmark evidence breakdown — when GraphRAG helps and when it hurts
 - Graph construction cost anatomy (extraction + community summarization)

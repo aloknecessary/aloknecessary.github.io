@@ -256,4 +256,3 @@ Audit the query distribution first. If the relational share is small, the agenti
 ---
 
 *Further Reading: Edge et al. — From Local to Global: A Graph RAG Approach to Query-Focused Summarization (Microsoft Research, 2024), Peng et al. — Graph Retrieval-Augmented Generation: A Survey (arXiv, 2024), Wang et al. — GraphRAG-Bench: When to use Graphs in RAG (arXiv, 2025), FalkorDB — GraphRAG SDK Documentation, Neo4j — Knowledge Graph Construction Guide*
-
