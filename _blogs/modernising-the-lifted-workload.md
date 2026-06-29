@@ -1,7 +1,7 @@
 ---
 title: "Modernising the Lifted Workload: The Architectural Decisions That Separate Cloud-Native from Cloud-Hosted"
-date: 2026-06-24
-last_modified_at: 2026-06-24
+date: 2026-07-03
+last_modified_at: 2026-07-03
 author: Alok Ranjan Daftuar
 description: "A modernisation roadmap for lifted workloads — covering workload assessment, managed service substitution, stateless redesign, the strangler fig pattern, Kubernetes readiness criteria, and autoscaling that reflects real load."
 excerpt: "Kubernetes does not make your architecture better automatically. This post covers the graduation path from 'it's running on VMs' to genuinely cloud-native."
