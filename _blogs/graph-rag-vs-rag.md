@@ -1,7 +1,7 @@
 ---
 title: "GraphRAG vs. RAG: When Knowledge Graphs Earn Their Complexity"
-date: 2026-06-30
-last_modified_at: 2026-06-30
+date: 2026-06-29
+last_modified_at: 2026-06-29
 author: Alok Ranjan Daftuar
 description: "An architect's guide to GraphRAG — what it actually adds over flat retrieval, benchmark evidence for when it helps, how 2026 implementations solved the cost problem, and a decision framework for choosing between BM25, vector search, and graph-based retrieval."
 excerpt: "Vector search tells you which chunks are similar to your query. GraphRAG tells you how entities in your corpus relate to each other. This post covers when that distinction matters, the benchmark evidence, how the 2024 cost problem got solved, and a decision framework for choosing between flat retrieval and graph retrieval."
