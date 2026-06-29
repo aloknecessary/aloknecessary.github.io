@@ -110,7 +110,7 @@ h2.description::before {
 
 @media (max-width: 768px) {
   .share-bar {
-    justify-content: flex-start;
+    justify-content: flex-end;
     gap: 12px;
   }
 }
@@ -225,6 +225,7 @@ h2.description::before {
 
   h2.description {
     font-size: 1.1rem;
+    text-align: justify;
   }
 }
 
@@ -299,6 +300,7 @@ ul.task-list input {
 
   border: 1px solid rgba(0,0,0,0.08);
   background: rgba(255,255,255,0.9);
+  -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 
   border-radius: 8px;
@@ -424,6 +426,7 @@ ul.task-list input {
 .series-nav {
   display: flex;
   gap: 1rem;
+  margin-left: auto;
 }
 
 .series-nav a {

@@ -144,7 +144,7 @@ body {
 .theme-controls {
   display: flex;
   justify-content: flex-end;
-  margin-top: -28px;
+  margin-top: -36px;
 }
 /* Wrapper */
 .theme-dropdown {
@@ -246,7 +246,7 @@ header {
 
 header h1 {
   font-size: 2.2rem;
-  margin-bottom: 4px;
+  /* margin-bottom: 4px; */
   color: var(--secondary);
 }
 
@@ -433,6 +433,8 @@ td > code {
   background: var(--code-inline-bg);
   padding: 0.1rem 0.3rem 0.2rem;
   border-radius: 0.2rem;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 /* ============================================================
@@ -488,7 +490,7 @@ tr:nth-child(even) {
   }
 
   .theme-controls {
-    margin-top: -16px;
+    margin-top: -40px;
   }
 
   table {
