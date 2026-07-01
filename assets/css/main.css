@@ -245,17 +245,18 @@ header {
 }
 
 header h1 {
-  font-size: 2.2rem;
+  font-size: clamp(1.3rem, 5vw, 2.2rem);
   /* margin-bottom: 4px; */
   color: var(--secondary);
 }
 
 .gradient-name {
-  /* background: linear-gradient(35deg, #0366d6 0%, #eb259c 100%); */
   background: linear-gradient(180deg, #0366d6 35%, #eb259c 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 header p {
@@ -464,11 +465,11 @@ tr:nth-child(even) {
 .nav-bar {
   margin-top: 16px;
   margin-bottom: -0.5rem;
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 2.5vw, 0.95rem);
 }
 
 .nav-separator {
-  margin: 0 0.4rem;
+  margin: 0 0.25rem;
   color: var(--muted);
 }
 
@@ -480,7 +481,17 @@ tr:nth-child(even) {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .page-banner {
+    width: 104%;
+    margin-left: -2.5%;
+  }
+  .page-banner img {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 767px) {
   .footer .mobile-visible {
     display: inline;
   }
@@ -497,4 +508,15 @@ tr:nth-child(even) {
     overflow-x: auto;
     display: block;
   }
+
+  .page-banner {
+    width: 108%;
+    margin-left: -4.5%;
+  }
+
+  .page-banner img {
+    width: 100vw;
+  }
 }
+
+

@@ -76,7 +76,7 @@
 }
 
 .blogs-subtitle {
-  font-size: 1.125rem;
+  font-size: clamp(0.9rem, 3vw, 1.125rem);
   color: var(--muted);
   margin: 0 auto;
 }

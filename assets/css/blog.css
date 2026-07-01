@@ -34,6 +34,7 @@ h2.description {
   color: var(--text-secondary);
   margin-top: 0;
   margin-bottom: 2.5rem;
+  text-align: justify;
 }
 
 h2.description::before {
