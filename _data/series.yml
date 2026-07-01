@@ -14,7 +14,7 @@
   slug: cloud-architecture
   icon: "☁️"
   domain: "Infrastructure"
-  description: "Migration patterns, region-level resilience, and the engineering decisions behind production cloud systems."
+  description: "Migration patterns, region-level resilience, modernisation, cost engineering, and security architecture for production cloud systems."
 
 - name: "DevOps & Platform Engineering"
   slug: devops-platform-engineering
