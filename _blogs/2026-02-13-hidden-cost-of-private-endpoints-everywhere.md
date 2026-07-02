@@ -10,6 +10,8 @@ tags: [private-endpoints, cloud-security, aws-privatelink, azure-private-link, d
 excerpt: "An honest examination of private endpoint proliferation in cloud architectures, covering the hidden costs of DNS complexity, network debugging nightmares, and when private endpoints are actually unnecessary despite security theater."
 description: "Critical analysis of private endpoint over-engineering in cloud environments, examining DNS complexity, debugging challenges, cost implications, and practical decision frameworks for when private connectivity is genuinely needed versus security theater."
 keywords: "private endpoints, AWS PrivateLink, Azure Private Link, cloud security, VPC endpoints, DNS complexity, network debugging, cloud architecture, security architecture, private connectivity"
+series: "Cloud Defaults Reconsidered"
+series_order: 1
 ---
 
 ## Introduction

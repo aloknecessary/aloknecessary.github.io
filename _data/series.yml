@@ -16,6 +16,12 @@
   domain: "Infrastructure"
   description: "Migration patterns, region-level resilience, and the engineering decisions behind production cloud systems."
 
+- name: "Cloud Defaults Reconsidered"
+  slug: cloud-defaults-reconsidered
+  icon: "⚖️"
+  domain: "Infrastructure"
+  description: "Examining widely-recommended cloud defaults that frequently get applied as blanket mandates without evaluating whether the cost is proportional to the actual benefit."
+
 - name: "DevOps & Platform Engineering"
   slug: devops-platform-engineering
   icon: "🔧"
