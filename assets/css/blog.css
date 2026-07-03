@@ -584,3 +584,63 @@ div[class*="language-"] pre {
   margin: 0;
   border: none;
 }
+
+/* ============================================================
+   COLLAPSIBLE CODE BLOCKS
+  ============================================================ */
+
+.code-block-wrapper.collapsible {
+  position: relative;
+}
+
+.code-block-wrapper.collapsible pre {
+  max-height: 220px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.code-block-wrapper.collapsible::after {
+  content: "";
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, var(--code-bg, #1e1e1e));
+  pointer-events: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.code-block-wrapper.collapsible.expanded pre {
+  max-height: none;
+}
+
+.code-block-wrapper.collapsible.expanded::after {
+  display: none;
+}
+
+.code-expand-btn {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  border: none;
+  border-top: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.code-expand-btn:hover {
+  color: var(--primary);
+}
+
+.code-block-wrapper.collapsible.expanded .code-expand-btn span::after {
+  content: "Collapse";
+}
+
+.code-block-wrapper.collapsible:not(.expanded) .code-expand-btn span::after {
+  content: "Expand";
+}
