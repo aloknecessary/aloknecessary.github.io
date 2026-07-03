@@ -620,7 +620,10 @@ div[class*="language-"] pre {
 }
 
 .code-expand-btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
   width: 100%;
   padding: 0.4rem;
   border: none;
@@ -635,12 +638,4 @@ div[class*="language-"] pre {
 
 .code-expand-btn:hover {
   color: var(--primary);
-}
-
-.code-block-wrapper.collapsible.expanded .code-expand-btn span::after {
-  content: "Collapse";
-}
-
-.code-block-wrapper.collapsible:not(.expanded) .code-expand-btn span::after {
-  content: "Expand";
 }

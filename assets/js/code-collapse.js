@@ -16,14 +16,16 @@
         btn.className = "code-expand-btn";
         btn.type = "button";
         btn.setAttribute("aria-label", "Expand code block");
-        btn.innerHTML = "<span></span>";
+        const downArrow = `<svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg>`;
+        const upArrow = `<svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="2"><path d="M18 15l-6-6-6 6"></path></svg>`;
+        btn.innerHTML = `<span>Expand</span>${downArrow}`;
         wrapper.appendChild(btn);
 
         btn.addEventListener("click", () => {
           wrapper.classList.toggle("expanded");
-          btn.setAttribute("aria-label",
-            wrapper.classList.contains("expanded") ? "Collapse code block" : "Expand code block"
-          );
+          const expanded = wrapper.classList.contains("expanded");
+          btn.innerHTML = expanded ? `<span>Collapse</span>${upArrow}` : `<span>Expand</span>${downArrow}`;
+          btn.setAttribute("aria-label", expanded ? "Collapse code block" : "Expand code block");
         });
       });
     }, 50);
