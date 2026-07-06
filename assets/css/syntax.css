@@ -1,0 +1,59 @@
+/* ============================================================
+   ROUGE SYNTAX HIGHLIGHTING — GitHub-inspired
+   Light + Dark theme via [data-theme]
+  ============================================================ */
+
+/* Light theme (default) */
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .cs { color: #6a737d; font-style: italic; } /* comments */
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp,
+.highlight .kr, .highlight .kt, .highlight .kc { color: #d73a49; } /* keywords */
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb,
+.highlight .sc, .highlight .sh, .highlight .sx { color: #032f62; } /* strings */
+.highlight .na { color: #005cc5; } /* attribute name */
+.highlight .nb { color: #005cc5; } /* builtin */
+.highlight .nc { color: #6f42c1; } /* class name */
+.highlight .nf, .highlight .fm { color: #6f42c1; } /* function name */
+.highlight .ni { color: #24292e; } /* entity */
+.highlight .nn { color: #005cc5; } /* namespace */
+.highlight .no { color: #005cc5; } /* constant */
+.highlight .nt { color: #22863a; } /* tag */
+.highlight .nv, .highlight .vi, .highlight .vm { color: #e36209; } /* variable */
+.highlight .o, .highlight .ow { color: #d73a49; } /* operator */
+.highlight .p, .highlight .pi { color: #24292e; } /* punctuation */
+.highlight .m, .highlight .mi, .highlight .mf, .highlight .mh,
+.highlight .il { color: #005cc5; } /* numbers */
+.highlight .ge { font-style: italic; } /* emphasis */
+.highlight .gs { font-weight: 700; } /* strong */
+.highlight .gd { color: #b31d28; background: #ffeef0; } /* diff deleted */
+.highlight .gi { color: #22863a; background: #f0fff4; } /* diff inserted */
+.highlight .err { color: #b31d28; } /* error */
+
+/* Dark theme */
+[data-theme="dark"] .highlight .c, [data-theme="dark"] .highlight .c1,
+[data-theme="dark"] .highlight .cm, [data-theme="dark"] .highlight .cs { color: #8b949e; }
+[data-theme="dark"] .highlight .k, [data-theme="dark"] .highlight .kd,
+[data-theme="dark"] .highlight .kn, [data-theme="dark"] .highlight .kp,
+[data-theme="dark"] .highlight .kr, [data-theme="dark"] .highlight .kt,
+[data-theme="dark"] .highlight .kc { color: #ff7b72; }
+[data-theme="dark"] .highlight .s, [data-theme="dark"] .highlight .s1,
+[data-theme="dark"] .highlight .s2, [data-theme="dark"] .highlight .sb,
+[data-theme="dark"] .highlight .sc, [data-theme="dark"] .highlight .sh,
+[data-theme="dark"] .highlight .sx { color: #a5d6ff; }
+[data-theme="dark"] .highlight .na { color: #79c0ff; }
+[data-theme="dark"] .highlight .nb { color: #79c0ff; }
+[data-theme="dark"] .highlight .nc { color: #d2a8ff; }
+[data-theme="dark"] .highlight .nf, [data-theme="dark"] .highlight .fm { color: #d2a8ff; }
+[data-theme="dark"] .highlight .ni { color: #c9d1d9; }
+[data-theme="dark"] .highlight .nn { color: #79c0ff; }
+[data-theme="dark"] .highlight .no { color: #79c0ff; }
+[data-theme="dark"] .highlight .nt { color: #7ee787; }
+[data-theme="dark"] .highlight .nv, [data-theme="dark"] .highlight .vi,
+[data-theme="dark"] .highlight .vm { color: #ffa657; }
+[data-theme="dark"] .highlight .o, [data-theme="dark"] .highlight .ow { color: #ff7b72; }
+[data-theme="dark"] .highlight .p, [data-theme="dark"] .highlight .pi { color: #c9d1d9; }
+[data-theme="dark"] .highlight .m, [data-theme="dark"] .highlight .mi,
+[data-theme="dark"] .highlight .mf, [data-theme="dark"] .highlight .mh,
+[data-theme="dark"] .highlight .il { color: #79c0ff; }
+[data-theme="dark"] .highlight .gd { color: #ffa198; background: rgba(248,81,73,0.15); }
+[data-theme="dark"] .highlight .gi { color: #7ee787; background: rgba(63,185,80,0.15); }
+[data-theme="dark"] .highlight .err { color: #ffa198; }

@@ -594,7 +594,7 @@ div[class*="language-"] pre {
 }
 
 .code-block-wrapper.collapsible pre {
-  max-height: 220px;
+  max-height: 480px;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }

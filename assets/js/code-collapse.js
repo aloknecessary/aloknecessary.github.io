@@ -1,5 +1,5 @@
 (function() {
-  const COLLAPSE_THRESHOLD = 260;
+  const COLLAPSE_THRESHOLD = 520;
 
   document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
