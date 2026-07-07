@@ -46,6 +46,7 @@
   text-decoration: none;
   letter-spacing: 0.05em;
   transition: color 0.2s;
+  margin-bottom: 10px;
 }
 
 .hero-back:hover {
@@ -78,7 +79,7 @@
   font-family: 'Syne', sans-serif;
   font-size: clamp(2.8rem, 7vw, 3.8rem);
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.4;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
   opacity: 0;
@@ -118,6 +119,7 @@
   flex-wrap: wrap;
   opacity: 0;
   animation: fadeUp 0.8s ease forwards 0.8s;
+  justify-content: space-between;
 }
 
 .stat {

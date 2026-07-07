@@ -43,6 +43,10 @@
   display: none;
 }
 
+.series-header h2 {
+  margin: 12px 0;
+}
+
 /* Series container */
 .series-container {
   display: flex;
@@ -98,6 +102,16 @@
   border-bottom: none;
 }
 
+/* Split start button */
+.series-start-split {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: 999px;
+  border: 1px solid var(--primary);
+  overflow: visible;
+}
+
 .series-start-btn {
   display: inline-flex;
   align-items: center;
@@ -106,9 +120,9 @@
   font-weight: 600;
   color: var(--primary);
   text-decoration: none;
-  padding: 0.35rem 0.85rem;
-  border: 1px solid var(--primary);
-  border-radius: 999px;
+  padding: 0.35rem 0.7rem 0.35rem 0.85rem;
+  border: none;
+  border-radius: 999px 0 0 999px;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
@@ -116,6 +130,62 @@
 .series-start-btn:hover {
   background: var(--primary);
   color: #fff;
+}
+
+.series-start-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.55rem;
+  border: none;
+  border-left: 1px solid var(--primary);
+  border-radius: 0 999px 999px 0;
+  background: none;
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.series-start-chevron:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.series-start-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 140px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.series-start-dropdown.open {
+  display: block;
+}
+
+.series-start-dropdown a {
+  display: block;
+  padding: 0.55rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.series-start-dropdown a:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+
+.series-start-dropdown a:hover {
+  background: var(--bg-soft);
+  color: var(--primary);
 }
 
 .series-block-title {
@@ -334,10 +404,15 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  .series-start-split {
+    align-self: flex-end;
+  }
   .series-start-btn {
     font-size: 0.75rem;
-    padding: 0.3rem 0.7rem;
-    align-self: flex-end;
+    padding: 0.3rem 0.55rem 0.3rem 0.7rem;
+  }
+  .series-start-chevron {
+    padding: 0.3rem 0.45rem;
   }
 
   .series-posts {
