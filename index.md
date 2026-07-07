@@ -197,7 +197,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 >
 > *Solution Architect* \| 2014 – Present \| *Hyderabad, India*
 >
-> For over a decade at Byteridge, I've grown from a hands-on engineer into a solution and architecture owner, shaping complex, production-grade systems across the full stack. My role focuses on translating real business problems into pragmatic, scalable, and resilient technical solutions.
+> For over a decade at Byteridge, I've grown from a hands-on engineer into a solution and architecture owner, shaping complex, production-grade systems across the full stack. My role spans technical delivery, pre-sales estimation, and solution scoping — translating real business problems into pragmatic, scalable, and resilient technical solutions.
 >
 > I've led and delivered systems that integrate frontend, backend, infrastructure, and cloud products — blending architectural rigor with software engineering craftsmanship.
 >
@@ -212,6 +212,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 > * **Architected and delivered production-grade AI POC** for natural language data visualization using OpenAI GPT Engine—enabling business users to generate interactive Chart.js visualizations from tabular data via conversational prompts, live on company POC list
 > * Collaborated with Microsoft teams on Bing and Microsoft Admin Portal platforms  
 > * Led cost optimization initiatives resulting in significant cloud infrastructure savings  
+> * Led 10+ pre-sales engagements — technical discovery, effort estimation, architecture proposals, team composition planning, and phased delivery roadmaps across fintech, healthcare, SaaS, and IoT domains
 > * Built custom Docker images for CI/CD optimization (playwright-az-cli, sonar-dotnet) downloaded 1000+ times across teams
 >
 > A core part of my role involves collaborating with product, UX, and business stakeholders to drive clarity and alignment, as well as mentoring engineers through system design and implementation decisions.
