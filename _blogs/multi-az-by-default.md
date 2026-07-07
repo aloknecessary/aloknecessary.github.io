@@ -1,7 +1,7 @@
 ---
 title: "Multi-AZ by Default: When High Availability Costs More Than the Downtime It Prevents"
-date: 2026-07-11
-last_modified_at: 2026-07-11
+date: 2026-07-08
+last_modified_at: 2026-07-08
 author: Alok Ranjan Daftuar
 description: "The 'always run Multi-AZ' mandate is one of the most expensive defaults in cloud architecture. This post examines what Multi-AZ actually protects against, what it doesn't, the workload classes where single-AZ with a fast restore strategy is both cheaper and operationally simpler, and a decision framework that ties availability investment to actual business cost."
 excerpt: "Multi-AZ doubles your database cost. That premium requires a business case, not a default. This post covers what Multi-AZ actually protects against, when Single-AZ with fast restore is the right answer, and a decision framework that ties availability investment to actual downtime cost."
