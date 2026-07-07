@@ -80,6 +80,7 @@ This is a summary of my deep dive into AI-assisted data reconciliation. The full
 **👉 [AI-Assisted Data Reconciliation at Scale — Full Article](https://aloknecessary.github.io/blogs/ai_assisted_data_reconciliation/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=ai-data-reconciliation)**
 
 The full article includes:
+
 - Where traditional reconciliation breaks down (4 failure modes)
 - Full architecture diagram with rules-first, AI-at-boundary pattern
 - Embedding-based similarity implementation (Python, OpenAI embeddings)

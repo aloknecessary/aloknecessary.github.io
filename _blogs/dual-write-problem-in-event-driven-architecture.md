@@ -30,6 +30,7 @@ This is the dual write problem — and it is not a Kafka problem, a network prob
 > **Article context:** The reconciliation patterns in the [previous blog](/blogs/ai_assisted_data_reconciliation/) are often the downstream symptom of dual write failures upstream. Fix the dual write problem and you dramatically reduce the volume of inconsistencies that require AI-assisted reconciliation later.
 
 ### Table of Contents
+
 - [The Bug That Looks Like Infrastructure](#the-bug-that-looks-like-infrastructure)
 - [1. Understanding the Dual Write Problem](#1-understanding-the-dual-write-problem)
 - [2. Solution 1 — The Transactional Outbox Pattern](#2-solution-1--the-transactional-outbox-pattern)
@@ -46,7 +47,7 @@ This is the dual write problem — and it is not a Kafka problem, a network prob
 
 A dual write occurs any time your application writes to two separate systems as part of a single logical operation — without atomicity across both writes. The most common form in microservices:
 
-```
+```text
 BEGIN
   INSERT INTO orders (id, status, ...) VALUES (...);   -- Write 1: Database
   kafka.publish('order.placed', { orderId, ... });      -- Write 2: Event broker
@@ -56,7 +57,7 @@ END
 These two operations have no shared transaction boundary. They are independent network calls to independent systems. Four failure scenarios exist:
 
 | Scenario | DB Write | Event Publish | Result |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | 1 — Happy path | ✅ Success | ✅ Success | Correct |
 | 2 — Event failure | ✅ Success | ❌ Failure | **Silent data loss** — order exists, downstream never notified |
 | 3 — DB failure | ❌ Failure | ✅ Success | **Ghost event** — event published for an order that doesn't exist |
@@ -80,7 +81,7 @@ The solution is not to achieve atomicity across both systems. It is to **reduce 
 
 The Outbox Pattern is the most widely applicable solution. The core insight: instead of publishing an event directly to the broker, write the event as a row in an `outbox` table in the same database transaction as your business data write. A separate relay process then reads from the outbox and publishes to the broker.
 
-```
+```text
 Application Transaction (single DB transaction)
   ├── INSERT INTO orders (id, status, ...) VALUES (...)
   └── INSERT INTO outbox (event_type, payload, created_at) VALUES ('OrderPlaced', {...}, NOW())
@@ -193,7 +194,7 @@ Change Data Capture (CDC) eliminates the outbox relay entirely by reading direct
 
 Debezium connects to your database as a replica and tails the WAL (PostgreSQL), binlog (MySQL), or redo log (Oracle/SQL Server). Every committed transaction produces a structured change event that Debezium publishes to a Kafka topic.
 
-```
+```text
 PostgreSQL WAL
      │
      ▼
@@ -237,7 +238,7 @@ Kafka Topic: postgres.public.orders
 ### CDC Strengths and Trade-offs
 
 | Aspect | Outbox Pattern | CDC with Debezium |
-|---|---|---|
+| --- | --- | --- |
 | Application changes required | Yes — outbox writes in transaction | No — purely infrastructure |
 | Publish latency | Polling interval (seconds) | Sub-second (WAL-based) |
 | Exactly-once delivery | At-least-once | At-least-once |
@@ -256,7 +257,7 @@ Kafka Topic: postgres.public.orders
 
 Both the Outbox Pattern and CDC treat the database as the source of truth and derive events from it. Event Sourcing inverts this entirely: **the event log is the source of truth**, and the database is a derived projection of it.
 
-```
+```text
 Command → Aggregate → Domain Events (appended to event store)
                               │
                     ┌─────────┴─────────┐
@@ -307,7 +308,7 @@ Event Sourcing eliminates the dual write problem entirely but introduces signifi
 ## 5. Choosing the Right Solution
 
 | Scenario | Recommended Solution |
-|---|---|
+| --- | --- |
 | New microservice, full control over code | Outbox Pattern |
 | Legacy service, cannot modify application code | CDC with Debezium |
 | High-throughput, sub-second event latency required | CDC with Debezium |

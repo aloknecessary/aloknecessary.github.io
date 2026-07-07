@@ -11,11 +11,12 @@ categories:
   - automation
 tags: [docker, playwright, github-actions, devops, automation, multi-architecture, software-architecture, developer-productivity, ci-cd]
 series: "DevOps & Platform Engineering"
-series_order: 2
+series_order: 1
 ---
 
 Modern CI/CD pipelines are powerful, but they are often **wasteful by default**.
 If you look closely at most automation workflows, a large chunk of execution time is spent not on *actual testing*, but on repeatedly installing the same tools:
+
 - Node.js
 - Playwright dependencies
 - Browser binaries
@@ -28,7 +29,7 @@ This setup cost is paid **on every run**, even though the tooling rarely changes
 In this post, I’ll walk through a simple but high-impact optimization:
 > **Using a custom Docker image to eliminate repetitive setup work in CI pipelines.**
 
-I’ll use my [**Playwright + Azure CLI Docker image**](https://hub.docker.com/r/aloknecessary/playwright-az-cli) as a concrete example to show how this approach improves speed, reliability, and maintainability. You can navigate to the repo by clicking 
+I’ll use my [**Playwright + Azure CLI Docker image**](https://hub.docker.com/r/aloknecessary/playwright-az-cli) as a concrete example to show how this approach improves speed, reliability, and maintainability. You can navigate to the repo by clicking
 [aloknecessary/playwright-az-cli](https://hub.docker.com/r/aloknecessary/playwright-az-cli)
 
 ---
@@ -46,11 +47,13 @@ A typical Playwright pipeline looks like this:
 7. Run tests
 
 Steps **2–5** are:
+
 - Time-consuming
 - Repeated across pipelines
 - Almost identical between projects
 
 Even with caching, these steps:
+
 - Add variability
 - Break unexpectedly
 - Increase cognitive load in workflow YAML files
@@ -62,6 +65,7 @@ Even with caching, these steps:
 Instead of installing tooling during every run, we can **pre-bake it into a Docker image**.
 
 The image becomes:
+
 - A **portable execution environment**
 - A **single source of truth** for tooling versions
 - A **drop-in replacement** for standard runners
@@ -94,11 +98,13 @@ The result is a **ready-to-run automation container**.
 ### 1. Faster Pipeline Execution
 
 Pipelines no longer:
+
 - Install Playwright
 - Download browsers
 - Install Azure CLI
 
 They move directly to:
+
 - `npm ci`
 - `playwright test`
 
@@ -109,6 +115,7 @@ This alone saves **several minutes per run**, which compounds quickly across tea
 ### 2. Deterministic & Reproducible Runs
 
 When tooling is baked into the image:
+
 - Every run uses the same versions
 - No surprises due to upstream changes
 - Fewer “works on my machine” failures
@@ -122,11 +129,13 @@ Your pipeline environment becomes **immutable and predictable**.
 Compare these two approaches:
 
 **Before**
+
 - Long YAML files
 - Tool installation logic
 - OS-specific commands
 
 **After**
+
 - Short, readable workflows
 - Focus on business logic
 - Less maintenance overhead
@@ -136,6 +145,7 @@ Compare these two approaches:
 ### 4. Multi-Architecture Support Out of the Box
 
 By building the image as a **multi-platform manifest**, the same tag works for:
+
 - GitHub-hosted runners
 - ARM-based self-hosted runners
 - Apple Silicon developers

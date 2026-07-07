@@ -23,6 +23,7 @@ This article provides a practical analysis of multi-tenant architecture patterns
 <!--more-->
 
 ## Table of Contents
+
 - [Introduction](#introduction)
 - [Understanding Multi-Tenancy Fundamentals](#understanding-multi-tenancy-fundamentals)
 - [The Three Isolation Models](#the-three-isolation-models)
@@ -52,6 +53,7 @@ The isolation model you choose creates cascading effects across your entire stac
 **Architecture**: All tenant data in a single database with tenant identification columns. Data segregation enforced through application logic and database query filters.
 
 **Structure Example**:
+
 ```sql
 CREATE TABLE orders (
     id UUID PRIMARY KEY,
@@ -64,12 +66,14 @@ CREATE TABLE orders (
 ```
 
 **Advantages**:
+
 - Maximum resource efficiency (single database serves all tenants)
 - Simplified schema management (deploy once for all)
 - Lower infrastructure costs
 - Easy cross-tenant analytics
 
 **Disadvantages**:
+
 - Performance blast radius (one tenant impacts all)
 - Data commingling risks (filtering bugs = massive breach)
 - Difficult per-tenant customization
@@ -84,6 +88,7 @@ CREATE TABLE orders (
 **Architecture**: Each tenant gets a dedicated database schema within a shared database instance. Provides physical separation while maintaining resource consolidation.
 
 **Structure Example**:
+
 ```sql
 -- Each tenant gets their own schema
 CREATE SCHEMA tenant_acme_corp;
@@ -98,12 +103,14 @@ CREATE TABLE tenant_acme_corp.orders (
 ```
 
 **Advantages**:
+
 - Better performance isolation (tenant-specific query plans)
 - Easier compliance (can backup/restore individual tenants)
 - Per-tenant schema customization possible
 - Moderate blast radius (database failure affects all, schema issues isolated)
 
 **Disadvantages**:
+
 - Migration complexity (run across thousands of schemas)
 - Connection pool pressure
 - Database catalog bloat at scale
@@ -118,6 +125,7 @@ CREATE TABLE tenant_acme_corp.orders (
 **Architecture**: Each tenant gets a completely isolated database instance. True multi-tenancy with zero data commingling.
 
 **Advantages**:
+
 - Complete isolation (zero data commingling risk)
 - Independent scaling per tenant
 - Simplified compliance and data residency
@@ -125,6 +133,7 @@ CREATE TABLE tenant_acme_corp.orders (
 - Easy tenant offboarding
 
 **Disadvantages**:
+
 - Highest infrastructure cost (per-instance baseline)
 - Operational complexity at scale (managing thousands of instances)
 - Patch management overhead
@@ -136,7 +145,7 @@ CREATE TABLE tenant_acme_corp.orders (
 ## Isolation Models Comparison
 
 | Aspect | Row-Level | Schema-Level | Database-Level |
-|--------|-----------|--------------|----------------|
+| -------- | ----------- | -------------- | ---------------- |
 | **Isolation** | Logical | Physical+Logical | Complete Physical |
 | **Resource Efficiency** | Highest | Medium | Lowest |
 | **Operational Complexity** | Lowest | Medium | Highest |
@@ -149,18 +158,21 @@ CREATE TABLE tenant_acme_corp.orders (
 Blast radius refers to the scope of impact when something goes wrong. Understanding this is critical for risk management.
 
 **Row-Level Isolation**:
+
 - Database failure → All tenants down
 - Bad query → All tenants impacted
 - Security bug → All tenant data at risk
 - **Blast Radius**: Maximum
 
 **Schema-Level Isolation**:
+
 - Database failure → All tenants down
 - Bad query in schema → Single tenant impacted
 - Schema corruption → Single tenant affected
 - **Blast Radius**: Medium
 
 **Database-Level Isolation**:
+
 - Database failure → Single tenant down
 - Bad query → Single tenant impacted
 - **Blast Radius**: Minimal
@@ -180,6 +192,7 @@ Occurs when one tenant's resource consumption negatively impacts others. Primary
 **Mitigation Approaches**:
 
 1. **Database Query Limits**:
+
 ```sql
 -- PostgreSQL role-based limits
 ALTER ROLE tenant_free_tier SET statement_timeout = '5s';
@@ -200,6 +213,7 @@ Understanding when to evolve your isolation strategy is critical. Here are prove
 ### 0-1,000 Tenants: Row-Level Isolation
 
 **Characteristics**:
+
 - Database size: <500GB
 - Total QPS: <1,000
 - High tenant churn (exploring product-market fit)
@@ -207,6 +221,7 @@ Understanding when to evolve your isolation strategy is critical. Here are prove
 **Strategy**: Maximize development velocity. Use row-level isolation with PostgreSQL Row-Level Security (RLS).
 
 **Warning Signs to Evolve**:
+
 - Query latency P95 >500ms despite proper indexing
 - Individual tenants consuming >10% of resources
 - First compliance requirements emerge
@@ -215,25 +230,28 @@ Understanding when to evolve your isolation strategy is critical. Here are prove
 ### 1,000-5,000 Tenants: Hybrid Approach
 
 **Characteristics**:
+
 - Database size: 500GB-5TB
 - Total QPS: 1,000-10,000
 - Mix of SMB and mid-market customers
 
-**Strategy**: 
+**Strategy**:
+
 - Row-level for small tenants (<100 users)
 - Schema-level for medium tenants (100-1,000 users)
 - Database-level for large/enterprise tenants (>1,000 users or compliance)
 
 **Warning Signs to Evolve**:
+
 - \>5,000 active schemas causing catalog bloat
 - Schema migrations taking >1 hour
 - Connection pool exhaustion
 - Operational burden overwhelming team
 
-
 ### 5,000-10,000 Tenants: Database Sharding
 
 **Characteristics**:
+
 - Total data: >5TB
 - Total QPS: >10,000
 - Geographic distribution needs
@@ -243,6 +261,7 @@ Understanding when to evolve your isolation strategy is critical. Here are prove
 ### 10,000+ Tenants: Purpose-Built Infrastructure
 
 **Examples**:
+
 - **Salesforce**: Custom multi-tenant database engine
 - **Slack**: Sharded MySQL with Vitess
 - **GitHub**: Partitioned MySQL clusters with geographic distribution
@@ -254,7 +273,7 @@ Understanding when to evolve your isolation strategy is critical. Here are prove
 Approximate infrastructure costs per month:
 
 | Tenants | Row-Level | Schema-Level | Database-Level | Hybrid |
-|---------|-----------|--------------|----------------|--------|
+| --------- | ----------- | -------------- | ---------------- | -------- |
 | 100 | $500 | $800 | $5,000 | $600 |
 | 1,000 | $2,000 | $5,000 | $50,000 | $8,000 |
 | 5,000 | $8,000 | $25,000 | $250,000 | $40,000 |
@@ -267,6 +286,7 @@ Approximate infrastructure costs per month:
 ### 1. Tenant Context Propagation
 
 Ensure tenant context flows through your entire stack:
+
 - Extract from JWT claims, headers, or subdomain
 - Store in request context (HttpContext, thread-local, etc.)
 - Automatically apply to all database queries
@@ -275,6 +295,7 @@ Ensure tenant context flows through your entire stack:
 ### 2. Automated Tenant Provisioning
 
 Build automation early:
+
 - Database/schema creation
 - Initial data seeding
 - Monitoring setup
@@ -285,6 +306,7 @@ Manual provisioning doesn't scale beyond 100 tenants.
 ### 3. Migration Strategy
 
 Plan tenant migrations between isolation models:
+
 - Build tooling for zero-downtime migrations
 - Test extensively with non-critical tenants first
 - Have rollback procedures
@@ -293,6 +315,7 @@ Plan tenant migrations between isolation models:
 ### 4. Monitoring and Observability
 
 Essential metrics per tenant:
+
 - Query performance (P50, P95, P99)
 - Resource utilization (CPU, memory, IOPS)
 - Error rates
@@ -311,14 +334,17 @@ Essential metrics per tenant:
 Most successful SaaS platforms don't use a single isolation model. Instead, they employ tiered approaches:
 
 **Free Tier**: Row-level isolation
+
 - Maximize cost efficiency
 - Accept higher blast radius for low-value tenants
 
 **Professional Tier**: Schema-level isolation
+
 - Better performance guarantees
 - Moderate cost increase justified by revenue
 
 **Enterprise Tier**: Database-level isolation
+
 - Complete isolation for compliance
 - Cost absorbed by premium pricing
 
@@ -341,4 +367,3 @@ This approach balances cost efficiency with customer expectations and risk manag
 7. **Hybrid Wins**: Different tenant tiers justify different isolation models.
 
 The multi-tenant architecture powering your SaaS platform is not static—it must evolve as your business scales. Understanding these patterns and inflection points enables proactive architectural decisions rather than reactive firefighting.
-

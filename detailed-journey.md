@@ -20,7 +20,7 @@ hide_header: false
     </p>
     <div class="hero-stats">
       <div class="stat"><span class="stat-value">10<span>+</span></span><span class="stat-label">Years at Byteridge</span></div>
-      <div class="stat"><span class="stat-value">9<span>+</span></span><span class="stat-label">Projects Delivered</span></div>
+      <div class="stat"><span class="stat-value">15<span>+</span></span><span class="stat-label">Projects Delivered</span></div>
       <div class="stat"><span class="stat-value">40<span>+</span></span><span class="stat-label">Team Members Led</span></div>
       <div class="stat"><span class="stat-value">100K<span>+</span></span><span class="stat-label">Records / Import</span></div>
     </div>
@@ -30,11 +30,70 @@ hide_header: false
 <section class="timeline-section" aria-label="Project timeline">
   <div class="container">
     <div class="section-header reveal">
-      <p class="section-tag">Chronological Journey</p>
-      <h2 class="section-title">Projects & Impact</h2>
-      <p class="section-subtitle">Every engagement — internal client and contracted — that shaped the engineer and leader.</p>
+      <p class="section-tag">Professional Journey</p>
+      <h2 class="section-title">Projects, Impact & Leadership</h2>
+      <p class="section-subtitle">Every engagement, estimation, and architectural contribution that shaped the engineer and leader.</p>
     </div>
     <div class="timeline">
+      <!-- Pre-Sales & Estimation -->
+      <article class="timeline-item" data-color="green" itemscope itemtype="https://schema.org/Project">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">2023 — Present</span>
+          <span class="timeline-badge badge-arch badge-current">Solution Architect</span>
+          <span class="timeline-badge badge-lead">Pre-Sales</span>
+        </div>
+        <h3 class="timeline-title" itemprop="name">Pre-Sales, Estimation & Solution Scoping</h3>
+        <p class="timeline-company">Cross-Domain · Enterprise Solution Consulting & Technical Scoping</p>
+        <div class="project-card reveal">
+          <div class="card-top">
+            <span class="card-title">Technical Estimation & Deal Architecture</span>
+            <div class="metrics-row">
+              <div class="metric-chip"><span class="metric-icon">📋</span><span class="metric-val">10<span style="color:var(--muted)">+</span></span><span class="metric-key">Engagements</span></div>
+              <div class="metric-chip"><span class="metric-icon">🌐</span><span class="metric-val">Multi</span><span class="metric-key">Domain</span></div>
+              <div class="metric-chip"><span class="metric-icon">📅</span><span class="metric-val">2<span style="color:var(--muted)">+</span></span><span class="metric-key">Years</span></div>
+            </div>
+          </div>
+          <p class="card-desc">Actively involved in technical pre-sales — translating client requirements into architecture proposals, effort estimations, team composition plans, and phased delivery roadmaps that inform commercial decisions and set project foundations.</p>
+          <p class="card-section-label">Scope of Activities</p>
+          <ul class="highlight-list">
+            <li>Led technical discovery sessions with prospective clients — understanding existing systems, pain points, and desired outcomes to shape solution proposals.</li>
+            <li>Produced detailed effort estimations covering infrastructure, application development, data migration, integrations, QA, and DevOps — broken down by phase and role.</li>
+            <li>Designed high-level architecture diagrams and technology recommendations tailored to client constraints (budget, compliance, existing stack, team maturity).</li>
+            <li>Defined team composition and ramp-up plans — mapping skill requirements to delivery phases with clear handoff points.</li>
+            <li>Collaborated with business development and delivery leadership to refine proposals, adjust scope, and align technical feasibility with commercial targets.</li>
+            <li>Evaluated build-vs-buy decisions for key components — recommending managed services, third-party integrations, or custom development based on ROI analysis.</li>
+            <li>Created phased delivery roadmaps with milestone definitions, dependency mapping, and risk identification for client-facing presentations.</li>
+          </ul>
+          <div class="divider"></div>
+          <p class="card-section-label">Domains Covered</p>
+          <div class="arch-pills">
+            <span class="arch-pill">Fintech & Payments</span>
+            <span class="arch-pill">Healthcare & Compliance</span>
+            <span class="arch-pill">SaaS Platforms</span>
+            <span class="arch-pill">IoT & Smart Infrastructure</span>
+            <span class="arch-pill">Enterprise CRM</span>
+            <span class="arch-pill">Cloud Migrations</span>
+            <span class="arch-pill">Platform Modernisation</span>
+            <span class="arch-pill">Greenfield Builds</span>
+          </div>
+          <div class="divider"></div>
+          <p class="card-section-label">Estimation Dimensions</p>
+          <div class="tech-stack">
+            <span class="tech-tag">Effort Estimation</span><span class="tech-tag">Architecture Proposals</span><span class="tech-tag">Team Composition</span>
+            <span class="tech-tag">Phased Roadmaps</span><span class="tech-tag">Risk Assessment</span><span class="tech-tag">Build vs Buy</span>
+            <span class="tech-tag">Technology Selection</span><span class="tech-tag">Cost Modelling</span><span class="tech-tag">Milestone Planning</span>
+          </div>
+          <div class="callout-box" style="border-left-color: var(--green); background: rgba(16,185,129,0.06); border-color: rgba(16,185,129,0.18);">
+            <strong>Impact on Delivery Success</strong><br>
+            Accurate scoping at the pre-sales stage directly determines project health downstream.
+            Estimations produced in these engagements informed staffing decisions, sprint planning baselines,
+            infrastructure provisioning timelines, and client expectation setting — reducing scope creep
+            and re-estimation cycles across active delivery.
+          </div>
+        </div>
+      </article>
+
       <!-- CCMR3 -->
       <article class="timeline-item" data-color="blue" itemscope itemtype="https://schema.org/Project">
         <div class="timeline-node"></div>
@@ -44,7 +103,7 @@ hide_header: false
           <span class="timeline-badge badge-lead">Engineering Lead</span>
         </div>
         <h3 class="timeline-title" itemprop="name">CCMR3 — CollectLogic</h3>
-        <p class="timeline-company">Financial Services · Debt Collection & Management Platform</p>
+        <p class="timeline-company">Financial Services · Debt Collection & Management Platform · 4 Major Phases</p>
         <div class="project-card reveal">
           <div class="card-top">
             <span class="card-title">Fintech Platform Modernisation</span>
@@ -52,6 +111,7 @@ hide_header: false
               <div class="metric-chip"><span class="metric-icon">👥</span><span class="metric-val">40<span style="color:var(--muted)">+</span></span><span class="metric-key">Team</span></div>
               <div class="metric-chip"><span class="metric-icon">📊</span><span class="metric-val">500<span style="color:var(--muted)">+</span></span><span class="metric-key">Daily Active Users</span></div>
               <div class="metric-chip"><span class="metric-icon">📦</span><span class="metric-val">100K<span style="color:var(--muted)">+</span></span><span class="metric-key">Records / Import</span></div>
+              <div class="metric-chip"><span class="metric-icon">📅</span><span class="metric-val">4</span><span class="metric-key">Major Phases</span></div>
             </div>
           </div>
           <p class="card-desc">A prominent financial services company specialising in debt collection rebuilt their core platform — CollectLogic — from a legacy system into a modern, cloud-native application handling complex regulatory operations at scale.</p>
@@ -113,6 +173,41 @@ hide_header: false
             without leaving the platform.
           </div>
           <div class="divider"></div>
+          <p class="card-section-label">Phase 3 — Platform Stabilisation & Servicing Expansion</p>
+          <ul class="highlight-list">
+            <li>Strengthened core collections engine — enhanced debtor management, linked accounts, co-debtor handling, SSN/EIN-based account linking with masking and access controls.</li>
+            <li>Expanded payment lifecycle — implemented settlement management, recurring payments, ACH workflows, late fee handling, financial waterfall processing, and processor integrations (Anteloope, USAePay).</li>
+            <li>Scaled workflow engine — attribute-based triggers, workflow variables, executable actions, run-on-demand queues, reshuffling, and operational monitoring with failure handling.</li>
+            <li>Delivered reporting overhaul — dynamic SQL-based reporting, advanced categorical search, customisable dashboards, debtor insights, and export capabilities.</li>
+            <li>Integrated external systems — LiveVox, Renkim, Palinode, IDI; enhanced letter generation, document management, and communication tracking.</li>
+            <li>Hardened security posture — MFA implementation, role management improvements, client restrictions, activity logging, and comprehensive audit trails.</li>
+            <li>Drove platform-wide performance optimisations — batching, bundling, background processing, centralised logging, database tuning, and large-scale import improvements.</li>
+          </ul>
+          <div class="callout-box">
+            <strong>Bankruptcy & Legal Foundations</strong><br>
+            Enhanced bankruptcy management with linked-account synchronisation, validation rules, and case management.
+            Established dispute management workflows and compliance integrations that became the foundation for the
+            full Legal module delivered in Phase 4.
+          </div>
+          <div class="divider"></div>
+          <p class="card-section-label">Phase 4 — Legal Platform, Permissions & AI Exploration</p>
+          <ul class="highlight-list">
+            <li>Architected and delivered end-to-end <strong>Legal module</strong> — legal forms, document generation, suit/judgment/settlement processing, plaintiff/defendant management, per diem computations, and legal-specific workflows.</li>
+            <li>Implemented <strong>Permission Visibility Strategy</strong> across the entire platform — access inheritance, disabled-state permissions, access request workflows, role-based visibility controls, and parent-child access management.</li>
+            <li>Built reconciliation and data integrity framework — processed/unprocessed record handling, advanced validation, warning categorisation, and import/update consistency enforcement.</li>
+            <li>Integrated <strong>Jira at workflow level</strong> — automated ticket generation for operational exceptions, workflow history integration, notifications, and progress tracking.</li>
+            <li>Enhanced bankruptcy synchronisation — immutable case numbers, synchronisation controls, cleanup utilities, and cross-account reconciliation.</li>
+            <li>Revamped user experience — manual account queues, persistent filters, customisable views, quick links, widgets, and document management improvements.</li>
+            <li>Drove enterprise-scale performance modernisation — bulk operation frameworks, import engine optimisation, transaction scope reduction, Azure logging improvements, and load testing.</li>
+          </ul>
+          <div class="callout-box" style="border-left-color: var(--accent3); background: rgba(139,92,246,0.06); border-color: rgba(139,92,246,0.18);">
+            <strong>AI & Intelligent Automation Initiatives</strong><br>
+            Initiated exploration of AI-enabled capabilities including a <strong>Smart Assistant</strong>,
+            AI-driven data ingestion, intelligent import mapping, workflow recommendations,
+            auto-suggestions, and operational insights — laying groundwork for the next evolution
+            of the platform's intelligence layer.
+          </div>
+          <div class="divider"></div>
           <p class="card-section-label">Architectural Decisions</p>
           <div class="arch-pills">
             <span class="arch-pill">Redis Caching</span>
@@ -125,6 +220,12 @@ hide_header: false
             <span class="arch-pill">Role-aware Dashboards</span>
             <span class="arch-pill">Schema Normalisation</span>
             <span class="arch-pill">Containerised Microservices</span>
+            <span class="arch-pill">Legal Module (End-to-End)</span>
+            <span class="arch-pill">Permission Visibility Strategy</span>
+            <span class="arch-pill">Jira Workflow Integration</span>
+            <span class="arch-pill">Financial Waterfall Processing</span>
+            <span class="arch-pill">Reconciliation Framework</span>
+            <span class="arch-pill">AI Smart Assistant (Exploration)</span>
           </div>
           <div class="divider"></div>
           <p class="card-section-label">Tech Stack</p>

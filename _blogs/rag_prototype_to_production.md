@@ -30,6 +30,7 @@ This is the prototype trap: RAG is easy to build and hard to build *well*. The g
 > **Article context:** The [BM25 vs. Vector Search](/blogs/bm25_vs_vector_search/) post in this series covers the retrieval layer in depth. This post builds on that foundation and covers the full pipeline — from document ingestion through production observability.
 
 ### Table of Contents
+
 - [The Prototype Trap](#the-prototype-trap)
 - [1. The RAG Pipeline, Component by Component](#1-the-rag-pipeline-component-by-component)
 - [2. Chunking Strategy — The Foundation Everything Else Depends On](#2-chunking-strategy--the-foundation-everything-else-depends-on)
@@ -48,7 +49,7 @@ This is the prototype trap: RAG is easy to build and hard to build *well*. The g
 
 Before addressing reliability, establish a clear mental model of every stage in the pipeline. Each is an independent failure surface.
 
-```
+```text
 Document Corpus
       │
       ▼
@@ -466,7 +467,7 @@ interface RAGTrace {
 ### Aggregate Metrics to Alert On
 
 | Metric | Alert Condition | What It Signals |
-|---|---|---|
+| --- | --- | --- |
 | `hadSufficientContext` rate | Drops below 80% | Retrieval degradation or corpus gap |
 | `chunksDropped` rate | Rises above 20% | Context window pressure; re-examine chunking |
 | `retrievalMs` p99 | Exceeds SLA threshold | Vector index performance degradation |

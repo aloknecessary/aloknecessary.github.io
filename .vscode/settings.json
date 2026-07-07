@@ -1,4 +1,7 @@
 {
-    "amazonQ.telemetry": false,
-    "workbench.browser.openLocalhostLinks": false
+  "amazonQ.telemetry": false,
+  "workbench.browser.openLocalhostLinks": false,
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true
 }

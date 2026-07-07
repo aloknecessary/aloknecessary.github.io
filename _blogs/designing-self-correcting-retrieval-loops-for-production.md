@@ -30,7 +30,7 @@ Agentic RAG is the architectural response to this limitation. Instead of a fixed
 
 This is not a marginal improvement. On complex query classes, the quality difference between single-pass RAG and agentic retrieval loops is significant enough to change whether the system is usable at all. But agentic loops introduce latency, cost, and failure modes that single-pass systems do not have. The engineering challenge is not implementing agentic retrieval — frameworks make that easy. The challenge is knowing when to use it, bounding its behavior in production, and building the observability to understand what it is actually doing.
 
-> **Article context:** This post is part of the RAG production series. The [Building Reliable RAG Pipelines](/blogs/rag_prototype_to_production/) post covers the standard single-pass pipeline in full. The [LLM Evaluation in Production](/blogs/llm-evaluation-in-production/) post covers how to measure generation quality — both posts are relevant context for reasoning about when agentic complexity is justified and how to detect when the loops are not working.
+> **Article context:** This post is part of the RAG and AI Engineering series. The [Building Reliable RAG Pipelines](/blogs/rag_prototype_to_production/) post covers the standard single-pass pipeline in full. The [LLM Evaluation in Production](/blogs/llm-evaluation-in-production/) post covers how to measure generation quality — both posts are relevant context for reasoning about when agentic complexity is justified and how to detect when the loops are not working.
 
 ### Table of Contents
 
@@ -53,7 +53,7 @@ This is not a marginal improvement. On complex query classes, the quality differ
 
 Before implementation, establish the architecture precisely. Agentic RAG is not a single pattern — it is a family of patterns that sit on a spectrum from lightly iterative to fully autonomous. Understanding where on that spectrum your system sits is the first engineering decision.
 
-```
+```text
 User Query
     │
     ▼
@@ -66,10 +66,10 @@ User Query
             │  Identify required retrieval tools
             ▼
         ┌─────────────────────────────────────────┐
-        │          AGENTIC RETRIEVAL LOOP          │
+        │          AGENTIC RETRIEVAL LOOP         │
         │                                         │
         │  ┌─────────────┐    ┌─────────────────┐ │
-        │  │   RETRIEVAL  │    │   REFLECTION    │ │
+        │  │  RETRIEVAL  │    │   REFLECTION    │ │
         │  │    AGENT    │───▶│     AGENT       │ │
         │  │             │    │                 │ │
         │  │ - BM25      │◀───│ - Sufficient?   │ │
@@ -78,7 +78,7 @@ User Query
         │  │ - Web       │    │ - Rewrite query?│ │
         │  └─────────────┘    └────────┬────────┘ │
         │                              │          │
-        │                    SUFFICIENT │          │
+        │                   SUFFICIENT │          │
         └──────────────────────────────┼──────────┘
                                        ▼
                               [CONTEXT ASSEMBLY]
@@ -379,7 +379,7 @@ The reflection agent's judgment quality determines the entire system's utility. 
 
 The signal to watch: what fraction of loops terminate at each iteration count?
 
-```
+```text
 Iteration 1:  65–75% of queries should terminate (simple queries that succeed on first pass)
 Iteration 2:  15–20% (queries that needed one refinement)
 Iteration 3:  5–10%  (multi-hop or genuinely ambiguous)
@@ -422,7 +422,7 @@ RETRIEVAL_TOOLS = [
 The other three tools in the registry follow the identical name/description/input_schema shape; only the "best for" guidance and schema fields differ:
 
 | Tool | Best for | Key schema fields beyond `query`, `top_k` |
-|---|---|---|
+| --- | --- | --- |
 | `keyword_search` | Exact terms, product names, codes, IDs, acronyms — BM25 matching | none additional |
 | `hybrid_search` | General queries; default when uncertain which search type is better | `semantic_weight` (0.6), `keyword_weight` (0.4) |
 | `filtered_search` | Time-scoped ("Q3 results") or source-specific ("from the API docs") queries | `document_type`, `date_from`, `date_to`, `source_id` |
@@ -667,7 +667,7 @@ Before deploying agentic RAG, model the cost and latency impact explicitly. The 
 
 ### Per-Request Cost Model
 
-```
+```text
 Single-pass RAG (baseline):
   - 1 embedding call:    ~$0.00002  (text-embedding-3-large, 200-token query)
   - 1 retrieval:         negligible (vector DB query)
@@ -692,7 +692,7 @@ The cost multiplier is manageable if your routing correctly limits the agentic p
 
 ### Latency Budget
 
-```
+```text
 Single-pass RAG p50 latency:  800ms–1.2s
 Agentic RAG latency breakdown (2 iterations):
   - Router:              ~150ms
@@ -761,7 +761,7 @@ def emit_loop_telemetry(request_id: str, query: str, result: AgenticRetrievalRes
 ### Metrics to Alert On
 
 | Metric | Alert Condition | Interpretation |
-|---|---|---|
+| --- | --- | --- |
 | `max_iterations_rate` | > 5% of agentic requests | Router mis-classifying, corpus gaps, or reflection agent over-critical |
 | `timeout_rate` | > 2% of agentic requests | Reflection calls taking too long; LLM API latency spike |
 | `no_new_content_rate` | > 10% of agentic requests | Corpus coverage gap for that query class |
@@ -816,4 +816,3 @@ The teams that get this right are not the ones with the most sophisticated loop 
 ---
 
 *Further Reading: Asai et al. — Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection (2023), Shinn et al. — Reflexion: Language Agents with Verbal Reinforcement Learning (2023), Anthropic — Tool Use Documentation, LangGraph — Agentic Workflow Patterns, LlamaIndex — Agentic RAG Documentation*
-

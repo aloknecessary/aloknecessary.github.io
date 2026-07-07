@@ -96,14 +96,16 @@
   }
 </style>
 
-<div class="sort-toggle">
+<div class="sort-toggle" title="Sort articles within each section">
   <button class="sort-btn active" data-sort="newest">Newest</button>
   <button class="sort-btn" data-sort="oldest">Oldest</button>
+  {% unless page.layout == 'series' %}
   <button class="sort-btn" data-sort="alpha">A-Z</button>
+  {% endunless %}
 </div>
 
 <div class="sort-menu">
-  <button class="sort-menu-trigger" aria-label="Sort articles">
+  <button class="sort-menu-trigger" aria-label="Sort articles" title="Sort articles within each section">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M3 6h18M6 12h12M9 18h6"/>
     </svg>
@@ -111,6 +113,8 @@
   <div class="sort-menu-dropdown">
     <button class="sort-menu-item active" data-sort="newest">Newest</button>
     <button class="sort-menu-item" data-sort="oldest">Oldest</button>
+    {% unless page.layout == 'series' %}
     <button class="sort-menu-item" data-sort="alpha">A-Z</button>
+    {% endunless %}
   </div>
 </div>

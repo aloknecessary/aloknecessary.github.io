@@ -26,6 +26,7 @@ When a region fails, the blast radius is not one service or one team. It is ever
 This post covers the real decisions behind multi-region resilience: what multi-AZ actually protects you from (and what it does not), the architecture patterns for surviving region-level failures, data replication strategies with their consistency trade-offs, failover automation that works under pressure, and a cost-aware framework for deciding how much resilience your system actually needs.
 
 ### Table of Contents
+
 - [Introduction](#introduction)
 - [1. Multi-AZ vs Multi-Region — What Each Actually Protects](#1-multi-az-vs-multi-region--what-each-actually-protects)
 - [2. Multi-Region Architecture Patterns](#2-multi-region-architecture-patterns)
@@ -83,11 +84,13 @@ There are three established patterns, each with a different cost, complexity, an
 The secondary region has the minimum infrastructure running to receive data replication, but no active compute. On failover, you scale up compute, update DNS, and start serving traffic.
 
 **What runs in the secondary region at all times:**
+
 - Database replicas (RDS cross-region read replica, Azure SQL geo-replication)
 - S3/Blob storage replication
 - Base networking (VPC/VNet, subnets, security groups)
 
 **What gets provisioned on failover:**
+
 - Compute (EKS nodes, App Service instances, Lambda functions)
 - Load balancers and target groups
 - Cache warming (ElastiCache, Redis)
@@ -103,12 +106,14 @@ This is the most cost-effective multi-region pattern and appropriate for workloa
 The secondary region runs a scaled-down but fully functional copy of the primary. Compute is running, databases are replicated, and the application is deployed — just at reduced capacity.
 
 **What runs in the secondary region:**
+
 - Scaled-down compute (minimum viable replica count)
 - Active database replicas promoted on failover
 - Deployed application code (same version as primary)
 - Pre-warmed caches where possible
 
 **On failover:**
+
 - Scale up compute to handle production traffic
 - Promote database replica to primary
 - Update DNS routing
@@ -124,6 +129,7 @@ Warm standby is the sweet spot for most production systems that need sub-15-minu
 Both regions serve production traffic simultaneously. There is no failover — if one region degrades, the other absorbs the traffic automatically.
 
 **Architecture requirements:**
+
 - Global load balancing (Route 53 latency-based routing, Azure Front Door, CloudFront)
 - Multi-region database with write capability in both regions (DynamoDB Global Tables, Cosmos DB multi-region writes, CockroachDB)
 - Conflict resolution strategy for concurrent writes
@@ -132,7 +138,7 @@ Both regions serve production traffic simultaneously. There is no failover — i
 
 **AWS implementation sketch:**
 
-```
+```text
 Route 53 (Latency-based routing + health checks)
   ├── us-east-1
   │     ├── ALB → EKS cluster
@@ -148,7 +154,7 @@ Route 53 (Latency-based routing + health checks)
 
 **Azure implementation sketch:**
 
-```
+```text
 Azure Front Door (latency-based routing + health probes)
   ├── East US
   │     ├── AKS cluster
@@ -181,7 +187,7 @@ Infrastructure can be duplicated. Compute is stateless. But data has gravity, an
 **Asynchronous replication** — a write is acknowledged in the primary region immediately, then replicated to the secondary in the background. Lower write latency, but creates a replication lag window where the secondary is behind. If the primary fails during that window, those writes are lost.
 
 | Replication Mode | Write Latency Impact | RPO | Use Case |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Synchronous | +50-150ms per write | Zero | Financial transactions, ledgers |
 | Asynchronous | None | Seconds to minutes | Most production workloads |
 | Semi-synchronous | +50-150ms (one replica) | Near-zero | Compromise for critical data |
@@ -218,7 +224,7 @@ The most common approach for active-passive architectures. The global DNS layer 
 
 **AWS Route 53 failover configuration:**
 
-```
+```text
 Primary record:
   Name: api.example.com
   Type: A (Alias to ALB in us-east-1)
@@ -241,7 +247,7 @@ Secondary record:
 
 Your health check endpoint must validate actual regional functionality, not just that the application process is running:
 
-```
+```text
 GET /health/region
 
 Response:
@@ -278,7 +284,7 @@ Not every system needs multi-region. The cost is significant, and over-engineeri
 ### Tiering Your Workloads
 
 | Tier | Description | Resilience Target | Pattern |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Tier 1** | Revenue-critical, customer-facing | RTO < 5 min, RPO ≈ 0 | Active-Active |
 | **Tier 2** | Important but tolerates brief outage | RTO < 30 min, RPO < 5 min | Warm Standby |
 | **Tier 3** | Internal tools, batch processing | RTO < 4 hours, RPO < 1 hour | Pilot Light or Backup/Restore |

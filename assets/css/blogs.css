@@ -76,7 +76,7 @@
 }
 
 .blogs-subtitle {
-  font-size: 1.125rem;
+  font-size: clamp(0.9rem, 3vw, 1.125rem);
   color: var(--muted);
   margin: 0 auto;
 }
@@ -205,11 +205,29 @@
   flex-direction: column;
   height: 100%;
   box-shadow: var(--shadow-soft);
+  position: relative;
+}
+
+.blog-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), #06b6d4, #8b5cf6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .blog-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
+  border-color: transparent;
+}
+
+.blog-card:hover::before {
+  opacity: 1;
 }
 
 .card-content {
@@ -283,8 +301,15 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  justify-content: space-evenly;
   margin-bottom: 1.25rem;
+  max-height: 5.5rem;
+  overflow-y: auto;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
 }
+
 
 .card-tags .tag {
   display: inline-block;
@@ -323,9 +348,8 @@
 .card-tags .tag[data-tag*="kubernetes"],
 .card-tags .tag[data-tag*="k8s"] {
   background: #e0f2fe;
-  color: #0369a1;
+  color: #0c4a6e;
 }
-
 .card-tags .tag[data-tag*="docker"],
 .card-tags .tag[data-tag*="container"] {
   background: #dbeafe;
@@ -335,10 +359,9 @@
 /* Cloud Platforms */
 .card-tags .tag[data-tag*="azure"],
 .card-tags .tag[data-tag*="cloud"] {
-  background: #dbeafe;
-  color: #1e3a8a;
+  background: #e0e7ff;
+  color: #3730a3;
 }
-
 .card-tags .tag[data-tag*="terraform"],
 .card-tags .tag[data-tag*="aws"] {
   background: #fef3c7;
@@ -362,15 +385,15 @@
 .card-tags .tag[data-tag*="javascript"],
 .card-tags .tag[data-tag*="web-"],
 .card-tags .tag[data-tag*="service-workers"] {
-  background: #fef3c7;
-  color: #78350f;
+  background: #ecfdf5;
+  color: #065f46;
 }
 
 /* .NET & Backend */
 .card-tags .tag[data-tag*="dotnet"],
 .card-tags .tag[data-tag*="csharp"],
 .card-tags .tag[data-tag*="net"] {
-  background: #ddd6fe;
+  background: #ede9fe;
   color: #5b21b6;
 }
 
@@ -382,7 +405,7 @@
 .card-tags .tag[data-tag*="patterns"],
 .card-tags .tag[data-tag*="system-design"] {
   background: #fce7f3;
-  color: #9f1239;
+  color: #9d174d;
 }
 
 /* Security & Networking */
@@ -410,35 +433,33 @@
 .card-tags .tag[data-tag*="modernization"],
 .card-tags .tag[data-tag*="productivity"],
 .card-tags .tag[data-tag*="legacy"] {
-  background: #4fc2cc;
-  color: #ffffff;
+  background: #e0f2fe;
+  color: #0c4a6e;
 }
 
 /* AI & Automation */
 .card-tags .tag[data-tag*="ai"],
 .card-tags .tag[data-tag*="automation"],
 .card-tags .tag[data-tag*="debugging"] {
-  background: #e924b8;
-  color: #ffffff;
+  background: #fae8ff;
+  color: #86198f;
 }
 
-/* Distributed Systems & Reliability */
+/* Distributed Systems */
 .card-tags .tag[data-tag*="distributed-systems"],
 .card-tags .tag[data-tag*="microservices"] {
-  background: #fbbf24;
-  color: #78350f;
+  background: #fef9c3;
+  color: #854d0e;
 }
-
 .card-tags .tag[data-tag*="reliability"],
 .card-tags .tag[data-tag*="idempotency"],
 .card-tags .tag[data-tag*="deduplication"] {
-  background: #a78bfa;
-  color: #ffffff;
+  background: #ede9fe;
+  color: #4c1d95;
 }
-
 .card-tags .tag[data-tag*="saga"],
 .card-tags .tag[data-tag*="event-driven"] {
-  background: #34d399;
+  background: #d1fae5;
   color: #064e3b;
 }
 
@@ -446,8 +467,8 @@
 .card-tags .tag[data-tag*="api-design"],
 .card-tags .tag[data-tag*="api"],
 .card-tags .tag[data-tag*="rest"] {
-  background: #fb923c;
-  color: #ffffff;
+  background: #ffedd5;
+  color: #9a3412;
 }
 
 /* Database & Data */
@@ -455,7 +476,7 @@
 .card-tags .tag[data-tag*="sql"],
 .card-tags .tag[data-tag*="redis"],
 .card-tags .tag[data-tag*="isolation"] {
-  background: #fde68a;
+  background: #fef3c7;
   color: #78350f;
 }
 
@@ -466,14 +487,14 @@
 .card-tags .tag[data-tag*="self-hosted"],
 .card-tags .tag[data-tag*="portainer"],
 .card-tags .tag[data-tag*="ubuntu"] {
-  background: #e9d5ff;
-  color: #6b21a8;
+  background: #e0e7ff;
+  color: #3730a3;
 }
 
 /* SaaS & Cloud Native */
 .card-tags .tag[data-tag*="saas"],
 .card-tags .tag[data-tag*="cloud-native"] {
-  background: #bfdbfe;
+  background: #dbeafe;
   color: #1e40af;
 }
 
@@ -493,9 +514,59 @@
 
 /* Cost Optimization */
 .card-tags .tag[data-tag*="cost"] {
-  background: #fef08a;
+  background: #fef9c3;
   color: #713f12;
 }
+
+/* AI/LLM & Retrieval */
+.card-tags .tag[data-tag*="llm"],
+.card-tags .tag[data-tag*="rag"],
+.card-tags .tag[data-tag*="ragas"],
+.card-tags .tag[data-tag*="agents"],
+.card-tags .tag[data-tag*="bm25"],
+.card-tags .tag[data-tag*="retrieval"],
+.card-tags .tag[data-tag*="context-engineering"],
+.card-tags .tag[data-tag*="prompt-engineering"],
+.card-tags .tag[data-tag*="memory"],
+.card-tags .tag[data-tag*="evaluation"],
+.card-tags .tag[data-tag*="information-retrieval"] {
+  background: #fae8ff;
+  color: #86198f;
+}
+
+/* Resilience & Reliability */
+.card-tags .tag[data-tag*="resilience"],
+.card-tags .tag[data-tag*="graceful-degradation"],
+.card-tags .tag[data-tag*="disaster-recovery"],
+.card-tags .tag[data-tag*="cap-theorem"],
+.card-tags .tag[data-tag*="sre"],
+.card-tags .tag[data-tag*="observability"],
+.card-tags .tag[data-tag*="latency"],
+.card-tags .tag[data-tag*="multi-region"],
+.card-tags .tag[data-tag*="production"] {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+/* Event-Driven & Data Patterns */
+.card-tags .tag[data-tag*="kafka"],
+.card-tags .tag[data-tag*="outbox-pattern"],
+.card-tags .tag[data-tag*="change-data-capture"],
+.card-tags .tag[data-tag*="data-consistency"],
+.card-tags .tag[data-tag*="data-reconciliation"] {
+  background: #ede9fe;
+  color: #4c1d95;
+}
+
+/* GitOps & Platform */
+.card-tags .tag[data-tag*="gitops"],
+.card-tags .tag[data-tag*="crossplane"],
+.card-tags .tag[data-tag*="backstage"],
+.card-tags .tag[data-tag*="lift-and-shift"] {
+  background: #ccfbf1;
+  color: #134e4a;
+}
+
 
 /* ========================================
    No Results Message
@@ -618,6 +689,13 @@
   .card-title {
     font-size: 1.25rem;
   }
+  .card-footer {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .card-footer .card-link {
+    align-self: flex-end;
+  }
 }
 
 /* ========================================
@@ -667,7 +745,7 @@
   margin-bottom: 0;
   letter-spacing: 0.01em;
   width: fit-content;
-  color: var(--text-tertiary);
+  color: var(--muted);
   border: none;
   /* border-left: 2px solid var(--primary); */
   border-bottom: 2px solid var(--primary);

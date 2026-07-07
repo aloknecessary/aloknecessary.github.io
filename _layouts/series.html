@@ -9,10 +9,16 @@ layout: default
 
 <div class="series-header">
   <h2>{{ page.title }}</h2>
+  {% include sort-toggle.html %}
 </div>
 {% if page.content != '' %}
-<p class="series-description">{{ page.content | strip_html }}</p>
+<div class="series-description">{{ page.content | markdownify }}</div>
 {% endif %}
+
+<div class="series-legend">
+  <span class="legend-item"><span class="legend-dot dot-ai"></span>AI Engineering</span>
+  <span class="legend-item"><span class="legend-dot dot-infra"></span>Infrastructure</span>
+</div>
 
 <section class="series-page">
 
@@ -32,23 +38,34 @@ layout: default
   <div id="series-content" class="hidden">
     <div class="series-container">
       {% for series in site.data.series %}
-        {% assign series_posts = site.blogs | where: "series", series.name | sort: "series_order" %}
+        {% assign series_posts = site.blogs | where: "series", series.name | sort: "series_order" | reverse %}
         {% assign count = series_posts | size %}
         {% if count > 0 %}
-        <div class="series-block" id="{{ series.slug }}">
+        <div class="series-block domain-{{ series.domain | slugify }}" id="{{ series.slug }}">
           <div class="series-block-header" data-collapsible>
             <div class="series-block-header-top">
               <div class="series-block-title-wrap">
                 <svg class="series-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
                 <h2 class="series-block-title">{{ series.name }} <span class="tag-count">{{ count }}</span></h2>
               </div>
-              <a href="{{ series_posts.first.url | relative_url }}" class="series-start-btn">Start reading <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
-            <p class="series-block-description">{{ series.description }}</p>
+            <div class="series-block-bottom">
+              <p class="series-block-description">{{ series.description }}</p>
+              <div class="series-start-split">
+                <a href="{{ series_posts.last.url | relative_url }}" class="series-start-btn">Start reading</a>
+                <button class="series-start-chevron" aria-label="Reading options" aria-haspopup="true" aria-expanded="false">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="series-start-dropdown" role="menu">
+                  <a href="{{ series_posts.last.url | relative_url }}" role="menuitem">From Beginning</a>
+                  <a href="{{ series_posts.first.url | relative_url }}" role="menuitem">Latest Post</a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <ol class="series-posts">
-            {% for post in series_posts %}
+            {%- for post in series_posts %}
             <li>
               <span class="step-indicator">{{ post.series_order }}</span>
               <div class="step-content">
@@ -56,7 +73,7 @@ layout: default
                 <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
               </div>
             </li>
-            {% endfor %}
+            {%- endfor %}
           </ol>
         </div>
         {% endif %}
@@ -76,12 +93,31 @@ layout: default
   });
 
   document.addEventListener("click", function(e) {
+    // Handle split-button dropdown
+    const chevron = e.target.closest('.series-start-chevron');
+    if (chevron) {
+      e.stopPropagation();
+      const dropdown = chevron.nextElementSibling;
+      const isOpen = dropdown.classList.contains('open');
+      document.querySelectorAll('.series-start-dropdown.open').forEach(d => d.classList.remove('open'));
+      if (!isOpen) dropdown.classList.add('open');
+      chevron.setAttribute('aria-expanded', !isOpen);
+      return;
+    }
+
+    // Close open dropdowns on outside click or dropdown item click
+    if (!e.target.closest('.series-start-split') || e.target.closest('.series-start-dropdown a')) {
+      document.querySelectorAll('.series-start-dropdown.open').forEach(d => d.classList.remove('open'));
+    }
+
+    // Collapsible series blocks
     const header = e.target.closest('[data-collapsible]');
     if (!header) return;
-    if (e.target.closest('.series-start-btn')) return;
+    if (e.target.closest('.series-start-split')) return;
     header.closest('.series-block').classList.toggle('collapsed');
   });
 </script>
 
 <script src="{{ '/assets/js/tag-highlight.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/tag-collapse.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/tag-sort.js' | relative_url }}"></script>

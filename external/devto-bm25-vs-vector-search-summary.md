@@ -70,6 +70,7 @@ This is a summary of my deep dive into retrieval architecture. The full article 
 **👉 [BM25 vs. Vector Search — Full Article](https://aloknecessary.github.io/blogs/bm25_vs_vector_search/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=bm25-vs-vector-search)**
 
 The full article includes:
+
 - BM25 scoring formula breakdown and tuning parameters
 - Embedding model evaluation criteria and provider comparison
 - Head-to-head scenario table showing when each wins

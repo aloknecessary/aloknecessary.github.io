@@ -72,6 +72,7 @@ This is a summary of my deep dive into multi-region resilience. The full article
 **👉 [Designing Cloud-Native Systems That Survive Region-Level Failures — Full Article](https://aloknecessary.github.io/blogs/cloud_native_region_failure_architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-native-region-failure)**
 
 The full article includes:
+
 - Multi-AZ vs multi-region — what each actually protects (and what it doesn't)
 - Three patterns with RTO/RPO/cost profiles (Pilot Light, Warm Standby, Active-Active)
 - AWS and Azure architecture sketches for active-active

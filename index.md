@@ -8,9 +8,9 @@ hide_header: true
   <img src="{{ '/assets/images/header.png' | relative_url }}" alt="Header" fetchpriority="high">
   <div class="theme-controls">
     <div class="theme-dropdown">
-      <button 
-        class="theme-trigger" 
-        aria-haspopup="true" 
+      <button
+        class="theme-trigger"
+        aria-haspopup="true"
         aria-expanded="false"
         aria-label="Change theme"
       >
@@ -102,8 +102,6 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
   <img src="https://img.shields.io/badge/K8s-Orchestration-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="K8s" />
 </div>
 
-
-
 * Scalable, cloud-native systems with clear domain boundaries
 * API design, integration patterns, and secure auth flows (OAuth, SSO, JWT)
 * Containerization (Docker), Kubernetes and platform architecture
@@ -139,7 +137,6 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 ![ChatGPT](https://img.shields.io/badge/ChatGPT-OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
 ![Amazon Q](https://img.shields.io/badge/Amazon_Q-AWS-FF9900?style=for-the-badge&logo=amazon&logoColor=white) -->
 
-
 * AI-assisted software development with Claude, GPT-4, and Amazon Q
 * LLM API integration for production systems (OpenAI, Anthropic)
 * Context engineering and prompt optimization for technical workflows
@@ -156,7 +153,6 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
   <img src="https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="Azure"/>
   <img src="https://img.shields.io/badge/Amazon_AWS-F24C53?style=for-the-badge&logo=hackthebox&logoColor=white" alt="AWS"/>
 </div>
-
 
 * Robust CI/CD using GitHub Actions
 * Infrastructure as Code and repeatable environments
@@ -193,15 +189,15 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 * Balancing cost with resilience & performance
 * Visibility and accountability via FinOps practices
 
-
 ---
 
 ## 💼 Professional Experience
+>
 > ### **[Byteridge Software Pvt. Ltd.](https://www.byteridge.com)**
 >
 > *Solution Architect* \| 2014 – Present \| *Hyderabad, India*
 >
-> For over a decade at Byteridge, I've grown from a hands-on engineer into a solution and architecture owner, shaping complex, production-grade systems across the full stack. My role focuses on translating real business problems into pragmatic, scalable, and resilient technical solutions.
+> For over a decade at Byteridge, I've grown from a hands-on engineer into a solution and architecture owner, shaping complex, production-grade systems across the full stack. My role spans technical delivery, pre-sales estimation, and solution scoping — translating real business problems into pragmatic, scalable, and resilient technical solutions.
 >
 > I've led and delivered systems that integrate frontend, backend, infrastructure, and cloud products — blending architectural rigor with software engineering craftsmanship.
 >
@@ -209,14 +205,15 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 >
 > **Key Achievements:**
 >
-> - Architected and delivered full-stack application designs using React, Angular, Node.js, and .NET  
-> - Built modular, API-centric platforms with strong authentication, observability, and integration patterns  
-> - Designed cloud-native architectures with Docker, Kubernetes, and automated CI/CD pipelines 
-> - **Led AI-powered Playwright automation initiative** for Client's debt collection platform, increasing test coverage from 35% to 81%+ and delivering 2500+ test cases across 40+ modules in 2 months with a 4-5 engineer team
-> - **Architected and delivered production-grade AI POC** for natural language data visualization using OpenAI GPT Engine—enabling business users to generate interactive Chart.js visualizations from tabular data via conversational prompts, live on company POC list 
-> - Collaborated with Microsoft teams on Bing and Microsoft Admin Portal platforms  
-> - Led cost optimization initiatives resulting in significant cloud infrastructure savings  
-> - Built custom Docker images for CI/CD optimization (playwright-az-cli, sonar-dotnet) downloaded 1000+ times across teams
+> * Architected and delivered full-stack application designs using React, Angular, Node.js, and .NET  
+> * Built modular, API-centric platforms with strong authentication, observability, and integration patterns  
+> * Designed cloud-native architectures with Docker, Kubernetes, and automated CI/CD pipelines
+> * **Led AI-powered Playwright automation initiative** for Client's debt collection platform, increasing test coverage from 35% to 81%+ and delivering 2500+ test cases across 40+ modules in 2 months with a 4-5 engineer team
+> * **Architected and delivered production-grade AI POC** for natural language data visualization using OpenAI GPT Engine—enabling business users to generate interactive Chart.js visualizations from tabular data via conversational prompts, live on company POC list
+> * Collaborated with Microsoft teams on Bing and Microsoft Admin Portal platforms  
+> * Led cost optimization initiatives resulting in significant cloud infrastructure savings  
+> * Led 10+ pre-sales engagements — technical discovery, effort estimation, architecture proposals, team composition planning, and phased delivery roadmaps across fintech, healthcare, SaaS, and IoT domains
+> * Built custom Docker images for CI/CD optimization (playwright-az-cli, sonar-dotnet) downloaded 1000+ times across teams
 >
 > A core part of my role involves collaborating with product, UX, and business stakeholders to drive clarity and alignment, as well as mentoring engineers through system design and implementation decisions.
 
@@ -233,7 +230,6 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 * 🏅 **AWS Partner Certified** — AWS cloud fundamentals, partner-led architectures
 * 🏅 **ZEDEDA Certified Edge Computing Associate** — Edge orchestration and lifecycle management
 * 🏅 **Neo4j Professional Certified** — Graph data modeling and Cypher query expertise
-
 
 ---
 
@@ -272,14 +268,12 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 
 ## 📊 GitHub Activity
 
-
 <!-- [![Alok's GitHub Stats](https://github-readme-stats.vercel.app/api?username=aloknecessary&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true)](https://github.com/aloknecessary) -->
 
 <div class="stats-container">
   <img src="https://github-readme-stats-aloknecessary-4439s-projects.vercel.app/api/top-langs?username=aloknecessary&layout=compact&theme=ambient_gradient&size_weight=0.5&count_weight=0.5" alt="Top Languages" />
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=aloknecessary&theme=ambient-gradient&hide_border=true&exclude_days=Sat,Sun&mode=weekly" alt="GitHub Streak" />
 </div>
-
 
 ---
 
@@ -465,6 +459,7 @@ Led a transformative test automation initiative for Client's debt collection pla
 **Workflow**: Module analysis → Context building → AI-generated test cases → Human review → CI/CD integration
 
 **Technical Approach**:
+
 ```typescript
 // Workflow: AI-assisted test generation
 1. Extract module context from codebase
@@ -474,13 +469,15 @@ Led a transformative test automation initiative for Client's debt collection pla
 5. Execute in local for verification and evaluation
 6. Integrate into GitHub Actions CI/CD pipeline for realtime testing 
 ```
+
 **Key Innovation**: Combined AI code generation with rigorous engineering review process, ensuring every generated test met production standards before merge.
 
 **Impact**:
-- 📈 Code coverage: **35% → 81%+**
-- ✅ **2500+ test cases** delivered in 2 months
-- 🚀 **40+ modules** fully covered
-- ⚡ Ongoing e2e test expansion
+
+* 📈 Code coverage: **35% → 81%+**
+* ✅ **2500+ test cases** delivered in 2 months
+* 🚀 **40+ modules** fully covered
+* ⚡ Ongoing e2e test expansion
 
 **Key Innovation**: Combined AI code generation with rigorous engineering review process, ensuring every generated test met production standards before merge.
 
@@ -500,8 +497,9 @@ Built an intelligent Higher-Order Component (HOC) that wraps any React-compatibl
 
 **Tech Stack**: React 18, Node.js, OpenAI GPT, Chart.js
 
-**Architecture**: 
-```
+**Architecture**:
+
+```text
 User uploads data (CSV/Excel/JSON)
     ↓
 Natural language prompt input
@@ -518,7 +516,8 @@ Enable drill-down on chart segments
 ```
 
 **Example User Experience:**:
-```
+
+```text
 User: "Generate a pie chart on sales done for beauty products"
 System: [Analyzes data, generates interactive pie chart with 5 product segments]
 
@@ -527,33 +526,34 @@ System: [Drills down to show regional sales breakdown for Clothing]
 ```
 
 **Key Features**:
-- 🗣️ **Natural language interface** - No chart configuration knowledge required
-- 🔒 **Security built-in** - PII filtering and content moderation layer
-- 📊 **Universal data support** - CSV, Excel uploads
-- 🔍 **Interactive drill-down** - Multi-level data exploration
-- 🎨 **Auto-schema generation** - GPT creates Chart.js configs automatically
-- 🔌 **HOC pattern** - Wraps any React-compatible table library
+
+* 🗣️ **Natural language interface** - No chart configuration knowledge required
+* 🔒 **Security built-in** - PII filtering and content moderation layer
+* 📊 **Universal data support** - CSV, Excel uploads
+* 🔍 **Interactive drill-down** - Multi-level data exploration
+* 🎨 **Auto-schema generation** - GPT creates Chart.js configs automatically
+* 🔌 **HOC pattern** - Wraps any React-compatible table library
 
 **Business Impact**:
-- ✅ **Democratized data analysis** - Non-technical users create charts independently
-- 💬 **Highly praised by stakeholders** - Marketing and leadership teams
-- 🎯 **Proven feasibility** - Validated LLM-powered BI approach
-- ⚡ **Rapid delivery** - 20-30 days from concept to production POC
-- 🏢 **Company showcase** - Featured on [Byteridge's innovation portal](https://byteridge.com/gen-ai-solutions/visualizer/)
 
-**Current Status**: 
-- 🌐 **Publicly accessible** at [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Try_It_Now-4CAF50?style=flat-square)](https://solution.byteridge.com/innovation/visualizer)
-- 🔐 Social authentication (Gmail, LinkedIn, GitHub, Facebook, Microsoft)
-- 📊 Demo datasets provided for immediate experimentation
-- 🎯 Available for client demonstrations and POC evaluations
+* ✅ **Democratized data analysis** - Non-technical users create charts independently
+* 💬 **Highly praised by stakeholders** - Marketing and leadership teams
+* 🎯 **Proven feasibility** - Validated LLM-powered BI approach
+* ⚡ **Rapid delivery** - 20-30 days from concept to production POC
+* 🏢 **Company showcase** - Featured on [Byteridge's innovation portal](https://byteridge.com/gen-ai-solutions/visualizer/)
 
+**Current Status**:
+
+* 🌐 **Publicly accessible** at [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Try_It_Now-4CAF50?style=flat-square)](https://solution.byteridge.com/innovation/visualizer)
+* 🔐 Social authentication (Gmail, LinkedIn, GitHub, Facebook, Microsoft)
+* 📊 Demo datasets provided for immediate experimentation
+* 🎯 Available for client demonstrations and POC evaluations
 
 <!-- [![Documentation](https://img.shields.io/badge/📖_Read_More-Technical_Deep_Dive-2196F3?style=for-the-badge)](#) -->
 
 ---
 
 ## 🤝 Open To
-
 
 I'm always interested in:
 
@@ -565,11 +565,9 @@ I'm always interested in:
 * 💡 **Advisory roles** for startups and scale-ups
 * 🧪 **POC partnerships** exploring AI/ML use cases in enterprise software
 
-
 ---
 
 ## 📫 Contact & Presence
-
 
 If you're interested in **architecture discussions, system design reviews, DevOps or technical collaboration**, feel free to reach out.
 
@@ -598,5 +596,3 @@ If you're interested in **architecture discussions, system design reviews, DevOp
   </a>
   </div>
 <!-- </p> -->
-
-

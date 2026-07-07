@@ -56,6 +56,7 @@ This is a summary of my deep dive into CAP theorem trade-offs. The full article 
 **👉 [The CAP Theorem in Practice — Full Article](https://aloknecessary.github.io/blogs/the-cap-theorem-in-practice-making-the-right-trade-offs-at-scale/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cap-theorem)**
 
 The full article includes:
+
 - Detailed CP vs AP comparison with canonical system examples
 - PACELC model with system-by-system partition and normal operation behavior
 - Saga and CQRS patterns analyzed through the CAP lens
