@@ -745,7 +745,7 @@
   margin-bottom: 0;
   letter-spacing: 0.01em;
   width: fit-content;
-  color: var(--text-tertiary);
+  color: var(--muted);
   border: none;
   /* border-left: 2px solid var(--primary); */
   border-bottom: 2px solid var(--primary);
