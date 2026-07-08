@@ -29,7 +29,7 @@ None of this means Multi-AZ is wrong. For mission-critical, customer-facing work
 
 This post is the decision framework that the "always enable Multi-AZ" mandate omits.
 
-> **Article context:** This is the second post in the Cloud Architecture Trade-Offs series. The first post, [Private Endpoints Everywhere? The Hidden Cost of 'Secure by Default' Cloud Architectures](/blogs/hidden-cost-of-private-endpoints-everywhere/), examined a similar pattern — a widely-recommended security practice that frequently gets applied as a blanket default without evaluating whether the cost is proportional to the actual risk reduction. The same analytical approach applies here to availability architecture. For the resilience patterns that apply *after* you have decided Multi-AZ is justified — pilot light, warm standby, active-active — see [Designing Cloud-Native Systems That Survive Region-Level Failures](/blogs/cloud_native_region_failure_architecture/).
+> **Article context:** This is the second post in the Cloud Defaults Reconsidered series. The first post, [Private Endpoints Everywhere? The Hidden Cost of 'Secure by Default' Cloud Architectures](/blogs/hidden-cost-of-private-endpoints-everywhere/), examined a similar pattern — a widely-recommended security practice that frequently gets applied as a blanket default without evaluating whether the cost is proportional to the actual risk reduction. The same analytical approach applies here to availability architecture. For the resilience patterns that apply *after* you have decided Multi-AZ is justified — pilot light, warm standby, active-active — see [Designing Cloud-Native Systems That Survive Region-Level Failures](/blogs/cloud_native_region_failure_architecture/).
 
 ### Table of Contents
 

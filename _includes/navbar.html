@@ -1,5 +1,7 @@
 <nav class="nav-bar">
   {% if page.layout == 'blog' %}
+    <a id="backButton">← Back</a>
+    <span class="nav-separator">|</span>
     <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
     <span class="nav-separator">|</span>
     <a href="{{ '/' | relative_url }}">Home</a>
@@ -54,7 +56,7 @@
   {% endif %}
 </nav>
 
-{% if page.layout == 'categories' or page.layout == 'tags' or page.layout == 'series' %}
+{% if page.layout == 'categories' or page.layout == 'tags' or page.layout == 'series' or page.layout == 'blog' %}
 <script>
   (function () {
     const backBtn = document.getElementById("backButton");

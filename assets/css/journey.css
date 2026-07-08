@@ -180,7 +180,7 @@
 
 .timeline-node {
   position: absolute;
-  left: -2rem;
+  left: -2.15rem;
   top: 0.38rem;
   width: 14px;
   height: 14px;
@@ -381,6 +381,11 @@
   text-transform: uppercase;
   color: var(--primary);
   margin-bottom: 0.75rem;
+}
+
+.phase-focus {
+  color: var(--muted);
+  font-weight: 400;
 }
 
 .metrics-row {

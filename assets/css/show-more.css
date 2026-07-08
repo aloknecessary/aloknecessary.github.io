@@ -16,7 +16,7 @@
   pointer-events: none;
 }
 
-.series-posts.collapsed li:nth-child(n+5) {
+.series-posts.collapsed li:nth-child(n+4) {
   display: none;
 }
 

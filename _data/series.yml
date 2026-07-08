@@ -25,5 +25,5 @@
 - name: "DevOps & Platform Engineering"
   slug: devops-platform-engineering
   icon: "🔧"
-  domain: "Infrastructure"
+  domain: "Platform"
   description: "From custom images and CI runners to full dev environment assembly — the infrastructure that accelerates delivery."

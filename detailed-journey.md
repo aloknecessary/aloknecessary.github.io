@@ -116,7 +116,7 @@ hide_header: false
           </div>
           <p class="card-desc">A prominent financial services company specialising in debt collection rebuilt their core platform — CollectLogic — from a legacy system into a modern, cloud-native application handling complex regulatory operations at scale.</p>
           <div class="divider"></div>
-          <p class="card-section-label">Phase 1 — Engineering Lead</p>
+          <p class="card-section-label">Phase 1 — Engineering Lead <span class="phase-focus">· Foundation & Go-Live</span></p>
           <ul class="highlight-list">
             <li>Architected containerised infrastructure; defined Docker/Kubernetes deployment topology on Azure AKS from scratch.</li>
             <li>Designed and implemented GitHub Actions CI/CD pipelines across all services — backend APIs, frontend, and integration workers.</li>
@@ -126,7 +126,7 @@ hide_header: false
             <li>Coordinated 40+ team members across Dev, QA, and Leads to a successful <strong>Go-Live on April 29th 2024</strong>.</li>
           </ul>
           <div class="divider"></div>
-          <p class="card-section-label">Phase 2 — Solution Architect</p>
+          <p class="card-section-label">Phase 2 — Solution Architect <span class="phase-focus">· Strategy & Scale</span></p>
           <ul class="highlight-list">
             <li>Defined long-term technical strategy, architectural roadmap, and cross-team design standards.</li>
             <li>Drove system design reviews ensuring all new development aligns with architectural principles and NFRs.</li>
@@ -173,7 +173,7 @@ hide_header: false
             without leaving the platform.
           </div>
           <div class="divider"></div>
-          <p class="card-section-label">Phase 3 — Platform Stabilisation & Servicing Expansion</p>
+          <p class="card-section-label">Phase 3 — Solution Architect <span class="phase-focus">· Platform Stabilisation & Servicing Expansion</span></p>
           <ul class="highlight-list">
             <li>Strengthened core collections engine — enhanced debtor management, linked accounts, co-debtor handling, SSN/EIN-based account linking with masking and access controls.</li>
             <li>Expanded payment lifecycle — implemented settlement management, recurring payments, ACH workflows, late fee handling, financial waterfall processing, and processor integrations (Anteloope, USAePay).</li>
@@ -190,7 +190,7 @@ hide_header: false
             full Legal module delivered in Phase 4.
           </div>
           <div class="divider"></div>
-          <p class="card-section-label">Phase 4 — Legal Platform, Permissions & AI Exploration</p>
+          <p class="card-section-label">Phase 4 — Solution Architect <span class="phase-focus">· Legal Platform, Permissions & AI Exploration</span></p>
           <ul class="highlight-list">
             <li>Architected and delivered end-to-end <strong>Legal module</strong> — legal forms, document generation, suit/judgment/settlement processing, plaintiff/defendant management, per diem computations, and legal-specific workflows.</li>
             <li>Implemented <strong>Permission Visibility Strategy</strong> across the entire platform — access inheritance, disabled-state permissions, access request workflows, role-based visibility controls, and parent-child access management.</li>

@@ -75,7 +75,7 @@ Disabling Multi-AZ on non-production environments alone saves $3,118/year per da
 
 ## Read the Full Article
 
-This is a summary of the second post in the Cloud Architecture Trade-Offs series. The full article includes detailed cost breakdowns, cross-AZ transfer calculations, Aurora comparison, automated restore alternatives, and a complete decision framework:
+This is a summary of the second post in the Cloud Defaults Reconsidered series. The full article includes detailed cost breakdowns, cross-AZ transfer calculations, Aurora comparison, automated restore alternatives, and a complete decision framework:
 
 **👉 [Multi-AZ by Default — Full Article](https://aloknecessary.github.io/blogs/multi-az-by-default/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=multi-az-by-default)**
 

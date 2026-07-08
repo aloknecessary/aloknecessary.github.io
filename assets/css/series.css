@@ -384,8 +384,6 @@
     flex-wrap: wrap;
   }
 
-
-
   .series-block-title {
     font-size: 1rem;
   }
@@ -449,12 +447,6 @@
   }
 }
 
-
-
-
-
-
-
 /* Series Legend */
 .series-legend {
   display: flex;
@@ -498,20 +490,32 @@
   margin: 0;
 }
 
-
 /* Domain color coding */
 .domain-ai-engineering {
   border-left: 4px solid var(--domain-ai);
-}
-.domain-ai-engineering .tag-count {
-  background: var(--domain-ai);
+  --domain-accent: var(--domain-ai);
 }
 
 .domain-infrastructure {
   border-left: 4px solid var(--domain-infra);
+  --domain-accent: var(--domain-infra);
 }
-.domain-infrastructure .tag-count {
-  background: var(--domain-infra);
+
+.domain-platform {
+  border-left: 4px solid var(--domain-platform);
+  --domain-accent: var(--domain-platform);
+}
+
+.series-block-title {
+  background: linear-gradient(90deg, var(--domain-accent), var(--text-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.series-block-title .tag-count {
+  -webkit-text-fill-color: #fff;
+  background: var(--domain-accent);
 }
 
 .dot-ai {
@@ -520,4 +524,8 @@
 
 .dot-infra {
   background: var(--domain-infra);
+}
+
+.dot-platform {
+  background: var(--domain-platform);
 }
