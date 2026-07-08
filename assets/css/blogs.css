@@ -539,10 +539,13 @@
 .card-tags .tag[data-tag*="graceful-degradation"],
 .card-tags .tag[data-tag*="disaster-recovery"],
 .card-tags .tag[data-tag*="cap-theorem"],
+.card-tags .tag[data-tag*="high-availability"],
+.card-tags .tag[data-tag*="multi-az"],
 .card-tags .tag[data-tag*="sre"],
 .card-tags .tag[data-tag*="observability"],
 .card-tags .tag[data-tag*="latency"],
 .card-tags .tag[data-tag*="multi-region"],
+.card-tags .tag[data-tag*="trade-offs"],
 .card-tags .tag[data-tag*="production"] {
   background: #fef9c3;
   color: #854d0e;
