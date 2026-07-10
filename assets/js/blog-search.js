@@ -8,6 +8,11 @@
   
   if (!searchToggle || !searchInput || !searchClear || !searchContainer) return;
 
+  // Auto-expand on desktop
+  if (window.innerWidth > 768) {
+    searchContainer.classList.add('active');
+  }
+
   const blogCards = document.querySelectorAll('.blog-card');
   let debounceTimer;
   

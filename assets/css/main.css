@@ -17,7 +17,7 @@
   --border: #e5e7eb;
   --bg-card: #ffffff;
   --border-card: #e5e7eb;
-  --border-crimson: #ff009c;
+  --crimson: #ff009c;
 
   --text-primary: #111827;
   --text-secondary: #6b7280;
@@ -63,7 +63,7 @@
   --border: #334155;
   --bg-card: #1f2937;
   --border-card: #374151;
-  --border-crimson: #ff009c;
+  --crimson: #ff009c;
 
   --text-primary: #f9fafb;
   --text-secondary: #9ca3af;
@@ -129,6 +129,10 @@
 /* ============================================================
    BASE
 ============================================================ */
+
+html {
+  overflow-x: hidden;
+}
 
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, sans-serif;
@@ -465,15 +469,58 @@ tr:nth-child(even) {
 ============================================================ */
 
 .nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: transparent;
   margin-top: 16px;
   margin-bottom: -0.5rem;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
   font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  margin-left: calc(-50vw + 50%);
+  padding: 10px calc(50vw - 50%);
+  border-bottom: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-bar.stuck {
+  background: var(--bg-base);
+  border-bottom-color: var(--border);
 }
 
 .nav-separator {
   margin: 0 0.25rem;
   color: var(--muted);
 }
+
+.nav-active {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0;
+  background: linear-gradient(90deg, var(--primary), var(--crimson));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* .nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--domain-ai));
+} */
 
 #backButton {
   cursor: pointer;
