@@ -1,7 +1,7 @@
 ---
 title: "Cloud Cost Architecture: Engineering FinOps Into the System, Not Onto It"
-date: 2026-07-10
-last_modified_at: 2026-07-10
+date: 2026-07-13
+last_modified_at: 2026-07-13
 author: Alok Ranjan Daftuar
 description: "A systems-level approach to cloud cost governance — covering commitment tiers, cost allocation tagging, Kubernetes cost attribution, pipeline cost gates, and guardrails that block expensive changes before they deploy."
 excerpt: "Cost is an architectural concern, not a finance concern. This post covers the decisions that determine your cloud bill before it arrives."
