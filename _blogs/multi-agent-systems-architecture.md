@@ -12,7 +12,7 @@ categories:
   - architecture
 tags: [ai, agents, multi-agent, llm, architecture, production, observability, distributed-systems, orchestration, patterns]
 series: "RAG and AI Engineering"
-series_order: 7
+series_order: 8
 ---
 
 
