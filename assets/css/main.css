@@ -245,8 +245,8 @@ body {
 }
 
 header {
-  padding: 12px 0;
-  margin-bottom: 8px;
+  /* padding: 8px 0; */
+  margin-bottom: 4px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -268,36 +268,16 @@ header h1 {
 header p {
   font-size: 1rem;
   color: var(--muted);
-  margin-top: 0.25rem;
+  margin-top: 0;
 }
 
 .header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  cursor: pointer;
-  -webkit-user-select: none;
-  user-select: none;
 }
 
-.header-chevron {
-  color: var(--text-secondary);
-  transition: transform 0.25s ease;
-  flex-shrink: 0;
-}
 
-.header-chevron:hover {
-  color: var(--primary);
-}
-
-.site-header.collapsed .header-chevron {
-  transform: rotate(-90deg);
-}
-
-.site-header.collapsed .info-header,
-.site-header.collapsed .theme-controls {
-  display: none;
-}
 
 .info-header {
   max-width: 780px;
@@ -521,6 +501,14 @@ tr:nth-child(even) {
   border-radius: 2px;
   background: linear-gradient(90deg, var(--primary), var(--domain-ai));
 } */
+
+.nav-bar a:hover {
+  background: linear-gradient(90deg, var(--primary), var(--crimson));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
 
 #backButton {
   cursor: pointer;
