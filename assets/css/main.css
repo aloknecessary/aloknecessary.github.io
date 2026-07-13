@@ -458,6 +458,7 @@ tr:nth-child(even) {
   min-height: 42px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   font-size: clamp(0.8rem, 2.5vw, 0.95rem);
   width: 100vw;
   max-width: 100vw;
@@ -474,8 +475,14 @@ tr:nth-child(even) {
 }
 
 .nav-separator {
-  margin: 0 0.25rem;
+  margin: 0 0.4rem;
   color: var(--muted);
+}
+
+@media (max-width: 767px) {
+  .nav-separator {
+    margin: 0 0.25rem;
+  }
 }
 
 .nav-active {
@@ -512,6 +519,79 @@ tr:nth-child(even) {
 
 #backButton {
   cursor: pointer;
+}
+
+/* Nav responsive browse menu */
+.nav-desktop-only {
+  display: inline;
+}
+
+.nav-mobile-only {
+  display: none;
+}
+
+.nav-browse-menu {
+  position: relative;
+  margin-left: 0.5rem;
+}
+
+.nav-browse-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0;
+}
+
+.nav-browse-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 130px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.nav-browse-dropdown.open {
+  display: block;
+}
+
+.nav-browse-dropdown a {
+  display: block;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.nav-browse-dropdown a:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-browse-dropdown a:hover {
+  background: var(--bg-soft);
+  color: var(--primary);
+}
+
+@media (max-width: 767px) {
+  .nav-desktop-only {
+    display: none;
+  }
+  .nav-mobile-only {
+    display: inline-block;
+  }
 }
 
 /* ============================================================
