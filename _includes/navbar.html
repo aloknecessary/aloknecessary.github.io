@@ -1,44 +1,62 @@
 <nav class="nav-bar">
-  {% if page.layout == 'blog' %}
-    <a id="backButton">← Back</a>
+  {% if page.layout == 'blog' or page.layout == 'categories' or page.layout == 'tags' or page.layout == 'series' %}
+    <span class="nav-active">{% if page.layout == 'blog' %}Article{% elsif page.layout == 'categories' %}Categories{% elsif page.layout == 'tags' %}Topics{% else %}Series{% endif %}</span>
+    <span class="nav-separator nav-desktop-only">|</span>
+    <a id="backButton" class="nav-desktop-only">← Back</a>
     <span class="nav-separator">|</span>
     <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
-    <span class="nav-separator">|</span>
-    <a href="{{ '/' | relative_url }}">Home</a>
+    {% if page.layout != 'series' %}
     <span class="nav-separator nav-desktop-only">|</span>
     <a href="{{ '/series' | relative_url }}" class="nav-desktop-only">Series</a>
+    {% endif %}
+    {% if page.layout != 'categories' %}
     <span class="nav-separator nav-desktop-only">|</span>
     <a href="{{ '/categories' | relative_url }}" class="nav-desktop-only">Categories</a>
+    {% endif %}
+    {% if page.layout != 'tags' %}
     <span class="nav-separator nav-desktop-only">|</span>
     <a href="{{ '/tags' | relative_url }}" class="nav-desktop-only">Topics</a>
+    {% endif %}
     <div class="nav-browse-menu nav-mobile-only">
       <span class="nav-separator">|</span>
       <button class="nav-browse-trigger">
         Browse <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="nav-browse-dropdown">
-        <a href="{{ '/series' | relative_url }}">Series</a>
-        <a href="{{ '/categories' | relative_url }}">Categories</a>
-        <a href="{{ '/tags' | relative_url }}">Topics</a>
+        {% if page.layout != 'series' %}<a href="{{ '/series' | relative_url }}">Series</a>{% endif %}
+        {% if page.layout != 'categories' %}<a href="{{ '/categories' | relative_url }}">Categories</a>{% endif %}
+        {% if page.layout != 'tags' %}<a href="{{ '/tags' | relative_url }}">Topics</a>{% endif %}
       </div>
     </div>
-  {% elsif page.layout == 'categories' or page.layout == 'tags' or page.layout == 'series' %}
-    <a id="backButton">← Back</a>
-    <span class="nav-separator">|</span>
-    <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
     <span class="nav-separator">|</span>
     <a href="{{ '/' | relative_url }}">Home</a>
   {% elsif page.layout == 'blogs' %}
     <div class="nav-left">
+      <span class="nav-active">Blogs</span>
+      <span class="nav-separator">|</span>
       <a href="{{ '/' | relative_url }}">Home</a>
       <span class="nav-separator">|</span>
       <a href="{{ '/series' | relative_url }}">Series</a>
-      <span class="nav-separator">|</span>
-      <a href="{{ '/categories' | relative_url }}">Categories</a>
-      <span class="nav-separator">|</span>
-      <a href="{{ '/tags' | relative_url }}">Topics</a>
+      <span class="nav-separator nav-desktop-only">|</span>
+      <a href="{{ '/categories' | relative_url }}" class="nav-desktop-only">Categories</a>
+      <span class="nav-separator nav-desktop-only">|</span>
+      <a href="{{ '/tags' | relative_url }}" class="nav-desktop-only">Topics</a>
+      <div class="nav-browse-menu nav-mobile-only">
+        <span class="nav-separator">|</span>
+        <button class="nav-browse-trigger">
+          Browse <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-browse-dropdown">
+          <a href="{{ '/categories' | relative_url }}">Categories</a>
+          <a href="{{ '/tags' | relative_url }}">Topics</a>
+        </div>
+      </div>
     </div>
     <div class="search-container">
+      <svg class="search-icon-inside" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
       <button class="search-toggle" id="search-toggle" aria-label="Search blogs">
         <svg class="search-icon-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="11" cy="11" r="8"></circle>
@@ -87,5 +105,15 @@
   document.addEventListener('click', function() {
     dropdown.classList.remove('open');
   });
+})();
+</script>
+
+<script>
+(function() {
+  const nav = document.querySelector('.nav-bar');
+  if (!nav) return;
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('stuck', window.scrollY > 140);
+  }, { passive: true });
 })();
 </script>
