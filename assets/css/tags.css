@@ -145,4 +145,16 @@
   margin-left: -14px;
 }
 
+@media (max-width: 768px) {
+  .tag-posts li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .tag-posts .post-date {
+    align-self: flex-end;
+  }
+}
+
 

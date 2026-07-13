@@ -434,6 +434,10 @@
     padding: 0.5rem 0.75rem;
   }
 
+  .series-posts .post-date {
+    align-self: flex-end;
+  }
+
   .series-posts li .step-indicator {
     min-width: 1.5rem;
     height: 1.5rem;
