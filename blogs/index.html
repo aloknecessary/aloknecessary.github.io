@@ -37,7 +37,7 @@ hide_header: false
         <div class="card-footer">
           {% if post.series %}
             {% assign s_info = site.data.series | where: "name", post.series | first %}
-            <a href="{{ '/series/#' | append: s_info.slug | relative_url }}" class="card-series-badge" data-domain="{{ s_info.domain | slugify }}">Series · {{ s_info.icon }} <span class="series-name">{{ post.series }}</span></a>
+            <a href="{{ '/series/#' | append: s_info.slug | relative_url }}" class="card-series-badge" data-domain="{{ s_info.domain | slugify }}">{{ s_info.icon }} <span class="series-name">{{ post.series }}</span></a>
           {% endif %}
           <a href="{{ post.url }}" class="card-link" aria-label="Read {{ post.title }}">
             Read article
