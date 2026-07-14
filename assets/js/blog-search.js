@@ -9,7 +9,7 @@
   if (!searchToggle || !searchInput || !searchClear || !searchContainer) return;
 
   // Auto-expand on desktop
-  if (window.innerWidth > 768) {
+  if (window.innerWidth >= 1025) {
     searchContainer.classList.add('active');
   }
 

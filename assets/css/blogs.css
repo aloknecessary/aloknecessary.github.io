@@ -83,12 +83,6 @@
 }
 
 /* Search Container */
-.nav-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .nav-left {
   /* display: flex; */
   align-items: center;
@@ -98,6 +92,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin-left: auto;
 }
 
 .search-icon-inside {
@@ -149,7 +144,7 @@
   width: 250px;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .search-container .search-input {
     display: block;
     width: 250px;
@@ -677,20 +672,16 @@
    Responsive Design
    ======================================== */
 
-@media (max-width: 768px) {
-  .nav-bar {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
+@media (max-width: 1024px) {
   .search-container {
     position: absolute;
     right: calc(50vw - 48%);
     top: 50%;
     transform: translateY(-50%);
   }
+}
 
-
+@media (max-width: 768px) {
   .blog-cards-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -707,10 +698,12 @@
   .card-title {
     font-size: 1.25rem;
   }
+
   .card-footer {
     flex-wrap: wrap;
     gap: 0.5rem;
   }
+
   .card-footer .card-link {
     align-self: flex-end;
   }

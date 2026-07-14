@@ -145,7 +145,11 @@
   margin-left: -14px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  .tags-container {
+    gap: 1.5rem;
+  }
+
   .tag-posts li {
     flex-direction: column;
     align-items: flex-start;
@@ -154,6 +158,9 @@
 
   .tag-posts .post-date {
     align-self: flex-end;
+  }
+  h2 {
+    margin-top: 32px;
   }
 }
 

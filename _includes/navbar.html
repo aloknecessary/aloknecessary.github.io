@@ -1,10 +1,11 @@
 <nav class="nav-bar">
+  <a href="{{ '/' | relative_url }}" class="nav-brand" aria-label="Home">AD</a><span class="nav-brand-separator">|</span>
   {% if page.layout == 'blog' or page.layout == 'categories' or page.layout == 'tags' or page.layout == 'series' %}
     <span class="nav-active">{% if page.layout == 'blog' %}Article{% elsif page.layout == 'categories' %}Categories{% elsif page.layout == 'tags' %}Topics{% else %}Series{% endif %}</span>
-    <span class="nav-separator nav-desktop-only">|</span>
-    <a id="backButton" class="nav-desktop-only">← Back</a>
     <span class="nav-separator">|</span>
-    <a href="{{ '/blogs' | relative_url }}">← Back to Blogs</a>
+    <a id="backButton">← Back</a>
+    <span class="nav-separator nav-desktop-only">|</span>
+    <a href="{{ '/blogs' | relative_url }}" class="nav-desktop-only">← Back to Blogs</a>
     {% if page.layout != 'series' %}
     <span class="nav-separator nav-desktop-only">|</span>
     <a href="{{ '/series' | relative_url }}" class="nav-desktop-only">Series</a>
@@ -23,6 +24,7 @@
         Browse <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="nav-browse-dropdown">
+        <a href="{{ '/blogs' | relative_url }}">Blogs</a>
         {% if page.layout != 'series' %}<a href="{{ '/series' | relative_url }}">Series</a>{% endif %}
         {% if page.layout != 'categories' %}<a href="{{ '/categories' | relative_url }}">Categories</a>{% endif %}
         {% if page.layout != 'tags' %}<a href="{{ '/tags' | relative_url }}">Topics</a>{% endif %}
@@ -33,8 +35,6 @@
   {% elsif page.layout == 'blogs' %}
     <div class="nav-left">
       <span class="nav-active">Blogs</span>
-      <span class="nav-separator">|</span>
-      <a href="{{ '/' | relative_url }}">Home</a>
       <span class="nav-separator">|</span>
       <a href="{{ '/series' | relative_url }}">Series</a>
       <span class="nav-separator nav-desktop-only">|</span>
@@ -51,6 +51,8 @@
           <a href="{{ '/tags' | relative_url }}">Topics</a>
         </div>
       </div>
+      <span class="nav-separator">|</span>
+      <a href="{{ '/' | relative_url }}">Home</a>
     </div>
     <div class="search-container">
       <svg class="search-icon-inside" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
