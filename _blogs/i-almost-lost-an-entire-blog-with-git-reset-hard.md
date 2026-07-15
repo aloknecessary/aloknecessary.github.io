@@ -102,7 +102,7 @@ Everything came back. Every word, every code block, every carefully crafted para
 Most Git confusion dissolves once you internalize these three zones:
 
 | Area | What Lives Here |
-|------|----------------|
+| ---- | --------------- |
 | Working Directory | Files on disk (what you see in your editor) |
 | Index (Staging Area) | Files staged for the next commit |
 | Repository (HEAD) | The committed history |
@@ -110,7 +110,7 @@ Most Git confusion dissolves once you internalize these three zones:
 ### What each reset mode touches
 
 | Command | Working Tree | Index | HEAD |
-|---------|:---:|:---:|:---:|
+| ------- | :---: | :---: | :---: |
 | `git reset --soft` | ✗ | ✗ | ✓ |
 | `git reset --mixed` (default) | ✗ | ✓ | ✓ |
 | `git reset --hard` | ✓ | ✓ | ✓ |
@@ -229,7 +229,7 @@ This has rescued repositories that seemed beyond saving.
 ## Git Command Decision Matrix
 
 | I want to... | Use |
-|---|---|
+| --- | --- |
 | Undo a local commit | `git reset` |
 | Undo a pushed commit | `git revert` |
 | Recover lost work | `git reflog` |
