@@ -3,7 +3,7 @@ title: "I Almost Lost an Entire Blog with git reset --hard (And Git Saved Me)"
 published: false
 description: "I ran git reset --hard on autopilot and watched my blog post vanish. Here's how git reflog saved me — and the mental model every developer should internalize."
 canonical_url: "https://aloknecessary.github.io/blogs/i-almost-lost-an-entire-blog-with-git-reset-hard/?utm_source=devto&utm_medium=crosspost&utm_campaign=git-reset-hard"
-tags: git, beginners, productivity, devops
+tags: git, programming, productivity, devops
 cover_image:
 ---
 

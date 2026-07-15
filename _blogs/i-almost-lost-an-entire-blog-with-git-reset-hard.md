@@ -1,7 +1,7 @@
 ---
 title: "I Almost Lost an Entire Blog with git reset --hard (And Git Saved Me)"
-date: 2025-07-14
-last_modified_at: 2025-07-14
+date: 2026-06-14
+last_modified_at: 2026-06-14
 author: Alok Ranjan Daftuar
 description: "A real incident turned into a complete guide to Git recovery — reflog, reset modes, merge vs rebase, and the mental model every developer should internalize."
 excerpt: "I ran git reset --hard on autopilot and watched my blog post vanish. Fortunately, Git is far more resilient than most developers realize. This post covers the recovery, the mental model behind commits and references, and the commands every developer should know before they need them."
