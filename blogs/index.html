@@ -4,6 +4,11 @@ title: Blogs
 hide_header: false
 ---
 
+<div class="search-result-count" id="search-result-count">
+  <span id="search-result-text"></span>
+  <button class="search-result-dismiss" id="search-result-dismiss" aria-label="Clear search">&times;</button>
+</div>
+
 <div class="blog-cards-grid">
   {% assign blogs = site.blogs | sort: "date" | reverse %}
   {% for post in blogs %}
@@ -57,6 +62,6 @@ hide_header: false
     <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
     <path d="M9 9l4 4M13 9l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
   </svg>
-  <h3 class="no-results-title">No matching blogs</h3>
-  <p class="no-results-text">Nothing matched your search. Try different keywords or <button class="clear-search-link" id="clear-search-link">clear search</button>.</p>
+  <h3 class="no-results-title">No matching articles</h3>
+  <p class="no-results-text">Try different keywords or <button class="clear-search-link" id="clear-search-link">clear search</button>.</p>
 </div>
