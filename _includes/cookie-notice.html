@@ -47,7 +47,7 @@
             Helps improve content and user experience
           </div>
         </div>
-        <div class="toggle-indicator" id="analytics-toggle" style="width: 50px; height: 28px; background: #d1d5db; border-radius: 14px; position: relative; transition: all 0.3s; cursor: pointer;" onclick="cookieConsent.toggleIndicator()">
+        <div class="toggle-indicator" id="analytics-toggle" style="width: 50px; height: 28px; border-radius: 14px; position: relative; transition: all 0.3s;">
           <div class="toggle-thumb" style="width: 22px; height: 22px; background: white; border-radius: 50%; position: absolute; top: 3px; left: 3px; transition: all 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.2);"></div>
         </div>
       </div>
@@ -179,6 +179,10 @@ a[href="/privacy-policy"]:hover {
 }
 
 /* Toggle active state */
+.toggle-indicator {
+  background: #d1d5db;
+}
+
 .toggle-indicator.active {
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
 }
@@ -392,6 +396,13 @@ const cookieConsent = {
   showPopup() {
     const popup = document.getElementById('cookie-consent-popup');
     if (popup) {
+      // Sync toggle with stored preference
+      const consent = this.getConsentCookie();
+      const toggle = document.getElementById('analytics-toggle');
+      if (toggle && consent) {
+        toggle.classList.toggle('active', consent.analytics);
+      }
+
       popup.style.display = 'flex';
       popup.classList.remove('fade-out');
       
