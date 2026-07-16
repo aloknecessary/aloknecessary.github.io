@@ -1,6 +1,6 @@
 ---
 title: "Designing for Partial Failure: Why 'Everything is Highly Available' Is a Myth"
-published: false
+published: true
 description: A production-grounded guide to designing distributed systems that degrade gracefully — cascading failure anatomy, circuit breakers, bulkheads, timeout hierarchies, and observability for degraded states
 tags: distributedsystems, architecture, reliability, systemdesign
 canonical_url: https://aloknecessary.github.io/blogs/designing_for_partial_failure/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=designing-for-partial-failure

@@ -1,6 +1,6 @@
 ---
 title: "Designing Cloud-Native Systems That Survive Region-Level Failures"
-published: false
+published: true
 description: A practical architecture guide to surviving region-level cloud failures — multi-AZ vs multi-region trade-offs, active-passive and active-active patterns, data replication strategies, failover automation, and a cost-aware decision framework
 tags: cloud, architecture, aws, distributedsystems
 canonical_url: https://aloknecessary.github.io/blogs/cloud_native_region_failure_architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-native-region-failure

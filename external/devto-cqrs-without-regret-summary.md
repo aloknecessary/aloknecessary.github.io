@@ -1,6 +1,6 @@
 ---
 title: CQRS Without Regret - Where It Works, Where It Breaks, and How to Evolve Safely
-published: false
+published: true
 description: A pragmatic guide to CQRS covering when it genuinely works, where it predictably breaks, and safe migration strategies from CRUD systems
 tags: architecture, cqrs, systemdesign, microservices
 canonical_url: https://aloknecessary.github.io/blogs/cqrs-without-regret/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cqrs-without-regret

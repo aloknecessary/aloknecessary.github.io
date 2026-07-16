@@ -1,6 +1,6 @@
 ---
 title: "LLM Evaluation in Production: Building the Eval Pipeline That Runs on Every Deploy"
-published: false
+published: true
 description: Faithfulness scoring, LLM-as-Judge calibration, RAGAS integration, golden dataset management, and wiring it into CI/CD — the eval infrastructure that catches quality regressions before users do
 tags: ai, machinelearning, devops, architecture
 canonical_url: https://aloknecessary.github.io/blogs/llm-evaluation-in-production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=llm-evaluation-in-production

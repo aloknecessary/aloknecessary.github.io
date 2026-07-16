@@ -1,6 +1,6 @@
 ---
 title: "Cloud Cost Architecture: Engineering FinOps Into the System, Not Onto It"
-published: false
+published: true
 description: A systems-level approach to cloud cost governance — commitment tiers, cost allocation tagging, Kubernetes cost attribution, pipeline cost gates, and guardrails that block expensive changes before they deploy
 tags: cloud, finops, devops, architecture
 canonical_url: https://aloknecessary.github.io/blogs/cloud-cost-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-cost-architecture
