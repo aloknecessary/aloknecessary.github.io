@@ -1,6 +1,6 @@
 ---
 title: "Event-Driven Architecture: The Dual Write Problem and How to Solve It"
-published: false
+published: true
 description: Why writing to a database and publishing an event without atomicity fails silently in microservices — and the three solutions that fix it permanently
 tags: microservices, architecture, distributedsystems, eventdriven
 canonical_url: https://aloknecessary.github.io/blogs/dual-write-problem-in-event-driven-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=dual-write-problem

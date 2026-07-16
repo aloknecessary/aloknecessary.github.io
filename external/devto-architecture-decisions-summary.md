@@ -1,6 +1,6 @@
 ---
 title: Architecture Decisions That Actually Matter in Production
-published: false
+published: true
 description: Real-world architectural decisions that impact production systems—from choosing simplicity over premature scalability to treating cost as an architectural constraint
 tags: architecture, systemdesign, cloud, kubernetes
 canonical_url: https://aloknecessary.github.io/blogs/architecture-decisions/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=architecture-decisions

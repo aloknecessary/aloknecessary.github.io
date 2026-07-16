@@ -1,6 +1,6 @@
 ---
 title: "Agentic RAG: Designing Self-Correcting Retrieval Loops for Production"
-published: false
+published: true
 description: Query planning, iterative retrieval, reflection agents, tool-call orchestration, routing logic, failure isolation, and the cost trade-offs that determine when agentic loops earn their complexity
 tags: ai, architecture, python, machinelearning
 canonical_url: https://aloknecessary.github.io/blogs/designing-self-correcting-retrieval-loops-for-production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=agentic-rag-self-correcting-retrieval

@@ -1,6 +1,6 @@
 ---
 title: "BM25 vs. Vector Search: Choosing the Right Retrieval Strategy for Production Systems"
-published: false
+published: true
 description: A production-focused comparison of BM25 and vector search — when each wins, where each fails, hybrid retrieval with RRF, re-ranking strategies, and a decision framework for RAG and search systems
 tags: ai, search, architecture, machinelearning
 canonical_url: https://aloknecessary.github.io/blogs/bm25_vs_vector_search/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=bm25-vs-vector-search

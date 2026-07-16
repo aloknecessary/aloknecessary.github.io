@@ -1,6 +1,6 @@
 ---
 title: "Modernising the Lifted Workload: The Architectural Decisions That Separate Cloud-Native from Cloud-Hosted"
-published: false
+published: true
 description: A modernisation roadmap for lifted workloads — workload assessment, managed service substitution, stateless redesign, the strangler fig pattern, Kubernetes readiness criteria, and autoscaling that reflects real load
 tags: kubernetes, cloud, architecture, devops
 canonical_url: https://aloknecessary.github.io/blogs/modernising-the-lifted-workload/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=modernising-the-lifted-workload
