@@ -474,7 +474,9 @@ tr:nth-child(even) {
 }
 
 .nav-bar.stuck {
-  background: var(--bg-base);
+  background: color-mix(in srgb, var(--bg-base) 75%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border-bottom-color: var(--border);
 }
 
@@ -565,7 +567,7 @@ tr:nth-child(even) {
 
 .nav-browse-menu {
   position: relative;
-  margin-left: 0.5rem;
+  /* margin-left: 0.5rem; */
 }
 
 .nav-browse-trigger {
