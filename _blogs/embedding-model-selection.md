@@ -1,7 +1,7 @@
 ---
 title: "Embedding Model Selection for Production: The Decision Nobody Documents"
-date: 2026-07-22
-last_modified_at: 2026-07-22
+date: 2026-07-17
+last_modified_at: 2026-07-17
 author: Alok Ranjan Daftuar
 description: "A production decision framework for choosing embedding models — MTEB and domain benchmarking methodology, dimensionality and Matryoshka trade-offs, cost modeling at corpus scale, the re-embedding migration problem, and when fine-tuned domain embeddings beat general-purpose ones."
 excerpt: "Every RAG architecture diagram has a box labeled 'embed.' Almost nobody documents how that box's contents got chosen, and almost everybody regrets the choice within eighteen months. This post is the decision framework that choice deserves."
