@@ -202,7 +202,7 @@ body {
   transform: translateY(-6px);
   pointer-events: none;
   transition: all 0.2s ease;
-  z-index: 10;
+  z-index: 200;
 }
 
 .theme-dropdown.open .theme-panel {
@@ -499,6 +499,10 @@ tr:nth-child(even) {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.nav-bar a {
+  font-weight: 600;
 }
 
 .nav-bar a:hover {
