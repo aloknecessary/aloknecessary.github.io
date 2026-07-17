@@ -186,6 +186,12 @@
   display: flex;
 }
 
+@media (min-width: 1025px) {
+  .search-container.has-text .search-clear {
+    display: flex;
+  }
+}
+
 /* Grid Layout */
 
 .blog-cards-grid {
@@ -580,6 +586,64 @@
 
 
 /* ========================================
+   Search Result Count
+   ======================================== */
+
+.search-result-count {
+  display: none;
+  font-size: 0.875rem;
+  color: var(--primary);
+  font-weight: 600;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem 0.85rem;
+  margin: 0 1rem 1rem;
+  width: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-result-count.visible {
+  display: flex;
+}
+
+.search-result-dismiss {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  font-size: 1.4rem;
+  transition: color 0.2s ease;
+}
+
+.search-result-dismiss:hover {
+  color: var(--text-primary);
+}
+
+/* ========================================
+   Search Highlight
+   ======================================== */
+
+.search-highlight {
+  background: var(--highlight-bg);
+  color: var(--highlight-color);
+  border-radius: 3px;
+  padding: 0.1em 0.25em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  -webkit-text-fill-color: var(--highlight-color);
+}
+
+.card-tags .tag.tag-matched {
+  background: var(--highlight-bg) !important;
+  color: var(--highlight-color) !important;
+  font-weight: 600;
+}
+
+/* ========================================
    No Results Message
    ======================================== */
 
@@ -600,13 +664,13 @@
 .no-results-icon {
   color: var(--muted);
   margin-bottom: 1rem;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .no-results-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   margin: 0 0 0.5rem 0;
 }
 

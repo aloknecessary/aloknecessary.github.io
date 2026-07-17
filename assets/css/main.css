@@ -45,6 +45,8 @@
   --control-text: var(--text-primary);
   --control-hover-border: var(--primary);
   --control-focus-ring: var(--primary);
+  --highlight-bg: linear-gradient(120deg, #a5f3fc 0%, #c4b5fd 100%);
+  --highlight-color: #1e1b4b;
 }
 
 /* ---------------- DARK MODE ---------------- */
@@ -56,6 +58,8 @@
   --domain-ai: #a78bfa;
   --domain-infra: #34d399;
   --domain-platform: #f472b6;
+  --highlight-bg: linear-gradient(120deg, #06b6d4 0%, #8b5cf6 100%);
+  --highlight-color: #ffffff;
 
   --bg-soft: #0f172a;
   --bg-base: #0b1220;
@@ -198,7 +202,7 @@ body {
   transform: translateY(-6px);
   pointer-events: none;
   transition: all 0.2s ease;
-  z-index: 10;
+  z-index: 200;
 }
 
 .theme-dropdown.open .theme-panel {
@@ -495,6 +499,11 @@ tr:nth-child(even) {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.nav-bar a {
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .nav-bar a:hover {

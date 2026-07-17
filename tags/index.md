@@ -1,6 +1,6 @@
 ---
 layout: tags
-title: Tags
+title: Explore by Topic
 permalink: /tags/
 hide_header: false
 ---

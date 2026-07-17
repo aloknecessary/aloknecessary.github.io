@@ -1,6 +1,6 @@
 ---
 layout: categories
-title: Categories
+title: Browse by Subject
 permalink: /categories/
 hide_header: false
 ---
