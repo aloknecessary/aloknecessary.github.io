@@ -503,6 +503,7 @@ tr:nth-child(even) {
 
 .nav-bar a {
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .nav-bar a:hover {
