@@ -59,9 +59,9 @@ hide_header: true
 
 ## 🚀 About Me
 
-I am a **Solution Architect** with deep, hands-on experience across **full-stack engineering, cloud architecture, DevOps, and system design**. Over the past decade, I have evolved from an individual contributor into a technical leader who architects, builds, reviews, and scales production-grade systems.
+I am a **Solution Architect** with deep, hands-on experience across **full-stack engineering, cloud architecture, DevOps, system design, and pre-sales technical scoping**. Over the past decade, I have evolved from an individual contributor into a technical leader who architects, builds, reviews, and scales production-grade systems across fintech, accessibility tech, IoT, enterprise security, and global tech.
 
-My work focuses on translating **business problems into pragmatic, scalable, and cost-efficient technical solutions**. I believe strong architecture is driven by clarity, resilience, and long-term maintainability—not unnecessary complexity.
+My work focuses on translating **business problems into pragmatic, scalable, and cost-efficient technical solutions** — from greenfield platform builds and multi-phase modernisations to reusable microservice design and compliance-grade architectures. I believe strong architecture is driven by clarity, resilience, and long-term maintainability—not unnecessary complexity.
 
 ---
 
@@ -210,6 +210,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 > * Designed cloud-native architectures with Docker, Kubernetes, and automated CI/CD pipelines
 > * **Led AI-powered Playwright automation initiative** for Client's debt collection platform, increasing test coverage from 35% to 81%+ and delivering 2500+ test cases across 40+ modules in 2 months with a 4-5 engineer team
 > * **Architected and delivered production-grade AI POC** for natural language data visualization using OpenAI GPT Engine—enabling business users to generate interactive Chart.js visualizations from tabular data via conversational prompts, live on company POC list
+> * **Architected and delivered CCMR3 — CollectLogic** across 4 major phases: led 40+ engineers through greenfield go-live, stepped up as Solution Architect to define roadmap, deliver 100K+ record bulk import, full Legal module, enterprise permission strategy, and AI exploration — serving 500+ daily active users
 > * Collaborated with Microsoft teams on Bing and Microsoft Admin Portal platforms  
 > * Led cost optimization initiatives resulting in significant cloud infrastructure savings  
 > * Led 10+ pre-sales engagements — technical discovery, effort estimation, architecture proposals, team composition planning, and phased delivery roadmaps across fintech, healthcare, SaaS, and IoT domains

@@ -94,7 +94,114 @@ hide_header: false
         </div>
       </article>
 
-      <!-- CCMR3 -->
+      <!-- AT/AD Platform -->
+      <article class="timeline-item" data-color="purple" itemscope itemtype="https://schema.org/Project">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">Oct 2025 — Dec 2025</span>
+          <span class="timeline-badge badge-arch">Solution Architect</span>
+        </div>
+        <h3 class="timeline-title" itemprop="name">AT/AD Platform — Y4J</h3>
+        <p class="timeline-company">Accessibility Tech · Assistive Technology & Device Discovery Platform for PwDs</p>
+        <div class="project-card reveal">
+          <div class="card-top">
+            <span class="card-title">Centralized Accessibility Platform</span>
+            <div class="metrics-row">
+              <div class="metric-chip"><span class="metric-icon">👥</span><span class="metric-val">10K<span style="color:var(--muted)">+</span></span><span class="metric-key">Concurrent Users</span></div>
+              <div class="metric-chip"><span class="metric-icon">📦</span><span class="metric-val">10K<span style="color:var(--muted)">+</span></span><span class="metric-key">Listed Products</span></div>
+              <div class="metric-chip"><span class="metric-icon">🌐</span><span class="metric-val">4</span><span class="metric-key">Languages</span></div>
+            </div>
+          </div>
+          <p class="card-desc">A centralized, WCAG 2.1-compliant digital platform connecting Persons with Disabilities (PwDs), caregivers, employers, and AT/AD vendors — designed to improve accessibility, awareness, and informed decision-making around assistive technology at scale.</p>
+          <p class="card-section-label">Architectural Contributions</p>
+          <ul class="highlight-list">
+            <li>Architected a multi-role access model covering PwD users, employers, caregivers, vendors, AT partners, and administrators — with role-based permissions, vendor approval workflows, and content moderation capabilities.</li>
+            <li>Designed an AI-powered device matching engine delivering personalized AT/AD recommendations based on disability profile, severity, occupational needs, and lifestyle context — with suitability-ranked output of top 5–10 devices per user.</li>
+            <li>Architected a Vendor & Distributor Portal with full product lifecycle management, multi-image uploads, optional 3D mockup support, and location-based provider discovery.</li>
+            <li>Defined DPDP Act compliance, API-ready interoperability (LMS, eCommerce, CRM), and multilingual support (Hindi, English + 2 regional languages) as core architectural constraints.</li>
+            <li>Scoped future roadmap including eCommerce module, micro-entrepreneurship reseller onboarding, analytics dashboards for NGOs and policymakers, and an embedded LMS for device usage training.</li>
+          </ul>
+          <div class="callout-box" style="border-left-color: var(--accent3); background: rgba(139,92,246,0.06); border-color: rgba(139,92,246,0.18);">
+            <strong>Authentik SSO — Unified Identity Across y4j</strong><br>
+            Integrated <strong>Authentik</strong> as the centralized Identity Provider (IdP) for Single Sign-On across the AT/AD platform and all other y4j applications via OAuth2/OIDC — establishing a unified login experience across the entire product suite. Designed the SSO integration layer covering authentication flows, application registration, and user session management.
+          </div>
+          <div class="divider"></div>
+          <p class="card-section-label">Architectural Decisions</p>
+          <div class="arch-pills">
+            <span class="arch-pill">WCAG 2.1 Compliance</span>
+            <span class="arch-pill">AI Device Matching Engine</span>
+            <span class="arch-pill">Authentik SSO (OAuth2/OIDC)</span>
+            <span class="arch-pill">Multi-role Access Model</span>
+            <span class="arch-pill">Vendor Portal</span>
+            <span class="arch-pill">DPDP Act Compliance</span>
+            <span class="arch-pill">API-ready Architecture</span>
+            <span class="arch-pill">Multilingual Support</span>
+          </div>
+          <div class="divider"></div>
+          <p class="card-section-label">Key NFRs</p>
+          <div class="tech-stack">
+            <span class="tech-tag">WCAG 2.1</span><span class="tech-tag">DPDP Compliance</span><span class="tech-tag">10K Concurrent Users</span>
+            <span class="tech-tag">Sub-3s Page Load</span><span class="tech-tag">Multilingual</span><span class="tech-tag">API-ready</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CredAble TMS & Scheduler -->
+      <article class="timeline-item" data-color="cyan" itemscope itemtype="https://schema.org/Project">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">Apr 2025 — Jun 2025</span>
+          <span class="timeline-badge badge-arch">Solution Architect</span>
+        </div>
+        <h3 class="timeline-title" itemprop="name">TMS & Scheduler — CredAble</h3>
+        <p class="timeline-company">Fintech · Platform-level Microservices for Multi-product Communication & Scheduling</p>
+        <div class="project-card reveal">
+          <div class="card-top">
+            <span class="card-title">Reusable Platform Microservices</span>
+            <div class="metrics-row">
+              <div class="metric-chip"><span class="metric-icon">📡</span><span class="metric-val">5</span><span class="metric-key">Channels</span></div>
+              <div class="metric-chip"><span class="metric-icon">🔁</span><span class="metric-val">Multi</span><span class="metric-key">Product Reuse</span></div>
+            </div>
+          </div>
+          <p class="card-desc">Architected two platform-level microservices for CredAble — a centralized Template Management System (TMS) and a generic Scheduler Service — both designed for reuse across multiple products within CredAble's ecosystem without duplication of infrastructure.</p>
+          <p class="card-section-label">Template Management System (TMS)</p>
+          <ul class="highlight-list">
+            <li>Designed TMS as a standalone microservice with an embedded Micro Frontend (Micro-FE) — enabling centralized template storage with decentralized, per-product usage across Email, SMS, WhatsApp, In-App Banner, and Document channels.</li>
+            <li>Defined REST API contracts for template retrieval by Template ID and Application Code, supporting dynamic content population via FreeMarker/Thymeleaf templating with a WYSIWYG authoring experience and real-time preview.</li>
+            <li>Architected the In-App Documentation Configuration module with role-based document applicability (Buyer, Supplier, Both), configurable trigger instances, delivery mode selection, and digital signing method integration (OTP, DIGIO, Clickwrap, Wet Signature).</li>
+          </ul>
+          <div class="callout-box">
+            <strong>Micro Frontend Embedding Strategy</strong><br>
+            Each product embeds the TMS Micro-FE with its own UI styling while sharing the unified backend — achieving centralized governance over template management without forcing a monolithic UI dependency. This pattern allowed CredAble's products to maintain visual consistency with their own design systems while benefiting from a single source of truth for all communication templates.
+          </div>
+          <p class="card-section-label">Scheduler Service</p>
+          <ul class="highlight-list">
+            <li>Architected a centralized, reusable scheduling engine supporting both time-triggered and event-driven task execution across products — eliminating the need for per-product scheduling infrastructure.</li>
+            <li>Designed for modularity and independent deployability, with clear separation of scheduling concerns from business logic execution.</li>
+          </ul>
+          <div class="divider"></div>
+          <p class="card-section-label">Architectural Decisions</p>
+          <div class="arch-pills">
+            <span class="arch-pill">Microservice Architecture</span>
+            <span class="arch-pill">Micro Frontend (Micro-FE)</span>
+            <span class="arch-pill">Centralized Template Storage</span>
+            <span class="arch-pill">FreeMarker / Thymeleaf</span>
+            <span class="arch-pill">REST API Contracts</span>
+            <span class="arch-pill">Role-based Document Workflows</span>
+            <span class="arch-pill">Generic Scheduler Engine</span>
+            <span class="arch-pill">Event-driven Task Execution</span>
+          </div>
+          <div class="divider"></div>
+          <p class="card-section-label">Tech Stack</p>
+          <div class="tech-stack">
+            <span class="tech-tag">Microservices</span><span class="tech-tag">Micro Frontend</span><span class="tech-tag">REST APIs</span>
+            <span class="tech-tag">FreeMarker</span><span class="tech-tag">Thymeleaf</span><span class="tech-tag">WYSIWYG Editor</span>
+            <span class="tech-tag">OAuth2</span><span class="tech-tag">Scheduler Engine</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CCMR3 — Overview -->
       <article class="timeline-item" data-color="blue" itemscope itemtype="https://schema.org/Project">
         <div class="timeline-node"></div>
         <div class="timeline-meta">
@@ -114,83 +221,44 @@ hide_header: false
               <div class="metric-chip"><span class="metric-icon">📅</span><span class="metric-val">4</span><span class="metric-key">Major Phases</span></div>
             </div>
           </div>
-          <p class="card-desc">A prominent financial services company specialising in debt collection rebuilt their core platform — CollectLogic — from a legacy system into a modern, cloud-native application handling complex regulatory operations at scale.</p>
+          <p class="card-desc">A prominent financial services company specialising in debt collection rebuilt their core platform — CollectLogic — from a legacy system into a modern, cloud-native application handling complex regulatory operations at scale. Delivered across 4 major phases, evolving from Engineering Lead at foundation to Solution Architect driving long-term platform strategy.</p>
           <div class="divider"></div>
-          <p class="card-section-label">Phase 1 — Engineering Lead <span class="phase-focus">· Foundation & Go-Live</span></p>
-          <ul class="highlight-list">
-            <li>Architected containerised infrastructure; defined Docker/Kubernetes deployment topology on Azure AKS from scratch.</li>
-            <li>Designed and implemented GitHub Actions CI/CD pipelines across all services — backend APIs, frontend, and integration workers.</li>
-            <li>Led complex database migration: schema normalisation, deduplication, and data integrity enforcement across a large legacy dataset.</li>
-            <li>Integrated third-party payment and data services: <strong>Live Vox, Tradeline, USAePay, Choice,</strong> and <strong>Razorpay</strong>.</li>
-            <li>Implemented Redis caching delivering significant, measurable performance improvements over the legacy system.</li>
-            <li>Coordinated 40+ team members across Dev, QA, and Leads to a successful <strong>Go-Live on April 29th 2024</strong>.</li>
-          </ul>
-          <div class="divider"></div>
-          <p class="card-section-label">Phase 2 — Solution Architect <span class="phase-focus">· Strategy & Scale</span></p>
-          <ul class="highlight-list">
-            <li>Defined long-term technical strategy, architectural roadmap, and cross-team design standards.</li>
-            <li>Drove system design reviews ensuring all new development aligns with architectural principles and NFRs.</li>
-            <li>Collaborated with Business Analysts to translate business requirements into concrete architecture decisions.</li>
-            <li>Mentored senior engineers and maintained alignment between stakeholder expectations and delivery.</li>
-          </ul>
-          <div class="callout-box">
-            <strong>Bulk Data Operations at Scale</strong><br>
-            Designed and delivered a high-throughput bulk import system supporting <strong>100,000+ records per operation</strong>.
-            The system handles both workflow-driven imports (via configurable business workflows) and direct generic update
-            modules for mass record updates. Additionally, automated SFTP-based ingestion pipelines allow records to be
-            updated from controlled SFTP endpoints configured via a third-party service — enabling scheduled,
-            zero-touch data synchronisation for client integrations.
-          </div>
-          <div class="callout-box" style="border-left-color: var(--accent3); background: rgba(139,92,246,0.06); border-color: rgba(139,92,246,0.18);">
-            <strong>Automated & Manual Workflows — Quartz Scheduler Microservice</strong><br>
-            Built a dedicated workflow engine powered by <strong>Quartz Scheduler</strong>, deployed as a standalone
-            microservice. The system supports both <em>automated</em> workflows (time-triggered or event-driven, running
-            hands-free on schedule) and <em>manual</em> workflows (operator-initiated, configurable multi-step processes).
-            Workflows orchestrate actions across the platform — from data updates and bulk operations to notifications and
-            status transitions — giving business stakeholders full control over operational logic without touching code.
-          </div>
-          <div class="callout-box" style="border-left-color: var(--accent2); background: rgba(6,182,212,0.06); border-color: rgba(6,182,212,0.18);">
-            <strong>Custom SQL Query Module — Secure Read-only Execution</strong><br>
-            Delivered a powerful in-app SQL query execution module enabling DBAs and authorised stakeholders to write and
-            run custom SQL queries directly within the platform — with results rendered inline. For security, the module
-            is strictly <strong>read-only</strong>: all write operations are blocked at the application layer, ensuring
-            no risk of accidental or unauthorised data modification while still giving technical users the flexibility
-            they need for ad-hoc analysis and reporting.
-          </div>
-          <div class="callout-box" style="border-left-color: var(--green); background: rgba(16,185,129,0.06); border-color: rgba(16,185,129,0.18);">
-            <strong>Task Management Module</strong><br>
-            Built a purpose-built task system where administrators can create, assign, and track tasks for individual
-            agents — enabling structured work management across the collections team. Tasks carry priority, due dates,
-            status tracking, and assignment history, giving supervisors visibility into workload distribution and
-            ensuring no follow-up or action item falls through the cracks.
-          </div>
-          <div class="callout-box" style="border-left-color: var(--gold); background: rgba(245,158,11,0.06); border-color: rgba(245,158,11,0.18);">
-            <strong>Role-aware Dashboards — Agent & Admin Views</strong><br>
-            Designed a dual-mode dashboard system. Each <em>agent</em> sees a personalised dashboard reflecting their
-            own daily progress — calls handled, tasks completed, targets vs. actuals — keeping individuals accountable
-            and motivated. <em>Admins</em> get a consolidated team-wide view with the ability to filter by agent, date
-            range, or metric — enabling supervisors to monitor overall team health and drill into individual performance
-            without leaving the platform.
+          <p class="card-section-label">Tech Stack</p>
+          <div class="tech-stack">
+            <span class="tech-tag">.NET</span><span class="tech-tag">React</span><span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MSSQL</span><span class="tech-tag">Redis</span><span class="tech-tag">Azure AKS</span>
+            <span class="tech-tag">Docker</span><span class="tech-tag">Kubernetes</span><span class="tech-tag">GitHub Actions</span>
+            <span class="tech-tag">Quartz Scheduler</span><span class="tech-tag">SFTP Integration</span>
           </div>
           <div class="divider"></div>
-          <p class="card-section-label">Phase 3 — Solution Architect <span class="phase-focus">· Platform Stabilisation & Servicing Expansion</span></p>
-          <ul class="highlight-list">
-            <li>Strengthened core collections engine — enhanced debtor management, linked accounts, co-debtor handling, SSN/EIN-based account linking with masking and access controls.</li>
-            <li>Expanded payment lifecycle — implemented settlement management, recurring payments, ACH workflows, late fee handling, financial waterfall processing, and processor integrations (Anteloope, USAePay).</li>
-            <li>Scaled workflow engine — attribute-based triggers, workflow variables, executable actions, run-on-demand queues, reshuffling, and operational monitoring with failure handling.</li>
-            <li>Delivered reporting overhaul — dynamic SQL-based reporting, advanced categorical search, customisable dashboards, debtor insights, and export capabilities.</li>
-            <li>Integrated external systems — LiveVox, Renkim, Palinode, IDI; enhanced letter generation, document management, and communication tracking.</li>
-            <li>Hardened security posture — MFA implementation, role management improvements, client restrictions, activity logging, and comprehensive audit trails.</li>
-            <li>Drove platform-wide performance optimisations — batching, bundling, background processing, centralised logging, database tuning, and large-scale import improvements.</li>
-          </ul>
-          <div class="callout-box">
-            <strong>Bankruptcy & Legal Foundations</strong><br>
-            Enhanced bankruptcy management with linked-account synchronisation, validation rules, and case management.
-            Established dispute management workflows and compliance integrations that became the foundation for the
-            full Legal module delivered in Phase 4.
+          <div class="phase-order-toggle">
+            <span class="phase-order-label">View phases:</span>
+            <div class="phase-order-buttons">
+              <button class="phase-order-btn active" data-order="latest">⬇ Latest First</button>
+              <button class="phase-order-btn" data-order="chrono">⬆ Oldest First</button>
+            </div>
           </div>
-          <div class="divider"></div>
-          <p class="card-section-label">Phase 4 — Solution Architect <span class="phase-focus">· Legal Platform, Permissions & AI Exploration</span></p>
+        </div>
+      </article>
+
+      <!-- CCMR3 — Phase 4 -->
+      <article class="timeline-item ccmr3-phase" data-color="coral" itemscope itemtype="https://schema.org/Project">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <span class="timeline-badge badge-arch badge-current">Solution Architect</span>
+          <span class="timeline-date">May 2026 — Present</span>
+        </div>
+        <h3 class="timeline-title" itemprop="name">CCMR3 · Phase 4 — Legal Platform, Permissions & AI Exploration</h3>
+        <p class="timeline-company">Financial Services · Legal Module, Enterprise Permissions & Intelligent Automation</p>
+        <div class="project-card reveal">
+          <div class="card-top">
+            <span class="card-title">Legal Platform, Permissions & AI Exploration</span>
+            <div class="metrics-row">
+              <div class="metric-chip"><span class="metric-icon">📊</span><span class="metric-val">500<span style="color:var(--muted)">+</span></span><span class="metric-key">Daily Active Users</span></div>
+              <div class="metric-chip"><span class="metric-icon">⚖️</span><span class="metric-val">End-to-End</span><span class="metric-key">Legal Module</span></div>
+            </div>
+          </div>
+          <p class="card-desc">Delivered the full Legal module, enterprise-wide Permission Visibility Strategy, and AI exploration initiatives — completing the platform's evolution into a comprehensive, compliance-grade debt collection system.</p>
           <ul class="highlight-list">
             <li>Architected and delivered end-to-end <strong>Legal module</strong> — legal forms, document generation, suit/judgment/settlement processing, plaintiff/defendant management, per diem computations, and legal-specific workflows.</li>
             <li>Implemented <strong>Permission Visibility Strategy</strong> across the entire platform — access inheritance, disabled-state permissions, access request workflows, role-based visibility controls, and parent-child access management.</li>
@@ -203,29 +271,153 @@ hide_header: false
           <div class="callout-box" style="border-left-color: var(--accent3); background: rgba(139,92,246,0.06); border-color: rgba(139,92,246,0.18);">
             <strong>AI & Intelligent Automation Initiatives</strong><br>
             Initiated exploration of AI-enabled capabilities including a <strong>Smart Assistant</strong>,
-            AI-driven data ingestion, intelligent import mapping, workflow recommendations,
-            auto-suggestions, and operational insights — laying groundwork for the next evolution
-            of the platform's intelligence layer.
+            AI-driven data ingestion, intelligent import mapping, workflow recommendations, auto-suggestions,
+            and operational insights — laying groundwork for the next evolution of the platform's intelligence layer.
           </div>
           <div class="divider"></div>
           <p class="card-section-label">Architectural Decisions</p>
           <div class="arch-pills">
-            <span class="arch-pill">Redis Caching</span>
-            <span class="arch-pill">Azure AKS</span>
-            <span class="arch-pill">GitHub Actions CI/CD</span>
-            <span class="arch-pill">Bulk Import Engine (100K+)</span>
-            <span class="arch-pill">SFTP Automated Ingestion</span>
-            <span class="arch-pill">Quartz Scheduler Microservice</span>
-            <span class="arch-pill">Read-only SQL Execution Module</span>
-            <span class="arch-pill">Role-aware Dashboards</span>
-            <span class="arch-pill">Schema Normalisation</span>
-            <span class="arch-pill">Containerised Microservices</span>
             <span class="arch-pill">Legal Module (End-to-End)</span>
             <span class="arch-pill">Permission Visibility Strategy</span>
             <span class="arch-pill">Jira Workflow Integration</span>
-            <span class="arch-pill">Financial Waterfall Processing</span>
             <span class="arch-pill">Reconciliation Framework</span>
             <span class="arch-pill">AI Smart Assistant (Exploration)</span>
+            <span class="arch-pill">Enterprise Performance Modernisation</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CCMR3 — Phase 3 -->
+      <article class="timeline-item ccmr3-phase" data-color="coral" itemscope itemtype="https://schema.org/Project">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <span class="timeline-badge badge-arch">Solution Architect</span>
+          <span class="timeline-date">Jun 2025 — May 2026</span>
+        </div>
+        <h3 class="timeline-title" itemprop="name">CCMR3 · Phase 3 — Platform Stabilisation & Servicing Expansion</h3>
+        <p class="timeline-company">Financial Services · Collections Engine, Payment Lifecycle & Security Hardening</p>
+        <div class="project-card reveal">
+          <div class="card-top">
+            <span class="card-title">Platform Stabilisation & Servicing Expansion</span>
+            <div class="metrics-row">
+              <div class="metric-chip"><span class="metric-icon">💳</span><span class="metric-val">ACH + Waterfall</span><span class="metric-key">Payment Lifecycle</span></div>
+              <div class="metric-chip"><span class="metric-icon">🔒</span><span class="metric-val">MFA + Audit</span><span class="metric-key">Security Hardening</span></div>
+            </div>
+          </div>
+          <p class="card-desc">Expanded the platform's core capabilities — strengthening the collections engine, broadening the payment lifecycle, scaling the workflow engine, and hardening security posture across the entire system.</p>
+          <ul class="highlight-list">
+            <li>Strengthened core collections engine — enhanced debtor management, linked accounts, co-debtor handling, SSN/EIN-based account linking with masking and access controls.</li>
+            <li>Expanded payment lifecycle — settlement management, recurring payments, ACH workflows, late fee handling, financial waterfall processing, and processor integrations (Anteloope, USAePay).</li>
+            <li>Scaled workflow engine — attribute-based triggers, workflow variables, executable actions, run-on-demand queues, reshuffling, and operational monitoring with failure handling.</li>
+            <li>Delivered reporting overhaul — dynamic SQL-based reporting, advanced categorical search, customisable dashboards, debtor insights, and export capabilities.</li>
+            <li>Integrated external systems — LiveVox, Renkim, Palinode, IDI; enhanced letter generation, document management, and communication tracking.</li>
+            <li>Hardened security posture — MFA, role management improvements, client restrictions, activity logging, and comprehensive audit trails.</li>
+            <li>Drove platform-wide performance optimisations — batching, bundling, background processing, centralised logging, database tuning, and large-scale import improvements.</li>
+          </ul>
+          <div class="callout-box">
+            <strong>Bankruptcy & Legal Foundations</strong><br>
+            Enhanced bankruptcy management with linked-account synchronisation, validation rules, and case management.
+            Established dispute management workflows and compliance integrations that became the foundation for the
+            full Legal module delivered in Phase 4.
+          </div>
+          <div class="divider"></div>
+          <p class="card-section-label">Architectural Decisions</p>
+          <div class="arch-pills">
+            <span class="arch-pill">Financial Waterfall Processing</span>
+            <span class="arch-pill">ACH Workflows</span>
+            <span class="arch-pill">Dynamic SQL Reporting</span>
+            <span class="arch-pill">MFA & Audit Trails</span>
+            <span class="arch-pill">External System Integrations</span>
+            <span class="arch-pill">Bankruptcy Management</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CCMR3 — Phase 2 -->
+      <article class="timeline-item ccmr3-phase" data-color="coral" itemscope itemtype="https://schema.org/Project">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <span class="timeline-badge badge-arch">Solution Architect</span>
+          <span class="timeline-date">Apr 2024 — May 2025</span>
+        </div>
+        <h3 class="timeline-title" itemprop="name">CCMR3 · Phase 2 — Strategy & Scale</h3>
+        <p class="timeline-company">Financial Services · Architectural Roadmap, Bulk Operations & Workflow Engine</p>
+        <div class="project-card reveal">
+          <div class="card-top">
+            <span class="card-title">Strategy & Scale</span>
+            <div class="metrics-row">
+              <div class="metric-chip"><span class="metric-icon">📦</span><span class="metric-val">100K<span style="color:var(--muted)">+</span></span><span class="metric-key">Records / Import</span></div>
+              <div class="metric-chip"><span class="metric-icon">🔄</span><span class="metric-val">SFTP</span><span class="metric-key">Automated Ingestion</span></div>
+            </div>
+          </div>
+          <p class="card-desc">Stepped into the Solution Architect role — defining long-term technical strategy, driving architectural standards, and delivering high-throughput bulk data capabilities that became a platform cornerstone.</p>
+          <ul class="highlight-list">
+            <li>Defined long-term technical strategy, architectural roadmap, and cross-team design standards.</li>
+            <li>Drove system design reviews ensuring all new development aligns with architectural principles and NFRs.</li>
+            <li>Collaborated with Business Analysts to translate business requirements into concrete architecture decisions.</li>
+            <li>Mentored senior engineers and maintained alignment between stakeholder expectations and delivery.</li>
+          </ul>
+          <div class="callout-box">
+            <strong>Bulk Data Operations at Scale</strong><br>
+            Designed and delivered a high-throughput bulk import system supporting <strong>100,000+ records per operation</strong>.
+            The system handles both workflow-driven imports (via configurable business workflows) and direct generic update
+            modules for mass record updates. Additionally, automated SFTP-based ingestion pipelines allow records to be
+            updated from controlled SFTP endpoints — enabling scheduled, zero-touch data synchronisation for client integrations.
+          </div>
+          <div class="callout-box" style="border-left-color: var(--accent2); background: rgba(6,182,212,0.06); border-color: rgba(6,182,212,0.18);">
+            <strong>Custom SQL Query Module — Secure Read-only Execution</strong><br>
+            Delivered an in-app SQL execution module enabling DBAs and authorised stakeholders to run custom queries
+            directly within the platform. Strictly <strong>read-only</strong> at the application layer — no risk of
+            accidental data modification while retaining full flexibility for ad-hoc analysis and reporting.
+          </div>
+          <div class="divider"></div>
+          <p class="card-section-label">Architectural Decisions</p>
+          <div class="arch-pills">
+            <span class="arch-pill">Bulk Import Engine (100K+)</span>
+            <span class="arch-pill">SFTP Automated Ingestion</span>
+            <span class="arch-pill">Read-only SQL Execution Module</span>
+            <span class="arch-pill">Task Management Module</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- CCMR3 — Phase 1 -->
+      <article class="timeline-item ccmr3-phase" data-color="coral" itemscope itemtype="https://schema.org/Project">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <span class="timeline-badge badge-lead">Engineering Lead</span>
+          <span class="timeline-date">Jun 2023 — Apr 2024</span>
+        </div>
+        <h3 class="timeline-title" itemprop="name">CCMR3 · Phase 1 — Foundation & Go-Live</h3>
+        <p class="timeline-company">Financial Services · Infrastructure, Migration & Go-Live Coordination</p>
+        <div class="project-card reveal">
+          <div class="card-top">
+            <span class="card-title">0 → Production · Go-Live April 29th 2024</span>
+            <div class="metrics-row">
+              <div class="metric-chip"><span class="metric-icon">👥</span><span class="metric-val">40<span style="color:var(--muted)">+</span></span><span class="metric-key">Team</span></div>
+              <div class="metric-chip"><span class="metric-icon">🚀</span><span class="metric-val">0 → 1</span><span class="metric-key">Greenfield</span></div>
+            </div>
+          </div>
+          <ul class="highlight-list">
+            <li>Architected containerised infrastructure; defined Docker/Kubernetes deployment topology on Azure AKS from scratch.</li>
+            <li>Designed and implemented GitHub Actions CI/CD pipelines across all services — backend APIs, frontend, and integration workers.</li>
+            <li>Led complex database migration: schema normalisation, deduplication, and data integrity enforcement across a large legacy dataset.</li>
+            <li>Integrated third-party payment and data services: <strong>Live Vox, Tradeline, USAePay, Choice,</strong> and <strong>Razorpay</strong>.</li>
+            <li>Implemented Redis caching delivering significant, measurable performance improvements over the legacy system.</li>
+            <li>Coordinated 40+ team members across Dev, QA, and Leads to a successful <strong>Go-Live on April 29th 2024</strong>.</li>
+          </ul>
+          <div class="callout-box" style="border-left-color: var(--accent3); background: rgba(139,92,246,0.06); border-color: rgba(139,92,246,0.18);">
+            <strong>Automated & Manual Workflows — Quartz Scheduler Microservice</strong><br>
+            Built a dedicated workflow engine powered by <strong>Quartz Scheduler</strong>, deployed as a standalone
+            microservice. Supports both <em>automated</em> (time-triggered or event-driven) and <em>manual</em>
+            (operator-initiated, configurable multi-step) workflows — orchestrating data updates, bulk operations,
+            notifications, and status transitions without touching code.
+          </div>
+          <div class="callout-box" style="border-left-color: var(--gold); background: rgba(245,158,11,0.06); border-color: rgba(245,158,11,0.18);">
+            <strong>Role-aware Dashboards — Agent & Admin Views</strong><br>
+            Designed a dual-mode dashboard: <em>agents</em> see personalised daily progress (calls, tasks, targets vs. actuals);
+            <em>admins</em> get a consolidated team-wide view with agent-level drill-down — keeping individuals accountable
+            and supervisors informed without leaving the platform.
           </div>
           <div class="divider"></div>
           <p class="card-section-label">Tech Stack</p>
@@ -234,6 +426,18 @@ hide_header: false
             <span class="tech-tag">MSSQL</span><span class="tech-tag">Redis</span><span class="tech-tag">Azure AKS</span>
             <span class="tech-tag">Docker</span><span class="tech-tag">Kubernetes</span><span class="tech-tag">GitHub Actions</span>
             <span class="tech-tag">Quartz Scheduler</span><span class="tech-tag">SFTP Integration</span>
+          </div>
+          <div class="divider"></div>
+          <p class="card-section-label">Architectural Decisions</p>
+          <div class="arch-pills">
+            <span class="arch-pill">Azure AKS</span>
+            <span class="arch-pill">Docker / Kubernetes</span>
+            <span class="arch-pill">GitHub Actions CI/CD</span>
+            <span class="arch-pill">Redis Caching</span>
+            <span class="arch-pill">Schema Normalisation</span>
+            <span class="arch-pill">Third-party Payment Integrations</span>
+            <span class="arch-pill">Quartz Scheduler Microservice</span>
+            <span class="arch-pill">Role-aware Dashboards</span>
           </div>
         </div>
       </article>
@@ -354,31 +558,6 @@ hide_header: false
           </div>
         </div>
       </article>
-      <!-- ifUiWill -->
-      <article class="timeline-item" data-color="green" itemscope itemtype="https://schema.org/Project">
-        <div class="timeline-node"></div>
-        <div class="timeline-meta">
-          <span class="timeline-date">May 2020 — Dec 2020</span>
-          <span class="timeline-badge badge-lead">Engineering Lead</span>
-        </div>
-        <h3 class="timeline-title" itemprop="name">ifUiWill</h3>
-        <p class="timeline-company">Social Mobile Application · Challenge &amp; Task Collaboration</p>
-        <div class="project-card reveal">
-          <p class="card-desc">ifUiWill is a mobile platform where users create and issue challenges to each other — community-driven task engagement with a "you go, then I go" mechanic at its core.</p>
-          <p class="card-section-label">Contributions &amp; Impact</p>
-          <ul class="highlight-list">
-            <li>Designed the application architecture, built RESTful APIs, and led frontend development for a seamless cross-platform experience.</li>
-            <li>Managed a team of developers — code reviews, push notification integration, testing, and debugging.</li>
-            <li>Handled full deployment to both App Store and Play Store; received positive reception on usability.</li>
-          </ul>
-          <div class="divider"></div>
-          <p class="card-section-label">Tech Stack</p>
-          <div class="tech-stack">
-            <span class="tech-tag">Node.js</span><span class="tech-tag">React Native</span><span class="tech-tag">MongoDB</span>
-            <span class="tech-tag">AWS</span><span class="tech-tag">App Store</span><span class="tech-tag">Play Store</span>
-          </div>
-        </div>
-      </article>
       <!-- Microsoft -->
       <article class="timeline-item" data-color="blue" itemscope itemtype="https://schema.org/Project">
         <div class="timeline-node"></div>
@@ -411,6 +590,31 @@ hide_header: false
           <div class="tech-stack">
             <span class="tech-tag">React.js</span><span class="tech-tag">TypeScript</span>
             <span class="tech-tag">REST APIs</span><span class="tech-tag">Enterprise Design Systems</span>
+          </div>
+        </div>
+      </article>
+      <!-- ifUiWill -->
+      <article class="timeline-item" data-color="green" itemscope itemtype="https://schema.org/Project">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">May 2020 — Dec 2020</span>
+          <span class="timeline-badge badge-lead">Engineering Lead</span>
+        </div>
+        <h3 class="timeline-title" itemprop="name">ifUiWill</h3>
+        <p class="timeline-company">Social Mobile Application · Challenge &amp; Task Collaboration</p>
+        <div class="project-card reveal">
+          <p class="card-desc">ifUiWill is a mobile platform where users create and issue challenges to each other — community-driven task engagement with a "you go, then I go" mechanic at its core.</p>
+          <p class="card-section-label">Contributions &amp; Impact</p>
+          <ul class="highlight-list">
+            <li>Designed the application architecture, built RESTful APIs, and led frontend development for a seamless cross-platform experience.</li>
+            <li>Managed a team of developers — code reviews, push notification integration, testing, and debugging.</li>
+            <li>Handled full deployment to both App Store and Play Store; received positive reception on usability.</li>
+          </ul>
+          <div class="divider"></div>
+          <p class="card-section-label">Tech Stack</p>
+          <div class="tech-stack">
+            <span class="tech-tag">Node.js</span><span class="tech-tag">React Native</span><span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">AWS</span><span class="tech-tag">App Store</span><span class="tech-tag">Play Store</span>
           </div>
         </div>
       </article>
@@ -667,11 +871,27 @@ hide_header: false
         immediately: a crisis management platform delivered greenfield in five months with a lean team.
       </p>
       <p class="reveal">
-        <strong>CCMR3</strong> represents the culmination. Coordinating 40+ developers, QA engineers,
+        <strong>CCMR3</strong> represents the culmination of the leadership arc. Coordinating 40+ developers, QA engineers,
         and leads through a full fintech platform modernisation in Phase 1 — then stepping up as
-        Solution Architect to define the roadmap and deliver Phase 2 capabilities including bulk
-        import of 100,000+ records and SFTP-driven automated data pipelines — is the full expression
-        of a decade spent building, shipping, and growing.
+        Solution Architect to define the roadmap, deliver bulk import at 100,000+ records, SFTP-driven
+        data pipelines, a full Legal module, enterprise permission strategy, and AI exploration across
+        four phases — is the full expression of what a decade of building, shipping, and growing looks like.
+      </p>
+      <p class="reveal">
+        The Solution Architect role also opened a parallel dimension: <strong>pre-sales and technical scoping</strong>.
+        Translating ambiguous client requirements into architecture proposals, effort estimations, and phased
+        delivery roadmaps — across fintech, healthcare, SaaS, IoT, and enterprise CRM — became a discipline
+        in its own right. Accurate scoping at the front of an engagement is what keeps delivery healthy at the back.
+      </p>
+      <p class="reveal">
+        The most recent engagements reflect the breadth the role now demands. For <strong>CredAble</strong>,
+        two reusable platform microservices — a centralised Template Management System with embedded Micro
+        Frontend, and a generic Scheduler Service — were architected to serve multiple products without
+        duplicating infrastructure. For <strong>Y4J's AT/AD platform</strong>, the challenge was different:
+        designing a WCAG 2.1-compliant accessibility platform for Persons with Disabilities, complete with
+        an AI-powered device matching engine, multi-role access model, and Authentik SSO unifying identity
+        across the entire product suite. Different domains, same discipline — understand the constraints,
+        define the architecture, set the foundation right.
       </p>
       <div class="pull-quote reveal">
         "From manually deploying via RDP on a physical IIS server to architecting Kubernetes-based
@@ -683,3 +903,5 @@ hide_header: false
     </div>
   </div>
 </section>
+
+<script src="{{ '/assets/js/ccmr3-phase-toggle.js' | relative_url }}"></script>
