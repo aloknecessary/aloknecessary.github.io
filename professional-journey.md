@@ -1,6 +1,6 @@
 ---
 layout: architect
-title: Byteridge Journey | Alok Ranjan Daftuar
+title: Professional Journey | Alok Ranjan Daftuar
 hide_header: false
 ---
 
