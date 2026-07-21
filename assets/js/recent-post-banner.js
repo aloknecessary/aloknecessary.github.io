@@ -5,11 +5,16 @@
   const slug = banner.dataset.slug;
   const modified = banner.dataset.modified;
 
-  const STORAGE_KEY = 'rpb_dismissed_slug';
-  if (localStorage.getItem(STORAGE_KEY) === slug) return;
+ const DISMISS_KEY = 'rpb_dismissed_slug';
+  const VISITED_KEY = 'rpb_visited_slug';
+  if (localStorage.getItem(DISMISS_KEY) === slug) return;
+  if (localStorage.getItem(VISITED_KEY) === slug) return;
 
   const postUrl = banner.dataset.url;
-  if (window.location.pathname === postUrl || window.location.pathname.replace(/\/$/, '') === postUrl.replace(/\/$/, '')) return;
+  if (window.location.pathname === postUrl || window.location.pathname.replace(/\/$/, '') === postUrl.replace(/\/$/, '')) {
+    localStorage.setItem(VISITED_KEY, slug);
+    return;
+  }
 
   const publishedAt = new Date(modified).getTime();
   if (isNaN(publishedAt) || (Date.now() - publishedAt) >= 24 * 60 * 60 * 1000) return;
@@ -35,7 +40,7 @@
   banner.classList.remove('hidden');
 
   banner.querySelector('.rpb-close').addEventListener('click', function () {
-    localStorage.setItem(STORAGE_KEY, slug);
+    localStorage.setItem(DISMISS_KEY, slug);
     banner.classList.add('hidden');
   });
 })();
