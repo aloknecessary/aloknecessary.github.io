@@ -720,6 +720,21 @@ tr:nth-child(even) {
     font-size: 0.82rem;
     padding: 0.6rem 0.9rem;
   }
+
+  .rpb-content {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .rpb-label {
+    font-size: 0.68rem;
+  }
+
+  .rpb-time {
+    flex-basis: 100%;
+    font-size: 0.68rem;
+    text-align: right;
+  }
 }
 
 /* ============================================================

@@ -260,7 +260,7 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   padding: 0.15rem 0.5rem;
-  border-radius: 5px;
+  border-radius: 25px;
   white-space: nowrap;
   flex-shrink: 0;
 }
