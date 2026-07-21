@@ -520,7 +520,7 @@
 }
 
 .series-block-title {
-  background: linear-gradient(90deg, var(--domain-accent), var(--text-primary));
+  background: linear-gradient(90deg, var(--domain-accent), var(--coral));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

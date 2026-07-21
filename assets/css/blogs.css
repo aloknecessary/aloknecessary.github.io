@@ -253,6 +253,18 @@
   margin-bottom: 0.75rem;
 }
 
+.card-new-badge {
+  background: linear-gradient(90deg, var(--primary), var(--coral));
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .card-title {
   font-weight: 600;
   margin: 0;
@@ -821,12 +833,13 @@
   background: var(--bg-soft);
   padding: 0.2rem 0.6rem;
   margin-bottom: 0;
+  border-radius: 10px;
   letter-spacing: 0.01em;
   width: fit-content;
   color: var(--muted);
   border: none;
-  border-bottom: 2px solid var(--primary);
-  border-top: 2px solid var(--crimson);
+  border-bottom: 1.5px solid var(--primary);
+  border-top: 1.4px solid var(--crimson);
   border-radius: 10px;
 }
 .card-series-badge:hover {
@@ -834,21 +847,21 @@
 }
 
 .card-series-badge[data-domain="ai-engineering"] .series-name {
-  background: linear-gradient(90deg, var(--domain-ai), var(--text-primary));
+  background: linear-gradient(90deg, var(--domain-ai), var(--coral));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .card-series-badge[data-domain="infrastructure"] .series-name {
-  background: linear-gradient(270deg, var(--domain-infra), var(--text-primary));
+  background: linear-gradient(270deg, var(--domain-infra), var(--coral));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .card-series-badge[data-domain="platform"] .series-name {
-  background: linear-gradient(180deg, var(--domain-platform), var(--text-primary));
+  background: linear-gradient(90deg, var(--domain-platform), var(--text-primary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
