@@ -492,11 +492,11 @@ Led a transformative test automation initiative for Client's debt collection pla
 
 ### 🏥 Medical Health Records Extraction POC (Pre-Sales, Health-Tech)
 
-Amazon Textract + Node.js + Custom Extraction Pipeline
+Amazon Textract + Comprehend Medical + Streamlit + Python
 
 Built a focused pre-sales POC to validate feasibility of extracting structured data from unstructured medical documents — prescriptions and diagnostic test reports — as scoped in a client BRD. The POC directly enabled the proposal submission by proving extraction accuracy and output quality before commitment.
 
-**Tech Stack**: Amazon Textract, Node.js, AWS SDK
+**Tech Stack**: Amazon Textract, Amazon Comprehend Medical, Streamlit, Python, AWS SDK (boto3)
 
 **Document Types Handled**:
 
@@ -510,9 +510,11 @@ Document upload (image / scanned PDF)
     ↓
 Amazon Textract — OCR + layout analysis
     ↓
-Custom extraction layer — identify medicine / test fields
+Amazon Comprehend Medical — identify medicines / test entities
     ↓
 Structured tabular output (medicines table / test results table)
+    ↓
+Streamlit UI — upload interface + results display
 ```
 
 **Key Results**:
