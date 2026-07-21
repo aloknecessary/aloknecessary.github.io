@@ -72,7 +72,8 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 **Key AI Initiatives:**
 
 * **Test Automation at Scale**: Led AI-powered Playwright test generation that increased code coverage from 35% to 82%+ across 40+ modules
-* **Intelligent Data Visualization**: Built a production POC enabling natural language to chart generation with real-time drill-down capabilities  
+* **Intelligent Data Visualization**: Built a production POC enabling natural language to chart generation with real-time drill-down capabilities
+* **Medical Records Extraction**: Built a pre-sales POC using Amazon Textract to extract and structure data from handwritten and printed prescriptions and test reports at 85%+ accuracy — directly enabled a health-tech proposal
 * **Context-Driven Problem Solving**: Use AI in agentic and chat modes to rapidly prototype solutions, analyze codebases, and validate architectural decisions
 
 > I view AI as a **productivity accelerator and creative partner**—not a replacement for engineering judgment. Every AI-generated solution undergoes code review, testing, and refinement to meet production standards.
@@ -84,6 +85,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 * Architect and deliver **end-to-end systems** spanning frontend, backend, infrastructure, and integrations
 * Design **cloud-native architectures** with a focus on reliability, security, and cost optimization
 * Lead **system design discussions**, estimations, and architectural decision-making
+* Build **pre-sales POCs and technical feasibility prototypes** to validate architectural approaches and enable client proposals
 * Mentor engineers and **collaborate** closely with product, UX, and business stakeholders
 * Drive initiatives to **reduce operational risk** and technical debt
 
@@ -211,9 +213,10 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 > * **Led AI-powered Playwright automation initiative** for Client's debt collection platform, increasing test coverage from 35% to 81%+ and delivering 2500+ test cases across 40+ modules in 2 months with a 4-5 engineer team
 > * **Architected and delivered production-grade AI POC** for natural language data visualization using OpenAI GPT Engine—enabling business users to generate interactive Chart.js visualizations from tabular data via conversational prompts, live on company POC list
 > * **Architected and delivered CCMR3 — CollectLogic** across 4 major phases: led 40+ engineers through greenfield go-live, stepped up as Solution Architect to define roadmap, deliver 100K+ record bulk import, full Legal module, enterprise permission strategy, and AI exploration — serving 500+ daily active users
-> * Collaborated with Microsoft teams on Bing and Microsoft Admin Portal platforms  
+> * **Collaborated with Microsoft team** on Bing and Microsoft Admin Portal platforms
 > * Led cost optimization initiatives resulting in significant cloud infrastructure savings  
 > * Led 10+ pre-sales engagements — technical discovery, effort estimation, architecture proposals, team composition planning, and phased delivery roadmaps across fintech, healthcare, SaaS, and IoT domains
+> * **Built a pre-sales POC using Amazon Textract** for a health-tech client — extracted and structured data from handwritten and printed prescriptions and diagnostic test reports at 85%+ accuracy, directly enabling the client proposal submission
 > * Built custom Docker images for CI/CD optimization (playwright-az-cli, sonar-dotnet) downloaded 1000+ times across teams
 >
 > A core part of my role involves collaborating with product, UX, and business stakeholders to drive clarity and alignment, as well as mentoring engineers through system design and implementation decisions.
@@ -484,6 +487,42 @@ Led a transformative test automation initiative for Client's debt collection pla
 
 [![GitHub](https://img.shields.io/badge/GitHub-Custom_Docker_Image-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/aloknecessary/playwright-az-cli)
 [![Docker Hub](https://img.shields.io/badge/Docker_Hub-playwright--az--cli-2496ED?style=flat-square&logo=docker&logoColor=white)](https://hub.docker.com/r/aloknecessary/playwright-az-cli)
+
+---
+
+### 🏥 Medical Health Records Extraction POC (Pre-Sales, Health-Tech)
+
+Amazon Textract + Node.js + Custom Extraction Pipeline
+
+Built a focused pre-sales POC to validate feasibility of extracting structured data from unstructured medical documents — prescriptions and diagnostic test reports — as scoped in a client BRD. The POC directly enabled the proposal submission by proving extraction accuracy and output quality before commitment.
+
+**Tech Stack**: Amazon Textract, Node.js, AWS SDK
+
+**Document Types Handled**:
+
+* 📋 **Prescriptions** — handwritten and printed; extracted medicine names, dosage, frequency, and duration into structured tabular output
+* 🧪 **Test Reports** — printed diagnostic reports; identified test names, values, reference ranges, and status into structured tabular output
+
+**Architecture**:
+
+```text
+Document upload (image / scanned PDF)
+    ↓
+Amazon Textract — OCR + layout analysis
+    ↓
+Custom extraction layer — identify medicine / test fields
+    ↓
+Structured tabular output (medicines table / test results table)
+```
+
+**Key Results**:
+
+* 🎯 **85%+ extraction accuracy** across both handwritten and printed documents
+* 💊 **Medicine identification** — name, dosage, frequency, duration extracted and tabulated
+* 🔬 **Test report parsing** — test name, value, reference range, and status structured automatically
+* ✅ **Proposal enabled** — POC output directly supported the technical feasibility section of the client proposal
+
+**Context**: Pre-sales engagement for a health-tech client. POC scope was deliberately narrow — prove extraction accuracy and structured output quality to satisfy BRD requirements before full project commitment.
 
 ---
 
