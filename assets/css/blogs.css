@@ -424,6 +424,9 @@
 
 /* Security & Networking */
 .card-tags .tag[data-tag*="security"],
+.card-tags .tag[data-tag*="zero-trust"],
+.card-tags .tag[data-tag*="iam"],
+.card-tags .tag[data-tag*="secrets-management"],
 .card-tags .tag[data-tag*="private-endpoints"],
 .card-tags .tag[data-tag*="privatelink"],
 .card-tags .tag[data-tag*="vpc"],
