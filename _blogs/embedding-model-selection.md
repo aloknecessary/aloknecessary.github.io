@@ -28,7 +28,7 @@ The market has also gotten considerably harder to navigate since the early days 
 
 This post is a decision framework, not a leaderboard snapshot — leaderboard positions shift every quarter, but the methodology for choosing correctly does not.
 
-> **Article context:** This post is part of the RAG production series. The [Building Reliable RAG Pipelines](/blogs/rag_prototype_to_production/) post's chunking and indexing pipeline is the system this decision feeds into. The [LLM Evaluation in Production](/blogs/llm-evaluation-in-production/) post's context precision metric is the downstream signal that tells you whether an embedding choice was right — Section 6 of this post connects the two directly.
+> **Article context:** This post is part of the RAG and AI Engineering series. The [Building Reliable RAG Pipelines](/blogs/rag_prototype_to_production/) post's chunking and indexing pipeline is the system this decision feeds into. The [LLM Evaluation in Production](/blogs/llm-evaluation-in-production/) post's context precision metric is the downstream signal that tells you whether an embedding choice was right — Section 6 of this post connects the two directly.
 
 ### Table of Contents
 
