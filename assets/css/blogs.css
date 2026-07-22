@@ -647,8 +647,8 @@
   color: var(--highlight-color);
   border-radius: 3px;
   padding: 0.1em 0.25em;
-  box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
   -webkit-text-fill-color: var(--highlight-color);
 }
 
