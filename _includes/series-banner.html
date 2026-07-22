@@ -3,11 +3,12 @@
 {% assign series_total = series_posts | size %}
 {% assign prev_order = page.series_order | minus: 1 %}
 {% assign next_order = page.series_order | plus: 1 %}
+{% assign s_info = site.data.series | where: "name", page.series | first %}
 
 <div class="series-banner">
   <div class="series-label">
     <span class="series-badge">Series</span>
-    <span class="series-name">{{ page.series }}</span>
+    <a class="series-name" href="{{ '/series/#' | append: s_info.slug | relative_url }}">{{ page.series }}</a>
     <span class="series-position">— Part {{ page.series_order }} of {{ series_total }}</span>
   </div>
   <nav class="series-nav">

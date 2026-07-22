@@ -3,7 +3,7 @@
   ======================================== */
 
 .post header {
-  padding: 24px 0 20px;
+  padding: 2px 0 20px;
   margin-bottom: 1.5rem;
   border-bottom: none;
   position: relative;
@@ -217,6 +217,37 @@ h2.description::before {
   font-size: 0.875rem;
   letter-spacing: 0.01em;
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.author-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--muted);
+  text-decoration: none;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.author-link:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.author-link span {
+  margin-top: 3px;
+}
+
+.author-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
 }
 
 @media (max-width: 768px) {
@@ -416,6 +447,11 @@ ul.task-list input {
 .series-name {
   font-weight: 600;
   color: var(--text-primary);
+  text-decoration: none;
+}
+
+.series-name:hover {
+  text-decoration: underline;
 }
 
 .series-position {

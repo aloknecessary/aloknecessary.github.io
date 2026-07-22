@@ -1,7 +1,7 @@
 ---
 title: "Cloud Security Architecture: From Shared Responsibility to Zero Trust"
 date: 2026-07-21
-last_modified_at: 2026-07-21
+last_modified_at: 2026-07-21T15:30:00+05:30
 author: Alok Ranjan Daftuar
 description: "The security posture that underpins a production cloud system — shared responsibility boundaries, IAM least-privilege at scale, secrets management without credential sprawl, network segmentation that doesn't recreate on-premises perimeters, and zero-trust applied to Kubernetes workloads."
 excerpt: "Cloud security is not a layer you add after the architecture is designed — it is a set of architectural decisions made at the same time as resilience, cost, and modernisation. This post covers shared responsibility boundaries, IAM least-privilege at scale, secrets management, network segmentation, and zero-trust for Kubernetes workloads."

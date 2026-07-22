@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="{{ '/assets/css/banner.css' | relative_url }}">
+{% assign latest = site.blogs | sort: "date" | last %}
+{% if latest %}
+<div
+  id="recent-post-banner"
+  class="recent-post-banner hidden"
+  data-slug="{{ latest.slug }}"
+  data-title="{{ latest.title | escape }}"
+  data-url="{{ latest.url | relative_url }}"
+  data-modified="{{ latest.last_modified_at }}"
+>
+  <div class="rpb-content">
+    <span class="rpb-label">New Post</span>
+    <a class="rpb-link" href="{{ latest.url | relative_url }}">{{ latest.title | escape }}</a>
+    <span class="rpb-time"></span>
+  </div>
+  <button class="rpb-close" aria-label="Dismiss">&times;</button>
+</div>
+<script src="{{ '/assets/js/recent-post-banner.js' | relative_url }}"></script>
+{% endif %}

@@ -12,7 +12,7 @@ hide_header: false
 <div class="blog-cards-grid">
   {% assign blogs = site.blogs | sort: "date" | reverse %}
   {% for post in blogs %}
-    <article class="blog-card" data-series="{{ post.series | slugify }}">
+    <article class="blog-card" data-series="{{ post.series | slugify }}"{% if forloop.first %} data-modified="{{ post.last_modified_at }}"{% endif %}>
       <div class="card-content">
         <div class="card-header">
           <h2 class="card-title">
@@ -20,6 +20,7 @@ hide_header: false
           </h2>
         </div>
         <div class="card-meta">
+          {% if forloop.first %}<span class="card-new-badge hidden">Latest</span>{% endif %}
           <time datetime="{{ post.date | date_to_xmlschema }}">
             {{ post.date | date: "%B %d, %Y" }}
           </time>
@@ -55,6 +56,17 @@ hide_header: false
     </article>
   {% endfor %}
 </div>
+
+<script>
+(function () {
+  const card = document.querySelector('.blog-card[data-modified]');
+  if (!card) return;
+  const modified = card.dataset.modified;
+  if (isNaN(new Date(modified).getTime()) || (Date.now() - new Date(modified).getTime()) >= 24 * 60 * 60 * 1000) return;
+  const badge = card.querySelector('.card-new-badge');
+  if (badge) badge.classList.remove('hidden');
+})();
+</script>
 
 <div class="no-results" id="no-results">
   <svg class="no-results-icon" height="80" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
