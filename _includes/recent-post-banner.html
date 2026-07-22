@@ -1,5 +1,6 @@
 {% assign latest = site.blogs | sort: "last_modified_at" | last %}
 {% if latest %}
+<link rel="stylesheet" href="{{ '/assets/css/banner.css' | relative_url }}">
 <div
   id="recent-post-banner"
   class="recent-post-banner hidden"
