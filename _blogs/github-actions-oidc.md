@@ -1,7 +1,7 @@
 ﻿---
 title: "GitHub Actions OIDC: Eliminating Long-Lived Credentials from Your CI/CD Pipeline"
-date: 2026-07-15
-last_modified_at: 2026-07-15
+date: 2026-07-27
+last_modified_at: 2026-07-27 12:21:00 +0530
 author: Alok Ranjan Daftuar
 description: "A production implementation guide to GitHub Actions OIDC authentication for AWS and Azure â€” trust policy design, sub claim scoping, per-job role architecture, reusable workflow federation, the migration path from static secrets, and the audit trail OIDC gives you that stored credentials never could."
 excerpt: "OpenID Connect eliminates long-lived CI/CD credentials at the architectural level. This post covers the full implementation for AWS and Azure â€” OIDC provider setup, trust policy scoping, per-job role architecture, reusable workflow federation, the migration path from static secrets, and the audit trail that stored credentials structurally cannot provide."
