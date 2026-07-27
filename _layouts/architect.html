@@ -4,6 +4,149 @@ layout: default
 
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}" />
 <link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}">
+
+<nav class="architect-nav" id="architectNav" aria-label="Page sections">
+  <a class="an-brand" href="#">AD</a>
+  <span class="an-sep">|</span>
+  <div class="an-links">
+    <a href="#about" class="an-link">About</a>
+    <span class="an-sep">|</span>
+    <a href="#expertise" class="an-link">Expertise</a>
+    <span class="an-sep">|</span>
+    <a href="#experience" class="an-link">Experience</a>
+    <span class="an-sep">|</span>
+    <a href="#writing" class="an-link">Writing</a>
+    <span class="an-sep">|</span>
+    <a href="#projects" class="an-link">AI POCs</a>
+    <span class="an-sep">|</span>
+    <a href="#contact" class="an-link">Contact</a>
+  </div>
+</nav>
+
+<style>
+  .architect-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 10px calc(50vw - 50% + 1rem);
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .architect-nav.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    background: color-mix(in srgb, var(--bg-base) 75%, transparent);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom-color: var(--border);
+  }
+
+  .an-brand {
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--primary) 55%, var(--domain-platform) 45%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    margin-right: 0.4rem;
+  }
+
+  .an-sep {
+    margin: 0 0.5rem;
+    color: var(--muted);
+  }
+
+  .an-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .an-link {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .an-link:hover,
+  .an-link.active {
+    background: linear-gradient(90deg, var(--primary), var(--crimson));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  @media (max-width: 600px) {
+    .an-links .an-sep { margin: 0 0.2rem; }
+    .an-link { font-size: 0.75rem; }
+    .an-brand { font-size: 1.1rem; }
+  }
+</style>
+
+<script>
+(function () {
+  const nav = document.getElementById('architectNav');
+  const sections = ['about', 'expertise', 'experience', 'writing', 'projects', 'contact'];
+  const links = {};
+  sections.forEach(id => {
+    links[id] = nav.querySelector(`a[href="#${id}"]`);
+  });
+
+  const THRESHOLD = 200;
+
+  function setActive(id) {
+    sections.forEach(s => links[s] && links[s].classList.remove('active'));
+    if (id && links[id]) links[id].classList.add('active');
+  }
+
+  function onScroll() {
+    nav.classList.toggle('visible', window.scrollY > THRESHOLD);
+
+    const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 10;
+    if (atBottom) {
+      setActive('contact');
+      return;
+    }
+
+    let current = null;
+    let minDist = Infinity;
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const top = el.getBoundingClientRect().top;
+      if (top <= 100 && Math.abs(top) < minDist) {
+        minDist = Math.abs(top);
+        current = id;
+      }
+    });
+    setActive(current);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
 <!-- {% unless page.hide_header %}
 
 <header>

@@ -57,7 +57,7 @@ hide_header: true
 
 ---
 
-## 🚀 About Me
+## 🚀 About Me {#about}
 
 I am a **Solution Architect** with deep, hands-on experience across **full-stack engineering, cloud architecture, DevOps, system design, and pre-sales technical scoping**. Over the past decade, I have evolved from an individual contributor into a technical leader who architects, builds, reviews, and scales production-grade systems across fintech, accessibility tech, IoT, enterprise security, and global tech.
 
@@ -91,7 +91,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ---
 
-## 🛠️ Core Expertise
+## 🛠️ Core Expertise {#expertise}
 
 ### **Architecture & Platforms**
 
@@ -193,7 +193,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ---
 
-## 💼 Professional Experience
+## 💼 Professional Experience {#experience}
 >
 > ### **[Byteridge Software Pvt. Ltd.](https://www.byteridge.com)**
 >
@@ -237,7 +237,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ---
 
-## 📝 Writing & Knowledge Sharing
+## 📝 Writing & Knowledge Sharing {#writing}
 
 <div class="soft-block">
   <p>I regularly write about:</p>
@@ -448,7 +448,7 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 
 ---
 
-## 🤖 AI-Powered Projects & POCs
+## 🤖 AI-Powered Projects & POCs {#projects}
 
 ### 🧪 AI-Driven Test Automation Framework (Built at Byteridge)
 
@@ -609,7 +609,7 @@ I'm always interested in:
 
 ---
 
-## 📫 Contact & Presence
+## 📫 Contact & Presence {#contact}
 
 If you're interested in **architecture discussions, system design reviews, DevOps or technical collaboration**, feel free to reach out.
 

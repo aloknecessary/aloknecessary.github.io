@@ -1,7 +1,10 @@
 <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
-  <svg viewBox="0 0 24 24" width="24" height="24">
-    <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-  </svg>
+  <div class="stt-inner">
+    <svg class="stt-icon" viewBox="0 0 24 24" width="20" height="20">
+      <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+    <span class="stt-label">Back to top</span>
+  </div>
 </button>
 
 <style>
@@ -12,34 +15,114 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: var(--bg-card, #ffffff);
+    border: 2px solid transparent;
+    background: linear-gradient(var(--bg-card, #ffffff), var(--bg-card, #ffffff)) padding-box,
+                linear-gradient(90deg, var(--primary, #2563eb), var(--crimson, #ff009c)) border-box;
     color: var(--text-primary);
-    border: 2px solid var(--border, #d0d7de);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0;
+    overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease, background 0.2s ease;
+    translate: 0 16px;
+    transition: opacity 0.5s ease, visibility 0.8s ease, translate 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.2s ease, background 0.2s ease, width 0.25s ease,
+                border-radius 0.25s ease, gap 0.25s ease;
     z-index: 1000;
   }
 
   .scroll-to-top.visible {
     opacity: 1;
     visibility: visible;
+    translate: 0 0;
   }
 
-  .scroll-to-top:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    background: var(--bg-soft, #f6f8fa);
-    border-color: var(--primary, #0366d6);
+  .stt-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+  }
+
+  .stt-icon {
+    color: var(--primary, #2563eb);
+    flex-shrink: 0;
+  }
+
+  .stt-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    position: relative;
+    transition: max-width 0.25s ease, opacity 0.2s ease 0.05s;
+  }
+
+  .stt-label::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: linear-gradient(90deg, var(--primary, #2563eb), var(--crimson, #ff009c));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease 0.2s;
   }
 
   .scroll-to-top:active {
     transform: translateY(-2px);
+  }
+
+  @media (min-width: 769px) {
+    .scroll-to-top:hover {
+      width: auto;
+      border-radius: 24px;
+      gap: 6px;
+      padding: 2px;
+      border: none;
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(90deg, var(--primary, #2563eb), var(--crimson, #ff009c));
+    }
+
+    .scroll-to-top:hover .stt-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 0 12px 0 8px;
+      width: 100%;
+      height: 100%;
+      border-radius: 22px;
+      background: var(--bg-soft, #f6f8fa);
+    }
+
+    .scroll-to-top:hover .stt-label {
+      max-width: 120px;
+      opacity: 1;
+      background: linear-gradient(90deg, var(--primary, #2563eb), var(--crimson, #ff009c));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .scroll-to-top:hover .stt-icon {
+      color: var(--primary, #2563eb);
+    }
+
+    .scroll-to-top:hover .stt-label::after {
+      transform: scaleX(1);
+    }
   }
 
   @media (max-width: 768px) {

@@ -39,6 +39,7 @@ layout: default
   <!-- Series Content -->
   <div id="series-content" class="hidden">
     <div class="series-container">
+      {%- assign latest_post = site.blogs | sort: "last_modified_at" | last %}
       {% for series in site.data.series %}
         {% assign series_posts = site.blogs | where: "series", series.name | sort: "series_order" | reverse %}
         {% assign count = series_posts | size %}
@@ -71,7 +72,7 @@ layout: default
             <li>
               <span class="step-indicator">{{ post.series_order }}</span>
               <div class="step-content">
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}{% if post.slug == latest_post.slug %}<span class="post-new-badge">New</span>{% endif %}</a>
                 <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
               </div>
             </li>

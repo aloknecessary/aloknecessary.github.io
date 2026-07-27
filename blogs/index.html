@@ -20,7 +20,7 @@ hide_header: false
           </h2>
         </div>
         <div class="card-meta">
-          {% if forloop.first %}<span class="card-new-badge hidden">Latest</span>{% endif %}
+          {% if forloop.first %}<span class="card-new-badge hidden">New</span>{% endif %}
           <time datetime="{{ post.date | date_to_xmlschema }}">
             {{ post.date | date: "%B %d, %Y" }}
           </time>
