@@ -22,18 +22,20 @@
   const timeEl = banner.querySelector('.rpb-time');
   if (timeEl) {
     try {
-      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Asia/Kolkata';
       timeEl.textContent = new Intl.DateTimeFormat('en', {
-        timeZone: tz,
         month: 'short', day: 'numeric', year: 'numeric',
-        hour: 'numeric', minute: '2-digit', hour12: true
+        hour: 'numeric', minute: '2-digit', hour12: true,
+        timeZoneName: 'short'
       }).format(new Date(modified));
     } catch (_) {
-      timeEl.textContent = new Intl.DateTimeFormat('en', {
-        timeZone: 'Asia/Kolkata',
-        month: 'short', day: 'numeric', year: 'numeric',
-        hour: 'numeric', minute: '2-digit', hour12: true
-      }).format(new Date(modified));
+      try {
+        timeEl.textContent = new Intl.DateTimeFormat('en', {
+          month: 'short', day: 'numeric', year: 'numeric',
+          hour: 'numeric', minute: '2-digit', hour12: true
+        }).format(new Date(modified));
+      } catch (_) {
+        timeEl.textContent = modified;
+      }
     }
   }
 
