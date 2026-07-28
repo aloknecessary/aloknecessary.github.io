@@ -331,6 +331,7 @@ layout: default
   const THRESHOLD = 200;
 
   const mobileContext = document.getElementById('anMobileContext');
+  const isJourneyPage = window.location.pathname.includes('professional-journey');
   const sectionNames = {
     about: 'About', expertise: 'Expertise', experience: 'Experience',
     writing: 'Writing', projects: 'AI POCs', contact: 'Contact'
@@ -349,9 +350,7 @@ layout: default
   function setActive(id) {
     sections.forEach(s => links[s] && links[s].classList.remove('active'));
     if (id && links[id]) links[id].classList.add('active');
-    {% unless page.url contains 'professional-journey' %}
-    setMobileContext(id ? (sectionNames[id] || '') : '');
-    {% endunless %}
+    if (!isJourneyPage) setMobileContext(id ? (sectionNames[id] || '') : '');
   }
 
   function onScroll() {
