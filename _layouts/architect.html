@@ -48,9 +48,20 @@ layout: default
   <div class="an-mobile-drawer" id="anMobileDrawer">
     <button class="an-drawer-close" id="anDrawerClose" aria-label="Close menu">✕</button>
     {% if page.url contains 'professional-journey' %}
+      <span class="an-mobile-theme-label">Navigate</span>
       <a href="{{ '/' | relative_url }}" class="an-mobile-link">← Portfolio</a>
-      <a href="{{ '/blogs' | relative_url }}" class="an-mobile-link">Blogs</a>
+      <a href="{{ '/blogs' | relative_url }}" class="an-mobile-link">Blogs →</a>
+      <hr class="an-mobile-divider">
+      <div class="an-mobile-theme">
+        <span class="an-mobile-theme-label">Theme</span>
+        <div class="an-mobile-theme-btns">
+          <button class="an-theme-btn" data-an-theme="light">☀ Light</button>
+          <button class="an-theme-btn" data-an-theme="dark">🌙 Dark</button>
+          <button class="an-theme-btn" data-an-theme="system">🖥 System</button>
+        </div>
+      </div>
     {% else %}
+      <span class="an-mobile-theme-label">Navigate</span>
       <a href="#about" class="an-mobile-link">About</a>
       <a href="#expertise" class="an-mobile-link">Expertise</a>
       <a href="#experience" class="an-mobile-link">Experience</a>
@@ -58,8 +69,18 @@ layout: default
       <a href="#projects" class="an-mobile-link">AI POCs</a>
       <a href="#contact" class="an-mobile-link">Contact</a>
       <hr class="an-mobile-divider">
-      <a href="{{ '/blogs' | relative_url }}" class="an-mobile-link">Blogs</a>
-      <a href="{{ '/professional-journey' | relative_url }}" class="an-mobile-link">Professional Journey</a>
+      <span class="an-mobile-theme-label">Explore</span>
+      <a href="{{ '/blogs' | relative_url }}" class="an-mobile-link">Blogs →</a>
+      <a href="{{ '/professional-journey' | relative_url }}" class="an-mobile-link">Professional Journey →</a>
+      <hr class="an-mobile-divider">
+      <div class="an-mobile-theme">
+        <span class="an-mobile-theme-label">Theme</span>
+        <div class="an-mobile-theme-btns">
+          <button class="an-theme-btn" data-an-theme="light">☀ Light</button>
+          <button class="an-theme-btn" data-an-theme="dark">🌙 Dark</button>
+          <button class="an-theme-btn" data-an-theme="system">🖥 System</button>
+        </div>
+      </div>
     {% endif %}
   </div>
 </div>
@@ -248,7 +269,7 @@ layout: default
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 200;
+    z-index: 1100;
     background: rgba(0,0,0,0.4);
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
@@ -302,6 +323,41 @@ layout: default
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .an-mobile-theme {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+  }
+
+  .an-mobile-theme-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .an-mobile-theme-btns {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .an-theme-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .an-theme-btn.active {
+    border-color: var(--primary);
+    color: var(--primary);
   }
 
   .an-mobile-divider {
@@ -388,6 +444,7 @@ layout: default
     overlay.setAttribute('aria-hidden', 'false');
     hamburger.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    syncThemeBtns();
   }
 
   function closeDrawer() {
@@ -404,6 +461,20 @@ layout: default
   });
   overlay.querySelectorAll('.an-mobile-link').forEach(function(link) {
     link.addEventListener('click', closeDrawer);
+  });
+
+  function syncThemeBtns() {
+    const current = localStorage.getItem('theme') || 'system';
+    overlay.querySelectorAll('.an-theme-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.anTheme === current);
+    });
+  }
+
+  overlay.querySelectorAll('.an-theme-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      if (typeof window.setTheme === 'function') window.setTheme(btn.dataset.anTheme);
+      syncThemeBtns();
+    });
   });
 })();
 </script>
