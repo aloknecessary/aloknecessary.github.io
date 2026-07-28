@@ -14,6 +14,8 @@ layout: default
   <span class="an-sep">|</span>
   <div class="an-links">
     {% if page.url contains 'professional-journey' %}
+      <span class="an-active-label">Professional Journey</span>
+      <span class="an-sep">|</span>
       <a href="{{ '/' | relative_url }}" class="an-link">← Portfolio</a>
       <span class="an-sep">|</span>
       <a href="{{ '/blogs' | relative_url }}" class="an-link">Blogs</a>
@@ -186,6 +188,15 @@ layout: default
     align-items: center;
     flex-wrap: wrap;
     flex: 1;
+  }
+
+  .an-active-label {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background: linear-gradient(90deg, var(--primary), var(--crimson));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .an-link {
