@@ -1,0 +1,84 @@
+<style>
+  .drawer-theme {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+  }
+
+  .drawer-theme-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .drawer-theme-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .drawer-theme-btn {
+    background: none;
+    border: none;
+    padding: 0.55rem 0 0.55rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.2s;
+  }
+
+  .drawer-theme-btn-text {
+    color: var(--text-secondary);
+  }
+
+  .drawer-theme-btn.active .drawer-theme-btn-text {
+    background: linear-gradient(90deg, var(--primary), var(--coral));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+    padding-bottom: 3px;
+    padding-right: 3px;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, var(--primary), var(--coral)) 1;
+  }
+</style>
+
+<hr class="nav-drawer-divider">
+<div class="drawer-theme">
+  <span class="drawer-theme-label">Theme</span>
+  <div class="drawer-theme-btns">
+    <button class="drawer-theme-btn" data-drawer-theme="light"><span class="drawer-theme-btn-text">☀ Light</span></button>
+    <button class="drawer-theme-btn" data-drawer-theme="dark"><span class="drawer-theme-btn-text">🌙 Dark</span></button>
+    <button class="drawer-theme-btn" data-drawer-theme="system"><span class="drawer-theme-btn-text">🖥 System</span></button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var container = document.querySelector('.drawer-theme');
+  if (!container) return;
+
+  function syncThemeBtns() {
+    var current = localStorage.getItem('theme') || 'system';
+    container.querySelectorAll('.drawer-theme-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.drawerTheme === current);
+    });
+  }
+
+  container.querySelectorAll('.drawer-theme-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      if (typeof window.setTheme === 'function') window.setTheme(btn.dataset.drawerTheme);
+      syncThemeBtns();
+    });
+  });
+
+  document.addEventListener('draweropen', syncThemeBtns);
+  window.addEventListener('themechange', syncThemeBtns);
+})();
+</script>

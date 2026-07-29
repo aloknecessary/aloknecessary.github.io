@@ -104,6 +104,7 @@
           localStorage.setItem(THEME_KEY, theme);
           const effective = getEffectiveTheme();
           applyTheme(effective);
+          window.dispatchEvent(new CustomEvent('themechange', { detail: theme }));
         }
 
         function handleSystemChange(e) {
@@ -167,6 +168,9 @@
           }
 
           updateUI();
+
+          // Sync when theme changed externally (e.g. drawer)
+          window.addEventListener('themechange', updateUI);
 
           // Toggle dropdown
           trigger.addEventListener("click", (e) => {

@@ -57,7 +57,7 @@ hide_header: true
 
 ---
 
-## 🚀 About Me
+## 🚀 About Me {#about}
 
 I am a **Solution Architect** with deep, hands-on experience across **full-stack engineering, cloud architecture, DevOps, system design, and pre-sales technical scoping**. Over the past decade, I have evolved from an individual contributor into a technical leader who architects, builds, reviews, and scales production-grade systems across fintech, accessibility tech, IoT, enterprise security, and global tech.
 
@@ -91,7 +91,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ---
 
-## 🛠️ Core Expertise
+## 🛠️ Core Expertise {#expertise}
 
 ### **Architecture & Platforms**
 
@@ -193,7 +193,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ---
 
-## 💼 Professional Experience
+## 💼 Professional Experience {#experience}
 >
 > ### **[Byteridge Software Pvt. Ltd.](https://www.byteridge.com)**
 >
@@ -203,7 +203,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 >
 > I've led and delivered systems that integrate frontend, backend, infrastructure, and cloud products — blending architectural rigor with software engineering craftsmanship.
 >
-> [**→ Read the full journey**]({{ '/professional-journey' | relative_url }})
+> [**Read the full journey <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;transform:translateY(1px)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>**]({{ '/professional-journey' | relative_url }})
 >
 > **Key Achievements:**
 >
@@ -237,7 +237,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ---
 
-## 📝 Writing & Knowledge Sharing
+## 📝 Writing & Knowledge Sharing {#writing}
 
 <div class="soft-block">
   <p>I regularly write about:</p>
@@ -448,7 +448,7 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 
 ---
 
-## 🤖 AI-Powered Projects & POCs
+## 🤖 AI-Powered Projects & POCs {#projects}
 
 ### 🧪 AI-Driven Test Automation Framework (Built at Byteridge)
 
@@ -609,7 +609,7 @@ I'm always interested in:
 
 ---
 
-## 📫 Contact & Presence
+## 📫 Contact & Presence {#contact}
 
 If you're interested in **architecture discussions, system design reviews, DevOps or technical collaboration**, feel free to reach out.
 

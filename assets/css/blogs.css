@@ -82,116 +82,6 @@
   margin: 0 auto;
 }
 
-/* Search Container */
-.nav-left {
-  /* display: flex; */
-  align-items: center;
-}
-
-.search-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
-
-.search-icon-inside {
-  position: absolute;
-  left: 0.75rem;
-  color: var(--primary);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.search-container.active .search-icon-inside {
-  opacity: 1;
-}
-
-.search-toggle {
-  background: none;
-  border: none;
-  padding: 0.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-  margin-left: auto;
-}
-
-.search-toggle:hover {
-  opacity: 0.8;
-}
-
-.search-container.active .search-toggle {
-  display: none;
-}
-
-.search-input {
-  padding: 0.5rem 2.5rem 0.5rem 2.75rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--bg-card);
-  color: var(--text-primary);
-  font-size: 0.9rem;
-  display: none;
-  margin-left: auto;
-}
-
-.search-container.active .search-input {
-  display: block;
-  width: 250px;
-}
-
-@media (min-width: 1025px) {
-  .search-container .search-input {
-    display: block;
-    width: 250px;
-  }
-
-  .search-container .search-toggle {
-    display: none;
-  }
-
-  .search-container .search-icon-inside {
-    opacity: 1;
-  }
-}
-
-.search-input:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-  border-color: var(--primary);
-}
-
-.search-clear {
-  position: absolute;
-  right: 1rem;
-  background: none;
-  border: none;
-  padding: 0.25rem;
-  cursor: pointer;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-}
-
-.search-clear:hover {
-  color: var(--text-primary);
-}
-
-.search-container.active.has-text .search-clear {
-  display: flex;
-}
-
-@media (min-width: 1025px) {
-  .search-container.has-text .search-clear {
-    display: flex;
-  }
-}
-
 /* Grid Layout */
 
 .blog-cards-grid {
@@ -750,15 +640,6 @@
 /* ========================================
    Responsive Design
    ======================================== */
-
-@media (max-width: 1024px) {
-  .search-container {
-    position: absolute;
-    right: calc(50vw - 48%);
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
 
 @media (max-width: 768px) {
   .blog-cards-grid {

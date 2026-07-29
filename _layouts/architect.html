@@ -4,6 +4,478 @@ layout: default
 
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}" />
 <link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}">
+
+<nav class="architect-nav" id="architectNav" aria-label="Page sections">
+  <a class="an-brand" href="#">
+    <span class="an-brand-mono">AD</span>
+    <span class="an-brand-pipe">|</span>
+    <span class="an-brand-page">{% if page.url contains 'professional-journey' %}Professional Journey{% else %}Portfolio{% endif %}</span>
+  </a>
+  <span class="an-sep">|</span>
+  <div class="an-links">
+    {% if page.url contains 'professional-journey' %}
+      <span class="an-active-label">Professional Journey</span>
+      <span class="an-sep">|</span>
+      <a href="{{ '/' | relative_url }}" class="an-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;transform:translateY(-1px)"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Portfolio</a>
+      <span class="an-sep">|</span>
+      <a href="{{ '/blogs' | relative_url }}" class="an-link">Blogs</a>
+    {% else %}
+      <a href="#about" class="an-link">About</a>
+      <span class="an-sep">|</span>
+      <a href="#expertise" class="an-link">Expertise</a>
+      <span class="an-sep">|</span>
+      <a href="#experience" class="an-link">Experience</a>
+      <span class="an-sep">|</span>
+      <a href="#writing" class="an-link">Writing</a>
+      <span class="an-sep">|</span>
+      <a href="#projects" class="an-link">AI POCs</a>
+      <span class="an-sep">|</span>
+      <a href="#contact" class="an-link">Contact</a>
+    {% endif %}
+  </div>
+  <div class="an-actions">
+    {% unless page.url contains 'professional-journey' %}
+    <a href="{{ '/blogs' | relative_url }}" class="an-action-btn">Blogs</a>
+    <span class="an-action-divider"></span>
+    <a href="{{ '/professional-journey' | relative_url }}" class="an-action-btn">Professional Journey <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    {% endunless %}
+  </div>
+  <span class="an-mobile-context" id="anMobileContext"></span>
+  <button class="an-hamburger" id="anHamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="an-mobile-overlay" id="anMobileOverlay" aria-hidden="true">
+  <div class="an-mobile-drawer" id="anMobileDrawer">
+    <button class="an-drawer-close" id="anDrawerClose" aria-label="Close menu">✕</button>
+    {% if page.url contains 'professional-journey' %}
+      <span class="an-mobile-theme-label">Navigate</span>
+      <a href="{{ '/' | relative_url }}" class="an-mobile-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Portfolio</a>
+      <a href="{{ '/blogs' | relative_url }}" class="an-mobile-link">Blogs <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <hr class="an-mobile-divider">
+      {% include drawer-theme.html %}
+    {% else %}
+      <span class="an-mobile-theme-label">Navigate</span>
+      <a href="#about" class="an-mobile-link">About</a>
+      <a href="#expertise" class="an-mobile-link">Expertise</a>
+      <a href="#experience" class="an-mobile-link">Experience</a>
+      <a href="#writing" class="an-mobile-link">Writing</a>
+      <a href="#projects" class="an-mobile-link">AI POCs</a>
+      <a href="#contact" class="an-mobile-link">Contact</a>
+      <hr class="an-mobile-divider">
+      <span class="an-mobile-theme-label">Explore</span>
+      <a href="{{ '/blogs' | relative_url }}" class="an-mobile-link">Blogs <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="{{ '/professional-journey' | relative_url }}" class="an-mobile-link">Professional Journey <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <hr class="an-mobile-divider">
+      {% include drawer-theme.html %}
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .architect-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 10px max(20px, calc((100vw - 960px) / 2 - 20px));
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .architect-nav.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    background: color-mix(in srgb, var(--bg-base) 75%, transparent);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom-color: var(--border);
+  }
+
+  .an-brand {
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    margin-right: 0.4rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .an-brand-mono {
+    background: linear-gradient(135deg, var(--primary) 55%, var(--domain-platform) 45%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .an-brand-page {
+    display: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--primary), var(--crimson));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.01em;
+  }
+
+  .an-brand-pipe {
+    display: none;
+    color: var(--muted);
+    -webkit-text-fill-color: var(--muted);
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  .an-mobile-context {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--coral);
+    -webkit-text-fill-color: var(--coral);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .an-mobile-context.visible {
+    opacity: 1;
+  }
+
+  .an-sep {
+    margin: 0 0.5rem;
+    color: var(--muted);
+  }
+
+  .an-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+
+  .an-active-label {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background: linear-gradient(90deg, var(--primary), var(--crimson));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .an-link {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .an-link:hover,
+  .an-link.active {
+    background: linear-gradient(90deg, var(--primary), var(--crimson));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .an-action-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--text-secondary);
+    -webkit-text-fill-color: var(--text-secondary);
+    transition: color 0.2s ease;
+  }
+
+  .an-action-btn:hover {
+    background: linear-gradient(90deg, var(--primary), var(--crimson));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .an-action-divider {
+    width: 1px;
+    background: linear-gradient(to bottom, var(--primary), var(--crimson));
+    align-self: stretch;
+    opacity: 0.4;
+  }
+
+  .an-actions {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: stretch;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--bg-base), var(--bg-base)) padding-box,
+                linear-gradient(90deg, var(--primary), var(--crimson)) border-box;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .an-mobile-nav-links { display: none; }
+
+  .an-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    margin-left: auto;
+  }
+
+  .an-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--coral));
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+
+  .an-mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    background: rgba(0,0,0,0.4);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+
+  .an-mobile-overlay.open {
+    display: block;
+  }
+
+  .an-mobile-drawer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(280px, 80vw);
+    height: 100%;
+    background: var(--bg-base);
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+
+  .an-mobile-overlay.open .an-mobile-drawer {
+    transform: translateX(0);
+  }
+
+  .an-drawer-close {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    padding: 0;
+  }
+
+  .an-mobile-link {
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.55rem 0 0.55rem 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .an-mobile-link svg {
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+
+  .an-mobile-link:hover,
+  .an-mobile-link.active {
+    background: linear-gradient(270deg, var(--primary), var(--coral));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .an-mobile-theme {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+  }
+
+  .an-mobile-theme-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .an-mobile-theme-btns {
+    display: flex;
+    gap: 0.4rem;
+    padding-left: 0.75rem;
+  }
+
+  .an-theme-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .an-theme-btn.active {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .an-mobile-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0.5rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .an-links, .an-actions { display: none; }
+    .an-sep { display: none; }
+    .an-hamburger { display: flex; margin-left: auto; }
+    .an-brand-pipe, .an-brand-page { display: inline; }
+    .an-mobile-context { display: block; }
+  }
+</style>
+
+<script>
+(function () {
+  const nav = document.getElementById('architectNav');
+  const sections = ['about', 'expertise', 'experience', 'writing', 'projects', 'contact'];
+  const links = {};
+  sections.forEach(id => {
+    links[id] = nav.querySelector(`a[href="#${id}"]`);
+  });
+
+  const THRESHOLD = 200;
+
+  const mobileContext = document.getElementById('anMobileContext');
+  const isJourneyPage = window.location.pathname.includes('professional-journey');
+  const sectionNames = {
+    about: 'About', expertise: 'Expertise', experience: 'Experience',
+    writing: 'Writing', projects: 'AI POCs', contact: 'Contact'
+  };
+  const drawerLinks = document.querySelectorAll('.an-mobile-link[href^="#"]');
+
+  function setMobileContext(text) {
+    if (!mobileContext) return;
+    if (mobileContext.textContent === text) return;
+    mobileContext.classList.remove('visible');
+    setTimeout(() => {
+      mobileContext.textContent = text;
+      if (text) mobileContext.classList.add('visible');
+    }, 150);
+  }
+
+  function setActive(id) {
+    sections.forEach(s => links[s] && links[s].classList.remove('active'));
+    if (id && links[id]) links[id].classList.add('active');
+    drawerLinks.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+    });
+    if (!isJourneyPage) setMobileContext(id ? (sectionNames[id] || '') : '');
+  }
+
+  function onScroll() {
+    nav.classList.toggle('visible', window.scrollY > THRESHOLD);
+
+    const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 10;
+    if (atBottom) {
+      setActive('contact');
+      return;
+    }
+
+    let current = null;
+    let minDist = Infinity;
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const top = el.getBoundingClientRect().top;
+      if (top <= 100 && Math.abs(top) < minDist) {
+        minDist = Math.abs(top);
+        current = id;
+      }
+    });
+    setActive(current);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const hamburger = document.getElementById('anHamburger');
+  const overlay = document.getElementById('anMobileOverlay');
+  const drawerClose = document.getElementById('anDrawerClose');
+
+  function openDrawer() {
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    document.dispatchEvent(new Event('draweropen'));
+  }
+
+  function closeDrawer() {
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeDrawer();
+  });
+  overlay.querySelectorAll('.an-mobile-link').forEach(function(link) {
+    link.addEventListener('click', closeDrawer);
+  });
+})();
+</script>
+
 <!-- {% unless page.hide_header %}
 
 <header>
