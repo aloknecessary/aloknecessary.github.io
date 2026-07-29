@@ -39,7 +39,6 @@ layout: default
   <!-- Series Content -->
   <div id="series-content" class="hidden">
     <div class="series-container">
-      {%- assign latest_post = site.blogs | sort: "last_modified_at" | last %}
       {% for series in site.data.series %}
         {% assign series_posts = site.blogs | where: "series", series.name | sort: "series_order" | reverse %}
         {% assign count = series_posts | size %}
@@ -56,7 +55,7 @@ layout: default
               <p class="series-block-description">{{ series.description }}</p>
               <div class="series-start-split">
                 <a href="{{ series_posts.last.url | relative_url }}" class="series-start-btn">Start reading</a>
-                <button class="series-start-chevron" aria-label="Reading options" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="series-start-chevron" aria-label="Reading options" aria-haspopup="true" aria-expanded="false">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
                 </button>
                 <div class="series-start-dropdown" role="menu">
@@ -72,7 +71,7 @@ layout: default
             <li>
               <span class="step-indicator">{{ post.series_order }}</span>
               <div class="step-content">
-                <a href="{{ post.url | relative_url }}">{{ post.title }}{% if post.slug == latest_post.slug %}<span class="post-new-badge" data-modified="{{ latest_post.last_modified_at }}"><span>New</span></span>{% endif %}</a>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}<span class="post-new-badge" data-url="{{ post.url }}"><span>New</span></span></a>
                 <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
               </div>
             </li>
@@ -126,9 +125,12 @@ layout: default
 <script src="{{ '/assets/js/tag-sort.js' | relative_url }}"></script>
 <script>
 (function() {
-  document.querySelectorAll('.post-new-badge[data-modified]').forEach(function(badge) {
-    var modified = new Date(badge.dataset.modified).getTime();
-    if (isNaN(modified) || (Date.now() - modified) >= 24 * 60 * 60 * 1000) {
+  var banner = document.getElementById('recent-post-banner');
+  var latestUrl = banner ? banner.dataset.url : null;
+  var modified = banner ? new Date(banner.dataset.modified).getTime() : NaN;
+  var isRecent = !isNaN(modified) && (Date.now() - modified) < 24 * 60 * 60 * 1000;
+  document.querySelectorAll('.post-new-badge[data-url]').forEach(function(badge) {
+    if (!isRecent || badge.dataset.url !== latestUrl) {
       badge.style.display = 'none';
     }
   });
