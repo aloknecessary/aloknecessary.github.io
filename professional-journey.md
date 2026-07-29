@@ -9,7 +9,7 @@ hide_header: false
 <header class="hero" role="banner">
   <div class="hero-bg"></div>
   <div class="hero-content">
-    <a href="{{ '/' | relative_url }}" class="hero-back">← Back to Portfolio</a>
+    <a href="{{ '/' | relative_url }}" class="hero-back"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;transform:translateY(0px)"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Back to Portfolio</a>
     <p class="hero-eyebrow">Engineering Journey · Byteridge</p>
     <h1 class="hero-name">10+ Years of<br><span>Building & Leading</span></h1>
     <p class="hero-role">Full Stack Developer → Engineering Lead → Solution Architect  ·  2014 – Present</p>
@@ -898,7 +898,7 @@ hide_header: false
         microservices for 500+ daily users — the throughline has always been total ownership."
       </div>
       <p style="text-align: center; margin-top: 3rem;">
-        <a href="{{ '/' | relative_url }}" class="hero-back" style="text-align: center; display: inline-block;">← Back to Portfolio</a>
+        <a href="{{ '/' | relative_url }}" class="hero-back" style="text-align: center; display: inline-block;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;transform:translateY(0px)"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Back to Portfolio</a>
       </p>
     </div>
   </div>

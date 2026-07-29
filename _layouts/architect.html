@@ -16,7 +16,7 @@ layout: default
     {% if page.url contains 'professional-journey' %}
       <span class="an-active-label">Professional Journey</span>
       <span class="an-sep">|</span>
-      <a href="{{ '/' | relative_url }}" class="an-link">← Portfolio</a>
+      <a href="{{ '/' | relative_url }}" class="an-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;transform:translateY(-1px)"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Portfolio</a>
       <span class="an-sep">|</span>
       <a href="{{ '/blogs' | relative_url }}" class="an-link">Blogs</a>
     {% else %}
@@ -37,7 +37,7 @@ layout: default
     {% unless page.url contains 'professional-journey' %}
     <a href="{{ '/blogs' | relative_url }}" class="an-action-btn">Blogs</a>
     <span class="an-action-divider"></span>
-    <a href="{{ '/professional-journey' | relative_url }}" class="an-action-btn">Professional Journey</a>
+    <a href="{{ '/professional-journey' | relative_url }}" class="an-action-btn">Professional Journey <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     {% endunless %}
   </div>
   <span class="an-mobile-context" id="anMobileContext"></span>
@@ -51,8 +51,8 @@ layout: default
     <button class="an-drawer-close" id="anDrawerClose" aria-label="Close menu">✕</button>
     {% if page.url contains 'professional-journey' %}
       <span class="an-mobile-theme-label">Navigate</span>
-      <a href="{{ '/' | relative_url }}" class="an-mobile-link">← Portfolio</a>
-      <a href="{{ '/blogs' | relative_url }}" class="an-mobile-link">→ Blogs</a>
+      <a href="{{ '/' | relative_url }}" class="an-mobile-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Portfolio</a>
+      <a href="{{ '/blogs' | relative_url }}" class="an-mobile-link">Blogs <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <hr class="an-mobile-divider">
       {% include drawer-theme.html %}
     {% else %}
@@ -65,8 +65,8 @@ layout: default
       <a href="#contact" class="an-mobile-link">Contact</a>
       <hr class="an-mobile-divider">
       <span class="an-mobile-theme-label">Explore</span>
-      <a href="{{ '/blogs' | relative_url }}" class="an-mobile-link">Blogs →</a>
-      <a href="{{ '/professional-journey' | relative_url }}" class="an-mobile-link">Professional Journey →</a>
+      <a href="{{ '/blogs' | relative_url }}" class="an-mobile-link">Blogs <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="{{ '/professional-journey' | relative_url }}" class="an-mobile-link">Professional Journey <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <hr class="an-mobile-divider">
       {% include drawer-theme.html %}
     {% endif %}
@@ -312,7 +312,15 @@ layout: default
     font-weight: 600;
     text-decoration: none;
     padding: 0.55rem 0 0.55rem 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     transition: color 0.2s;
+  }
+
+  .an-mobile-link svg {
+    vertical-align: middle;
+    flex-shrink: 0;
   }
 
   .an-mobile-link:hover,

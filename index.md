@@ -203,7 +203,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 >
 > I've led and delivered systems that integrate frontend, backend, infrastructure, and cloud products — blending architectural rigor with software engineering craftsmanship.
 >
-> [**→ Read the full journey**]({{ '/professional-journey' | relative_url }})
+> [**Read the full journey <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;transform:translateY(1px)"><path d="M5 12h14M12 5l7 7-7 7"/></svg>**]({{ '/professional-journey' | relative_url }})
 >
 > **Key Achievements:**
 >

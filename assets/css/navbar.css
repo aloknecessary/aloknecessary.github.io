@@ -274,6 +274,11 @@
   transition: color 0.2s;
 }
 
+.nav-drawer-link svg {
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
 .nav-drawer-link:hover {
   background: linear-gradient(90deg, var(--primary), var(--coral));
   -webkit-background-clip: text;
