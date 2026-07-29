@@ -33,6 +33,9 @@
     </div>
     <span class="nav-separator">|</span>
     <a href="{{ '/' | relative_url }}">Home</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   {% elsif page.layout == 'blogs' %}
     <div class="nav-left">
       <span class="nav-active">Blogs</span>
@@ -74,8 +77,32 @@
         </svg>
       </button>
     </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   {% endif %}
 </nav>
+
+{% if page.layout == 'blog' or page.layout == 'blogs' or page.layout == 'categories' or page.layout == 'tags' or page.layout == 'series' %}
+<div class="nav-drawer-overlay" id="navDrawerOverlay" aria-hidden="true">
+  <div class="nav-drawer" id="navDrawer">
+    <button class="nav-drawer-close" id="navDrawerClose" aria-label="Close menu">✕</button>
+    <span class="nav-drawer-label">Browse</span>
+    {% if page.layout == 'blogs' %}
+      <a href="{{ '/blogs' | relative_url }}" class="nav-drawer-link nav-drawer-link--disabled">Blogs <span class="nav-drawer-current">current</span></a>
+    {% else %}
+      <a href="{{ '/blogs' | relative_url }}" class="nav-drawer-link">← Back to Blogs</a>
+      <hr class="nav-drawer-divider">
+    {% endif %}
+    <a href="{{ '/series' | relative_url }}" class="nav-drawer-link{% if page.layout == 'series' %} nav-drawer-link--disabled{% endif %}">Series{% unless page.layout == 'series' %} →{% endunless %}{% if page.layout == 'series' %} <span class="nav-drawer-current">current</span>{% endif %}</a>
+    <a href="{{ '/categories' | relative_url }}" class="nav-drawer-link{% if page.layout == 'categories' %} nav-drawer-link--disabled{% endif %}">Categories{% unless page.layout == 'categories' %} →{% endunless %}{% if page.layout == 'categories' %} <span class="nav-drawer-current">current</span>{% endif %}</a>
+    <a href="{{ '/tags' | relative_url }}" class="nav-drawer-link{% if page.layout == 'tags' %} nav-drawer-link--disabled{% endif %}">Topics{% unless page.layout == 'tags' %} →{% endunless %}{% if page.layout == 'tags' %} <span class="nav-drawer-current">current</span>{% endif %}</a>
+    <hr class="nav-drawer-divider">
+    <a href="{{ '/' | relative_url }}" class="nav-drawer-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
+    {% include drawer-theme.html %}
+  </div>
+</div>
+{% endif %}
 
 {% if page.layout == 'categories' or page.layout == 'tags' or page.layout == 'series' or page.layout == 'blog' %}
 <script>
@@ -107,6 +134,39 @@
 
   document.addEventListener('click', function() {
     dropdown.classList.remove('open');
+  });
+})();
+</script>
+
+<script>
+(function() {
+  const hamburger = document.getElementById('navHamburger');
+  const overlay = document.getElementById('navDrawerOverlay');
+  const drawerClose = document.getElementById('navDrawerClose');
+  if (!hamburger || !overlay) return;
+
+  function openDrawer() {
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    document.dispatchEvent(new Event('draweropen'));
+  }
+
+  function closeDrawer() {
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', openDrawer);
+  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeDrawer();
+  });
+  overlay.querySelectorAll('.nav-drawer-link:not(.nav-drawer-link--disabled)').forEach(function(link) {
+    link.addEventListener('click', closeDrawer);
   });
 })();
 </script>
