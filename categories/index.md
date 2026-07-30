@@ -1,8 +1,8 @@
 ---
 layout: categories
-title: Browse by Subject
+title: Browse by Domain
 permalink: /categories/
 hide_header: false
 ---
 
-Browse posts organized by broad topics to explore content by subject area.
+Browse posts organized by broad domains to explore content by subject area.

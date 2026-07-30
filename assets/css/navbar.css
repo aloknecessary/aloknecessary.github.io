@@ -456,3 +456,20 @@
     right: calc(50vw - 48% + 36px);
   }
 }
+
+@media (max-width: 376px) {
+  .nav-bar.stuck {
+    padding: 10px calc(50vw - 52%);
+  }
+  .nav-brand {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  .nav-hamburger {
+    flex-shrink: 0;
+  }
+  .nav-bar.stuck .search-container {
+    right: calc(50vw - 48% + 32px);
+  }
+}
