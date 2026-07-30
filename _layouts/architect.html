@@ -283,13 +283,14 @@ layout: default
     width: min(280px, 80vw);
     height: 100%;
     background: var(--bg-base);
-    padding: 1.5rem 1.25rem;
+    padding: 1.5rem 1.25rem 3rem;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
     box-shadow: -4px 0 24px rgba(0,0,0,0.15);
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+    overflow-y: auto;
   }
 
   .an-mobile-overlay.open .an-mobile-drawer {
@@ -379,6 +380,16 @@ layout: default
     .an-hamburger { display: flex; margin-left: auto; }
     .an-brand-pipe, .an-brand-page { display: inline; }
     .an-mobile-context { display: block; }
+  }
+  @media (max-width: 376px) {
+    .architect-nav {
+      padding: 10px;
+      width: 95vw;
+      top: env(safe-area-inset-top, 0px);
+    }
+    .an-mobile-drawer {
+      height:90vh;
+    }
   }
 </style>
 

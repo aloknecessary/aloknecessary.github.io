@@ -2,7 +2,7 @@
 <nav class="nav-bar">
   <a href="{{ '/' | relative_url }}" class="nav-brand" aria-label="Home">AD</a><span class="nav-brand-separator">|</span>
   {% if page.layout == 'blog' or page.layout == 'categories' or page.layout == 'tags' or page.layout == 'series' %}
-    <span class="nav-active">{% if page.layout == 'blog' %}Article{% elsif page.layout == 'categories' %}Categories{% elsif page.layout == 'tags' %}Topics{% else %}Series{% endif %}</span>
+    <span class="nav-active">{% if page.layout == 'blog' %}Article{% elsif page.layout == 'categories' %}Domains{% elsif page.layout == 'tags' %}Topics{% else %}Series{% endif %}</span>
     <span class="nav-separator">|</span>
     <a id="backButton"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;transform:translateY(-1px)"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Back</a>
     <span class="nav-separator nav-desktop-only">|</span>
@@ -13,7 +13,7 @@
     {% endif %}
     {% if page.layout != 'categories' %}
     <span class="nav-separator nav-desktop-only">|</span>
-    <a href="{{ '/categories' | relative_url }}" class="nav-desktop-only">Categories</a>
+    <a href="{{ '/categories' | relative_url }}" class="nav-desktop-only">Domains</a>
     {% endif %}
     {% if page.layout != 'tags' %}
     <span class="nav-separator nav-desktop-only">|</span>
@@ -27,7 +27,7 @@
       <div class="nav-browse-dropdown">
         <a href="{{ '/blogs' | relative_url }}">Blogs</a>
         {% if page.layout != 'series' %}<a href="{{ '/series' | relative_url }}">Series</a>{% endif %}
-        {% if page.layout != 'categories' %}<a href="{{ '/categories' | relative_url }}">Categories</a>{% endif %}
+        {% if page.layout != 'categories' %}<a href="{{ '/categories' | relative_url }}">Domains</a>{% endif %}
         {% if page.layout != 'tags' %}<a href="{{ '/tags' | relative_url }}">Topics</a>{% endif %}
       </div>
     </div>
@@ -42,7 +42,7 @@
       <span class="nav-separator">|</span>
       <a href="{{ '/series' | relative_url }}">Series</a>
       <span class="nav-separator nav-desktop-only">|</span>
-      <a href="{{ '/categories' | relative_url }}" class="nav-desktop-only">Categories</a>
+      <a href="{{ '/categories' | relative_url }}" class="nav-desktop-only">Domains</a>
       <span class="nav-separator nav-desktop-only">|</span>
       <a href="{{ '/tags' | relative_url }}" class="nav-desktop-only">Topics</a>
       <div class="nav-browse-menu nav-mobile-only">
@@ -51,7 +51,7 @@
           Browse <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="nav-browse-dropdown">
-          <a href="{{ '/categories' | relative_url }}">Categories</a>
+          <a href="{{ '/categories' | relative_url }}">Domains</a>
           <a href="{{ '/tags' | relative_url }}">Topics</a>
         </div>
       </div>
@@ -95,7 +95,7 @@
       <hr class="nav-drawer-divider">
     {% endif %}
     <a href="{{ '/series' | relative_url }}" class="nav-drawer-link{% if page.layout == 'series' %} nav-drawer-link--disabled{% endif %}">Series{% unless page.layout == 'series' %} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>{% endunless %}{% if page.layout == 'series' %} <span class="nav-drawer-current">current</span>{% endif %}</a>
-    <a href="{{ '/categories' | relative_url }}" class="nav-drawer-link{% if page.layout == 'categories' %} nav-drawer-link--disabled{% endif %}">Categories{% unless page.layout == 'categories' %} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>{% endunless %}{% if page.layout == 'categories' %} <span class="nav-drawer-current">current</span>{% endif %}</a>
+    <a href="{{ '/categories' | relative_url }}" class="nav-drawer-link{% if page.layout == 'categories' %} nav-drawer-link--disabled{% endif %}">Domains{% unless page.layout == 'categories' %} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>{% endunless %}{% if page.layout == 'categories' %} <span class="nav-drawer-current">current</span>{% endif %}</a>
     <a href="{{ '/tags' | relative_url }}" class="nav-drawer-link{% if page.layout == 'tags' %} nav-drawer-link--disabled{% endif %}">Topics{% unless page.layout == 'tags' %} <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>{% endunless %}{% if page.layout == 'tags' %} <span class="nav-drawer-current">current</span>{% endif %}</a>
     <hr class="nav-drawer-divider">
     <a href="{{ '/' | relative_url }}" class="nav-drawer-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a>
