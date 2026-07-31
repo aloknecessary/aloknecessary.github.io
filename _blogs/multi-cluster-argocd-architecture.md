@@ -1,7 +1,7 @@
 ---
 title: "Multi-Cluster ArgoCD Architecture: Hub-and-Spoke vs. Per-Cluster, Done Right"
 date: 2026-07-31
-last_modified_at: 2026-07-31T12:17:00+05:30
+last_modified_at: 2026-07-31T14:28:00+05:30
 author: Alok Ranjan Daftuar
 description: "A practical guide to multi-cluster ArgoCD architecture — comparing hub-and-spoke vs. per-cluster patterns, covering EKS and AKS cluster registration mechanics, and a decision framework tied to team topology and compliance boundaries."
 excerpt: "Where does ArgoCD live when you go from 1 cluster to 15? Hub-and-spoke vs. ArgoCD-per-cluster, EKS and AKS cluster registration mechanics, and a decision framework tied to team topology and compliance boundaries."
