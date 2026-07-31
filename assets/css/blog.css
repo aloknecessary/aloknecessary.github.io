@@ -446,12 +446,12 @@ ul.task-list input {
 
 .series-name {
   font-weight: 600;
-  color: var(--text-primary);
   text-decoration: none;
 }
 
 .series-name:hover {
-  text-decoration: underline;
+  text-decoration-color: var(--domain-accent, var(--primary));
+  opacity: 0.8;
 }
 
 .series-position {

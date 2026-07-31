@@ -1,0 +1,23 @@
+/* ========================================
+   Domain Color Utilities
+   Shared by series page and blog article banner
+   ======================================== */
+
+.domain-ai-engineering {
+  --domain-accent: var(--domain-ai);
+}
+
+.domain-infrastructure {
+  --domain-accent: var(--domain-infra);
+}
+
+.domain-platform {
+  --domain-accent: var(--domain-platform);
+}
+
+.series-block-title {
+  background: linear-gradient(90deg, var(--domain-accent), var(--coral));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
