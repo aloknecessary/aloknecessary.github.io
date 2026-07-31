@@ -506,24 +506,14 @@
 /* Domain color coding */
 .domain-ai-engineering {
   border-left: 4px solid var(--domain-ai);
-  --domain-accent: var(--domain-ai);
 }
 
 .domain-infrastructure {
   border-left: 4px solid var(--domain-infra);
-  --domain-accent: var(--domain-infra);
 }
 
 .domain-platform {
   border-left: 4px solid var(--domain-platform);
-  --domain-accent: var(--domain-platform);
-}
-
-.series-block-title {
-  background: linear-gradient(90deg, var(--domain-accent), var(--coral));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .series-block-title .tag-count {

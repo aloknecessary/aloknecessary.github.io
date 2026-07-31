@@ -5,10 +5,10 @@
 {% assign next_order = page.series_order | plus: 1 %}
 {% assign s_info = site.data.series | where: "name", page.series | first %}
 
-<div class="series-banner">
+<div class="series-banner domain-{{ s_info.domain | slugify }}">
   <div class="series-label">
     <span class="series-badge">Series</span>
-    <a class="series-name" href="{{ '/series/#' | append: s_info.slug | relative_url }}">{{ page.series }}</a>
+    <a class="series-name series-block-title" href="{{ '/series/#' | append: s_info.slug | relative_url }}">{{ page.series }}</a>
     <span class="series-position">— Part {{ page.series_order }} of {{ series_total }}</span>
   </div>
   <nav class="series-nav">
