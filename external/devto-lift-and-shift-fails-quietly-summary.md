@@ -3,7 +3,7 @@ title: "Why Lift-and-Shift Fails Quietly: Architectural Smells That Appear After
 published: true
 description: The architectural debt that migrated workloads accumulate — latency amplification, chatty services, cost surprises, stateful assumptions, observability voids, and distributed monoliths disguised as microservices
 tags: cloud, architecture, devops, migration
-canonical_url: https://aloknecessary.github.io/blogs/lift-and-shift-fails-quietly/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=lift-and-shift-fails-quietly
+canonical_url: https://aloknecessary.in/blogs/lift-and-shift-fails-quietly/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=lift-and-shift-fails-quietly
 cover_image: 
 ---
 
@@ -77,7 +77,7 @@ Lift-and-shift is not a failure state. It's a phase. The mistake is treating it 
 
 This is a summary of my deep dive into post-migration architectural smells. The full article covers all six patterns with diagnostics, mitigations, and a pre-migration review checklist:
 
-**👉 [Why Lift-and-Shift Fails Quietly — Full Article](https://aloknecessary.github.io/blogs/lift-and-shift-fails-quietly/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=lift-and-shift-fails-quietly)**
+**👉 [Why Lift-and-Shift Fails Quietly — Full Article](https://aloknecessary.in/blogs/lift-and-shift-fails-quietly/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=lift-and-shift-fails-quietly)**
 
 The full article includes:
 

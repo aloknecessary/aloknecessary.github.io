@@ -3,7 +3,7 @@ title: "Agentic RAG: Designing Self-Correcting Retrieval Loops for Production"
 published: true
 description: Query planning, iterative retrieval, reflection agents, tool-call orchestration, routing logic, failure isolation, and the cost trade-offs that determine when agentic loops earn their complexity
 tags: ai, architecture, python, machinelearning
-canonical_url: https://aloknecessary.github.io/blogs/designing-self-correcting-retrieval-loops-for-production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=agentic-rag-self-correcting-retrieval
+canonical_url: https://aloknecessary.in/blogs/designing-self-correcting-retrieval-loops-for-production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=agentic-rag-self-correcting-retrieval
 cover_image: 
 ---
 
@@ -85,7 +85,7 @@ An agentic system with no observability is not an improvement over single-pass �
 
 This is a summary of my deep dive into agentic RAG architecture. The full article covers the complete system with production implementations:
 
-**👉 [Designing Self-Correcting Retrieval Loops for Production — Full Article](https://aloknecessary.github.io/blogs/designing-self-correcting-retrieval-loops-for-production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=agentic-rag-self-correcting-retrieval)**
+**👉 [Designing Self-Correcting Retrieval Loops for Production — Full Article](https://aloknecessary.in/blogs/designing-self-correcting-retrieval-loops-for-production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=agentic-rag-self-correcting-retrieval)**
 
 The full article includes:
 

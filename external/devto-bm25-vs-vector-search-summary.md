@@ -3,7 +3,7 @@ title: "BM25 vs. Vector Search: Choosing the Right Retrieval Strategy for Produc
 published: true
 description: A production-focused comparison of BM25 and vector search — when each wins, where each fails, hybrid retrieval with RRF, re-ranking strategies, and a decision framework for RAG and search systems
 tags: ai, search, architecture, machinelearning
-canonical_url: https://aloknecessary.github.io/blogs/bm25_vs_vector_search/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=bm25-vs-vector-search
+canonical_url: https://aloknecessary.in/blogs/bm25_vs_vector_search/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=bm25-vs-vector-search
 cover_image: 
 ---
 
@@ -67,7 +67,7 @@ Skipping the re-ranker is a common mistake. Initial retrieval optimizes for reca
 
 This is a summary of my deep dive into retrieval architecture. The full article covers BM25 mechanics, vector search internals, the complete tooling landscape, chunking strategies, and a decision framework:
 
-**👉 [BM25 vs. Vector Search — Full Article](https://aloknecessary.github.io/blogs/bm25_vs_vector_search/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=bm25-vs-vector-search)**
+**👉 [BM25 vs. Vector Search — Full Article](https://aloknecessary.in/blogs/bm25_vs_vector_search/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=bm25-vs-vector-search)**
 
 The full article includes:
 

@@ -3,7 +3,7 @@ title: "The CAP Theorem in Practice: Making the Right Trade-offs at Scale"
 published: true
 description: A practical guide to the CAP theorem for architects — CP vs AP trade-offs, PACELC model, saga and CQRS patterns shaped by CAP, tunable consistency, and a decision framework
 tags: distributedsystems, architecture, database, systemdesign
-canonical_url: https://aloknecessary.github.io/blogs/the-cap-theorem-in-practice-making-the-right-trade-offs-at-scale/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cap-theorem
+canonical_url: https://aloknecessary.in/blogs/the-cap-theorem-in-practice-making-the-right-trade-offs-at-scale/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cap-theorem
 cover_image: 
 ---
 
@@ -53,7 +53,7 @@ A CP system with synchronous replication pays a latency tax on every write — a
 
 This is a summary of my deep dive into CAP theorem trade-offs. The full article covers CP vs AP with canonical examples, the PACELC model, architectural patterns, and a decision framework:
 
-**👉 [The CAP Theorem in Practice — Full Article](https://aloknecessary.github.io/blogs/the-cap-theorem-in-practice-making-the-right-trade-offs-at-scale/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cap-theorem)**
+**👉 [The CAP Theorem in Practice — Full Article](https://aloknecessary.in/blogs/the-cap-theorem-in-practice-making-the-right-trade-offs-at-scale/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cap-theorem)**
 
 The full article includes:
 

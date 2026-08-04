@@ -3,7 +3,7 @@ title: "Saga Orchestration vs. Choreography: Making the Right Trade-off in Event
 published: true
 description: A production-grounded comparison of saga orchestration and choreography — central control vs. decentralized reactions, failure modes, compensation correctness, and how to choose
 tags: distributedsystems, architecture, microservices, eventdriven
-canonical_url: https://aloknecessary.github.io/blogs/saga-orchestration-vs-choreography/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=saga-orchestration-vs-choreography
+canonical_url: https://aloknecessary.in/blogs/saga-orchestration-vs-choreography/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=saga-orchestration-vs-choreography
 cover_image: 
 ---
 
@@ -92,7 +92,7 @@ Most large systems use **both** — choreography for high-throughput, loosely-co
 
 This is a summary of my deep dive into saga patterns. The full article covers orchestration and choreography in detail with production failure scenarios, compensation strategies, and decision frameworks:
 
-**👉 [Saga Orchestration vs. Choreography — Full Article](https://aloknecessary.github.io/blogs/saga-orchestration-vs-choreography/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=saga-orchestration-vs-choreography)**
+**👉 [Saga Orchestration vs. Choreography — Full Article](https://aloknecessary.in/blogs/saga-orchestration-vs-choreography/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=saga-orchestration-vs-choreography)**
 
 The full article includes:
 

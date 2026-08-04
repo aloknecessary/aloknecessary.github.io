@@ -3,7 +3,7 @@ title: "Cloud Cost Architecture: Engineering FinOps Into the System, Not Onto It
 published: true
 description: A systems-level approach to cloud cost governance — commitment tiers, cost allocation tagging, Kubernetes cost attribution, pipeline cost gates, and guardrails that block expensive changes before they deploy
 tags: cloud, finops, devops, architecture
-canonical_url: https://aloknecessary.github.io/blogs/cloud-cost-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-cost-architecture
+canonical_url: https://aloknecessary.in/blogs/cloud-cost-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-cost-architecture
 cover_image: 
 ---
 
@@ -88,7 +88,7 @@ If the projected increase exceeds a threshold, the check fails and the PR cannot
 
 This is a summary of the fourth post in the Cloud Architecture series. The full article includes Infracost GitHub Actions workflow, Azure Policy JSON for tag enforcement, Kubernetes ResourceQuota and CronJob manifests, commitment tier decision matrix, and a comprehensive cost architecture checklist:
 
-**👉 [Cloud Cost Architecture: Engineering FinOps Into the System, Not Onto It — Full Article](https://aloknecessary.github.io/blogs/cloud-cost-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-cost-architecture)**
+**👉 [Cloud Cost Architecture: Engineering FinOps Into the System, Not Onto It — Full Article](https://aloknecessary.in/blogs/cloud-cost-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-cost-architecture)**
 
 The full article includes:
 

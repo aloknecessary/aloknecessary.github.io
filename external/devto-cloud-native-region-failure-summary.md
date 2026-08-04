@@ -3,7 +3,7 @@ title: "Designing Cloud-Native Systems That Survive Region-Level Failures"
 published: true
 description: A practical architecture guide to surviving region-level cloud failures — multi-AZ vs multi-region trade-offs, active-passive and active-active patterns, data replication strategies, failover automation, and a cost-aware decision framework
 tags: cloud, architecture, aws, distributedsystems
-canonical_url: https://aloknecessary.github.io/blogs/cloud_native_region_failure_architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-native-region-failure
+canonical_url: https://aloknecessary.in/blogs/cloud_native_region_failure_architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-native-region-failure
 cover_image: 
 ---
 
@@ -69,7 +69,7 @@ Manual failover is not failover. Under the stress of a region-level incident, ma
 
 This is a summary of my deep dive into multi-region resilience. The full article covers all patterns with AWS and Azure architecture sketches, cost analysis, and a decision framework:
 
-**👉 [Designing Cloud-Native Systems That Survive Region-Level Failures — Full Article](https://aloknecessary.github.io/blogs/cloud_native_region_failure_architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-native-region-failure)**
+**👉 [Designing Cloud-Native Systems That Survive Region-Level Failures — Full Article](https://aloknecessary.in/blogs/cloud_native_region_failure_architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-native-region-failure)**
 
 The full article includes:
 

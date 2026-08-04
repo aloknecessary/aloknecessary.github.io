@@ -3,7 +3,7 @@ title: "Embedding Model Selection for Production: The Decision Nobody Documents"
 published: false
 description: A production decision framework for choosing embedding models — MTEB shortlisting, domain benchmarking, Matryoshka dimensionality trade-offs, cost modeling at corpus scale, and the re-embedding migration problem.
 tags: ai, rag, embeddings, architecture
-canonical_url: https://aloknecessary.github.io/blogs/embedding-model-selection/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=embedding-model-selection
+canonical_url: https://aloknecessary.in/blogs/embedding-model-selection/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=embedding-model-selection
 cover_image: 
 ---
 
@@ -79,7 +79,7 @@ Check whether a domain-specific model already exists (e.g., code-specific varian
 
 This is a summary of the seventh post in the RAG and AI Engineering series. The full article includes complete benchmarking code, cost modeling functions, the re-indexing migration architecture, decision matrix, and production checklist:
 
-**👉 [Embedding Model Selection for Production — Full Article](https://aloknecessary.github.io/blogs/embedding-model-selection/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=embedding-model-selection)**
+**👉 [Embedding Model Selection for Production — Full Article](https://aloknecessary.in/blogs/embedding-model-selection/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=embedding-model-selection)**
 
 The full article includes:
 

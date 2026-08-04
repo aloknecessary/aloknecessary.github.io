@@ -12,6 +12,6 @@ The site serves as a central place for:
 
 The repository follows a content-first structure with a strong focus on clarity, maintainability, and long-term evolution.
 
-# [About Me](https://aloknecessary.github.io/)
+# [About Me](https://aloknecessary.in/)
 
-# [My Blog](https://aloknecessary.github.io/blogs)
+# [My Blog](https://aloknecessary.in/blogs)

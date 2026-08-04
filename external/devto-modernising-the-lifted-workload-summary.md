@@ -3,7 +3,7 @@ title: "Modernising the Lifted Workload: The Architectural Decisions That Separa
 published: true
 description: A modernisation roadmap for lifted workloads — workload assessment, managed service substitution, stateless redesign, the strangler fig pattern, Kubernetes readiness criteria, and autoscaling that reflects real load
 tags: kubernetes, cloud, architecture, devops
-canonical_url: https://aloknecessary.github.io/blogs/modernising-the-lifted-workload/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=modernising-the-lifted-workload
+canonical_url: https://aloknecessary.in/blogs/modernising-the-lifted-workload/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=modernising-the-lifted-workload
 cover_image: 
 ---
 
@@ -103,7 +103,7 @@ Observability comes second, not last — you cannot safely extract services you 
 
 This is a summary of the third post in the Cloud Architecture series. The full article includes workload assessment matrices, managed service substitution tables, strangler fig architecture diagrams, Kubernetes probe configuration, KEDA ScaledObject manifests, and a comprehensive modernisation readiness checklist:
 
-**👉 [Modernising the Lifted Workload — Full Article](https://aloknecessary.github.io/blogs/modernising-the-lifted-workload/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=modernising-the-lifted-workload)**
+**👉 [Modernising the Lifted Workload — Full Article](https://aloknecessary.in/blogs/modernising-the-lifted-workload/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=modernising-the-lifted-workload)**
 
 The full article includes:
 

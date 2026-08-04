@@ -3,7 +3,7 @@ title: "GitHub Actions OIDC: Eliminating Long-Lived Credentials from Your CI/CD 
 published: false
 description: A production implementation guide to GitHub Actions OIDC for AWS and Azure — trust policy design, sub claim scoping, per-job role architecture, reusable workflow federation, and the migration path from static secrets
 tags: github, devops, aws, security
-canonical_url: https://aloknecessary.github.io/blogs/github-actions-oidc/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=github-actions-oidc
+canonical_url: https://aloknecessary.in/blogs/github-actions-oidc/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=github-actions-oidc
 cover_image: 
 ---
 
@@ -85,7 +85,7 @@ Step 6 is what most teams defer indefinitely. The credential still exists and co
 
 This is a condensed version. The full article includes complete, production-ready implementations:
 
-**👉 [GitHub Actions OIDC: Eliminating Long-Lived Credentials — Full Article](https://aloknecessary.github.io/blogs/github-actions-oidc/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=github-actions-oidc)**
+**👉 [GitHub Actions OIDC: Eliminating Long-Lived Credentials — Full Article](https://aloknecessary.in/blogs/github-actions-oidc/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=github-actions-oidc)**
 
 The full article includes:
 

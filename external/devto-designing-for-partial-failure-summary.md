@@ -3,7 +3,7 @@ title: "Designing for Partial Failure: Why 'Everything is Highly Available' Is a
 published: true
 description: A production-grounded guide to designing distributed systems that degrade gracefully — cascading failure anatomy, circuit breakers, bulkheads, timeout hierarchies, and observability for degraded states
 tags: distributedsystems, architecture, reliability, systemdesign
-canonical_url: https://aloknecessary.github.io/blogs/designing_for_partial_failure/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=designing-for-partial-failure
+canonical_url: https://aloknecessary.in/blogs/designing_for_partial_failure/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=designing-for-partial-failure
 cover_image: 
 ---
 
@@ -92,7 +92,7 @@ If you can answer with specific, tested, observable behaviors — you have a res
 
 This is a summary of my deep dive into designing for partial failure. The full article covers each pattern with production implementation examples, real-world cascade case studies, and a complete resilience checklist:
 
-**👉 [Designing for Partial Failure — Full Article](https://aloknecessary.github.io/blogs/designing_for_partial_failure/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=designing-for-partial-failure)**
+**👉 [Designing for Partial Failure — Full Article](https://aloknecessary.in/blogs/designing_for_partial_failure/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=designing-for-partial-failure)**
 
 The full article includes:
 

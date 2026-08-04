@@ -3,7 +3,7 @@ title: "Cloud Security Architecture: From Shared Responsibility to Zero Trust"
 published: false
 description: Shared responsibility boundaries, IAM least-privilege at scale, secrets management without credential sprawl, network segmentation, and zero-trust applied to Kubernetes workloads
 tags: cloud, security, kubernetes, devops
-canonical_url: https://aloknecessary.github.io/blogs/cloud-security-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-security-architecture
+canonical_url: https://aloknecessary.in/blogs/cloud-security-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-security-architecture
 cover_image: 
 ---
 
@@ -86,7 +86,7 @@ Enable GuardDuty / Defender for Cloud before you need them — post-incident ena
 
 This is a summary of the fifth and final post in the Cloud Architecture series. The full article includes detailed IAM policy examples, IRSA/Workload Identity configuration, NetworkPolicy manifests, Pod Security Admission labels, GitHub Actions OIDC setup, and a comprehensive production-readiness checklist:
 
-**👉 [Cloud Security Architecture: From Shared Responsibility to Zero Trust — Full Article](https://aloknecessary.github.io/blogs/cloud-security-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-security-architecture)**
+**👉 [Cloud Security Architecture: From Shared Responsibility to Zero Trust — Full Article](https://aloknecessary.in/blogs/cloud-security-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cloud-security-architecture)**
 
 The full article includes:
 

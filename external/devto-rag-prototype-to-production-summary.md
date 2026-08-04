@@ -3,7 +3,7 @@ title: "Building Reliable RAG Pipelines: From Prototype to Production"
 published: true
 description: The engineering gap between a RAG demo and a production system — chunking strategies, hybrid retrieval, re-ranking, context assembly, retrieval evaluation, and the observability that makes it trustworthy
 tags: ai, architecture, machinelearning, python
-canonical_url: https://aloknecessary.github.io/blogs/rag_prototype_to_production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=rag-prototype-to-production
+canonical_url: https://aloknecessary.in/blogs/rag_prototype_to_production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=rag-prototype-to-production
 cover_image: 
 ---
 
@@ -74,7 +74,7 @@ A RAG pipeline without observability is a black box that silently degrades. Key 
 
 This is a summary of my deep dive into production RAG engineering. The full article covers every pipeline component with implementation examples:
 
-**👉 [Building Reliable RAG Pipelines — Full Article](https://aloknecessary.github.io/blogs/rag_prototype_to_production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=rag-prototype-to-production)**
+**👉 [Building Reliable RAG Pipelines — Full Article](https://aloknecessary.in/blogs/rag_prototype_to_production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=rag-prototype-to-production)**
 
 The full article includes:
 

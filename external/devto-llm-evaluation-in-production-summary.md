@@ -3,7 +3,7 @@ title: "LLM Evaluation in Production: Building the Eval Pipeline That Runs on Ev
 published: true
 description: Faithfulness scoring, LLM-as-Judge calibration, RAGAS integration, golden dataset management, and wiring it into CI/CD — the eval infrastructure that catches quality regressions before users do
 tags: ai, machinelearning, devops, architecture
-canonical_url: https://aloknecessary.github.io/blogs/llm-evaluation-in-production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=llm-evaluation-in-production
+canonical_url: https://aloknecessary.in/blogs/llm-evaluation-in-production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=llm-evaluation-in-production
 cover_image: 
 ---
 
@@ -77,7 +77,7 @@ LLM systems do not have stable, deterministic behavior. They drift through corpu
 
 This is a summary of my deep dive into LLM evaluation infrastructure. The full article covers the complete eval stack with implementation examples:
 
-**👉 [LLM Evaluation in Production — Full Article](https://aloknecessary.github.io/blogs/llm-evaluation-in-production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=llm-evaluation-in-production)**
+**👉 [LLM Evaluation in Production — Full Article](https://aloknecessary.in/blogs/llm-evaluation-in-production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=llm-evaluation-in-production)**
 
 The full article includes:
 

@@ -3,7 +3,7 @@ title: "Idempotency in Distributed Systems: Design Patterns Beyond 'Retry Safely
 published: true
 description: Deep dive into idempotency patterns — idempotency keys, deduplication stores, two-phase reservation, API gateway vs application-layer handling, and the failure scenarios most teams miss
 tags: distributedsystems, architecture, microservices, api
-canonical_url: https://aloknecessary.github.io/blogs/idempotency-distributed-systems/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=idempotency-distributed-systems
+canonical_url: https://aloknecessary.in/blogs/idempotency-distributed-systems/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=idempotency-distributed-systems
 cover_image: 
 ---
 
@@ -83,7 +83,7 @@ Idempotency done right is a **system-wide property**, not a feature you add to a
 
 This is a summary of my comprehensive deep dive into idempotency patterns. The full article covers each pattern in detail with production-grade implementation strategies:
 
-**👉 [Idempotency in Distributed Systems — Full Article](https://aloknecessary.github.io/blogs/idempotency-distributed-systems/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=idempotency-distributed-systems)**
+**👉 [Idempotency in Distributed Systems — Full Article](https://aloknecessary.in/blogs/idempotency-distributed-systems/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=idempotency-distributed-systems)**
 
 The full article includes:
 
