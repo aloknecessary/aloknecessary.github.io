@@ -1,7 +1,7 @@
 ---
 title: "Service Mesh Everywhere? The Operational Cost of Cluster-Wide mTLS"
-date: 2026-07-28
-last_modified_at: 2026-07-28
+date: 2026-08-04
+last_modified_at: 2026-08-04T14:05:29+05:30
 author: Alok Ranjan Daftuar
 description: "Istio and Linkerd are frequently recommended for any Kubernetes cluster running microservices. This post examines what a service mesh actually buys you, what it costs operationally, the workload classes where the overhead is unjustifiable, and the lighter alternatives that close 80% of the gap at a fraction of the complexity."
 excerpt: "At 1,000 pods, Envoy sidecars consume ~70 GB of memory before a single byte of application traffic. This post covers what a service mesh actually provides, when the overhead is unjustifiable, and the lighter alternatives that close 80% of the gap."
@@ -27,6 +27,8 @@ At 1,000 pods, traditional Envoy sidecars consume approximately 70 GB of memory 
 None of this means a service mesh is wrong. For a 200-service cluster with genuine mTLS requirements, complex traffic routing, and a dedicated platform team, it is the right infrastructure investment. The problem is applying it as a default — including to clusters running five services owned by two engineers, where the same security properties can be achieved at a fraction of the complexity cost with Kubernetes-native alternatives that the mesh recommendation consistently fails to mention.
 
 This post is the decision framework that the "add a service mesh" recommendation omits.
+
+<!--more-->
 
 > **Article context:** This is the third post in the Cloud Defaults Reconsidered series. The [Private Endpoints Everywhere?](/blogs/hidden-cost-of-private-endpoints-everywhere/) post examined reflexive network privatisation. The [Multi-AZ by Default](/blogs/multi-az-by-default/) post examined reflexive availability investment. This post applies the same analysis to reflexive mesh adoption: the same question, applied to a different default.
 

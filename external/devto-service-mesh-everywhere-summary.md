@@ -3,7 +3,7 @@ title: "Service Mesh Everywhere? The Operational Cost of Cluster-Wide mTLS"
 published: false
 description: Istio and Linkerd are frequently recommended for any Kubernetes cluster. This post examines what a service mesh actually costs operationally, when the overhead is unjustifiable, and the lighter alternatives that close 80% of the gap.
 tags: kubernetes, servicemesh, architecture, devops
-canonical_url: https://aloknecessary.github.io/blogs/service-mesh-everywhere/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=service-mesh-everywhere
+canonical_url: https://aloknecessary.in/blogs/service-mesh-everywhere/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=service-mesh-everywhere
 cover_image: 
 ---
 
@@ -81,7 +81,7 @@ If overhead was your objection before mid-2025, re-evaluate.
 
 This is a summary of the third post in the Cloud Defaults Reconsidered series. The full article includes the complete decision framework, detailed cost breakdowns, operational overhead analysis, and architecture selection guide:
 
-**👉 [Service Mesh Everywhere? — Full Article](https://aloknecessary.github.io/blogs/service-mesh-everywhere/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=service-mesh-everywhere)**
+**👉 [Service Mesh Everywhere? — Full Article](https://aloknecessary.in/blogs/service-mesh-everywhere/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=service-mesh-everywhere)**
 
 The full article includes:
 
