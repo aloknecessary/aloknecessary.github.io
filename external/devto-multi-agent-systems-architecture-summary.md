@@ -3,7 +3,7 @@ title: "Multi-Agent Systems Architecture: Patterns, Pitfalls, and Production Rea
 published: false
 description: The four coordination patterns, orchestration vs choreography, state persistence, inter-agent contracts, cost controls, and the observability that detects "wrong" as distinct from "down"
 tags: ai, architecture, distributedsystems, python
-canonical_url: https://aloknecessary.github.io/blogs/multi-agent-systems-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=multi-agent-systems-architecture
+canonical_url: https://aloknecessary.in/blogs/multi-agent-systems-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=multi-agent-systems-architecture
 cover_image: 
 ---
 
@@ -78,7 +78,7 @@ The $47K alert: flag any workflow where `sum(attempt_count) > 2 * len(tasks)`.
 
 This is a summary of my deep dive into multi-agent production architecture. The full article covers all patterns with implementation examples:
 
-**👉 [Multi-Agent Systems Architecture — Full Article](https://aloknecessary.github.io/blogs/multi-agent-systems-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=multi-agent-systems-architecture)**
+**👉 [Multi-Agent Systems Architecture — Full Article](https://aloknecessary.in/blogs/multi-agent-systems-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=multi-agent-systems-architecture)**
 
 The full article includes:
 - When multi-agent is NOT the answer (5 heuristics)
