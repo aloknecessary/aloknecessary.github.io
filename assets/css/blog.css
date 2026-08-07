@@ -603,3 +603,60 @@ div[class*="language-"] pre {
 .code-expand-btn:hover {
   color: var(--primary);
 }
+
+/* ============================================================
+   FURTHER READING — collapsible, muted
+  ============================================================ */
+
+details.further-reading {
+  margin: 2.5rem 0 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+
+details.further-reading summary {
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  cursor: pointer;
+  -webkit-user-select:none;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+details.further-reading summary::-webkit-details-marker {
+  display: none;
+}
+
+details.further-reading summary::before {
+  content: '›';
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+  display: inline-block;
+  margin-bottom: 1.9px;
+}
+
+details.further-reading[open] summary::before {
+  transform: rotate(90deg);
+}
+
+details.further-reading summary:hover {
+  color: var(--text-secondary);
+}
+
+.further-reading-body {
+  padding: 0.75rem 1rem 1rem;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+  border-top: 1px solid var(--border);
+}
