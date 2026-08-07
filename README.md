@@ -12,6 +12,10 @@ The site serves as a central place for:
 
 The repository follows a content-first structure with a strong focus on clarity, maintainability, and long-term evolution.
 
+# [About Me](https://aloknecessary.in/)
+
+# [My Blog](https://aloknecessary.in/blogs)
+
 ## Development
 
 **Install dependencies**
@@ -75,7 +79,3 @@ $bytes[0..2] | ForEach-Object { $_.ToString('X2') }
 ```bash
 npx markdownlint-cli _blogs/your-post.md
 ```
-
-# [About Me](https://aloknecessary.in/)
-
-# [My Blog](https://aloknecessary.in/blogs)
