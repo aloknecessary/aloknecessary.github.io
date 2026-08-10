@@ -1,7 +1,7 @@
 ---
 title: "Multi-Agent Systems Architecture: Patterns, Pitfalls, and Production Reality"
-date: 2026-08-04
-last_modified_at: 2026-08-04T14:02:21+05:30
+date: 2026-08-10
+last_modified_at: 2026-08-10T11:11:21+05:30
 author: Alok Ranjan Daftuar
 description: "A systems architect's guide to multi-agent production design — orchestration vs. choreography, the four coordination patterns and their failure modes, state persistence, inter-agent protocols, cost controls, and the observability discipline that separates systems that survive production from systems that look fine until the cloud bill arrives."
 excerpt: "An agent stuck in an infinite retry loop doesn't show up in your error rate — it shows up in your AWS bill. This post covers the four coordination patterns, orchestration vs choreography, state persistence, inter-agent contracts (MCP/A2A), failure isolation with circuit breakers and sagas, cost controls, and the observability that detects 'wrong' as distinct from 'down.'"
