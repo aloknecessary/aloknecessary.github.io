@@ -196,6 +196,3 @@ At the 10-15 cluster range from Article 1, with multiple teams and a hybrid hub-
 
 The three pieces compose in one direction: repo structure determines what the ApplicationSet's Git generator sees, the ApplicationSet's Matrix generator combines that with cluster registration from Article 1 to produce Applications, and the AppProject referenced by every one of those Applications is what keeps the resulting sync operations inside the boundary that repo was ever supposed to have. Skip AppProjects and the first two pieces still function — they just function without a backstop, which tends to be fine until the day it very much isn't.
 
-## What's next
-
-Applications now exist, are generated automatically as services and clusters are added, and are boundaried by team. What's still missing is the other end of the pipeline — how a CI build actually gets a new image reference into one of these Git repos so ArgoCD picks it up. That's Article 3: CI to GitOps handoff, comparing Argo Image Updater, CI-writes-the-commit, and Kargo, and building directly on the OIDC trust model from your GitHub Actions post.
