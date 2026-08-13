@@ -1,7 +1,7 @@
 ---
 title: "GitOps Repo Structure and Application Patterns: App-of-Apps, ApplicationSets, and AppProjects"
 date: 2026-08-13
-last_modified_at: 2026-08-07T18:07:48+05:30
+last_modified_at: 2026-08-13T18:07:48+05:30
 author: Alok Ranjan Daftuar
 description: "How to structure GitOps repositories for scale, when to use App-of-Apps vs ApplicationSets, and how AppProjects enforce the multi-tenancy boundary that keeps teams from deploying into each other's namespaces."
 excerpt: "Mono-repo vs. repo-per-team, App-of-Apps vs. ApplicationSets at scale, and AppProjects as the multi-tenancy boundary that keeps teams from stepping on each other's Applications."
