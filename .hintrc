@@ -9,6 +9,7 @@
       {
         "aria-required-children": "off"
       }
-    ]
+    ],
+    "no-inline-styles": "off"
   }
 }
