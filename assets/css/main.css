@@ -11,6 +11,7 @@
   --domain-cloud: #FBBC04;
   --domain-distributed: #059669;
   --domain-platform: #db2777;
+  --domain-networking: #0284c7;
 
   --bg-soft: #f8fafc;
   --bg-base: #ffffff;
@@ -63,6 +64,7 @@
   --domain-cloud: #fcd34d;
   --domain-distributed: #34d399;
   --domain-platform: #f472b6;
+  --domain-networking: #38bdf8;
   --highlight-bg: linear-gradient(120deg, var(--cyan) 0%, var(--purple) 100%);
   --highlight-color: #ffffff;
 

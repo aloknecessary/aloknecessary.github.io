@@ -554,6 +554,10 @@
   border-left: 4px solid var(--domain-platform);
 }
 
+.domain-networking {
+  border-left: 4px solid var(--domain-networking);
+}
+
 .series-block-title .tag-count {
   -webkit-text-fill-color: #fff;
   background: var(--domain-accent);
@@ -573,6 +577,10 @@
 
 .dot-platform {
   background: var(--domain-platform);
+}
+
+.dot-networking {
+  background: var(--domain-networking);
 }
 
 /* New post badge */

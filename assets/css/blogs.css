@@ -755,6 +755,13 @@
   background-clip: text;
 }
 
+
+.card-series-badge[data-domain="networking"] .series-name {
+  background: linear-gradient(90deg, var(--domain-networking), var(--coral));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 /* Card Footer */
 .card-footer {
   display: flex;
