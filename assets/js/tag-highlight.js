@@ -16,7 +16,10 @@ function scrollToHash() {
   if (window.location.hash) {
     const target = document.querySelector(window.location.hash);
     if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+      const nav = document.querySelector('.nav-bar');
+      const offset = nav ? nav.offsetHeight  : 60;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
     }
   }
 }

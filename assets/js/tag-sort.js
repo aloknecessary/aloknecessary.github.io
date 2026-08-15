@@ -18,19 +18,8 @@
     return linkEl.textContent.trim().toLowerCase();
   }
 
-  function getSeriesOrder(el) {
-    const indicator = el.querySelector('.step-indicator');
-    if (!indicator) return 0;
-    return parseInt(indicator.textContent.trim(), 10) || 0;
-  }
-
   function sortList(container, items, mode) {
-    const isSeries = container.classList.contains('series-posts');
     items.sort((a, b) => {
-      if (isSeries) {
-        if (mode === 'newest') return getSeriesOrder(b) - getSeriesOrder(a);
-        if (mode === 'oldest') return getSeriesOrder(a) - getSeriesOrder(b);
-      }
       if (mode === 'newest') return getDate(b) - getDate(a);
       if (mode === 'oldest') return getDate(a) - getDate(b);
       return getTitle(a).localeCompare(getTitle(b));
@@ -39,10 +28,19 @@
   }
 
   function sortAll(mode) {
-    document.querySelectorAll('.tag-posts, .series-posts').forEach(ul => {
+    if (document.querySelector('.series-container')) {
+      const container = document.querySelector('.series-container');
+      const blocks = Array.from(container.querySelectorAll('.series-block'));
+      blocks.sort((a, b) => {
+        if (mode === 'latest') return (b.dataset.date || '').localeCompare(a.dataset.date || '');
+        return (a.dataset.name || '').localeCompare(b.dataset.name || '');
+      });
+      blocks.forEach(block => container.appendChild(block));
+      return;
+    }
+    document.querySelectorAll('.tag-posts').forEach(ul => {
       sortList(ul, Array.from(ul.querySelectorAll('li')), mode);
     });
-
     const grid = document.querySelector('.blog-cards-grid');
     if (grid) {
       sortList(grid, Array.from(grid.querySelectorAll('.blog-card')), mode);
@@ -50,16 +48,17 @@
   }
 
   function setActive(mode) {
-    desktopBtns.forEach(b => {
-      b.classList.toggle('active', b.dataset.sort === mode);
-    });
-    mobileBtns.forEach(b => {
-      b.classList.toggle('active', b.dataset.sort === mode);
-    });
+    desktopBtns.forEach(b => b.classList.toggle('active', b.dataset.sort === mode));
+    mobileBtns.forEach(b => b.classList.toggle('active', b.dataset.sort === mode));
   }
 
   function closeAllDropdowns() {
     dropdowns.forEach(d => d.classList.remove('open'));
+  }
+
+  if (document.querySelector('.series-container')) {
+    setActive('latest');
+    sortAll('latest');
   }
 
   desktopBtns.forEach(btn => {

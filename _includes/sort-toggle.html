@@ -2,22 +2,23 @@
   .sort-toggle {
     display: inline-flex;
     gap: 0;
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    border: 1px solid var(--primary);
+    border-radius: 16px;
     overflow: hidden;
   }
   .sort-btn {
     padding: 0.4rem 0.85rem;
     font-size: 0.8rem;
-    font-weight: 500;
+    letter-spacing: 0.02em;
+    font-weight: 600;
     border: none;
     background: var(--bg-card);
-    color: var(--text-secondary);
+    color: var(--primary);
     cursor: pointer;
     transition: all 0.2s ease;
   }
   .sort-btn:not(:last-child) {
-    border-right: 1px solid var(--border);
+    border-right: 1px solid var(--primary);
   }
   .sort-btn.active {
     background: var(--primary);
@@ -96,25 +97,31 @@
   }
 </style>
 
-<div class="sort-toggle" title="Sort articles within each section">
+<div class="sort-toggle" title="{% if page.layout == 'series' %}Sort series{% else %}Sort articles within each section{% endif %}">
+  {% if page.layout == 'series' %}
+  <button class="sort-btn active" data-sort="latest">Latest</button>
+  <button class="sort-btn" data-sort="alpha">A-Z</button>
+  {% else %}
   <button class="sort-btn active" data-sort="newest">Newest</button>
   <button class="sort-btn" data-sort="oldest">Oldest</button>
-  {% unless page.layout == 'series' %}
   <button class="sort-btn" data-sort="alpha">A-Z</button>
-  {% endunless %}
+  {% endif %}
 </div>
 
 <div class="sort-menu">
-  <button class="sort-menu-trigger" aria-label="Sort articles" title="Sort articles within each section">
+  <button class="sort-menu-trigger" aria-label="Sort" title="{% if page.layout == 'series' %}Sort series{% else %}Sort articles within each section{% endif %}">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M3 6h18M6 12h12M9 18h6"/>
     </svg>
   </button>
   <div class="sort-menu-dropdown">
+    {% if page.layout == 'series' %}
+    <button class="sort-menu-item active" data-sort="latest">Latest</button>
+    <button class="sort-menu-item" data-sort="alpha">A-Z</button>
+    {% else %}
     <button class="sort-menu-item active" data-sort="newest">Newest</button>
     <button class="sort-menu-item" data-sort="oldest">Oldest</button>
-    {% unless page.layout == 'series' %}
     <button class="sort-menu-item" data-sort="alpha">A-Z</button>
-    {% endunless %}
+    {% endif %}
   </div>
 </div>
