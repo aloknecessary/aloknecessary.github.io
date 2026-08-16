@@ -48,21 +48,18 @@ layout: default
     <!-- Tags listing -->
     <div class="tags-container">
       {% for tag in sorted_tags %}
-      <div class="tag-block" id="{{ tag | slugify }}" data-date="{{ sorted_posts | where_exp: 'p', 'p.tags contains tag' | map: 'date' | sort | last | date: '%Y-%m-%d' }}" data-name="{{ tag | downcase }}">
-        {% assign count = 0 %}
-        {% for post in sorted_posts %}
-          {% if post.tags contains tag %}{% assign count = count | plus: 1 %}{% endif %}
-        {% endfor %}
+        {% assign tag_posts = sorted_posts | where_exp: 'p', 'p.tags contains tag' %}
+        {% assign count = tag_posts | size %}
+        {% assign latest_date = tag_posts | map: 'date' | sort | last | date: '%Y-%m-%d' %}
+      <div class="tag-block" id="{{ tag | slugify }}" data-date="{{ latest_date }}" data-name="{{ tag | downcase }}">
         <h2 class="tag-heading">#{{ tag }} <span class="tag-count">{{ count }}</span>{% include inline-sort-btn.html count=count %}</h2>
 
         <ul class="tag-posts">
-          {% for post in sorted_posts %} 
-            {% if post.tags contains tag %}
-            <li>
-              <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
-              <span class="post-date"> {{ post.date | date: "%b %d, %Y" }} </span>
-            </li>
-            {% endif %} 
+          {% for post in tag_posts %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+          </li>
           {% endfor %}
         </ul>
       </div>
