@@ -232,35 +232,6 @@
   line-height: 1;
 }
 
-/* Per-series article sort toggle */
-.series-post-sort-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.6rem;
-  height: 1.6rem;
-  padding: 0;
-  border: 1px solid var(--domain-accent);
-  border-radius: 6px;
-  background: var(--bg-card);
-  color: var(--domain-accent);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  vertical-align: middle;
-  margin-left: 0.55rem;
-  flex-shrink: 0;
-}
-
-.series-post-sort-btn:hover {
-  background: var(--domain-accent);
-  color: #fff;
-}
-
-.series-post-sort-btn.asc svg polyline {
-  transform-origin: 20px 16.5px;
-  transform: rotate(180deg);
-}
-
 /* Timeline post list */
 .series-posts {
   list-style: none;

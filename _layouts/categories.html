@@ -47,12 +47,12 @@ layout: default
     
     <div class="tags-container">
       {% for category in sorted_categories %}
-      <div class="tag-block" id="{{ category | slugify }}">
+      <div class="tag-block" id="{{ category | slugify }}" data-date="{{ sorted_posts | where_exp: 'p', 'p.categories contains category' | map: 'date' | sort | last | date: '%Y-%m-%d' }}" data-name="{{ category | downcase }}">
         {% assign count = 0 %}
         {% for post in sorted_posts %}
           {% if post.categories contains category %}{% assign count = count | plus: 1 %}{% endif %}
         {% endfor %}
-        <h2 class="tag-heading">{{ category | capitalize }} <span class="tag-count">{{ count }}</span></h2>
+        <h2 class="tag-heading">{{ category | capitalize }} <span class="tag-count">{{ count }}</span>{% include inline-sort-btn.html count=count %}</h2>
 
         <ul class="tag-posts">
           {% for post in sorted_posts %} 

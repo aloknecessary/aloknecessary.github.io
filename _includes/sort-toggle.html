@@ -8,7 +8,7 @@
   }
   .sort-btn {
     padding: 0.4rem 0.85rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     letter-spacing: 0.02em;
     font-weight: 600;
     border: none;
@@ -99,7 +99,8 @@
 
 <div class="sort-toggle" title="{% if page.layout == 'series' %}Sort series{% else %}Sort articles within each section{% endif %}">
   {% if page.layout == 'series' %}
-  <button class="sort-btn active" data-sort="latest">Latest</button>
+  <button class="sort-btn active" data-sort="newest">Newest</button>
+  <button class="sort-btn" data-sort="domain">By Domain</button>
   <button class="sort-btn" data-sort="alpha">A-Z</button>
   {% else %}
   <button class="sort-btn active" data-sort="newest">Newest</button>
@@ -116,7 +117,8 @@
   </button>
   <div class="sort-menu-dropdown">
     {% if page.layout == 'series' %}
-    <button class="sort-menu-item active" data-sort="latest">Latest</button>
+    <button class="sort-menu-item active" data-sort="newest">Newest</button>
+    <button class="sort-menu-item" data-sort="domain">By Domain</button>
     <button class="sort-menu-item" data-sort="alpha">A-Z</button>
     {% else %}
     <button class="sort-menu-item active" data-sort="newest">Newest</button>

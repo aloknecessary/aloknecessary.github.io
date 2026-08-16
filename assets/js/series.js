@@ -23,36 +23,7 @@
     });
   });
 
-  // --- Global block sort (Latest / A-Z) handled by tag-sort.js via shared partial ---
-
-  // --- Per-series article sort ---
-  function getSeriesOrder(li) {
-    const indicator = li.querySelector('.step-indicator');
-    return parseInt(indicator ? indicator.textContent.trim() : '0', 10) || 0;
-  }
-
-  function sortSeriesPosts(ol, mode) {
-    const items = Array.from(ol.querySelectorAll('li'));
-    items.sort((a, b) =>
-      mode === 'asc'
-        ? getSeriesOrder(a) - getSeriesOrder(b)
-        : getSeriesOrder(b) - getSeriesOrder(a)
-    );
-    items.forEach(item => ol.appendChild(item));
-  }
-
-  document.querySelectorAll('.series-post-sort-btn').forEach(btn => {
-    btn.setAttribute('title', 'Newest first — click to sort oldest first');
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      const block = this.closest('.series-block');
-      const ol = block.querySelector('.series-posts');
-      const isAsc = this.classList.toggle('asc');
-      this.setAttribute('aria-label', isAsc ? 'Oldest first' : 'Newest first');
-      this.setAttribute('title', isAsc ? 'Oldest first — click to sort newest first' : 'Newest first — click to sort oldest first');
-      sortSeriesPosts(ol, isAsc ? 'asc' : 'desc');
-    });
-  });
+  // --- Per-series article sort handled by tag-sort.js ---
 
   // --- Split-button dropdown ---
   document.addEventListener('click', function (e) {

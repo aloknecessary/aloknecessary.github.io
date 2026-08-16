@@ -107,7 +107,6 @@
   white-space: nowrap;
 }
 
-/* Active tag block */
 .tag-block.active > h2::before {
   display: none !important;
 }
