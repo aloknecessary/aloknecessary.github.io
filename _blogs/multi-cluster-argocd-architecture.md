@@ -9,7 +9,6 @@ keywords: "argocd, multi-cluster, gitops, hub-and-spoke, eks, aks, kubernetes, p
 twitter_card: "summary_large_image"
 categories:
   - devops
-  - kubernetes
 tags: [argocd, gitops, kubernetes, multi-cluster, eks, aks, platform-engineering]
 series: "GitOps in Practice"
 series_order: 1

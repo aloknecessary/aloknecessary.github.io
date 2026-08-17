@@ -8,8 +8,7 @@ excerpt: "Writing to a database and publishing an event in the same operation wi
 keywords: "dual write problem, transactional outbox, change data capture, debezium, event sourcing, event-driven architecture, microservices, data consistency, kafka, distributed systems"
 twitter_card: summary_large_image
 categories:
-  - architecture
-  - system-design
+  - distributed-systems
 tags: [event-driven, microservices, outbox-pattern, change-data-capture, distributed-systems, architecture, patterns, data-consistency, kafka, system-design]
 series: "Distributed Systems"
 series_order: 6

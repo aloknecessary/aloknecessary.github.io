@@ -7,8 +7,7 @@ description: "Exploring how PWAs deliver native-like web experiences, their arch
 excerpt: "Progressive Web Apps combine web reach with native capabilities. Explore PWA architecture, service workers, caching strategies, and why they matter for modern applications."
 keywords: "progressive web apps, PWA architecture, service workers, web performance, React PWA, offline support, app shell architecture"
 categories:
-  - architecture
-  - web-development
+  - software-engineering
 tags: ["progressive-web-apps", "web-architecture", "react-pwa", "service-workers", "web-performance", "software-architecture", "system-design"]
 ---
 

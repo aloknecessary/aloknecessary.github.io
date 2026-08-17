@@ -8,8 +8,7 @@ excerpt: "Most teams get RAG working in a notebook over a weekend. Very few get 
 keywords: "RAG pipeline, retrieval augmented generation, vector search, hybrid retrieval, chunking strategy, LLM production, re-ranking, context assembly, AI engineering, observability"
 twitter_card: summary_large_image
 categories:
-  - architecture
-  - ai
+  - ai-engineering
 tags: [ai, rag, vector-search, llm, information-retrieval, architecture, observability, system-design, production, patterns]
 series: "RAG and AI Engineering"
 series_order: 2

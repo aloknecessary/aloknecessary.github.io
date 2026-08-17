@@ -7,8 +7,6 @@ description: "Deep dive into self-hosted GitHub Actions runners on Kubernetes â€
 excerpt: "Running GitHub Actions self-hosted runners on Kubernetes at scale requires careful architectural decisions around isolation, security, and cost. This deep dive covers Actions Runner Controller (ARC) deployment patterns, namespace vs node-level isolation models, blast radius analysis, security hardening strategies, and realistic cost comparisons against GitHub-managed runners. Learn when self-hosted makes sense and how to implement it safely."
 keywords: "self-hosted runners kubernetes, github actions kubernetes, ARC actions runner controller, runner isolation, CI/CD security"
 categories:
-  - architecture
-  - system-design
   - devops
 tags: [kubernetes, github-actions, devops, ci-cd, security, arc, container-security, cloud-architecture, platform-engineering, automation]
 series: "DevOps & Platform Engineering"

@@ -9,7 +9,6 @@ keywords: "multi-az, high availability, RDS, cloud cost, availability architectu
 twitter_card: summary_large_image
 categories:
   - cloud
-  - architecture
 tags: [cloud-architecture, aws, azure, rds, multi-az, high-availability, cost-optimization, kubernetes, architecture, trade-offs, production]
 series: "Cloud Defaults Reconsidered"
 series_order: 2

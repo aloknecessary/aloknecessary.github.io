@@ -8,7 +8,6 @@ excerpt: "Modern CI/CD pipelines waste time repeatedly installing the same tools
 keywords: "docker, playwright, github actions, devops, automation, multi-architecture, CI/CD optimization, docker images, pipeline performance, developer productivity"
 categories:
   - devops
-  - automation
 tags: [docker, playwright, github-actions, devops, automation, multi-architecture, software-architecture, developer-productivity, ci-cd]
 series: "DevOps & Platform Engineering"
 series_order: 1

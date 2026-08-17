@@ -8,8 +8,8 @@ excerpt: "More than 40% of organisations regret at least some of their microserv
 keywords: "microservices, modular monolith, conways law, distributed systems, architecture, team topology, service decomposition, cloud native, strangler fig"
 twitter_card: summary_large_image
 categories:
-  - architecture
   - distributed-systems
+  - software-engineering
 tags: [microservices, architecture, modular-monolith, conways-law, distributed-systems, cloud-native, devops, production, trade-offs, team-topology]
 series: "Cloud Defaults Reconsidered"
 series_order: 4

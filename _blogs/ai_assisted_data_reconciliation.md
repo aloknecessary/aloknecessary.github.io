@@ -8,8 +8,8 @@ excerpt: "Traditional reconciliation breaks at the seams of distributed ownershi
 keywords: "data reconciliation, AI reconciliation, embedding similarity, LLM classification, distributed systems, data consistency, schema drift, vector search, data quality, system design"
 twitter_card: summary_large_image
 categories:
-  - architecture
-  - system-design
+  - distributed-systems
+  - ai-engineering
 tags: [ai, distributed-systems, data-reconciliation, vector-search, llm, architecture, patterns, observability, cloud-native, system-design]
 series: "Distributed Systems"
 series_order: 5

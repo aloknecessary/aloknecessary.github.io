@@ -8,8 +8,7 @@ excerpt: "Every distributed system you build is already taking a side in the CAP
 keywords: "CAP theorem, distributed systems, consistency availability partition tolerance, PACELC, CP vs AP, eventual consistency, system architecture"
 twitter_card: summary_large_image
 categories:
-  - architecture
-  - system-design
+  - distributed-systems
 tags: [distributed-systems, cap-theorem, architecture, patterns, reliability, cloud-native, database, system-design, microservices]
 series: "Distributed Systems"
 series_order: 1

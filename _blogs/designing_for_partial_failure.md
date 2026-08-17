@@ -8,8 +8,7 @@ excerpt: "High availability is not a property you buy — it is a discipline you
 keywords: "partial failure, graceful degradation, circuit breaker, bulkhead, cascading failure, distributed systems, resilience engineering, system design, SRE, observability"
 twitter_card: summary_large_image
 categories:
-  - architecture
-  - system-design
+  - distributed-systems
 tags: [distributed-systems, resilience, graceful-degradation, cap-theorem, system-design, architecture, sre, observability, cloud-native, patterns]
 series: "Distributed Systems"
 series_order: 4

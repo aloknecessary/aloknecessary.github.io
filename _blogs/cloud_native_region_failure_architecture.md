@@ -8,7 +8,6 @@ excerpt: "Most teams design for instance and zone failures but treat region-leve
 keywords: "multi-region architecture, region failure, disaster recovery, active-active, active-passive, AWS multi-region, Azure disaster recovery, cloud resilience, failover, high availability"
 twitter_card: summary_large_image
 categories:
-  - architecture
   - cloud
 tags: [cloud-native, disaster-recovery, aws, azure, multi-region, high-availability, resilience, architecture, system-design, infrastructure]
 series: "Cloud Architecture"
