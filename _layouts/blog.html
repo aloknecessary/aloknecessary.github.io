@@ -42,8 +42,10 @@ layout: default
   <hr class="border"/>
 
   <div class="bottom-share-container">
-    {% include share.html %}
+    {% include share.html label=true %}
   </div>
+
+  {% include series-banner.html position="bottom" %}
   
   {% if page.comments != false %}
   <div id="comments" style="margin-top: 3rem;">

@@ -90,6 +90,7 @@
   flex-shrink: 0;
 }
 
+
 .series-block.collapsed .series-chevron {
   transform: rotate(-90deg);
 }

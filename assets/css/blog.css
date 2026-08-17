@@ -109,6 +109,15 @@ h2.description::before {
   justify-content: flex-end;
 }
 
+.share-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-right: auto;
+}
+
 @media (max-width: 768px) {
   .share-bar {
     justify-content: flex-end;
@@ -433,6 +442,12 @@ ul.task-list input {
   font-size: 0.95rem;
 }
 
+.series-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
 .series-badge {
   font-size: 0.8rem;
   font-weight: 600;
@@ -477,6 +492,11 @@ ul.task-list input {
 .series-nav a:hover {
   opacity: 0.7;
 }
+
+.series-banner.bottom {
+  margin-top: 1.75rem;
+}
+
 
 
 

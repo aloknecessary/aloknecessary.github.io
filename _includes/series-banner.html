@@ -5,21 +5,33 @@
 {% assign next_order = page.series_order | plus: 1 %}
 {% assign s_info = site.data.series | where: "name", page.series | first %}
 
-<div class="series-banner domain-{{ s_info.domain | slugify }}">
+<div class="series-banner{% if include.position == 'bottom' %} bottom{% endif %} domain-{{ s_info.domain | slugify }}">
   <div class="series-label">
     <span class="series-badge">Series</span>
+    <span class="series-icon" aria-hidden="true">{{ s_info.icon }}</span>
     <a class="series-name series-block-title" href="{{ '/series/#' | append: s_info.slug | relative_url }}">{{ page.series }}</a>
     <span class="series-position">— Part {{ page.series_order }} of {{ series_total }}</span>
   </div>
   <nav class="series-nav">
-    {% for post in series_posts %}
-      {% if post.series_order == prev_order %}
-        <a href="{{ post.url | relative_url }}" class="series-prev">← Previous</a>
-      {% endif %}
-      {% if post.series_order == next_order %}
-        <a href="{{ post.url | relative_url }}" class="series-next">Next →</a>
-      {% endif %}
-    {% endfor %}
+    {% if include.position == 'bottom' %}
+      {% for post in series_posts %}
+        {% if post.series_order == prev_order %}
+          <a href="{{ post.url | relative_url }}" class="series-prev">← Previous</a>
+        {% endif %}
+        {% if post.series_order == next_order %}
+          <a href="{{ post.url | relative_url }}" class="series-next">Continue →</a>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% for post in series_posts %}
+        {% if post.series_order == prev_order %}
+          <a href="{{ post.url | relative_url }}" class="series-prev">← Previous</a>
+        {% endif %}
+        {% if post.series_order == next_order %}
+          <a href="{{ post.url | relative_url }}" class="series-next">Next →</a>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
   </nav>
 </div>
 {% endif %}
