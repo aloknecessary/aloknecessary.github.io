@@ -3,7 +3,7 @@ title: "Microservices by Default: The Organisational Constraints Nobody Puts in 
 published: false
 description: Microservices are an organisational pattern that happens to have technical expression. Applying the technical pattern without the organisational conditions is the most expensive mistake in modern cloud architecture.
 tags: microservices, architecture, distributedsystems, devops
-canonical_url: https://aloknecessary.github.io/blogs/microservices-by-default/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=microservices-by-default
+canonical_url: https://aloknecessary.in/blogs/microservices-by-default/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=microservices-by-default
 cover_image: 
 ---
 
@@ -125,7 +125,7 @@ Step 3: Use the strangler fig — extract one bounded context at a time
 
 This is a summary of the fourth post in the Cloud Defaults Reconsidered series. The full article includes the complete distributed system tax breakdown, Conway's Law analysis, modular monolith implementation patterns, and the full decomposition decision framework:
 
-**👉 [Microservices by Default — Full Article](https://aloknecessary.github.io/blogs/microservices-by-default/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=microservices-by-default)**
+**👉 [Microservices by Default — Full Article](https://aloknecessary.in/blogs/microservices-by-default/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=microservices-by-default)**
 
 The full article includes:
 

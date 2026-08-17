@@ -1,7 +1,7 @@
 ---
 title: "Microservices by Default: The Organisational Constraints Nobody Puts in the Architecture Diagram"
-date: 2026-07-10
-last_modified_at: 2026-07-10
+date: 2026-08-17
+last_modified_at: 2026-08-17T09:44:38+05:30
 author: Alok Ranjan Daftuar
 description: "Microservices optimise for team autonomy and independent deployability — but only deliver those benefits when the organisational conditions exist to exploit them. This post examines the distributed system tax, Conway's Law as a constraint not a suggestion, the modular monolith as a production-viable default, and the signals that indicate a codebase is actually ready to decompose."
 excerpt: "More than 40% of organisations regret at least some of their microservices decisions. The problem is not implementation — it is applying a technical pattern without the organisational prerequisites. This post covers the distributed system tax, Conway's Law, the modular monolith as the correct default, and a decomposition decision framework."
