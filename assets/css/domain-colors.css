@@ -7,8 +7,12 @@
   --domain-accent: var(--domain-ai);
 }
 
-.domain-infrastructure {
-  --domain-accent: var(--domain-infra);
+.domain-cloud-infra {
+  --domain-accent: var(--domain-cloud);
+}
+
+.domain-distributed-systems {
+  --domain-accent: var(--domain-distributed);
 }
 
 .domain-platform {
@@ -18,6 +22,12 @@
 .series-block-title {
   background: linear-gradient(90deg, var(--domain-accent), var(--coral));
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.domain-cloud-infra .series-block-title {
+  background: linear-gradient(90deg, var(--domain-accent), var(--crimson));
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
