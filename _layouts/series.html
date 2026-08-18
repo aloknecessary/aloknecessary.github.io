@@ -19,13 +19,18 @@ layout: default
 
 <div class="series-legend-wrap">
 <div class="series-legend">
-  {% assign legend_domains = "AI Engineering,dot-ai,rag-and-ai-engineering,ai|Cloud Infrastructure,dot-cloud,cloud-architecture,cloud-infra|Distributed Systems,dot-distributed,distributed-systems,distributed-systems|Platform & DevOps,dot-platform,gitops-in-practice,platform" | split: "|" %}
-  {% for entry in legend_domains %}
-    {% assign parts = entry | split: "," %}
-    <a href="#{{ parts[2] }}" class="legend-item legend-item--link" data-domain="{{ parts[3] }}">
-      <span class="legend-dot {{ parts[1] }}"></span>{{ parts[0] }}
-    </a>
-  {% endfor %}
+  <span class="legend-item legend-item--link" data-domain="ai engineering">
+    <span class="legend-dot dot-ai"></span>AI Engineering
+  </span>
+  <span class="legend-item legend-item--link" data-domain="cloud infra">
+    <span class="legend-dot dot-cloud"></span>Cloud Infrastructure
+  </span>
+  <span class="legend-item legend-item--link" data-domain="distributed systems">
+    <span class="legend-dot dot-distributed"></span>Distributed Systems
+  </span>
+  <span class="legend-item legend-item--link" data-domain="platform">
+    <span class="legend-dot dot-platform"></span>Platform & DevOps
+  </span>
 </div>
 </div>
 

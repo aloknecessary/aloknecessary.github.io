@@ -9,17 +9,16 @@
   });
 
   // --- Legend smooth scroll ---
-  document.querySelectorAll('.legend-item--link').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const slug = this.getAttribute('href').substring(1);
-      const target = document.getElementById(slug);
+  document.querySelectorAll('.legend-item--link').forEach(function (item) {
+    item.style.cursor = 'pointer';
+    item.addEventListener('click', function () {
+      const domain = this.dataset.domain;
+      const target = document.querySelector('.series-container .series-block[data-domain="' + domain + '"]');
       if (!target) return;
       const nav = document.querySelector('.nav-bar');
       const offset = nav ? nav.offsetHeight : 60;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: 'smooth' });
-      history.pushState(null, '', '#' + slug);
     });
   });
 
