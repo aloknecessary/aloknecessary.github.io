@@ -8,9 +8,7 @@ excerpt: "A clear mental model for how VPCs, subnets, CIDR blocks, route tables,
 keywords: "aws vpc, subnets, cidr, route tables, internet gateway, nat gateway, security groups, network acl, vpc networking, terraform, eks networking"
 twitter_card: "summary_large_image"
 categories:
-  - aws
-  - networking
-  - cloud-architecture
+  - cloud
 tags: [vpc, subnets, cidr, route-tables, internet-gateway, nat-gateway, security-groups, aws, networking, terraform]
 series: "AWS Network Architecture"
 series_order: 1
