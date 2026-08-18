@@ -6,7 +6,7 @@
 
   if (!desktopBtns.length && !mobileBtns.length) return;
 
-  const DOMAIN_ORDER = ['ai engineering', 'infrastructure', 'platform', 'networking'];
+  const DOMAIN_ORDER = ['ai engineering', 'cloud infra', 'distributed systems', 'platform', 'networking'];
 
   function sortAll(mode) {
     if (document.querySelector('.series-container')) {
@@ -29,7 +29,7 @@
       const blocks = Array.from(container.querySelectorAll('.tag-block'));
       blocks.sort((a, b) => {
         if (mode === 'newest') return (b.dataset.date || '').localeCompare(a.dataset.date || '');
-        if (mode === 'oldest') return (a.dataset.date || '').localeCompare(b.dataset.date || '');
+        if (mode === 'most-posts') return parseInt(b.dataset.count || 0) - parseInt(a.dataset.count || 0);
         return (a.dataset.name || '').localeCompare(b.dataset.name || '');
       });
       blocks.forEach(block => container.appendChild(block));

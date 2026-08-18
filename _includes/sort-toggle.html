@@ -102,6 +102,10 @@
   <button class="sort-btn active" data-sort="newest">Newest</button>
   <button class="sort-btn" data-sort="domain">By Domain</button>
   <button class="sort-btn" data-sort="alpha">A-Z</button>
+  {% elsif page.layout == 'categories' %}
+  <button class="sort-btn active" data-sort="newest">Newest</button>
+  <button class="sort-btn" data-sort="most-posts">Most Posts</button>
+  <button class="sort-btn" data-sort="alpha">A-Z</button>
   {% else %}
   <button class="sort-btn active" data-sort="newest">Newest</button>
   <button class="sort-btn" data-sort="oldest">Oldest</button>
@@ -119,6 +123,10 @@
     {% if page.layout == 'series' %}
     <button class="sort-menu-item active" data-sort="newest">Newest</button>
     <button class="sort-menu-item" data-sort="domain">By Domain</button>
+    <button class="sort-menu-item" data-sort="alpha">A-Z</button>
+    {% elsif page.layout == 'categories' %}
+    <button class="sort-menu-item active" data-sort="newest">Newest</button>
+    <button class="sort-menu-item" data-sort="most-posts">Most Posts</button>
     <button class="sort-menu-item" data-sort="alpha">A-Z</button>
     {% else %}
     <button class="sort-menu-item active" data-sort="newest">Newest</button>
