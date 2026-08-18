@@ -7,8 +7,8 @@ date: 2026-01-30
 last_modified_at: 2026-02-16
 author: Alok Ranjan Daftuar
 categories:
-  - architecture
-  - system-design
+  - software-engineering
+  - ai-engineering
 tags: [architecture, cloud, system-design, ai, "productivity", developer-productivity, automation]
 ---
 

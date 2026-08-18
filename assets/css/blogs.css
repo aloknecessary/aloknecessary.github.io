@@ -734,8 +734,15 @@
   background-clip: text;
 }
 
-.card-series-badge[data-domain="infrastructure"] .series-name {
-  background: linear-gradient(270deg, var(--domain-infra), var(--coral));
+.card-series-badge[data-domain="cloud-infra"] .series-name {
+  background: linear-gradient(270deg, var(--domain-cloud), var(--crimson));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-series-badge[data-domain="distributed-systems"] .series-name {
+  background: linear-gradient(270deg, var(--domain-distributed), var(--coral));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

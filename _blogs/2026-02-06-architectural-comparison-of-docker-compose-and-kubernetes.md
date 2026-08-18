@@ -7,8 +7,8 @@ description: "A deep architectural comparison of Docker Compose and Kubernetes, 
 excerpt: "A deep architectural comparison of Docker Compose and Kubernetes, focusing on system design principles, trade-offs, and real-world usage decisions."
 keywords: "kubernetes vs docker compose, container orchestration, system design, cloud native, docker compose production, kubernetes when to use"
 categories:
-  - architecture
   - devops
+  - software-engineering
 tags: ["kubernetes", "docker-compose", "container-architecture", "cloud-native", "system-design", "devops", "cloud-architecture", "scalability"]
 series: "DevOps & Platform Engineering"
 series_order: 2

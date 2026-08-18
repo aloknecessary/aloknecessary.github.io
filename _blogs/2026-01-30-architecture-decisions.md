@@ -7,8 +7,8 @@ description: "Real-world architectural decisions that impact production systemsâ
 excerpt: "Most systems don't fail because of bad codeâ€”they fail because of poor architectural decisions. Learn the architecture decisions that actually matter once your system starts serving real users."
 keywords: "architecture, cloud, system design, kubernetes, optimization, scalability, production architecture, cost optimization, data modeling"
 categories:
-  - architecture
-  - system-design
+  - software-engineering
+  - distributed-systems
 tags: [architecture, cloud, system-design, kubernetes, optimization, scalability, cloud-architecture]
 ---
 

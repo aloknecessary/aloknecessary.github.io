@@ -8,8 +8,7 @@ excerpt: "Vector search tells you which chunks are similar to your query. GraphR
 keywords: "GraphRAG, knowledge graph, graph retrieval, RAG, vector search, multi-hop retrieval, entity extraction, knowledge graph construction, Neo4j, graph traversal"
 twitter_card: summary_large_image
 categories:
-  - ai
-  - architecture
+  - ai-engineering
 tags: [ai, rag, graphrag, knowledge-graphs, llm, retrieval, architecture, production, patterns, system-design]
 series: "RAG and AI Engineering"
 series_order: 6

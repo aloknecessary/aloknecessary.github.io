@@ -9,7 +9,6 @@ keywords: "service mesh, kubernetes, istio, linkerd, cilium, mtls, envoy, sideca
 twitter_card: summary_large_image
 categories:
   - cloud
-  - architecture
 tags: [kubernetes, service-mesh, istio, linkerd, cilium, mtls, architecture, cloud-native, devops, production, trade-offs]
 
 series: "Cloud Defaults Reconsidered"

@@ -3,4 +3,4 @@ layout: series
 title: Guided Series
 ---
 
-Curated multi-part deep dives across three domains: **AI engineering** — retrieval, evaluation, and agent patterns that make LLM systems production-worthy — **infrastructure** — distributed systems, cloud architecture, and the defaults worth reconsidering — and **platform & DevOps** — from custom images and CI runners to full dev environment assembly. Each series builds progressively from fundamentals to production patterns; domains are cross-referenced where they intersect.
+**In-depth series on the engineering domains that matter most.** Curated multi-part deep dives, each building from first principles to production-ready patterns. Use the legend to explore by domain, or browse everything below.

@@ -7,8 +7,8 @@ date: 2026-02-11
 last_modified_at: 2026-02-11
 author: Alok Ranjan Daftuar
 categories:
-  - architecture
-  - system-design
+  - distributed-systems
+  - software-engineering
 tags: [multi-tenancy, saas, architecture, database-design, isolation, scalability, cloud-architecture, system-design, software-architecture]
 
 ---

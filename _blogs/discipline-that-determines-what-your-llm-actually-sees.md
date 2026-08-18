@@ -8,8 +8,7 @@ excerpt: "Prompt engineering asks how to phrase an instruction. Context engineer
 keywords: "context engineering, context window, LLM context, memory architecture, token budget, conversation compression, lost in the middle, RAG context assembly, structured prompting, context quality"
 twitter_card: summary_large_image
 categories:
-  - ai
-  - architecture
+  - ai-engineering
 tags: [ai, llm, context-engineering, rag, prompt-engineering, memory, architecture, production, observability, patterns]
 series: "RAG and AI Engineering"
 series_order: 5

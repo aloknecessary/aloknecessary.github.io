@@ -508,8 +508,12 @@
   border-left: 4px solid var(--domain-ai);
 }
 
-.domain-infrastructure {
-  border-left: 4px solid var(--domain-infra);
+.domain-cloud-infra {
+  border-left: 4px solid var(--domain-cloud);
+}
+
+.domain-distributed-systems {
+  border-left: 4px solid var(--domain-distributed);
 }
 
 .domain-platform {
@@ -525,8 +529,12 @@
   background: var(--domain-ai);
 }
 
-.dot-infra {
-  background: var(--domain-infra);
+.dot-cloud {
+  background: var(--domain-cloud);
+}
+
+.dot-distributed {
+  background: var(--domain-distributed);
 }
 
 .dot-platform {
