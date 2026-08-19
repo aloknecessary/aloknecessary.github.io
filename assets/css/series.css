@@ -499,10 +499,10 @@
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
-.legend-item--link[data-domain="ai"]       { --domain-accent: var(--domain-ai); }
-.legend-item--link[data-domain="infra"]    { --domain-accent: var(--domain-infra); }
-.legend-item--link[data-domain="platform"] { --domain-accent: var(--domain-platform); }
-.legend-item--link[data-domain="networking"]{ --domain-accent: var(--domain-networking); }
+.legend-item--link[data-domain="ai engineering"]      { --domain-accent: var(--domain-ai); }
+.legend-item--link[data-domain="cloud infra"]          { --domain-accent: var(--domain-cloud); }
+.legend-item--link[data-domain="distributed systems"]  { --domain-accent: var(--domain-distributed); }
+.legend-item--link[data-domain="platform"]             { --domain-accent: var(--domain-platform); }
 
 .legend-item--link:hover {
   border-color: var(--domain-accent);

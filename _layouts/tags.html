@@ -52,7 +52,7 @@ layout: default
         {% assign count = tag_posts | size %}
         {% assign latest_date = tag_posts | map: 'date' | sort | last | date: '%Y-%m-%d' %}
       <div class="tag-block" id="{{ tag | slugify }}" data-date="{{ latest_date }}" data-name="{{ tag | downcase }}">
-        <h2 class="tag-heading">#{{ tag }} <span class="tag-count">{{ count }}</span>{% include inline-sort-btn.html count=count %}</h2>
+        <h2 class="tag-heading">#{{ tag }} <span class="tag-count">{{ count }}</span>{% include inline-sort-btn.html count=count limit=4 %}</h2>
 
         <ul class="tag-posts">
           {% for post in tag_posts %}
