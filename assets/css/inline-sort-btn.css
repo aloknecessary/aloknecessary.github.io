@@ -1,0 +1,38 @@
+.inline-sort-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0;
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  background: var(--bg-card);
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  vertical-align: middle;
+  margin-left: 0.55rem;
+  flex-shrink: 0;
+}
+
+.inline-sort-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.inline-sort-btn.asc svg polyline {
+  transform-origin: 20px 16.5px;
+  transform: rotate(180deg);
+}
+
+/* Series blocks override with domain accent */
+.series-block .inline-sort-btn {
+  border-color: var(--domain-accent);
+  color: var(--domain-accent);
+}
+
+.series-block .inline-sort-btn:hover {
+  background: var(--domain-accent);
+  color: #fff;
+}
