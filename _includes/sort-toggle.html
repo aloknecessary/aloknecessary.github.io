@@ -97,7 +97,7 @@
   }
 </style>
 
-<div class="sort-toggle" title="{% if page.layout == 'series' %}Sort series{% else %}Sort articles within each section{% endif %}">
+<div class="sort-toggle">
   {% if page.layout == 'series' %}
   <button class="sort-btn active" data-sort="newest">Newest</button>
   <button class="sort-btn" data-sort="domain">By Domain</button>
@@ -114,7 +114,7 @@
 </div>
 
 <div class="sort-menu">
-  <button class="sort-menu-trigger" aria-label="Sort" title="{% if page.layout == 'series' %}Sort series{% else %}Sort articles within each section{% endif %}">
+  <button class="sort-menu-trigger" aria-label="Sort">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M3 6h18M6 12h12M9 18h6"/>
     </svg>
