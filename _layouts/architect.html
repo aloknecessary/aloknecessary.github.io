@@ -26,6 +26,8 @@ layout: default
       <span class="an-sep">|</span>
       <a href="#experience" class="an-link">Experience</a>
       <span class="an-sep">|</span>
+      <a href="#certifications" class="an-link">Certifications</a>
+      <span class="an-sep">|</span>
       <a href="#writing" class="an-link">Writing</a>
       <span class="an-sep">|</span>
       <a href="#projects" class="an-link">AI POCs</a>
@@ -62,6 +64,7 @@ layout: default
       <a href="#about" class="an-mobile-link">About</a>
       <a href="#expertise" class="an-mobile-link">Expertise</a>
       <a href="#experience" class="an-mobile-link">Experience</a>
+      <a href="#certifications" class="an-mobile-link">Certifications</a>
       <a href="#writing" class="an-mobile-link">Writing</a>
       <a href="#projects" class="an-mobile-link">AI POCs</a>
       <a href="#contact" class="an-mobile-link">Contact</a>
@@ -398,7 +401,7 @@ layout: default
 <script>
 (function () {
   const nav = document.getElementById('architectNav');
-  const sections = ['about', 'expertise', 'experience', 'writing', 'projects', 'contact'];
+  const sections = ['about', 'expertise', 'experience', 'certifications', 'writing', 'projects', 'contact'];
   const links = {};
   sections.forEach(id => {
     links[id] = nav.querySelector(`a[href="#${id}"]`);
@@ -410,7 +413,7 @@ layout: default
   const isJourneyPage = window.location.pathname.includes('professional-journey');
   const sectionNames = {
     about: 'About', expertise: 'Expertise', experience: 'Experience',
-    writing: 'Writing', projects: 'AI POCs', contact: 'Contact'
+    certifications: 'Certifications', writing: 'Writing', projects: 'AI POCs', contact: 'Contact'
   };
   const drawerLinks = document.querySelectorAll('.an-mobile-link[href^="#"]');
 
