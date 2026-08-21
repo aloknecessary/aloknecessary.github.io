@@ -1,7 +1,7 @@
 ---
 title: "AWS VPC Networking Fundamentals: VPCs, Subnets, CIDR, Route Tables, IGW, and NAT Gateways"
-date: 2026-08-14
-last_modified_at: 2026-08-14T10:00:00+05:30
+date: 2026-08-21
+last_modified_at: 2026-08-21T11:50:00+05:30
 author: Alok Ranjan Daftuar
 description: "A ground-up mental model for AWS VPC networking — how CIDR math, subnet allocation, route tables, internet gateways, and NAT gateways connect into a single coherent system, with Terraform examples and production sizing guidance."
 excerpt: "A clear mental model for how VPCs, subnets, CIDR blocks, route tables, internet gateways, and NAT gateways fit together — and why route tables, not subnet names, decide what's actually public or private."
@@ -17,8 +17,6 @@ series_order: 1
 If you've worked with AWS for any length of time, you've probably provisioned a VPC from a Terraform module or a CloudFormation template without fully internalizing what each piece is doing. That's fine right up until something breaks — an instance that should be reachable isn't, or a private instance can't pull a package update — and you're left checking five different resources with no clear mental model of how they connect.
 
 This post builds that mental model from the ground up: VPCs, CIDR math, subnet allocation, route tables, internet gateways, NAT gateways, and the security layers that sit on top of all of it. The goal isn't just definitions — it's understanding *why* each piece is designed the way it is, so troubleshooting becomes deduction instead of guesswork.
-
-<!--more-->
 
 ## The building analogy
 
