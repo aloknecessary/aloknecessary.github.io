@@ -19,6 +19,10 @@
   --domain-accent: var(--domain-platform);
 }
 
+.domain-networking {
+  --domain-accent: var(--domain-networking);
+}
+
 .series-block-title {
   background: linear-gradient(90deg, var(--domain-accent), var(--coral));
   -webkit-background-clip: text;

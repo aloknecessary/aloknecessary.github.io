@@ -7,9 +7,9 @@ canonical_url: https://aloknecessary.in/blogs/gitops-repo-structure-application-
 cover_image:
 ---
 
-Article 1 of this series covered where ArgoCD lives — hub-and-spoke vs. per-cluster, EKS and AKS registration mechanics. That's the plumbing. It says nothing about how Applications get organized once you're managing dozens of them across a dozen clusters, or how the Git repositories driving all of it should be laid out.
+Once you have ArgoCD running across clusters — hub-and-spoke or per-cluster — the next question is how to organize what it deploys. How should Git repositories be structured? When does App-of-Apps break down? What actually stops one team from deploying into another team's namespace?
 
-That second question tends to be the first real disagreement a platform team has — usually before anyone's written a single ArgoCD manifest. Get it wrong and every later decision (how ApplicationSets generate Applications, how AppProjects enforce boundaries) inherits the mess.
+Those decisions compound. Get the repo structure wrong and every later choice about ApplicationSets and AppProjects inherits the mess.
 
 ---
 
@@ -179,7 +179,7 @@ Three things worth being deliberate about:
 
 ## How the Three Pieces Compose
 
-Repo structure determines what the ApplicationSet's Git generator sees. The ApplicationSet's Matrix generator combines that with cluster registration from Article 1 to produce Applications. The AppProject referenced by every one of those Applications keeps the resulting sync operations inside the boundary that repo was ever supposed to have.
+Repo structure determines what the ApplicationSet's Git generator sees. The ApplicationSet's Matrix generator combines that with cluster registration to produce Applications — if you haven't read [Multi-Cluster ArgoCD Architecture](https://aloknecessary.in/blogs/multi-cluster-argocd-architecture/), that's the foundation this builds on. The AppProject referenced by every one of those Applications keeps the resulting sync operations inside the boundary that repo was ever supposed to have.
 
 Skip AppProjects and the first two pieces still function — they just function without a backstop, which tends to be fine until the day it very much isn't.
 
@@ -187,7 +187,7 @@ Skip AppProjects and the first two pieces still function — they just function 
 
 ## Read the Full Article
 
-This is Article 2 of the GitOps in Practice series. The full article includes:
+The full article covers:
 
 - Detailed cost/benefit analysis for all three repo structure shapes with the decision table
 - App-of-Apps sync-wave failure mode explained in full with the CrashLoopBackOff scenario
@@ -195,6 +195,5 @@ This is Article 2 of the GitOps in Practice series. The full article includes:
 - `argocd appset generate` dry-run workflow for catching label selector mistakes before they go live
 - Full AppProject YAML with `sourceRepos`, `destinations`, `clusterResourceWhitelist`, `namespaceResourceBlacklist`, and role definitions
 - The cross-team deployment scenario that AppProject destinations prevent — and why the label selector mistake alone isn't enough to cause it
-- What's next: Article 3 — CI to GitOps handoff, Argo Image Updater vs. CI-writes-the-commit vs. Kargo
 
 **👉 [GitOps Repo Structure and Application Patterns — Full Article](https://aloknecessary.in/blogs/gitops-repo-structure-application-patterns/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=gitops-repo-structure-application-patterns)**
