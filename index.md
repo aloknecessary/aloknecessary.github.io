@@ -223,16 +223,18 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ---
 
-## 🎓 Certifications
+## 🎓 Certifications {#certifications}
 
-<p align="center">
-  <img src="https://img.shields.io/badge/AWS-Partner_Certified-FF9900?style=for-the-badge&logo=hackthebox&logoColor=white" alt="AWS"/>
+<div class="cert-badges">
+  <img src="https://img.shields.io/badge/AWS-Partner_Certified-FF9900?style=for-the-badge&logo=hackthebox&logoColor=white" alt="AWS Partner Certified"/>
+  <img src="https://img.shields.io/badge/Microsoft-AZ--104_Azure_Administrator-0078D4?style=for-the-badge&logo=alfred&logoColor=white" alt="AZ-104"/>
   <img src="https://img.shields.io/badge/Neo4j-Professional_Certified-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/>
-  <img src="https://img.shields.io/badge/ZEDEDA-Edge_Computing_Associate-4285F4?style=for-the-badge&logo=zulip&logoColor=white" alt="ZEDEDA"/>
-</p>
+  <img src="https://img.shields.io/badge/ZEDEDA-Edge_Computing_Associate-4285F4?style=for-the-badge&logo=zulip&logoColor=white" alt="ZEDEDA Edge Computing Associate"/>
+</div>
 
-* 🏅 **AWS Partner Certified** — AWS cloud fundamentals, partner-led architectures
-* 🏅 **ZEDEDA Certified Edge Computing Associate** — Edge orchestration and lifecycle management
+* 🏅 [**AWS Partner Certified**](https://www.credly.com/badges/ddc65713-3463-4980-ba05-3ba71d83a74a) — AWS cloud fundamentals, partner-led architectures
+* 🏅 [**Microsoft Certified: Azure Administrator Associate (AZ-104)**](https://learn.microsoft.com/api/credentials/share/en-us/AlokRanjanDaftuar-6549/9CB67B872CFCDE4D?sharingId=3A811A69B5D449B5) — Azure infrastructure, identity, networking, and governance
+* 🏅 [**ZEDEDA Certified Edge Computing Associate**](https://www.credly.com/badges/5112c56d-c499-4d13-b8cc-6d3a640d63c3) — Edge orchestration and lifecycle management
 * 🏅 **Neo4j Professional Certified** — Graph data modeling and Cypher query expertise
 
 ---
