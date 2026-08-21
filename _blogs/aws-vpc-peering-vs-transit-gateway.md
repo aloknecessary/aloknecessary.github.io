@@ -1,8 +1,8 @@
 ---
 layout: blog
 title: "VPC Peering vs Transit Gateway: Choosing the Right AWS Inter-VPC Connectivity Model"
-date: 2026-08-18
-last_modified_at: 2026-08-21T12:12:58+05:30
+date: 2026-08-28
+last_modified_at: 2026-08-28T12:12:58+05:30
 author: Alok Ranjan Daftuar
 description: "A practical guide to choosing between VPC Peering and Transit Gateway — covering topology shape, the N(N-1)/2 scaling problem, route table segmentation, multi-account patterns, DNS, and a migration path from peering to TGW."
 excerpt: "VPC peering and Transit Gateway solve the same problem — connecting VPCs — but scale, cost, and operational complexity in opposite directions. Here's how to choose correctly the first time."
