@@ -1,7 +1,7 @@
 ---
 title: "Enforcing Modular Monolith Boundaries in .NET: NDepend, Parallel Pipelines, and the Architecture That Holds"
-date: 2026-07-16
-last_modified_at: 2026-07-16
+date: 2026-08-24
+last_modified_at: 2026-08-24T13:50:00+5:30
 author: Alok Ranjan Daftuar
 description: "A production implementation guide to building a .NET modular monolith with enforced boundaries — solution structure, NDepend CQLinq rules, module-scoped DbContext, MediatR in-process events, parallel GitHub Actions pipelines per module, and Quality Gates that fail the build before boundary violations reach main."
 excerpt: "A modular monolith without enforcement is not an architecture — it is a monolith with good intentions. This post covers the full .NET implementation: solution structure, NDepend CQLinq rules, module-scoped DbContext, MediatR events, parallel CI pipelines, and Quality Gates that block boundary violations before they reach main."
