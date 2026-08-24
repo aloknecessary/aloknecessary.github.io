@@ -215,7 +215,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 > * **Architected and delivered CCMR3 — CollectLogic** across 4 major phases: led 40+ engineers through greenfield go-live, stepped up as Solution Architect to define roadmap, deliver 100K+ record bulk import, full Legal module, enterprise permission strategy, and AI exploration — serving 500+ daily active users
 > * **Collaborated with Microsoft team** on Bing and Microsoft Admin Portal platforms
 > * Led cost optimization initiatives resulting in significant cloud infrastructure savings  
-> * Led 10+ pre-sales engagements — technical discovery, effort estimation, architecture proposals, team composition planning, and phased delivery roadmaps across fintech, healthcare, SaaS, and IoT domains
+> * **Led 10+ pre-sales engagements** — technical discovery, effort estimation, architecture proposals, team composition planning, and phased delivery roadmaps across fintech, healthcare, SaaS, and IoT domains
 > * **Built a pre-sales POC using Amazon Textract** for a health-tech client — extracted and structured data from handwritten and printed prescriptions and diagnostic test reports at 85%+ accuracy, directly enabling the client proposal submission
 > * Built custom Docker images for CI/CD optimization (playwright-az-cli, sonar-dotnet) downloaded 1000+ times across teams
 >
@@ -226,8 +226,8 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 ## 🎓 Certifications {#certifications}
 
 <div class="cert-badges">
-  <img src="https://img.shields.io/badge/AWS-Partner_Certified-FF9900?style=for-the-badge&logo=hackthebox&logoColor=white" alt="AWS Partner Certified"/>
   <img src="https://img.shields.io/badge/Microsoft-AZ--104_Azure_Administrator-0078D4?style=for-the-badge&logo=alfred&logoColor=white" alt="AZ-104"/>
+  <img src="https://img.shields.io/badge/AWS-Partner_Certified-FF9900?style=for-the-badge&logo=hackthebox&logoColor=white" alt="AWS Partner Certified"/>
   <img src="https://img.shields.io/badge/Neo4j-Professional_Certified-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/>
   <img src="https://img.shields.io/badge/ZEDEDA-Edge_Computing_Associate-4285F4?style=for-the-badge&logo=zulip&logoColor=white" alt="ZEDEDA Edge Computing Associate"/>
 </div>
@@ -278,7 +278,7 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 
 <div class="stats-container">
   <img src="https://github-readme-stats-aloknecessary-4439s-projects.vercel.app/api/top-langs?username=aloknecessary&layout=compact&theme=ambient_gradient&size_weight=0.5&count_weight=0.5" alt="Top Languages" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aloknecessary&theme=ambient-gradient&hide_border=true&exclude_days=Sat,Sun&mode=weekly" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aloknecessary&theme=ambient-gradient&hide_border=true&mode=weekly" alt="GitHub Streak" />
 </div>
 
 ---
