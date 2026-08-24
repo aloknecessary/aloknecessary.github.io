@@ -39,3 +39,9 @@
   icon: "🌐"
   domain: "Networking"
   description: "VPC fundamentals, subnet design, routing, connectivity patterns, and the networking decisions that underpin production AWS architectures."
+
+- name: "Agentic Infrastructure"
+  slug: agentic-infrastructure
+  icon: "🤖"
+  domain: "AI Engineering"
+  description: "The deployment, scaling, and operational patterns that MCP-based agents need on Kubernetes — liveness probes, autoscaling signals, session isolation, workload identity, and the infrastructure decisions that determine whether an agent has a fair chance to behave correctly in production."
