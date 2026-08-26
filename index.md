@@ -232,10 +232,10 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
   <img src="https://img.shields.io/badge/ZEDEDA-Edge_Computing_Associate-4285F4?style=for-the-badge&logo=zulip&logoColor=white" alt="ZEDEDA Edge Computing Associate"/>
 </div>
 
-* 🏅 <a href="https://www.credly.com/badges/ddc65713-3463-4980-ba05-3ba71d83a74a" target="_blank" rel="noopener noreferrer">**AWS Partner Certified**</a> — AWS cloud fundamentals, partner-led architectures
 * 🏅 <a href="https://learn.microsoft.com/api/credentials/share/en-us/AlokRanjanDaftuar-6549/9CB67B872CFCDE4D?sharingId=3A811A69B5D449B5" target="_blank" rel="noopener noreferrer">**Microsoft Certified: Azure Administrator Associate (AZ-104)**</a> — Azure infrastructure, identity, networking, and governance
-* 🏅 <a href="https://www.credly.com/badges/5112c56d-c499-4d13-b8cc-6d3a640d63c3" target="_blank" rel="noopener noreferrer">**ZEDEDA Certified Edge Computing Associate**</a> — Edge orchestration and lifecycle management
-* 🏅 <a href="https://graphacademy.neo4j.com/c/2c0f1dde-7785-4c12-97ee-20a160574c8a" target="_blank" rel="noopener noreferrer">**Neo4j Professional Certified**</a> — Graph data modeling and Cypher query expertise
+* 🏅 <a href="https://www.credly.com/badges/ddc65713-3463-4980-ba05-3ba71d83a74a" target="_blank" rel="noopener noreferrer">**AWS Partner Certified: Technical Accredited Trained Partner**</a> — AWS cloud fundamentals, partner-led architectures
+* 🏅 <a href="https://www.credly.com/badges/5112c56d-c499-4d13-b8cc-6d3a640d63c3" target="_blank" rel="noopener noreferrer">**ZEDEDA Certified: ZEDEDA Edge Computing Associate**</a> — Edge orchestration and lifecycle management
+* 🏅 <a href="https://graphacademy.neo4j.com/c/2c0f1dde-7785-4c12-97ee-20a160574c8a" target="_blank" rel="noopener noreferrer">**Neo4j Certified: Neo4j Certified Professional**</a> — Graph data modeling and Cypher query expertise
 
 ---
 

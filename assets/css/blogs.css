@@ -232,7 +232,7 @@
   padding: 0.375rem 0.75rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  border-radius: 6px;
+  border-radius: 28px;
   text-decoration: none;
   transition: all 0.2s ease;
   background: var(--tag-bg, var(--bg-soft));

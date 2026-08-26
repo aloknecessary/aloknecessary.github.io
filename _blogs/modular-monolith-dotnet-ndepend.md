@@ -7,8 +7,8 @@ description: "A production implementation guide to building a .NET modular monol
 excerpt: "A modular monolith without enforcement is not an architecture — it is a monolith with good intentions. This post covers the full .NET implementation: solution structure, NDepend CQLinq rules, module-scoped DbContext, MediatR events, parallel CI pipelines, and Quality Gates that block boundary violations before they reach main."
 keywords: "modular monolith, dotnet, ndepend, cqlinq, mediatr, github actions, clean architecture, module boundaries, parallel pipelines, quality gates"
 categories:
-  - architecture
-  - dotnet
+  - software-engineering
+  - devops
 tags: [dotnet, modular-monolith, ndepend, architecture, csharp, github-actions, ci-cd, mediatr, clean-architecture, production]
 ---
 
