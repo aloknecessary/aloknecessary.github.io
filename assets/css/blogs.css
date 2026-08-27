@@ -258,235 +258,200 @@
 .tag--performance { --tag-bg: var(--tag-performance-bg); --tag-color: var(--tag-performance-color); }
 .tag--ai         { --tag-bg: var(--tag-ai-bg); --tag-color: var(--tag-ai-color); } */
 
-/* Tag Color Coding */
+/* Tag Color Coding — 7 role-based buckets
+   so cards with mixed tags get a natural mix of colors.
 
-/* Container & Cloud Native */
-.card-tags .tag[data-tag*="kubernetes"],
-.card-tags .tag[data-tag*="k8s"] {
-  background: #e0f2fe;
-  color: #0c4a6e;
-}
-.card-tags .tag[data-tag*="docker"],
-.card-tags .tag[data-tag*="container"] {
+   1. CLOUD & INFRA          → blue   #dbeafe / #1e40af
+   2. CONTAINERS & ORCH      → cyan   #e0f2fe / #0c4a6e
+   3. CONCEPTS & PATTERNS    → pink   #fce7f3 / #9d174d
+   4. AI & DATA              → purple #ede9fe / #5b21b6
+   5. PRACTICE & WORKFLOW    → teal   #ccfbf1 / #134e4a
+   6. LANGUAGES & FRAMEWORKS → green  #dcfce7 / #166534
+   7. OUTCOMES & QUALITY     → amber  #fef9c3 / #854d0e
+*/
+
+/* 1. CLOUD & INFRASTRUCTURE */
+.card-tags .tag[data-tag*="aws"],
+.card-tags .tag[data-tag*="azure"],
+.card-tags .tag[data-tag*="terraform"],
+.card-tags .tag[data-tag*="vpc"],
+.card-tags .tag[data-tag*="subnets"],
+.card-tags .tag[data-tag*="cidr"],
+.card-tags .tag[data-tag*="ec2"],
+.card-tags .tag[data-tag*="ebs"],
+.card-tags .tag[data-tag*="rds"],
+.card-tags .tag[data-tag*="nat-gateway"],
+.card-tags .tag[data-tag*="internet-gateway"],
+.card-tags .tag[data-tag*="route-tables"],
+.card-tags .tag[data-tag*="mgn"],
+.card-tags .tag[data-tag*="infrastructure-as-code"],
+.card-tags .tag[data-tag*="cloud-native"],
+.card-tags .tag[data-tag*="saas"],
+.card-tags .tag[data-tag*="migration"],
+.card-tags .tag[data-tag*="replication"],
+.card-tags .tag[data-tag*="cutover"] {
   background: #dbeafe;
   color: #1e40af;
 }
 
-/* Cloud Platforms */
-.card-tags .tag[data-tag*="azure"],
-.card-tags .tag[data-tag*="cloud"] {
-  background: #e0e7ff;
-  color: #3730a3;
-}
-.card-tags .tag[data-tag*="terraform"],
-.card-tags .tag[data-tag*="aws"] {
-  background: #fef3c7;
-  color: #92400e;
-}
-
-/* DevOps & CI/CD */
-.card-tags .tag[data-tag*="devops"],
-.card-tags .tag[data-tag*="cicd"],
-.card-tags .tag[data-tag*="github-actions"],
-.card-tags .tag[data-tag*="ci-cd"],
-.card-tags .tag[data-tag*="arc"] {
-  background: #f3e8ff;
-  color: #6b21a8;
-}
-
-/* Frontend & Web */
-.card-tags .tag[data-tag*="react"],
-.card-tags .tag[data-tag*="progressive-web-apps"],
-.card-tags .tag[data-tag*="node"],
-.card-tags .tag[data-tag*="javascript"],
-.card-tags .tag[data-tag*="web-"],
-.card-tags .tag[data-tag*="service-workers"] {
-  background: #ecfdf5;
-  color: #065f46;
+/* 2. CONTAINERS & ORCHESTRATION */
+.card-tags .tag[data-tag*="kubernetes"],
+.card-tags .tag[data-tag*="k8s"],
+.card-tags .tag[data-tag*="docker"],
+.card-tags .tag[data-tag*="container"],
+.card-tags .tag[data-tag*="eks"],
+.card-tags .tag[data-tag*="aks"],
+.card-tags .tag[data-tag*="argocd"],
+.card-tags .tag[data-tag*="multi-cluster"],
+.card-tags .tag[data-tag*="applicationsets"],
+.card-tags .tag[data-tag*="service-mesh"],
+.card-tags .tag[data-tag*="istio"],
+.card-tags .tag[data-tag*="linkerd"],
+.card-tags .tag[data-tag*="cilium"],
+.card-tags .tag[data-tag*="portainer"],
+.card-tags .tag[data-tag*="ubuntu"],
+.card-tags .tag[data-tag*="self-hosted"],
+.card-tags .tag[data-tag*="dev-infra"] {
+  background: #e0f2fe;
+  color: #0c4a6e;
 }
 
-/* .NET & Backend */
-.card-tags .tag[data-tag*="dotnet"],
-.card-tags .tag[data-tag*="csharp"],
-.card-tags .tag[data-tag*="net"] {
-  background: #ede9fe;
-  color: #5b21b6;
-}
-
-/* Architecture & Design */
-.card-tags .tag[data-tag*="architecture"],
-.card-tags .tag[data-tag*="platform"],
-.card-tags .tag[data-tag*="design"],
+/* 3. CONCEPTS & PATTERNS */
 .card-tags .tag[data-tag*="cqrs"],
-.card-tags .tag[data-tag*="patterns"],
-.card-tags .tag[data-tag*="system-design"] {
+.card-tags .tag[data-tag*="saga"],
+.card-tags .tag[data-tag*="event-driven"],
+.card-tags .tag[data-tag*="outbox-pattern"],
+.card-tags .tag[data-tag*="change-data-capture"],
+.card-tags .tag[data-tag*="idempotency"],
+.card-tags .tag[data-tag*="deduplication"],
+.card-tags .tag[data-tag*="strangler-fig"],
+.card-tags .tag[data-tag*="modular-monolith"],
+.card-tags .tag[data-tag*="conways-law"],
+.card-tags .tag[data-tag*="team-topology"],
+.card-tags .tag[data-tag*="cap-theorem"],
+.card-tags .tag[data-tag*="zero-trust"],
+.card-tags .tag[data-tag*="lift-and-shift"],
+.card-tags .tag[data-tag*="multi-tenancy"],
+.card-tags .tag[data-tag*="isolation"],
+.card-tags .tag[data-tag*="data-consistency"],
+.card-tags .tag[data-tag*="data-reconciliation"],
+.card-tags .tag[data-tag*="search-architecture"],
+.card-tags .tag[data-tag*="service-workers"],
+.card-tags .tag[data-tag*="progressive-web-apps"],
+.card-tags .tag[data-tag*="microservices"],
+.card-tags .tag[data-tag*="distributed-systems"],
+.card-tags .tag[data-tag*="api-design"],
+.card-tags .tag[data-tag*="api"],
+.card-tags .tag[data-tag*="rest"] {
   background: #fce7f3;
   color: #9d174d;
 }
 
-/* Security & Networking */
-.card-tags .tag[data-tag*="security"],
-.card-tags .tag[data-tag*="zero-trust"],
-.card-tags .tag[data-tag*="iam"],
-.card-tags .tag[data-tag*="secrets-management"],
-.card-tags .tag[data-tag*="private-endpoints"],
-.card-tags .tag[data-tag*="privatelink"],
-.card-tags .tag[data-tag*="vpc"],
-.card-tags .tag[data-tag*="dns"],
-.card-tags .tag[data-tag*="networking"] {
-  background: #fee2e2;
-  color: #991b1b;
-}
-
-/* Scalability & Performance */
-.card-tags .tag[data-tag*="scalability"],
-.card-tags .tag[data-tag*="performance"],
-.card-tags .tag[data-tag*="optimization"],
-.card-tags .tag[data-tag*="multi-tenancy"] {
-  background: #d1fae5;
-  color: #065f46;
-}
-
-/* Modernization & Productivity */
-.card-tags .tag[data-tag*="modernisation"],
-.card-tags .tag[data-tag*="modernization"],
-.card-tags .tag[data-tag*="productivity"],
-.card-tags .tag[data-tag*="legacy"] {
-  background: #e0f2fe;
-  color: #0c4a6e;
-}
-
-/* AI & Automation */
+/* 4. AI & DATA */
 .card-tags .tag[data-tag*="ai"],
-.card-tags .tag[data-tag*="automation"],
-.card-tags .tag[data-tag*="debugging"] {
-  background: #fae8ff;
-  color: #86198f;
-}
-
-/* Distributed Systems */
-.card-tags .tag[data-tag*="distributed-systems"],
-.card-tags .tag[data-tag*="microservices"] {
-  background: #fef9c3;
-  color: #854d0e;
-}
-.card-tags .tag[data-tag*="reliability"],
-.card-tags .tag[data-tag*="idempotency"],
-.card-tags .tag[data-tag*="deduplication"] {
-  background: #ede9fe;
-  color: #4c1d95;
-}
-.card-tags .tag[data-tag*="saga"],
-.card-tags .tag[data-tag*="event-driven"] {
-  background: #d1fae5;
-  color: #064e3b;
-}
-
-/* API Design */
-.card-tags .tag[data-tag*="api-design"],
-.card-tags .tag[data-tag*="api"],
-.card-tags .tag[data-tag*="rest"] {
-  background: #ffedd5;
-  color: #9a3412;
-}
-
-/* Database & Data */
-.card-tags .tag[data-tag*="database"],
-.card-tags .tag[data-tag*="sql"],
-.card-tags .tag[data-tag*="redis"],
-.card-tags .tag[data-tag*="isolation"] {
-  background: #fef3c7;
-  color: #78350f;
-}
-
-/* Infrastructure & Platform */
-.card-tags .tag[data-tag*="infrastructure"],
-.card-tags .tag[data-tag*="platform-engineering"],
-.card-tags .tag[data-tag*="dev-infra"],
-.card-tags .tag[data-tag*="self-hosted"],
-.card-tags .tag[data-tag*="portainer"],
-.card-tags .tag[data-tag*="ubuntu"] {
-  background: #e0e7ff;
-  color: #3730a3;
-}
-
-/* SaaS & Cloud Native */
-.card-tags .tag[data-tag*="saas"],
-.card-tags .tag[data-tag*="cloud-native"] {
-  background: #dbeafe;
-  color: #1e40af;
-}
-
-/* Technical Debt & Quality */
-.card-tags .tag[data-tag*="technical-debt"],
-.card-tags .tag[data-tag*="code-quality"] {
-  background: #fed7aa;
-  color: #9a3412;
-}
-
-/* Documentation & Testing */
-.card-tags .tag[data-tag*="documentation"],
-.card-tags .tag[data-tag*="playwright"] {
-  background: #d1fae5;
-  color: #14532d;
-}
-
-/* Cost Optimization */
-.card-tags .tag[data-tag*="cost"] {
-  background: #fef9c3;
-  color: #713f12;
-}
-
-/* AI/LLM & Retrieval */
 .card-tags .tag[data-tag*="llm"],
 .card-tags .tag[data-tag*="rag"],
 .card-tags .tag[data-tag*="ragas"],
-.card-tags .tag[data-tag*="agents"],
 .card-tags .tag[data-tag*="bm25"],
+.card-tags .tag[data-tag*="graphrag"],
+.card-tags .tag[data-tag*="multi-agent"],
+.card-tags .tag[data-tag*="agents"],
+.card-tags .tag[data-tag*="information-retrieval"],
 .card-tags .tag[data-tag*="retrieval"],
+.card-tags .tag[data-tag*="embeddings"],
+.card-tags .tag[data-tag*="vector-search"],
+.card-tags .tag[data-tag*="knowledge-graphs"],
 .card-tags .tag[data-tag*="context-engineering"],
 .card-tags .tag[data-tag*="prompt-engineering"],
 .card-tags .tag[data-tag*="memory"],
 .card-tags .tag[data-tag*="evaluation"],
-.card-tags .tag[data-tag*="information-retrieval"] {
-  background: #fae8ff;
-  color: #86198f;
+.card-tags .tag[data-tag*="mteb"],
+.card-tags .tag[data-tag*="database"],
+.card-tags .tag[data-tag*="redis"],
+.card-tags .tag[data-tag*="kafka"],
+.card-tags .tag[data-tag*="sql"] {
+  background: #ede9fe;
+  color: #5b21b6;
 }
 
-/* Resilience & Reliability */
-.card-tags .tag[data-tag*="resilience"],
-.card-tags .tag[data-tag*="graceful-degradation"],
-.card-tags .tag[data-tag*="disaster-recovery"],
-.card-tags .tag[data-tag*="cap-theorem"],
-.card-tags .tag[data-tag*="high-availability"],
-.card-tags .tag[data-tag*="multi-az"],
+/* 5. PRACTICE & WORKFLOW */
+.card-tags .tag[data-tag*="devops"],
+.card-tags .tag[data-tag*="gitops"],
+.card-tags .tag[data-tag*="ci-cd"],
+.card-tags .tag[data-tag*="cicd"],
+.card-tags .tag[data-tag*="github-actions"],
+.card-tags .tag[data-tag*="arc"],
 .card-tags .tag[data-tag*="sre"],
 .card-tags .tag[data-tag*="observability"],
-.card-tags .tag[data-tag*="latency"],
-.card-tags .tag[data-tag*="multi-region"],
-.card-tags .tag[data-tag*="trade-offs"],
-.card-tags .tag[data-tag*="production"] {
-  background: #fef9c3;
-  color: #854d0e;
-}
-
-/* Event-Driven & Data Patterns */
-.card-tags .tag[data-tag*="kafka"],
-.card-tags .tag[data-tag*="outbox-pattern"],
-.card-tags .tag[data-tag*="change-data-capture"],
-.card-tags .tag[data-tag*="data-consistency"],
-.card-tags .tag[data-tag*="data-reconciliation"] {
-  background: #ede9fe;
-  color: #4c1d95;
-}
-
-/* GitOps & Platform */
-.card-tags .tag[data-tag*="gitops"],
+.card-tags .tag[data-tag*="platform-engineering"],
+.card-tags .tag[data-tag*="internal-developer-platform"],
 .card-tags .tag[data-tag*="crossplane"],
 .card-tags .tag[data-tag*="backstage"],
-.card-tags .tag[data-tag*="lift-and-shift"] {
+.card-tags .tag[data-tag*="automation"],
+.card-tags .tag[data-tag*="developer-productivity"],
+.card-tags .tag[data-tag*="developer-tools"],
+.card-tags .tag[data-tag*="version-control"],
+.card-tags .tag[data-tag*="best-practices"],
+.card-tags .tag[data-tag*="documentation"],
+.card-tags .tag[data-tag*="debugging"],
+.card-tags .tag[data-tag*="git"],
+.card-tags .tag[data-tag*="reflog"],
+.card-tags .tag[data-tag*="rebase"],
+.card-tags .tag[data-tag*="recovery"],
+.card-tags .tag[data-tag*="orchestration"] {
   background: #ccfbf1;
   color: #134e4a;
+}
+
+/* 6. LANGUAGES & FRAMEWORKS */
+.card-tags .tag[data-tag*="dotnet"],
+.card-tags .tag[data-tag*="csharp"],
+.card-tags .tag[data-tag*="mediatr"],
+.card-tags .tag[data-tag*="ndepend"],
+.card-tags .tag[data-tag*="clean-architecture"],
+.card-tags .tag[data-tag*="javascript"],
+.card-tags .tag[data-tag*="react"],
+.card-tags .tag[data-tag*="playwright"],
+.card-tags .tag[data-tag*="web-"],
+.card-tags .tag[data-tag*="node"] {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* 7. OUTCOMES & QUALITY */
+.card-tags .tag[data-tag*="production"],
+.card-tags .tag[data-tag*="reliability"],
+.card-tags .tag[data-tag*="resilience"],
+.card-tags .tag[data-tag*="scalability"],
+.card-tags .tag[data-tag*="performance"],
+.card-tags .tag[data-tag*="high-availability"],
+.card-tags .tag[data-tag*="multi-az"],
+.card-tags .tag[data-tag*="multi-region"],
+.card-tags .tag[data-tag*="disaster-recovery"],
+.card-tags .tag[data-tag*="graceful-degradation"],
+.card-tags .tag[data-tag*="latency"],
+.card-tags .tag[data-tag*="trade-offs"],
+.card-tags .tag[data-tag*="cost"],
+.card-tags .tag[data-tag*="optimization"],
+.card-tags .tag[data-tag*="technical-debt"],
+.card-tags .tag[data-tag*="code-quality"],
+.card-tags .tag[data-tag*="modernisation"],
+.card-tags .tag[data-tag*="modernization"],
+.card-tags .tag[data-tag*="legacy"],
+.card-tags .tag[data-tag*="productivity"],
+.card-tags .tag[data-tag*="security"],
+.card-tags .tag[data-tag*="cloud-security"],
+.card-tags .tag[data-tag*="iam"],
+.card-tags .tag[data-tag*="mtls"],
+.card-tags .tag[data-tag*="authentication"],
+.card-tags .tag[data-tag*="secrets-management"],
+.card-tags .tag[data-tag*="private-endpoints"],
+.card-tags .tag[data-tag*="privatelink"],
+.card-tags .tag[data-tag*="security-groups"],
+.card-tags .tag[data-tag*="networking"],
+.card-tags .tag[data-tag*="dns"] {
+  background: #fef9c3;
+  color: #854d0e;
 }
 
 
