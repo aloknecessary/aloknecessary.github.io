@@ -1,8 +1,8 @@
 ---
 layout: blog
 title: "AWS MGN Architecture: How Continuous Replication Actually Works"
-date: 2026-08-21
-last_modified_at: 2026-08-21T14:52:54+05:30
+date: 2026-08-27
+last_modified_at: 2026-08-27T12:02:04+05:30
 author: Alok Ranjan Daftuar
 description: "A deep dive into how AWS Application Migration Service works under the hood — the replication agent, staging area, continuous block-level sync, cutover mechanics, and where migrations actually fail."
 excerpt: "Before I trusted AWS MGN with production cutovers, I needed to understand exactly what the replication agent does, second by second, from install to launch. This is that breakdown."
