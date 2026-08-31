@@ -2,7 +2,7 @@
 title: "Enforcing Modular Monolith Boundaries in .NET: NDepend, Parallel Pipelines, and the Architecture That Holds"
 published: false
 description: "A production guide to .NET modular monoliths with enforced boundaries — solution structure, NDepend CQLinq rules, module-scoped DbContext, MediatR events, parallel CI pipelines, and Quality Gates."
-canonical_url: "https://aloknecessary.github.io/blogs/modular-monolith-dotnet-ndepend/?utm_source=devto&utm_medium=crosspost&utm_campaign=modular-monolith-dotnet"
+canonical_url: "https://aloknecessary.in/blogs/modular-monolith-dotnet-ndepend/?utm_source=devto&utm_medium=crosspost&utm_campaign=modular-monolith-dotnet"
 tags: dotnet, architecture, csharp, devops
 cover_image:
 ---
@@ -74,4 +74,4 @@ The boundary was already clean. Extraction is a deployment change, not a redesig
 
 The full post covers NDepend CQLinq rule examples, Quality Gate configuration, GitHub Actions pipeline YAML, test isolation patterns, and a production checklist.
 
-👉 [Read the complete implementation guide](https://aloknecessary.github.io/blogs/modular-monolith-dotnet-ndepend/?utm_source=devto&utm_medium=crosspost&utm_campaign=modular-monolith-dotnet)
+👉 [Read the complete implementation guide](https://aloknecessary.in/blogs/modular-monolith-dotnet-ndepend/?utm_source=devto&utm_medium=crosspost&utm_campaign=modular-monolith-dotnet)
