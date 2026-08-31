@@ -1,7 +1,7 @@
 ---
 title: "Always Encrypt in Transit: The Gap Between TLS Everywhere and Actual Transport Security"
-date: 2026-08-31T11:40:48+05:30
-last_modified_at: 2026-08-31
+date: 2026-08-31
+last_modified_at: 2026-08-31T11:40:48+05:30
 author: Alok Ranjan Daftuar
 description: "Most systems that claim TLS everywhere have TLS at the edge and plaintext everywhere else. This post maps where encryption is actually absent — ingress-to-pod, pod-to-pod, application-to-database — and the implementation path that closes those gaps without defaulting to a service mesh."
 excerpt: "'TLS everywhere' is the right posture and the wrong implementation. This post maps where plaintext actually exists in systems that claim full encryption, the termination architecture decisions that create invisible gaps, certificate lifecycle failures that turn security controls into outages, and the path to transport security that holds up under a compliance audit."
@@ -318,6 +318,8 @@ spec:
 
 ### Monitoring Certificate Expiry
 
+{% raw %}
+
 ```yaml
 # Prometheus alert: fire 15 days before expiry — prevention, not notification
 groups:
@@ -344,6 +346,8 @@ groups:
     annotations:
       summary: "Certificate {{ $labels.name }} has EXPIRED"
 ```
+
+{% endraw %}
 
 Both alerts are required. The 15-day warning gives the team time to investigate a renewal failure before it becomes an outage. The expired alert catches the case where the warning was missed or the renewal failed silently.
 
