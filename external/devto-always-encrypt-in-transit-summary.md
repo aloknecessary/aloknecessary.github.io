@@ -3,7 +3,7 @@ title: "Always Encrypt in Transit: The Gap Between TLS Everywhere and Actual Tra
 published: false
 description: Most systems that claim TLS everywhere have TLS at the edge and plaintext everywhere else — here's where the gaps actually are and how to close them.
 tags: security, kubernetes, tls, cloudnative
-canonical_url: https://aloknecessary.github.io/blogs/always-encrypt-in-transit/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=always-encrypt-in-transit
+canonical_url: https://aloknecessary.in/blogs/always-encrypt-in-transit/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=always-encrypt-in-transit
 cover_image:
 ---
 
@@ -26,4 +26,4 @@ This is a summary of the fifth and final post in the Cloud Defaults Reconsidered
 - .NET HttpClient mTLS implementation without a service mesh
 - Decision framework: map every traffic path, choose termination architecture, automate lifecycle, enforce at both ends
 
-**👉 [Always Encrypt in Transit — Full Article](https://aloknecessary.github.io/blogs/always-encrypt-in-transit/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=always-encrypt-in-transit)**
+**👉 [Always Encrypt in Transit — Full Article](https://aloknecessary.in/blogs/always-encrypt-in-transit/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=always-encrypt-in-transit)**
