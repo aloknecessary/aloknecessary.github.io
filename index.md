@@ -283,7 +283,7 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 
 ---
 
-## 📦 Featured Open Source Contributions
+## 📦 Featured Open Source Contributions {#opensource}
 
 <div class="opensource-grid">
 
@@ -585,13 +585,6 @@ System: [Drills down to show regional sales breakdown for Clothing]
 * 🎯 **Proven feasibility** - Validated LLM-powered BI approach
 * ⚡ **Rapid delivery** - 20-30 days from concept to production POC
 * 🏢 **Company showcase** - Featured on [Byteridge's innovation portal](https://byteridge.com/gen-ai-solutions/visualizer/)
-
-**Current Status**:
-
-* 🌐 **Publicly accessible** at [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Try_It_Now-4CAF50?style=flat-square)](https://solution.byteridge.com/innovation/visualizer)
-* 🔐 Social authentication (Gmail, LinkedIn, GitHub, Facebook, Microsoft)
-* 📊 Demo datasets provided for immediate experimentation
-* 🎯 Available for client demonstrations and POC evaluations
 
 <!-- [![Documentation](https://img.shields.io/badge/📖_Read_More-Technical_Deep_Dive-2196F3?style=for-the-badge)](#) -->
 

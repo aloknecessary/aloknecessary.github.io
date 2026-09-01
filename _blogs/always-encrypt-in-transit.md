@@ -8,9 +8,7 @@ excerpt: "'TLS everywhere' is the right posture and the wrong implementation. Th
 keywords: "TLS, encryption in transit, Kubernetes, cert-manager, mTLS, certificates, transport security, cloud security, ingress, pod-to-pod encryption"
 twitter_card: "summary_large_image"
 categories:
-  - security
-  - cloud-architecture
-  - kubernetes
+  - cloud
 tags: [tls, security, kubernetes, cert-manager, mtls, certificates, cloud-security, architecture, production, trade-offs, cloud-native]
 series: "Cloud Defaults Reconsidered"
 series_order: 5
