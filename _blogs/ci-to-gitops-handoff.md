@@ -1,7 +1,7 @@
 ---
 title: "CI to GitOps Handoff: Argo Image Updater vs. CI-Writes-the-Commit vs. Kargo"
-date: 2026-08-13
-last_modified_at: 2026-08-13T10:00:00+05:30
+date: 2026-09-03
+last_modified_at: 2026-09-03T12:49:32+05:30
 author: Alok Ranjan Daftuar
 description: "How to close the gap between a CI image push and an ArgoCD sync: comparing Argo Image Updater, CI-writes-the-commit, and Kargo on promotion model, auth chain, and operational cost."
 excerpt: "A build produces an image. Something has to get that image reference into the Git repo ArgoCD is watching. Three ways to close that gap, what each costs you, and how the auth chain from your CI pipeline should actually work."
@@ -9,7 +9,6 @@ keywords: "gitops, argocd, argo image updater, kargo, ci cd, github actions, ima
 twitter_card: "summary_large_image"
 categories:
   - devops
-  - kubernetes
 tags: [argocd, gitops, kubernetes, github-actions, kargo, ci-cd, platform-engineering]
 series: "GitOps in Practice"
 series_order: 3
