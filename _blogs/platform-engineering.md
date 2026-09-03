@@ -8,8 +8,8 @@ excerpt: "Platform Engineering is the architectural response to infrastructure t
 keywords: "platform engineering, internal developer platform, IDP, backstage, crossplane, golden path, developer experience, devops, kubernetes, self-service infrastructure"
 twitter_card: summary_large_image
 categories:
-  - architecture
   - devops
+  - software-engineering
 tags: [platform-engineering, kubernetes, devops, internal-developer-platform, backstage, crossplane, github-actions, gitops, cloud-native, architecture]
 series: "DevOps & Platform Engineering"
 series_order: 5

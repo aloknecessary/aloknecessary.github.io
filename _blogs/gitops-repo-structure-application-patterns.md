@@ -9,7 +9,6 @@ keywords: "gitops, argocd, applicationset, app-of-apps, appproject, kubernetes, 
 twitter_card: summary_large_image
 categories:
   - devops
-  - kubernetes
 tags: [argocd, gitops, kubernetes, applicationsets, multi-tenancy, platform-engineering]
 series: "GitOps in Practice"
 series_order: 2

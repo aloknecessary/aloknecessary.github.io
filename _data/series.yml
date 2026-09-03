@@ -13,19 +13,19 @@
 - name: "Distributed Systems"
   slug: distributed-systems
   icon: "⚡"
-  domain: "Infrastructure"
+  domain: "Distributed Systems"
   description: "CAP trade-offs, partial failure, dual writes, and data reconciliation at scale."
 
 - name: "Cloud Architecture"
   slug: cloud-architecture
   icon: "🌩️"
-  domain: "Infrastructure"
+  domain: "Cloud Infra"
   description: "Migration patterns, region-level resilience, modernisation, cost engineering, and security architecture for production cloud systems."
 
 - name: "Cloud Defaults Reconsidered"
   slug: cloud-defaults-reconsidered
   icon: "⚖️"
-  domain: "Infrastructure"
+  domain: "Cloud Infra"
   description: "Examining widely-recommended cloud defaults that frequently get applied as blanket mandates without evaluating whether the cost is proportional to the actual benefit."
 
 - name: "DevOps & Platform Engineering"
@@ -33,3 +33,15 @@
   icon: "🛠️"
   domain: "Platform"
   description: "From custom images and CI runners to full dev environment assembly — the infrastructure that accelerates delivery."
+
+- name: "AWS Network Architecture"
+  slug: aws-network-architecture
+  icon: "🌐"
+  domain: "Networking"
+  description: "VPC fundamentals, subnet design, routing, connectivity patterns, and the networking decisions that underpin production AWS architectures."
+
+- name: "AWS Migration Playbook"
+  slug: aws-migration-playbook
+  icon: "🚚"
+  domain: "Cloud Infra"
+  description: "Real-world AWS migration mechanics — MGN replication internals, kernel driver failures, cutover sequencing, and the operational patterns that separate a clean migration from an incident."

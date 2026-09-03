@@ -9,7 +9,6 @@ keywords: "lift-and-shift, cloud migration, rehosting, latency amplification, ch
 twitter_card: summary_large_image
 categories:
   - cloud
-  - architecture
 tags: [lift-and-shift, cloud-migration, latency, cost-optimization, devops, architecture, observability, microservices, cloud-native, system-design]
 series: "Cloud Architecture"
 series_order: 1

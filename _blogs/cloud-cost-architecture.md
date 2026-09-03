@@ -8,7 +8,6 @@ excerpt: "Cost is an architectural concern, not a finance concern. This post cov
 keywords: "finops, cloud cost, cost optimization, kubernetes cost attribution, infracost, tagging, reserved instances, savings plans, cloud architecture"
 twitter_card: "summary_large_image"
 categories:
-  - architecture
   - cloud
 tags: [cloud, cost-optimization, architecture, kubernetes, aws, azure, infrastructure, devops, production, observability]
 series: "Cloud Architecture"

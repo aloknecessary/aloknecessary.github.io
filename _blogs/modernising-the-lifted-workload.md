@@ -8,7 +8,6 @@ excerpt: "Kubernetes does not make your architecture better automatically. This 
 keywords: "kubernetes, cloud-native, modernisation, strangler-fig, stateless, autoscaling, KEDA, managed services, cloud architecture"
 twitter_card: "summary_large_image"
 categories:
-  - architecture
   - cloud
 tags: [kubernetes, cloud, architecture, modernisation, container-architecture, cloud-native, azure, aws, devops, production, strangler-fig]
 series: "Cloud Architecture"

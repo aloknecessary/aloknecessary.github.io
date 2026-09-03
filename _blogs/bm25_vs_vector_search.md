@@ -8,8 +8,7 @@ excerpt: "Keyword relevance or semantic understanding — the answer is rarely o
 keywords: "BM25 vs vector search, hybrid search, RAG retrieval, embedding models, reciprocal rank fusion, search architecture, information retrieval"
 twitter_card: summary_large_image
 categories:
-  - architecture
-  - system-design
+  - ai-engineering
 tags: [ai, search-architecture, vector-search, bm25, information-retrieval, patterns, architecture, performance, cloud-native]
 series: "RAG and AI Engineering"
 series_order: 1

@@ -9,7 +9,6 @@ keywords: "fresh vm dev setup, github self-hosted runner linux, docker-compose d
 twitter_card: summary_large_image
 categories:
   - devops
-  - infrastructure
 tags: [docker, github-actions, self-hosted-runner, redis, sql-server, portainer, ubuntu, dev-infra]
 series: "DevOps & Platform Engineering"
 series_order: 4

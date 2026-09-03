@@ -215,7 +215,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 > * **Architected and delivered CCMR3 — CollectLogic** across 4 major phases: led 40+ engineers through greenfield go-live, stepped up as Solution Architect to define roadmap, deliver 100K+ record bulk import, full Legal module, enterprise permission strategy, and AI exploration — serving 500+ daily active users
 > * **Collaborated with Microsoft team** on Bing and Microsoft Admin Portal platforms
 > * Led cost optimization initiatives resulting in significant cloud infrastructure savings  
-> * Led 10+ pre-sales engagements — technical discovery, effort estimation, architecture proposals, team composition planning, and phased delivery roadmaps across fintech, healthcare, SaaS, and IoT domains
+> * **Led 10+ pre-sales engagements** — technical discovery, effort estimation, architecture proposals, team composition planning, and phased delivery roadmaps across fintech, healthcare, SaaS, and IoT domains
 > * **Built a pre-sales POC using Amazon Textract** for a health-tech client — extracted and structured data from handwritten and printed prescriptions and diagnostic test reports at 85%+ accuracy, directly enabling the client proposal submission
 > * Built custom Docker images for CI/CD optimization (playwright-az-cli, sonar-dotnet) downloaded 1000+ times across teams
 >
@@ -223,17 +223,19 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 
 ---
 
-## 🎓 Certifications
+## 🎓 Certifications {#certifications}
 
-<p align="center">
-  <img src="https://img.shields.io/badge/AWS-Partner_Certified-FF9900?style=for-the-badge&logo=hackthebox&logoColor=white" alt="AWS"/>
+<div class="cert-badges">
+  <img src="https://img.shields.io/badge/Microsoft-AZ--104_Azure_Administrator-0078D4?style=for-the-badge&logo=alfred&logoColor=white" alt="AZ-104"/>
+  <img src="https://img.shields.io/badge/AWS-Partner_Certified-FF9900?style=for-the-badge&logo=hackthebox&logoColor=white" alt="AWS Partner Certified"/>
   <img src="https://img.shields.io/badge/Neo4j-Professional_Certified-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/>
-  <img src="https://img.shields.io/badge/ZEDEDA-Edge_Computing_Associate-4285F4?style=for-the-badge&logo=zulip&logoColor=white" alt="ZEDEDA"/>
-</p>
+  <img src="https://img.shields.io/badge/ZEDEDA-Edge_Computing_Associate-4285F4?style=for-the-badge&logo=zulip&logoColor=white" alt="ZEDEDA Edge Computing Associate"/>
+</div>
 
-* 🏅 **AWS Partner Certified** — AWS cloud fundamentals, partner-led architectures
-* 🏅 **ZEDEDA Certified Edge Computing Associate** — Edge orchestration and lifecycle management
-* 🏅 **Neo4j Professional Certified** — Graph data modeling and Cypher query expertise
+* 🏅 <a href="https://learn.microsoft.com/api/credentials/share/en-us/AlokRanjanDaftuar-6549/9CB67B872CFCDE4D?sharingId=3A811A69B5D449B5" target="_blank" rel="noopener noreferrer">**Microsoft Certified: Azure Administrator Associate (AZ-104)**</a> — Azure infrastructure, identity, networking, and governance
+* 🏅 <a href="https://www.credly.com/badges/ddc65713-3463-4980-ba05-3ba71d83a74a" target="_blank" rel="noopener noreferrer">**AWS Partner Certified: Technical Accredited Trained Partner**</a> — AWS cloud fundamentals, partner-led architectures
+* 🏅 <a href="https://www.credly.com/badges/5112c56d-c499-4d13-b8cc-6d3a640d63c3" target="_blank" rel="noopener noreferrer">**ZEDEDA Certified: ZEDEDA Edge Computing Associate**</a> — Edge orchestration and lifecycle management
+* 🏅 <a href="https://graphacademy.neo4j.com/c/2c0f1dde-7785-4c12-97ee-20a160574c8a" target="_blank" rel="noopener noreferrer">**Neo4j Certified: Neo4j Certified Professional**</a> — Graph data modeling and Cypher query expertise
 
 ---
 
@@ -276,12 +278,12 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 
 <div class="stats-container">
   <img src="https://github-readme-stats-aloknecessary-4439s-projects.vercel.app/api/top-langs?username=aloknecessary&layout=compact&theme=ambient_gradient&size_weight=0.5&count_weight=0.5" alt="Top Languages" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aloknecessary&theme=ambient-gradient&hide_border=true&exclude_days=Sat,Sun&mode=weekly" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aloknecessary&theme=ambient-gradient&hide_border=true&mode=weekly" alt="GitHub Streak" />
 </div>
 
 ---
 
-## 📦 Featured Open Source Contributions
+## 📦 Featured Open Source Contributions {#opensource}
 
 <div class="opensource-grid">
 
@@ -583,13 +585,6 @@ System: [Drills down to show regional sales breakdown for Clothing]
 * 🎯 **Proven feasibility** - Validated LLM-powered BI approach
 * ⚡ **Rapid delivery** - 20-30 days from concept to production POC
 * 🏢 **Company showcase** - Featured on [Byteridge's innovation portal](https://byteridge.com/gen-ai-solutions/visualizer/)
-
-**Current Status**:
-
-* 🌐 **Publicly accessible** at [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Try_It_Now-4CAF50?style=flat-square)](https://solution.byteridge.com/innovation/visualizer)
-* 🔐 Social authentication (Gmail, LinkedIn, GitHub, Facebook, Microsoft)
-* 📊 Demo datasets provided for immediate experimentation
-* 🎯 Available for client demonstrations and POC evaluations
 
 <!-- [![Documentation](https://img.shields.io/badge/📖_Read_More-Technical_Deep_Dive-2196F3?style=for-the-badge)](#) -->
 

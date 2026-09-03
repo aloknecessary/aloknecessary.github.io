@@ -7,7 +7,7 @@ description: "A real incident turned into a complete guide to Git recovery — r
 excerpt: "I ran git reset --hard on autopilot and watched my blog post vanish. Fortunately, Git is far more resilient than most developers realize. This post covers the recovery, the mental model behind commits and references, and the commands every developer should know before they need them."
 keywords: "git, reflog, reset, rebase, merge, cherry-pick, interactive rebase, git recovery, version control, developer tools"
 categories:
-  - developer-experience
+  - software-engineering
 tags: [git, recovery, reflog, reset, rebase, merge, developer-tools, version-control, best-practices]
 ---
 

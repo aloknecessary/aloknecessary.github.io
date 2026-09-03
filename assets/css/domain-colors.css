@@ -7,17 +7,31 @@
   --domain-accent: var(--domain-ai);
 }
 
-.domain-infrastructure {
-  --domain-accent: var(--domain-infra);
+.domain-cloud-infra {
+  --domain-accent: var(--domain-cloud);
+}
+
+.domain-distributed-systems {
+  --domain-accent: var(--domain-distributed);
 }
 
 .domain-platform {
   --domain-accent: var(--domain-platform);
 }
 
+.domain-networking {
+  --domain-accent: var(--domain-networking);
+}
+
 .series-block-title {
   background: linear-gradient(90deg, var(--domain-accent), var(--coral));
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.domain-cloud-infra .series-block-title {
+  background: linear-gradient(90deg, var(--domain-accent), var(--crimson));
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }

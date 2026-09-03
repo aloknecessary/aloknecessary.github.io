@@ -7,8 +7,7 @@ description: "A pragmatic, production-focused deep dive into CQRS—covering rea
 excerpt: "A pragmatic, production-focused deep dive into CQRS—covering divergence risks, operational complexity, and safe migration strategies from CRUD systems."
 keywords: "CQRS pattern, command query responsibility segregation, distributed systems, event sourcing, microservices architecture, system design patterns"
 categories:
-  - architecture
-  - system-design
+  - distributed-systems
 tags:
   - system-design
   - cqrs

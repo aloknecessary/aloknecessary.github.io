@@ -8,8 +8,7 @@ excerpt: "An agent stuck in an infinite retry loop doesn't show up in your error
 keywords: "multi-agent systems, agent orchestration, MCP, A2A protocol, LLM agents, agent coordination, production AI, circuit breaker, workflow state, agent observability"
 twitter_card: summary_large_image
 categories:
-  - ai
-  - architecture
+  - ai-engineering
 tags: [ai, agents, multi-agent, llm, architecture, production, observability, distributed-systems, orchestration, patterns]
 series: "RAG and AI Engineering"
 series_order: 8

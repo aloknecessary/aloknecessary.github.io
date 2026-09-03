@@ -7,7 +7,6 @@ description: "A production implementation guide to GitHub Actions OIDC authentic
 excerpt: "OpenID Connect eliminates long-lived CI/CD credentials at the architectural level. This post covers the full implementation for AWS and Azure - OIDC provider setup, trust policy scoping, per-job role architecture, reusable workflow federation, the migration path from static secrets, and the audit trail that stored credentials structurally cannot provide."
 keywords: "github actions oidc, aws oidc, azure federated credentials, ci/cd security, eliminate static credentials, sts assume role, workload identity federation"
 categories:
-  - architecture
   - devops
 tags: [github-actions, oidc, aws, azure, security, ci-cd, devops, iam, authentication, secrets-management, production]
 series: "DevOps & Platform Engineering"

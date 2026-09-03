@@ -8,8 +8,7 @@ excerpt: "Everyone ships the RAG system. Almost nobody ships the eval system tha
 keywords: "LLM evaluation, RAG evaluation, RAGAS, faithfulness, hallucination detection, LLM-as-Judge, golden dataset, CI/CD eval pipeline, answer relevance, production AI"
 twitter_card: summary_large_image
 categories:
-  - ai
-  - architecture
+  - ai-engineering
 tags: [ai, rag, llm, evaluation, observability, ci-cd, github-actions, production, ragas, architecture]
 series: "RAG and AI Engineering"
 series_order: 3

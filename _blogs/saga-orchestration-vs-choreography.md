@@ -8,8 +8,7 @@ excerpt: "The saga pattern looks straightforward in diagrams and becomes genuine
 keywords: "saga pattern, orchestration vs choreography, distributed transactions, event-driven architecture, microservices, compensation patterns, transactional outbox"
 twitter_card: summary_large_image
 categories:
-  - architecture
-  - system-design
+  - distributed-systems
 tags: [distributed-systems, saga, event-driven, microservices, reliability, architecture, patterns, cloud-native]
 series: "Distributed Systems"
 series_order: 2

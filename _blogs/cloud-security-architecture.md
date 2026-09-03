@@ -9,8 +9,6 @@ keywords: "cloud security, zero trust, IAM, least privilege, secrets management,
 twitter_card: summary_large_image
 categories:
   - cloud
-  - architecture
-  - security
 tags: [cloud-security, zero-trust, iam, kubernetes, secrets-management, azure, aws, devops, architecture, production, github-actions]
 series: "Cloud Architecture"
 series_order: 5

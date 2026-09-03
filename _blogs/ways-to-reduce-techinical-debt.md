@@ -7,8 +7,8 @@ description: "Practical approaches to systematically lower technical debt by mod
 excerpt: "Technical debt can silently slow teams down. Learn five practical strategies to identify, prioritize, and reduce technical debt through modernization of systems, infrastructure, and development practices."
 keywords: "technical debt, software architecture, modernization, legacy modernization, application modernization, refactoring, infrastructure modernization, code quality"
 categories:
-  - architecture
-  - system-design
+  - software-engineering
+  - distributed-systems
 tags: ["technical-debt", "software-architecture", "modernisation", "legacy-modernisation", "application-modernisation", "system-design", "cloud-architecture"]
 ---
 

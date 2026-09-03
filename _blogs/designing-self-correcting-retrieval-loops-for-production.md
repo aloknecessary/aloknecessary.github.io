@@ -8,8 +8,7 @@ excerpt: "Standard RAG retrieves once and hopes for the best. Agentic RAG retrie
 keywords: "agentic RAG, self-correcting retrieval, reflection agent, query planning, iterative retrieval, tool orchestration, LLM agents, production AI, retrieval loops, RAG architecture"
 twitter_card: summary_large_image
 categories:
-  - ai
-  - architecture
+  - ai-engineering
 tags: [ai, rag, agents, llm, retrieval, architecture, observability, production, patterns, system-design]
 series: "RAG and AI Engineering"
 series_order: 4

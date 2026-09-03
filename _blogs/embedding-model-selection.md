@@ -8,8 +8,7 @@ excerpt: "Every RAG architecture diagram has a box labeled 'embed.' Almost nobod
 keywords: "embedding models, MTEB, matryoshka, vector search, RAG, retrieval, dimensionality, fine-tuning, re-embedding, production, cost optimization"
 twitter_card: summary_large_image
 categories:
-  - ai
-  - architecture
+  - ai-engineering
 tags: [ai, rag, embeddings, llm, retrieval, architecture, production, cost-optimization, patterns, mteb]
 
 series: "RAG and AI Engineering"

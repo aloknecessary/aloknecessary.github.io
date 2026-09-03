@@ -8,8 +8,7 @@ excerpt: "Idempotency is more than 'retry safely' — it's a system-wide propert
 keywords: "idempotency distributed systems, idempotency keys, deduplication patterns, retry safety, api design, distributed systems architecture"
 twitter_card: summary_large_image
 categories:
-  - architecture
-  - system-design
+  - distributed-systems
 tags: [distributed-systems, api-design, idempotency, reliability, microservices, architecture, patterns, deduplication, saga, event-driven]
 series: "Distributed Systems"
 series_order: 3

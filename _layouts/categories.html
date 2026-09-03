@@ -47,21 +47,18 @@ layout: default
     
     <div class="tags-container">
       {% for category in sorted_categories %}
-      <div class="tag-block" id="{{ category | slugify }}">
-        {% assign count = 0 %}
-        {% for post in sorted_posts %}
-          {% if post.categories contains category %}{% assign count = count | plus: 1 %}{% endif %}
-        {% endfor %}
-        <h2 class="tag-heading">{{ category | capitalize }} <span class="tag-count">{{ count }}</span></h2>
+        {% assign cat_posts = sorted_posts | where_exp: 'p', 'p.categories contains category' %}
+        {% assign count = cat_posts | size %}
+        {% assign latest_date = cat_posts | map: 'date' | sort | last | date: '%Y-%m-%d' %}
+      <div class="tag-block" id="{{ category | slugify }}" data-date="{{ latest_date }}" data-count="{{ count }}" data-name="{{ category | downcase }}">
+        <h2 class="tag-heading">{{ category | capitalize }} <span class="tag-count">{{ count }}</span>{% include inline-sort-btn.html count=count limit=4 %}</h2>
 
         <ul class="tag-posts">
-          {% for post in sorted_posts %} 
-            {% if post.categories contains category %}
-            <li>
-              <a href="{{ post.url | relative_url }}"> {{ post.title }} </a>
-              <span class="post-date"> {{ post.date | date: "%b %d, %Y" }} </span>
-            </li>
-            {% endif %} 
+          {% for post in cat_posts %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="post-date">{{ post.date | date: "%b %d, %Y" }}</span>
+          </li>
           {% endfor %}
         </ul>
       </div>
