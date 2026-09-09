@@ -2,46 +2,54 @@
   slug: gitops-in-practice
   icon: "🔁"
   domain: "Platform"
+  status: active
   description: "Multi-cluster ArgoCD architecture, repo structure, ApplicationSets, and the operational patterns that make GitOps work at scale."
 
 - name: "RAG and AI Engineering"
   slug: rag-and-ai-engineering
   icon: "🧠"
   domain: "AI Engineering"
+  status: complete
   description: "From retrieval fundamentals to agentic loops — building AI search systems that work in production."
 
 - name: "Distributed Systems"
   slug: distributed-systems
   icon: "⚡"
   domain: "Distributed Systems"
+  status: complete
   description: "CAP trade-offs, partial failure, dual writes, and data reconciliation at scale."
 
 - name: "Cloud Architecture"
   slug: cloud-architecture
   icon: "🌩️"
   domain: "Cloud Infra"
+  status: complete
   description: "Migration patterns, region-level resilience, modernisation, cost engineering, and security architecture for production cloud systems."
 
 - name: "Cloud Defaults Reconsidered"
   slug: cloud-defaults-reconsidered
   icon: "⚖️"
   domain: "Cloud Infra"
+  status: complete
   description: "Examining widely-recommended cloud defaults that frequently get applied as blanket mandates without evaluating whether the cost is proportional to the actual benefit."
 
 - name: "DevOps & Platform Engineering"
   slug: devops-platform-engineering
   icon: "🛠️"
   domain: "Platform"
+  status: complete
   description: "From custom images and CI runners to full dev environment assembly — the infrastructure that accelerates delivery."
 
 - name: "AWS Network Architecture"
   slug: aws-network-architecture
   icon: "🌐"
   domain: "Networking"
+  status: active
   description: "VPC fundamentals, subnet design, routing, connectivity patterns, and the networking decisions that underpin production AWS architectures."
 
 - name: "AWS Migration Playbook"
   slug: aws-migration-playbook
   icon: "🚚"
   domain: "Cloud Infra"
+  status: active
   description: "Real-world AWS migration mechanics — MGN replication internals, kernel driver failures, cutover sequencing, and the operational patterns that separate a clean migration from an incident."
