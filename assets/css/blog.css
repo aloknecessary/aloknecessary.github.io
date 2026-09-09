@@ -658,20 +658,3 @@ details.further-reading summary:hover {
 .toggle-chevron.flipped {
   transform: rotate(180deg);
 }
-
-.comments-prompt {
-  margin: 0.5rem 0 1rem;
-  font-size: 0.85rem;
-  color: var(--muted);
-  font-style: italic;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-.comments-prompt.hidden {
-  display: none;
-}
-
-.comments-prompt.visible {
-  opacity: 1;
-}

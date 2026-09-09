@@ -60,7 +60,6 @@ layout: default
         <span class="toggle-label">Hide comments</span>
       </button>
     </div>
-    <p class="comments-prompt hidden">Have thoughts or questions? I read and respond to every comment.</p>
     <div id="comments"></div>
   </div>
   {% endif %}
@@ -88,19 +87,16 @@ layout: default
   var loadBtn = document.getElementById('load-comments-btn');
   var toggleBtn = document.getElementById('toggle-comments-btn');
   var header = document.querySelector('.comments-header');
-  var prompt = document.querySelector('.comments-prompt');
   var comments = document.getElementById('comments');
-  if (!loadBtn || !toggleBtn || !header || !prompt || !comments) return;
+  if (!loadBtn || !toggleBtn || !header || !comments) return;
 
   loadBtn.addEventListener('click', function() {
     loadBtn.classList.add('hidden');
     if (typeof window.loadGiscus === 'function') window.loadGiscus();
     setTimeout(function() {
       header.classList.remove('hidden');
-      prompt.classList.remove('hidden');
       requestAnimationFrame(function() {
         header.classList.add('visible');
-        prompt.classList.add('visible');
       });
     }, 1800);
   });
@@ -112,7 +108,6 @@ layout: default
     toggleBtn.setAttribute('aria-label', isHidden ? 'Show comments' : 'Hide comments');
     label.textContent = isHidden ? 'Show comments' : 'Hide comments';
     chevron.classList.toggle('flipped', isHidden);
-    prompt.style.display = isHidden ? 'none' : '';
   });
 })();
 </script>
