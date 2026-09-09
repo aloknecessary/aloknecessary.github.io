@@ -194,4 +194,3 @@ At the 10-15 cluster range from Article 1, with multiple teams and a hybrid hub-
 ## Putting it together
 
 The three pieces compose in one direction: repo structure determines what the ApplicationSet's Git generator sees, the ApplicationSet's Matrix generator combines that with cluster registration from Article 1 to produce Applications, and the AppProject referenced by every one of those Applications is what keeps the resulting sync operations inside the boundary that repo was ever supposed to have. Skip AppProjects and the first two pieces still function — they just function without a backstop, which tends to be fine until the day it very much isn't.
-
