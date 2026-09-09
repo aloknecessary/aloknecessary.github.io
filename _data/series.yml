@@ -2,6 +2,7 @@
   slug: gitops-in-practice
   icon: "🔁"
   domain: "Platform"
+  status: complete
   description: "Multi-cluster ArgoCD architecture, repo structure, ApplicationSets, and the operational patterns that make GitOps work at scale."
 
 - name: "RAG and AI Engineering"
