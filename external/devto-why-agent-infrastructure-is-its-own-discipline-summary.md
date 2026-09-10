@@ -77,11 +77,13 @@ readinessProbe:
 
 ---
 
-## Why the July 2026 MCP spec change matters for infrastructure
+## What changed in the protocol layer
 
 A large part of the awkwardness in running MCP-based agents on Kubernetes came from the original protocol design, which required persistent, pinned sessions between a client and a specific server instance — the opposite of what horizontally scaled infrastructure wants. That constraint forced teams into sticky routing and shared session stores just to keep a conversation coherent across requests.
 
 The July 2026 MCP specification revision removed the protocol-level session entirely. Any request can now land on any server instance, and applications that need to carry state across calls do it the way HTTP APIs always have — by minting an explicit handle passed back as an ordinary argument, rather than relying on the transport to remember. That single change removes an entire category of infrastructure workaround (sticky routing, pinned sessions, shared session stores) that used to be treated as unavoidable.
+
+The second shift is A2A (Agent-to-Agent protocol), which reached v1.0 in early 2026. Where MCP governs how an agent talks to tools and data sources, A2A governs how agents talk to each other — and that distinction matters for infrastructure design. A multi-agent system where agents call each other over A2A has different routing, identity, and isolation requirements than one where a single orchestrator calls tools over MCP. Both patterns are in production today.
 
 ---
 

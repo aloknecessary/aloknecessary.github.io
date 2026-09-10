@@ -1,8 +1,8 @@
 ---
 layout: blog
 title: "Why Agent Infrastructure Is Its Own Discipline"
-date: 2026-08-24
-last_modified_at: 2026-08-24T14:58:46+05:30
+date: 2026-09-10
+last_modified_at: 2026-09-10T14:28:50+05:30
 author: Alok Ranjan Daftuar
 description: "Deploying an agent on Kubernetes using the standard microservice playbook breaks in predictable ways — liveness probes kill healthy pods mid-reasoning, HPA scales on the wrong signal, and session state has no design at all. This post explains why, precisely."
 excerpt: "Deploying an agent is not deploying another microservice. The assumptions baked into a decade of Kubernetes practice quietly break the moment a container starts calling tools instead of just serving requests."
@@ -134,11 +134,13 @@ It's tempting to treat this as a Kubernetes-versus-managed-service question and 
 
 The pattern across this series will be to establish the underlying principle first — what the workload actually needs — and then show how that principle gets implemented on EKS and on AKS, because the implementations diverge (IAM roles for service accounts versus workload identity federation, ALB Ingress Controller versus Application Gateway Ingress Controller, EKS managed node groups versus AKS node pools) even when the underlying design goal is identical.
 
-## The piece that changed a month ago
+## What changed in the protocol layer
 
 There's a reason this series is starting now rather than a year ago: a large part of the awkwardness in running MCP-based agents on Kubernetes came from the original protocol design, which required persistent, pinned sessions between a client and a specific server instance — the opposite of what horizontally scaled infrastructure wants. That constraint forced teams into sticky routing and shared session stores just to keep a conversation coherent across requests, which is exactly the kind of stateful-transport problem Kubernetes networking wasn't built to make easy.
 
-The July 2026 MCP specification revision removed the protocol-level session entirely. Any request can now land on any server instance, and applications that still need to carry state across calls do it the way HTTP APIs always have — by minting an explicit handle and having it passed back as an ordinary argument on the next call, rather than relying on the transport to remember. That single change is why deployment, routing, and autoscaling patterns for MCP servers look meaningfully different at the end of 2026 than they did a year earlier — it removes an entire category of infrastructure workaround (sticky routing, pinned sessions, shared session stores) that used to be treated as unavoidable.
+The July 2026 MCP specification revision removed the protocol-level session entirely. Any request can now land on any server instance, and applications that still need to carry state across calls do it the way HTTP APIs always have — by minting an explicit handle and having it passed back as an ordinary argument on the next call, rather than relying on the transport to remember. That single change is why deployment, routing, and autoscaling patterns for MCP servers look meaningfully different in mid-2026 than they did a year earlier — it removes an entire category of infrastructure workaround (sticky routing, pinned sessions, shared session stores) that used to be treated as unavoidable.
+
+The second protocol shift is A2A (Agent-to-Agent), which reached v1.0 in early 2026 with gRPC and OAuth 2.1 support. Where MCP governs how an agent talks to tools and data sources, A2A governs how agents talk to each other — and that distinction matters for infrastructure design. A multi-agent system where agents call each other over A2A has different routing, identity, and isolation requirements than one where a single orchestrator calls tools over MCP. Both patterns are in production today, and the infrastructure layer has to be designed with both in mind.
 
 ## Why this matters more than it looks like it should
 
