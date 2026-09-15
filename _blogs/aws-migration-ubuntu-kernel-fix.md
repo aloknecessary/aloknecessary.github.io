@@ -1,7 +1,7 @@
 ---
-title: "Migrating Ubuntu 24.04 from Azure to AWS: The linux-azure Kernel Trap"
-date: 2026-09-07
-last_modified_at: 2026-09-07T12:23:09+05:30
+title: "Migrating Ubuntu Servers from Azure to AWS: The linux-azure Kernel Trap"
+date: 2026-09-15
+last_modified_at: 2026-09-15T10:32:09+05:30
 author: Alok Ranjan Daftuar
 description: "When migrating Ubuntu servers from Azure to AWS via MGN, the linux-azure kernel ships without AWS's ena network driver — causing instances to launch healthy but unreachable. Here's the diagnosis and fix."
 excerpt: "The source server replicated cleanly, the test launch looked fine, and the instance still came up with no network connectivity. The cause was three layers down, in the kernel package itself."
