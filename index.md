@@ -217,7 +217,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 > * Led cost optimization initiatives resulting in significant cloud infrastructure savings  
 > * **Led 10+ pre-sales engagements** — technical discovery, effort estimation, architecture proposals, team composition planning, and phased delivery roadmaps across fintech, healthcare, SaaS, and IoT domains
 > * **Built a pre-sales POC using Amazon Textract** for a health-tech client — extracted and structured data from handwritten and printed prescriptions and diagnostic test reports at 85%+ accuracy, directly enabling the client proposal submission
-> * Built custom Docker images for CI/CD optimization (playwright-az-cli, sonar-dotnet) downloaded 1000+ times across teams
+> * Built custom Docker images for CI/CD optimization (playwright-az-cli, playwright-aws-cli, sonar-dotnet) downloaded 35K+ times across teams
 >
 > A core part of my role involves collaborating with product, UX, and business stakeholders to drive clarity and alignment, as well as mentoring engineers through system design and implementation decisions.
 
@@ -326,44 +326,103 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
     </div>
   </div>
 
-  <!-- Playwright Azure CLI Card -->
+  <!-- Playwright CI Images Card (tabbed: Azure CLI / AWS CLI) -->
   <div class="project-card">
     <div class="project-card-header">
       <div class="project-icon">🎭</div>
       <div class="project-title-section">
-        <h3 class="project-title">playwright-az-cli</h3>
-        <p class="project-category">Docker Image</p>
+        <h3 class="project-title">playwright-ci-images</h3>
+        <p class="project-category">Docker Images</p>
       </div>
     </div>
-    <p class="project-description">
-      Custom Docker image built on Microsoft Playwright with Azure CLI pre-installed. Designed for CI/CD and automation workflows that require browser-based testing along with Azure operations in a single, ready-to-use container.
-    </p>
-    <div class="project-tags">
-      <span class="tag">Docker</span>
-      <span class="tag">Playwright</span>
-      <span class="tag">Azure CLI</span>
-      <span class="tag">CI/CD</span>
+    <div class="card-tabs" role="tablist" aria-label="Playwright CI image variants">
+      <button class="card-tab active" role="tab" aria-selected="true" aria-controls="pw-az-pane" id="pw-az-tab" data-pane="pw-az-pane">Azure CLI</button>
+      <button class="card-tab" role="tab" aria-selected="false" aria-controls="pw-aws-pane" id="pw-aws-tab" data-pane="pw-aws-pane">AWS CLI</button>
     </div>
-    <div class="project-stats">
-      <div class="stat-item">
-        <span class="stat-icon">🏗️</span>
-        <span class="stat-value">Multi-Arch</span>
-        <span class="stat-label">x86/ARM Support</span>
+    <div class="card-tab-pane active" id="pw-az-pane" role="tabpanel" aria-labelledby="pw-az-tab">
+      <p class="project-description">
+        Custom Docker image built on Microsoft Playwright with Azure CLI pre-installed. Designed for CI/CD workflows that require browser-based testing alongside Azure operations in a single, ready-to-use container.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Docker</span>
+        <span class="tag">Playwright</span>
+        <span class="tag">Azure CLI</span>
+        <span class="tag">CI/CD</span>
       </div>
-      <div class="stat-item">
-        <span class="stat-icon">🚀</span>
-        <span class="stat-value"><img src="https://img.shields.io/docker/v/aloknecessary/playwright-az-cli?style=flat-square&logo=docker&color=2496ED" alt="Docker version" /></span>
-        <span class="stat-label"><img src="https://img.shields.io/docker/pulls/aloknecessary/playwright-az-cli?style=flat-square&logo=docker&color=blue" alt="Docker pulls" /></span>
+      <div class="project-stats">
+        <div class="stat-item">
+          <span class="stat-icon">🏗️</span>
+          <span class="stat-value">Multi-Arch</span>
+          <span class="stat-label">x86/ARM Support</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">🚀</span>
+          <span class="stat-value"><img src="https://img.shields.io/docker/v/aloknecessary/playwright-az-cli?style=flat-square&logo=docker&color=2496ED" alt="Docker version" /></span>
+          <span class="stat-label"><img src="https://img.shields.io/docker/pulls/aloknecessary/playwright-az-cli?style=flat-square&logo=docker&color=blue" alt="Docker pulls" /></span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/aloknecessary/playwright-az-cli" class="project-link primary">
+          <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+        </a>
+        <a href="https://hub.docker.com/r/aloknecessary/playwright-az-cli" class="project-link secondary">
+          <img src="https://img.shields.io/badge/Docker_Hub-Image-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Hub" />
+        </a>
       </div>
     </div>
-    <div class="project-links">
-      <a href="https://github.com/aloknecessary/playwright-az-cli" class="project-link primary">
-        <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
-      </a>
-      <a href="https://hub.docker.com/r/aloknecessary/playwright-az-cli" class="project-link secondary">
-        <img src="https://img.shields.io/badge/Docker_Hub-Image-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Hub" />
-      </a>
+    <div class="card-tab-pane" id="pw-aws-pane" role="tabpanel" aria-labelledby="pw-aws-tab" hidden>
+      <p class="project-description">
+        Custom Docker image built on Microsoft Playwright with AWS CLI pre-installed. Designed for CI/CD workflows that require browser-based testing alongside AWS operations in a single, ready-to-use container.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Docker</span>
+        <span class="tag">Playwright</span>
+        <span class="tag">AWS CLI</span>
+        <span class="tag">CI/CD</span>
+      </div>
+      <div class="project-stats">
+        <div class="stat-item">
+          <span class="stat-icon">🏗️</span>
+          <span class="stat-value">Multi-Arch</span>
+          <span class="stat-label">x86/ARM Support</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">🚀</span>
+          <span class="stat-value"><img src="https://img.shields.io/docker/v/aloknecessary/playwright-aws-cli?style=flat-square&logo=docker&color=2496ED" alt="Docker version" /></span>
+          <span class="stat-label"><img src="https://img.shields.io/docker/pulls/aloknecessary/playwright-aws-cli?style=flat-square&logo=docker&color=blue" alt="Docker pulls" /></span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/aloknecessary/playwright-aws-cli" class="project-link primary">
+          <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+        </a>
+        <a href="https://hub.docker.com/r/aloknecessary/playwright-aws-cli" class="project-link secondary">
+          <img src="https://img.shields.io/badge/Docker_Hub-Image-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Hub" />
+        </a>
+      </div>
     </div>
+    <script>
+    (function () {
+      var card = document.currentScript.parentElement;
+      card.querySelectorAll('.card-tab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          card.querySelectorAll('.card-tab').forEach(function (t) {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          card.querySelectorAll('.card-tab-pane').forEach(function (p) {
+            p.classList.remove('active');
+            p.hidden = true;
+          });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          var pane = card.querySelector('#' + tab.dataset.pane);
+          pane.classList.add('active');
+          pane.hidden = false;
+        });
+      });
+    })();
+    </script>
   </div>
 
   <!-- SonarQube .NET 9.0 Card -->
