@@ -207,6 +207,7 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 >
 > **Key Achievements:**
 >
+> * **Led end-to-end cloud infrastructure migration for Hawky.ai** (Azure → AWS) — migrated 1500+ container image tags across 9 registries, lifted and shifted 10+ production VMs via AWS MGN, designed a WireGuard cross-cloud VPN, and delivered full team handover documentation in one month
 > * Architected and delivered full-stack application designs using React, Angular, Node.js, and .NET  
 > * Built modular, API-centric platforms with strong authentication, observability, and integration patterns  
 > * Designed cloud-native architectures with Docker, Kubernetes, and automated CI/CD pipelines

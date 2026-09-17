@@ -94,6 +94,66 @@ hide_header: false
         </div>
       </article>
 
+      <!-- Hawky.ai Migration -->
+      <article class="timeline-item" data-color="blue" itemscope itemtype="https://schema.org/Project">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">Aug 2026</span>
+          <span class="timeline-badge badge-arch">Cloud Infrastructure Consultant</span>
+        </div>
+        <h3 class="timeline-title" itemprop="name">Hawky.ai — Cloud Infrastructure Migration</h3>
+        <p class="timeline-company">Cloud Migration · Azure → AWS · End-to-End Infrastructure Migration</p>
+        <div class="project-card reveal">
+          <div class="card-top">
+            <span class="card-title">Azure → AWS · 10+ Production Servers</span>
+            <div class="metrics-row">
+              <div class="metric-chip"><span class="metric-icon">🖥️</span><span class="metric-val">10+</span><span class="metric-key">Production Servers</span></div>
+              <div class="metric-chip"><span class="metric-icon">📦</span><span class="metric-val">1500<span style="color:var(--muted)">+</span></span><span class="metric-key">Image Tags Migrated</span></div>
+              <div class="metric-chip"><span class="metric-icon">🗓️</span><span class="metric-val">1</span><span class="metric-key">Month</span></div>
+            </div>
+          </div>
+          <p class="card-desc">End-to-end migration of Hawky.ai's cloud infrastructure from Microsoft Azure to AWS — covering container registry migration, virtual machine lift-and-shift, secure cross-cloud networking, and post-migration hardening across a fleet of 10 production servers, delivered in a single month.</p>
+          <p class="card-section-label">Key Contributions</p>
+          <ul class="highlight-list">
+            <li>Migrated <strong>1500+ container image tags</strong> across 9 ACR registries to AWS ECR using skopeo registry-to-registry copy — preserving multi-arch manifest lists with zero downtime.</li>
+            <li>Before MGN replication could begin, <strong>converted all 10+ Azure VMs from the Azure-optimised kernel to a generic kernel</strong> — a hard requirement for MGN compatibility. This hands-on experience with kernel switching, GRUB reconfiguration, and boot recovery directly informed the <a href="/blogs/aws-migration-ubuntu-kernel-fix/">AWS Migration: Ubuntu Kernel Fix</a> article.</li>
+            <li>Executed VM lift-and-shift for <strong>10+ production servers</strong> using AWS Application Migration Service (MGN), including GRUB configuration, generic kernel setup, and replication management.</li>
+            <li>Designed and implemented a <strong>WireGuard VPN tunnel</strong> between Azure MongoDB and AWS bastion for secure cross-cloud database connectivity post-migration.</li>
+            <li>Upgraded all 10+ migrated VMs from generic to <strong>AWS-optimised kernel</strong> (linux-aws) and installed SSM agent for centralised fleet management via AWS Systems Manager.</li>
+            <li>Built <strong>cross-registry verification and smart resync automation scripts</strong> to detect and resolve post-migration drift between ACR and ECR.</li>
+            <li>Authored full team handover documentation — AWS best practices guide, troubleshooting &amp; how-to guide, post-migration runbook, and complete audit log.</li>
+          </ul>
+          <div class="callout-box" style="border-left-color: var(--accent2); background: rgba(6,182,212,0.06); border-color: rgba(6,182,212,0.18);">
+            <strong>Zero-Downtime Registry Migration at Scale</strong><br>
+            Migrating 1500+ image tags across 9 registries with skopeo's registry-to-registry copy preserved multi-arch manifest lists intact — no image rebuilds, no layer re-uploads, no service interruption. Cross-registry drift detection scripts ran post-migration to catch any tag discrepancies before the Azure registries were decommissioned.
+          </div>
+          <div class="callout-box" style="border-left-color: var(--gold); background: rgba(245,158,11,0.06); border-color: rgba(245,158,11,0.18);">
+            <strong>Production VM Lift-and-Shift via AWS MGN</strong><br>
+            Migrated 10+ production servers using AWS Application Migration Service — managing continuous replication, GRUB reconfiguration for cloud boot compatibility, generic kernel setup during replication, and coordinated cutover. Post-cutover, all servers were upgraded from the generic kernel to the AWS-optimised kernel (linux-aws) and onboarded to AWS Systems Manager for centralised fleet management — replacing ad-hoc SSH access with auditable, policy-driven operations.
+          </div>
+          <div class="divider"></div>
+          <p class="card-section-label">Tech Stack</p>
+          <div class="tech-stack">
+            <span class="tech-tag">AWS MGN</span><span class="tech-tag">EC2</span><span class="tech-tag">ECR</span>
+            <span class="tech-tag">ECS</span><span class="tech-tag">SSM</span><span class="tech-tag">IAM</span>
+            <span class="tech-tag">VPC</span><span class="tech-tag">Route 53</span><span class="tech-tag">CloudFront</span>
+            <span class="tech-tag">Bedrock</span><span class="tech-tag">Azure ACR</span><span class="tech-tag">Azure VMs</span>
+            <span class="tech-tag">skopeo</span><span class="tech-tag">WireGuard</span><span class="tech-tag">Docker</span>
+            <span class="tech-tag">MongoDB</span><span class="tech-tag">Ubuntu 22.04/24.04</span><span class="tech-tag">Python</span><span class="tech-tag">Bash</span>
+          </div>
+          <div class="divider"></div>
+          <p class="card-section-label">Architectural Decisions</p>
+          <div class="arch-pills">
+            <span class="arch-pill">AWS MGN Lift-and-Shift</span>
+            <span class="arch-pill">skopeo Registry-to-Registry Copy</span>
+            <span class="arch-pill">WireGuard Cross-Cloud VPN</span>
+            <span class="arch-pill">AWS-Optimised Kernel</span>
+            <span class="arch-pill">SSM Fleet Management</span>
+            <span class="arch-pill">Drift Detection Automation</span>
+          </div>
+        </div>
+      </article>
+
       <!-- AT/AD Platform -->
       <article class="timeline-item" data-color="purple" itemscope itemtype="https://schema.org/Project">
         <div class="timeline-node"></div>
@@ -892,6 +952,9 @@ hide_header: false
         an AI-powered device matching engine, multi-role access model, and Authentik SSO unifying identity
         across the entire product suite. Different domains, same discipline — understand the constraints,
         define the architecture, set the foundation right.
+      </p>
+      <p class="reveal">
+        August 2026 brought a different kind of engagement: <strong>Hawky.ai</strong> needed their entire cloud infrastructure migrated from Azure to AWS in a single month. The work spanned every layer — 1500+ container image tags across 9 ACR registries moved to ECR via skopeo with zero downtime, 10+ production VMs lifted and shifted using AWS MGN, a WireGuard VPN tunnel bridging Azure MongoDB to the new AWS bastion during the transition, and all servers upgraded to the AWS-optimised kernel with SSM agent for centralised fleet management. Automation scripts handled cross-registry drift detection post-migration. The engagement closed with full team handover documentation covering best practices, runbooks, and a complete audit log.
       </p>
       <div class="pull-quote reveal">
         "From manually deploying via RDP on a physical IIS server to architecting Kubernetes-based
