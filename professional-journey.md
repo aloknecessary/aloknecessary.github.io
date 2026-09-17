@@ -288,7 +288,7 @@ hide_header: false
               <div class="metric-chip"><span class="metric-icon">📅</span><span class="metric-val">4</span><span class="metric-key">Major Phases</span></div>
             </div>
           </div>
-          <p class="card-desc">A prominent financial services company specialising in debt collection rebuilt their core platform — CollectLogic — from a legacy system into a modern, cloud-native application handling complex regulatory operations at scale. Delivered across 4 major phases, evolving from Engineering Lead at foundation to Solution Architect driving long-term platform strategy.</p>
+          <p class="card-desc">A prominent financial services company specialising in debt collection rebuilt their core platform — CollectLogic — from a legacy system into a modern, cloud-native application handling complex regulatory operations at scale. Delivered across 4 major phases, evolving from Engineering Lead at foundation to Solution Architect driving long-term platform strategy — owning technical roadmap, system design governance, cross-team architectural standards, and stakeholder alignment across all phases.</p>
           <div class="divider"></div>
           <p class="card-section-label">Tech Stack</p>
           <div class="tech-stack">
@@ -559,13 +559,13 @@ hide_header: false
             </div>
           </div>
           <p class="card-desc">DeviceThread is the digital backbone for hospitality properties hosting smart devices — enabling owners, managers, and staff to monitor, manage, secure, and automate their entire digital infrastructure from a single platform.</p>
-          <p class="card-section-label">Contributions &amp; Impact</p>
+          <p class="card-section-label">Architectural Contributions</p>
           <ul class="highlight-list">
-            <li>Led backend and frontend teams across 10+ members, coordinating microservices integration across IoT device layers.</li>
-            <li>Introduced <strong>message queue architecture</strong> for asynchronous device event processing — the foundational reliability decision for the platform.</li>
-            <li>Implemented caching to reduce response latency for real-time device state queries across all hotel properties.</li>
-            <li>Delivered platform from greenfield — live across 10–15 hotel properties at project close.</li>
-            <li>Managed containerised deployments and CI/CD pipelines via Docker and GitHub Actions on AWS.</li>
+            <li>Designed the <strong>cloud infrastructure architecture on AWS</strong> — provisioning EC2, S3, RDS, and networking with IAM least-privilege access controls and secrets management, following AWS Well-Architected principles across security, reliability, and operational excellence.</li>
+            <li>Defined the <strong>asynchronous event processing architecture</strong> using message queues as the foundational reliability decision — ensuring no device state change from SmartThings was missed or delayed across hotel properties.</li>
+            <li>Architected <strong>Amazon Cognito-based identity flows</strong> with OAuth/OIDC integration for secure authentication across web and mobile surfaces — replacing ad-hoc credential handling with a governed identity layer.</li>
+            <li>Designed the <strong>SmartThings and CloudBeds integration architecture</strong> — event-driven device automation triggered by PMS lifecycle events (check-in, check-out, occupancy) with real-time state propagation to management dashboards.</li>
+            <li>Established <strong>containerised deployment topology</strong> with Docker and GitHub Actions CI/CD on AWS, and introduced a caching layer for real-time device state queries across all hotel properties.</li>
           </ul>
           <div class="callout-box">
             <strong>Samsung SmartThings — Deep IoT Integration</strong><br>
