@@ -95,13 +95,38 @@
 }
 
 .hero-role {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(1rem, 2.5vw, 1.35rem);
-  font-weight: 600;
-  color: var(--muted);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-bottom: 2rem;
   opacity: 0;
   animation: fadeUp 0.8s ease forwards 0.5s;
+}
+
+.role-text {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.role-text--full  { color: var(--gold); }
+.role-text--lead  { color: var(--primary); }
+.role-text--arch  { color: var(--accent3); }
+
+.role-arrow {
+  color: var(--muted);
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
+
+.role-sep {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+  color: var(--muted);
+  margin-left: 0.25rem;
 }
 
 .hero-tagline {
@@ -126,23 +151,44 @@
 .stat {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.35rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-top: 2px solid transparent;
+  min-width: 110px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.stat:hover {
+  transform: translateY(-2px);
+}
+
+.stat--blue  { border-top-color: var(--primary); }
+.stat--cyan  { border-top-color: var(--accent2); }
+.stat--purple{ border-top-color: var(--accent3); }
+.stat--gold  { border-top-color: var(--gold); }
+
+.stat--blue  .stat-value { color: var(--primary); }
+.stat--cyan  .stat-value { color: var(--accent2); }
+.stat--purple .stat-value { color: var(--accent3); }
+.stat--gold  .stat-value { color: var(--gold); }
 
 .stat-value {
   font-family: 'Syne', sans-serif;
   font-size: 2rem;
   font-weight: 800;
-  color: var(--text-primary);
   line-height: 1;
 }
 
 .stat-value span {
-  color: var(--primary);
+  font-size: 1.2rem;
+  opacity: 0.7;
 }
 
 .stat-label {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: var(--muted);
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -573,9 +619,21 @@
   font-family: 'Syne', sans-serif;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   font-size: 0.93rem;
+  padding-left: 0.65rem;
+  border-left: 2px solid var(--skill-accent, var(--primary));
 }
+
+.skill-card:nth-child(9n+1) { --skill-accent: var(--primary); }
+.skill-card:nth-child(9n+2) { --skill-accent: var(--accent2); }
+.skill-card:nth-child(9n+3) { --skill-accent: var(--accent3); }
+.skill-card:nth-child(9n+4) { --skill-accent: var(--gold); }
+.skill-card:nth-child(9n+5) { --skill-accent: var(--green); }
+.skill-card:nth-child(9n+6) { --skill-accent: var(--coral); }
+.skill-card:nth-child(9n+7) { --skill-accent: var(--primary); }
+.skill-card:nth-child(9n+8) { --skill-accent: var(--accent2); }
+.skill-card:nth-child(9n+9) { --skill-accent: var(--accent3); }
 
 .skill-tags {
   display: flex;
@@ -610,19 +668,39 @@
 }
 
 .narrative-block p strong {
-  color: var(--text-primary);
-  font-weight: 500;
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .pull-quote {
-  border-left: 2px solid var(--primary);
-  padding: 0.25rem 0 0.25rem 1.5rem;
+  position: relative;
+  border-left: none;
+  padding: 1.5rem 1.75rem 1.5rem 4rem;
   margin: 2.5rem 0;
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-style: italic;
   color: var(--text-primary);
-  line-height: 1.72;
-  background: var(--bg-soft);
+  line-height: 1.78;
+  background: linear-gradient(135deg, rgba(59,130,246,0.05) 0%, rgba(139,92,246,0.04) 100%);
+  border-radius: 0 12px 12px 0;
+  border-left: 3px solid var(--primary);
+}
+
+.pull-quote::before {
+  content: '\201C';
+  position: absolute;
+  left: 1rem;
+  top: 0.5rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--primary), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.5;
 }
 
 /* Section Headers */
@@ -647,6 +725,13 @@
   font-weight: 800;
   color: var(--text-primary);
   margin-bottom: 1rem;
+}
+
+.section-title-accent {
+  background: linear-gradient(135deg, var(--primary), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .section-subtitle {

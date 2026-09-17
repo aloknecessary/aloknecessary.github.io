@@ -16,9 +16,11 @@ layout: default
     {% if page.url contains 'professional-journey' %}
       <span class="an-active-label">Professional Journey</span>
       <span class="an-sep">|</span>
-      <a href="{{ '/' | relative_url }}" class="an-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;transform:translateY(-1px)"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Portfolio</a>
+      <a href="#projects" class="an-link">Projects</a>
       <span class="an-sep">|</span>
-      <a href="{{ '/blogs' | relative_url }}" class="an-link">Blogs <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#competencies" class="an-link">Competencies</a>
+      <span class="an-sep">|</span>
+      <a href="#story" class="an-link">Story</a>
     {% else %}
       <a href="#about" class="an-link">About</a>
       <span class="an-sep">|</span>
@@ -36,11 +38,15 @@ layout: default
     {% endif %}
   </div>
   <div class="an-actions">
-    {% unless page.url contains 'professional-journey' %}
+    {% if page.url contains 'professional-journey' %}
+    <a href="{{ '/' | relative_url }}" class="an-action-btn"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;transform:translateY(-1px)"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Portfolio</a>
+    <span class="an-action-divider"></span>
+    <a href="{{ '/blogs' | relative_url }}" class="an-action-btn">Blogs <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    {% else %}
     <a href="{{ '/blogs' | relative_url }}" class="an-action-btn">Blogs <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     <span class="an-action-divider"></span>
     <a href="{{ '/professional-journey' | relative_url }}" class="an-action-btn">Professional Journey <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    {% endunless %}
+    {% endif %}
   </div>
   <span class="an-mobile-context" id="anMobileContext"></span>
   <button class="an-hamburger" id="anHamburger" aria-label="Open menu" aria-expanded="false">
@@ -54,6 +60,11 @@ layout: default
   <div class="an-mobile-drawer" id="anMobileDrawer">
     <button class="an-drawer-close" id="anDrawerClose" aria-label="Close menu">✕</button>
     {% if page.url contains 'professional-journey' %}
+      <span class="an-mobile-theme-label">Sections</span>
+      <a href="#projects" class="an-mobile-link">Projects</a>
+      <a href="#competencies" class="an-mobile-link">Competencies</a>
+      <a href="#story" class="an-mobile-link">Story</a>
+      <hr class="an-mobile-divider">
       <span class="an-mobile-theme-label">Navigate</span>
       <a href="{{ '/' | relative_url }}" class="an-mobile-link"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Portfolio</a>
       <a href="{{ '/blogs' | relative_url }}" class="an-mobile-link">Blogs <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
@@ -401,7 +412,7 @@ layout: default
 <script>
 (function () {
   const nav = document.getElementById('architectNav');
-  const sections = ['about', 'expertise', 'experience', 'certifications', 'writing', 'opensource', 'projects', 'contact'];
+  const sections = ['about', 'expertise', 'experience', 'certifications', 'writing', 'opensource', 'projects', 'contact', 'competencies', 'story'];
   const links = {};
   sections.forEach(id => {
     links[id] = nav.querySelector(`a[href="#${id}"]`);

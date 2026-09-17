@@ -12,26 +12,33 @@ hide_header: false
     <a href="{{ '/' | relative_url }}" class="hero-back"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;transform:translateY(0px)"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Back to Portfolio</a>
     <p class="hero-eyebrow">Engineering Journey · Byteridge</p>
     <h1 class="hero-name">10+ Years of<br><span>Building & Leading</span></h1>
-    <p class="hero-role">Full Stack Developer → Engineering Lead → Solution Architect  ·  2014 – Present</p>
+    <div class="hero-role">
+      <span class="role-text role-text--full">Full Stack Developer</span>
+      <span class="role-arrow">→</span>
+      <span class="role-text role-text--lead">Engineering Lead</span>
+      <span class="role-arrow">→</span>
+      <span class="role-text role-text--arch">Solution Architect</span>
+      <span class="role-sep">·  2014 – Present</span>
+    </div>
     <p class="hero-tagline">
       A decade-long journey across fintech, hospitality IoT, enterprise security, media, developer tooling,
       and global tech — evolving from a solo developer with total stack ownership to leading 40+ person
       engineering organisations and defining architectural strategy at scale.
     </p>
     <div class="hero-stats">
-      <div class="stat"><span class="stat-value">10<span>+</span></span><span class="stat-label">Years at Byteridge</span></div>
-      <div class="stat"><span class="stat-value">15<span>+</span></span><span class="stat-label">Projects Delivered</span></div>
-      <div class="stat"><span class="stat-value">40<span>+</span></span><span class="stat-label">Team Members Led</span></div>
-      <div class="stat"><span class="stat-value">100K<span>+</span></span><span class="stat-label">Records / Import</span></div>
+      <div class="stat stat--blue"><span class="stat-value">10<span>+</span></span><span class="stat-label">Years at Byteridge</span></div>
+      <div class="stat stat--cyan"><span class="stat-value">15<span>+</span></span><span class="stat-label">Projects Delivered</span></div>
+      <div class="stat stat--purple"><span class="stat-value">40<span>+</span></span><span class="stat-label">Team Members Led</span></div>
+      <div class="stat stat--gold"><span class="stat-value">100K<span>+</span></span><span class="stat-label">Records / Import</span></div>
     </div>
   </div>
 </header>
 
-<section class="timeline-section" aria-label="Project timeline">
+<section class="timeline-section" id="projects" aria-label="Project timeline">
   <div class="container">
     <div class="section-header reveal">
       <p class="section-tag">Professional Journey</p>
-      <h2 class="section-title">Projects, Impact & Leadership</h2>
+      <h2 class="section-title">Projects, <span class="section-title-accent">Impact</span> & Leadership</h2>
       <p class="section-subtitle">Every engagement, estimation, and architectural contribution that shaped the engineer and leader.</p>
     </div>
     <div class="timeline">
@@ -784,11 +791,11 @@ hide_header: false
 </section>
 
 <!-- SKILLS -->
-<section class="skills-section" aria-label="Core competencies">
+<section class="skills-section" id="competencies" aria-label="Core competencies">
   <div class="container">
     <div class="section-header reveal">
       <p class="section-tag">Core Competencies</p>
-      <h2 class="section-title">Technical Arsenal</h2>
+      <h2 class="section-title">Technical <span class="section-title-accent">Arsenal</span></h2>
       <p class="section-subtitle">The full-stack of skills forged across every engagement.</p>
     </div>
     <div class="skills-grid">
@@ -889,11 +896,11 @@ hide_header: false
 </section>
 
 <!-- NARRATIVE -->
-<section class="narrative-section" aria-label="Career narrative">
+<section class="narrative-section" id="story" aria-label="Career narrative">
   <div class="container">
     <div class="section-header reveal">
       <p class="section-tag">The Story</p>
-      <h2 class="section-title">A Decade of Growth</h2>
+      <h2 class="section-title">A Decade of <span class="section-title-accent">Growth</span></h2>
     </div>
     <div class="narrative-block">
       <p class="reveal">
