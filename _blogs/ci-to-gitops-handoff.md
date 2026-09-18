@@ -249,7 +249,3 @@ With that in place, the promotion isn't "staging deployed, therefore eligible fo
 | Regulated workloads needing an auditable promotion trail, independent of CI pipeline history | Kargo — the Stage/Freight model gives you that audit trail as a first-class object, not something reconstructed from CI logs |
 
 These aren't mutually exclusive across an entire platform, either — a team running mostly independent services on Image Updater might still put its most compliance-sensitive service through Kargo specifically, the same way Article 1's hybrid cluster pattern carved out per-cluster ArgoCD only where the boundary demanded it.
-
-## What's next
-
-None of the three approaches above touch what's arguably the sharpest edge in GitOps: how do you get a database password or an API key into a running Pod, when the whole model is "everything lives in Git" and Git is very much not where secrets belong. That's Article 4 — Sealed Secrets, External Secrets Operator, and the Vault plugin, compared on what they actually protect against and what they don't.

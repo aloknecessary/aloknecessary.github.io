@@ -228,10 +228,10 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 ## 🎓 Certifications {#certifications}
 
 <div class="cert-badges">
-  <img src="https://img.shields.io/badge/Microsoft-AZ--104_Azure_Administrator-0078D4?style=for-the-badge&logo=alfred&logoColor=white" alt="AZ-104"/>
+  <img src="https://img.shields.io/badge/Microsoft-AZ--104_Azure_Administrator-4285F4?style=for-the-badge&logo=alfred&logoColor=white" alt="AZ-104"/>
   <img src="https://img.shields.io/badge/AWS-Partner_Certified-FF9900?style=for-the-badge&logo=hackthebox&logoColor=white" alt="AWS Partner Certified"/>
-  <img src="https://img.shields.io/badge/Neo4j-Professional_Certified-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/>
-  <img src="https://img.shields.io/badge/ZEDEDA-Edge_Computing_Associate-4285F4?style=for-the-badge&logo=zulip&logoColor=white" alt="ZEDEDA Edge Computing Associate"/>
+  <img src="https://img.shields.io/badge/Neo4j-Professional_Certified-34A853?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/>
+  <img src="https://img.shields.io/badge/ZEDEDA-Edge_Computing_Associate-EA4335?style=for-the-badge&logo=zulip&logoColor=white" alt="ZEDEDA Edge Computing Associate"/>
 </div>
 
 * 🏅 <a href="https://learn.microsoft.com/api/credentials/share/en-us/AlokRanjanDaftuar-6549/9CB67B872CFCDE4D?sharingId=3A811A69B5D449B5" target="_blank" rel="noopener noreferrer">**Microsoft Certified: Azure Administrator Associate (AZ-104)**</a> — Azure infrastructure, identity, networking, and governance
