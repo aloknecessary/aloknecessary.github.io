@@ -1,8 +1,8 @@
 ---
 layout: blog
 title: "Secrets Management in a GitOps World: Sealed Secrets vs. External Secrets Operator vs. Vault"
-date: 2026-08-25
-last_modified_at: 2026-08-25T12:35:47+05:30
+date: 2026-09-18
+last_modified_at: 2026-09-18T10:54:47+05:30
 author: Alok Ranjan Daftuar
 description: "A practical comparison of Sealed Secrets, External Secrets Operator, and Vault for managing secrets in a GitOps pipeline — covering what each approach actually protects against and where each one breaks down."
 excerpt: "GitOps means everything a cluster needs lives in Git. Secrets very much don't belong in Git. Three ways teams actually resolve that contradiction, and what each one is really protecting against."
