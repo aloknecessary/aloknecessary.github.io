@@ -1,8 +1,8 @@
 ---
 layout: blog
 title: "VPC Endpoints: Gateway vs Interface, and the AWS Traffic That Shouldn't Touch the Internet"
-date: 2026-08-25
-last_modified_at: 2026-08-27T13:55:22+05:30
+date: 2026-09-21
+last_modified_at: 2026-09-21T12:40:22+05:30
 author: Alok Ranjan Daftuar
 description: "A practical guide to AWS VPC endpoints — how Gateway endpoints (S3, DynamoDB) and Interface endpoints (PrivateLink) work under the hood, when each is worth adding, and the failure modes that actually show up in production."
 excerpt: "Traffic to S3 and DynamoDB from a private subnet routes through a NAT gateway by default — and gets billed for it — unless you tell AWS it doesn't need to leave the VPC at all."
