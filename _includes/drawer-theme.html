@@ -75,7 +75,7 @@
     btn.addEventListener('click', function() {
       if (typeof window.setTheme === 'function') window.setTheme(btn.dataset.drawerTheme);
       syncThemeBtns();
-      var closeBtn = document.getElementById('navDrawerClose');
+      var closeBtn = document.getElementById('navDrawerClose') || document.getElementById('anDrawerClose');
       if (closeBtn) closeBtn.click();
     });
   });

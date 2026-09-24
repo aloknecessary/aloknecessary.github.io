@@ -327,7 +327,6 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: auto;
 }
 
 .search-icon-inside {
@@ -394,6 +393,10 @@
   }
 }
 
+.nav-left + .search-container {
+  margin-left: auto;
+}
+
 .search-input:focus {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
@@ -433,6 +436,9 @@
     right: calc(50vw - 48%);
     top: 50%;
     transform: translateY(-50%);
+  }
+  .nav-bar.stuck .search-container {
+    right: calc(50vw - 48% + 52px);
   }
 }
 
