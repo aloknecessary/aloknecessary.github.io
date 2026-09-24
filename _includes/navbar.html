@@ -81,6 +81,18 @@
       <span></span><span></span><span></span>
     </button>
   {% endif %}
+  <div class="nav-theme-switcher">
+    <div class="theme-dropdown">
+      <button class="theme-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Change theme">
+        <span class="theme-icon">🖥</span>
+      </button>
+      <div class="theme-panel" role="menu">
+        <button data-theme-option="system">🖥 System</button>
+        <button data-theme-option="light">☀ Light</button>
+        <button data-theme-option="dark">🌙 Dark</button>
+      </div>
+    </div>
+  </div>
 </nav>
 
 {% if page.layout == 'blog' or page.layout == 'blogs' or page.layout == 'categories' or page.layout == 'tags' or page.layout == 'series' %}
@@ -180,3 +192,4 @@
   }, { passive: true });
 })();
 </script>
+

@@ -190,7 +190,6 @@
   border: none;
   cursor: pointer;
   padding: 4px;
-  margin-left: auto;
   flex-shrink: 0;
 }
 
@@ -471,5 +470,26 @@
   }
   .nav-bar.stuck .search-container {
     right: calc(50vw - 48% + 32px);
+  }
+}
+
+/* Nav theme switcher — desktop sticky only */
+.nav-theme-switcher {
+  display: none;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.nav-bar.stuck .nav-theme-switcher {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .nav-theme-switcher {
+    display: none !important;
+  }
+  .nav-bar.stuck .nav-hamburger {
+    margin-left: auto;
   }
 }
