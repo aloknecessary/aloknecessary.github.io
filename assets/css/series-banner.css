@@ -73,31 +73,12 @@
 
 .series-banner.bottom {
   margin-top: 1.75rem;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.series-banner.bottom .series-label {
-  flex: 1;
-}
-
-.series-banner.bottom .series-nav {
-  margin-left: auto;
-  flex-shrink: 0;
-}
-
-.series-banner-top-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  width: 100%;
 }
 
 .series-toc {
   width: 100%;
-  margin-top: 0.5rem;
+  flex-basis: 100%;
+  margin-top: 0.25rem;
   border-top: 1px solid var(--border);
   padding-top: 0.5rem;
 }
@@ -119,10 +100,15 @@
 }
 
 .series-toc summary::before {
-  content: '▸';
-  font-size: 0.7rem;
+  content: '';
+  width: 0.7rem;
+  height: 0.7rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
   transition: transform 0.2s ease;
   display: inline-block;
+  flex-shrink: 0;
 }
 
 .series-toc[open] summary::before {
@@ -153,7 +139,15 @@
 
 .series-toc li.current {
   font-weight: 600;
-  color: var(--text);
+  color: var(--text-secondary);
+}
+
+.toc-current-text {
+  background-image: linear-gradient(90deg, var(--cyan), var(--coral), var(--purple));
+  background-repeat: no-repeat;
+  background-size: 100% 1.4px;
+  background-position: 0 100%;
+  padding-bottom: 4px;
 }
 
 .toc-current-label {
