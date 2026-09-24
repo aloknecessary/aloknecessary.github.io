@@ -49,24 +49,18 @@ layout: default
   {% include series-banner.html position="bottom" %}
   
   {% if page.comments != false %}
-  <div id="comments" style="margin-top: 3rem;">
-    <!-- Loading it through js in default.html for better theme sync -->
-    <!-- <script src="https://giscus.app/client.js"
-        data-repo="aloknecessary/aloknecessary.github.io"
-        data-repo-id="R_kgDOQ_tpLA"
-        data-category="General"
-        data-category-id="DIC_kwDOQ_tpLM4C3Ls-"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-    </script> -->
+  <div class="comments-section">
+    <button id="load-comments-btn" class="load-comments-btn" aria-label="Load comments">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+      Load Comments &amp; Reactions
+    </button>
+    <div class="comments-header hidden">
+      <button id="toggle-comments-btn" class="load-comments-btn" aria-label="Hide comments">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="toggle-chevron"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        <span class="toggle-label">Hide comments</span>
+      </button>
+    </div>
+    <div id="comments"></div>
   </div>
   {% endif %}
 
@@ -88,3 +82,32 @@ layout: default
 <script src="{{ '/assets/js/copy.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/code-collapse.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/further-reading.js' | relative_url }}"></script>
+<script>
+(function() {
+  var loadBtn = document.getElementById('load-comments-btn');
+  var toggleBtn = document.getElementById('toggle-comments-btn');
+  var header = document.querySelector('.comments-header');
+  var comments = document.getElementById('comments');
+  if (!loadBtn || !toggleBtn || !header || !comments) return;
+
+  loadBtn.addEventListener('click', function() {
+    loadBtn.classList.add('hidden');
+    if (typeof window.loadGiscus === 'function') window.loadGiscus();
+    setTimeout(function() {
+      header.classList.remove('hidden');
+      requestAnimationFrame(function() {
+        header.classList.add('visible');
+      });
+    }, 1800);
+  });
+
+  toggleBtn.addEventListener('click', function() {
+    var isHidden = comments.classList.toggle('hidden');
+    var chevron = toggleBtn.querySelector('.toggle-chevron');
+    var label = toggleBtn.querySelector('.toggle-label');
+    toggleBtn.setAttribute('aria-label', isHidden ? 'Show comments' : 'Hide comments');
+    label.textContent = isHidden ? 'Show comments' : 'Hide comments';
+    chevron.classList.toggle('flipped', isHidden);
+  });
+})();
+</script>
