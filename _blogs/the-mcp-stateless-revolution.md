@@ -1,8 +1,8 @@
 ---
 layout: blog
 title: "The MCP Stateless Revolution"
-date: 2026-08-31
-last_modified_at: 2026-08-31T11:51:44+05:30
+date: 2026-09-24
+last_modified_at: 2026-09-24T02:20:44+05:30
 author: Alok Ranjan Daftuar
 description: "The 2026-07-28 MCP specification removed protocol-level sessions entirely — and with it, the sticky routing, shared session stores, and affinity cookies that teams had been forced to build around a stateful transport that was never supposed to be permanent."
 excerpt: "For two years, running an MCP server meant sticky routing and shared session stores just to keep a conversation coherent. The 2026-07-28 specification deleted the session entirely — and with it, an entire category of infrastructure workaround."
