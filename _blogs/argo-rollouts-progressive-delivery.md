@@ -1,8 +1,8 @@
 ---
 layout: blog
 title: "Progressive Delivery with Argo Rollouts: Canary, Blue-Green, and AnalysisTemplates That Actually Gate"
-date: 2026-09-03
-last_modified_at: 2026-09-03T13:17:42+05:30
+date: 2026-09-28
+last_modified_at: 2026-09-28T10:43:42+05:30
 author: Alok Ranjan Daftuar
 description: "Argo Rollouts replaces the all-or-nothing Kubernetes Deployment rollout with a strategy that pauses, runs automated analysis against real traffic, and only proceeds — or reverses — based on the result. This post covers canary and blue-green strategies, AnalysisTemplate gating, and where progressive delivery fits against a CI/CD pipeline."
 excerpt: "A standard Deployment rollout is all-or-nothing once it starts. Argo Rollouts adds the pause points and automated gates that decide, without a human watching a dashboard, whether a release should continue or reverse."
