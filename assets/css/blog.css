@@ -600,3 +600,61 @@ details.further-reading summary:hover {
   line-height: 1.7;
   border-top: 1px solid var(--border);
 }
+
+/* ============================================================
+   COMMENTS SECTION
+  ============================================================ */
+
+.comments-section {
+  margin-top: 3rem;
+}
+
+.load-comments-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 auto;
+  padding: 0.65rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-soft);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.load-comments-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--bg-card);
+}
+
+.load-comments-btn.hidden {
+  display: none;
+}
+
+.comments-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.comments-header.hidden {
+  display: none;
+}
+
+.comments-header.visible {
+  opacity: 1;
+}
+
+.toggle-chevron {
+  transition: transform 0.2s ease;
+}
+
+.toggle-chevron.flipped {
+  transform: rotate(180deg);
+}

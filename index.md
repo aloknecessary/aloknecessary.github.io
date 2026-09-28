@@ -39,7 +39,7 @@ hide_header: true
     <img src="https://img.shields.io/badge/LinkedIn-aloknecessary-0077B5?style=for-the-badge&logo=searxng&logoColor=white" alt="LinkedIn"/>
   </a>
   <a href="mailto:aloknecessary@gmail.com">
-    <img src="https://img.shields.io/badge/Email-aloknecessary%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+    <img src="https://img.shields.io/badge/Email-aloknecessary%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
   </a>
 </p>
 
@@ -207,17 +207,19 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 >
 > **Key Achievements:**
 >
-> * Architected and delivered full-stack application designs using React, Angular, Node.js, and .NET  
-> * Built modular, API-centric platforms with strong authentication, observability, and integration patterns  
-> * Designed cloud-native architectures with Docker, Kubernetes, and automated CI/CD pipelines
+> * **Led end-to-end cloud infrastructure migration for Hawky.ai** (Azure → AWS) — lifted and shifted 10+ production VMs via AWS MGN, migrated 1500+ container image tags across 9 registries, designed a WireGuard cross-cloud VPN, and delivered full team handover documentation in one month
+> * **Architected and delivered full-stack application designs** using React, Angular, Node.js, and .NET
+> * **Built modular, API-centric platforms** with strong authentication, observability, and integration patterns
+> * **Designed cloud-native architectures** with Docker, Kubernetes, and automated CI/CD pipelines
 > * **Led AI-powered Playwright automation initiative** for Client's debt collection platform, increasing test coverage from 35% to 81%+ and delivering 2500+ test cases across 40+ modules in 2 months with a 4-5 engineer team
 > * **Architected and delivered production-grade AI POC** for natural language data visualization using OpenAI GPT Engine—enabling business users to generate interactive Chart.js visualizations from tabular data via conversational prompts, live on company POC list
-> * **Architected and delivered CCMR3 — CollectLogic** across 4 major phases: led 40+ engineers through greenfield go-live, stepped up as Solution Architect to define roadmap, deliver 100K+ record bulk import, full Legal module, enterprise permission strategy, and AI exploration — serving 500+ daily active users
+> * **Architected and delivered CCMR3 - CollectLogic** across 4 major phases: owned technical roadmap, system design governance, and cross-team architectural standards - led 40+ engineers through greenfield go-live, delivered 100K+ record bulk import, full Legal module, enterprise permission strategy, and AI exploration - serving 500+ daily active users
+> * **Architected cloud-native IoT platform for DeviceThread** - designed AWS infrastructure (EC2, RDS, Cognito OAuth/OIDC, IAM least-privilege), async event architecture via message queues, and SmartThings + CloudBeds integration layer for 10-15 hotel deployments following AWS Well-Architected principles
 > * **Collaborated with Microsoft team** on Bing and Microsoft Admin Portal platforms
-> * Led cost optimization initiatives resulting in significant cloud infrastructure savings  
+> * **Led cost optimization initiatives** resulting in significant cloud infrastructure savings
 > * **Led 10+ pre-sales engagements** — technical discovery, effort estimation, architecture proposals, team composition planning, and phased delivery roadmaps across fintech, healthcare, SaaS, and IoT domains
 > * **Built a pre-sales POC using Amazon Textract** for a health-tech client — extracted and structured data from handwritten and printed prescriptions and diagnostic test reports at 85%+ accuracy, directly enabling the client proposal submission
-> * Built custom Docker images for CI/CD optimization (playwright-az-cli, sonar-dotnet) downloaded 1000+ times across teams
+> * **Built custom Docker images** for CI/CD optimization (playwright-az-cli, playwright-aws-cli, sonar-dotnet) downloaded 35K+ times across teams
 >
 > A core part of my role involves collaborating with product, UX, and business stakeholders to drive clarity and alignment, as well as mentoring engineers through system design and implementation decisions.
 
@@ -226,10 +228,10 @@ I leverage AI strategically to accelerate delivery, improve code quality, and so
 ## 🎓 Certifications {#certifications}
 
 <div class="cert-badges">
-  <img src="https://img.shields.io/badge/Microsoft-AZ--104_Azure_Administrator-0078D4?style=for-the-badge&logo=alfred&logoColor=white" alt="AZ-104"/>
+  <img src="https://img.shields.io/badge/Microsoft-AZ--104_Azure_Administrator-4285F4?style=for-the-badge&logo=alfred&logoColor=white" alt="AZ-104"/>
   <img src="https://img.shields.io/badge/AWS-Partner_Certified-FF9900?style=for-the-badge&logo=hackthebox&logoColor=white" alt="AWS Partner Certified"/>
-  <img src="https://img.shields.io/badge/Neo4j-Professional_Certified-008CC1?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/>
-  <img src="https://img.shields.io/badge/ZEDEDA-Edge_Computing_Associate-4285F4?style=for-the-badge&logo=zulip&logoColor=white" alt="ZEDEDA Edge Computing Associate"/>
+  <img src="https://img.shields.io/badge/Neo4j-Professional_Certified-34A853?style=for-the-badge&logo=neo4j&logoColor=white" alt="Neo4j"/>
+  <img src="https://img.shields.io/badge/ZEDEDA-Edge_Computing_Associate-EA4335?style=for-the-badge&logo=zulip&logoColor=white" alt="ZEDEDA Edge Computing Associate"/>
 </div>
 
 * 🏅 <a href="https://learn.microsoft.com/api/credentials/share/en-us/AlokRanjanDaftuar-6549/9CB67B872CFCDE4D?sharingId=3A811A69B5D449B5" target="_blank" rel="noopener noreferrer">**Microsoft Certified: Azure Administrator Associate (AZ-104)**</a> — Azure infrastructure, identity, networking, and governance
@@ -287,83 +289,103 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 
 <div class="opensource-grid">
 
-  <!-- React Progress Stepper Card -->
-  <div class="project-card">
-    <div class="project-card-header">
-      <div class="project-icon">🎯</div>
-      <div class="project-title-section">
-        <h3 class="project-title">react-progress-stepper-ts</h3>
-        <p class="project-category">UI Component Library</p>
-      </div>
-    </div>
-    <p class="project-description">
-      TypeScript-first React component library for creating customizable step-by-step progress indicators. Features a clean API with React Hooks, comprehensive TypeScript support, and zero runtime dependencies.
-    </p>
-    <div class="project-tags">
-      <span class="tag">TypeScript</span>
-      <span class="tag">React</span>
-      <span class="tag">npm Package</span>
-    </div>
-    <div class="project-stats">
-      <div class="stat-item">
-        <span class="stat-icon">📊</span>
-        <span class="stat-value"><img src="https://img.shields.io/npm/dm/react-progress-stepper-ts?logo=npm&color=cb3837&style=flat-square" alt="npm downloads" /></span>
-        <span class="stat-label">Download stats</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-icon">📦</span>
-        <span class="stat-value"><img src="https://img.shields.io/npm/v/react-progress-stepper-ts?style=flat-square&logo=npm&color=cb3837" alt="npm version" /></span>
-        <span class="stat-label">Version info</span>
-      </div>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/aloknecessary/react-progress-stepper-ts" class="project-link primary">
-        <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
-      </a>
-      <a href="https://www.npmjs.com/package/react-progress-stepper-ts" class="project-link npm secondary">
-        <img src="https://img.shields.io/badge/npm-Package-CB3837?style=flat-square&logo=npm&logoColor=white" alt="npm" />
-      </a>
-    </div>
-  </div>
-
-  <!-- Playwright Azure CLI Card -->
+  <!-- Playwright CI Images Card (tabbed: Azure CLI / AWS CLI) -->
   <div class="project-card">
     <div class="project-card-header">
       <div class="project-icon">🎭</div>
       <div class="project-title-section">
-        <h3 class="project-title">playwright-az-cli</h3>
-        <p class="project-category">Docker Image</p>
+        <h3 class="project-title">playwright-ci-images</h3>
+        <p class="project-category">Docker Images</p>
       </div>
     </div>
-    <p class="project-description">
-      Custom Docker image built on Microsoft Playwright with Azure CLI pre-installed. Designed for CI/CD and automation workflows that require browser-based testing along with Azure operations in a single, ready-to-use container.
-    </p>
-    <div class="project-tags">
-      <span class="tag">Docker</span>
-      <span class="tag">Playwright</span>
-      <span class="tag">Azure CLI</span>
-      <span class="tag">CI/CD</span>
+    <div class="card-tabs" role="tablist" aria-label="Playwright CI image variants">
+      <button class="card-tab active" role="tab" aria-selected="true" aria-controls="pw-az-pane" id="pw-az-tab" data-pane="pw-az-pane">Azure CLI</button>
+      <button class="card-tab" role="tab" aria-selected="false" aria-controls="pw-aws-pane" id="pw-aws-tab" data-pane="pw-aws-pane">AWS CLI</button>
     </div>
-    <div class="project-stats">
-      <div class="stat-item">
-        <span class="stat-icon">🏗️</span>
-        <span class="stat-value">Multi-Arch</span>
-        <span class="stat-label">x86/ARM Support</span>
+    <div class="card-tab-pane active" id="pw-az-pane" role="tabpanel" aria-labelledby="pw-az-tab">
+      <p class="project-description">
+        Custom Docker image built on Microsoft Playwright with Azure CLI pre-installed. Designed for CI/CD workflows that require browser-based testing alongside Azure operations in a single, ready-to-use container.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Docker</span>
+        <span class="tag">Playwright</span>
+        <span class="tag">Azure CLI</span>
+        <span class="tag">CI/CD</span>
       </div>
-      <div class="stat-item">
-        <span class="stat-icon">🚀</span>
-        <span class="stat-value"><img src="https://img.shields.io/docker/v/aloknecessary/playwright-az-cli?style=flat-square&logo=docker&color=2496ED" alt="Docker version" /></span>
-        <span class="stat-label"><img src="https://img.shields.io/docker/pulls/aloknecessary/playwright-az-cli?style=flat-square&logo=docker&color=blue" alt="Docker pulls" /></span>
+      <div class="project-stats">
+        <div class="stat-item">
+          <span class="stat-icon">🏗️</span>
+          <span class="stat-value">Multi-Arch</span>
+          <span class="stat-label">x86/ARM Support</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">🚀</span>
+          <span class="stat-value"><img src="https://img.shields.io/docker/v/aloknecessary/playwright-az-cli?style=flat-square&logo=docker&color=2496ED" alt="Docker version" /></span>
+          <span class="stat-label"><img src="https://img.shields.io/docker/pulls/aloknecessary/playwright-az-cli?style=flat-square&logo=docker&color=blue" alt="Docker pulls" /></span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/aloknecessary/playwright-az-cli" class="project-link primary">
+          <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+        </a>
+        <a href="https://hub.docker.com/r/aloknecessary/playwright-az-cli" class="project-link secondary">
+          <img src="https://img.shields.io/badge/Docker_Hub-Image-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Hub" />
+        </a>
       </div>
     </div>
-    <div class="project-links">
-      <a href="https://github.com/aloknecessary/playwright-az-cli" class="project-link primary">
-        <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
-      </a>
-      <a href="https://hub.docker.com/r/aloknecessary/playwright-az-cli" class="project-link secondary">
-        <img src="https://img.shields.io/badge/Docker_Hub-Image-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Hub" />
-      </a>
+    <div class="card-tab-pane" id="pw-aws-pane" role="tabpanel" aria-labelledby="pw-aws-tab" hidden>
+      <p class="project-description">
+        Custom Docker image built on Microsoft Playwright with AWS CLI pre-installed. Designed for CI/CD workflows that require browser-based testing alongside AWS operations in a single, ready-to-use container.
+      </p>
+      <div class="project-tags">
+        <span class="tag">Docker</span>
+        <span class="tag">Playwright</span>
+        <span class="tag">AWS CLI</span>
+        <span class="tag">CI/CD</span>
+      </div>
+      <div class="project-stats">
+        <div class="stat-item">
+          <span class="stat-icon">🏗️</span>
+          <span class="stat-value">Multi-Arch</span>
+          <span class="stat-label">x86/ARM Support</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">🚀</span>
+          <span class="stat-value"><img src="https://img.shields.io/docker/v/aloknecessary/playwright-aws-cli?style=flat-square&logo=docker&color=2496ED" alt="Docker version" /></span>
+          <span class="stat-label"><img src="https://img.shields.io/docker/pulls/aloknecessary/playwright-aws-cli?style=flat-square&logo=docker&color=blue" alt="Docker pulls" /></span>
+        </div>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/aloknecessary/playwright-aws-cli" class="project-link primary">
+          <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+        </a>
+        <a href="https://hub.docker.com/r/aloknecessary/playwright-aws-cli" class="project-link secondary">
+          <img src="https://img.shields.io/badge/Docker_Hub-Image-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Hub" />
+        </a>
+      </div>
     </div>
+    <script>
+    (function () {
+      var card = document.currentScript.parentElement;
+      card.querySelectorAll('.card-tab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          card.querySelectorAll('.card-tab').forEach(function (t) {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          card.querySelectorAll('.card-tab-pane').forEach(function (p) {
+            p.classList.remove('active');
+            p.hidden = true;
+          });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          var pane = card.querySelector('#' + tab.dataset.pane);
+          pane.classList.add('active');
+          pane.hidden = false;
+        });
+      });
+    })();
+    </script>
   </div>
 
   <!-- SonarQube .NET 9.0 Card -->
@@ -446,6 +468,45 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
     </div>
   </div>
 
+  <!-- React Progress Stepper Card -->
+  <div class="project-card">
+    <div class="project-card-header">
+      <div class="project-icon">🎯</div>
+      <div class="project-title-section">
+        <h3 class="project-title">react-progress-stepper-ts</h3>
+        <p class="project-category">UI Component Library</p>
+      </div>
+    </div>
+    <p class="project-description">
+      TypeScript-first React component library for creating customizable step-by-step progress indicators. Features a clean API with React Hooks, comprehensive TypeScript support, and zero runtime dependencies.
+    </p>
+    <div class="project-tags">
+      <span class="tag">TypeScript</span>
+      <span class="tag">React</span>
+      <span class="tag">npm Package</span>
+    </div>
+    <div class="project-stats">
+      <div class="stat-item">
+        <span class="stat-icon">📊</span>
+        <span class="stat-value"><img src="https://img.shields.io/npm/dm/react-progress-stepper-ts?logo=npm&color=cb3837&style=flat-square" alt="npm downloads" /></span>
+        <span class="stat-label">Download stats</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">📦</span>
+        <span class="stat-value"><img src="https://img.shields.io/npm/v/react-progress-stepper-ts?style=flat-square&logo=npm&color=cb3837" alt="npm version" /></span>
+        <span class="stat-label">Version info</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/aloknecessary/react-progress-stepper-ts" class="project-link primary">
+        <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+      </a>
+      <a href="https://www.npmjs.com/package/react-progress-stepper-ts" class="project-link npm secondary">
+        <img src="https://img.shields.io/badge/npm-Package-CB3837?style=flat-square&logo=npm&logoColor=white" alt="npm" />
+      </a>
+    </div>
+  </div>
+  
 </div>
 
 ---
@@ -610,7 +671,7 @@ If you're interested in **architecture discussions, system design reviews, DevOp
 
 <p style="margin: 2rem 0; text-align:center;">
   <a href="mailto:aloknecessary@gmail.com">
-    <img src="https://img.shields.io/badge/Email-aloknecessary%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=darkgreen" alt="Email"/>
+    <img src="https://img.shields.io/badge/Email-aloknecessary%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=34A853" alt="Email"/>
   </a>
   <a href="https://facebook.com/aloknecessary">
     <img src="https://img.shields.io/badge/Facebook-aloknecessary-FFEAD3?style=for-the-badge&logo=facebook&logoColor=white&labelColor=blue" alt="Facebook"/>

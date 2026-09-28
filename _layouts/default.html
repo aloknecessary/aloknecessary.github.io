@@ -64,7 +64,6 @@
             theme === "dark" ? "dark_dimmed" : "light"
           );
           script.setAttribute("data-lang", "en");
-          script.setAttribute("data-loading", "lazy");
 
           container.appendChild(script);
           container.dataset.loaded = "true";
@@ -94,11 +93,12 @@
         function initTheme() {
           const effective = getEffectiveTheme();
           applyTheme(effective);
-
-          document.addEventListener("DOMContentLoaded", function () {
-            loadGiscus(effective);
-          });
         }
+
+        // Expose loadGiscus globally for the load-comments button
+        window.loadGiscus = function() {
+          loadGiscus(getEffectiveTheme());
+        };
 
         function setTheme(theme) {
           localStorage.setItem(THEME_KEY, theme);

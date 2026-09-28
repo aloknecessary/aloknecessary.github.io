@@ -248,55 +248,53 @@
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .project-card {
-    background: #1f2937;
-    border-color: #374151;
-  }
-  
-  .project-card:hover {
-    border-color: #60a5fa;
-  }
-  
-  .project-title {
-    color: #f9fafb;
-  }
-  
-  .project-category {
-    color: #9ca3af;
-  }
-  
-  .project-description {
-    color: #d1d5db;
-  }
-  
-  .tag {
-    background: #1e3a8a;
-    color: #93c5fd;
-    border-color: #1e40af;
-  }
-  
-  .tag:hover {
-    background: #1e40af;
-    border-color: #3b82f6;
-  }
-  
-  .stat-value {
-    color: #f9fafb;
-  }
-  
-  .stat-label {
-    color: #9ca3af;
-  }
-  
-  .project-stats {
-    border-top-color: #374151;
-    border-bottom-color: #374151;
-  }
+[data-theme="dark"] .project-card {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+[data-theme="dark"] .project-card:hover {
+  border-color: #60a5fa;
+}
+
+[data-theme="dark"] .project-title {
+  color: #f9fafb;
+}
+
+[data-theme="dark"] .project-category {
+  color: #9ca3af;
+}
+
+[data-theme="dark"] .project-description {
+  color: #d1d5db;
+}
+
+[data-theme="dark"] .tag {
+  background: #1e3a8a;
+  color: #93c5fd;
+  border-color: #1e40af;
+}
+
+[data-theme="dark"] .tag:hover {
+  background: #1e40af;
+  border-color: #3b82f6;
+}
+
+[data-theme="dark"] .stat-value {
+  color: #f9fafb;
+}
+
+[data-theme="dark"] .stat-label {
+  color: #9ca3af;
+}
+
+[data-theme="dark"] .project-stats {
+  border-top-color: #374151;
+  border-bottom-color: #374151;
 }
 
 /* Accessibility Enhancements */
-.project-card:focus-within {
+.project-card:has(.project-link:focus) {
   outline: 2px solid #2563eb;
   outline-offset: 2px;
 }
@@ -305,4 +303,66 @@
   outline: 2px solid #2563eb;
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Card Tabs */
+.card-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.card-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.card-tab:hover {
+  color: #2563eb;
+}
+
+.card-tab.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+}
+
+.card-tab-pane {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-tab-pane[hidden] {
+  display: none;
+}
+
+.card-tab-pane .project-stats {
+  border-top: none;
+}
+
+[data-theme="dark"] .card-tabs {
+  border-bottom-color: #374151;
+}
+
+[data-theme="dark"] .card-tab {
+  color: #9ca3af;
+}
+
+[data-theme="dark"] .card-tab:hover {
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .card-tab.active {
+  color: #60a5fa;
+  border-bottom-color: #60a5fa;
 }

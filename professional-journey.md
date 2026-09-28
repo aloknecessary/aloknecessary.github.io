@@ -12,26 +12,33 @@ hide_header: false
     <a href="{{ '/' | relative_url }}" class="hero-back"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;transform:translateY(0px)"><path d="M19 12H5M12 5l-7 7 7 7"/></svg> Back to Portfolio</a>
     <p class="hero-eyebrow">Engineering Journey · Byteridge</p>
     <h1 class="hero-name">10+ Years of<br><span>Building & Leading</span></h1>
-    <p class="hero-role">Full Stack Developer → Engineering Lead → Solution Architect  ·  2014 – Present</p>
+    <div class="hero-role">
+      <span class="role-text role-text--full">Full Stack Developer</span>
+      <span class="role-arrow">→</span>
+      <span class="role-text role-text--lead">Engineering Lead</span>
+      <span class="role-arrow">→</span>
+      <span class="role-text role-text--arch">Solution Architect</span>
+      <span class="role-sep">·  2014 – Present</span>
+    </div>
     <p class="hero-tagline">
       A decade-long journey across fintech, hospitality IoT, enterprise security, media, developer tooling,
       and global tech — evolving from a solo developer with total stack ownership to leading 40+ person
       engineering organisations and defining architectural strategy at scale.
     </p>
     <div class="hero-stats">
-      <div class="stat"><span class="stat-value">10<span>+</span></span><span class="stat-label">Years at Byteridge</span></div>
-      <div class="stat"><span class="stat-value">15<span>+</span></span><span class="stat-label">Projects Delivered</span></div>
-      <div class="stat"><span class="stat-value">40<span>+</span></span><span class="stat-label">Team Members Led</span></div>
-      <div class="stat"><span class="stat-value">100K<span>+</span></span><span class="stat-label">Records / Import</span></div>
+      <div class="stat stat--blue"><span class="stat-value">10<span>+</span></span><span class="stat-label">Years at Byteridge</span></div>
+      <div class="stat stat--cyan"><span class="stat-value">15<span>+</span></span><span class="stat-label">Projects Delivered</span></div>
+      <div class="stat stat--purple"><span class="stat-value">40<span>+</span></span><span class="stat-label">Team Members Led</span></div>
+      <div class="stat stat--gold"><span class="stat-value">100K<span>+</span></span><span class="stat-label">Records / Import</span></div>
     </div>
   </div>
 </header>
 
-<section class="timeline-section" aria-label="Project timeline">
+<section class="timeline-section" id="projects" aria-label="Project timeline">
   <div class="container">
     <div class="section-header reveal">
       <p class="section-tag">Professional Journey</p>
-      <h2 class="section-title">Projects, Impact & Leadership</h2>
+      <h2 class="section-title">Projects, <span class="section-title-accent">Impact</span> & Leadership</h2>
       <p class="section-subtitle">Every engagement, estimation, and architectural contribution that shaped the engineer and leader.</p>
     </div>
     <div class="timeline">
@@ -90,6 +97,66 @@ hide_header: false
             Estimations produced in these engagements informed staffing decisions, sprint planning baselines,
             infrastructure provisioning timelines, and client expectation setting — reducing scope creep
             and re-estimation cycles across active delivery.
+          </div>
+        </div>
+      </article>
+
+      <!-- Hawky.ai Migration -->
+      <article class="timeline-item" data-color="blue" itemscope itemtype="https://schema.org/Project">
+        <div class="timeline-node"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">Aug 2026</span>
+          <span class="timeline-badge badge-arch">Cloud Infrastructure Consultant</span>
+        </div>
+        <h3 class="timeline-title" itemprop="name">Hawky.ai — Cloud Infrastructure Migration</h3>
+        <p class="timeline-company">Cloud Migration · Azure → AWS · End-to-End Infrastructure Migration</p>
+        <div class="project-card reveal">
+          <div class="card-top">
+            <span class="card-title">Azure → AWS · 10+ Production Servers</span>
+            <div class="metrics-row">
+              <div class="metric-chip"><span class="metric-icon">🖥️</span><span class="metric-val">10+</span><span class="metric-key">Production Servers</span></div>
+              <div class="metric-chip"><span class="metric-icon">📦</span><span class="metric-val">1500<span style="color:var(--muted)">+</span></span><span class="metric-key">Image Tags Migrated</span></div>
+              <div class="metric-chip"><span class="metric-icon">🗓️</span><span class="metric-val">1</span><span class="metric-key">Month</span></div>
+            </div>
+          </div>
+          <p class="card-desc">End-to-end migration of Hawky.ai's cloud infrastructure from Microsoft Azure to AWS — covering container registry migration, virtual machine lift-and-shift, secure cross-cloud networking, and post-migration hardening across a fleet of 10 production servers, delivered in a single month.</p>
+          <p class="card-section-label">Key Contributions</p>
+          <ul class="highlight-list">
+            <li>Migrated <strong>1500+ container image tags</strong> across 9 ACR registries to AWS ECR using skopeo registry-to-registry copy — preserving multi-arch manifest lists with zero downtime.</li>
+            <li>Before MGN replication could begin, <strong>converted all 10+ Azure VMs from the Azure-optimised kernel to a generic kernel</strong> — a hard requirement for MGN compatibility. This hands-on experience with kernel switching, GRUB reconfiguration, and boot recovery directly informed the <a href="/blogs/aws-migration-ubuntu-kernel-fix/">AWS Migration: Ubuntu Kernel Fix</a> article.</li>
+            <li>Executed VM lift-and-shift for <strong>10+ production servers</strong> using AWS Application Migration Service (MGN), including GRUB configuration, generic kernel setup, and replication management.</li>
+            <li>Designed and implemented a <strong>WireGuard VPN tunnel</strong> between Azure MongoDB and AWS bastion for secure cross-cloud database connectivity post-migration.</li>
+            <li>Upgraded all 10+ migrated VMs from generic to <strong>AWS-optimised kernel</strong> (linux-aws) and installed SSM agent for centralised fleet management via AWS Systems Manager.</li>
+            <li>Built <strong>cross-registry verification and smart resync automation scripts</strong> to detect and resolve post-migration drift between ACR and ECR.</li>
+            <li>Authored full team handover documentation — AWS best practices guide, troubleshooting &amp; how-to guide, post-migration runbook, and complete audit log.</li>
+          </ul>
+          <div class="callout-box" style="border-left-color: var(--accent2); background: rgba(6,182,212,0.06); border-color: rgba(6,182,212,0.18);">
+            <strong>Zero-Downtime Registry Migration at Scale</strong><br>
+            Migrating 1500+ image tags across 9 registries with skopeo's registry-to-registry copy preserved multi-arch manifest lists intact — no image rebuilds, no layer re-uploads, no service interruption. Cross-registry drift detection scripts ran post-migration to catch any tag discrepancies before the Azure registries were decommissioned.
+          </div>
+          <div class="callout-box" style="border-left-color: var(--gold); background: rgba(245,158,11,0.06); border-color: rgba(245,158,11,0.18);">
+            <strong>Production VM Lift-and-Shift via AWS MGN</strong><br>
+            Migrated 10+ production servers using AWS Application Migration Service — managing continuous replication, GRUB reconfiguration for cloud boot compatibility, generic kernel setup during replication, and coordinated cutover. Post-cutover, all servers were upgraded from the generic kernel to the AWS-optimised kernel (linux-aws) and onboarded to AWS Systems Manager for centralised fleet management — replacing ad-hoc SSH access with auditable, policy-driven operations.
+          </div>
+          <div class="divider"></div>
+          <p class="card-section-label">Tech Stack</p>
+          <div class="tech-stack">
+            <span class="tech-tag">AWS MGN</span><span class="tech-tag">EC2</span><span class="tech-tag">ECR</span>
+            <span class="tech-tag">ECS</span><span class="tech-tag">SSM</span><span class="tech-tag">IAM</span>
+            <span class="tech-tag">VPC</span><span class="tech-tag">Route 53</span><span class="tech-tag">CloudFront</span>
+            <span class="tech-tag">Bedrock</span><span class="tech-tag">Azure ACR</span><span class="tech-tag">Azure VMs</span>
+            <span class="tech-tag">skopeo</span><span class="tech-tag">WireGuard</span><span class="tech-tag">Docker</span>
+            <span class="tech-tag">MongoDB</span><span class="tech-tag">Ubuntu 22.04/24.04</span><span class="tech-tag">Python</span><span class="tech-tag">Bash</span>
+          </div>
+          <div class="divider"></div>
+          <p class="card-section-label">Architectural Decisions</p>
+          <div class="arch-pills">
+            <span class="arch-pill">AWS MGN Lift-and-Shift</span>
+            <span class="arch-pill">skopeo Registry-to-Registry Copy</span>
+            <span class="arch-pill">WireGuard Cross-Cloud VPN</span>
+            <span class="arch-pill">AWS-Optimised Kernel</span>
+            <span class="arch-pill">SSM Fleet Management</span>
+            <span class="arch-pill">Drift Detection Automation</span>
           </div>
         </div>
       </article>
@@ -221,7 +288,7 @@ hide_header: false
               <div class="metric-chip"><span class="metric-icon">📅</span><span class="metric-val">4</span><span class="metric-key">Major Phases</span></div>
             </div>
           </div>
-          <p class="card-desc">A prominent financial services company specialising in debt collection rebuilt their core platform — CollectLogic — from a legacy system into a modern, cloud-native application handling complex regulatory operations at scale. Delivered across 4 major phases, evolving from Engineering Lead at foundation to Solution Architect driving long-term platform strategy.</p>
+          <p class="card-desc">A prominent financial services company specialising in debt collection rebuilt their core platform — CollectLogic — from a legacy system into a modern, cloud-native application handling complex regulatory operations at scale. Delivered across 4 major phases, evolving from Engineering Lead at foundation to Solution Architect driving long-term platform strategy — owning technical roadmap, system design governance, cross-team architectural standards, and stakeholder alignment across all phases.</p>
           <div class="divider"></div>
           <p class="card-section-label">Tech Stack</p>
           <div class="tech-stack">
@@ -492,13 +559,13 @@ hide_header: false
             </div>
           </div>
           <p class="card-desc">DeviceThread is the digital backbone for hospitality properties hosting smart devices — enabling owners, managers, and staff to monitor, manage, secure, and automate their entire digital infrastructure from a single platform.</p>
-          <p class="card-section-label">Contributions &amp; Impact</p>
+          <p class="card-section-label">Architectural Contributions</p>
           <ul class="highlight-list">
-            <li>Led backend and frontend teams across 10+ members, coordinating microservices integration across IoT device layers.</li>
-            <li>Introduced <strong>message queue architecture</strong> for asynchronous device event processing — the foundational reliability decision for the platform.</li>
-            <li>Implemented caching to reduce response latency for real-time device state queries across all hotel properties.</li>
-            <li>Delivered platform from greenfield — live across 10–15 hotel properties at project close.</li>
-            <li>Managed containerised deployments and CI/CD pipelines via Docker and GitHub Actions on AWS.</li>
+            <li>Designed the <strong>cloud infrastructure architecture on AWS</strong> — provisioning EC2, S3, RDS, and networking with IAM least-privilege access controls and secrets management, following AWS Well-Architected principles across security, reliability, and operational excellence.</li>
+            <li>Defined the <strong>asynchronous event processing architecture</strong> using message queues as the foundational reliability decision — ensuring no device state change from SmartThings was missed or delayed across hotel properties.</li>
+            <li>Architected <strong>Amazon Cognito-based identity flows</strong> with OAuth/OIDC integration for secure authentication across web and mobile surfaces — replacing ad-hoc credential handling with a governed identity layer.</li>
+            <li>Designed the <strong>SmartThings and CloudBeds integration architecture</strong> — event-driven device automation triggered by PMS lifecycle events (check-in, check-out, occupancy) with real-time state propagation to management dashboards.</li>
+            <li>Established <strong>containerised deployment topology</strong> with Docker and GitHub Actions CI/CD on AWS, and introduced a caching layer for real-time device state queries across all hotel properties.</li>
           </ul>
           <div class="callout-box">
             <strong>Samsung SmartThings — Deep IoT Integration</strong><br>
@@ -724,11 +791,11 @@ hide_header: false
 </section>
 
 <!-- SKILLS -->
-<section class="skills-section" aria-label="Core competencies">
+<section class="skills-section" id="competencies" aria-label="Core competencies">
   <div class="container">
     <div class="section-header reveal">
       <p class="section-tag">Core Competencies</p>
-      <h2 class="section-title">Technical Arsenal</h2>
+      <h2 class="section-title">Technical <span class="section-title-accent">Arsenal</span></h2>
       <p class="section-subtitle">The full-stack of skills forged across every engagement.</p>
     </div>
     <div class="skills-grid">
@@ -829,11 +896,11 @@ hide_header: false
 </section>
 
 <!-- NARRATIVE -->
-<section class="narrative-section" aria-label="Career narrative">
+<section class="narrative-section" id="story" aria-label="Career narrative">
   <div class="container">
     <div class="section-header reveal">
       <p class="section-tag">The Story</p>
-      <h2 class="section-title">A Decade of Growth</h2>
+      <h2 class="section-title">A Decade of <span class="section-title-accent">Growth</span></h2>
     </div>
     <div class="narrative-block">
       <p class="reveal">
@@ -892,6 +959,9 @@ hide_header: false
         an AI-powered device matching engine, multi-role access model, and Authentik SSO unifying identity
         across the entire product suite. Different domains, same discipline — understand the constraints,
         define the architecture, set the foundation right.
+      </p>
+      <p class="reveal">
+        August 2026 brought a different kind of engagement: <strong>Hawky.ai</strong> needed their entire cloud infrastructure migrated from Azure to AWS in a single month. The work spanned every layer — 1500+ container image tags across 9 ACR registries moved to ECR via skopeo with zero downtime, 10+ production VMs lifted and shifted using AWS MGN, a WireGuard VPN tunnel bridging Azure MongoDB to the new AWS bastion during the transition, and all servers upgraded to the AWS-optimised kernel with SSM agent for centralised fleet management. Automation scripts handled cross-registry drift detection post-migration. The engagement closed with full team handover documentation covering best practices, runbooks, and a complete audit log.
       </p>
       <div class="pull-quote reveal">
         "From manually deploying via RDP on a physical IIS server to architecting Kubernetes-based
