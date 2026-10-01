@@ -1,7 +1,7 @@
 ---
 title: "Recovering an Azure VM Boot Loop with Serial Console, Mid-Migration"
-date: 2026-09-05
-last_modified_at: 2026-09-09T13:55:15+05:30
+date: 2026-10-01
+last_modified_at: 2026-10-01T16:05:15+05:30
 author: Alok Ranjan Daftuar
 description: "How Azure Serial Console recovers a VM stuck in a boot loop after a kernel swap gone wrong — GRUB command-line recovery, initramfs regeneration, and the depmod root cause."
 excerpt: "Removing the old kernel before confirming the new one boots is exactly how a routine swap becomes a VM with no bootable entry left. This is how Azure Serial Console got it back."
