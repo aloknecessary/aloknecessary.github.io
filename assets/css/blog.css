@@ -105,7 +105,7 @@ h2.description::before {
   align-items: center;
   gap: 14px;
   margin-top: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
 }
 
@@ -116,6 +116,19 @@ h2.description::before {
   letter-spacing: 0.06em;
   color: var(--muted);
   margin-right: auto;
+}
+
+@media (max-width: 767px) {
+  .share-bar {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .share-label {
+    width: 100%;
+    text-align: left;
+  }
 }
 
 @media (max-width: 768px) {
@@ -140,6 +153,7 @@ h2.description::before {
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.2s ease;
   color: #fff;
+  flex-shrink: 0;
 }
 
 .share-icon svg {
