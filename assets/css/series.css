@@ -577,6 +577,7 @@
 .legend-item--link[data-domain="networking"]           { --domain-accent: var(--domain-networking); }
 
 .legend-item--link {
+  cursor: pointer;
   border-color: var(--domain-accent);
 }
 
@@ -585,6 +586,20 @@
   color: var(--domain-accent);
   background: var(--bg-soft);
   text-decoration: none;
+}
+
+.legend-item--link.active {
+  background: var(--domain-accent);
+  border-color: var(--domain-accent);
+  color: #fff;
+}
+
+.legend-item--link.active .legend-dot {
+  background: #fff;
+}
+
+.series-block.filtered-out {
+  display: none;
 }
 
 .legend-dot {
