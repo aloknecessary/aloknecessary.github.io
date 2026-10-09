@@ -1,7 +1,7 @@
 ---
 title: "Deploying MCP Servers on Kubernetes"
-date: 2026-09-15
-last_modified_at: 2026-09-15T11:45:51+05:30
+date: 2026-10-09
+last_modified_at: 2026-10-09T13:35:51+05:30
 author: Alok Ranjan Daftuar
 description: "Containerizing a stdio MCP server and exposing a port is a transport mismatch, not a deployment. This post covers what a correct Kubernetes deployment looks like — probes, IRSA, Workload Identity, rolling updates, and autoscaling — end to end on EKS and AKS."
 excerpt: "Wrapping a stdio MCP server in a container and exposing a port isn't a deployment — it's a transport mismatch waiting to surface in production. Here's what an actual Kubernetes deployment looks like, end to end, on EKS and AKS."
