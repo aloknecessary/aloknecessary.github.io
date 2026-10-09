@@ -12,7 +12,7 @@ categories:
   - security
 tags: [mcp, kubernetes, multi-tenancy, security, aws, azure]
 series: "Agentic Infrastructure"
-series_order: 3
+series_order: 4
 ---
 
 > The claim that isn't the boundary
