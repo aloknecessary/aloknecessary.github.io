@@ -12,7 +12,7 @@ categories:
   - cloud
 tags: [mcp, kubernetes, docker, eks, aks, deployment, irsa, workload-identity, autoscaling, platform-engineering]
 series: "Agentic Infrastructure"
-series_order: 2
+series_order: 3
 ---
 
 ## The wrapper that doesn't actually work
