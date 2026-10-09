@@ -190,7 +190,3 @@ That last point is worth making concrete, since it's the sharpest contrast with 
 | Extremely sensitive secrets where even a `Secret` object existing in the cluster's API is more exposure than acceptable | Vault, via the injector pattern — no `Secret` object is ever created |
 
 As with every table in this series, these aren't exclusive: it's entirely reasonable to run ESO for the bulk of a fleet's secrets and reserve Vault's injector pattern specifically for the small set of credentials — often database creds needing dynamic, short-lived leases — that justify the added operational weight. The decision isn't "pick the best tool once," it's "match each secret's actual sensitivity and rotation requirement to the approach that handles it well," which for most fleets means at least two of these three coexisting rather than a single tool covering everything uniformly.
-
-## What's next
-
-Every article so far has assumed a sync goes well: Application syncs, image updates, secret resolves, done. Article 5 covers what happens when it doesn't — Argo Rollouts, canary and blue-green strategies, and the AnalysisTemplates that decide, automatically, whether a rollout should proceed or reverse.
