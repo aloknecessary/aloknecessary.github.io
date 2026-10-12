@@ -187,7 +187,3 @@ Worth being explicit about where the two layers' verification differs, since it'
 | No traffic-splitting infrastructure available | Blue-green, or canary via ReplicaSet ratio approximation if resource footprint for full blue-green is a concern |
 | Release needs real-traffic-pattern validation before any production exposure, and double resource footprint during transition is acceptable | Blue-green — the preview service gives you that validation window canary can't |
 | Workload has strict version-coupling to a shared schema or can't safely run two versions concurrently | Neither — this is a signal the deployment needs a different pattern (expand-contract schema migration, versioned APIs) before progressive delivery strategy is the right lever to pull |
-
-## What's next
-
-Every article in this series so far has covered the pipeline working as designed — sync succeeding, images updating, secrets resolving, rollouts gating correctly. Article 6 closes the series with the opposite: what auto-sync and self-heal actually do when they collide with something else changing cluster state — an HPA fighting ArgoCD's declared replica count, a sync wave failing partway, an operator mutating a resource ArgoCD also considers its own — grounded in the incident shapes these failures actually take.
