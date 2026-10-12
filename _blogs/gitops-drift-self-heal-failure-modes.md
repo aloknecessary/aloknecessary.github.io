@@ -1,7 +1,7 @@
 ---
 title: "Drift, Self-Heal, and Failure Modes: When ArgoCD's Reconciliation Loop Fights Something Else"
-date: 2026-09-09
-last_modified_at: 2026-09-09T12:36:04+05:30
+date: 2026-10-12
+last_modified_at: 2026-10-12T11:02:04+05:30
 author: Alok Ranjan Daftuar
 description: "A practical map of where ArgoCD's auto-sync and self-heal break down — HPA replica oscillation, sync-wave partial failure, and operator-owned field conflicts — and how to fix each one."
 excerpt: "Auto-sync and self-heal are usually presented as unambiguous wins. They are, right up until something else in the cluster has a legitimate reason to change the same resource ArgoCD thinks it owns exclusively."
