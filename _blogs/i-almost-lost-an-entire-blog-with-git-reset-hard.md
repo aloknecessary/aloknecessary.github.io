@@ -1,7 +1,7 @@
 ---
 title: "I Almost Lost an Entire Blog with git reset --hard (And Git Saved Me)"
 date: 2026-06-14
-last_modified_at: 2026-06-14
+last_modified_at: 2026-10-14T14:19:37+05:30
 author: Alok Ranjan Daftuar
 description: "A real incident turned into a complete guide to Git recovery — reflog, reset modes, merge vs rebase, and the mental model every developer should internalize."
 excerpt: "I ran git reset --hard on autopilot and watched my blog post vanish. Fortunately, Git is far more resilient than most developers realize. This post covers the recovery, the mental model behind commits and references, and the commands every developer should know before they need them."
@@ -12,6 +12,24 @@ tags: [git, recovery, reflog, reset, rebase, merge, developer-tools, version-con
 ---
 
 > **What started as a routine cleanup became a lesson in Git's resilience — and a reminder that understanding the model matters more than memorizing commands.**
+
+---
+
+## Table of Contents
+
+- [The Moment Everything Disappeared](#the-moment-everything-disappeared)
+- [What Actually Happened](#what-actually-happened)
+- [Git Doesn't Think in Files](#git-doesnt-think-in-files)
+- [The Recovery: `git reflog`](#the-recovery-git-reflog)
+- [Understanding Git's Three Areas](#understanding-gits-three-areas)
+- [Reset vs Restore vs Revert](#reset-vs-restore-vs-revert)
+- [Merge vs Rebase: The Eternal Debate](#merge-vs-rebase-the-eternal-debate)
+- [Interactive Rebase: Git's Power Tool](#interactive-rebase-gits-power-tool)
+- [Other Recovery Tools Worth Knowing](#other-recovery-tools-worth-knowing)
+- [Git Command Decision Matrix](#git-command-decision-matrix)
+- [Why Linear History Matters](#why-linear-history-matters)
+- [Lessons Learned](#lessons-learned)
+- [Final Thought](#final-thought)
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Recovering an Azure VM Boot Loop with Serial Console, Mid-Migration"
 date: 2026-10-01
-last_modified_at: 2026-10-01T16:05:15+05:30
+last_modified_at: 2026-10-14T14:19:37+05:30
 author: Alok Ranjan Daftuar
 description: "How Azure Serial Console recovers a VM stuck in a boot loop after a kernel swap gone wrong — GRUB command-line recovery, initramfs regeneration, and the depmod root cause."
 excerpt: "Removing the old kernel before confirming the new one boots is exactly how a routine swap becomes a VM with no bootable entry left. This is how Azure Serial Console got it back."
@@ -16,6 +16,18 @@ series_order: 3
 ---
 
 The [previous article in this series](/blogs/aws-migration-ubuntu-kernel-fix/) walked through the fix for the `linux-azure` to `linux-generic` kernel swap needed before migrating an Ubuntu 24.04 server to AWS, and flagged one specific risk in passing: removing the old kernel before confirming the new one boots successfully. This article is what happened when I made exactly that mistake on the source Azure VM, and the recovery — Azure Serial Console — which turned an apparently bricked VM back into a working migration source without a rebuild.
+
+## Table of Contents
+
+- [How the boot loop actually happened](#how-the-boot-loop-actually-happened)
+- [Why this is a genuinely different failure from the AWS kernel issue](#why-this-is-a-genuinely-different-failure-from-the-aws-kernel-issue)
+- [What Azure Serial Console actually is](#what-azure-serial-console-actually-is)
+- [The recovery sequence](#the-recovery-sequence)
+- [Digging into why the initramfs was actually malformed](#digging-into-why-the-initramfs-was-actually-malformed)
+- [A general troubleshooting checklist for serial-console-reachable boot failures](#a-general-troubleshooting-checklist-for-serial-console-reachable-boot-failures)
+- [Why I didn't just restore from a snapshot](#why-i-didnt-just-restore-from-a-snapshot)
+- [Documenting this before the next server in the wave](#documenting-this-before-the-next-server-in-the-wave)
+- [What changed in the runbook after this incident](#what-changed-in-the-runbook-after-this-incident)
 
 ## How the boot loop actually happened
 

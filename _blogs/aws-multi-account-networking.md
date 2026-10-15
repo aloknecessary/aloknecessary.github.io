@@ -1,7 +1,7 @@
 ---
 title: "Multi-Account AWS Networking: Shared VPC, RAM, and the Hub-and-Spoke Model"
 date: 2026-10-05
-last_modified_at: 2026-10-05T11:17:13+05:30
+last_modified_at: 2026-10-14T14:19:37+05:30
 author: Alok Ranjan Daftuar
 description: "Two models for multi-account AWS networking — Shared VPC and centralized Transit Gateway — answer the ownership question differently. This post maps the trade-offs, the failure modes, and when each model earns its complexity."
 excerpt: "Once an AWS Organization crosses a handful of accounts, the question stops being how to connect VPCs and becomes who owns the network at all. Shared VPC and centralized Transit Gateway answer that differently, and the choice compounds."
@@ -15,6 +15,17 @@ series_order: 4
 ---
 
 > The [VPC Peering vs Transit Gateway](/blogs/aws-vpc-peering-vs-transit-gateway/) article in this series covered how Transit Gateway shares across accounts through AWS Resource Access Manager, and treated that as a routing detail — one line, one RAM share, done. It undersold the decision. Once an AWS Organization has more than a handful of accounts, multi-account networking stops being a routing question and becomes an ownership question: who controls the VPC, who controls the route tables, and who's accountable when something in the shared network breaks. Two genuinely different models answer that question differently, and picking the wrong one early is expensive to unwind later.
+
+## Table of Contents
+
+- [Why multi-account exists before we get to networking](#why-multi-account-exists-before-we-get-to-networking)
+- [Model 1: Shared VPC](#model-1-shared-vpc)
+- [Model 2: Centralized Transit Gateway (hub-and-spoke)](#model-2-centralized-transit-gateway-hub-and-spoke)
+- [A hybrid pattern worth knowing](#a-hybrid-pattern-worth-knowing-shared-services-via-transit-gateway-not-shared-vpc-subnets)
+- [Choosing between the two, restated as one comparison](#choosing-between-the-two-restated-as-one-comparison)
+- [DNS across account boundaries](#dns-across-account-boundaries)
+- [Troubleshooting: where multi-account networking actually breaks](#troubleshooting-where-multi-account-networking-actually-breaks)
+- [What this means for a migration-in-progress Organization](#what-this-means-for-a-migration-in-progress-organization)
 
 ## Why multi-account exists before we get to networking
 

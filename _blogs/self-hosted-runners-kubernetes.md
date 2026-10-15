@@ -1,7 +1,7 @@
 ---
 title: "Self-Hosted Runners on Kubernetes: Architecture, Security, and Cost Analysis"
 date: 2026-02-26
-last_modified_at: 2026-02-26
+last_modified_at: 2026-10-14T14:19:37+05:30
 author: Alok Ranjan Daftuar
 description: "Deep dive into self-hosted GitHub Actions runners on Kubernetes — isolation models, blast radius, security hardening, and cost vs managed runners."
 excerpt: "Running GitHub Actions self-hosted runners on Kubernetes at scale requires careful architectural decisions around isolation, security, and cost. This deep dive covers Actions Runner Controller (ARC) deployment patterns, namespace vs node-level isolation models, blast radius analysis, security hardening strategies, and realistic cost comparisons against GitHub-managed runners. Learn when self-hosted makes sense and how to implement it safely."
@@ -20,6 +20,19 @@ Running CI/CD workloads at scale forces a reckoning with a deceptively simple qu
 This post is a technical deep-dive into running self-hosted GitHub Actions runners on Kubernetes using the [Actions Runner Controller (ARC)](https://github.com/actions/actions-runner-controller). We'll cover isolation models, blast radius analysis, security hardening, and a realistic cost comparison against managed runners. By the end, you'll have the mental model to decide which path is right for your workload — and the configuration to get there if you go self-hosted.
 
 <!--more-->
+
+## Table of Contents
+
+- [Why Kubernetes for Runners?](#why-kubernetes-for-runners)
+- [Architecture: Actions Runner Controller (ARC)](#architecture-actions-runner-controller-arc)
+- [Isolation Models](#isolation-models)
+- [Blast Radius Analysis](#blast-radius-analysis)
+- [Security Hardening Checklist](#security-hardening-checklist)
+- [Cost Analysis: Self-Hosted vs. Managed Runners](#cost-analysis-self-hosted-vs-managed-runners)
+- [When Managed Runners Are the Better Choice](#when-managed-runners-are-the-better-choice)
+- [Observability for Self-Hosted Runners](#observability-for-self-hosted-runners)
+- [Decision Framework](#decision-framework)
+- [Conclusion](#conclusion)
 
 ---
 

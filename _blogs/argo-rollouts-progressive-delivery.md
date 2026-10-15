@@ -2,7 +2,7 @@
 layout: blog
 title: "Progressive Delivery with Argo Rollouts: Canary, Blue-Green, and AnalysisTemplates That Actually Gate"
 date: 2026-09-28
-last_modified_at: 2026-09-28T10:43:42+05:30
+last_modified_at: 2026-10-14T14:19:37+05:30
 author: Alok Ranjan Daftuar
 description: "Argo Rollouts replaces the all-or-nothing Kubernetes Deployment rollout with a strategy that pauses, runs automated analysis against real traffic, and only proceeds — or reverses — based on the result. This post covers canary and blue-green strategies, AnalysisTemplate gating, and where progressive delivery fits against a CI/CD pipeline."
 excerpt: "A standard Deployment rollout is all-or-nothing once it starts. Argo Rollouts adds the pause points and automated gates that decide, without a human watching a dashboard, whether a release should continue or reverse."
@@ -18,6 +18,15 @@ series_order: 5
 > Every article so far in this series has assumed a sync succeeds cleanly: the new manifest applies, the new Pods come up, done. That's also exactly how a standard Kubernetes `Deployment` behaves — a rolling update that replaces old Pods with new ones on a fixed schedule, with no concept of "check whether this is actually working before replacing more of them." If the new version is broken, a standard rolling update finds out the same way your users do: by serving it to more and more of them until someone notices.
 
 Argo Rollouts replaces the `Deployment` resource with a `Rollout` — API-compatible with `Deployment` in its Pod template, but with an explicit strategy for how traffic shifts and, critically, automated checks that can halt or reverse that shift before it reaches everyone. This article covers the two strategies that matter in practice, the `AnalysisTemplate` mechanism that makes the gating real rather than cosmetic, and where this fits against the CI/CD pipeline built up in Articles 3 and 4.
+
+## Table of Contents
+
+- [Why a Deployment isn't enough](#why-a-deployment-isnt-enough)
+- [Canary strategy](#canary-strategy)
+- [Blue-green strategy](#blue-green-strategy)
+- [AnalysisTemplates — what actually gates the rollout](#analysistemplates--what-actually-gates-the-rollout)
+- [Where this sits against Articles 3 and 4](#where-this-sits-against-articles-3-and-4)
+- [Decision framework](#decision-framework)
 
 ## Why a Deployment isn't enough
 

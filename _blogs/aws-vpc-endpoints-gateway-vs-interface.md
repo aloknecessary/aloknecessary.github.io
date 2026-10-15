@@ -2,7 +2,7 @@
 layout: blog
 title: "VPC Endpoints: Gateway vs Interface, and the AWS Traffic That Shouldn't Touch the Internet"
 date: 2026-09-21
-last_modified_at: 2026-09-21T12:40:22+05:30
+last_modified_at: 2026-10-14T14:19:37+05:30
 author: Alok Ranjan Daftuar
 description: "A practical guide to AWS VPC endpoints — how Gateway endpoints (S3, DynamoDB) and Interface endpoints (PrivateLink) work under the hood, when each is worth adding, and the failure modes that actually show up in production."
 excerpt: "Traffic to S3 and DynamoDB from a private subnet routes through a NAT gateway by default — and gets billed for it — unless you tell AWS it doesn't need to leave the VPC at all."
@@ -16,6 +16,17 @@ series_order: 3
 ---
 
 Two articles ago, in [VPC Networking Fundamentals](/blogs/aws-vpc-networking-fundamentals/), I flagged a detail almost in passing: traffic from a private subnet to S3 routes through the NAT gateway by default, and gets billed per GB for the privilege, when a free alternative exists. The follow-up article on [VPC Peering vs Transit Gateway](/blogs/aws-vpc-peering-vs-transit-gateway/) mentioned it again in the context of a hub-and-spoke architecture. It's worth its own article, because the fix — VPC endpoints — is one of the highest-leverage, lowest-effort changes available in most AWS accounts, and the two flavors of endpoint work in genuinely different ways under the hood.
+
+## Table of Contents
+
+- [Why this traffic touches NAT in the first place](#why-this-traffic-touches-nat-in-the-first-place)
+- [Gateway endpoints: a route table entry, nothing more](#gateway-endpoints-a-route-table-entry-nothing-more)
+- [Interface endpoints: a real ENI, backed by PrivateLink](#interface-endpoints-a-real-eni-backed-by-privatelink)
+- [Deciding which services actually need an Interface endpoint](#deciding-which-services-actually-need-an-interface-endpoint)
+- [Security group and NACL implications](#security-group-and-nacl-implications)
+- [A side-by-side summary](#a-side-by-side-summary)
+- [Troubleshooting: the failure modes that actually show up](#troubleshooting-the-failure-modes-that-actually-show-up)
+- [What to do this week if you haven't already](#what-to-do-this-week-if-you-havent-already)
 
 ## Why this traffic touches NAT in the first place
 
