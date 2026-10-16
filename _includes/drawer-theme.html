@@ -139,10 +139,16 @@
 
 <script>
 (function() {
-  document.addEventListener('DOMContentLoaded', function() {
+  var drawerEl = document.currentScript.closest('.nav-drawer, .an-mobile-drawer');
+  function init() {
     if (typeof window.initPrefDrawer === 'function') {
-      window.initPrefDrawer(document.querySelector('.nav-drawer'));
+      window.initPrefDrawer(drawerEl);
     }
-  });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 </script>

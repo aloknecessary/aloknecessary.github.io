@@ -49,16 +49,7 @@ layout: default
     {% endif %}
   </div>
   <div class="an-theme-switcher">
-    <div class="theme-dropdown">
-      <button class="theme-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Change theme">
-        <span class="theme-icon">🖥</span>
-      </button>
-      <div class="theme-panel" role="menu">
-        <button data-theme-option="system">🖥 System</button>
-        <button data-theme-option="light">☀ Light</button>
-        <button data-theme-option="dark">🌙 Dark</button>
-      </div>
-    </div>
+    {% include preferences-panel.html %}
   </div>
   <span class="an-mobile-context" id="anMobileContext"></span>
   <button class="an-hamburger" id="anHamburger" aria-label="Open menu" aria-expanded="false">
@@ -310,8 +301,9 @@ layout: default
     right: 0;
     width: min(280px, 80vw);
     height: 100%;
+    max-height: 91vh;
     background: var(--bg-base);
-    padding: 1.5rem 1.25rem 3rem;
+    padding: 1.5rem 1.25rem 4rem;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
@@ -319,6 +311,11 @@ layout: default
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
     overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .an-mobile-drawer > * {
+    flex-shrink: 0;
   }
 
   .an-mobile-overlay.open .an-mobile-drawer {
@@ -405,6 +402,14 @@ layout: default
   .an-theme-switcher {
     margin-left: 0.75rem;
     flex-shrink: 0;
+  }
+
+  .theme-controls {
+    margin-top: -40px;
+  }
+
+  .theme-controls .pref-trigger {
+    background: var(--bg-soft)
   }
 
   @media (max-width: 961px) {
