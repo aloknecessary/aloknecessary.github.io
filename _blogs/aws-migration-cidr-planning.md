@@ -1,7 +1,7 @@
 ---
 title: "CIDR Planning for Azure-to-AWS Migrations: Reconciling Two Address Spaces That Were Never Designed Together"
-date: 2026-09-22
-last_modified_at: 2026-09-22T10:51:06+05:30
+date: 2026-10-16
+last_modified_at: 2026-10-16T11:31:06+05:30
 author: Alok Ranjan Daftuar
 description: "CIDR planning for an Azure-to-AWS migration is a reconciliation problem, not a fresh design exercise — the Azure address space is a fixed constraint that must be fully audited before the AWS target range is chosen."
 excerpt: "The VPC you provision for a migration target isn't a fresh design exercise — it's a negotiation with whatever CIDR decisions were made on the Azure side, years ago, by people not thinking about AWS at all."
