@@ -31,7 +31,7 @@
       panel.classList.add('open');
       trigger.setAttribute('aria-expanded', 'true');
       panel.setAttribute('aria-hidden', 'false');
-      syncAll();
+      syncPrefButtons(panel);
       window.addEventListener('scroll', closePanel, { passive: true, once: true });
     }
 
@@ -39,6 +39,19 @@
       panel.classList.remove('open');
       trigger.setAttribute('aria-expanded', 'false');
       panel.setAttribute('aria-hidden', 'true');
+    }
+
+    var mobileTrigger = wrap.querySelector('.pref-mobile-trigger');
+    if (mobileTrigger) {
+      mobileTrigger.addEventListener('click', function () {
+        var overlay = document.getElementById('navDrawerOverlay');
+        if (overlay) {
+          overlay.classList.add('open');
+          overlay.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          document.dispatchEvent(new Event('draweropen'));
+        }
+      });
     }
 
     trigger.addEventListener('click', function (e) {
@@ -52,71 +65,72 @@
       if (!wrap.contains(e.target)) closePanel();
     });
 
-    panel.querySelectorAll('[data-pref-theme]').forEach(function (btn) {
+    bindPrefButtons(panel);
+    window.addEventListener('themechange', function () { syncPrefButtons(panel); });
+  };
+
+  // Shared: wire up click handlers on any container using data-pref-* buttons
+  function bindPrefButtons(container) {
+    container.querySelectorAll('[data-pref-theme]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         if (typeof window.setTheme === 'function') window.setTheme(btn.dataset.prefTheme);
-        syncTheme();
+        syncPrefButtons(container);
       });
     });
-
-    panel.querySelectorAll('[data-pref-posts]').forEach(function (btn) {
+    container.querySelectorAll('[data-pref-posts]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         localStorage.setItem(PREF_POSTS_KEY, btn.dataset.prefPosts);
         sessionStorage.removeItem('blogsVisibleLimit');
         sessionStorage.removeItem('blogsScrollY');
-        syncPosts();
+        syncPrefButtons(container);
       });
     });
-
-    panel.querySelectorAll('[data-pref-banner]').forEach(function (btn) {
+    container.querySelectorAll('[data-pref-banner]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         localStorage.setItem(PREF_BANNER_KEY, btn.dataset.prefBanner);
-        syncBanner();
+        syncPrefButtons(container);
       });
     });
-
-    panel.querySelectorAll('[data-pref-suppress]').forEach(function (btn) {
+    container.querySelectorAll('[data-pref-suppress]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         localStorage.setItem(PREF_SUPPRESS_KEY, btn.dataset.prefSuppress);
-        syncSuppress();
+        syncPrefButtons(container);
       });
     });
+  }
 
-    function syncTheme() {
-      var current = localStorage.getItem('theme') || 'system';
-      panel.querySelectorAll('[data-pref-theme]').forEach(function (btn) {
-        btn.classList.toggle('active', btn.dataset.prefTheme === current);
+  // Shared: sync active state on any container using data-pref-* buttons
+  window.syncPrefButtons = function (container) {
+    var theme    = localStorage.getItem('theme') || 'system';
+    var posts    = String(window.getPostsPerPage());
+    var banner   = String(window.getBannerWindowHours());
+    var suppress = localStorage.getItem(PREF_SUPPRESS_KEY) || DEFAULT_SUPPRESS;
+    container.querySelectorAll('[data-pref-theme]').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.prefTheme === theme);
+    });
+    container.querySelectorAll('[data-pref-posts]').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.prefPosts === posts);
+    });
+    container.querySelectorAll('[data-pref-banner]').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.prefBanner === banner);
+    });
+    container.querySelectorAll('[data-pref-suppress]').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.prefSuppress === suppress);
+    });
+  };
+
+  // Drawer init — called from drawer-theme.html
+  window.initPrefDrawer = function (container) {
+    if (!container) return;
+    bindPrefButtons(container);
+    // Theme closes the drawer; others just sync
+    container.querySelectorAll('[data-pref-theme]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var closeBtn = document.getElementById('navDrawerClose') || document.getElementById('anDrawerClose');
+        if (closeBtn) closeBtn.click();
       });
-    }
-
-    function syncPosts() {
-      var current = String(window.getPostsPerPage());
-      panel.querySelectorAll('[data-pref-posts]').forEach(function (btn) {
-        btn.classList.toggle('active', btn.dataset.prefPosts === current);
-      });
-    }
-
-    function syncBanner() {
-      var current = String(window.getBannerWindowHours());
-      panel.querySelectorAll('[data-pref-banner]').forEach(function (btn) {
-        btn.classList.toggle('active', btn.dataset.prefBanner === current);
-      });
-    }
-
-    function syncSuppress() {
-      var current = localStorage.getItem(PREF_SUPPRESS_KEY) || DEFAULT_SUPPRESS;
-      panel.querySelectorAll('[data-pref-suppress]').forEach(function (btn) {
-        btn.classList.toggle('active', btn.dataset.prefSuppress === current);
-      });
-    }
-
-    function syncAll() {
-      syncTheme();
-      syncPosts();
-      syncBanner();
-      syncSuppress();
-    }
-
-    window.addEventListener('themechange', syncTheme);
+    });
+    document.addEventListener('draweropen', function () { syncPrefButtons(container); });
+    window.addEventListener('themechange', function () { syncPrefButtons(container); });
   };
 })();

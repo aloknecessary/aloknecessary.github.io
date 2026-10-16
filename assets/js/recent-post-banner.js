@@ -8,10 +8,11 @@
  const DISMISS_KEY = 'rpb_dismissed_slug';
   const VISITED_KEY = 'rpb_visited_slug';
   if (localStorage.getItem(DISMISS_KEY) === slug) return;
-  if (localStorage.getItem(VISITED_KEY) === slug) return;
+
+  const suppressOnVisit = typeof window.getBannerSuppressOnVisit === 'function' ? window.getBannerSuppressOnVisit() : true;
+  if (suppressOnVisit && localStorage.getItem(VISITED_KEY) === slug) return;
 
   const postUrl = banner.dataset.url;
-  const suppressOnVisit = typeof window.getBannerSuppressOnVisit === 'function' ? window.getBannerSuppressOnVisit() : true;
   if (window.location.pathname === postUrl || window.location.pathname.replace(/\/$/, '') === postUrl.replace(/\/$/, '')) {
     if (suppressOnVisit) localStorage.setItem(VISITED_KEY, slug);
     return;
