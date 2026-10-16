@@ -1,0 +1,211 @@
+.pref-panel-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.pref-trigger {
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  border-radius: 6px;
+  transition: color 0.2s ease;
+}
+
+.pref-trigger:hover {
+  color: var(--primary);
+}
+
+.pref-gear-icon {
+  display: block;
+}
+
+/* Panel — desktop */
+.pref-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 320px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+  z-index: 200;
+  overflow: hidden;
+}
+
+.pref-panel.open {
+  display: block;
+}
+
+/* Panel — mobile: full-width sheet anchored to viewport bottom */
+@media (max-width: 767px) {
+  .pref-panel {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.18);
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+}
+
+/* Header */
+.pref-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1.25rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.pref-panel-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.pref-panel-close {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 0;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.pref-panel-close:hover {
+  color: var(--text-primary);
+}
+
+/* Sections */
+.pref-section {
+  padding: 0.75rem 1.25rem;
+}
+
+.pref-section:not(:last-of-type) {
+  border-bottom: 1px solid var(--border);
+}
+
+.pref-section-header {
+  margin-bottom: 0.45rem;
+}
+
+.pref-section-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.pref-section-desc {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* Rows within a section */
+.pref-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.pref-row--mt {
+  margin-top: 0.4rem;
+}
+
+.pref-row-label {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+/* Option button groups */
+.pref-option-group {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.pref-theme-group {
+  justify-content: stretch;
+}
+
+.pref-option-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.82rem;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.pref-option-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.pref-option-btn.active {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Wide variant — theme buttons fill the row evenly */
+.pref-option-btn--wide {
+  flex: 1;
+  text-align: center;
+}
+
+/* Footer */
+.pref-footer {
+  padding: 0.5rem 1.25rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.74rem;
+  color: var(--muted);
+  line-height: 1.5;
+  background: var(--bg-soft);
+}
+
+/* Nav theme switcher positioning (content provided by this partial) */
+.nav-theme-switcher {
+  display: none;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.nav-bar.stuck .nav-theme-switcher {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .nav-theme-switcher {
+    display: none !important;
+  }
+}

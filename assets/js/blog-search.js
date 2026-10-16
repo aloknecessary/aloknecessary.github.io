@@ -1,5 +1,5 @@
 (function() {
-  const INITIAL_POSTS = 10;
+  const INITIAL_POSTS = (typeof window.getPostsPerPage === 'function') ? window.getPostsPerPage() : 10;
 
   const searchToggle = document.getElementById('search-toggle');
   const searchInput = document.getElementById('blog-search');
