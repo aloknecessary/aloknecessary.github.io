@@ -47,40 +47,102 @@
     border-bottom: 2px solid transparent;
     border-image: linear-gradient(90deg, var(--primary), var(--coral)) 1;
   }
+
+  .drawer-pref-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 0 0.3rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .drawer-pref-row-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+  }
+
+  .drawer-pref-btns {
+    display: flex;
+    gap: 0.3rem;
+  }
+
+  .drawer-pref-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.78rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+
+  .drawer-pref-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .drawer-pref-btn.active {
+    border-color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
+    color: var(--primary);
+    font-weight: 600;
+  }
 </style>
 
 <hr class="nav-drawer-divider">
 <div class="drawer-theme">
-  <span class="drawer-theme-label">Theme</span>
+  <span class="drawer-theme-label">Appearance</span>
   <div class="drawer-theme-btns">
-    <button class="drawer-theme-btn" data-drawer-theme="light"><span class="drawer-theme-btn-text">☀ Light</span></button>
-    <button class="drawer-theme-btn" data-drawer-theme="dark"><span class="drawer-theme-btn-text">🌙 Dark</span></button>
-    <button class="drawer-theme-btn" data-drawer-theme="system"><span class="drawer-theme-btn-text">🖥 System</span></button>
+    <button class="drawer-theme-btn" data-pref-theme="light"><span class="drawer-theme-btn-text">☀ Light</span></button>
+    <button class="drawer-theme-btn" data-pref-theme="dark"><span class="drawer-theme-btn-text">🌙 Dark</span></button>
+    <button class="drawer-theme-btn" data-pref-theme="system"><span class="drawer-theme-btn-text">🖥 System</span></button>
+  </div>
+</div>
+
+<hr class="nav-drawer-divider">
+<div class="drawer-theme">
+  <span class="drawer-theme-label">Blog listing</span>
+  <div class="drawer-pref-row">
+    <span class="drawer-pref-row-label">Articles per page</span>
+    <div class="drawer-pref-btns">
+      <button class="drawer-pref-btn" data-pref-posts="10">10</button>
+      <button class="drawer-pref-btn" data-pref-posts="20">20</button>
+      <button class="drawer-pref-btn" data-pref-posts="30">30</button>
+    </div>
+  </div>
+</div>
+
+<hr class="nav-drawer-divider">
+<div class="drawer-theme">
+  <span class="drawer-theme-label">Notifications</span>
+  <div class="drawer-pref-row">
+    <span class="drawer-pref-row-label">Show banner for</span>
+    <div class="drawer-pref-btns">
+      <button class="drawer-pref-btn" data-pref-banner="12">12h</button>
+      <button class="drawer-pref-btn" data-pref-banner="24">24h</button>
+      <button class="drawer-pref-btn" data-pref-banner="0">Off</button>
+    </div>
+  </div>
+  <div class="drawer-pref-row">
+    <span class="drawer-pref-row-label">Suppress on visit</span>
+    <div class="drawer-pref-btns">
+      <button class="drawer-pref-btn" data-pref-suppress="yes">Yes</button>
+      <button class="drawer-pref-btn" data-pref-suppress="no">No</button>
+    </div>
   </div>
 </div>
 
 <script>
 (function() {
-  var container = document.querySelector('.drawer-theme');
-  if (!container) return;
-
-  function syncThemeBtns() {
-    var current = localStorage.getItem('theme') || 'system';
-    container.querySelectorAll('.drawer-theme-btn').forEach(function(btn) {
-      btn.classList.toggle('active', btn.dataset.drawerTheme === current);
-    });
-  }
-
-  container.querySelectorAll('.drawer-theme-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      if (typeof window.setTheme === 'function') window.setTheme(btn.dataset.drawerTheme);
-      syncThemeBtns();
-      var closeBtn = document.getElementById('navDrawerClose') || document.getElementById('anDrawerClose');
-      if (closeBtn) closeBtn.click();
-    });
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof window.initPrefDrawer === 'function') {
+      window.initPrefDrawer(document.querySelector('.nav-drawer'));
+    }
   });
-
-  document.addEventListener('draweropen', syncThemeBtns);
-  window.addEventListener('themechange', syncThemeBtns);
 })();
 </script>

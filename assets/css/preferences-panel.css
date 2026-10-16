@@ -20,8 +20,24 @@
   color: var(--primary);
 }
 
-.pref-gear-icon {
+.pref-mobile-trigger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.pref-mobile-trigger span {
   display: block;
+  width: 22px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--coral));
+  border-radius: 2px;
 }
 
 /* Panel — desktop */
@@ -207,5 +223,11 @@
 @media (max-width: 767px) {
   .nav-theme-switcher {
     display: none !important;
+  }
+  .pref-trigger {
+    display: none;
+  }
+  .pref-mobile-trigger {
+    display: flex;
   }
 }
