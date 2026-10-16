@@ -1,7 +1,7 @@
 ---
 title: "Multi-Cluster ArgoCD Architecture: Hub-and-Spoke vs. Per-Cluster, Done Right"
 date: 2026-07-31
-last_modified_at: 2026-07-31T14:28:00+05:30
+last_modified_at: 2026-10-14T14:19:37+05:30
 author: Alok Ranjan Daftuar
 description: "A practical guide to multi-cluster ArgoCD architecture — comparing hub-and-spoke vs. per-cluster patterns, covering EKS and AKS cluster registration mechanics, and a decision framework tied to team topology and compliance boundaries."
 excerpt: "Where does ArgoCD live when you go from 1 cluster to 15? Hub-and-spoke vs. ArgoCD-per-cluster, EKS and AKS cluster registration mechanics, and a decision framework tied to team topology and compliance boundaries."
@@ -21,6 +21,15 @@ That question shows up faster than most teams expect. Two clusters — dev and p
 This article covers the two dominant patterns, the EKS and AKS mechanics for registering a spoke cluster with a hub, and a decision framework for picking between them based on cluster count, compliance boundaries, and team topology.
 
 <!--more-->
+
+## Table of Contents
+
+- [Two failure modes, not one](#two-failure-modes-not-one)
+- [Pattern 1: Hub-and-spoke](#pattern-1-hub-and-spoke)
+- [Pattern 2: ArgoCD-per-cluster](#pattern-2-argocd-per-cluster)
+- [Cluster registration and auth — EKS](#cluster-registration-and-auth--eks)
+- [Cluster registration and auth — AKS](#cluster-registration-and-auth--aks)
+- [Decision framework](#decision-framework)
 
 ## Two failure modes, not one
 

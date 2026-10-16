@@ -2,7 +2,7 @@
 layout: blog
 title: "The MCP Stateless Revolution"
 date: 2026-09-24
-last_modified_at: 2026-09-24T14:20:44+05:30
+last_modified_at: 2026-10-14T14:19:37+05:30
 author: Alok Ranjan Daftuar
 description: "The 2026-07-28 MCP specification removed protocol-level sessions entirely — and with it, the sticky routing, shared session stores, and affinity cookies that teams had been forced to build around a stateful transport that was never supposed to be permanent."
 excerpt: "For two years, running an MCP server meant sticky routing and shared session stores just to keep a conversation coherent. The 2026-07-28 specification deleted the session entirely — and with it, an entire category of infrastructure workaround."
@@ -23,6 +23,17 @@ series_order: 2
 Every exchange between an MCP client and server opened with an `initialize` handshake. Over HTTP, that handshake returned an `Mcp-Session-Id` header, and every subsequent request in that conversation had to carry the same ID back to the same server instance. That single requirement — a session pinned to one instance — is what forced sticky routing, shared session stores, and all the operational overhead that came with them onto teams who otherwise had no reason to build stateful infrastructure at all.
 
 On July 28, 2026, the MCP specification removed the session entirely. This is the largest revision since the protocol launched, and it changes how you should be routing, scaling, and load-balancing MCP traffic today — not eventually, and not as an optimization, but as a direct consequence of what the transport now requires and no longer requires.
+
+## Table of Contents
+
+- [What the old transport actually forced on you](#what-the-old-transport-actually-forced-on-you)
+- [What SEP-2567 actually removes](#what-sep-2567-actually-removes)
+- [The second half of the change: routing without reading the body](#the-second-half-of-the-change-routing-without-reading-the-body)
+- [What disappears from the transport, not just the header](#what-disappears-from-the-transport-not-just-the-header)
+- [What self-describing requests mean for who's calling](#what-self-describing-requests-mean-for-whos-calling)
+- [Before and after, on both clouds](#before-and-after-on-both-clouds)
+- [Two smaller changes worth knowing about](#two-smaller-changes-worth-knowing-about)
+- [What this means for the migration window](#what-this-means-for-the-migration-window)
 
 ## What the old transport actually forced on you
 
