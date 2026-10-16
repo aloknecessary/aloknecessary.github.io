@@ -59,7 +59,7 @@
     var mobileTrigger = wrap.querySelector('.pref-mobile-trigger');
     if (mobileTrigger) {
       mobileTrigger.addEventListener('click', function () {
-        var overlay = document.getElementById('navDrawerOverlay');
+        var overlay = document.getElementById('navDrawerOverlay') || document.getElementById('anMobileOverlay');
         if (overlay) {
           overlay.classList.add('open');
           overlay.setAttribute('aria-hidden', 'false');
