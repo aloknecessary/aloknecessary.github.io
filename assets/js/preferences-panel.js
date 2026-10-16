@@ -27,8 +27,22 @@
     var closeBtn = wrap.querySelector('.pref-panel-close');
     if (!trigger || !panel) return;
 
+    var backdrop = document.createElement('div');
+    backdrop.className = 'pref-backdrop';
+    backdrop.addEventListener('click', closePanel);
+    document.body.appendChild(backdrop);
+    document.body.appendChild(panel);
+
+    function positionPanel() {
+      var rect = trigger.getBoundingClientRect();
+      panel.style.top  = (rect.bottom + 10) + 'px';
+      panel.style.right = (document.documentElement.clientWidth - rect.right) + 'px';
+    }
+
     function openPanel() {
+      positionPanel();
       panel.classList.add('open');
+      backdrop.classList.add('open');
       trigger.setAttribute('aria-expanded', 'true');
       panel.setAttribute('aria-hidden', 'false');
       syncPrefButtons(panel);
@@ -37,6 +51,7 @@
 
     function closePanel() {
       panel.classList.remove('open');
+      backdrop.classList.remove('open');
       trigger.setAttribute('aria-expanded', 'false');
       panel.setAttribute('aria-hidden', 'true');
     }

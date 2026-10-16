@@ -43,15 +43,13 @@
 /* Panel — desktop */
 .pref-panel {
   display: none;
-  position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
+  position: fixed;
   width: 320px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
-  z-index: 200;
+  z-index: 201;
   overflow: hidden;
 }
 
@@ -62,7 +60,6 @@
 /* Panel — mobile: full-width sheet anchored to viewport bottom */
 @media (max-width: 767px) {
   .pref-panel {
-    position: fixed;
     top: auto;
     bottom: 0;
     left: 0;
@@ -206,6 +203,23 @@
   color: var(--muted);
   line-height: 1.5;
   background: var(--bg-soft);
+}
+
+/* Backdrop — desktop only */
+.pref-backdrop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .pref-backdrop.open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 199;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
 }
 
 /* Nav theme switcher positioning (content provided by this partial) */
