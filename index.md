@@ -289,45 +289,6 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 
 <div class="opensource-grid">
 
-  <!-- React Progress Stepper Card -->
-  <div class="project-card">
-    <div class="project-card-header">
-      <div class="project-icon">🎯</div>
-      <div class="project-title-section">
-        <h3 class="project-title">react-progress-stepper-ts</h3>
-        <p class="project-category">UI Component Library</p>
-      </div>
-    </div>
-    <p class="project-description">
-      TypeScript-first React component library for creating customizable step-by-step progress indicators. Features a clean API with React Hooks, comprehensive TypeScript support, and zero runtime dependencies.
-    </p>
-    <div class="project-tags">
-      <span class="tag">TypeScript</span>
-      <span class="tag">React</span>
-      <span class="tag">npm Package</span>
-    </div>
-    <div class="project-stats">
-      <div class="stat-item">
-        <span class="stat-icon">📊</span>
-        <span class="stat-value"><img src="https://img.shields.io/npm/dm/react-progress-stepper-ts?logo=npm&color=cb3837&style=flat-square" alt="npm downloads" /></span>
-        <span class="stat-label">Download stats</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-icon">📦</span>
-        <span class="stat-value"><img src="https://img.shields.io/npm/v/react-progress-stepper-ts?style=flat-square&logo=npm&color=cb3837" alt="npm version" /></span>
-        <span class="stat-label">Version info</span>
-      </div>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/aloknecessary/react-progress-stepper-ts" class="project-link primary">
-        <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
-      </a>
-      <a href="https://www.npmjs.com/package/react-progress-stepper-ts" class="project-link npm secondary">
-        <img src="https://img.shields.io/badge/npm-Package-CB3837?style=flat-square&logo=npm&logoColor=white" alt="npm" />
-      </a>
-    </div>
-  </div>
-
   <!-- Playwright CI Images Card (tabbed: Azure CLI / AWS CLI) -->
   <div class="project-card">
     <div class="project-card-header">
@@ -507,6 +468,45 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
     </div>
   </div>
 
+  <!-- React Progress Stepper Card -->
+  <div class="project-card">
+    <div class="project-card-header">
+      <div class="project-icon">🎯</div>
+      <div class="project-title-section">
+        <h3 class="project-title">react-progress-stepper-ts</h3>
+        <p class="project-category">UI Component Library</p>
+      </div>
+    </div>
+    <p class="project-description">
+      TypeScript-first React component library for creating customizable step-by-step progress indicators. Features a clean API with React Hooks, comprehensive TypeScript support, and zero runtime dependencies.
+    </p>
+    <div class="project-tags">
+      <span class="tag">TypeScript</span>
+      <span class="tag">React</span>
+      <span class="tag">npm Package</span>
+    </div>
+    <div class="project-stats">
+      <div class="stat-item">
+        <span class="stat-icon">📊</span>
+        <span class="stat-value"><img src="https://img.shields.io/npm/dm/react-progress-stepper-ts?logo=npm&color=cb3837&style=flat-square" alt="npm downloads" /></span>
+        <span class="stat-label">Download stats</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">📦</span>
+        <span class="stat-value"><img src="https://img.shields.io/npm/v/react-progress-stepper-ts?style=flat-square&logo=npm&color=cb3837" alt="npm version" /></span>
+        <span class="stat-label">Version info</span>
+      </div>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/aloknecessary/react-progress-stepper-ts" class="project-link primary">
+        <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+      </a>
+      <a href="https://www.npmjs.com/package/react-progress-stepper-ts" class="project-link npm secondary">
+        <img src="https://img.shields.io/badge/npm-Package-CB3837?style=flat-square&logo=npm&logoColor=white" alt="npm" />
+      </a>
+    </div>
+  </div>
+  
 </div>
 
 ---

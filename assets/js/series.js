@@ -8,19 +8,36 @@
     }, 350);
   });
 
-  // --- Legend smooth scroll ---
-  document.querySelectorAll('.legend-item--link').forEach(function (item) {
-    item.style.cursor = 'pointer';
-    item.addEventListener('click', function () {
+  // --- Legend domain filter ---
+  function applyDomainFilter(domain) {
+    const blocks = document.querySelectorAll('.series-block');
+    const pills = document.querySelectorAll('.legend-item--link');
+    if (!domain) {
+      blocks.forEach(b => b.classList.remove('filtered-out'));
+      pills.forEach(p => p.classList.remove('active'));
+      return;
+    }
+    blocks.forEach(b => b.classList.toggle('filtered-out', b.dataset.domain !== domain));
+    pills.forEach(p => p.classList.toggle('active', p.dataset.domain === domain));
+  }
+
+  document.querySelectorAll('.legend-item--link').forEach(function (pill) {
+    pill.addEventListener('click', function () {
       const domain = this.dataset.domain;
-      const target = document.querySelector('.series-container .series-block[data-domain="' + domain + '"]');
-      if (!target) return;
-      const nav = document.querySelector('.nav-bar');
-      const offset = nav ? nav.offsetHeight : 60;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
+      const isActive = this.classList.contains('active');
+      const next = isActive ? '' : domain;
+      history.replaceState(null, '', next ? '#domain-' + next.replace(/\s+/g, '-') : window.location.pathname);
+      applyDomainFilter(next);
     });
   });
+
+  // Restore filter from URL hash on load
+  (function () {
+    const hash = window.location.hash;
+    if (!hash.startsWith('#domain-')) return;
+    const domain = hash.slice('#domain-'.length).replace(/-/g, ' ');
+    applyDomainFilter(domain);
+  })();
 
   // --- Per-series article sort handled by tag-sort.js ---
 

@@ -82,9 +82,7 @@ layout: default
             </div>
           </div>
 
-          <ol class="series-posts" data-status="{{ series.status }}">
-            {% if series.status == "active" %}<span class="series-ongoing-tip" aria-label="Series in progress"></span>{% endif %}
-            {% if series.status == "complete" %}<span class="series-complete-tip" aria-label="Series complete"></span>{% endif %}
+          <ol class="series-posts" data-status="{{ series.status }}" {% if series.status == "active" %}title="Series in progress"{% elsif series.status == "complete" %}title="Series completed"{% endif %}>
             {%- for post in series_posts %}
             <li>
               <span class="step-indicator">{{ post.series_order }}</span>

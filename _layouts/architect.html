@@ -43,10 +43,22 @@ layout: default
     <span class="an-action-divider"></span>
     <a href="{{ '/blogs' | relative_url }}" class="an-action-btn">Blogs <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     {% else %}
-    <a href="{{ '/blogs' | relative_url }}" class="an-action-btn">Blogs <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    <span class="an-action-divider"></span>
     <a href="{{ '/professional-journey' | relative_url }}" class="an-action-btn">Professional Journey <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <span class="an-action-divider"></span>
+    <a href="{{ '/blogs' | relative_url }}" class="an-action-btn">Blogs <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     {% endif %}
+  </div>
+  <div class="an-theme-switcher">
+    <div class="theme-dropdown">
+      <button class="theme-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Change theme">
+        <span class="theme-icon">🖥</span>
+      </button>
+      <div class="theme-panel" role="menu">
+        <button data-theme-option="system">🖥 System</button>
+        <button data-theme-option="light">☀ Light</button>
+        <button data-theme-option="dark">🌙 Dark</button>
+      </div>
+    </div>
   </div>
   <span class="an-mobile-context" id="anMobileContext"></span>
   <button class="an-hamburger" id="anHamburger" aria-label="Open menu" aria-expanded="false">
@@ -390,7 +402,13 @@ layout: default
     margin: 0.5rem 0;
   }
 
-  @media (max-width: 768px) {
+  .an-theme-switcher {
+    margin-left: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 961px) {
+    .an-theme-switcher { display: none; }
     .an-links, .an-actions { display: none; }
     .an-sep { display: none; }
     .an-hamburger { display: flex; margin-left: auto; }
@@ -438,9 +456,12 @@ layout: default
     }, 150);
   }
 
+  const linkAlias = links['opensource'] ? { projects: 'opensource' } : {};
+
   function setActive(id) {
+    const resolvedId = (id && linkAlias[id]) ? linkAlias[id] : id;
     sections.forEach(s => links[s] && links[s].classList.remove('active'));
-    if (id && links[id]) links[id].classList.add('active');
+    if (resolvedId && links[resolvedId]) links[resolvedId].classList.add('active');
     drawerLinks.forEach(l => {
       l.classList.toggle('active', l.getAttribute('href') === '#' + id);
     });

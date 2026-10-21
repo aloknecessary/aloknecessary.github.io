@@ -33,6 +33,16 @@
     </div>
     <span class="nav-separator">|</span>
     <a href="{{ '/' | relative_url }}">Home</a>
+    <div class="nav-theme-switcher">
+      <div class="theme-dropdown">
+        <button class="theme-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Change theme"><span class="theme-icon">🖥</span></button>
+        <div class="theme-panel" role="menu">
+          <button data-theme-option="system">🖥 System</button>
+          <button data-theme-option="light">☀ Light</button>
+          <button data-theme-option="dark">🌙 Dark</button>
+        </div>
+      </div>
+    </div>
     <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -76,6 +86,16 @@
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
+    </div>
+    <div class="nav-theme-switcher">
+      <div class="theme-dropdown">
+        <button class="theme-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Change theme"><span class="theme-icon">🖥</span></button>
+        <div class="theme-panel" role="menu">
+          <button data-theme-option="system">🖥 System</button>
+          <button data-theme-option="light">☀ Light</button>
+          <button data-theme-option="dark">🌙 Dark</button>
+        </div>
+      </div>
     </div>
     <button type="button" class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -180,3 +200,4 @@
   }, { passive: true });
 })();
 </script>
+

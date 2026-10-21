@@ -1,7 +1,7 @@
 ---
 title: "Designing for Partial Failure: Why 'Everything is Highly Available' Is a Myth"
 date: 2026-04-17
-last_modified_at: 2026-04-17
+last_modified_at: 2026-09-28T10:36:31+05:30
 author: Alok Ranjan Daftuar
 description: "A production-grounded guide to designing distributed systems that degrade gracefully — cascading failure anatomy, circuit breakers, bulkheads, timeout hierarchies, fallback strategies, and the observability needed to detect partial failure before users do."
 excerpt: "High availability is not a property you buy — it is a discipline you build. This post covers how partial failures propagate into full outages, the concrete patterns that prevent cascading collapse (circuit breakers, bulkheads, timeout hierarchies, fallbacks), and the observability signals that make degraded states visible before they become incidents."
@@ -24,7 +24,7 @@ The truth is that high availability is not a property of your system — it is a
 
 This blog is about that gap — the space between "all services are healthy" and "total outage" that most architecture reviews never spend enough time in. We'll cover what CAP theorem tells us about unavoidable failure, how cascading failures actually propagate in production, the concrete patterns (with implementation examples) that keep a partial failure from becoming a full one, and how to observe degraded states before your users find them first.
 
-> **If you haven't read the [CAP Theorem article](/blogs/the-cap-theorem-in-practice-making-the-right-trade-offs-at-scale/) posted earlier**, the short version: in any distributed system, network partitions are inevitable, and your only real architectural choice is whether you sacrifice Consistency or Availability when one occurs. This post picks up where that trade-off lands in production.
+> **If you haven't read the [CAP Theorem article](/blogs/cap_theorem_architecture/) posted earlier**, the short version: in any distributed system, network partitions are inevitable, and your only real architectural choice is whether you sacrifice Consistency or Availability when one occurs. This post picks up where that trade-off lands in production.
 
 ### Table of Contents
 
