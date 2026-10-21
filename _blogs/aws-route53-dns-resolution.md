@@ -1,7 +1,7 @@
 ---
 title: "DNS in AWS: Route 53 Resolver, Private Hosted Zones, and Hybrid Resolution"
-date: 2026-09-22
-last_modified_at: 2026-09-22T13:40:26+05:30
+date: 2026-10-21
+last_modified_at: 2026-10-21T12:12:26+05:30
 author: Alok Ranjan Daftuar
 description: "How DNS resolution actually works inside a VPC, and what has to be built deliberately to make it work across VPCs, accounts, and hybrid Azure/AWS environments using Route 53 Resolver and private hosted zones."
 excerpt: "Connectivity at the routing layer and name resolution are two separate problems, solved by two separate systems — and every earlier article in this series has been quietly deferring the second one."
