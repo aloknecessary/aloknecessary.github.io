@@ -342,7 +342,7 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
         </div>
       </div>
       <div class="project-links">
-        <a href="https://github.com/aloknecessary/playwright-aws-cli" class="project-link primary">
+        <a href="https://github.com/aloknecessary/playwright-az-cli/tree/aws" class="project-link primary">
           <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
         </a>
         <a href="https://hub.docker.com/r/aloknecessary/playwright-aws-cli" class="project-link secondary">
