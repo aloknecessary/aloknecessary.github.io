@@ -479,22 +479,8 @@
   }
 }
 
-/* Nav theme switcher — desktop sticky only */
-.nav-theme-switcher {
-  display: none;
-  margin-left: auto;
-  flex-shrink: 0;
-}
-
-.nav-bar.stuck .nav-theme-switcher {
-  display: flex;
-  align-items: center;
-}
-
+/* Nav theme switcher — desktop sticky only (styles in preferences-panel.css) */
 @media (max-width: 767px) {
-  .nav-theme-switcher {
-    display: none !important;
-  }
   .nav-bar.stuck .nav-hamburger {
     margin-left: auto;
   }

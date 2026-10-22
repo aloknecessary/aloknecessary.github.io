@@ -8,16 +8,21 @@
  const DISMISS_KEY = 'rpb_dismissed_slug';
   const VISITED_KEY = 'rpb_visited_slug';
   if (localStorage.getItem(DISMISS_KEY) === slug) return;
-  if (localStorage.getItem(VISITED_KEY) === slug) return;
+
+  const suppressOnVisit = typeof window.getBannerSuppressOnVisit === 'function' ? window.getBannerSuppressOnVisit() : true;
+  if (suppressOnVisit && localStorage.getItem(VISITED_KEY) === slug) return;
 
   const postUrl = banner.dataset.url;
   if (window.location.pathname === postUrl || window.location.pathname.replace(/\/$/, '') === postUrl.replace(/\/$/, '')) {
-    localStorage.setItem(VISITED_KEY, slug);
+    if (suppressOnVisit) localStorage.setItem(VISITED_KEY, slug);
     return;
   }
 
+  const windowHours = (typeof window.getBannerWindowHours === 'function') ? window.getBannerWindowHours() : 24;
+  if (windowHours === 0) return;
+
   const publishedAt = new Date(modified).getTime();
-  if (isNaN(publishedAt) || (Date.now() - publishedAt) >= 24 * 60 * 60 * 1000) return;
+  if (isNaN(publishedAt) || (Date.now() - publishedAt) >= windowHours * 60 * 60 * 1000) return;
 
   const timeEl = banner.querySelector('.rpb-time');
   if (timeEl) {

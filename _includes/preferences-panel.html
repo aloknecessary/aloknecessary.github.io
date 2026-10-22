@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="{{ '/assets/css/preferences-panel.css' | relative_url }}">
+
+<div class="pref-panel-wrap">
+  <button class="pref-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Preferences">
+    <svg class="pref-gear-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+  </button>
+  <button class="pref-mobile-trigger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="pref-panel" role="dialog" aria-label="Preferences" aria-hidden="true">
+    <div class="pref-panel-header">
+      <span class="pref-panel-title">User Preferences</span>
+      <button class="pref-panel-close" aria-label="Close preferences">&times;</button>
+    </div>
+
+    <div class="pref-section">
+      <div class="pref-section-header">
+        <span class="pref-section-label">Appearance</span>
+        <span class="pref-section-desc">Choose your colour scheme</span>
+      </div>
+      <div class="pref-option-group pref-theme-group">
+        <button class="pref-option-btn pref-option-btn--wide" data-pref-theme="system">🖥 System</button>
+        <button class="pref-option-btn pref-option-btn--wide" data-pref-theme="light">☀ Light</button>
+        <button class="pref-option-btn pref-option-btn--wide" data-pref-theme="dark">🌙 Dark</button>
+      </div>
+    </div>
+
+    <div class="pref-section">
+      <div class="pref-section-header">
+        <span class="pref-section-label">Blog listing</span>
+        <span class="pref-section-desc">Articles loaded per page</span>
+      </div>
+      <div class="pref-option-group">
+        <button class="pref-option-btn" data-pref-posts="10">10</button>
+        <button class="pref-option-btn" data-pref-posts="20">20</button>
+        <button class="pref-option-btn" data-pref-posts="30">30</button>
+      </div>
+    </div>
+
+    <div class="pref-section">
+      <div class="pref-section-header">
+        <span class="pref-section-label">Notifications</span>
+        <span class="pref-section-desc">New post banner behaviour</span>
+      </div>
+      <div class="pref-row">
+        <span class="pref-row-label">Show banner for</span>
+        <div class="pref-option-group">
+          <button class="pref-option-btn" data-pref-banner="12">12h</button>
+          <button class="pref-option-btn" data-pref-banner="24">24h</button>
+          <button class="pref-option-btn" data-pref-banner="0">Off</button>
+        </div>
+      </div>
+      <div class="pref-row pref-row--mt">
+        <span class="pref-row-label">Suppress on article visit</span>
+        <div class="pref-option-group">
+          <button class="pref-option-btn" data-pref-suppress="yes">Yes</button>
+          <button class="pref-option-btn" data-pref-suppress="no">No</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pref-footer">
+      Theme changes apply instantly. Blog listing and notification settings take effect on the next page load.
+    </div>
+  </div>
+</div>
+
+<script src="{{ '/assets/js/preferences-panel.js' | relative_url }}"></script>
+<script>(function(){ if(typeof initPrefPanel==='function') initPrefPanel(document.currentScript.parentElement.querySelector('.pref-panel-wrap')); })();</script>
