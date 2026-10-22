@@ -1,7 +1,7 @@
 ---
 title: "Migrating Ubuntu Servers from Azure to AWS: The linux-azure Kernel Trap"
 date: 2026-09-15
-last_modified_at: 2026-09-15T10:32:09+05:30
+last_modified_at: 2026-10-14T14:19:37+05:30
 author: Alok Ranjan Daftuar
 description: "When migrating Ubuntu servers from Azure to AWS via MGN, the linux-azure kernel ships without AWS's ena network driver — causing instances to launch healthy but unreachable. Here's the diagnosis and fix."
 excerpt: "The source server replicated cleanly, the test launch looked fine, and the instance still came up with no network connectivity. The cause was three layers down, in the kernel package itself."
@@ -16,6 +16,20 @@ series_order: 2
 ---
 
 > This article is what happens when MGN's post-launch conversion step fails, why it fails specifically for Ubuntu servers that started life on Azure, and the fix — one that's a single package swap once you know what's actually wrong, and a genuinely confusing debugging session if you don't. I described in the [previous article in this series](/blogs/aws-mgn-architecture-continuous-replication/) how that conversion process works under normal conditions.
+
+## Table of Contents
+
+- [The symptom](#the-symptom)
+- [Why this happens specifically for Azure-sourced Ubuntu servers](#why-this-happens-specifically-for-azure-sourced-ubuntu-servers)
+- [Confirming this is actually the cause before you touch anything](#confirming-this-is-actually-the-cause-before-you-touch-anything)
+- [The fix: swapping the kernel package](#the-fix-swapping-the-kernel-package)
+- [Doing this before replication, not after](#doing-this-before-replication-not-after)
+- [Baking the fix into a repeatable pre-flight check](#baking-the-fix-into-a-repeatable-pre-flight-check)
+- [A second layer under the first: network interface naming](#a-second-layer-under-the-first-network-interface-naming)
+- [Other Azure-specific dependencies worth auditing while you're in there](#other-azure-specific-dependencies-worth-auditing-while-youre-in-there)
+- [Don't stop at linux-generic — move to linux-aws once the instance is live](#dont-stop-at-linux-generic--move-to-linux-aws-once-the-instance-is-live)
+- [Validating the fix through MGN's test launch, not the real cutover](#validating-the-fix-through-mgns-test-launch-not-the-real-cutover)
+- [What actually made this hard to diagnose the first time](#what-actually-made-this-hard-to-diagnose-the-first-time)
 
 ## The symptom
 

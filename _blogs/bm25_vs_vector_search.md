@@ -1,7 +1,7 @@
 ---
 title: "BM25 vs. Vector Search: Choosing the Right Retrieval Strategy for Production Systems"
 date: 2026-03-31
-last_modified_at: 2026-03-31
+last_modified_at: 2026-10-14T14:19:37+05:30
 author: Alok Ranjan Daftuar
 description: "A production-focused comparison of BM25 and vector search — when each wins, where each fails, hybrid retrieval with RRF, re-ranking strategies, chunking pitfalls, and a decision framework for RAG and search systems."
 excerpt: "Keyword relevance or semantic understanding — the answer is rarely one or the other. This deep dive covers BM25 mechanics, vector search with embeddings, hybrid retrieval via Reciprocal Rank Fusion, re-ranking with cross-encoders, chunking strategies, and the architecture mistakes teams make when building search and RAG pipelines."
@@ -13,6 +13,19 @@ tags: [ai, search-architecture, vector-search, bm25, information-retrieval, patt
 series: "RAG and AI Engineering"
 series_order: 1
 ---
+
+## Table of Contents
+
+- [Why This Decision Matters More Than You Think](#why-this-decision-matters-more-than-you-think)
+- [1. BM25 — The Probabilistic Workhorse](#1-bm25--the-probabilistic-workhorse)
+- [2. Vector Search — Semantic Retrieval via Embeddings](#2-vector-search--semantic-retrieval-via-embeddings)
+- [3. Head-to-Head: When Each Wins](#3-head-to-head-when-each-wins)
+- [4. Hybrid Search — The Production Reality](#4-hybrid-search--the-production-reality)
+- [5. Tooling Landscape](#5-tooling-landscape)
+- [6. Chunking Strategy — The Underrated Dependency](#6-chunking-strategy--the-underrated-dependency)
+- [7. Decision Framework](#7-decision-framework)
+- [8. Common Architecture Mistakes](#8-common-architecture-mistakes)
+- [Closing: It's Not Either/Or](#closing-its-not-eitheror)
 
 ## Why This Decision Matters More Than You Think
 

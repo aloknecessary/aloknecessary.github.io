@@ -2,7 +2,7 @@
 layout: blog
 title: "VPC Peering vs Transit Gateway: Choosing the Right AWS Inter-VPC Connectivity Model"
 date: 2026-09-07
-last_modified_at: 2026-09-07T11:39:58+05:30
+last_modified_at: 2026-10-14T14:19:37+05:30
 author: Alok Ranjan Daftuar
 description: "A practical guide to choosing between VPC Peering and Transit Gateway — covering topology shape, the N(N-1)/2 scaling problem, route table segmentation, multi-account patterns, DNS, and a migration path from peering to TGW."
 excerpt: "VPC peering and Transit Gateway solve the same problem — connecting VPCs — but scale, cost, and operational complexity in opposite directions. Here's how to choose correctly the first time."
@@ -18,6 +18,19 @@ series_order: 2
 The default assumption most teams start with is that VPC peering is the "simple" option and Transit Gateway is the "enterprise" option you graduate into once you're big enough to need it. That framing is wrong often enough to cause real architectural pain. The actual decision isn't about company size — it's about topology shape, and getting it backwards means either overpaying for capability you don't need or hitting a hard wall of unsupported routing a year into production.
 
 This article assumes the VPC fundamentals covered in [VPC Networking Fundamentals](/blogs/aws-vpc-networking-fundamentals/) — CIDR allocation, route tables, and how a route table target decides traffic flow. Peering and Transit Gateway are both, at their core, just additional route table targets. The complexity is in what each target is actually capable of routing.
+
+## Table of Contents
+
+- [The topology test that actually matters](#the-topology-test-that-actually-matters)
+- [VPC Peering: what it actually does](#vpc-peering-what-it-actually-does)
+- [Transit Gateway: what it actually does](#transit-gateway-what-it-actually-does)
+- [Multi-account and multi-region considerations](#multi-account-and-multi-region-considerations)
+- [DNS resolution across the connection](#dns-resolution-across-the-connection)
+- [Security group referencing across the connection](#security-group-referencing-across-the-connection)
+- [Troubleshooting: where connectivity actually breaks](#troubleshooting-where-connectivity-actually-breaks)
+- [A side-by-side summary](#a-side-by-side-summary)
+- [Migration path: peering to Transit Gateway](#migration-path-peering-to-transit-gateway)
+- [The decision, restated simply](#the-decision-restated-simply)
 
 ## The topology test that actually matters
 

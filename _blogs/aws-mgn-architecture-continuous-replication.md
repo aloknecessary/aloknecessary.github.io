@@ -2,7 +2,7 @@
 layout: blog
 title: "AWS MGN Architecture: How Continuous Replication Actually Works"
 date: 2026-08-27
-last_modified_at: 2026-08-27T12:02:04+05:30
+last_modified_at: 2026-10-14T14:19:37+05:30
 author: Alok Ranjan Daftuar
 description: "A deep dive into how AWS Application Migration Service works under the hood — the replication agent, staging area, continuous block-level sync, cutover mechanics, and where migrations actually fail."
 excerpt: "Before I trusted AWS MGN with production cutovers, I needed to understand exactly what the replication agent does, second by second, from install to launch. This is that breakdown."
@@ -19,6 +19,16 @@ series_order: 1
 The first time I ran an AWS Application Migration Service (MGN) migration, I made the mistake most people make: I trusted the console's green "Healthy" status without understanding what it actually meant. It took a stalled replication and a confusing lag metric mid-migration for me to go back and actually learn the mechanics underneath the dashboard. This post is the breakdown I wish I'd had before that first wave — what the replication agent does, what "continuous" actually means in practice, and where the real failure points are.
 
 This is the opening piece of the AWS Migration Playbook series, written from the Azure-to-AWS migration work I'm currently running. The series covers the full arc of a real migration: the replication mechanics here, the OS-level conversion failures that surface at cutover, network and CIDR planning for the target VPC, and the operational patterns that keep a wave on track. The mechanics in this post underpin everything that follows, so it's worth reading first even if you're already comfortable with MGN at a surface level.
+
+## Table of Contents
+
+- [What MGN actually is](#what-mgn-actually-is)
+- [The four components, in order of what happens when you start a migration](#the-four-components-in-order-of-what-happens-when-you-start-a-migration)
+- [What "cutover" actually triggers](#what-cutover-actually-triggers)
+- [Launch settings: the configuration surface most people under-invest in](#launch-settings-the-configuration-surface-most-people-under-invest-in)
+- [Replication settings that affect how MGN behaves under load](#replication-settings-that-affect-how-mgn-behaves-under-load)
+- [Why continuous replication beats a snapshot-and-copy approach](#why-continuous-replication-beats-a-snapshot-and-copy-approach)
+- [What I'd tell someone starting their first MGN migration](#what-id-tell-someone-starting-their-first-mgn-migration)
 
 ## What MGN actually is
 
