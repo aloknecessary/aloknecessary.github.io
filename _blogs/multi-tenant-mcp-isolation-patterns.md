@@ -1,7 +1,7 @@
 ---
 title: "Multi-Tenant MCP: Isolation Patterns That Hold Up"
-date: 2026-09-25
-last_modified_at: 2026-09-25T12:21:34+05:30
+date: 2026-10-23
+last_modified_at: 2026-10-23T11:14:34+05:30
 author: Alok Ranjan Daftuar
 description: "Multi-tenant MCP isolation requires more than a tenant_id claim — it demands layered enforcement at the data, network, execution, and credential layers, with the right combination determined by your most demanding tenant's compliance posture."
 excerpt: "A tenant_id claim in a JWT is necessary and nowhere near sufficient. Real MCP isolation is enforced at the network layer, the execution layer, and the credential layer at once — and which combination you need is a compliance decision, not a technical preference."
