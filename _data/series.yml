@@ -66,4 +66,4 @@
   icon: "📨"
   domain: "Distributed Systems"
   status: active
-  description: "Queues, topics, logs, sagas, and the dual-write problem — the messaging and coordination patterns that underpin reliable event-driven architectures on AWS and Azure."
+  description: "Choosing and operating message brokers on AWS and Azure: queues, topics and logs, ordering and partitioning, schema evolution, consumer lag and backpressure, and safe replay. The operational layer beneath patterns like sagas and idempotency."
