@@ -9,7 +9,7 @@ keywords: "architecture, cloud, system design, kubernetes, optimization, scalabi
 categories:
   - software-engineering
   - distributed-systems
-tags: [architecture, cloud, system-design, kubernetes, optimization, scalability, cloud-architecture]
+tags: [architecture, cloud, system-design, kubernetes, optimization, scalability]
 ---
 
 ## Introduction

@@ -15,6 +15,19 @@ series: "AWS Migration Playbook"
 series_order: 4
 ---
 
+### Table of Contents
+
+- [Step one: audit the Azure side before touching AWS at all](#step-one-audit-the-azure-side-before-touching-aws-at-all)
+- [The overlap problem, and why it matters even when you're not peering yet](#the-overlap-problem-and-why-it-matters-even-when-youre-not-peering-yet)
+- [Building the reconciliation table](#building-the-reconciliation-table)
+- [Mapping tiers, not just totals](#mapping-tiers-not-just-totals)
+- [Where the MGN staging subnet fits into this plan](#where-the-mgn-staging-subnet-fits-into-this-plan)
+- [Sizing the staging subnet correctly](#sizing-the-staging-subnet-correctly)
+- [Reserving room for phased waves](#reserving-room-for-phased-waves)
+- [DNS coexistence during the transition window](#dns-coexistence-during-the-transition-window)
+- [Validating the plan before the first server replicates](#validating-the-plan-before-the-first-server-replicates)
+- [A pre-wave CIDR checklist](#a-pre-wave-cidr-checklist)
+
 The assumption that trips up CIDR planning for a migration specifically — as opposed to CIDR planning for a brand-new AWS environment — is treating it as the same exercise described in the AWS Network Architecture series' [VPC Networking Fundamentals](/blogs/aws-vpc-networking-fundamentals/) article: pick a clean `/16`, carve it into tiers, done. That approach works perfectly for a greenfield VPC with no constraints. It falls apart the moment the target VPC has to coexist with, route to, or eventually replace a source Azure VNet that was sized and addressed by someone solving a completely different problem, possibly years earlier. Migration CIDR planning isn't a design exercise — it's a reconciliation exercise, and treating it as the former is how teams end up with an unusable overlap discovered mid-migration wave rather than during planning.
 
 This article assumes the MGN mechanics from [MGN Architecture and Continuous Replication](/blogs/aws-mgn-architecture-continuous-replication/) and picks up a thread deliberately left open in that article: the staging subnet's positioning relative to the rest of the target VPC. It also connects back to the two-part kernel incident covered in [the kernel fix](/blogs/aws-migration-ubuntu-kernel-fix/) and [serial console recovery](/blogs/azure-serial-console-boot-loop-recovery/) articles — a wrong CIDR decision doesn't cause a boot loop, but it does compound the same kind of "should have caught this before the maintenance window" cost that incident represents.

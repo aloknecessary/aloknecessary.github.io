@@ -9,7 +9,7 @@ author: Alok Ranjan Daftuar
 categories:
   - distributed-systems
   - software-engineering
-tags: [multi-tenancy, saas, architecture, database-design, isolation, scalability, cloud-architecture, system-design, software-architecture]
+tags: [multi-tenancy, saas, architecture, database-design, isolation, scalability, system-design, software-architecture]
 
 ---
 

@@ -15,6 +15,20 @@ series: "Agentic Infrastructure"
 series_order: 3
 ---
 
+### Table of Contents
+
+- [The wrapper that doesn't actually work](#the-wrapper-that-doesnt-actually-work)
+- [The image](#the-image)
+- [The Deployment](#the-deployment)
+- [The Service and Ingress](#the-service-and-ingress)
+- [EKS: credentials without a static secret](#eks-credentials-without-a-static-secret)
+- [AKS: the same problem, Azure's mechanism](#aks-the-same-problem-azures-mechanism)
+- [A starting point for autoscaling](#a-starting-point-for-autoscaling)
+- [Rolling updates without dropping in-flight work](#rolling-updates-without-dropping-in-flight-work)
+- [Namespace and labeling conventions worth setting now](#namespace-and-labeling-conventions-worth-setting-now)
+- [Why credential federation matters more than it looks like it should](#why-credential-federation-matters-more-than-it-looks-like-it-should)
+- [Verifying the deployment](#verifying-the-deployment)
+
 ## The wrapper that doesn't actually work
 
 Most MCP servers start life as a local, stdio-based process — the client spawns the server directly as a child process, and messages flow over stdin and stdout. That model is genuinely the right one for local development: one client, one process, no network involved. The instinct once that same server needs to serve more than one client is to containerize it and expose a port, treating the move to Kubernetes as packaging rather than architecture.

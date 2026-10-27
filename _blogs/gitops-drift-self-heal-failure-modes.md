@@ -14,6 +14,15 @@ series: "GitOps in Practice"
 series_order: 6
 ---
 
+### Table of Contents
+
+- [Drift, in ArgoCD's own terms](#drift-in-argocds-own-terms)
+- [HPA vs. self-heal: the replica count fight](#hpa-vs-self-heal-the-replica-count-fight)
+- [Sync waves and partial failure](#sync-waves-and-partial-failure)
+- [Operators mutating ArgoCD-owned resources](#operators-mutating-argocd-owned-resources)
+- [Decision framework](#decision-framework)
+- [Series takeaways](#series-takeaways)
+
 Every article in this series so far has described a pipeline working as designed: Applications generated correctly ([Article 2](/blogs/gitops-repo-structure-application-patterns/)), images landing in Git on schedule ([Article 3](/blogs/ci-to-gitops-handoff/)), secrets resolving cleanly ([Article 4](/blogs/gitops-secrets-management/)), rollouts gating on real analysis ([Article 5](/blogs/argo-rollouts-progressive-delivery/)). That's the right way to learn the pieces, and it's also not what running ArgoCD in production actually feels like most weeks. This closing article covers what happens when the reconciliation loop's core assumption — "Git is the source of truth, and nothing else should be changing this resource" — turns out to be false for a specific resource, and ArgoCD's self-heal behavior meets something else with an equally legitimate claim to changing the same object.
 
 None of what follows is an argument against auto-sync or self-heal. It's a map of exactly where their edges are, so the first time you hit one it's recognizable rather than mysterious.

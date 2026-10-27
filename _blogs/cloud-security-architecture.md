@@ -8,7 +8,7 @@ excerpt: "Cloud security is not a layer you add after the architecture is design
 keywords: "cloud security, zero trust, IAM, least privilege, secrets management, IRSA, workload identity, network segmentation, VPC, Kubernetes security, pod security, OIDC, CI/CD security"
 twitter_card: summary_large_image
 categories:
-  - cloud
+  - security
 tags: [cloud-security, zero-trust, iam, kubernetes, secrets-management, azure, aws, devops, architecture, production, github-actions]
 series: "Cloud Architecture"
 series_order: 5

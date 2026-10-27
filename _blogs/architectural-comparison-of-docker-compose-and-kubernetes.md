@@ -9,7 +9,7 @@ keywords: "kubernetes vs docker compose, container orchestration, system design,
 categories:
   - devops
   - software-engineering
-tags: ["kubernetes", "docker-compose", "container-architecture", "cloud-native", "system-design", "devops", "cloud-architecture", "scalability"]
+tags: ["kubernetes", "docker-compose", "container-architecture", "cloud-native", "system-design", "devops", "scalability"]
 series: "DevOps & Platform Engineering"
 series_order: 2
 ---

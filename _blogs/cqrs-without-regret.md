@@ -16,7 +16,6 @@ tags:
   - cloud-native
   - software-architecture
   - scalability
-  - cloud-architecture
 ---
 
 ## Introduction
