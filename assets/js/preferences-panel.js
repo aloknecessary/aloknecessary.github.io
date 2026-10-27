@@ -2,7 +2,7 @@
   const PREF_POSTS_KEY    = 'prefPostsPerPage';
   const PREF_BANNER_KEY   = 'prefBannerWindowHours';
   const PREF_SUPPRESS_KEY = 'prefBannerSuppressOnVisit';
-  const DEFAULT_POSTS     = 10;
+  const DEFAULT_POSTS     = 20;
   const DEFAULT_BANNER    = 24;
   const DEFAULT_SUPPRESS  = 'yes';
 
