@@ -8,7 +8,7 @@ excerpt: "Running GitHub Actions self-hosted runners on Kubernetes at scale requ
 keywords: "self-hosted runners kubernetes, github actions kubernetes, ARC actions runner controller, runner isolation, CI/CD security"
 categories:
   - devops
-tags: [kubernetes, github-actions, devops, ci-cd, security, arc, container-security, platform-engineering, automation]
+tags: [kubernetes, github-actions, devops, ci-cd, security, arc, container-security, cloud-architecture, platform-engineering, automation]
 series: "DevOps & Platform Engineering"
 series_order: 3
 ---
