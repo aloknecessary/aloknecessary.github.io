@@ -1,7 +1,7 @@
 ---
 title: "Queue vs Topic vs Log: Picking the Broker"
-date: 2026-10-08
-last_modified_at: 2026-10-08T12:58:54+05:30
+date: 2026-10-27
+last_modified_at: 2026-10-27T11:33:54+05:30
 author: Alok Ranjan Daftuar
 description: "Queue, topic, and log are three different contracts about who owns a message after delivery. How to choose between SQS, SNS, EventBridge, MSK, Service Bus, Event Grid, and Event Hubs, with the Terraform, Bicep, and Kafka config that encode the decision."
 excerpt: "Most broker decisions are made in a ten-minute conversation that ends with 'we'll just use Kafka.' Both sentences treat the broker as a throughput-and-price decision. It isn't. What you're choosing is a contract: who owns a message after delivery, and whether yesterday's events still exist tomorrow."
