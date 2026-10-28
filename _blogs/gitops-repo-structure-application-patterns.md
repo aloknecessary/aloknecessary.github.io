@@ -14,6 +14,14 @@ series: "GitOps in Practice"
 series_order: 2
 ---
 
+### Table of Contents
+
+- [Repo structure conventions](#repo-structure-conventions)
+- [App-of-Apps](#app-of-apps)
+- [ApplicationSets — the scaling answer](#applicationsets--the-scaling-answer)
+- [AppProjects — the multi-tenancy boundary](#appprojects--the-multi-tenancy-boundary)
+- [Putting it together](#putting-it-together)
+
 Article 1 in this series covered where ArgoCD lives — [Multi-Cluster ArgoCD Architecture](/blogs/multi-cluster-argocd-architecture/) walked through hub-and-spoke vs. per-cluster, with EKS and AKS registration mechanics. That's the plumbing. It says nothing about how Applications themselves get organized once you're managing dozens of them across a dozen clusters, or how the Git repositories driving all of it should be laid out.
 
 That second question tends to be the first real disagreement a platform team has — usually before anyone's written a single ArgoCD manifest. Get it wrong and every later decision (how ApplicationSets generate Applications, how AppProjects enforce boundaries) inherits the mess.

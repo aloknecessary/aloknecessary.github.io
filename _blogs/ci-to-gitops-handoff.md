@@ -14,6 +14,14 @@ series: "GitOps in Practice"
 series_order: 3
 ---
 
+### Table of Contents
+
+- [The three approaches](#the-three-approaches)
+- [Argo Image Updater](#argo-image-updater)
+- [CI writes the manifest commit](#ci-writes-the-manifest-commit)
+- [Kargo](#kargo)
+- [Decision framework](#decision-framework)
+
 Articles 1 and 2 in this series covered where ArgoCD lives ([Multi-Cluster ArgoCD Architecture](/blogs/multi-cluster-argocd-architecture/)) and how Applications get generated from repo structure ([GitOps Repo Structure and Application Patterns](/blogs/gitops-repo-structure-application-patterns/)). Both assume the Git repo already contains the right image tag. Nothing so far explains how it gets there.
 
 That's the part GitOps introductions gloss over. CI builds an image, pushes it to a registry, and then — what? ArgoCD only reconciles what's in Git. Somebody, or something, has to turn "a new image exists in the registry" into "a commit exists in the GitOps repo referencing it." That handoff is where a surprising amount of GitOps implementations quietly go wrong: either it's done manually (defeating half the point of GitOps), or it's automated in a way that reintroduces the exact imperative-deploy risk GitOps was supposed to remove.

@@ -8,6 +8,7 @@ excerpt: "OpenID Connect eliminates long-lived CI/CD credentials at the architec
 keywords: "github actions oidc, aws oidc, azure federated credentials, ci/cd security, eliminate static credentials, sts assume role, workload identity federation"
 categories:
   - devops
+  - security
 tags: [github-actions, oidc, aws, azure, security, ci-cd, devops, iam, authentication, secrets-management, production]
 series: "DevOps & Platform Engineering"
 series_order: 6

@@ -10,10 +10,19 @@ keywords: "gitops secrets management, sealed secrets, external secrets operator,
 twitter_card: "summary_large_image"
 categories:
   - devops
+  - security
 tags: [argocd, gitops, kubernetes, secrets, external-secrets-operator, vault, sealed-secrets, platform-engineering, aws, security]
 series: "GitOps in Practice"
 series_order: 4
 ---
+
+### Table of Contents
+
+- [The shape of the problem](#the-shape-of-the-problem)
+- [Sealed Secrets](#sealed-secrets)
+- [External Secrets Operator](#external-secrets-operator)
+- [Vault plugin (Vault Agent / CSI provider)](#vault-plugin-vault-agent--csi-provider)
+- [Decision framework](#decision-framework)
 
 > Three approaches resolve the core GitOps contradiction: everything the cluster needs is declared in a repo ArgoCD watches, but secrets can't safely live in that repo. Each approach breaks the "it's all just committed to Git" assumption in a different place.
 

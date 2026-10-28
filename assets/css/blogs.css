@@ -727,6 +727,64 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+/* ========================================
+   Load More
+   ======================================== */
+
+.load-more-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem 1rem 3rem;
+}
+
+.load-more-count {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.load-more-count.hidden {
+  display: none;
+}
+
+.load-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1.5rem;
+  background: var(--bg-card);
+  color: var(--primary);
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-image: linear-gradient(var(--bg-card), var(--bg-card)),
+                    linear-gradient(90deg, var(--primary), var(--crimson));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.load-more-btn:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.load-more-chevron {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.load-more-btn:hover .load-more-chevron {
+  transform: translateY(3px);
+}
+
+.load-more-btn.hidden {
+  display: none;
+}
+
 /* Card Footer */
 .card-footer {
   display: flex;

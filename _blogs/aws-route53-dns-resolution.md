@@ -14,6 +14,19 @@ series: "AWS Network Architecture"
 series_order: 5
 ---
 
+### Table of Contents
+
+- [The default: what a VPC resolves out of the box](#the-default-what-a-vpc-resolves-out-of-the-box)
+- [Private hosted zones: DNS scoped to a VPC, not the internet](#private-hosted-zones-dns-scoped-to-a-vpc-not-the-internet)
+- [Associating a private hosted zone with more than one VPC](#associating-a-private-hosted-zone-with-more-than-one-vpc)
+- [Route 53 Resolver: the piece for anything beyond simple association](#route-53-resolver-the-piece-for-anything-beyond-simple-association)
+- [The hybrid case: this migration's actual requirement](#the-hybrid-case-this-migrations-actual-requirement)
+- [What breaks, and the order to check it in](#what-breaks-and-the-order-to-check-it-in)
+- [Sharing Resolver rules across accounts via RAM](#sharing-resolver-rules-across-accounts-via-ram)
+- [Query logging and a note on DNSSEC](#query-logging-and-a-note-on-dnssec)
+- [A side-by-side summary of the mechanisms](#a-side-by-side-summary-of-the-mechanisms)
+- [Why this belongs at this point in the series](#why-this-belongs-at-this-point-in-the-series)
+
 Three earlier articles in this series each hit the same wall and moved past it without fully resolving it. [VPC Endpoints](/blogs/aws-vpc-endpoints-gateway-vs-interface/) needed `private_dns_enabled` to make an Interface endpoint transparent to application code. [VPC Peering vs Transit Gateway](/blogs/aws-vpc-peering-vs-transit-gateway/) noted that DNS resolution across a peering connection needs its own explicit setting, separate from the routing itself. [Multi-Account Networking](/blogs/aws-multi-account-networking/) flagged that centralized Transit Gateway spoke accounts don't automatically share DNS resolution scope the way Shared VPC accounts do. This article is the piece all three were pointing toward: how DNS resolution actually works inside a VPC, and what has to be built deliberately to make it work across VPCs, accounts, and — for anyone running a migration in parallel with this series — a hybrid Azure/AWS environment.
 
 ## The default: what a VPC resolves out of the box

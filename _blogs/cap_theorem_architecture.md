@@ -14,6 +14,7 @@ series: "Distributed Systems"
 series_order: 1
 redirect_from:
   - /blogs/the-cap-theorem-in-practice-making-the-right-trade-offs-at-scale/
+
 ---
 
 ## The Problem No One Talks About Until Production Burns

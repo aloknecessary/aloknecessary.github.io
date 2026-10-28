@@ -7,21 +7,7 @@ hide_header: true
 <div class="page-banner">
   <img src="{{ '/assets/images/header.png' | relative_url }}" alt="Header" fetchpriority="high">
   <div class="theme-controls">
-    <div class="theme-dropdown">
-      <button
-        class="theme-trigger"
-        aria-haspopup="true"
-        aria-expanded="false"
-        aria-label="Change theme"
-      >
-        <span class="theme-icon">🖥</span>
-      </button>
-      <div class="theme-panel" role="menu">
-        <button data-theme-option="system">🖥 System</button>
-        <button data-theme-option="light">☀ Light</button>
-        <button data-theme-option="dark">🌙 Dark</button>
-      </div>
-    </div>
+    {% include preferences-panel.html %}
   </div>
 </div>
 
@@ -356,7 +342,7 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
         </div>
       </div>
       <div class="project-links">
-        <a href="https://github.com/aloknecessary/playwright-aws-cli" class="project-link primary">
+        <a href="https://github.com/aloknecessary/playwright-az-cli/tree/aws" class="project-link primary">
           <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
         </a>
         <a href="https://hub.docker.com/r/aloknecessary/playwright-aws-cli" class="project-link secondary">

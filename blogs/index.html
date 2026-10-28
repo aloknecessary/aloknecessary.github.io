@@ -12,7 +12,7 @@ hide_header: false
 <div class="blog-cards-grid">
   {% assign blogs = site.blogs | sort: "date" | reverse %}
   {% for post in blogs %}
-    <article class="blog-card" data-series="{{ post.series | slugify }}"{% if forloop.first %} data-modified="{{ post.last_modified_at }}"{% endif %}>
+    <article class="blog-card" data-index="{{ forloop.index }}" data-series="{{ post.series | slugify }}"{% if forloop.first %} data-modified="{{ post.last_modified_at }}"{% endif %}>
       <div class="card-content">
         <div class="card-header">
           <h2 class="card-title">
@@ -55,6 +55,17 @@ hide_header: false
       </div>
     </article>
   {% endfor %}
+</div>
+
+<div class="load-more-container">
+  <p class="load-more-count" id="load-more-count"></p>
+  <button id="load-more-btn" class="load-more-btn" aria-label="Load more articles">
+    Load More
+    <svg class="load-more-chevron" width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M3 9l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
 </div>
 
 <script>
