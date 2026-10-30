@@ -1,7 +1,7 @@
 ---
 title: "MGN Cutover Strategies: Gating, Sequencing, and Keeping a Way Back"
-date: 2026-10-15
-last_modified_at: 2026-10-13T14:29:40+05:30
+date: 2026-10-30
+last_modified_at: 2026-10-30T14:39:40+05:30
 author: Alok Ranjan Daftuar
 description: "MGN cutover isn't a data operation — the data is already replicated. It's a commitment to a new source of truth, and the strategy is about how reversible you keep that commitment through gating, sequencing, DNS mechanics, and a defined rollback window."
 excerpt: "A cutover isn't the moment data moves. By the time you launch, the data is already there. It's the moment you commit to a new source of truth, and the strategy is about how reversible you keep that commitment."
