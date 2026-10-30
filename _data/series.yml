@@ -51,7 +51,7 @@
   slug: aws-migration-playbook
   icon: "🚚"
   domain: "Cloud Infra"
-  status: active
+  status: complete
   description: "Real-world AWS migration mechanics — MGN replication internals, kernel driver failures, cutover sequencing, and the operational patterns that separate a clean migration from an incident."
 
 - name: "Agentic Infrastructure"
