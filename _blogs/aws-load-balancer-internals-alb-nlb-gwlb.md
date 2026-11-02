@@ -1,7 +1,7 @@
 ---
 title: "Load Balancer Internals: ALB vs NLB vs GWLB, and What Actually Happens to a Packet"
-date: 2026-10-08
-last_modified_at: 2026-10-08T15:06:23+05:30
+date: 2026-11-02
+last_modified_at: 2026-11-02T15:46:23+05:30
 author: Alok Ranjan Daftuar
 description: "ALB, NLB, and GWLB operate at different OSI layers — Layer 7, 4, and 3 respectively — and that single distinction determines connection handling, routing capability, source IP visibility, and what each type can and cannot do. A packet-level walkthrough of all three."
 excerpt: "Picking a load balancer type by feature checklist misses the actual decision — the three AWS load balancers operate at different layers of the stack, and that difference, not the feature list, is what determines whether one will even work for your traffic."
