@@ -1,20 +1,37 @@
 ---
-layout: post
 title: "Site-to-Site VPN vs Direct Connect: Hybrid Connectivity Is a Choice of Kind, Not Speed"
-series: "AWS Network Architecture"
-date: 2026-10-29
-categories: [aws, networking, cloud-architecture]
-tags: [site-to-site-vpn, direct-connect, bgp, hybrid-networking, transit-gateway, direct-connect-gateway]
+date: 2026-11-03
+last_modified_at: 2026-11-03T12:46:44+05:30
+author: Alok Ranjan Daftuar
+description: "Site-to-Site VPN and Direct Connect differ in kind, not just speed. One is encrypted IPsec tunnels over the public internet; the other is a private dedicated circuit with no encryption by default. This article covers when to use each, how to combine them, and how to design for resilience."
 excerpt: "VPN and Direct Connect aren't a starter tier and an upgrade tier. One is encrypted tunnels over the public internet; the other is a private physical link with no encryption by default. The choice follows from that difference, not from the bandwidth number."
+keywords: "site-to-site vpn, direct connect, hybrid connectivity, aws networking, bgp, transit gateway, direct connect gateway, hybrid cloud"
+twitter_card: "summary_large_image"
+categories:
+  - cloud
+tags: [site-to-site-vpn, direct-connect, bgp, hybrid-networking, transit-gateway, direct-connect-gateway, aws, networking]
+series: "AWS Network Architecture"
+series_order: 7
 ---
 
 The usual framing is that a Site-to-Site VPN is what you use until you're big enough to justify Direct Connect. It's a tidy story, and it hides the actual decision. The two differ in kind: a VPN is IPsec tunnels riding the public internet, encrypted but subject to internet path variability, while Direct Connect is a dedicated private circuit with consistent latency and, perhaps surprisingly, no encryption unless you add it. Picking by bandwidth alone misses the questions that usually decide the matter: how long you can wait for the link, what happens when it fails, and whether your compliance posture requires encryption in transit.
 
 This article assumes the building blocks from earlier in the series. Route tables and most-specific-route-wins come from [VPC Networking Fundamentals](/blogs/aws-vpc-networking-fundamentals/). Both connectivity types terminate most cleanly on the Transit Gateway covered in [VPC Peering vs Transit Gateway](/blogs/aws-vpc-peering-vs-transit-gateway/), and the central-network-account ownership model from [Multi-Account Networking](/blogs/aws-multi-account-networking/) is where these resources normally live. The [DNS article](/blogs/route53-dns-resolution-hybrid-networking/) assumed hybrid connectivity already existed; this is the piece that builds it.
 
+## Table of Contents
+
+- [The shape of each option](#the-shape-of-each-option)
+- [Site-to-Site VPN in detail](#site-to-site-vpn-in-detail)
+- [Direct Connect in detail](#direct-connect-in-detail)
+- [Combining them: Direct Connect primary, VPN backup](#combining-them-direct-connect-primary-vpn-backup)
+- [Resilience: what "redundant" actually means](#resilience-what-redundant-actually-means)
+- [Choosing between them](#choosing-between-them)
+- [Cross-cloud: connecting an Azure environment](#cross-cloud-connecting-an-azure-environment)
+- [Troubleshooting, in order](#troubleshooting-in-order)
+
 ## The shape of each option
 
-```
+```text
 Site-to-Site VPN                          Direct Connect
 
 On-prem / Azure                           On-prem / Azure
@@ -36,7 +53,7 @@ A VPN connection always has **two tunnels**, terminating on two different AWS en
 A VPN needs a **customer gateway** (an AWS resource that describes your on-premises or other-cloud device: its public IP and BGP ASN), a **VPN connection**, and a **termination point** on the AWS side. That termination point is the first real decision, because it determines what the VPN can do later.
 
 | Termination point | Scope | Notable capability | Limitation |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Virtual private gateway (VGW) | Attached to one VPC | Simple, no extra hourly attachment charge | One VPC only; no ECMP |
 | Transit Gateway | Hub for many VPCs | ECMP across tunnels, central route tables, shared via RAM | Per-attachment and per-GB charges |
 
@@ -123,7 +140,7 @@ A **dedicated connection** is a physical port allocated to you at a Direct Conne
 The physical link carries one or more **virtual interfaces (VIFs)**, each a BGP session with a specific purpose:
 
 | VIF type | Reaches | Use |
-|---|---|---|
+| --- | --- | --- |
 | Private VIF | A VPC, via a VGW or Direct Connect gateway | Private connectivity to a VPC's private addresses |
 | Transit VIF | Transit Gateways, via a Direct Connect gateway | Hub-and-spoke access to many VPCs |
 | Public VIF | AWS public service endpoints | Reaching S3 or other public AWS endpoints over the private link |
@@ -165,7 +182,7 @@ This catches teams who equate "private" with "encrypted." Traffic on a Direct Co
 
 The most common production pattern isn't either one alone. A Direct Connect circuit carries the steady traffic, and a Site-to-Site VPN stands by as a backup path over the internet. Because both advertise the same prefixes over BGP, the failover is automatic when routing is set up correctly.
 
-```
+```text
 On-prem / Azure ──── Direct Connect (preferred) ────┐
         │                                            ├── Transit Gateway ── VPCs
         └────── Site-to-Site VPN (backup) ───────────┘
@@ -182,7 +199,7 @@ A single Direct Connect connection is a single point of failure at the port, the
 ## Choosing between them
 
 | Consideration | Site-to-Site VPN | Direct Connect |
-|---|---|---|
+| --- | --- | --- |
 | Time to provision | Minutes to hours | Weeks to months |
 | Path | Public internet | Private dedicated circuit |
 | Encryption | IPsec, built in | None by default; MACsec or IPsec over it |
