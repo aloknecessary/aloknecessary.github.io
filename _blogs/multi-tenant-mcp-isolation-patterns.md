@@ -8,7 +8,7 @@ excerpt: "A tenant_id claim in a JWT is necessary and nowhere near sufficient. R
 keywords: "mcp, multi-tenancy, kubernetes, tenant isolation, secrets management, gvisor, network policy, oauth, gitops, agentic infrastructure"
 twitter_card: "summary_large_image"
 categories:
-  - cloud-architecture
+  - cloud
   - security
 tags: [mcp, kubernetes, multi-tenancy, security, aws, azure]
 series: "Agentic Infrastructure"
