@@ -2,7 +2,7 @@
 layout: blog
 title: "The MCP Stateless Revolution"
 date: 2026-09-24
-last_modified_at: 2026-10-14T14:19:37+05:30
+last_modified_at: 2026-11-04T15:54:26+05:30
 author: Alok Ranjan Daftuar
 description: "The 2026-07-28 MCP specification removed protocol-level sessions entirely — and with it, the sticky routing, shared session stores, and affinity cookies that teams had been forced to build around a stateful transport that was never supposed to be permanent."
 excerpt: "For two years, running an MCP server meant sticky routing and shared session stores just to keep a conversation coherent. The 2026-07-28 specification deleted the session entirely — and with it, an entire category of infrastructure workaround."
@@ -51,10 +51,7 @@ metadata:
   name: mcp-server
   annotations:
     # AWS: ALB target group stickiness
-    alb.ingress.kubernetes.io/target-group-attributes: |
-      stickiness.enabled=true,
-      stickiness.type=lb_cookie,
-      stickiness.lb_cookie.duration_seconds=3600
+    alb.ingress.kubernetes.io/target-group-attributes: stickiness.enabled=true,stickiness.type=lb_cookie,stickiness.lb_cookie.duration_seconds=3600
 spec:
   selector:
     app: mcp-server
@@ -100,16 +97,24 @@ kind: Ingress
 metadata:
   name: mcp-server
   annotations:
-    kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/conditions.mcp-tasks: |
-      [{"field":"http-header","httpHeaderConfig":{"httpHeaderName":"Mcp-Method","values":["tasks/*"]}}]
-    alb.ingress.kubernetes.io/actions.mcp-tasks: |
+    alb.ingress.kubernetes.io/actions.mcp-tasks: >-
       {"type":"forward","forwardConfig":{"targetGroups":[{"serviceName":"mcp-tasks-pool","servicePort":8443}]}}
+    alb.ingress.kubernetes.io/conditions.mcp-tasks: >-
+      [{"field":"http-header","httpHeaderConfig":{"httpHeaderName":"Mcp-Method","values":["tasks/*"]}}]
 spec:
+  ingressClassName: alb
   rules:
     - http:
         paths:
+          # Conditioned rule first, so it is evaluated before the catch-all
+          - path: /mcp
+            pathType: Prefix
+            backend:
+              service:
+                name: mcp-tasks          # must match the annotation suffix
+                port:
+                  name: use-annotation
           - path: /mcp
             pathType: Prefix
             backend:
@@ -146,7 +151,7 @@ spec:
                   number: 8443
 ```
 
-Application Gateway's routing rules can be extended with custom HTTP header conditions the same way, splitting `Mcp-Method: tasks/*` traffic to a differently-scaled backend pool — the underlying pattern is identical across both clouds, which is the point: statelessness plus header-based routing means the ingress layer configuration converges toward ordinary HTTP API practice regardless of which cloud is hosting it, rather than diverging into cloud-specific session-handling workarounds.
+Application Gateway doesn't match arbitrary request headers in its routing rules the way an ALB listener rule does; its routing is host- and path-based. Header-driven routing is still possible, but indirectly: a rewrite rule set can match the `Mcp-Method` header and rewrite the URL path, and with path-map re-evaluation enabled the gateway then routes on the rewritten path to a separate backend pool. That keeps the "tasks traffic gets its own pool" design available on Azure at the cost of one extra moving part. What carries across both clouds is the stateless design itself: with no session affinity to preserve, ingress configuration on either one reduces to ordinary HTTP routing.
 
 ## Two smaller changes worth knowing about
 
