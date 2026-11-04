@@ -1,14 +1,14 @@
 ---
 title: "Multi-Tenant MCP: Isolation Patterns That Hold Up"
-date: 2026-10-23
-last_modified_at: 2026-10-23T11:14:34+05:30
+date: 2026-09-25
+last_modified_at: 2026-11-04T15:54:26+05:30
 author: Alok Ranjan Daftuar
 description: "Multi-tenant MCP isolation requires more than a tenant_id claim — it demands layered enforcement at the data, network, execution, and credential layers, with the right combination determined by your most demanding tenant's compliance posture."
 excerpt: "A tenant_id claim in a JWT is necessary and nowhere near sufficient. Real MCP isolation is enforced at the network layer, the execution layer, and the credential layer at once — and which combination you need is a compliance decision, not a technical preference."
 keywords: "mcp, multi-tenancy, kubernetes, tenant isolation, secrets management, gvisor, network policy, oauth, gitops, agentic infrastructure"
 twitter_card: "summary_large_image"
 categories:
-  - cloud
+  - cloud-architecture
   - security
 tags: [mcp, kubernetes, multi-tenancy, security, aws, azure]
 series: "Agentic Infrastructure"
@@ -60,7 +60,7 @@ async function handleToolCall(req: McpRequest): Promise<McpResponse> {
 
 Two details here matter more than they look. Returning `tool_not_found` rather than a `403` when a tool genuinely exists but belongs to a different tenant avoids confirming to a caller that the tool exists at all — a small thing, but the difference between an isolation boundary and an isolation boundary that leaks information about what's on the other side of it. And passing `tenantId` explicitly through every function call, rather than reading it from a request-scoped global or thread-local, is deliberate: an ambient "current tenant" is exactly the kind of implicit state that a new tool handler, added six months later by someone who didn't write this code, can forget to consult.
 
-This pattern also depends on getting the authorization framework right at the protocol level, not just the application level. The specification requires OAuth 2.1 with PKCE for remote server authentication, explicitly prohibits token passthrough, and requires each token to be scoped to one specific MCP server using Resource Indicators (RFC 8707) — which closes a specific failure mode where a token issued for one MCP server gets replayed against a different one it was never meant to authorize. None of that is optional hardening on top of this pattern; it's the baseline the pattern depends on to be a security boundary at all rather than a convention everyone happens to follow.
+This pattern also depends on getting the authorization framework right at the protocol level, not just the application level. Authorization is optional in the specification, but when a remote server uses it, the specification calls for OAuth 2.1 with PKCE, explicitly prohibits token passthrough, and requires each token to be scoped to one specific MCP server using Resource Indicators (RFC 8707) — which closes a specific failure mode where a token issued for one MCP server gets replayed against a different one it was never meant to authorize. In a multi-tenant deployment none of that is optional hardening on top of this pattern; it's the baseline the pattern depends on to be a security boundary at all rather than a convention everyone happens to follow.
 
 ## Pattern 2: dedicated compute per tenant
 
@@ -100,6 +100,13 @@ spec:
         - namespaceSelector:
             matchLabels:
               tenant: acme
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: mcp-gateway   # your gateway/ingress namespace
+        # ALB with target-type: ip delivers from VPC subnet addresses:
+        # - ipBlock:
+        #     cidr: 10.0.0.0/20                          # your ALB subnet range
   egress:
     - to:
         - namespaceSelector:
@@ -140,6 +147,8 @@ spec:
 
 This is worth reserving for the tools that actually warrant it — an MCP server whose tools only make outbound API calls to well-known SaaS endpoints has a much smaller execution-risk surface than one that runs arbitrary code, shells out to a subprocess, or interprets tenant-supplied scripts. Applying gVisor uniformly to every deployment regardless of what the server's tools actually do adds latency for a boundary that pattern 1's tools may not need; reserving it for the specific tool set that executes untrusted logic keeps the overhead proportional to the actual risk.
 
+The `RuntimeClass` above is the pattern, but neither managed service gives you gVisor out of the box. EKS managed node groups don't ship `runsc`, so you'd run it on self-managed or custom-AMI nodes, or use Fargate, where each pod already runs in its own microVM. AKS doesn't offer gVisor, but its Pod Sandboxing feature provides Kata-based isolation through an AKS-supplied `RuntimeClass`. Check the current docs for the class name and the supported node OS and VM sizes, and treat the `runtimeClassName` value as platform-specific.
+
 It's worth being specific about what gVisor buys here versus what it doesn't. A `runsc`-backed pod still shares the Kubernetes control plane, the node's cgroup accounting, and — absent the NetworkPolicy from the previous section — the node's network stack with every other pod scheduled onto that node. The syscall interception layer closes one specific class of escape (a kernel exploit reached through a container's syscall surface); it says nothing about a request that legitimately reaches the pod over the network and abuses an application-level bug once inside. Treating gVisor as a substitute for network-layer isolation rather than a complement to it is a common enough misreading of what the sandbox actually protects that it's worth naming directly: pattern 2's `NetworkPolicy` and this section's `RuntimeClass` are answering two different questions — who can reach this pod, and what can code running inside this pod reach past the kernel — and a deployment that only implements one of them has a boundary with a specific, known hole in it.
 
 For workloads where even gVisor's syscall-level boundary isn't strong enough — genuinely untrusted, tenant-supplied code rather than a fixed set of vetted tools — Kata Containers or Firecracker microVMs go further, giving each sandbox a dedicated kernel rather than an interposed one. That's meaningfully more overhead per pod, and it's a decision worth making deliberately for the specific tool category that needs it rather than applying uniformly: a code-execution tool that runs tenant-submitted scripts is a different risk category from a tool that calls a fixed, vetted set of third-party APIs, and the sandboxing strategy should track that distinction rather than treat every tool in a server's catalog identically.
@@ -164,23 +173,26 @@ The credential vault (HashiCorp Vault, AWS Secrets Manager with per-tenant IAM p
 An isolation pattern that hasn't been tested for cross-tenant leakage is a claim, not a guarantee — and the way to close that gap is the same one used for the transport-compliance smoke test in the previous article: a scripted check that runs on every deploy rather than a manual review that happens once.
 
 ```bash
-# Create two tenants, get scoped tokens, attempt cross-tenant read
+HDRS=(-H "Content-Type: application/json" -H "Accept: application/json, text/event-stream")
 TOKEN_A=$(get_token_for_tenant acme)
 TOKEN_B=$(get_token_for_tenant globex)
 
-TOOL_ID=$(curl -s -X POST https://mcp.example.com/mcp \
+# Adjust the jq path to wherever your tool returns the new record's ID
+RECORD_ID=$(curl -s -X POST https://mcp.example.com/mcp "${HDRS[@]}" \
   -H "Authorization: Bearer $TOKEN_A" \
   -H "Mcp-Method: tools/call" -H "Mcp-Name: create-record" \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"create-record"}}' \
-  | jq -r '.result.id')
+  | jq -r '.result.structuredContent.id')
 
-# Tenant B attempting to read Tenant A's record must fail
-curl -s -X POST https://mcp.example.com/mcp \
+# Tenant B reading Tenant A's record must fail: a JSON-RPC error or isError result
+curl -s -X POST https://mcp.example.com/mcp "${HDRS[@]}" \
   -H "Authorization: Bearer $TOKEN_B" \
   -H "Mcp-Method: tools/call" -H "Mcp-Name: get-record" \
-  -d "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/call\",\"params\":{\"name\":\"get-record\",\"arguments\":{\"id\":\"$TOOL_ID\"}}}" \
-  | jq -e '.error.code == "tool_not_found" or .error.code == "not_found"'
+  -d "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/call\",\"params\":{\"name\":\"get-record\",\"arguments\":{\"id\":\"$RECORD_ID\"}}}" \
+  | jq -e '.error != null or .result.isError == true'
 ```
+
+The handler example in the same article throws `McpError("tool_not_found", 404)`. Treat that as illustrative: on the wire it surfaces as a numeric JSON-RPC error or an `isError` result.
 
 Wiring this into the same CI pipeline that already runs the transport smoke test means an accidental regression in tenant-scoping logic — a new tool handler that forgets the filter, a cache key that drops the tenant dimension — fails a build instead of surfacing as a support ticket from a customer who noticed data that wasn't theirs.
 

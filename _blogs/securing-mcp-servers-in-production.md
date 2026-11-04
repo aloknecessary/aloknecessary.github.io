@@ -1,7 +1,7 @@
 ---
 title: "Securing MCP in Production"
 date: 2026-10-15
-last_modified_at: 2026-10-15T12:31:14+05:30
+last_modified_at: 2026-11-04T15:54:26+05:30
 author: Alok Ranjan Daftuar
 description: "MCP's worst CVEs are classic web bugs — injection, path traversal, SSRF — made reachable because the model composes every argument. A layered control set covering input validation, token exchange, definition pinning, and network hardening for EKS and AKS."
 excerpt: "The MCP CVEs that keep landing are mostly path traversal, SSRF, and command injection — classic web bugs on an interface where every argument is attacker-influenced. Here is the layered control set that holds up on EKS and AKS."
@@ -99,7 +99,7 @@ On the output side, the specification places responsibility for sanitizing tool 
 
 ## Credentials: the lifecycle, not the vault
 
-An October 2025 audit of more than 5,200 open-source MCP servers found that 88% need credentials, 53% rely on static API keys or personal access tokens, only about 8.5% use OAuth, and 79% pass secrets through environment variables. [Deploying MCP Servers on Kubernetes](/blogs/deploying-mcp-servers-on-kubernetes/) argued for workload identity over static keys for the pod's own cloud access. The same reasoning extends to every credential the server uses on a caller's behalf — and the env-var number is why it matters here. Environment variables surface in `kubectl describe`, crash dumps, `/proc`, and every child process, so a command-injection bug turns "can run a command" into "can read every secret the server holds."
+An October 2025 security audit of more than 5,200 open-source MCP servers found that 88% need credentials, 53% rely on static API keys or personal access tokens, only about 8.5% use OAuth, and 79% pass secrets through environment variables. [Deploying MCP Servers on Kubernetes](/blogs/deploying-mcp-servers-on-kubernetes/) argued for workload identity over static keys for the pod's own cloud access. The same reasoning extends to every credential the server uses on a caller's behalf — and the env-var number is why it matters here. Environment variables surface in `kubectl describe`, crash dumps, `/proc`, and every child process, so a command-injection bug turns "can run a command" into "can read every secret the server holds."
 
 Three rules cover most of the ground.
 

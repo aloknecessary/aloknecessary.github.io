@@ -2,7 +2,7 @@
 layout: blog
 title: "Why Agent Infrastructure Is Its Own Discipline"
 date: 2026-09-10
-last_modified_at: 2026-09-10T14:28:50+05:30
+last_modified_at: 2026-11-04T15:54:26+05:30
 author: Alok Ranjan Daftuar
 description: "Deploying an agent on Kubernetes using the standard microservice playbook breaks in predictable ways — liveness probes kill healthy pods mid-reasoning, HPA scales on the wrong signal, and session state has no design at all. This post explains why, precisely."
 excerpt: "Deploying an agent is not deploying another microservice. The assumptions baked into a decade of Kubernetes practice quietly break the moment a container starts calling tools instead of just serving requests."
@@ -132,9 +132,9 @@ readinessProbe:
 
 It's tempting to treat this as a Kubernetes-versus-managed-service question and let the cloud provider pick the defaults — run agents on EKS with Karpenter handling node provisioning, or lean on AKS with its tighter integration into Azure AD for workload identity. Both are legitimate starting points, and this series will show worked examples on both throughout, but neither vendor's defaults solve the shape problem described above. Karpenter provisions nodes faster and can bin-pack more efficiently than the cluster autoscaler, which helps with the bursty compute pattern of agent workloads — but it still needs a scaling signal that actually reflects agent load, not CPU. AKS's tighter Entra ID integration simplifies workload identity for tool credentials, which helps directly with the isolation boundary problem — but it doesn't change how a liveness probe should be shaped for a process that's legitimately silent for 40 seconds.
 
-The pattern across this series will be to establish the underlying principle first — what the workload actually needs — and then show how that principle gets implemented on EKS and on AKS, because the implementations diverge (IAM roles for service accounts versus workload identity federation, ALB Ingress Controller versus Application Gateway Ingress Controller, EKS managed node groups versus AKS node pools) even when the underlying design goal is identical.
+The pattern across this series will be to establish the underlying principle first — what the workload actually needs — and then show how that principle gets implemented on EKS and on AKS, because the implementations diverge (IAM roles for service accounts versus workload identity federation, AWS Load Balancer Controller versus Application Gateway Ingress Controller, EKS managed node groups versus AKS node pools) even when the underlying design goal is identical.
 
-## What changed in the protocol layer
+## What changed in July 2026
 
 There's a reason this series is starting now rather than a year ago: a large part of the awkwardness in running MCP-based agents on Kubernetes came from the original protocol design, which required persistent, pinned sessions between a client and a specific server instance — the opposite of what horizontally scaled infrastructure wants. That constraint forced teams into sticky routing and shared session stores just to keep a conversation coherent across requests, which is exactly the kind of stateful-transport problem Kubernetes networking wasn't built to make easy.
 
