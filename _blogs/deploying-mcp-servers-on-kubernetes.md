@@ -1,7 +1,7 @@
 ---
 title: "Deploying MCP Servers on Kubernetes"
 date: 2026-10-09
-last_modified_at: 2026-10-09T13:35:51+05:30
+last_modified_at: 2026-11-04T15:54:26+05:30
 author: Alok Ranjan Daftuar
 description: "Containerizing a stdio MCP server and exposing a port is a transport mismatch, not a deployment. This post covers what a correct Kubernetes deployment looks like — probes, IRSA, Workload Identity, rolling updates, and autoscaling — end to end on EKS and AKS."
 excerpt: "Wrapping a stdio MCP server in a container and exposing a port isn't a deployment — it's a transport mismatch waiting to surface in production. Here's what an actual Kubernetes deployment looks like, end to end, on EKS and AKS."
@@ -45,9 +45,9 @@ The container image itself is unremarkable by design — the interesting decisio
 FROM node:22-slim AS builder
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --omit=dev
+RUN npm ci
 COPY . .
-RUN npm run build
+RUN npm run build && npm prune --omit=dev
 
 FROM node:22-slim
 WORKDIR /app
@@ -110,6 +110,10 @@ spec:
               port: 8080
             periodSeconds: 5
             failureThreshold: 2
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sleep", "5"]
           env:
             - name: MCP_TRANSPORT
               value: "streamable-http"
@@ -197,7 +201,7 @@ spec:
           # ...as above
 ```
 
-The `azure.workload.identity/use: "true"` label has to be present on both the ServiceAccount and the pod template — a common enough gap that it's worth calling out explicitly, since a pod missing that label silently falls back to no identity at all rather than failing loudly, which makes it a frustrating thing to debug after the fact. The federation itself happens through a short-lived, automatically rotated token projected into the pod by the Azure Workload Identity webhook, mirroring what IRSA does on EKS via OIDC — the mechanisms differ, but the underlying decision they both enforce is identical: no credential the pod holds should outlive the pod itself.
+The `azure.workload.identity/use: "true"` label must be present on the pod template — a common enough gap that it's worth calling out explicitly, since a pod missing that label silently falls back to no identity at all rather than failing loudly, which makes it a frustrating thing to debug after the fact. The federation itself happens through a short-lived, automatically rotated token projected into the pod by the Azure Workload Identity webhook, mirroring what IRSA does on EKS via OIDC — the mechanisms differ, but the underlying decision they both enforce is identical: no credential the pod holds should outlive the pod itself.
 
 ## A starting point for autoscaling
 
@@ -268,15 +272,27 @@ The IRSA and Workload Identity patterns above aren't just cloud-native best prac
 Once applied, a request that exercises the actual transport — headers included — confirms the deployment is correctly speaking the current specification rather than an older, session-based dialect:
 
 ```bash
-curl -s -X POST https://mcp.example.com/mcp \
+curl -si -X POST https://mcp.example.com/mcp \
   -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
   -H "Mcp-Method: tools/list" \
-  -H "Mcp-Name: mcp-server" \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}'
 ```
 
 A correctly deployed 2026-07-28-compliant server returns the tool list with no `Mcp-Session-Id` in the response headers and no `initialize` call required beforehand — if a session header does show up, that's a sign the server (or a proxy sitting in front of it) is still running the older, stateful transport path, worth catching in verification rather than discovering under load.
 
-It's worth running that same check again immediately after a rollout, not just once at initial deployment — a regression here is easy to introduce accidentally, for instance by fronting the Service with a proxy or API gateway that was configured against the older transport and silently reintroduces session affinity at a layer this article's manifests don't control. A five-line smoke test in the CI/CD pipeline that runs this `curl` against the newly rolled-out endpoint and asserts the header is absent catches that class of regression before it reaches production traffic, and it's a cheap enough check to run on every deploy rather than treating it as a one-time verification step.
+It's worth running that same check again immediately after a rollout, not just once at initial deployment — a regression here is easy to introduce accidentally, for instance by fronting the Service with a proxy or API gateway that was configured against the older transport and silently reintroduces session affinity at a layer this article's manifests don't control.
+
+```bash
+if curl -s -D - -o /dev/null -X POST "$MCP_URL" \
+     -H "Content-Type: application/json" \
+     -H "Accept: application/json, text/event-stream" \
+     -H "Mcp-Method: tools/list" \
+     -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
+   | grep -qi '^mcp-session-id:'; then
+  echo "FAIL: session header present, stateful transport still active" >&2
+  exit 1
+fi
+```
 
 > 📌 **Key Takeaway:** A Kubernetes deployment for an MCP server is not a container-and-port exercise — it depends on transport work happening first (stdio to Streamable HTTP), probes that understand the difference between "alive" and "ready for new work," and cloud-native identity federation instead of static credentials. Get those three right and the Service and Ingress layers stay genuinely simple, which is the actual payoff of the stateless transport underneath all of it.
