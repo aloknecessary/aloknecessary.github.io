@@ -265,8 +265,8 @@ Strong architecture is not about complexity, but about **clarity, resilience, an
 <!-- [![Alok's GitHub Stats](https://github-readme-stats.vercel.app/api?username=aloknecessary&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true)](https://github.com/aloknecessary) -->
 
 <div class="stats-container">
-  <img src="https://github-readme-stats-aloknecessary-4439s-projects.vercel.app/api/top-langs?username=aloknecessary&layout=compact&theme=ambient_gradient&size_weight=0.5&count_weight=0.5" alt="Top Languages" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=aloknecessary&theme=ambient-gradient&hide_border=true&mode=weekly" alt="GitHub Streak" />
+  <img src="https://stats.aloknecessary.in/api/top-langs?username=aloknecessary&layout=compact&theme=ambient_gradient&size_weight=0.5&count_weight=0.5" alt="Top Languages" />
+  <img src="https://streak.aloknecessary.in/?user=aloknecessary&theme=ambient-gradient&hide_border=true&mode=weekly" alt="GitHub Streak" />
 </div>
 
 ---
