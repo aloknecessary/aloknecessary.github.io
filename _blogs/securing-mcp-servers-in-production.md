@@ -1,7 +1,7 @@
 ---
 title: "Securing MCP in Production"
-date: 2026-10-15
-last_modified_at: 2026-11-04T15:54:26+05:30
+date: 2026-11-09
+last_modified_at: 2026-11-09T12:34:26+05:30
 author: Alok Ranjan Daftuar
 description: "MCP's worst CVEs are classic web bugs — injection, path traversal, SSRF — made reachable because the model composes every argument. A layered control set covering input validation, token exchange, definition pinning, and network hardening for EKS and AKS."
 excerpt: "The MCP CVEs that keep landing are mostly path traversal, SSRF, and command injection — classic web bugs on an interface where every argument is attacker-influenced. Here is the layered control set that holds up on EKS and AKS."
