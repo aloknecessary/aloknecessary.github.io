@@ -1,7 +1,7 @@
 ---
 title: "Ordering and Partitioning in Event-Driven Systems"
-date: 2026-10-27
-last_modified_at: 2026-10-27T14:10:58+05:30
+date: 2026-11-12
+last_modified_at: 2026-11-12T11:30:58+05:30
 author: Alok Ranjan Daftuar
 description: "'Process events in order' hides two decisions: in order relative to what, and at what throughput cost. How ordering scopes work in SQS FIFO, Service Bus sessions, Kafka, Event Hubs and Kinesis, how to pick the partition key, and where order still breaks."
 excerpt: "'The events must be processed in order' is an unfinished sentence. This post covers how ordering scopes work across SQS FIFO, Service Bus sessions, Kafka, Event Hubs and Kinesis — how to pick the right partition key, size your lanes, and defend against the six places order breaks even when the broker is doing its job."
