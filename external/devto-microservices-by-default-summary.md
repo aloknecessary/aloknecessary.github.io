@@ -3,7 +3,7 @@ title: "Microservices by Default: The Organisational Constraints Nobody Puts in 
 published: false
 description: Microservices are an organisational pattern that happens to have technical expression. Applying the technical pattern without the organisational conditions is the most expensive mistake in modern cloud architecture.
 tags: microservices, architecture, distributedsystems, devops
-canonical_url: https://aloknecessary.in/blogs/microservices-by-default/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=microservices-by-default
+canonical_url: https://aloknecessary.in/blogs/microservices-by-default/
 cover_image: 
 ---
 

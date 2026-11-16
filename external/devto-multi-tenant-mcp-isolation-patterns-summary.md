@@ -3,7 +3,7 @@ title: "Multi-Tenant MCP: Isolation Patterns That Hold Up"
 published: false
 description: A tenant_id claim identifies a request — it doesn't isolate one. Real multi-tenant MCP isolation is layered across the data, network, execution, and credential layers, and which combination you need is set by your most demanding tenant's compliance posture.
 tags: mcp, kubernetes, security, multi-tenancy
-canonical_url: https://aloknecessary.in/blogs/multi-tenant-mcp-isolation-patterns/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=multi-tenant-mcp-isolation-patterns
+canonical_url: https://aloknecessary.in/blogs/multi-tenant-mcp-isolation-patterns/
 cover_image:
 cover_image_prompt: >
   A dark, cinematic tech illustration of a multi-tenant Kubernetes cluster with layered isolation boundaries — glowing namespace walls separating tenant workloads, credential vaults emitting soft light, and network policy shields blocking lateral movement between pods. Suggests controlled separation and zero-trust enforcement at every layer. No humans, no hands, no text. Deep dark background (#0d1117), neon accent colors (electric blue, violet, soft cyan). Wide banner format, 16:9 aspect ratio. Flat-meets-glow aesthetic, suitable for a technical blog header.

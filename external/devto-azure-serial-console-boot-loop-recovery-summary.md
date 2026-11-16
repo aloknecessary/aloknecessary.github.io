@@ -3,7 +3,7 @@ title: "Recovering an Azure VM Boot Loop with Serial Console, Mid-Migration"
 published: false
 description: How Azure Serial Console recovers a VM stuck in a boot loop after a kernel swap gone wrong — GRUB command-line recovery, initramfs regeneration, and the depmod root cause.
 tags: azure, linux, devops, migration
-canonical_url: https://aloknecessary.in/blogs/azure-serial-console-boot-loop-recovery/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=azure-serial-console-boot-loop-recovery
+canonical_url: https://aloknecessary.in/blogs/azure-serial-console-boot-loop-recovery/
 cover_image:
 ---
 

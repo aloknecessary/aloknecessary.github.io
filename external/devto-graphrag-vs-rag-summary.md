@@ -3,7 +3,7 @@ title: "GraphRAG vs. RAG: When Knowledge Graphs Earn Their Complexity"
 published: true
 description: What GraphRAG actually adds over flat retrieval, benchmark evidence for when it helps, how the 2024 cost problem got solved, and a decision framework for choosing between vector search and graph-based retrieval
 tags: ai, architecture, machinelearning, database
-canonical_url: https://aloknecessary.in/blogs/graph-rag-vs-rag/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=graphrag-vs-rag
+canonical_url: https://aloknecessary.in/blogs/graph-rag-vs-rag/
 cover_image: 
 ---
 

@@ -3,7 +3,7 @@ title: "The CAP Theorem in Practice: Making the Right Trade-offs at Scale"
 published: true
 description: A practical guide to the CAP theorem for architects — CP vs AP trade-offs, PACELC model, saga and CQRS patterns shaped by CAP, tunable consistency, and a decision framework
 tags: distributedsystems, architecture, database, systemdesign
-canonical_url: https://aloknecessary.in/blogs/cap_theorem_architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=cap-theorem
+canonical_url: https://aloknecessary.in/blogs/cap_theorem_architecture/
 cover_image: 
 ---
 

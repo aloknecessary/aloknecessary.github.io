@@ -3,7 +3,7 @@ title: "DNS in AWS: Route 53 Resolver, Private Hosted Zones, and Hybrid Resoluti
 published: false
 description: How DNS resolution works inside a VPC, and what has to be built deliberately to make it work across VPCs, accounts, and hybrid Azure/AWS environments.
 tags: aws, networking, dns, devops
-canonical_url: https://aloknecessary.in/blogs/aws-route53-dns-resolution/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=aws-route53-dns-resolution
+canonical_url: https://aloknecessary.in/blogs/aws-route53-dns-resolution/
 cover_image:
 cover_image_prompt: >
   A dark, cinematic tech illustration of a layered DNS resolution system — glowing query paths branching outward from a central VPC resolver node, splitting into private hosted zones, inbound and outbound resolver endpoints, and hybrid forwarding paths toward an external cloud network. The visual suggests intelligent, directional name resolution flowing across cloud boundaries. No humans, no hands, no text. Deep dark background (#0d1117), neon accent colors (electric blue, violet, soft cyan). Wide banner format, 16:9 aspect ratio. Flat-meets-glow aesthetic, suitable for a technical blog header.

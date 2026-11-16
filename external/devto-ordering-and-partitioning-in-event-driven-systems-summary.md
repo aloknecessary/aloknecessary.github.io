@@ -3,7 +3,7 @@ title: "Ordering and Partitioning in Event-Driven Systems"
 published: false
 description: "Process events in order" hides two decisions — in order relative to what, and at what throughput cost. Here's how ordering scopes work across SQS FIFO, Service Bus, Kafka, Event Hubs and Kinesis, and where order breaks even when the broker is doing its job.
 tags: distributed-systems, event-driven-architecture, kafka, messaging
-canonical_url: https://aloknecessary.in/blogs/ordering-and-partitioning-in-event-driven-systems/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=ordering-and-partitioning-in-event-driven-systems
+canonical_url: https://aloknecessary.in/blogs/ordering-and-partitioning-in-event-driven-systems/
 cover_image:
 cover_image_prompt: >
   A dark, cinematic tech illustration of event streams being partitioned and routed across parallel lanes. Multiple glowing data streams flow from a single source, each splitting into distinct colour-coded channels that converge into separate consumer nodes. The visual suggests controlled parallelism — order preserved within each lane, independent across lanes. No humans, no hands, no text. Deep dark background (#0d1117), neon accent colors (electric blue, violet, soft cyan). Wide banner format, 16:9 aspect ratio. Flat-meets-glow aesthetic, suitable for a technical blog header.

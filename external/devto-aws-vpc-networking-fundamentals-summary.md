@@ -3,7 +3,7 @@ title: "AWS VPC Networking Fundamentals: VPCs, Subnets, CIDR, Route Tables, IGW,
 published: false
 description: A ground-up mental model for AWS VPC networking — how CIDR math, subnet allocation, route tables, internet gateways, and NAT gateways connect into a single coherent system.
 tags: aws, networking, vpc, terraform
-canonical_url: https://aloknecessary.in/blogs/aws-vpc-networking-fundamentals/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=aws-vpc-networking-fundamentals
+canonical_url: https://aloknecessary.in/blogs/aws-vpc-networking-fundamentals/
 cover_image:
 ---
 

@@ -3,7 +3,7 @@ title: "Secrets Management in a GitOps World: Sealed Secrets vs. External Secret
 published: false
 description: A practical comparison of three approaches to secrets management in a GitOps pipeline — what each one actually protects against, where each breaks down, and how to choose between them.
 tags: gitops, kubernetes, devops, security
-canonical_url: https://aloknecessary.in/blogs/gitops-secrets-management/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=gitops-secrets-management
+canonical_url: https://aloknecessary.in/blogs/gitops-secrets-management/
 cover_image:
 ---
 

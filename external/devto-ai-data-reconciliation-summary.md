@@ -3,7 +3,7 @@ title: "AI-Assisted Data Reconciliation at Scale: Patterns for Distributed Syste
 published: true
 description: Where rule-based reconciliation breaks down and how embedding similarity and LLM classification fill the gap — without replacing deterministic checks or sacrificing auditability
 tags: ai, distributedsystems, architecture, dataengineering
-canonical_url: https://aloknecessary.in/blogs/ai_assisted_data_reconciliation/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=ai-data-reconciliation
+canonical_url: https://aloknecessary.in/blogs/ai_assisted_data_reconciliation/
 cover_image: 
 ---
 

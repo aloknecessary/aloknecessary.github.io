@@ -3,7 +3,7 @@ title: AI as Your Engineering Force Multiplier
 published: true
 description: How engineering teams are using AI to eliminate friction and deliver 40% faster without compromising quality
 tags: ai, devops, productivity, kubernetes
-canonical_url: https://aloknecessary.in/blogs/ai-as-your-engineering-force-multiplier/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=ai-as-your-engineering-force-multiplier
+canonical_url: https://aloknecessary.in/blogs/ai-as-your-engineering-force-multiplier/
 cover_image: 
 ---
 

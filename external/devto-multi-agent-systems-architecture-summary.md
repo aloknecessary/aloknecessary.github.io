@@ -3,7 +3,7 @@ title: "Multi-Agent Systems Architecture: Patterns, Pitfalls, and Production Rea
 published: false
 description: The four coordination patterns, orchestration vs choreography, state persistence, inter-agent contracts, cost controls, and the observability that detects "wrong" as distinct from "down"
 tags: ai, architecture, distributedsystems, python
-canonical_url: https://aloknecessary.in/blogs/multi-agent-systems-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=multi-agent-systems-architecture
+canonical_url: https://aloknecessary.in/blogs/multi-agent-systems-architecture/
 cover_image: 
 ---
 

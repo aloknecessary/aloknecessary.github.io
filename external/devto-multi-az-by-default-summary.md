@@ -3,7 +3,7 @@ title: "Multi-AZ by Default: When High Availability Costs More Than the Downtime
 published: true
 description: The "always run Multi-AZ" mandate is one of the most expensive defaults in cloud architecture. A decision framework that ties availability investment to actual business cost of downtime.
 tags: cloud, aws, architecture, devops
-canonical_url: https://aloknecessary.in/blogs/multi-az-by-default/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=multi-az-by-default
+canonical_url: https://aloknecessary.in/blogs/multi-az-by-default/
 cover_image: 
 ---
 
