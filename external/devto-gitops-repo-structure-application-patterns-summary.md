@@ -1,6 +1,6 @@
 ---
 title: "GitOps Repo Structure and Application Patterns: App-of-Apps, ApplicationSets, and AppProjects"
-published: false
+published: true
 description: Mono-repo vs. repo-per-team, App-of-Apps vs. ApplicationSets at scale, and AppProjects as the multi-tenancy boundary that keeps teams from deploying into each other's namespaces.
 tags: argocd, gitops, kubernetes, devops
 canonical_url: https://aloknecessary.in/blogs/gitops-repo-structure-application-patterns/

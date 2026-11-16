@@ -1,6 +1,6 @@
 ---
 title: "Progressive Delivery with Argo Rollouts: Canary, Blue-Green, and AnalysisTemplates That Actually Gate"
-published: false
+published: true
 description: Argo Rollouts replaces the all-or-nothing Kubernetes Deployment rollout with a strategy that pauses, runs automated analysis against real traffic, and only proceeds — or reverses — based on the result.
 tags: kubernetes, gitops, devops, progressive-delivery
 canonical_url: https://aloknecessary.in/blogs/argo-rollouts-progressive-delivery/

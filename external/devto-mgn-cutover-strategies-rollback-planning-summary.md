@@ -1,6 +1,6 @@
 ---
 title: "MGN Cutover Strategies: Gating, Sequencing, and Keeping a Way Back"
-published: false
+published: true
 description: MGN cutover isn't a data operation — the data is already replicated. It's a commitment to a new source of truth, and the strategy is about how reversible you keep that commitment.
 tags: aws, migration, devops, cloud
 canonical_url: https://aloknecessary.in/blogs/mgn-cutover-strategies-rollback-planning/

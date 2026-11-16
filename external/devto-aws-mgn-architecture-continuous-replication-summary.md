@@ -1,6 +1,6 @@
 ---
 title: "AWS MGN Architecture: How Continuous Replication Actually Works"
-published: false
+published: true
 description: A deep dive into what the AWS Application Migration Service replication agent actually does — from install to cutover — and where migrations silently fail.
 tags: aws, migration, cloud, devops
 canonical_url: https://aloknecessary.in/blogs/aws-mgn-architecture-continuous-replication/

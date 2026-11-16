@@ -1,6 +1,6 @@
 ---
 title: "CIDR Planning for Azure-to-AWS Migrations: Reconciling Two Address Spaces That Were Never Designed Together"
-published: false
+published: true
 description: CIDR planning for an Azure-to-AWS migration is a reconciliation problem — the Azure address space is a fixed constraint that must be fully audited before the AWS target range is chosen.
 tags: aws, azure, networking, migration
 canonical_url: https://aloknecessary.in/blogs/aws-migration-cidr-planning/

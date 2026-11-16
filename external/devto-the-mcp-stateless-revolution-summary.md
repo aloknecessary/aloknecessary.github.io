@@ -1,6 +1,6 @@
 ---
 title: "The MCP Stateless Revolution"
-published: false
+published: true
 description: The 2026-07-28 MCP specification removed protocol-level sessions entirely — and with it, sticky routing, shared session stores, and affinity cookies that teams had been forced to build around a stateful transport.
 tags: ai, kubernetes, devops, cloud
 canonical_url: https://aloknecessary.in/blogs/the-mcp-stateless-revolution/

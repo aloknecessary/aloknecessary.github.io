@@ -1,6 +1,6 @@
 ---
 title: "VPC Endpoints: Gateway vs Interface, and the AWS Traffic That Shouldn't Touch the Internet"
-published: false
+published: true
 description: A practical guide to AWS VPC endpoints — how Gateway (S3, DynamoDB) and Interface (PrivateLink) endpoints work under the hood, when each is worth adding, and the failure modes that show up in production.
 tags: aws, networking, devops, cloud
 canonical_url: https://aloknecessary.in/blogs/aws-vpc-endpoints-gateway-vs-interface/

@@ -1,6 +1,6 @@
 ---
 title: "DNS in AWS: Route 53 Resolver, Private Hosted Zones, and Hybrid Resolution"
-published: false
+published: true
 description: How DNS resolution works inside a VPC, and what has to be built deliberately to make it work across VPCs, accounts, and hybrid Azure/AWS environments.
 tags: aws, networking, dns, devops
 canonical_url: https://aloknecessary.in/blogs/aws-route53-dns-resolution/

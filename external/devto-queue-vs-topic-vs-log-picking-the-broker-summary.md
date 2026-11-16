@@ -1,6 +1,6 @@
 ---
 title: "Queue vs Topic vs Log: Picking the Broker"
-published: false
+published: true
 description: Queue, topic, and log are three different contracts about who owns a message after delivery — not three throughput tiers. Getting the contract wrong means no amount of tuning fixes it.
 tags: aws, azure, kafka, distributed-systems
 canonical_url: https://aloknecessary.in/blogs/queue-vs-topic-vs-log-picking-the-broker/

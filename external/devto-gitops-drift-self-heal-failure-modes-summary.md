@@ -1,6 +1,6 @@
 ---
 title: "Drift, Self-Heal, and Failure Modes: When ArgoCD's Reconciliation Loop Fights Something Else"
-published: false
+published: true
 description: A practical map of where ArgoCD's auto-sync and self-heal break down — HPA replica oscillation, sync-wave partial failure, and operator-owned field conflicts — and how to fix each one.
 tags: gitops, argocd, kubernetes, devops
 canonical_url: https://aloknecessary.in/blogs/gitops-drift-self-heal-failure-modes/

@@ -1,6 +1,6 @@
 ---
 title: "Securing MCP in Production"
-published: false
+published: true
 description: MCP's worst CVEs are classic web bugs — injection, path traversal, SSRF — made reachable because the model composes every argument. A layered control set for EKS and AKS.
 tags: mcp, security, kubernetes, devops
 canonical_url: https://aloknecessary.in/blogs/securing-mcp-servers-in-production/

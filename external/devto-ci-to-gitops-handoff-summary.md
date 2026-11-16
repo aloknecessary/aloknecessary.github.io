@@ -1,6 +1,6 @@
 ---
 title: "CI to GitOps Handoff: Argo Image Updater vs. CI-Writes-the-Commit vs. Kargo"
-published: false
+published: true
 description: How to close the gap between a CI image push and an ArgoCD sync, comparing Argo Image Updater, CI-writes-the-commit, and Kargo on promotion model, auth chain, and operational cost.
 tags: argocd, gitops, kubernetes, github-actions
 canonical_url: https://aloknecessary.in/blogs/ci-to-gitops-handoff/

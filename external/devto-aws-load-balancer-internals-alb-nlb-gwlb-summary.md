@@ -1,6 +1,6 @@
 ---
 title: "Load Balancer Internals: ALB vs NLB vs GWLB, and What Actually Happens to a Packet"
-published: false
+published: true
 description: ALB, NLB, and GWLB operate at different OSI layers, and that single distinction — not the feature checklist — determines what each type can and cannot do to your traffic.
 tags: aws, networking, cloud, devops
 canonical_url: https://aloknecessary.in/blogs/aws-load-balancer-internals-alb-nlb-gwlb/

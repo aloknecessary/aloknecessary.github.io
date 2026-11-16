@@ -1,6 +1,6 @@
 ---
 title: "Deploying MCP Servers on Kubernetes"
-published: false
+published: true
 description: Containerizing a stdio MCP server and exposing a port is a transport mismatch, not a deployment. Here's what a correct Kubernetes deployment looks like on EKS and AKS.
 tags: kubernetes, mcp, devops, platform
 canonical_url: https://aloknecessary.in/blogs/deploying-mcp-servers-on-kubernetes/

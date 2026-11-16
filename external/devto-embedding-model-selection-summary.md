@@ -1,6 +1,6 @@
 ---
 title: "Embedding Model Selection for Production: The Decision Nobody Documents"
-published: false
+published: true
 description: A production decision framework for choosing embedding models — MTEB shortlisting, domain benchmarking, Matryoshka dimensionality trade-offs, cost modeling at corpus scale, and the re-embedding migration problem.
 tags: ai, rag, embeddings, architecture
 canonical_url: https://aloknecessary.in/blogs/embedding-model-selection/

@@ -1,6 +1,6 @@
 ---
 title: "Multi-Tenant MCP: Isolation Patterns That Hold Up"
-published: false
+published: true
 description: A tenant_id claim identifies a request — it doesn't isolate one. Real multi-tenant MCP isolation is layered across the data, network, execution, and credential layers, and which combination you need is set by your most demanding tenant's compliance posture.
 tags: mcp, kubernetes, security, multi-tenancy
 canonical_url: https://aloknecessary.in/blogs/multi-tenant-mcp-isolation-patterns/

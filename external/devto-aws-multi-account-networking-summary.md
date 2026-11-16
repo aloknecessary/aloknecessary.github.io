@@ -1,6 +1,6 @@
 ---
 title: "Multi-Account AWS Networking: Shared VPC, RAM, and the Hub-and-Spoke Model"
-published: false
+published: true
 description: Two models for multi-account AWS networking — Shared VPC and centralized Transit Gateway — answer the ownership question differently. Here's how to choose.
 tags: aws, networking, devops, cloud
 canonical_url: https://aloknecessary.in/blogs/aws-multi-account-networking/

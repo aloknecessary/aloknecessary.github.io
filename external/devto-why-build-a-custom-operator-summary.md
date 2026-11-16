@@ -1,6 +1,6 @@
 ---
 title: "Why Build a Custom Operator: Knowing When a CRD and Controller Earn Their Keep"
-published: false
+published: true
 description: A decision framework for when a Kubernetes operator is the right tool, and a practical guide to designing the CRD API you can't easily take back.
 tags: kubernetes, platform-engineering, devops, cloud-native
 canonical_url: https://aloknecessary.in/blogs/why-build-a-custom-operator/

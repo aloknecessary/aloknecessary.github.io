@@ -1,6 +1,6 @@
 ---
 title: "Cloud Security Architecture: From Shared Responsibility to Zero Trust"
-published: false
+published: true
 description: Shared responsibility boundaries, IAM least-privilege at scale, secrets management without credential sprawl, network segmentation, and zero-trust applied to Kubernetes workloads
 tags: cloud, security, kubernetes, devops
 canonical_url: https://aloknecessary.in/blogs/cloud-security-architecture/
