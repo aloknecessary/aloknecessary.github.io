@@ -6,3 +6,4 @@ vendor
 reports/*.md
 .amazonq/*
 *.ps1
+local/
