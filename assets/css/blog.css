@@ -194,6 +194,17 @@ h2.description::before {
 /* X */
 .share-bar a[aria-label="Share on X"] {
   background: #000000;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .share-bar a[aria-label="Share on X"] {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Bluesky */
+.share-bar a[aria-label="Share on Bluesky"] {
+  background: #0085ff;
 }
 
 /* Copy Link */
