@@ -1,7 +1,7 @@
 ---
 title: "Why Build a Custom Operator: Knowing When a CRD and Controller Earn Their Keep"
-date: 2026-11-12
-last_modified_at: 2026-11-12T12:31:05+05:30
+date: 2026-11-16
+last_modified_at: 2026-11-16T10:57:05+05:30
 author: Alok Ranjan Daftuar
 description: "A decision framework for when a Kubernetes operator is the right tool, and a practical guide to designing the CRD API — the part you can't easily take back."
 excerpt: "An operator is a long-running program you now deploy, upgrade, and carry a pager for. How to tell when that cost is justified, and how to design the one part you can't easily take back: the API."
