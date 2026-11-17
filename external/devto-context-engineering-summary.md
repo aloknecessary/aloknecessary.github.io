@@ -3,7 +3,7 @@ title: "Context Engineering: The Discipline That Determines What Your LLM Actual
 published: true
 description: Context window budgeting, four-type memory architecture, structured injection patterns, conversation compression, lost-in-the-middle mitigation, and treating context assembly as a testable system
 tags: ai, architecture, machinelearning, python
-canonical_url: https://aloknecessary.in/blogs/discipline-that-determines-what-your-llm-actually-sees/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=context-engineering
+canonical_url: https://aloknecessary.in/blogs/discipline-that-determines-what-your-llm-actually-sees/
 cover_image: 
 ---
 

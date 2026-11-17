@@ -1,9 +1,9 @@
 ---
 title: "VPC Peering vs Transit Gateway: Choosing the Right AWS Inter-VPC Connectivity Model"
-published: false
+published: true
 description: A practical guide to choosing between VPC Peering and Transit Gateway based on topology shape, scale, and operational complexity — not company size.
 tags: aws, networking, terraform, cloud
-canonical_url: https://aloknecessary.in/blogs/aws-vpc-peering-vs-transit-gateway/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=aws-vpc-peering-vs-transit-gateway
+canonical_url: https://aloknecessary.in/blogs/aws-vpc-peering-vs-transit-gateway/
 cover_image:
 ---
 

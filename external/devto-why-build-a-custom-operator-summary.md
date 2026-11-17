@@ -1,9 +1,9 @@
 ---
 title: "Why Build a Custom Operator: Knowing When a CRD and Controller Earn Their Keep"
-published: false
+published: true
 description: A decision framework for when a Kubernetes operator is the right tool, and a practical guide to designing the CRD API you can't easily take back.
 tags: kubernetes, platform-engineering, devops, cloud-native
-canonical_url: https://aloknecessary.in/blogs/why-build-a-custom-operator/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=why-build-a-custom-operator
+canonical_url: https://aloknecessary.in/blogs/why-build-a-custom-operator/
 cover_image:
 cover_image_prompt: >
   A dark, cinematic tech illustration of a Kubernetes control loop — a custom resource object at the top feeding into a reconcile loop that drives cluster state. Glowing CRD schema nodes connected by directed arrows to namespace, quota, and network policy icons arranged in a dependency graph. No humans, no hands, no text. Deep dark background (#0d1117), neon accent colors (electric blue, violet, soft cyan). Wide banner format, 16:9 aspect ratio. Flat-meets-glow aesthetic, suitable for a technical blog header.

@@ -1,9 +1,9 @@
 ---
 title: "Multi-Cluster ArgoCD Architecture: Hub-and-Spoke vs. Per-Cluster, Done Right"
-published: false
+published: true
 description: Where does ArgoCD live when you go from 1 cluster to 15? A practical decision framework for multi-cluster GitOps architecture.
 tags: argocd, kubernetes, gitops, devops
-canonical_url: https://aloknecessary.in/blogs/multi-cluster-argocd-architecture/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=multi-cluster-argocd-architecture
+canonical_url: https://aloknecessary.in/blogs/multi-cluster-argocd-architecture/
 cover_image:
 ---
 

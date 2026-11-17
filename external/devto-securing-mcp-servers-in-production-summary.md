@@ -1,9 +1,9 @@
 ---
 title: "Securing MCP in Production"
-published: false
+published: true
 description: MCP's worst CVEs are classic web bugs — injection, path traversal, SSRF — made reachable because the model composes every argument. A layered control set for EKS and AKS.
 tags: mcp, security, kubernetes, devops
-canonical_url: https://aloknecessary.in/blogs/securing-mcp-servers-in-production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=securing-mcp-servers-in-production
+canonical_url: https://aloknecessary.in/blogs/securing-mcp-servers-in-production/
 cover_image:
 cover_image_prompt: >
   A dark, cinematic tech illustration of a layered security perimeter around an autonomous AI tool-calling system. Concentric rings of glowing barriers — input validation, token exchange, network policy — surrounding a central MCP server node, with faint threat vectors deflected at each layer. No humans, no hands, no text. Deep dark background (#0d1117), neon accent colors (electric blue, violet, soft cyan). Wide banner format, 16:9 aspect ratio. Flat-meets-glow aesthetic, suitable for a technical blog header.

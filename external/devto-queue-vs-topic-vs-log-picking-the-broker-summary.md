@@ -1,9 +1,9 @@
 ---
 title: "Queue vs Topic vs Log: Picking the Broker"
-published: false
+published: true
 description: Queue, topic, and log are three different contracts about who owns a message after delivery — not three throughput tiers. Getting the contract wrong means no amount of tuning fixes it.
 tags: aws, azure, kafka, distributed-systems
-canonical_url: https://aloknecessary.in/blogs/queue-vs-topic-vs-log-picking-the-broker/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=queue-vs-topic-vs-log-picking-the-broker
+canonical_url: https://aloknecessary.in/blogs/queue-vs-topic-vs-log-picking-the-broker/
 cover_image:
 cover_image_prompt: >
   A dark, cinematic tech illustration of three distinct message flow patterns — a queue with competing consumers, a topic fanning out to multiple subscribers, and a retained log with independent consumer offsets at different positions. Each pattern glows with a different neon accent, suggesting three fundamentally different contracts. No humans, no hands, no text. Deep dark background (#0d1117), neon accent colors (electric blue, violet, soft cyan). Wide banner format, 16:9 aspect ratio. Flat-meets-glow aesthetic, suitable for a technical blog header.

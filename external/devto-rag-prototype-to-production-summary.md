@@ -3,7 +3,7 @@ title: "Building Reliable RAG Pipelines: From Prototype to Production"
 published: true
 description: The engineering gap between a RAG demo and a production system — chunking strategies, hybrid retrieval, re-ranking, context assembly, retrieval evaluation, and the observability that makes it trustworthy
 tags: ai, architecture, machinelearning, python
-canonical_url: https://aloknecessary.in/blogs/rag_prototype_to_production/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=rag-prototype-to-production
+canonical_url: https://aloknecessary.in/blogs/rag_prototype_to_production/
 cover_image: 
 ---
 

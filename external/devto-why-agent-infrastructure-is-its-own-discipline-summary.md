@@ -1,9 +1,9 @@
 ---
 title: "Why Agent Infrastructure Is Its Own Discipline"
-published: false
+published: true
 description: The standard Kubernetes microservice playbook breaks in predictable ways when you run agents on it — here's exactly why, and what needs to change.
 tags: kubernetes, ai, platform, devops
-canonical_url: https://aloknecessary.in/blogs/why-agent-infrastructure-is-its-own-discipline/?utm_source=devto&utm_medium=referral&utm_campaign=blog_syndication&utm_content=why-agent-infrastructure-is-its-own-discipline
+canonical_url: https://aloknecessary.in/blogs/why-agent-infrastructure-is-its-own-discipline/
 cover_image:
 ---
 

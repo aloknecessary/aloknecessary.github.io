@@ -1,6 +1,6 @@
 ---
 title: "Enforcing Modular Monolith Boundaries in .NET: NDepend, Parallel Pipelines, and the Architecture That Holds"
-published: false
+published: true
 description: "A production guide to .NET modular monoliths with enforced boundaries — solution structure, NDepend CQLinq rules, module-scoped DbContext, MediatR events, parallel CI pipelines, and Quality Gates."
 canonical_url: "https://aloknecessary.in/blogs/modular-monolith-dotnet-ndepend/?utm_source=devto&utm_medium=crosspost&utm_campaign=modular-monolith-dotnet"
 tags: dotnet, architecture, csharp, devops
