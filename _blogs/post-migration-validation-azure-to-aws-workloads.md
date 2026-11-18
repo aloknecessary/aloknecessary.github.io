@@ -1,7 +1,7 @@
 ---
 title: "Post-Migration Validation: Proving a Migrated Server Is Actually Equivalent"
-date: 2026-10-19
-last_modified_at: 2026-10-27T14:18:03+05:30
+date: 2026-11-19
+last_modified_at: 2026-11-27T11:18:03+05:30
 author: Alok Ranjan Daftuar
 description: "A running instance that answers a health check has proven almost nothing. This post covers a bottom-up validation framework for Azure-to-AWS migrations — OS and boot, storage, network, application, data, performance, and security — with scripts you can run inside the rollback window."
 excerpt: "A running instance that answers a health check has proven almost nothing. Validation means showing the migrated server behaves like the source did, against criteria you wrote down before cutover — and recording a pass or fail while the rollback window is still open."
