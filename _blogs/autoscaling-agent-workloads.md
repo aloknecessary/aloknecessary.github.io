@@ -1,7 +1,7 @@
 ---
 title: "Autoscaling Agent Workloads"
-date: 2026-11-04
-last_modified_at: 2026-11-04T17:29:24+05:30
+date: 2026-11-27
+last_modified_at: 2026-11-27T11:29:24+05:30
 author: Alok Ranjan Daftuar
 description: "CPU-based autoscaling fails for I/O-bound MCP servers — a replica holding 20 concurrent tool calls waiting on downstream APIs shows near-zero CPU while fully saturated. This article replaces the HPA with KEDA scaling on in-flight concurrency, adds drain-aware scale-down, and pre-provisions capacity so bursts never wait on a node."
 excerpt: "CPU utilization barely moves while an I/O-bound MCP server is completely busy. Scale on in-flight concurrency instead, protect busy replicas on the way down, and put capacity in place before the pods need it."
