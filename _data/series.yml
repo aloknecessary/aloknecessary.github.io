@@ -74,3 +74,10 @@
   domain: "Distributed Systems"
   status: active
   description: "Choosing and operating message brokers on AWS and Azure: queues, topics and logs, ordering and partitioning, schema evolution, consumer lag and backpressure, and safe replay. The operational layer beneath patterns like sagas and idempotency."
+
+- name: "Agent Observability"
+  slug: agent-observability
+  icon: "🔍"
+  domain: "AI Engineering"
+  status: active
+  description: "Why APM misses agent failures, how to instrument a run with structured logs and budgets, and the queries that surface loops, wandering, truncation, and cost runaways — with no new tooling."
