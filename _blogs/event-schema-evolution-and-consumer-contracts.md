@@ -1,7 +1,7 @@
 ---
 title: "Event Schema Evolution and Contracts"
-date: 2026-11-10
-last_modified_at: 2026-11-10T18:21:42+05:30
+date: 2026-11-30
+last_modified_at: 2026-11-30T10:21:42+05:30
 author: Alok Ranjan Daftuar
 description: "Adding a field is not always safe, and compatible depends on who upgrades first. This article covers compatibility modes, what each kind of schema change actually does to readers, tolerant reader patterns, CI gates with schema registries on AWS and Azure, and how to ship a breaking change without a flag day."
 excerpt: "Whether a schema change is safe depends on who reads the data, which version they were built against, and whether the reader is strict or tolerant. An event schema is a public API with consumers you may not know about, and its old versions never fully go away."
