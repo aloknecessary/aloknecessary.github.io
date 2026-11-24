@@ -1,7 +1,7 @@
 ---
 title: "Security Groups and NACLs at Scale: Design Patterns That Survive Growth"
-date: 2026-11-05
-last_modified_at: 2026-11-10T18:49:58+05:30
+date: 2026-12-03
+last_modified_at: 2026-12-03T10:49:58+05:30
 author: Alok Ranjan Daftuar
 description: "Security groups work fine at ten instances and become a liability at ten thousand. This article covers the design patterns that keep that from happening: group references over CIDRs, single-purpose composition, managed prefix lists, egress control, and how NACLs fit in as a coarse guardrail."
 excerpt: "Security groups work fine at ten instances and become a liability at ten thousand. The failure isn't the feature, it's the habits: CIDR-based rules, one giant group per app, and no way to tell which rules anything still depends on."
